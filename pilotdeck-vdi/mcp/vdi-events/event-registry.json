@@ -1,0 +1,222 @@
+{
+  "version": "1.0.0",
+  "description": "VDI 事件类型定义与订阅者注册表 — 基于学科代码体系 v1.0",
+  "_code_registry": "pilotdeck-vdi/config/discipline-codes.json",
+
+  "event_types": {
+    "design_basis.updated": {
+      "description": "工艺设计基础变更（介质、温度、压力、流量等关键参数更新）",
+      "produced_by": ["PR"],
+      "subscribers": ["PI", "IN", "EQ", "WA", "HS"],
+      "priority": "high",
+      "requires_ack": true,
+      "ttl_hours": 72,
+      "schema": {
+        "required_payload_fields": ["object_id", "object_type", "discipline", "basis_items"],
+        "payload_example": {
+          "object_id": "BASIS-001",
+          "object_type": "DesignBasis",
+          "discipline": "PR",
+          "basis_items": [
+            { "tag_id": "EQP-R-1001", "parameter": "design_pressure", "value": 1.6, "unit": "MPa" }
+          ]
+        }
+      }
+    },
+
+    "design_basis.acknowledged": {
+      "description": "下游专业确认已收到并处理设计基础变更",
+      "produced_by": ["PI", "IN", "EQ", "WA", "HS"],
+      "subscribers": ["PR"],
+      "priority": "medium",
+      "requires_ack": false,
+      "ttl_hours": 24
+    },
+
+    "discipline_output.submitted": {
+      "description": "专业提交 DisciplineOutput（status=draft），触发校审流程",
+      "produced_by": ["*"],
+      "subscribers": ["QA"],
+      "priority": "medium",
+      "requires_ack": true,
+      "ttl_hours": 168
+    },
+
+    "discipline_output.published": {
+      "description": "专业 DisciplineOutput 通过校审发布（status=published），下游专业据此开展设计",
+      "produced_by": ["*"],
+      "subscribers_by_discipline": {
+        "PR": ["PI", "IN", "EQ", "WA", "HS"],
+        "PI": ["IN", "ST"],
+        "IN": ["EL"],
+        "EQ": ["ST", "PI"],
+        "WA": ["FI", "EL"],
+        "EL": ["ST"],
+        "HS": ["PR"]
+      },
+      "priority": "high",
+      "requires_ack": true,
+      "ttl_hours": 168
+    },
+
+    "condition.changed": {
+      "description": "外部条件变更（如总图竖向标高、建筑防火分区调整、供电容量变化）",
+      "produced_by": ["SI", "AR", "EL"],
+      "subscribers_by_discipline": {
+        "SI": ["PI", "WA", "EL"],
+        "AR": ["FI", "HV", "EL", "WA"],
+        "EL": ["IN", "EQ", "WA", "HV"]
+      },
+      "priority": "high",
+      "requires_ack": true,
+      "ttl_hours": 48
+    },
+
+    "review_gate.passed": {
+      "description": "校审闸门通过（design/checking/review/approval）",
+      "produced_by": ["*"],
+      "subscribers": ["MG"],
+      "priority": "medium",
+      "requires_ack": false,
+      "ttl_hours": 72
+    },
+
+    "review_gate.failed": {
+      "description": "校审闸门未通过，需设计人整改",
+      "produced_by": ["QA", "*"],
+      "subscribers": ["MG"],
+      "priority": "high",
+      "requires_ack": true,
+      "ttl_hours": 72
+    },
+
+    "task.status_changed": {
+      "description": "WBS 任务状态变更（in_progress/completed/blocked/failed）",
+      "produced_by": ["*"],
+      "subscribers": ["MG"],
+      "priority": "low",
+      "requires_ack": false,
+      "ttl_hours": 24
+    },
+
+    "milestone.at_risk": {
+      "description": "里程碑存在滞后风险（偏差 ≥ 2 天）",
+      "produced_by": ["MG"],
+      "subscribers": ["MG"],
+      "priority": "critical",
+      "requires_ack": true,
+      "ttl_hours": 48
+    },
+
+    "milestone.achieved": {
+      "description": "里程碑达成",
+      "produced_by": ["MG"],
+      "subscribers": ["MG", "QA"],
+      "priority": "medium",
+      "requires_ack": false,
+      "ttl_hours": 72
+    },
+
+    "human.data_requested": {
+      "description": "Skill 在 CP-0 阶段发现 MUST 数据缺失，向人类发出数据补充请求。任务自动进入 paused 状态。",
+      "produced_by": ["*"],
+      "subscribers": ["MG"],
+      "priority": "critical",
+      "requires_ack": true,
+      "ttl_hours": 72,
+      "schema": {
+        "required_payload_fields": ["project_id", "wbs_id", "discipline", "sub_discipline", "missing_fields"],
+        "payload_example": {
+          "project_id": "VDI-PILOT-A",
+          "wbs_id": "1",
+          "discipline": "WA",
+          "sub_discipline": "S",
+          "checkpoint": "CP-0",
+          "missing_fields": [
+            { "field": "Q_process_m3d", "label": "工艺用水量（m³/d）", "source": "工艺专业 DesignBasis" }
+          ]
+        }
+      }
+    },
+
+    "human.data_supplied": {
+      "description": "人类已补充缺失数据，Skill 可以恢复执行。",
+      "produced_by": ["MG"],
+      "subscribers": ["*"],
+      "priority": "high",
+      "requires_ack": false,
+      "ttl_hours": 48,
+      "schema": {
+        "required_payload_fields": ["project_id", "wbs_id", "request_event_id", "supplied_data"],
+        "payload_example": {
+          "project_id": "VDI-PILOT-A",
+          "wbs_id": "1",
+          "request_event_id": "EVT-xxx",
+          "supplied_data": { "Q_process_m3d": 320 }
+        }
+      }
+    },
+
+    "human.review_requested": {
+      "description": "Skill 到达 CP-1/CP-2/CP-3 检查点，请求人类审核确认。任务进入 paused 状态。",
+      "produced_by": ["*"],
+      "subscribers": ["MG"],
+      "priority": "high",
+      "requires_ack": true,
+      "ttl_hours": 72,
+      "schema": {
+        "required_payload_fields": ["project_id", "wbs_id", "discipline_code", "checkpoint", "summary"],
+        "payload_example": {
+          "project_id": "VDI-PILOT-A",
+          "wbs_id": "1",
+          "discipline_code": "WASD",
+          "checkpoint": "CP-1",
+          "summary": "方案确定：环状管网 DN200，离心泵 Q=45m³/h H=42m",
+          "options": ["确认", "修改", "退回"]
+        }
+      }
+    },
+
+    "human.review_resolved": {
+      "description": "人类对检查点做出决策：批准/驳回/修改。Skill 根据决策继续执行或回退修改。",
+      "produced_by": ["MG"],
+      "subscribers": ["*"],
+      "priority": "high",
+      "requires_ack": false,
+      "ttl_hours": 48,
+      "schema": {
+        "required_payload_fields": ["project_id", "wbs_id", "request_event_id", "decision", "comment"],
+        "payload_example": {
+          "project_id": "VDI-PILOT-A",
+          "wbs_id": "1",
+          "request_event_id": "EVT-xxx",
+          "decision": "approved",
+          "comment": "方案合理，继续"
+        }
+      }
+    }
+  },
+
+  "subscriber_lookup": {
+    "PR": { "subscribes_to": ["design_basis.acknowledged", "review_gate.failed"], "lead_code": "PR0L" },
+    "WA": { "subscribes_to": ["design_basis.updated", "condition.changed"], "lead_code": "WA0L" },
+    "PI": { "subscribes_to": ["design_basis.updated", "discipline_output.published", "condition.changed"], "lead_code": null },
+    "IN": { "subscribes_to": ["design_basis.updated", "discipline_output.published", "condition.changed"], "lead_code": null },
+    "EQ": { "subscribes_to": ["design_basis.updated", "discipline_output.published", "condition.changed"], "lead_code": null },
+    "EL": { "subscribes_to": ["discipline_output.published", "condition.changed"], "lead_code": null },
+    "HS": { "subscribes_to": ["design_basis.updated"], "lead_code": null },
+    "FI": { "subscribes_to": ["discipline_output.published", "condition.changed"], "lead_code": null },
+    "HV": { "subscribes_to": ["condition.changed"], "lead_code": null },
+    "ST": { "subscribes_to": ["discipline_output.published"], "lead_code": null },
+    "AR": { "subscribes_to": [], "lead_code": null },
+    "SI": { "subscribes_to": [], "lead_code": null },
+    "TH": { "subscribes_to": [], "lead_code": null },
+    "TC": { "subscribes_to": [], "lead_code": null },
+    "MG": { "subscribes_to": ["review_gate.passed", "review_gate.failed", "task.status_changed", "milestone.at_risk", "milestone.achieved", "human.data_requested", "human.review_requested"], "lead_code": "MGDM" },
+    "QA": { "subscribes_to": ["discipline_output.submitted", "review_gate.passed", "milestone.achieved"], "lead_code": null }
+  },
+
+  "_active_disciplines": ["WA", "PR", "MG"],
+  "_pending_disciplines": ["PI", "IN", "EL", "EQ", "HV", "FI", "HS", "ST", "AR", "SI", "TH", "TC", "QA"],
+  "_note": "pending_disciplines 的 lead_code 为 null，待对应 SKILL.md 创建后补充"
+}

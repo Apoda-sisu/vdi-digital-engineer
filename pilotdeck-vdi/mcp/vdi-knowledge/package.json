@@ -1,0 +1,19 @@
+{
+  "name": "vdi-knowledge-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "VDI 规范知识库 MCP 服务（深集成）",
+  "bin": {
+    "vdi-knowledge-mcp": "./server.mjs"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "build-index": "node build-index.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "yaml": "^2.8.0",
+    "zod": "^3.24.0"
+  }
+}

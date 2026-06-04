@@ -1,0 +1,47 @@
+[
+  {
+    "standardId": "GB 27898.4-2025",
+    "title": "固定消防给水设备 第4部分：消防气体顶压给水设备",
+    "status": "即将实施",
+    "publishDate": "2025-10-31",
+    "publishYear": 2025,
+    "implementDate": "2026-11-01",
+    "url": "javascript:void(0)"
+  },
+  {
+    "standardId": "GB 27898.2-2011",
+    "title": "固定消防给水设备  第2部分：消防自动恒压给水设备",
+    "status": "现行",
+    "publishDate": "2024-04-12",
+    "publishYear": 2024,
+    "implementDate": "2012-06-01",
+    "url": "javascript:void(0)"
+  },
+  {
+    "standardId": "GB 27898.3-2011",
+    "title": "固定消防给水设备  第3部分：消防增压稳压给水设备",
+    "status": "现行",
+    "publishDate": "2024-04-12",
+    "publishYear": 2024,
+    "implementDate": "2012-06-01",
+    "url": "javascript:void(0)"
+  },
+  {
+    "standardId": "GB/T 41666.4-2024",
+    "title": "地下无压排水管网非开挖修复用塑料管道系统 第 4 部分：原位固化内衬法",
+    "status": "现行",
+    "publishDate": "2024-03-15",
+    "publishYear": 2024,
+    "implementDate": "2024-10-01",
+    "url": "javascript:void(0)"
+  },
+  {
+    "standardId": "GB/T 41666.7-2024",
+    "title": "地下无压排水管网非开挖修复用塑料管道系统  第7部分：螺旋缠绕内衬法",
+    "status": "现行",
+    "publishDate": "2024-05-28",
+    "publishYear": 2024,
+    "implementDate": "2024-12-01",
+    "url": "javascript:void(0)"
+  }
+]

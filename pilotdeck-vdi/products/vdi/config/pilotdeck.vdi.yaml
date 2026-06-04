@@ -1,0 +1,13 @@
+# 片段：合并到 PilotDeck pilotdeck.yaml 或 Docker 环境生成逻辑
+# 深集成 VDI 默认启用插件（实现 Tool 后取消注释）
+
+# extension:
+#   plugins:
+#     - vdi-knowledge
+#     - vdi-rules
+#     - vdi-events
+#     - vdi-orchestrator
+
+agent:
+  model: openai/gpt-4.1
+# 按环境配置 model.providers

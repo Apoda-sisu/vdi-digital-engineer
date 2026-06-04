@@ -1,0 +1,17 @@
+{
+  "name": "vdi-rules",
+  "version": "0.1.0",
+  "description": "VDI 红线规则与 DisciplineOutput 契约校验；三审三校阶段闸门。",
+  "mcpServers": {
+    "vdi-rules": {
+      "command": "node",
+      "args": ["/workspace/pilotdeck-vdi/mcp/vdi-rules/server.mjs"],
+      "env": {
+        "VDI_RULES_PATH": "/workspace/pilotdeck-vdi/mcp/vdi-rules/vdi-rules.json"
+      }
+    }
+  },
+  "settings": {
+    "rulesPath": "/workspace/pilotdeck-vdi/mcp/vdi-rules/vdi-rules.json"
+  }
+}

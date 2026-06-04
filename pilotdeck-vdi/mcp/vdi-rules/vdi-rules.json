@@ -1,0 +1,851 @@
+{
+  "version": "0.1.0",
+  "description": "VDI 红线规则与校审闸门定义",
+  "redlines": [
+    {
+      "id": "RL-001",
+      "name": "消防设计合规",
+      "description": "消防给水系统必须符合 GB 50974-2014 和 GB 50016-2014 的要求",
+      "discipline": [
+        "WA",
+        "FI"
+      ],
+      "severity": "critical",
+      "check": "输出中消防水量、消火栓布置、消防水池有效容积必须满足规范最低要求",
+      "standard_refs": [
+        "GB 50974-2014",
+        "GB 50016-2014 §3.3"
+      ]
+    },
+    {
+      "id": "RL-002",
+      "name": "防火间距合规",
+      "description": "建筑物防火间距必须符合 GB 50016-2014 的规定",
+      "discipline": [
+        "AR",
+        "SI",
+        "PI"
+      ],
+      "severity": "critical",
+      "check": "总图布置中相邻建筑间距不得小于规范要求的防火间距最小值",
+      "standard_refs": [
+        "GB 50016-2014 §3.4"
+      ]
+    },
+    {
+      "id": "RL-003",
+      "name": "防爆分区合规",
+      "description": "爆炸危险区域划分必须符合 GB 50058-2014",
+      "discipline": [
+        "EL",
+        "PR"
+      ],
+      "severity": "critical",
+      "check": "电气设备选型与防爆分区等级一致，爆炸危险区域图必须标注",
+      "standard_refs": [
+        "GB 50058-2014"
+      ]
+    },
+    {
+      "id": "RL-004",
+      "name": "HAZOP 建议闭环",
+      "description": "HAZOP/LOPA 分析建议必须在设计中闭环",
+      "discipline": [
+        "PR",
+        "IN",
+        "HS"
+      ],
+      "severity": "critical",
+      "check": "所有 HAZOP 建议项状态不得为 open，关闭率必须达到 100%",
+      "standard_refs": [
+        "AQ/T 3049-2013"
+      ]
+    },
+    {
+      "id": "RL-005",
+      "name": "排污水质达标",
+      "description": "排水水质必须满足排放标准或预处理要求",
+      "discipline": [
+        "WA",
+        "HS"
+      ],
+      "severity": "critical",
+      "check": "废水排放水质必须满足 GB 8978-1996 或项目环评批复要求",
+      "standard_refs": [
+        "GB 8978-1996"
+      ]
+    },
+    {
+      "id": "RL-006",
+      "name": "安全阀泄放合规",
+      "description": "安全阀泄放系统设计必须符合规范",
+      "discipline": [
+        "PR",
+        "PI",
+        "HS"
+      ],
+      "severity": "critical",
+      "check": "安全阀设定压力、泄放量、排放去向必须符合规范要求",
+      "standard_refs": [
+        "GB/T 12241-2021",
+        "API 520"
+      ]
+    },
+    {
+      "id": "RL-007",
+      "name": "证据链完整性",
+      "description": "所有设计结论必须附带规范依据引用（citations）",
+      "discipline": [
+        "*"
+      ],
+      "severity": "high",
+      "check": "DisciplineOutput 的 citations 字段不得为空，每条引用含 source_type/source_id/version/clause",
+      "standard_refs": [
+        "VDI-RED-002"
+      ]
+    }
+  ],
+  "review_gates": {
+    "design": {
+      "after": "设计人提交",
+      "checks": [
+        {
+          "id": "DS-01",
+          "item": "设计计算正确性",
+          "weight": "critical"
+        },
+        {
+          "id": "DS-02",
+          "item": "图纸与计算书一致性",
+          "weight": "high"
+        },
+        {
+          "id": "DS-03",
+          "item": "规范选用正确性",
+          "weight": "high"
+        },
+        {
+          "id": "DS-04",
+          "item": "设计文件完整性（说明书/计算书/图纸/数据表）",
+          "weight": "high"
+        },
+        {
+          "id": "DS-05",
+          "item": "自校记录完整性",
+          "weight": "medium"
+        }
+      ],
+      "pass_condition": "all_critical_passed AND high_failure_rate < 0.2"
+    },
+    "checking": {
+      "after": "设计人自校",
+      "performed_by": "校核人",
+      "checks": [
+        {
+          "id": "CK-01",
+          "item": "设计计算正确性校核",
+          "weight": "critical"
+        },
+        {
+          "id": "CK-02",
+          "item": "设计文件完整性校核",
+          "weight": "high"
+        },
+        {
+          "id": "CK-03",
+          "item": "规范符合性校核",
+          "weight": "critical"
+        },
+        {
+          "id": "CK-04",
+          "item": "证据链校核（citations 有效性）",
+          "weight": "high"
+        },
+        {
+          "id": "CK-05",
+          "item": "与上游输入条件一致性",
+          "weight": "high"
+        },
+        {
+          "id": "CK-06",
+          "item": "红线规则符合性",
+          "weight": "critical"
+        }
+      ],
+      "pass_condition": "all_critical_passed AND high_failure_rate < 0.1"
+    },
+    "review": {
+      "after": "校核通过",
+      "performed_by": "审核人",
+      "checks": [
+        {
+          "id": "RV-01",
+          "item": "技术方案合理性审核",
+          "weight": "critical"
+        },
+        {
+          "id": "RV-02",
+          "item": "设计原则正确性审核",
+          "weight": "critical"
+        },
+        {
+          "id": "RV-03",
+          "item": "系统间协调性审核",
+          "weight": "high"
+        },
+        {
+          "id": "RV-04",
+          "item": "上下游接口匹配审核",
+          "weight": "high"
+        },
+        {
+          "id": "RV-05",
+          "item": "设计参数经济合理性",
+          "weight": "medium"
+        },
+        {
+          "id": "RV-06",
+          "item": "可施工性审核",
+          "weight": "medium"
+        }
+      ],
+      "pass_condition": "all_critical_passed AND high_failure_rate < 0.1"
+    },
+    "approval": {
+      "after": "审核通过（仅重大方案需要）",
+      "performed_by": "审定人",
+      "checks": [
+        {
+          "id": "AP-01",
+          "item": "设计指导思想审定",
+          "weight": "critical"
+        },
+        {
+          "id": "AP-02",
+          "item": "技术路线审定",
+          "weight": "critical"
+        },
+        {
+          "id": "AP-03",
+          "item": "重大方案可行性审定",
+          "weight": "critical"
+        },
+        {
+          "id": "AP-04",
+          "item": "设计阶段成果审定",
+          "weight": "high"
+        },
+        {
+          "id": "AP-05",
+          "item": "生产过程合规性审查",
+          "weight": "high"
+        }
+      ],
+      "pass_condition": "all_critical_passed"
+    }
+  },
+  "output_contracts": {
+    "WA": {
+      "schema_ref": "DisciplineOutput",
+      "required_fields": [
+        "discipline",
+        "output_type",
+        "payload",
+        "citations",
+        "risk_level",
+        "confidence",
+        "status"
+      ],
+      "sub_discipline_contracts": {
+        "S": {
+          "output_type": "water_supply",
+          "required_payload_fields": [
+            "daily_demand_m3d",
+            "max_hourly_m3h",
+            "fire_reserve_m3",
+            "supply_pressure_MPa",
+            "pipe_material"
+          ]
+        },
+        "F": {
+          "output_type": "fire_water",
+          "required_payload_fields": [
+            "outdoor_fire_flow_Ls",
+            "indoor_fire_flow_Ls",
+            "sprinkler_density",
+            "fire_pump_sets",
+            "fire_tank_m3"
+          ]
+        },
+        "D": {
+          "output_type": "drainage",
+          "required_payload_fields": [
+            "drainage_flow_m3h",
+            "pipe_slope_pct",
+            "clean_separation",
+            "pump_station_config"
+          ]
+        },
+        "R": {
+          "output_type": "stormwater",
+          "required_payload_fields": [
+            "design_rainfall_intensity",
+            "runoff_coefficient",
+            "pipe_network_layout",
+            "collection_reuse_rate"
+          ]
+        },
+        "W": {
+          "output_type": "wastewater",
+          "required_payload_fields": [
+            "influent_quality",
+            "treatment_process",
+            "effluent_standard",
+            "sludge_handling"
+          ]
+        },
+        "C": {
+          "output_type": "circulating_water",
+          "required_payload_fields": [
+            "circulating_flow_m3h",
+            "supply_temp_C",
+            "return_temp_C",
+            "cooling_towers",
+            "water_treatment"
+          ]
+        }
+      }
+    },
+    "PR": {
+      "schema_ref": "DisciplineOutput",
+      "required_fields": [
+        "discipline",
+        "output_type",
+        "payload",
+        "citations",
+        "risk_level",
+        "confidence",
+        "status"
+      ]
+    },
+    "PI": {
+      "schema_ref": "DisciplineOutput",
+      "required_fields": [
+        "discipline",
+        "output_type",
+        "payload",
+        "citations",
+        "risk_level",
+        "confidence",
+        "status"
+      ],
+      "note": "output_type 枚举: piping_design / material_class / line_list / stress_analysis"
+    },
+    "IN": {
+      "schema_ref": "DisciplineOutput",
+      "required_fields": [
+        "discipline",
+        "output_type",
+        "payload",
+        "citations",
+        "risk_level",
+        "confidence",
+        "status"
+      ],
+      "note": "output_type 枚举: instrument_design / control_loop / interlock / dcs_config"
+    },
+    "SI": {
+      "schema_ref": "DisciplineOutput",
+      "required_fields": [
+        "discipline",
+        "output_type",
+        "content",
+        "citations",
+        "risk_level",
+        "confidence",
+        "status"
+      ],
+      "note": "output_type 枚举: layout / vertical / pipeline / transport / verification"
+    }
+  },
+  "data_contracts": {
+    "WA": {
+      "S": {
+        "must": [
+          {
+            "field": "Q_process_m3d",
+            "label": "工艺用水量（m³/d）",
+            "type": "number",
+            "source": "工艺专业 DesignBasis",
+            "rule": "> 0"
+          },
+          {
+            "field": "H_geo_m",
+            "label": "最不利点几何高差（m）",
+            "type": "number",
+            "source": "总图/建筑专业",
+            "rule": "> 0"
+          },
+          {
+            "field": "P_in_MPa",
+            "label": "市政给水压力（MPa）",
+            "type": "number",
+            "source": "市政/业主条件",
+            "rule": "0.1 ~ 1.0"
+          },
+          {
+            "field": "N_people",
+            "label": "定员人数",
+            "type": "number",
+            "source": "业主/工艺",
+            "rule": ">= 0"
+          }
+        ],
+        "should": [
+          {
+            "field": "inflow_water_quality",
+            "label": "进水水质",
+            "default": "市政自来水标准",
+            "basis": "GB 5749-2022",
+            "confirm_when": "水源非市政供水"
+          },
+          {
+            "field": "pipe_layout",
+            "label": "管网布置形式",
+            "default": "环状",
+            "basis": "GB 50015-2019 §3.4",
+            "confirm_when": "小型装置可用枝状"
+          },
+          {
+            "field": "unforeseen_rate_pct",
+            "label": "未预见水量比例",
+            "default": "10",
+            "basis": "GB 50015-2019 §3.1.4"
+          },
+          {
+            "field": "economic_velocity_ms",
+            "label": "经济流速（m/s）",
+            "default": "1.5",
+            "basis": "GB 50013-2018 表9.2.3",
+            "confirm_when": "长距离输水"
+          },
+          {
+            "field": "pipe_material",
+            "label": "管材",
+            "default": "球墨铸铁",
+            "basis": "GB 50013-2018 §4.2",
+            "confirm_when": "DN<100可选PE"
+          }
+        ]
+      },
+      "F": {
+        "must": [
+          {
+            "field": "building_class",
+            "label": "建筑类别（甲/乙/丙类）",
+            "type": "enum",
+            "source": "建筑/工艺专业",
+            "rule": "甲/乙/丙/丁/戊"
+          },
+          {
+            "field": "fire_rating",
+            "label": "建筑耐火等级",
+            "type": "enum",
+            "source": "建筑专业",
+            "rule": "一/二/三/四级"
+          },
+          {
+            "field": "building_volume_m3",
+            "label": "建筑体积（m³）",
+            "type": "number",
+            "source": "建筑专业",
+            "rule": "> 0"
+          }
+        ],
+        "should": [
+          {
+            "field": "fire_duration_h",
+            "label": "火灾延续时间（h）",
+            "default": "3",
+            "basis": "甲类厂房默认3h",
+            "confirm_when": "非甲类厂房"
+          },
+          {
+            "field": "sprinkler_hazard_level",
+            "label": "火灾危险等级（自喷）",
+            "default": "按GB 50084附录A推断",
+            "basis": "GB 50084-2017 附录A",
+            "confirm_when": "必须人工确认"
+          }
+        ]
+      },
+      "D": {
+        "must": [
+          {
+            "field": "process_drainage_m3d",
+            "label": "工艺排水量（m³/d）",
+            "type": "number",
+            "source": "工艺专业",
+            "rule": "> 0"
+          },
+          {
+            "field": "drainage_water_quality",
+            "label": "排水水质特征",
+            "type": "string",
+            "source": "工艺专业",
+            "rule": "含油/含酸/含碱/一般等"
+          }
+        ],
+        "should": [
+          {
+            "field": "site_area_ha",
+            "label": "厂区面积（ha）",
+            "default": "2",
+            "basis": "总图",
+            "confirm_when": "实际面积偏差较大"
+          },
+          {
+            "field": "discharge_elevation_m",
+            "label": "排出点标高（m）",
+            "default": "按不利情况假设",
+            "basis": "总图"
+          }
+        ]
+      },
+      "R": {
+        "must": [
+          {
+            "field": "site_area_with_surface",
+            "label": "厂区面积（ha）+ 地表类型分布",
+            "type": "object",
+            "source": "总图",
+            "rule": "含屋面/道路/绿地面积及占比"
+          },
+          {
+            "field": "storm_intensity_formula",
+            "label": "当地暴雨强度公式",
+            "type": "string",
+            "source": "市政/气象",
+            "rule": "q=... 格式"
+          }
+        ],
+        "should": [
+          {
+            "field": "return_period_yr",
+            "label": "设计重现期（年）",
+            "default": "3",
+            "basis": "GB 50014-2021",
+            "confirm_when": "重要区域需提高重现期"
+          }
+        ]
+      },
+      "W": {
+        "must": [
+          {
+            "field": "wastewater_flow_m3d",
+            "label": "废水流量（m³/d）",
+            "type": "number",
+            "source": "工艺专业",
+            "rule": "> 0"
+          },
+          {
+            "field": "wastewater_quality",
+            "label": "COD/BOD/SS/NH3-N/油",
+            "type": "object",
+            "source": "工艺专业",
+            "rule": "含5项主要指标"
+          },
+          {
+            "field": "effluent_standard_req",
+            "label": "排放标准要求",
+            "type": "string",
+            "source": "HSE/环评",
+            "rule": "如 GB 18918 一级A"
+          }
+        ],
+        "should": [
+          {
+            "field": "bc_ratio",
+            "label": "B/C 比（可生化性）",
+            "default": "按COD/BOD推算",
+            "basis": "工艺/实测"
+          }
+        ]
+      },
+      "C": {
+        "must": [
+          {
+            "field": "cooling_load_m3h",
+            "label": "工艺冷却负荷（m³/h）",
+            "type": "number",
+            "source": "工艺专业",
+            "rule": "> 0"
+          },
+          {
+            "field": "supply_return_temp_C",
+            "label": "供回水温度（°C）",
+            "type": "object",
+            "source": "工艺专业",
+            "rule": "含供水和回水温度"
+          }
+        ],
+        "should": [
+          {
+            "field": "concentration_factor",
+            "label": "浓缩倍数 N",
+            "default": "4",
+            "basis": "工艺/水质",
+            "confirm_when": "水质较差时需调整"
+          },
+          {
+            "field": "cooling_tower_site",
+            "label": "冷却塔布置场地条件",
+            "default": "开式逆流默认",
+            "basis": "总图"
+          }
+        ]
+      }
+    },
+    "PR": {
+      "R": {
+        "must": [
+          {
+            "field": "feedstock_spec",
+            "label": "原料方案（种类、规格、供给量）",
+            "type": "object",
+            "source": "业主/前期研究",
+            "rule": "含原料种类/组成/供给量"
+          },
+          {
+            "field": "product_spec",
+            "label": "产品方案（种类、产能、规格）",
+            "type": "object",
+            "source": "业主",
+            "rule": "含产品种类/产能/纯度要求"
+          },
+          {
+            "field": "battery_limit_conditions",
+            "label": "界区条件（温度/压力范围）",
+            "type": "object",
+            "source": "业主/前期",
+            "rule": "含原料进界区和产品出界区的T/P条件"
+          }
+        ],
+        "should": [
+          {
+            "field": "catalyst_type",
+            "label": "催化剂选择",
+            "default": "按文献推荐",
+            "basis": "工艺比选",
+            "confirm_when": "新催化剂需实验验证"
+          },
+          {
+            "field": "operating_hours_ha",
+            "label": "年操作时数",
+            "default": "8000",
+            "basis": "SH/T 3011-2017"
+          }
+        ]
+      },
+      "B": {
+        "must": [
+          {
+            "field": "route_output",
+            "label": "工艺路线确定后的物流数据",
+            "type": "object",
+            "source": "vdi-process-route",
+            "rule": "含关键物流的流量/组成/相态"
+          },
+          {
+            "field": "reaction_data",
+            "label": "反应转化率/选择性",
+            "type": "object",
+            "source": "vdi-process-route",
+            "rule": "含主副反应转化率和选择性"
+          },
+          {
+            "field": "key_operating_params",
+            "label": "关键操作参数(T/P)",
+            "type": "object",
+            "source": "vdi-process-route",
+            "rule": "含反应器和分离单元的操作T/P"
+          }
+        ],
+        "should": [
+          {
+            "field": "utility_prices",
+            "label": "公用工程价格",
+            "default": "按项目所在地均价",
+            "basis": "经济评价"
+          },
+          {
+            "field": "emission_factors",
+            "label": "三废排放因子",
+            "default": "按 GB/T 50483 估算",
+            "basis": "GB/T 50483-2019"
+          }
+        ]
+      },
+      "P": {
+        "must": [
+          {
+            "field": "material_balance",
+            "label": "物料平衡表（物流号/流量/组成/相态）",
+            "type": "object",
+            "source": "vdi-process-balance",
+            "rule": "含全部物流的流量/组成/相态"
+          },
+          {
+            "field": "equipment_draft_datasheets",
+            "label": "设备数据表草稿",
+            "type": "object",
+            "source": "vdi-process-equipment",
+            "rule": "含设备位号和基本操作条件"
+          },
+          {
+            "field": "control_philosophy",
+            "label": "控制方案说明",
+            "type": "string",
+            "source": "工艺/仪控",
+            "rule": "含主要控制回路和联锁逻辑描述"
+          }
+        ],
+        "should": [
+          {
+            "field": "pipe_material_class",
+            "label": "管道材料等级",
+            "default": "按介质/温度/压力选材",
+            "basis": "HG/T 20570-2015",
+            "confirm_when": "特殊介质需确认"
+          },
+          {
+            "field": "instrument_standard",
+            "label": "仪表规格标准",
+            "default": "HG/T 20505",
+            "basis": "HG/T 20505-2014"
+          }
+        ]
+      },
+      "E": {
+        "must": [
+          {
+            "field": "material_balance_table",
+            "label": "物料平衡表",
+            "type": "object",
+            "source": "vdi-process-balance",
+            "rule": "含各单元进出物流数据"
+          },
+          {
+            "field": "pfd_with_tags",
+            "label": "PFD（含设备位号和操作条件）",
+            "type": "object",
+            "source": "vdi-process-pfd-pid",
+            "rule": "含设备位号/操作T/P/流量"
+          },
+          {
+            "field": "equipment_operating_conditions",
+            "label": "设备操作参数(T/P/Flow)",
+            "type": "object",
+            "source": "vdi-process-route + balance",
+            "rule": "每台设备的设计T/P/流量"
+          }
+        ],
+        "should": [
+          {
+            "field": "vendor_data",
+            "label": "制造商数据/样本",
+            "default": "按经验选型",
+            "basis": "工程经验",
+            "confirm_when": "关键设备需制造商确认"
+          },
+          {
+            "field": "material_selection_detail",
+            "label": "具体材质选择",
+            "default": "按 GB 150 材料篇初选",
+            "basis": "GB 150-2011"
+          }
+        ]
+      },
+      "F": {
+        "must": [
+          {
+            "field": "pid_document",
+            "label": "P&ID（含设备/管道/仪表位号）",
+            "type": "object",
+            "source": "vdi-process-pfd-pid",
+            "rule": "完整的P&ID图"
+          },
+          {
+            "field": "fire_hazard_class",
+            "label": "介质火灾危险性分类（甲/乙/丙）",
+            "type": "enum",
+            "source": "工艺/消防",
+            "rule": "按 GB 50160 分类"
+          },
+          {
+            "field": "hazop_nodes",
+            "label": "HAZOP节点划分",
+            "type": "array",
+            "source": "工艺/HSE",
+            "rule": "含节点描述和边界"
+          }
+        ],
+        "should": [
+          {
+            "field": "sil_preliminary",
+            "label": "SIL定级初始评估",
+            "default": "按 GB/T 50770 初评",
+            "basis": "GB/T 50770-2013",
+            "confirm_when": "需LOPA确认"
+          },
+          {
+            "field": "relief_scenario_priority",
+            "label": "泄放场景优先级",
+            "default": "火灾>阻塞>热膨胀",
+            "basis": "API 521"
+          }
+        ]
+      },
+      "U": {
+        "must": [
+          {
+            "field": "material_balance_with_utilities",
+            "label": "物料平衡表（含公用工程消耗）",
+            "type": "object",
+            "source": "vdi-process-balance",
+            "rule": "含各级蒸汽/循环水/电/氮气用量"
+          },
+          {
+            "field": "heat_balance_table",
+            "label": "热量平衡表",
+            "type": "object",
+            "source": "vdi-process-balance",
+            "rule": "含各单元热负荷和换热网络"
+          },
+          {
+            "field": "equipment_cooling_load",
+            "label": "设备冷却负荷汇总",
+            "type": "object",
+            "source": "vdi-process-equipment",
+            "rule": "含需要循环水/冷冻水的设备及热负荷"
+          }
+        ],
+        "should": [
+          {
+            "field": "steam_pressure_levels",
+            "label": "蒸汽等级压力定义",
+            "default": "HP≥4.0/MP=1.6/LP=0.5 MPaG",
+            "basis": "项目统一规定"
+          },
+          {
+            "field": "condensate_recovery_target",
+            "label": "冷凝水回收率目标",
+            "default": "75%",
+            "basis": "SH/T 3011-2017",
+            "confirm_when": "严寒地区需调整"
+          }
+        ]
+      }
+    }
+  }
+}

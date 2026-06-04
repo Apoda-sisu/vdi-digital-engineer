@@ -1,0 +1,18 @@
+{
+  "name": "vdi-events",
+  "version": "0.1.0",
+  "description": "VDI 事件总线：发布/消费 design_basis.updated、discipline_output.published 等标准主题。",
+  "mcpServers": {
+    "vdi-events": {
+      "command": "node",
+      "args": ["/workspace/pilotdeck-vdi/mcp/vdi-events/server.mjs"],
+      "env": {
+        "VDI_WORKSPACE_ROOT": "/workspace/workspaces",
+        "VDI_EVENTS_REGISTRY": "/workspace/pilotdeck-vdi/mcp/vdi-events/event-registry.json"
+      }
+    }
+  },
+  "settings": {
+    "registryPath": "/workspace/pilotdeck-vdi/mcp/vdi-events/event-registry.json"
+  }
+}

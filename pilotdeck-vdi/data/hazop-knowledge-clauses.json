@@ -1,0 +1,761 @@
+{
+  "schema_version": 2,
+  "built_at": "2026-06-03T06:55:37.991Z",
+  "knowledge_root": "/Users/apoda/Documents/Cursor/016-数字工程师/workspaces/HAZOP分析/knowledge",
+  "stats": {
+    "total_clauses": 41,
+    "with_cross_refs": 0,
+    "mandatory": 41,
+    "total_outgoing_refs": 0,
+    "disciplines": {
+      "hazop": 41
+    },
+    "files_scanned": 4
+  },
+  "domain_dictionary": {
+    "synonyms": {
+      "HAZOP": [
+        "危险与可操作性分析",
+        "危害与可操作性研究"
+      ],
+      "本质安全": [
+        "inherent safety",
+        "固有安全"
+      ],
+      "引导词": [
+        "guide word",
+        "引导词汇"
+      ],
+      "偏差": [
+        "deviation",
+        "偏离"
+      ],
+      "风险矩阵": [
+        "risk matrix",
+        "风险评估矩阵"
+      ],
+      "SIL": [
+        "安全完整性等级",
+        "Safety Integrity Level"
+      ],
+      "BPCS": [
+        "基本过程控制系统",
+        "Basic Process Control System"
+      ],
+      "SIS": [
+        "安全仪表系统",
+        "Safety Instrumented System"
+      ],
+      "LOPA": [
+        "保护层分析",
+        "Layer of Protection Analysis"
+      ],
+      "PFD": [
+        "失效概率",
+        "Probability of Failure on Demand"
+      ],
+      "PSV": [
+        "安全阀",
+        "Pressure Safety Valve"
+      ],
+      "ESD": [
+        "紧急停车",
+        "Emergency Shutdown"
+      ]
+    },
+    "standard_aliases": {
+      "IEC 61882": [
+        "IEC61882",
+        "IEC-61882",
+        "HAZOP标准"
+      ],
+      "SH/T 3240": [
+        "SHT3240",
+        "SH-T-3240",
+        "石化HAZOP规范"
+      ],
+      "T/CCSAS 044-2023": [
+        "TCCSAS044",
+        "本质安全评估指南"
+      ],
+      "GB/T 35320": [
+        "GBT35320",
+        "GB-T-35320",
+        "HAZOP应用指南"
+      ]
+    }
+  },
+  "clauses": [
+    {
+      "clause_id": "hazop-HAZOP方法论-0",
+      "source_type": "methodology",
+      "source_id": "HAZOP方法论",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：四阶段模型",
+      "content": "```\n启动策划 → 会前准备 → 展开分析 → 报告跟踪\n```",
+      "keywords": [],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-HAZOP方法论-1",
+      "source_type": "methodology",
+      "source_id": "HAZOP方法论",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：六步分析法（IEC 61882）",
+      "content": "```\n偏差 → 原因 → 后果（无措施）→ 现有保护 → 风险 → 建议\n```\n| 步骤 | 内容 | 要点 |\n|------|------|------|\n| 1. 偏差 | 具体偏差描述 | 来自偏差矩阵 |\n| 2. 原因 | 导致偏差的具体原因 | 必须具体到设备或操作 |\n| 3. 后果 | 无保护措施下的后果 | 禁止包含保护措施 |\n| 4. 现有保护 | 已有的保护措施 | 区分 BPCS/SIS/物理防护 |\n| 5. 风险 | 初始和剩余风险等级 | 使用风险矩阵 |\n| 6. 建议 | 改进建议 | 具体可执行 |",
+      "keywords": [
+        "偏差",
+        "风险矩阵",
+        "bpcs",
+        "sis"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-HAZOP方法论-2",
+      "source_type": "methodology",
+      "source_id": "HAZOP方法论",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：引导词",
+      "content": "| 引导词 | 英文 | 含义 | 应用场景 |\n|--------|------|------|----------|\n| 无 | No | 完全否定 | 流量中断、无进料 |\n| 多 | More | 量增加 | 流量过大、压力过高 |\n| 少 | Less | 量减少 | 流量不足、液位过低 |\n| 反向 | Reverse | 方向相反 | 逆流、反向传热 |\n| 部分 | Part | 不完整 | 组分缺失、相变 |\n| 异常 | Other | 非预期 | 杂质、副产物 |\n| 高 | High | 高于正常 | 压力高、温度高 |\n| 低 | Low | 低于正常 | 压力低、温度低 |",
+      "keywords": [
+        "引导词",
+        "流量",
+        "压力",
+        "温度",
+        "液位"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-HAZOP方法论-3",
+      "source_type": "methodology",
+      "source_id": "HAZOP方法论",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：工艺参数",
+      "content": "| 参数 | 英文 | 典型偏差 | 常见原因 |\n|------|------|----------|----------|\n| 流量 | Flow | 无/多/少/反向 | 泵故障、阀门误操作、管道堵塞 |\n| 压力 | Pressure | 高/低/真空 | 泄放失效、管道破裂、泵扬程不足 |\n| 温度 | Temperature | 高/低 | 冷却失效、加热失控、环境温度 |\n| 液位 | Level | 高/低/空 | 进料异常、出料堵塞、仪表故障 |\n| 组成 | Composition | 异常 | 原料变化、反应失控、分离失效 |\n| 相态 | Phase | 变化 | 温度/压力变化导致相变 |",
+      "keywords": [
+        "偏差",
+        "流量",
+        "压力",
+        "温度",
+        "液位"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-HAZOP方法论-4",
+      "source_type": "methodology",
+      "source_id": "HAZOP方法论",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：可能性等级",
+      "content": "| 等级 | 描述 | 频率 |\n|------|------|------|\n| 1 | 极低 | <10⁻⁴ /年 |\n| 2 | 低 | 10⁻⁴ ~ 10⁻³ /年 |\n| 3 | 中 | 10⁻³ ~ 10⁻² /年 |\n| 4 | 高 | 10⁻² ~ 10⁻¹ /年 |\n| 5 | 极高 | >10⁻¹ /年 |",
+      "keywords": [
+        "可能性"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-HAZOP方法论-5",
+      "source_type": "methodology",
+      "source_id": "HAZOP方法论",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：严重度等级",
+      "content": "| 等级 | 人员安全 | 环境影响 | 财产损失 |\n|------|----------|----------|----------|\n| 1 | 轻微伤害 | 无影响 | <10万 |\n| 2 | 可恢复伤害 | 轻微污染 | 10-100万 |\n| 3 | 严重伤害 | 局部污染 | 100-1000万 |\n| 4 | 死亡 | 大面积污染 | >1000万 |\n| 5 | 多人死亡 | 生态灾难 | >1亿 |",
+      "keywords": [
+        "严重度"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-HAZOP方法论-6",
+      "source_type": "methodology",
+      "source_id": "HAZOP方法论",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：风险矩阵",
+      "content": "|  | 严重度1 | 严重度2 | 严重度3 | 严重度4 | 严重度5 |\n|--|---------|---------|---------|---------|---------|\n| 可能性5 | 中 | 较高 | 高 | 极高 | 极高 |\n| 可能性4 | 中 | 中 | 较高 | 高 | 极高 |\n| 可能性3 | 低 | 中 | 中 | 较高 | 高 |\n| 可能性2 | 低 | 低 | 中 | 中 | 较高 |\n| 可能性1 | 低 | 低 | 低 | 中 | 中 |",
+      "keywords": [
+        "风险矩阵",
+        "可能性",
+        "严重度"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-HAZOP方法论-7",
+      "source_type": "methodology",
+      "source_id": "HAZOP方法论",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：风险等级与建议对应",
+      "content": "| 风险等级 | 建议措施 |\n|----------|----------|\n| 极高 | 必须立即采取措施，否则禁止运行 |\n| 高 | 需要采取措施，制定整改计划 |\n| 较高 | 建议采取措施，评估成本效益 |\n| 中 | 可接受，但建议持续改进 |\n| 低 | 可接受，常规监控 |",
+      "keywords": [],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-HAZOP方法论-8",
+      "source_type": "methodology",
+      "source_id": "HAZOP方法论",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：保护层模型（洋葱模型）",
+      "content": "```\n┌─────────────────────────────────────┐\n│         工艺设计                     │\n│  ┌───────────────────────────────┐  │\n│  │       基本过程控制 (BPCS)      │  │\n│  │  ┌─────────────────────────┐  │  │\n│  │  │    安全仪表系统 (SIS)    │  │  │\n│  │  │  ┌───────────────────┐  │  │  │\n│  │  │  │   物理防护         │  │  │  │\n│  │  │  │  ┌─────────────┐  │  │  │  │\n│  │  │  │  │   泄放装置   │  │  │  │  │\n│  │  │  │  └─────────────┘  │  │  │  │\n│  │  │  └───────────────────┘  │  │  │\n│  └─────────────────────────────┘  │\n└───────────────────────────────────┘\n```",
+      "keywords": [
+        "bpcs",
+        "sis"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-HAZOP方法论-9",
+      "source_type": "methodology",
+      "source_id": "HAZOP方法论",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：保护措施分类",
+      "content": "| 层级 | 类型 | 示例 | 特点 |\n|------|------|------|------|\n| BPCS | 基本过程控制 | 常规调节回路 | 可靠性较低，不用于安全功能 |\n| SIS | 安全仪表系统 | 紧急停车系统 | 高可靠性，SIL 1/2/3 |\n| 物理防护 | 被动安全 | 安全阀、爆破片 | 无需动力，最后防线 |\n| 应急响应 | 主动安全 | 消防系统、应急预案 | 事后响应 |",
+      "keywords": [
+        "sil",
+        "bpcs",
+        "sis",
+        "安全阀",
+        "紧急停车"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-HAZOP方法论-10",
+      "source_type": "methodology",
+      "source_id": "HAZOP方法论",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：SIL 等级",
+      "content": "| SIL | PFD 范围 | 风险降低 |\n|-----|----------|----------|\n| SIL1 | 10⁻¹ ~ 10⁻² | 10-100 |\n| SIL2 | 10⁻² ~ 10⁻³ | 100-1000 |\n| SIL3 | 10⁻³ ~ 10⁻⁴ | 1000-10000 |",
+      "keywords": [
+        "sil"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-HAZOP方法论-11",
+      "source_type": "methodology",
+      "source_id": "HAZOP方法论",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：LOPA 分析步骤",
+      "content": "1. 识别初始事件\n2. 评估初始事件频率\n3. 识别独立保护层（IPL）\n4. 评估每个 IPL 的 PFD\n5. 计算残余风险频率\n6. 与目标风险频率比较\n7. 确定所需 SIL 等级",
+      "keywords": [
+        "sil",
+        "lopa"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-T/CCSAS 044-2023-0",
+      "source_type": "standard",
+      "source_id": "T/CCSAS 044-2023",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "条款：强化（Intensification）",
+      "content": "**定义**：减少危险物料存量\n**应用方法**：\n- 连续化反应替代间歇反应\n- 微反应器技术\n- 减少中间储罐\n- 优化设备尺寸\n**示例**：\n| 应用场景 | 传统方式 | 本质安全方式 |\n|----------|----------|--------------|\n| 反应器 | 大容量间歇反应器 | 小容量连续反应器 |\n| 储罐 | 大容量中间储罐 | 直接进料，无中间储罐 |\n| 换热器 | 大面积换热器 | 紧凑型换热器 |",
+      "keywords": [
+        "本质安全",
+        "强化",
+        "替代"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-T/CCSAS 044-2023-1",
+      "source_type": "standard",
+      "source_id": "T/CCSAS 044-2023",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "条款：替代（Substitution）",
+      "content": "**定义**：用低危险物料替代高危险物料\n**应用方法**：\n- 使用低毒溶剂替代高毒溶剂\n- 使用水基涂料替代溶剂型涂料\n- 使用低闪点物料替代高闪点物料\n- 使用低反应活性物料替代高反应活性物料\n**示例**：\n| 高危险物料 | 替代物料 | 降低的风险 |\n|------------|----------|------------|\n| 苯 | 甲苯 | 毒性 |\n| 氯气 | 次氯酸钠 | 毒性 |\n| 浓硫酸 | 稀硫酸 | 腐蚀性 |\n| 高活性催化剂 | 低活性催化剂 | 反应失控风险 |",
+      "keywords": [
+        "替代"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-T/CCSAS 044-2023-2",
+      "source_type": "standard",
+      "source_id": "T/CCSAS 044-2023",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "条款：缓和（Moderation）",
+      "content": "**定义**：降低工艺条件 severity\n**应用方法**：\n- 降低操作温度\n- 降低操作压力\n- 稀释操作\n- 使用常压操作\n**示例**：\n| 工艺条件 | 传统方式 | 本质安全方式 |\n|----------|----------|--------------|\n| 反应温度 | 350°C | 200°C |\n| 反应压力 | 10 MPaG | 常压 |\n| 物料浓度 | 浓溶液 | 稀溶液 |\n| 操作条件 | 高温高压 | 常温常压 |",
+      "keywords": [
+        "本质安全",
+        "缓和",
+        "压力",
+        "温度"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-T/CCSAS 044-2023-3",
+      "source_type": "standard",
+      "source_id": "T/CCSAS 044-2023",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "条款：简化（Simplification）",
+      "content": "**定义**：简化工艺流程，减少故障点\n**应用方法**：\n- 减少阀门数量\n- 合并工序\n- 减少控制回路\n- 简化设备布置\n**示例**：\n| 工艺元素 | 传统方式 | 本质安全方式 |\n|----------|----------|--------------|\n| 阀门数量 | 20个 | 10个 |\n| 控制回路 | 10个 | 5个 |\n| 设备数量 | 15台 | 8台 |\n| 管道长度 | 1000m | 500m |",
+      "keywords": [
+        "本质安全",
+        "简化"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-T/CCSAS 044-2023-4",
+      "source_type": "standard",
+      "source_id": "T/CCSAS 044-2023",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "条款：本质安全检查表法",
+      "content": "适用于全生命周期各阶段，从以下维度检查：\n| 检查项 | 问题 | 本质安全改进方向 |\n|--------|------|------------------|\n| 物料危险性 | 是否使用高危险物料？ | 替代为低危险物料 |\n| 物料存量 | 物料存量是否最小化？ | 强化，减少存量 |\n| 物料毒性 | 是否有低毒替代方案？ | 替代 |\n| 物料稳定性 | 物料是否稳定？ | 缓和，添加稳定剂 |\n| 检查项 | 问题 | 本质安全改进方向 |\n|--------|------|------------------|\n| 反应危险性 | 反应是否剧烈？ | 缓和，降低反应速率 |\n| 反应条件 | 是否需要高温高压？ | 缓和，降低温度压力 |\n| 反应选择性 | 副反应是否可控？ | 简化，优化催化剂 |\n| 反应失控 | 失控后果是否严重？ | 缓和，增加热容 |\n| 检查项 | 问题 | 本质安全改进方向 |\n|--------|------|------------------|\n| 温度 | 是否可以降低操作温度？ | 缓和 |\n| 压力 | 是否可以降低操作压力？ | 缓和 |\n| 流量 | 是否可以减少物料流量？ | 强化 |\n| 液位 | 是否可以减少储罐液位？ | 强化 |\n| 检查项 | 问题 | 本质安全改进方向 |\n|--------|------|------------------|\n| 流程复杂度 | 流程是否可以简化？ | 简化 |\n| 设备数量 | 设备数量是否最小化？ | 简化 |\n| 阀门数量 | 阀门数量是否最小化？ | 简化 |\n| 控制回路 | 控制回路是否必要？ | 简化 |\n| 检查项 | 问题 | 本质安全改进方向 |\n|--------|------|------------------|\n| 设备间距 | 间距是否合理？ | 缓和，减少连锁风险 |\n| 泄放能力 | 泄放能力是否足够？ | 强化 |\n| 隔离能力 | 是否可以有效隔离？ | 简化 |",
+      "keywords": [
+        "本质安全",
+        "强化",
+        "替代",
+        "缓和",
+        "简化",
+        "流量",
+        "压力",
+        "温度",
+        "液位"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-T/CCSAS 044-2023-5",
+      "source_type": "standard",
+      "source_id": "T/CCSAS 044-2023",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "条款：本质安全分析法（与HAZOP结合）",
+      "content": "在HAZOP分析时，使用本质安全引导词进行头脑风暴：\n| 引导词 | 含义 | 应用问题 |\n|--------|------|----------|\n| 减少 | 减少物料存量 | 是否可以减少储罐容量？ |\n| 替代 | 替代危险物料 | 是否可以用低危险物料替代？ |\n| 缓和 | 降低条件severity | 是否可以降低温度/压力？ |\n| 简化 | 简化工艺流程 | 是否可以减少设备/阀门？ |\n| 限制 | 限制能量释放 | 是否可以增加泄放能力？ |\n| 分离 | 分离危险物料 | 是否可以减少物料接触？ |",
+      "keywords": [
+        "hazop",
+        "本质安全",
+        "引导词",
+        "替代",
+        "缓和",
+        "简化",
+        "压力",
+        "温度"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-T/CCSAS 044-2023-6",
+      "source_type": "standard",
+      "source_id": "T/CCSAS 044-2023",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "条款：量化评估法",
+      "content": "适用于工艺路线选择阶段，评估不同工艺路线的本质安全化水平。\n**计算公式**：\n```\nISI = Σ(Wi × Fi) / ΣWi\n```\n其中：\n- ISI：本质安全指数（0-100）\n- Wi：权重因子\n- Fi：评分因子（0-10）\n**评估维度**：\n| 维度 | 权重 | 评分标准 |\n|------|------|----------|\n| 物料危险性 | 25% | 0=极高危险，10=极低危险 |\n| 反应危险性 | 25% | 0=极剧烈，10=极温和 |\n| 工艺条件 | 20% | 0=高温高压，10=常温常压 |\n| 工艺流程 | 15% | 0=极复杂，10=极简单 |\n| 设备布置 | 15% | 0=极密集，10=极分散 |\n**指数等级**：\n| 等级 | ISI范围 | 含义 |\n|------|---------|------|\n| 优秀 | 80-100 | 本质安全水平高 |\n| 良好 | 60-79 | 本质安全水平较高 |\n| 一般 | 40-59 | 本质安全水平中等 |\n| 较差 | 20-39 | 本质安全水平较低 |\n| 危险 | 0-19 | 本质安全水平极低 |\n适用于工艺流程设计阶段，评估整体物流的危险水平。\n**计算公式**：\n```\nSI = Σ(Qi × Hi × Ci) / n\n```\n其中：\n- SI：物流指数\n- Qi：物料数量因子\n- Hi：物料危险性因子\n- Ci：工艺条件因子\n- n：物流股数\n适用于基础设计阶段，评估设备本质安全化水平。\n**计算公式**：\n```\nCI = f(泄漏量, 物料危险性, 泄漏条件)\n```",
+      "keywords": [
+        "本质安全"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-T/CCSAS 044-2023-7",
+      "source_type": "standard",
+      "source_id": "T/CCSAS 044-2023",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "条款：评估阶段",
+      "content": "| 阶段 | 主要任务 | 评估方法 |\n|------|----------|----------|\n| 实验室研究 | 工艺路线选择 | 基础本质安全指数法、图形法 |\n| 中试试验 | 工艺优化 | 物流指数法 |\n| 工艺设计包开发 | 流程设计 | 物流指数法、后果指数法 |\n| 工程设计与施工 | 设备设计 | 后果指数法 |\n| 装置开车与运行 | 运行优化 | 检查表法、分析法 |\n| 变更 | 变更管理 | 检查表法、分析法 |\n| 报废和拆除 | 拆除安全 | 检查表法 |",
+      "keywords": [
+        "本质安全"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-T/CCSAS 044-2023-8",
+      "source_type": "standard",
+      "source_id": "T/CCSAS 044-2023",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "条款：评估报告要求",
+      "content": "评估报告应包含：\n1. 工艺安全信息\n2. 本质安全检查情况\n3. 本质安全分析过程\n4. 本质安全量化评估结果\n5. 本质安全化设计方案",
+      "keywords": [
+        "本质安全"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-风险矩阵-0",
+      "source_type": "methodology",
+      "source_id": "风险矩阵",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：可能性等级",
+      "content": "| 等级 | 描述 | 频率 | 说明 |\n|------|------|------|------|\n| 1 | 极低 | <10⁻⁴ /年 | 几乎不可能发生 |\n| 2 | 低 | 10⁻⁴ ~ 10⁻³ /年 | 不太可能发生 |\n| 3 | 中 | 10⁻³ ~ 10⁻² /年 | 可能发生 |\n| 4 | 高 | 10⁻² ~ 10⁻¹ /年 | 很可能发生 |\n| 5 | 极高 | >10⁻¹ /年 | 几乎必然发生 |",
+      "keywords": [
+        "可能性"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-风险矩阵-1",
+      "source_type": "methodology",
+      "source_id": "风险矩阵",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：严重度等级",
+      "content": "| 等级 | 人员安全 | 环境影响 | 财产损失 |\n|------|----------|----------|----------|\n| 1 | 轻微伤害 | 无影响 | <10万 |\n| 2 | 可恢复伤害 | 轻微污染 | 10-100万 |\n| 3 | 严重伤害 | 局部污染 | 100-1000万 |\n| 4 | 死亡 | 大面积污染 | >1000万 |\n| 5 | 多人死亡 | 生态灾难 | >1亿 |",
+      "keywords": [
+        "严重度"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-风险矩阵-2",
+      "source_type": "methodology",
+      "source_id": "风险矩阵",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：风险矩阵",
+      "content": "|  | 严重度1 | 严重度2 | 严重度3 | 严重度4 | 严重度5 |\n|--|---------|---------|---------|---------|---------|\n| 可能性5 | 中 | 较高 | 高 | 极高 | 极高 |\n| 可能性4 | 中 | 中 | 较高 | 高 | 极高 |\n| 可能性3 | 低 | 中 | 中 | 较高 | 高 |\n| 可能性2 | 低 | 低 | 中 | 中 | 较高 |\n| 可能性1 | 低 | 低 | 低 | 中 | 中 |",
+      "keywords": [
+        "风险矩阵",
+        "可能性",
+        "严重度"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-风险矩阵-3",
+      "source_type": "methodology",
+      "source_id": "风险矩阵",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：风险等级定义",
+      "content": "| 风险等级 | 颜色 | 含义 | 建议措施 |\n|----------|------|------|----------|\n| 极高 | 红色 | 不可接受风险 | 必须立即采取措施，否则禁止运行 |\n| 高 | 橙色 | 高风险 | 需要采取措施，制定整改计划 |\n| 较高 | 黄色 | 较高风险 | 建议采取措施，评估成本效益 |\n| 中 | 蓝色 | 中等风险 | 可接受，但建议持续改进 |\n| 低 | 绿色 | 低风险 | 可接受，常规监控 |",
+      "keywords": [],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-风险矩阵-4",
+      "source_type": "methodology",
+      "source_id": "风险矩阵",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：风险等级与建议对应",
+      "content": "| 风险等级 | 建议措施 | 响应时间 |\n|----------|----------|----------|\n| 极高 | 立即采取措施，停止运行 | 立即 |\n| 高 | 制定整改计划，限期完成 | 1周内 |\n| 较高 | 评估成本效益，择机实施 | 1月内 |\n| 中 | 持续改进，纳入计划 | 3月内 |\n| 低 | 常规监控，无需特殊措施 | 持续 |",
+      "keywords": [],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-风险矩阵-5",
+      "source_type": "methodology",
+      "source_id": "风险矩阵",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：初始风险评估",
+      "content": "**步骤**：\n1. 评估初始事件频率\n2. 评估后果严重度\n3. 查风险矩阵确定初始风险等级\n**示例**：\n```\n初始事件：泵 P-101 故障\n初始事件频率：1E-2 /年（可能性3）\n后果严重度：4（死亡）\n初始风险等级：较高\n```",
+      "keywords": [
+        "风险矩阵",
+        "可能性",
+        "严重度"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-风险矩阵-6",
+      "source_type": "methodology",
+      "source_id": "风险矩阵",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：剩余风险评估",
+      "content": "**步骤**：\n1. 识别现有保护措施\n2. 评估每个保护措施的 PFD\n3. 计算残余风险频率\n4. 评估剩余风险等级\n**示例**：\n```\n现有保护措施：\n- BPCS 流量调节：PFD 1E-1\n- SIS 低流量停车：PFD 1E-3\n- 安全阀：PFD 1E-2\n残余风险频率 = 1E-2 × 1E-1 × 1E-3 × 1E-2 = 1E-8 /年（可能性1）\n后果严重度：4\n剩余风险等级：中\n```",
+      "keywords": [
+        "bpcs",
+        "sis",
+        "安全阀",
+        "流量",
+        "可能性",
+        "严重度"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-风险矩阵-7",
+      "source_type": "methodology",
+      "source_id": "风险矩阵",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：风险可接受性判断",
+      "content": "| 初始风险等级 | 剩余风险等级 | 可接受性 | 建议措施 |\n|--------------|--------------|----------|----------|\n| 极高 | 任何 | 不可接受 | 必须采取措施 |\n| 高 | 高/较高/中/低 | 不可接受 | 需要采取措施 |\n| 较高 | 较高/中/低 | 可接受 | 建议采取措施 |\n| 中 | 中/低 | 可接受 | 持续改进 |\n| 低 | 低 | 可接受 | 常规监控 |",
+      "keywords": [],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-风险矩阵-8",
+      "source_type": "methodology",
+      "source_id": "风险矩阵",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：报告内容",
+      "content": "风险评估报告应包含：\n1. 风险评估范围和方法\n2. 初始风险评估结果\n3. 现有保护措施清单\n4. 剩余风险评估结果\n5. 风险可接受性判断\n6. 改进建议",
+      "keywords": [],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-风险矩阵-9",
+      "source_type": "methodology",
+      "source_id": "风险矩阵",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：报告格式",
+      "content": "```markdown\n- 场景描述：[描述]\n- 评估日期：[日期]\n- 评估人员：[人员]\n- 初始事件：[事件]\n- 初始事件频率：[频率]\n- 后果严重度：[等级]\n- 初始风险等级：[等级]\n| 保护措施 | 类型 | PFD | 有效性 |\n|----------|------|-----|--------|\n| [措施1] | [类型] | [PFD] | [有效性] |\n| [措施2] | [类型] | [PFD] | [有效性] |\n- 残余风险频率：[频率]\n- 后果严重度：[等级]\n- 剩余风险等级：[等级]\n- 可接受性：[是/否]\n- 理由：[理由]\n| 建议 | 优先级 | 责任专业 |\n|------|--------|----------|\n| [建议1] | [优先级] | [专业] |\n| [建议2] | [优先级] | [专业] |\n```",
+      "keywords": [
+        "严重度"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-HAZOP引导词-0",
+      "source_type": "methodology",
+      "source_id": "HAZOP引导词",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：IEC 61882 引导词",
+      "content": "| 引导词 | 英文 | 含义 | 应用场景 |\n|--------|------|------|----------|\n| 无 | No | 完全否定 | 流量中断、无进料 |\n| 多 | More | 量增加 | 流量过大、压力过高 |\n| 少 | Less | 量减少 | 流量不足、液位过低 |\n| 反向 | Reverse | 方向相反 | 逆流、反向传热 |\n| 部分 | Part | 不完整 | 组分缺失、相变 |\n| 异常 | Other | 非预期 | 杂质、副产物 |",
+      "keywords": [
+        "引导词",
+        "流量",
+        "压力",
+        "液位"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-HAZOP引导词-1",
+      "source_type": "methodology",
+      "source_id": "HAZOP引导词",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：扩展引导词",
+      "content": "| 引导词 | 英文 | 含义 | 应用场景 |\n|--------|------|------|----------|\n| 高 | High | 高于正常 | 压力高、温度高 |\n| 低 | Low | 低于正常 | 压力低、温度低 |\n| 早 | Early | 时间提前 | 过早反应、过早混合 |\n| 晚 | Late | 时间延迟 | 过晚反应、过晚混合 |\n| 先 | Before | 顺序提前 | 过早进料、过早加热 |\n| 后 | After | 顺序延迟 | 过晚进料、过晚冷却 |",
+      "keywords": [
+        "引导词",
+        "压力",
+        "温度"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-HAZOP引导词-2",
+      "source_type": "methodology",
+      "source_id": "HAZOP引导词",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：基本工艺参数",
+      "content": "| 参数 | 英文 | 典型偏差 | 常见原因 |\n|------|------|----------|----------|\n| 流量 | Flow | 无/多/少/反向 | 泵故障、阀门误操作、管道堵塞 |\n| 压力 | Pressure | 高/低/真空 | 泄放失效、管道破裂、泵扬程不足 |\n| 温度 | Temperature | 高/低 | 冷却失效、加热失控、环境温度 |\n| 液位 | Level | 高/低/空 | 进料异常、出料堵塞、仪表故障 |\n| 组成 | Composition | 异常 | 原料变化、反应失控、分离失效 |\n| 相态 | Phase | 变化 | 温度/压力变化导致相变 |",
+      "keywords": [
+        "偏差",
+        "流量",
+        "压力",
+        "温度",
+        "液位"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-HAZOP引导词-3",
+      "source_type": "methodology",
+      "source_id": "HAZOP引导词",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：扩展工艺参数",
+      "content": "| 参数 | 英文 | 典型偏差 | 常见原因 |\n|------|------|----------|----------|\n| 速度 | Speed | 高/低 | 泵/压缩机故障 |\n| 粘度 | Viscosity | 高/低 | 温度变化、组成变化 |\n| 密度 | Density | 高/低 | 温度变化、组成变化 |\n| pH值 | pH | 高/低 | 酸碱添加异常 |\n| 浊度 | Turbidity | 高 | 污染、泄漏 |\n| 电导率 | Conductivity | 高/低 | 离子浓度变化 |",
+      "keywords": [
+        "偏差",
+        "温度"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-HAZOP引导词-4",
+      "source_type": "methodology",
+      "source_id": "HAZOP引导词",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：矩阵生成规则",
+      "content": "1. **参数×引导词组合**：将每个工艺参数与每个引导词组合\n2. **有意义判定**：判断组合是否有实际意义\n3. **偏差描述**：为有意义的组合生成具体偏差描述\n4. **探查问题**：为每个有意义偏差生成探查问题",
+      "keywords": [
+        "引导词",
+        "偏差"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-HAZOP引导词-5",
+      "source_type": "methodology",
+      "source_id": "HAZOP引导词",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：矩阵示例",
+      "content": "**节点：原料加热炉**\n| 参数 | 引导词 | 偏差 | 状态 | 理由 |\n|------|--------|------|------|------|\n| 流量 | 无 | 流量中断 | meaningful | 进料泵可能故障 |\n| 流量 | 多 | 流量过大 | meaningful | 控制阀可能全开 |\n| 流量 | 少 | 流量不足 | meaningful | 管道可能结垢 |\n| 流量 | 反向 | 逆流 | skipped | 有止回阀，不可能 |\n| 温度 | 高 | 超温 | meaningful | 加热炉失控 |\n| 温度 | 低 | 温度低 | meaningful | 燃料气不足 |\n| 压力 | 高 | 超压 | meaningful | 出口堵塞 |\n| 压力 | 低 | 压力低 | meaningful | 进料不足 |",
+      "keywords": [
+        "引导词",
+        "偏差",
+        "流量",
+        "压力",
+        "温度"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-HAZOP引导词-6",
+      "source_type": "methodology",
+      "source_id": "HAZOP引导词",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：Meaningful 判定标准",
+      "content": "**判定为 Meaningful 的条件**：\n1. 物理上可能发生\n2. 有具体原因可分析\n3. 有实际后果可评估\n4. 有保护措施可分析\n**判定为 Skipped 的条件**：\n1. 物理上不可能发生\n2. 没有具体原因\n3. 没有实际后果\n4. 已有充分保护",
+      "keywords": [],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-HAZOP引导词-7",
+      "source_type": "methodology",
+      "source_id": "HAZOP引导词",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：系统性应用",
+      "content": "**步骤**：\n1. 确定节点和工艺参数\n2. 应用所有引导词\n3. 判定 meaningful/skipped\n4. 为 meaningful 偏差生成探查问题",
+      "keywords": [
+        "引导词",
+        "偏差"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-HAZOP引导词-8",
+      "source_type": "methodology",
+      "source_id": "HAZOP引导词",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：探查问题生成",
+      "content": "**探查问题类型**：\n1. **原因探查**：什么情况下会发生这个偏差？\n2. **后果探查**：如果发生这个偏差，会有什么后果？\n3. **保护探查**：现有保护措施能否防止这个偏差？\n4. **检测探查**：如何检测这个偏差的发生？\n**示例**：\n```\n偏差：流量中断\n探查问题：\n- 什么情况下进料泵会故障？（原因探查）\n- 如果流量中断，反应器会有什么后果？（后果探查）\n- 现有流量联锁能否防止这个偏差？（保护探查）\n- 如何检测流量中断？（检测探查）\n```",
+      "keywords": [
+        "偏差",
+        "流量"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    },
+    {
+      "clause_id": "hazop-HAZOP引导词-9",
+      "source_type": "methodology",
+      "source_id": "HAZOP引导词",
+      "version": "2023",
+      "discipline": "hazop",
+      "clause": "章节：常见偏差清单",
+      "content": "| 偏差 | 常见原因 | 典型后果 |\n|------|----------|----------|\n| 流量中断 | 泵故障、阀门误关、管道堵塞 | 设备空烧、反应失控 |\n| 流量过大 | 控制阀全开、泵扬程过高 | 设备超压、溢流 |\n| 流量不足 | 管道结垢、泵效率下降 | 设备干烧、反应不完全 |\n| 逆流 | 止回阀失效、泵反转 | 设备损坏、污染 |\n| 偏差 | 常见原因 | 典型后果 |\n|------|----------|----------|\n| 超压 | 出口堵塞、泄放失效、反应失控 | 设备爆炸、泄漏 |\n| 压力低 | 进料不足、泄漏、泵故障 | 设备损坏、工艺异常 |\n| 真空 | 冷凝、泵抽空 | 设备变形、损坏 |\n| 偏差 | 常见原因 | 典型后果 |\n|------|----------|----------|\n| 超温 | 冷却失效、加热失控、反应放热 | 设备损坏、反应失控 |\n| 温度低 | 加热不足、环境温度低 | 工艺异常、产品质量下降 |\n| 偏差 | 常见原因 | 典型后果 |\n|------|----------|----------|\n| 液位高 | 出料堵塞、进料过大 | 设备溢流、超压 |\n| 液位低 | 进料不足、出料过大 | 泵空转、设备干烧 |\n| 液位空 | 进料中断、出料过大 | 泵损坏、设备损坏 |",
+      "keywords": [
+        "偏差",
+        "流量",
+        "压力",
+        "温度",
+        "液位"
+      ],
+      "tokens": [],
+      "is_mandatory": true,
+      "cross_refs": []
+    }
+  ]
+}

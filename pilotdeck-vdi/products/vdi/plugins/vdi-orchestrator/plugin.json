@@ -1,0 +1,19 @@
+{
+  "name": "vdi-orchestrator",
+  "version": "0.2.0",
+  "description": "VDI 编排调度引擎。MCP 工具：vdi_create_task_package、vdi_decompose_tasks、vdi_dispatch_task、vdi_check_milestone、vdi_get_dependency_graph、vdi_trigger_alert、vdi_update_task_status。",
+  "mcpServers": {
+    "vdi-orchestrator": {
+      "command": "node",
+      "args": ["/workspace/pilotdeck-vdi/mcp/vdi-orchestrator/server.mjs"],
+      "env": {
+        "VDI_WORKSPACE_ROOT": "/workspace/workspaces"
+      }
+    }
+  },
+  "settings": {
+    "workspaceRoot": "/workspace/workspaces",
+    "stateRoot": ".pilotdeck/projects",
+    "dependencyGraph": "内置（server.mjs DEPENDENCY_GRAPH 常量）"
+  }
+}

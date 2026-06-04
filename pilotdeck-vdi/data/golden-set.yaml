@@ -1,0 +1,2279 @@
+# VDI 知识库检索评估数据集（Golden Set）
+# 版本：V1.0
+# 创建日期：2026-05-31
+# 用途：CI门槛评估 — Recall@5/MRR/Precision@5/CitationAccuracy
+# 规范：每次索引构建/检索策略变更后必须通过所有评估门槛
+
+meta:
+  version: "1.0"
+  created_at: "2026-05-31"
+  total_queries: 220
+  disciplines_covered:
+    - water
+    - fire
+    - process
+    - piping
+    - instrument
+    - electrical
+    - equipment
+    - hse
+  query_types:
+    - exact_lookup       # 精确查找（规范号+条款号）
+    - numeric_lookup     # 数值查询（最小管径、最大流速等）
+    - concept_search     # 概念检索（消防供水要求等）
+    - cross_reference    # 跨引用检索
+    - mandatory_filter   # 强制性别过滤
+    - ambiguous_term     # 模糊术语（同义词/缩写）
+    - negative_query     # 否定查询（知识库不应有的内容）
+    - multi_discipline   # 跨专业查询
+
+# ============================================================
+# 评估门槛（CI阻断条件）
+# ============================================================
+thresholds:
+  recall_at_5: 0.90       # Recall@5 — 正确答案在top-5中的比例
+  mrr: 0.80               # MRR — 第一个正确答案的平均倒数排名
+  precision_at_5: 0.75    # Precision@5 — top-5中相关结果的比例
+  citation_accuracy: 0.99 # Citation Accuracy — 引用指向正确条文的比例
+
+# ============================================================
+# 查询集
+# ============================================================
+queries:
+  # ========== A. 精确查找（20条）==========
+  # 测试场景：用户已知规范号和条款号，需要精确拉取条文内容
+  # 预期行为：实体索引直接命中，top-1必须是目标条文
+
+  - id: "E001"
+    query: "GB 50160 第5.2.3条"
+    query_type: exact_lookup
+    discipline: process
+    relevant_clauses:
+      - source_id: "GB 50160-2008"
+        clause: "5.2.3"
+        relevance: primary
+    irrelevant_clauses:
+      - source_id: "GB 50160-2008"
+        clause: "5.2.1"
+        reason: "同规范不同条款，不可混淆"
+
+  - id: "E002"
+    query: "GB 50016 第3.2.1条防火分区"
+    query_type: exact_lookup
+    discipline: fire
+    relevant_clauses:
+      - source_id: "GB 50016-2014"
+        clause: "3.2.1"
+        relevance: primary
+
+  - id: "E003"
+    query: "SH/T 3006-2024 第8.1.1条"
+    query_type: exact_lookup
+    discipline: instrument
+    relevant_clauses:
+      - source_id: "SH/T 3006-2024"
+        clause: "8.1.1"
+        relevance: primary
+
+  - id: "E004"
+    query: "GB 50058 爆炸危险分区"
+    query_type: exact_lookup
+    discipline: electrical
+    relevant_clauses:
+      - source_id: "GB 50058-2014"
+        clause: "3.2.1"
+        relevance: primary
+
+  - id: "E005"
+    query: "安全生产法第4条"
+    query_type: exact_lookup
+    discipline: hse
+    relevant_clauses:
+      - source_id: "安全生产法"
+        clause: "第4条"
+        relevance: primary
+
+  - id: "E006"
+    query: "消防法第16条"
+    query_type: exact_lookup
+    discipline: fire
+    relevant_clauses:
+      - source_id: "消防法"
+        clause: "第16条"
+        relevance: primary
+
+  - id: "E007"
+    query: "GB 50974 第7.2.1条室外消火栓"
+    query_type: exact_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50974-2014"
+        clause: "7.2.1"
+        relevance: primary
+
+  - id: "E008"
+    query: "GB 50015-2019 第3.2.1条"
+    query_type: exact_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50015-2019"
+        clause: "3.2.1"
+        relevance: primary
+
+  - id: "E009"
+    query: "GB/T 50770-2013 安全仪表系统"
+    query_type: exact_lookup
+    discipline: instrument
+    relevant_clauses:
+      - source_id: "GB/T 50770-2013"
+        clause: "5.1"
+        relevance: primary
+
+  - id: "E010"
+    query: "SH/T 3011-2017 第6.3条"
+    query_type: exact_lookup
+    discipline: process
+    relevant_clauses:
+      - source_id: "SH/T 3011-2017"
+        clause: "6.3"
+        relevance: primary
+
+  - id: "E011"
+    query: "GB 18918-2002 第5.2.1条监测频率"
+    query_type: exact_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 18918-2002"
+        clause: "5.2.1"
+        relevance: primary
+
+  - id: "E012"
+    query: "GB 50014-2021 第5.2.1条排水管最小管径"
+    query_type: exact_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.1"
+        relevance: primary
+
+  - id: "E013"
+    query: "GB 50084-2017 第7.1.1条"
+    query_type: exact_lookup
+    discipline: fire
+    relevant_clauses:
+      - source_id: "GB 50084-2017"
+        clause: "7.1.1"
+        relevance: primary
+
+  - id: "E014"
+    query: "SH/T 3059-2012 管道器材选用"
+    query_type: exact_lookup
+    discipline: piping
+    relevant_clauses:
+      - source_id: "SH/T 3059-2012"
+        clause: "3.1"
+        relevance: primary
+
+  - id: "E015"
+    query: "SH/T 3073-2016 支吊架设计"
+    query_type: exact_lookup
+    discipline: piping
+    relevant_clauses:
+      - source_id: "SH/T 3073-2016"
+        clause: "4.1"
+        relevance: primary
+
+  - id: "E016"
+    query: "HG/T 20507-2014 仪表选型"
+    query_type: exact_lookup
+    discipline: instrument
+    relevant_clauses:
+      - source_id: "HG/T 20507-2014"
+        clause: "3.1"
+        relevance: primary
+
+  - id: "E017"
+    query: "HG/T 20508-2014 控制室设计"
+    query_type: exact_lookup
+    discipline: instrument
+    relevant_clauses:
+      - source_id: "HG/T 20508-2014"
+        clause: "4.1"
+        relevance: primary
+
+  - id: "E018"
+    query: "GB 50050-2017 第4.1.1条"
+    query_type: exact_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50050-2017"
+        clause: "4.1.1"
+        relevance: primary
+
+  - id: "E019"
+    query: "SH/T 3007-2014 储运系统罐区"
+    query_type: exact_lookup
+    discipline: equipment
+    relevant_clauses:
+      - source_id: "SH/T 3007-2014"
+        clause: "4.1"
+        relevance: primary
+
+  - id: "E020"
+    query: "GB 50369-2014 第8条"
+    query_type: exact_lookup
+    discipline: piping
+    relevant_clauses:
+      - source_id: "GB 50369-2014"
+        clause: "8"
+        relevance: primary
+
+  # ========== B. 数值查询（30条）==========
+  # 测试场景：查询具体数值参数（管径、流速、间距、面积等）
+  # 预期行为：精确匹配数值所在的条文，不能返回概念相近但数值不同的条文
+
+  - id: "N001"
+    query: "石化装置消防给水管径最小要求是多少"
+    query_type: numeric_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50974-2014"
+        clause: "7.2.1"
+        relevance: primary
+
+  - id: "N002"
+    query: "排水管道污水管最小管径"
+    query_type: numeric_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.1"
+        relevance: primary
+
+  - id: "N003"
+    query: "排水管道污水最小设计流速"
+    query_type: numeric_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.2"
+        relevance: primary
+
+  - id: "N004"
+    query: "排水管道非金属管最大流速"
+    query_type: numeric_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.3"
+        relevance: primary
+
+  - id: "N005"
+    query: "排水管DN150最小坡度是多少"
+    query_type: numeric_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.4"
+        relevance: primary
+
+  - id: "N006"
+    query: "污水管道设计充满度最大值"
+    query_type: numeric_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.5"
+        relevance: primary
+    irrelevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.1"
+        reason: "充满度和管径是不同的设计参数"
+
+  - id: "N007"
+    query: "沉淀池设计表面负荷范围"
+    query_type: numeric_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50013-2018"
+        clause: "7.3.1"
+        relevance: primary
+
+  - id: "N008"
+    query: "滤池设计滤速范围"
+    query_type: numeric_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50013-2018"
+        clause: "7.4.1"
+        relevance: primary
+
+  - id: "N009"
+    query: "COD监测频率要求每日还是每周"
+    query_type: numeric_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 18918-2002"
+        clause: "5.2.1"
+        relevance: primary
+
+  - id: "N010"
+    query: "氨氮监测频率要求"
+    query_type: numeric_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 18918-2002"
+        clause: "5.2.1"
+        relevance: primary
+
+  - id: "N011"
+    query: "甲类厂房防火分区最大面积"
+    query_type: numeric_lookup
+    discipline: fire
+    relevant_clauses:
+      - source_id: "GB 50016-2014"
+        clause: "3.2.1"
+        relevance: primary
+
+  - id: "N012"
+    query: "防爆区域电气设备防爆等级要求"
+    query_type: numeric_lookup
+    discipline: electrical
+    relevant_clauses:
+      - source_id: "GB 50058-2014"
+        clause: "3.2.1"
+        relevance: primary
+
+  - id: "N013"
+    query: "压力容器设计压力等级分类"
+    query_type: numeric_lookup
+    discipline: equipment
+    relevant_clauses:
+      - source_id: "GB 150-2011"
+        clause: "4.1"
+        relevance: primary
+
+  - id: "N014"
+    query: "热交换器管壳式设计温差范围"
+    query_type: numeric_lookup
+    discipline: equipment
+    relevant_clauses:
+      - source_id: "GB/T 151-2014"
+        clause: "5.1"
+        relevance: primary
+
+  - id: "N015"
+    query: "可燃气体检测报警器安装高度要求"
+    query_type: numeric_lookup
+    discipline: instrument
+    relevant_clauses:
+      - source_id: "GB 50493-2019"
+        clause: "4.2.1"
+        relevance: primary
+
+  - id: "N016"
+    query: "控制室抗电磁干扰措施要求"
+    query_type: numeric_lookup
+    discipline: instrument
+    relevant_clauses:
+      - source_id: "SH/T 3006-2024"
+        clause: "8.1.1"
+        relevance: primary
+
+  - id: "N017"
+    query: "排水管道DN200最小坡度"
+    query_type: numeric_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.4"
+        relevance: primary
+
+  - id: "N018"
+    query: "排水管道DN300最小坡度"
+    query_type: numeric_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.4"
+        relevance: primary
+
+  - id: "N019"
+    query: "雨水管道最小管径要求"
+    query_type: numeric_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.1"
+        relevance: primary
+
+  - id: "N020"
+    query: "沉淀池停留时间范围"
+    query_type: numeric_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50013-2018"
+        clause: "7.3.1"
+        relevance: primary
+
+  - id: "N021"
+    query: "滤池冲洗强度要求"
+    query_type: numeric_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50013-2018"
+        clause: "7.4.1"
+        relevance: primary
+
+  - id: "N022"
+    query: "雨水口连接管最小管径"
+    query_type: numeric_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.1"
+        relevance: primary
+
+  - id: "N023"
+    query: "给水系统水源水质应符合什么标准"
+    query_type: numeric_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50013-2018"
+        clause: "5.1.1"
+        relevance: primary
+
+  - id: "N024"
+    query: "BOD5监测频率"
+    query_type: numeric_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 18918-2002"
+        clause: "5.2.1"
+        relevance: primary
+
+  - id: "N025"
+    query: "SS监测频率"
+    query_type: numeric_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 18918-2002"
+        clause: "5.2.1"
+        relevance: primary
+
+  - id: "N026"
+    query: "总磷监测频率"
+    query_type: numeric_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 18918-2002"
+        clause: "5.2.1"
+        relevance: primary
+
+  - id: "N027"
+    query: "金属管道最大设计流速"
+    query_type: numeric_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.3"
+        relevance: primary
+
+  - id: "N028"
+    query: "非金属管道最大设计流速"
+    query_type: numeric_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.3"
+        relevance: primary
+
+  - id: "N029"
+    query: "雨水管道最大充满度"
+    query_type: numeric_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.5"
+        relevance: primary
+
+  - id: "N030"
+    query: "DN250排水管最小坡度"
+    query_type: numeric_lookup
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.4"
+        relevance: primary
+
+  # ========== C. 概念检索（40条）==========
+  # 测试场景：用自然语言描述需求，不指定规范号和条款号
+  # 预期行为：语义理解找到正确的条文
+
+  - id: "C001"
+    query: "消防泵房给水设计有什么要求"
+    query_type: concept_search
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50974-2014"
+        clause: "7.2.1"
+        relevance: primary
+
+  - id: "C002"
+    query: "石油化工企业储罐区防火间距要求"
+    query_type: concept_search
+    discipline: fire
+    relevant_clauses:
+      - source_id: "GB 50160-2008"
+        clause: "5.2.1"
+        relevance: primary
+
+  - id: "C003"
+    query: "爆炸危险环境电气设备选型"
+    query_type: concept_search
+    discipline: electrical
+    relevant_clauses:
+      - source_id: "GB 50058-2014"
+        clause: "3.2.1"
+        relevance: primary
+
+  - id: "C004"
+    query: "工艺管道材料等级选择依据"
+    query_type: concept_search
+    discipline: piping
+    relevant_clauses:
+      - source_id: "SH/T 3059-2012"
+        clause: "3.1"
+        relevance: primary
+
+  - id: "C005"
+    query: "安全仪表系统SIL等级确定方法"
+    query_type: concept_search
+    discipline: instrument
+    relevant_clauses:
+      - source_id: "GB/T 50770-2013"
+        clause: "5.1"
+        relevance: primary
+
+  - id: "C006"
+    query: "压力容器设计需要考虑哪些因素"
+    query_type: concept_search
+    discipline: equipment
+    relevant_clauses:
+      - source_id: "GB 150-2011"
+        clause: "4.1"
+        relevance: primary
+
+  - id: "C007"
+    query: "生产经营单位安全生产责任制要求"
+    query_type: concept_search
+    discipline: hse
+    relevant_clauses:
+      - source_id: "安全生产法"
+        clause: "第4条"
+        relevance: primary
+
+  - id: "C008"
+    query: "企业主要负责人安全职责"
+    query_type: concept_search
+    discipline: hse
+    relevant_clauses:
+      - source_id: "安全生产法"
+        clause: "第5条"
+        relevance: primary
+
+  - id: "C009"
+    query: "安全风险分级管控制度要求"
+    query_type: concept_search
+    discipline: hse
+    relevant_clauses:
+      - source_id: "安全生产法"
+        clause: "第41条"
+        relevance: primary
+
+  - id: "C010"
+    query: "特种设备使用单位安全管理要求"
+    query_type: concept_search
+    discipline: hse
+    relevant_clauses:
+      - source_id: "特种设备安全法"
+        clause: "第13条"
+        relevance: primary
+
+  - id: "C011"
+    query: "职业病危害因素检测要求"
+    query_type: concept_search
+    discipline: hse
+    relevant_clauses:
+      - source_id: "职业病防治法"
+        clause: "第25条"
+        relevance: primary
+
+  - id: "C012"
+    query: "环境保护三同时制度要求"
+    query_type: concept_search
+    discipline: hse
+    relevant_clauses:
+      - source_id: "环境保护法"
+        clause: "第41条"
+        relevance: primary
+
+  - id: "C013"
+    query: "消防设施维护保养要求"
+    query_type: concept_search
+    discipline: fire
+    relevant_clauses:
+      - source_id: "消防法"
+        clause: "第16条"
+        relevance: primary
+
+  - id: "C014"
+    query: "自动喷水灭火系统设置场所"
+    query_type: concept_search
+    discipline: fire
+    relevant_clauses:
+      - source_id: "GB 50084-2017"
+        clause: "7.1.1"
+        relevance: primary
+
+  - id: "C015"
+    query: "工业企业总平面设计防火要求"
+    query_type: concept_search
+    discipline: fire
+    relevant_clauses:
+      - source_id: "GB 50187-2012"
+        clause: "4.1"
+        relevance: primary
+
+  - id: "C016"
+    query: "油气管道施工验收标准"
+    query_type: concept_search
+    discipline: piping
+    relevant_clauses:
+      - source_id: "GB 50369-2014"
+        clause: "8"
+        relevance: primary
+
+  - id: "C017"
+    query: "金属管道防腐措施要求"
+    query_type: concept_search
+    discipline: piping
+    relevant_clauses:
+      - source_id: "GB 50013-2018"
+        clause: "9.4.1"
+        relevance: primary
+
+  - id: "C018"
+    query: "管道支吊架设计原则"
+    query_type: concept_search
+    discipline: piping
+    relevant_clauses:
+      - source_id: "SH/T 3073-2016"
+        clause: "4.1"
+        relevance: primary
+
+  - id: "C019"
+    query: "管道布置设计一般要求"
+    query_type: concept_search
+    discipline: piping
+    relevant_clauses:
+      - source_id: "SH/T 3012-2011"
+        clause: "4.1"
+        relevance: primary
+
+  - id: "C020"
+    query: "控制室设计规范要求"
+    query_type: concept_search
+    discipline: instrument
+    relevant_clauses:
+      - source_id: "HG/T 20508-2014"
+        clause: "4.1"
+        relevance: primary
+
+  - id: "C021"
+    query: "自动化仪表选型设计规范"
+    query_type: concept_search
+    discipline: instrument
+    relevant_clauses:
+      - source_id: "HG/T 20507-2014"
+        clause: "3.1"
+        relevance: primary
+
+  - id: "C022"
+    query: "信号报警及联锁系统设计要求"
+    query_type: concept_search
+    discipline: instrument
+    relevant_clauses:
+      - source_id: "HG/T 20511-2014"
+        clause: "5.1"
+        relevance: primary
+
+  - id: "C023"
+    query: "工艺装置设计规范要求"
+    query_type: concept_search
+    discipline: process
+    relevant_clauses:
+      - source_id: "SH/T 3011-2017"
+        clause: "6.1"
+        relevance: primary
+
+  - id: "C024"
+    query: "储运系统罐区设计要求"
+    query_type: concept_search
+    discipline: equipment
+    relevant_clauses:
+      - source_id: "SH/T 3007-2014"
+        clause: "4.1"
+        relevance: primary
+
+  - id: "C025"
+    query: "工业循环冷却水处理设计要求"
+    query_type: concept_search
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50050-2017"
+        clause: "4.1.1"
+        relevance: primary
+
+  - id: "C026"
+    query: "排水管道设计充满度怎么确定"
+    query_type: concept_search
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.5"
+        relevance: primary
+
+  - id: "C027"
+    query: "给水管网水力计算依据"
+    query_type: concept_search
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50013-2018"
+        clause: "5.1.1"
+        relevance: primary
+
+  - id: "C028"
+    query: "污水排放标准要求"
+    query_type: concept_search
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 18918-2002"
+        clause: "5.2.1"
+        relevance: primary
+
+  - id: "C029"
+    query: "石油化工可燃气体检测报警设计"
+    query_type: concept_search
+    discipline: instrument
+    relevant_clauses:
+      - source_id: "GB 50493-2019"
+        clause: "4.2.1"
+        relevance: primary
+
+  - id: "C030"
+    query: "建筑物防火设计要求"
+    query_type: concept_search
+    discipline: fire
+    relevant_clauses:
+      - source_id: "GB 50016-2014"
+        clause: "3.1.1"
+        relevance: primary
+
+  - id: "C031"
+    query: "沉淀池设计参数如何确定"
+    query_type: concept_search
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50013-2018"
+        clause: "7.3.1"
+        relevance: primary
+
+  - id: "C032"
+    query: "滤池设计需要考虑哪些参数"
+    query_type: concept_search
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50013-2018"
+        clause: "7.4.1"
+        relevance: primary
+
+  - id: "C033"
+    query: "工业企业总平面设计规范"
+    query_type: concept_search
+    discipline: fire
+    relevant_clauses:
+      - source_id: "GB 50187-2012"
+        clause: "4.1"
+        relevance: primary
+
+  - id: "C034"
+    query: "消防安全责任人职责"
+    query_type: concept_search
+    discipline: fire
+    relevant_clauses:
+      - source_id: "消防法"
+        clause: "第16条"
+        relevance: primary
+
+  - id: "C035"
+    query: "压力容器定期检验要求"
+    query_type: concept_search
+    discipline: equipment
+    relevant_clauses:
+      - source_id: "特种设备安全法"
+        clause: "第33条"
+        relevance: primary
+
+  - id: "C036"
+    query: "特种设备使用登记要求"
+    query_type: concept_search
+    discipline: equipment
+    relevant_clauses:
+      - source_id: "特种设备安全法"
+        clause: "第39条"
+        relevance: primary
+
+  - id: "C037"
+    query: "建设项目安全设施三同时"
+    query_type: concept_search
+    discipline: hse
+    relevant_clauses:
+      - source_id: "安全生产法"
+        clause: "第44条"
+        relevance: primary
+
+  - id: "C038"
+    query: "劳动者职业健康检查要求"
+    query_type: concept_search
+    discipline: hse
+    relevant_clauses:
+      - source_id: "职业病防治法"
+        clause: "第39条"
+        relevance: primary
+
+  - id: "C039"
+    query: "企业环境应急预案要求"
+    query_type: concept_search
+    discipline: hse
+    relevant_clauses:
+      - source_id: "环境保护法"
+        clause: "第63条"
+        relevance: primary
+
+  - id: "C040"
+    query: "消防设计审查验收要求"
+    query_type: concept_search
+    discipline: fire
+    relevant_clauses:
+      - source_id: "消防法"
+        clause: "第17条"
+        relevance: primary
+
+  # ========== D. 跨引用检索（25条）==========
+  # 测试场景：查询涉及跨规范引用，需要二跳检索
+  # 预期行为：返回主条文+被引用规范的相关章节
+
+  - id: "X001"
+    query: "给水系统水源应该符合什么标准"
+    query_type: cross_reference
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50013-2018"
+        clause: "5.1.1"
+        relevance: primary
+    cross_references:
+      - source_id: "GB 5749"
+        reason: "生活饮用水卫生标准（被GB 50013-2018 §5.1.1引用）"
+
+  - id: "X002"
+    query: "金属管道防腐应符合什么规范"
+    query_type: cross_reference
+    discipline: piping
+    relevant_clauses:
+      - source_id: "GB 50013-2018"
+        clause: "9.4.1"
+        relevance: primary
+    cross_references:
+      - source_id: "GB 50316"
+        reason: "工业金属管道设计规范（被GB 50013-2018 §9.4.1引用）"
+
+  - id: "X003"
+    query: "可燃液体储罐防火间距要求引用哪个规范"
+    query_type: cross_reference
+    discipline: fire
+    relevant_clauses:
+      - source_id: "GB 50160-2008"
+        clause: "5.2.1"
+        relevance: primary
+    cross_references:
+      - source_id: "GB 50016"
+        reason: "建筑设计防火规范（被GB 50160-2008 §5.2.1引用）"
+
+  - id: "X004"
+    query: "排水管道设计需参考哪些上下游规范"
+    query_type: cross_reference
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.1"
+        relevance: primary
+      - source_id: "GB 50014-2021"
+        clause: "5.2.2"
+        relevance: secondary
+      - source_id: "GB 50014-2021"
+        clause: "5.2.3"
+        relevance: secondary
+      - source_id: "GB 50014-2021"
+        clause: "5.2.4"
+        relevance: secondary
+      - source_id: "GB 50014-2021"
+        clause: "5.2.5"
+        relevance: secondary
+
+  - id: "X005"
+    query: "石油化工企业防火设计依据哪些国标"
+    query_type: cross_reference
+    discipline: fire
+    relevant_clauses:
+      - source_id: "GB 50160-2008"
+        clause: "1.0.1"
+        relevance: primary
+      - source_id: "GB 50016-2014"
+        clause: "1.0.1"
+        relevance: secondary
+
+  - id: "X006"
+    query: "工艺装置设计需满足哪些安全规范"
+    query_type: cross_reference
+    discipline: process
+    relevant_clauses:
+      - source_id: "SH/T 3011-2017"
+        clause: "6.1"
+        relevance: primary
+
+  - id: "X007"
+    query: "控制室设计应参照哪些标准"
+    query_type: cross_reference
+    discipline: instrument
+    relevant_clauses:
+      - source_id: "HG/T 20508-2014"
+        clause: "4.1"
+        relevance: primary
+      - source_id: "SH/T 3006-2024"
+        clause: "8.1.1"
+        relevance: secondary
+
+  - id: "X008"
+    query: "罐区设计需要满足哪些安全规范"
+    query_type: cross_reference
+    discipline: equipment
+    relevant_clauses:
+      - source_id: "SH/T 3007-2014"
+        clause: "4.1"
+        relevance: primary
+      - source_id: "GB 50160-2008"
+        clause: "5.2.1"
+        relevance: secondary
+
+  - id: "X009"
+    query: "安全阀泄放量计算依据什么标准"
+    query_type: cross_reference
+    discipline: equipment
+    relevant_clauses:
+      - source_id: "GB 150-2011"
+        clause: "4.1"
+        relevance: primary
+
+  - id: "X010"
+    query: "电气防爆设计引用哪些标准"
+    query_type: cross_reference
+    discipline: electrical
+    relevant_clauses:
+      - source_id: "GB 50058-2014"
+        clause: "3.2.1"
+        relevance: primary
+
+  - id: "X011"
+    query: "监测频率应符合什么规定"
+    query_type: cross_reference
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 18918-2002"
+        clause: "5.2.1"
+        relevance: primary
+
+  - id: "X012"
+    query: "沉淀池设计应符合什么规定"
+    query_type: cross_reference
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50013-2018"
+        clause: "7.3.1"
+        relevance: primary
+
+  - id: "X013"
+    query: "滤池设计应符合什么规定"
+    query_type: cross_reference
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50013-2018"
+        clause: "7.4.1"
+        relevance: primary
+
+  - id: "X014"
+    query: "排水管道最小管径应符合什么规定"
+    query_type: cross_reference
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.1"
+        relevance: primary
+
+  - id: "X015"
+    query: "排水管道设计流速应符合什么规定"
+    query_type: cross_reference
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.2"
+        relevance: primary
+
+  - id: "X016"
+    query: "排水管道最大流速应符合什么规定"
+    query_type: cross_reference
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.3"
+        relevance: primary
+
+  - id: "X017"
+    query: "排水管道最小坡度应符合什么规定"
+    query_type: cross_reference
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.4"
+        relevance: primary
+
+  - id: "X018"
+    query: "排水管道充满度应符合什么规定"
+    query_type: cross_reference
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.5"
+        relevance: primary
+
+  - id: "X019"
+    query: "给水水源应符合什么标准要求"
+    query_type: cross_reference
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50013-2018"
+        clause: "5.1.1"
+        relevance: primary
+
+  - id: "X020"
+    query: "金属管道防腐应符合什么规范"
+    query_type: cross_reference
+    discipline: piping
+    relevant_clauses:
+      - source_id: "GB 50013-2018"
+        clause: "9.4.1"
+        relevance: primary
+
+  - id: "X021"
+    query: "安全仪表系统SIL定级依据什么标准"
+    query_type: cross_reference
+    discipline: instrument
+    relevant_clauses:
+      - source_id: "GB/T 50770-2013"
+        clause: "5.1"
+        relevance: primary
+
+  - id: "X022"
+    query: "可燃气体检测报警设计依据什么标准"
+    query_type: cross_reference
+    discipline: instrument
+    relevant_clauses:
+      - source_id: "GB 50493-2019"
+        clause: "4.2.1"
+        relevance: primary
+
+  - id: "X023"
+    query: "压力容器设计依据什么标准"
+    query_type: cross_reference
+    discipline: equipment
+    relevant_clauses:
+      - source_id: "GB 150-2011"
+        clause: "4.1"
+        relevance: primary
+
+  - id: "X024"
+    query: "热交换器设计依据什么标准"
+    query_type: cross_reference
+    discipline: equipment
+    relevant_clauses:
+      - source_id: "GB/T 151-2014"
+        clause: "5.1"
+        relevance: primary
+
+  - id: "X025"
+    query: "爆炸危险环境电气设计依据什么标准"
+    query_type: cross_reference
+    discipline: electrical
+    relevant_clauses:
+      - source_id: "GB 50058-2014"
+        clause: "3.2.1"
+        relevance: primary
+
+  # ========== E. 强制性别过滤（15条）==========
+  # 测试场景：查询中强调"必须""强制性"等关键词
+  # 预期行为：强制性条文排在推荐性条文前面
+
+  - id: "M001"
+    query: "高风险介质管线必须设置什么安全设施"
+    query_type: mandatory_filter
+    discipline: hse
+    relevant_clauses:
+      - source_id: "安全生产法"
+        clause: "第41条"
+        relevance: primary
+
+  - id: "M002"
+    query: "消防设计强制性要求有哪些"
+    query_type: mandatory_filter
+    discipline: fire
+    relevant_clauses:
+      - source_id: "GB 50160-2008"
+        clause: "5.2.1"
+        relevance: primary
+
+  - id: "M003"
+    query: "安全生产强制性规定"
+    query_type: mandatory_filter
+    discipline: hse
+    relevant_clauses:
+      - source_id: "安全生产法"
+        clause: "第4条"
+        relevance: primary
+      - source_id: "安全生产法"
+        clause: "第5条"
+        relevance: secondary
+
+  - id: "M004"
+    query: "特种设备必须进行什么检验"
+    query_type: mandatory_filter
+    discipline: equipment
+    relevant_clauses:
+      - source_id: "特种设备安全法"
+        clause: "第33条"
+        relevance: primary
+
+  - id: "M005"
+    query: "防爆区域必须满足什么电气要求"
+    query_type: mandatory_filter
+    discipline: electrical
+    relevant_clauses:
+      - source_id: "GB 50058-2014"
+        clause: "3.2.1"
+        relevance: primary
+
+  - id: "M006"
+    query: "建设项目必须执行安全设施三同时"
+    query_type: mandatory_filter
+    discipline: hse
+    relevant_clauses:
+      - source_id: "安全生产法"
+        clause: "第44条"
+        relevance: primary
+
+  - id: "M007"
+    query: "企业必须建立安全风险分级管控"
+    query_type: mandatory_filter
+    discipline: hse
+    relevant_clauses:
+      - source_id: "安全生产法"
+        clause: "第41条"
+        relevance: primary
+
+  - id: "M008"
+    query: "主要负责人必须是安全第一责任人"
+    query_type: mandatory_filter
+    discipline: hse
+    relevant_clauses:
+      - source_id: "安全生产法"
+        clause: "第5条"
+        relevance: primary
+
+  - id: "M009"
+    query: "消防设施必须定期维护保养"
+    query_type: mandatory_filter
+    discipline: fire
+    relevant_clauses:
+      - source_id: "消防法"
+        clause: "第16条"
+        relevance: primary
+
+  - id: "M010"
+    query: "职业病危害必须进行检测"
+    query_type: mandatory_filter
+    discipline: hse
+    relevant_clauses:
+      - source_id: "职业病防治法"
+        clause: "第25条"
+        relevance: primary
+
+  - id: "M011"
+    query: "劳动者必须进行职业健康检查"
+    query_type: mandatory_filter
+    discipline: hse
+    relevant_clauses:
+      - source_id: "职业病防治法"
+        clause: "第39条"
+        relevance: primary
+
+  - id: "M012"
+    query: "企业必须制定环境应急预案"
+    query_type: mandatory_filter
+    discipline: hse
+    relevant_clauses:
+      - source_id: "环境保护法"
+        clause: "第63条"
+        relevance: primary
+
+  - id: "M013"
+    query: "特种设备使用必须登记"
+    query_type: mandatory_filter
+    discipline: equipment
+    relevant_clauses:
+      - source_id: "特种设备安全法"
+        clause: "第39条"
+        relevance: primary
+
+  - id: "M014"
+    query: "控制室必须采取抗电磁干扰措施"
+    query_type: mandatory_filter
+    discipline: instrument
+    relevant_clauses:
+      - source_id: "SH/T 3006-2024"
+        clause: "8.1.1"
+        relevance: primary
+
+  - id: "M015"
+    query: "生产单位必须建立安全生产责任制"
+    query_type: mandatory_filter
+    discipline: hse
+    relevant_clauses:
+      - source_id: "安全生产法"
+        clause: "第4条"
+        relevance: primary
+
+  # ========== F. 模糊术语/同义词/缩写（30条）==========
+  # 测试场景：用口语化/非标准术语查询，需要领域词典扩展
+  # 预期行为：通过同义词扩展找到正确的条文
+
+  - id: "A001"
+    query: "消防栓设置要求"
+    query_type: ambiguous_term
+    discipline: fire
+    note: "测试'消防栓'→'消火栓'同义词映射"
+    relevant_clauses:
+      - source_id: "GB 50974-2014"
+        clause: "7.2.1"
+        relevance: primary
+
+  - id: "A002"
+    query: "ESD阀设置条件"
+    query_type: ambiguous_term
+    discipline: process
+    note: "测试'ESD阀'→'紧急切断阀'缩写映射"
+    relevant_clauses:
+      - source_id: "SH/T 3011-2017"
+        clause: "6.3"
+        relevance: primary
+
+  - id: "A003"
+    query: "防火调节阀安装要求"
+    query_type: ambiguous_term
+    discipline: fire
+    note: "测试'防火调节阀'→'防火阀'映射"
+    relevant_clauses:
+      - source_id: "GB 50016-2014"
+        clause: "3.2.1"
+        relevance: primary
+
+  - id: "A004"
+    query: "防爆电器选型标准"
+    query_type: ambiguous_term
+    discipline: electrical
+    note: "测试'防爆电器'→'防爆电气设备'映射"
+    relevant_clauses:
+      - source_id: "GB 50058-2014"
+        clause: "3.2.1"
+        relevance: primary
+
+  - id: "A005"
+    query: "DCS系统设计要求"
+    query_type: ambiguous_term
+    discipline: instrument
+    note: "测试'DCS'→'分散控制系统'缩写映射"
+    relevant_clauses:
+      - source_id: "HG/T 20508-2014"
+        clause: "4.1"
+        relevance: primary
+
+  - id: "A006"
+    query: "PLC控制系统选型"
+    query_type: ambiguous_term
+    discipline: instrument
+    note: "测试'PLC'→'可编程逻辑控制器'缩写映射"
+    relevant_clauses:
+      - source_id: "HG/T 20507-2014"
+        clause: "3.1"
+        relevance: primary
+
+  - id: "A007"
+    query: "泵房消防供水能力计算"
+    query_type: ambiguous_term
+    discipline: water
+    note: "测试'泵房'→'消防水泵房'映射"
+    relevant_clauses:
+      - source_id: "GB 50974-2014"
+        clause: "7.2.1"
+        relevance: primary
+
+  - id: "A008"
+    query: "SIL等级评定方法"
+    query_type: ambiguous_term
+    discipline: instrument
+    note: "测试'SIL'→'安全完整性等级'缩写映射"
+    relevant_clauses:
+      - source_id: "GB/T 50770-2013"
+        clause: "5.1"
+        relevance: primary
+
+  - id: "A009"
+    query: "危险源辨识要求"
+    query_type: ambiguous_term
+    discipline: hse
+    note: "测试'危险源辨识'→'安全风险分级'映射"
+    relevant_clauses:
+      - source_id: "安全生产法"
+        clause: "第41条"
+        relevance: primary
+
+  - id: "A010"
+    query: "HAZOP分析要求"
+    query_type: ambiguous_term
+    discipline: process
+    note: "测试'HAZOP'→'危险与可操作性分析'缩写映射"
+    relevant_clauses:
+      - source_id: "SH/T 3011-2017"
+        clause: "6.1"
+        relevance: primary
+
+  - id: "A011"
+    query: "罐区防火堤设计要求"
+    query_type: ambiguous_term
+    discipline: fire
+    note: "测试'防火堤'→'防火间距'相关映射"
+    relevant_clauses:
+      - source_id: "GB 50160-2008"
+        clause: "5.2.1"
+        relevance: primary
+
+  - id: "A012"
+    query: "污水处理排放指标"
+    query_type: ambiguous_term
+    discipline: water
+    note: "测试'污水处理'→'污水排放'相关映射"
+    relevant_clauses:
+      - source_id: "GB 18918-2002"
+        clause: "5.2.1"
+        relevance: primary
+
+  - id: "A013"
+    query: "循环水冷却塔设计"
+    query_type: ambiguous_term
+    discipline: water
+    note: "测试'循环水'→'工业循环冷却水'映射"
+    relevant_clauses:
+      - source_id: "GB 50050-2017"
+        clause: "4.1.1"
+        relevance: primary
+
+  - id: "A014"
+    query: "管廊管道布置间距"
+    query_type: ambiguous_term
+    discipline: piping
+    note: "测试'管廊'→'管道布置'映射"
+    relevant_clauses:
+      - source_id: "SH/T 3012-2011"
+        clause: "4.1"
+        relevance: primary
+
+  - id: "A015"
+    query: "反应器安全阀泄放"
+    query_type: ambiguous_term
+    discipline: equipment
+    note: "测试'泄放'→'安全阀泄放量'映射"
+    relevant_clauses:
+      - source_id: "GB 150-2011"
+        clause: "4.1"
+        relevance: primary
+
+  - id: "A016"
+    query: "有毒气体报警器设置"
+    query_type: ambiguous_term
+    discipline: instrument
+    note: "测试'有毒气体'→'可燃气体和有毒气体'映射"
+    relevant_clauses:
+      - source_id: "GB 50493-2019"
+        clause: "4.2.1"
+        relevance: primary
+
+  - id: "A017"
+    query: "给水干管管径选择"
+    query_type: ambiguous_term
+    discipline: water
+    note: "测试'干管'→'给水管道'映射"
+    relevant_clauses:
+      - source_id: "GB 50013-2018"
+        clause: "5.1.1"
+        relevance: primary
+
+  - id: "A018"
+    query: "排水立管管径要求"
+    query_type: ambiguous_term
+    discipline: water
+    note: "测试'立管'→'排水管道'映射"
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.1"
+        relevance: primary
+
+  - id: "A019"
+    query: "雨水管渠设计重现期"
+    query_type: ambiguous_term
+    discipline: water
+    note: "测试'管渠'→'管道'映射"
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.1"
+        relevance: primary
+
+  - id: "A020"
+    query: "工艺管线材质选用"
+    query_type: ambiguous_term
+    discipline: piping
+    note: "测试'工艺管线'→'工艺管道'映射"
+    relevant_clauses:
+      - source_id: "SH/T 3059-2012"
+        clause: "3.1"
+        relevance: primary
+
+  - id: "A021"
+    query: "Exd防爆等级要求"
+    query_type: ambiguous_term
+    discipline: electrical
+    note: "测试'Exd'→'隔爆型'符号映射"
+    relevant_clauses:
+      - source_id: "GB 50058-2014"
+        clause: "3.2.1"
+        relevance: primary
+
+  - id: "A022"
+    query: "消防水炮设置间距"
+    query_type: ambiguous_term
+    discipline: fire
+    note: "测试'消防水炮'→'室外消火栓'相关映射"
+    relevant_clauses:
+      - source_id: "GB 50974-2014"
+        clause: "7.2.1"
+        relevance: primary
+
+  - id: "A023"
+    query: "配水管网水力计算"
+    query_type: ambiguous_term
+    discipline: water
+    note: "测试'配水管网'→'给水系统'映射"
+    relevant_clauses:
+      - source_id: "GB 50013-2018"
+        clause: "5.1.1"
+        relevance: primary
+
+  - id: "A024"
+    query: "集水坑设计容积"
+    query_type: ambiguous_term
+    discipline: water
+    note: "测试'集水坑'→'排水'映射"
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.1"
+        relevance: primary
+
+  - id: "A025"
+    query: "隔油池设计参数"
+    query_type: ambiguous_term
+    discipline: water
+    note: "测试'隔油池'→'污水'相关映射"
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.5"
+        relevance: primary
+
+  - id: "A026"
+    query: "化粪池容积计算"
+    query_type: ambiguous_term
+    discipline: water
+    note: "测试'化粪池'→'污水'映射"
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.5"
+        relevance: primary
+
+  - id: "A027"
+    query: "热力管道补偿器设置"
+    query_type: ambiguous_term
+    discipline: piping
+    note: "测试'热力管道'→'管道'映射"
+    relevant_clauses:
+      - source_id: "SH/T 3073-2016"
+        clause: "4.1"
+        relevance: primary
+
+  - id: "A028"
+    query: "蒸汽管道疏水阀安装"
+    query_type: ambiguous_term
+    discipline: piping
+    note: "测试'蒸汽管道'→'管道'映射"
+    relevant_clauses:
+      - source_id: "SH/T 3012-2011"
+        clause: "4.1"
+        relevance: primary
+
+  - id: "A029"
+    query: "气动调节阀选型"
+    query_type: ambiguous_term
+    discipline: instrument
+    note: "测试'气动调节阀'→'自动化仪表'映射"
+    relevant_clauses:
+      - source_id: "HG/T 20507-2014"
+        clause: "3.1"
+        relevance: primary
+
+  - id: "A030"
+    query: "电磁流量计安装要求"
+    query_type: ambiguous_term
+    discipline: instrument
+    note: "测试'电磁流量计'→'仪表选型'映射"
+    relevant_clauses:
+      - source_id: "HG/T 20507-2014"
+        clause: "3.1"
+        relevance: primary
+
+  # ========== G. 否定查询（15条）==========
+  # 测试场景：查询知识库中不存在的内容，应返回空或低置信度
+  # 预期行为：不返回结果或返回"I don't know"，不能编造
+
+  - id: "G001"
+    query: "核电站安全设计要求"
+    query_type: negative_query
+    discipline: process
+    note: "知识库中无核电站相关规范，应返回空"
+    relevant_clauses: []
+    expect_empty: true
+
+  - id: "G002"
+    query: "桥梁结构设计规范"
+    query_type: negative_query
+    discipline: structure
+    note: "知识库中无桥梁设计规范"
+    relevant_clauses: []
+    expect_empty: true
+
+  - id: "G003"
+    query: "食品加工车间卫生标准"
+    query_type: negative_query
+    discipline: process
+    note: "不在石油化工工程设计范围内"
+    relevant_clauses: []
+    expect_empty: true
+
+  - id: "G004"
+    query: "GB 50011 抗震设计第5.1条"
+    query_type: negative_query
+    discipline: structure
+    note: "GB 50011未收录在知识库中"
+    relevant_clauses: []
+    expect_empty: true
+
+  - id: "G005"
+    query: "民用建筑电气设计规范"
+    query_type: negative_query
+    discipline: electrical
+    note: "知识库主要覆盖工业/石油化工规范"
+    relevant_clauses: []
+    expect_empty: true
+
+  - id: "G006"
+    query: "PVDF管道焊接工艺评定"
+    query_type: negative_query
+    discipline: piping
+    note: "过于具体的施工工艺，不在知识库范围"
+    relevant_clauses: []
+    expect_empty: true
+
+  - id: "G007"
+    query: "加氢裂化装置反应器内构件设计"
+    query_type: negative_query
+    discipline: equipment
+    note: "过于具体的设备内构件设计，知识库未覆盖"
+    relevant_clauses: []
+    expect_empty: true
+
+  - id: "G008"
+    query: "SIS系统三重冗余表决逻辑设计"
+    query_type: negative_query
+    discipline: instrument
+    note: "过于具体的系统逻辑设计，不在规范条文范围"
+    relevant_clauses: []
+    expect_empty: true
+
+  - id: "G009"
+    query: "海上平台消防设计规范"
+    query_type: negative_query
+    discipline: fire
+    note: "海上平台规范未收录"
+    relevant_clauses: []
+    expect_empty: true
+
+  - id: "G010"
+    query: "煤矿瓦斯抽采设计标准"
+    query_type: negative_query
+    discipline: process
+    note: "煤矿行业不在石化工程设计范围"
+    relevant_clauses: []
+    expect_empty: true
+
+  - id: "G011"
+    query: "光伏电站电气设计规范"
+    query_type: negative_query
+    discipline: electrical
+    note: "新能源领域未覆盖"
+    relevant_clauses: []
+    expect_empty: true
+
+  - id: "G012"
+    query: "LNG接收站工艺设计"
+    query_type: negative_query
+    discipline: process
+    note: "LNG专项规范未收录"
+    relevant_clauses: []
+    expect_empty: true
+
+  - id: "G013"
+    query: "氢气管线材料选用规范"
+    query_type: negative_query
+    discipline: piping
+    note: "氢气专项规范未单独收录"
+    relevant_clauses: []
+    expect_empty: true
+
+  - id: "G014"
+    query: "醋酸装置腐蚀选材指南"
+    query_type: negative_query
+    discipline: equipment
+    note: "过于具体的装置级指南，不在通用规范条文范围"
+    relevant_clauses: []
+    expect_empty: true
+
+  - id: "G015"
+    query: "ASME B31.3 工艺管道第302条"
+    query_type: negative_query
+    discipline: piping
+    note: "国际标准（ASME）未收录，知识库仅限中国国标/行标"
+    relevant_clauses: []
+    expect_empty: true
+
+  # ========== H. 跨专业综合查询（25条）==========
+  # 测试场景：一个查询涉及多个专业，需要跨 discipline 检索
+  # 预期行为：能返回多个专业的规范条文
+
+  - id: "D001"
+    query: "石化装置设计需要满足哪些消防和电气规范"
+    query_type: multi_discipline
+    discipline: fire
+    relevant_clauses:
+      - source_id: "GB 50160-2008"
+        clause: "5.2.1"
+        relevance: primary
+        discipline: fire
+      - source_id: "GB 50058-2014"
+        clause: "3.2.1"
+        relevance: secondary
+        discipline: electrical
+
+  - id: "D002"
+    query: "给排水和消防设计有什么关联规范"
+    query_type: multi_discipline
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50974-2014"
+        clause: "7.2.1"
+        relevance: primary
+        discipline: water
+      - source_id: "GB 50016-2014"
+        clause: "3.2.1"
+        relevance: secondary
+        discipline: fire
+
+  - id: "D003"
+    query: "管道设计和仪表选型如何配合"
+    query_type: multi_discipline
+    discipline: piping
+    relevant_clauses:
+      - source_id: "SH/T 3059-2012"
+        clause: "3.1"
+        relevance: primary
+        discipline: piping
+      - source_id: "HG/T 20507-2014"
+        clause: "3.1"
+        relevance: secondary
+        discipline: instrument
+
+  - id: "D004"
+    query: "压力容器和管道材料选择标准"
+    query_type: multi_discipline
+    discipline: equipment
+    relevant_clauses:
+      - source_id: "GB 150-2011"
+        clause: "4.1"
+        relevance: primary
+        discipline: equipment
+      - source_id: "SH/T 3059-2012"
+        clause: "3.1"
+        relevance: secondary
+        discipline: piping
+
+  - id: "D005"
+    query: "工艺设计和安全设计需要参照哪些标准"
+    query_type: multi_discipline
+    discipline: process
+    relevant_clauses:
+      - source_id: "SH/T 3011-2017"
+        clause: "6.1"
+        relevance: primary
+        discipline: process
+      - source_id: "GB 50160-2008"
+        clause: "5.2.1"
+        relevance: secondary
+        discipline: fire
+
+  - id: "D006"
+    query: "环保和给排水设计规范要求"
+    query_type: multi_discipline
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 18918-2002"
+        clause: "5.2.1"
+        relevance: primary
+        discipline: water
+      - source_id: "环境保护法"
+        clause: "第41条"
+        relevance: secondary
+        discipline: hse
+
+  - id: "D007"
+    query: "电气防爆和消防联动要求"
+    query_type: multi_discipline
+    discipline: electrical
+    relevant_clauses:
+      - source_id: "GB 50058-2014"
+        clause: "3.2.1"
+        relevance: primary
+        discipline: electrical
+      - source_id: "GB 50160-2008"
+        clause: "5.2.1"
+        relevance: secondary
+        discipline: fire
+
+  - id: "D008"
+    query: "设备布置和管道应力分析标准"
+    query_type: multi_discipline
+    discipline: equipment
+    relevant_clauses:
+      - source_id: "SH/T 3007-2014"
+        clause: "4.1"
+        relevance: primary
+        discipline: equipment
+      - source_id: "SH/T 3073-2016"
+        clause: "4.1"
+        relevance: secondary
+        discipline: piping
+
+  - id: "D009"
+    query: "控制室和仪表设计需满足什么安全规范"
+    query_type: multi_discipline
+    discipline: instrument
+    relevant_clauses:
+      - source_id: "HG/T 20508-2014"
+        clause: "4.1"
+        relevance: primary
+        discipline: instrument
+      - source_id: "SH/T 3006-2024"
+        clause: "8.1.1"
+        relevance: secondary
+        discipline: instrument
+      - source_id: "GB 50016-2014"
+        clause: "3.1.1"
+        relevance: secondary
+        discipline: fire
+
+  - id: "D010"
+    query: "特种设备和压力管道安全管理要求"
+    query_type: multi_discipline
+    discipline: equipment
+    relevant_clauses:
+      - source_id: "特种设备安全法"
+        clause: "第13条"
+        relevance: primary
+        discipline: hse
+      - source_id: "GB 150-2011"
+        clause: "4.1"
+        relevance: primary
+        discipline: equipment
+
+  - id: "D011"
+    query: "化工装置总图布置的消防和环保要求"
+    query_type: multi_discipline
+    discipline: fire
+    relevant_clauses:
+      - source_id: "GB 50187-2012"
+        clause: "4.1"
+        relevance: primary
+        discipline: fire
+      - source_id: "GB 50160-2008"
+        clause: "5.2.1"
+        relevance: secondary
+        discipline: fire
+
+  - id: "D012"
+    query: "污水处理和排放监测的法规要求"
+    query_type: multi_discipline
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 18918-2002"
+        clause: "5.2.1"
+        relevance: primary
+        discipline: water
+      - source_id: "环境保护法"
+        clause: "第63条"
+        relevance: secondary
+        discipline: hse
+
+  - id: "D013"
+    query: "管道材料和焊接工艺评定标准"
+    query_type: multi_discipline
+    discipline: piping
+    relevant_clauses:
+      - source_id: "SH/T 3059-2012"
+        clause: "3.1"
+        relevance: primary
+        discipline: piping
+      - source_id: "GB 50369-2014"
+        clause: "8"
+        relevance: secondary
+        discipline: piping
+
+  - id: "D014"
+    query: "罐区消防和防雷设计规范"
+    query_type: multi_discipline
+    discipline: fire
+    relevant_clauses:
+      - source_id: "GB 50160-2008"
+        clause: "5.2.1"
+        relevance: primary
+        discipline: fire
+      - source_id: "SH/T 3007-2014"
+        clause: "4.1"
+        relevance: secondary
+        discipline: equipment
+
+  - id: "D015"
+    query: "工艺联锁和安全仪表系统设计规范"
+    query_type: multi_discipline
+    discipline: instrument
+    relevant_clauses:
+      - source_id: "GB/T 50770-2013"
+        clause: "5.1"
+        relevance: primary
+        discipline: instrument
+      - source_id: "HG/T 20511-2014"
+        clause: "5.1"
+        relevance: secondary
+        discipline: instrument
+      - source_id: "SH/T 3011-2017"
+        clause: "6.1"
+        relevance: secondary
+        discipline: process
+
+  - id: "D016"
+    query: "循环水和给水系统设计规范"
+    query_type: multi_discipline
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50050-2017"
+        clause: "4.1.1"
+        relevance: primary
+        discipline: water
+      - source_id: "GB 50013-2018"
+        clause: "5.1.1"
+        relevance: secondary
+        discipline: water
+
+  - id: "D017"
+    query: "消防水泵和消防给水管道设计"
+    query_type: multi_discipline
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50974-2014"
+        clause: "7.2.1"
+        relevance: primary
+        discipline: water
+      - source_id: "GB 50013-2018"
+        clause: "7.3.1"
+        relevance: secondary
+        discipline: water
+
+  - id: "D018"
+    query: "防爆电气和可燃气体检测联动设计"
+    query_type: multi_discipline
+    discipline: electrical
+    relevant_clauses:
+      - source_id: "GB 50058-2014"
+        clause: "3.2.1"
+        relevance: primary
+        discipline: electrical
+      - source_id: "GB 50493-2019"
+        clause: "4.2.1"
+        relevance: secondary
+        discipline: instrument
+
+  - id: "D019"
+    query: "压力容器和安全阀的检验规范"
+    query_type: multi_discipline
+    discipline: equipment
+    relevant_clauses:
+      - source_id: "GB 150-2011"
+        clause: "4.1"
+        relevance: primary
+        discipline: equipment
+      - source_id: "特种设备安全法"
+        clause: "第33条"
+        relevance: secondary
+        discipline: hse
+
+  - id: "D020"
+    query: "热交换器和循环水系统设计规范"
+    query_type: multi_discipline
+    discipline: equipment
+    relevant_clauses:
+      - source_id: "GB/T 151-2014"
+        clause: "5.1"
+        relevance: primary
+        discipline: equipment
+      - source_id: "GB 50050-2017"
+        clause: "4.1.1"
+        relevance: secondary
+        discipline: water
+
+  - id: "D021"
+    query: "企业安全生产和职业健康管理规范"
+    query_type: multi_discipline
+    discipline: hse
+    relevant_clauses:
+      - source_id: "安全生产法"
+        clause: "第4条"
+        relevance: primary
+        discipline: hse
+      - source_id: "职业病防治法"
+        clause: "第25条"
+        relevance: secondary
+        discipline: hse
+
+  - id: "D022"
+    query: "消防设计和建筑防火设计规范"
+    query_type: multi_discipline
+    discipline: fire
+    relevant_clauses:
+      - source_id: "GB 50160-2008"
+        clause: "5.2.1"
+        relevance: primary
+        discipline: fire
+      - source_id: "GB 50016-2014"
+        clause: "3.2.1"
+        relevance: secondary
+        discipline: fire
+
+  - id: "D023"
+    query: "排水和污水处理设计规范"
+    query_type: multi_discipline
+    discipline: water
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.1"
+        relevance: primary
+        discipline: water
+      - source_id: "GB 18918-2002"
+        clause: "5.2.1"
+        relevance: secondary
+        discipline: water
+
+  - id: "D024"
+    query: "控制室、仪表和电气抗干扰设计规范"
+    query_type: multi_discipline
+    discipline: instrument
+    relevant_clauses:
+      - source_id: "SH/T 3006-2024"
+        clause: "8.1.1"
+        relevance: primary
+        discipline: instrument
+      - source_id: "HG/T 20508-2014"
+        clause: "4.1"
+        relevance: secondary
+        discipline: instrument
+
+  - id: "D025"
+    query: "管道设计、应力分析和支吊架规范"
+    query_type: multi_discipline
+    discipline: piping
+    relevant_clauses:
+      - source_id: "SH/T 3059-2012"
+        clause: "3.1"
+        relevance: primary
+        discipline: piping
+      - source_id: "SH/T 3073-2016"
+        clause: "4.1"
+        relevance: secondary
+        discipline: piping
+      - source_id: "SH/T 3012-2011"
+        clause: "4.1"
+        relevance: secondary
+        discipline: piping
+
+  # ========== I. 边界/压力测试（20条）==========
+  # 测试场景：极端输入、超长查询、特殊字符等
+
+  - id: "B001"
+    query: "DN"
+    query_type: numeric_lookup
+    discipline: water
+    note: "极短查询，测试单字符输入"
+    relevant_clauses:
+      - source_id: "GB 50014-2021"
+        clause: "5.2.1"
+        relevance: primary
+
+  - id: "B002"
+    query: "消防水泵房的设计需要满足哪些规范要求包括给水管径流速压力消火栓设置间距消防水池容量以及电气控制和报警系统的联动要求"
+    query_type: concept_search
+    discipline: water
+    note: "超长查询，测试分词和召回能力"
+    relevant_clauses:
+      - source_id: "GB 50974-2014"
+        clause: "7.2.1"
+        relevance: primary
+
+  - id: "B003"
+    query: "GB-50160 第5.2.3条"
+    query_type: exact_lookup
+    discipline: process
+    note: "测试规范号带连字符的变体格式"
+    relevant_clauses:
+      - source_id: "GB 50160-2008"
+        clause: "5.2.3"
+        relevance: primary
+
+  - id: "B004"
+    query: "gb 50016 3.2.1"
+    query_type: exact_lookup
+    discipline: fire
+    note: "测试小写规范号查询"
+    relevant_clauses:
+      - source_id: "GB 50016-2014"
+        clause: "3.2.1"
+        relevance: primary
+
+  - id: "B005"
+    query: "Sh/t 3006-2024"
+    query_type: exact_lookup
+    discipline: instrument
+    note: "测试大小写混合的规范号查询"
+    relevant_clauses:
+      - source_id: "SH/T 3006-2024"
+        clause: "8.1.1"
+        relevance: primary
+
+  - id: "B006"
+    query: "COD、BOD5、SS、氨氮、总磷"
+    query_type: numeric_lookup
+    discipline: water
+    note: "测试以参数列表形式查询"
+    relevant_clauses:
+      - source_id: "GB 18918-2002"
+        clause: "5.2.1"
+        relevance: primary
+
+  - id: "B007"
+    query: "消防给水系统设计流量不小于 L/s"
+    query_type: concept_search
+    discipline: water
+    note: "测试带单位的模糊查询"
+    relevant_clauses:
+      - source_id: "GB 50974-2014"
+        clause: "7.2.1"
+        relevance: primary
+
+  - id: "B008"
+    query: "管道设计温度≥350℃时材料选用"
+    query_type: concept_search
+    discipline: piping
+    note: "测试带比较运算符和特殊字符的查询"
+    relevant_clauses:
+      - source_id: "SH/T 3059-2012"
+        clause: "3.1"
+        relevance: primary
+
+  - id: "B009"
+    query: "爆炸危险区域0区1区2区划分"
+    query_type: concept_search
+    discipline: electrical
+    note: "测试带区域编号的查询"
+    relevant_clauses:
+      - source_id: "GB 50058-2014"
+        clause: "3.2.1"
+        relevance: primary
+
+  - id: "B010"
+    query: ""  # 空查询
+    query_type: concept_search
+    discipline: water
+    note: "测试空查询的鲁棒性"
+    relevant_clauses: []
+    expect_empty: true
+
+  - id: "B011"
+    query: "φ114.3×4.0管道外径"
+    query_type: concept_search
+    discipline: piping
+    note: "测试带希腊字母和乘号的查询"
+    relevant_clauses:
+      - source_id: "SH/T 3059-2012"
+        clause: "3.1"
+        relevance: primary
+
+  - id: "B012"
+    query: "压力1.6MPa以上管道法兰标准"
+    query_type: concept_search
+    discipline: piping
+    note: "测试带单位数值的查询"
+    relevant_clauses:
+      - source_id: "SH/T 3012-2011"
+        clause: "4.1"
+        relevance: primary
+
+  - id: "B013"
+    query: "Q235B、Q345R、304、316L"
+    query_type: concept_search
+    discipline: equipment
+    note: "测试以材料牌号列表查询"
+    relevant_clauses:
+      - source_id: "GB 150-2011"
+        clause: "4.1"
+        relevance: primary
+
+  - id: "B014"
+    query: "SIL1 SIL2 SIL3 区别"
+    query_type: concept_search
+    discipline: instrument
+    note: "测试带等级缩写的对比查询"
+    relevant_clauses:
+      - source_id: "GB/T 50770-2013"
+        clause: "5.1"
+        relevance: primary
+
+  - id: "B015"
+    query: "设备布置间距 ≥ 1.5m"
+    query_type: concept_search
+    discipline: equipment
+    note: "测试带比较符号和单位的查询"
+    relevant_clauses:
+      - source_id: "SH/T 3007-2014"
+        clause: "4.1"
+        relevance: primary
+
+  - id: "B016"
+    query: "第4条 第5条 第41条 第44条"
+    query_type: exact_lookup
+    discipline: hse
+    note: "测试批量条款号查询"
+    relevant_clauses:
+      - source_id: "安全生产法"
+        clause: "第4条"
+        relevance: primary
+      - source_id: "安全生产法"
+        clause: "第5条"
+        relevance: secondary
+      - source_id: "安全生产法"
+        clause: "第41条"
+        relevance: secondary
+      - source_id: "安全生产法"
+        clause: "第44条"
+        relevance: secondary
+
+  - id: "B017"
+    query: "GB 50013|GB 50014|GB 50015|GB 50016"
+    query_type: exact_lookup
+    discipline: water
+    note: "测试管道符分隔的多规范查询"
+    relevant_clauses:
+      - source_id: "GB 50013-2018"
+        clause: "5.1.1"
+        relevance: primary
+      - source_id: "GB 50014-2021"
+        clause: "5.2.1"
+        relevance: secondary
+
+  - id: "B018"
+    query: "   消防   给水   管径   "
+    query_type: concept_search
+    discipline: water
+    note: "测试多余空格的查询"
+    relevant_clauses:
+      - source_id: "GB 50974-2014"
+        clause: "7.2.1"
+        relevance: primary
+
+  - id: "B019"
+    query: "消防&给水&管径"
+    query_type: concept_search
+    discipline: water
+    note: "测试带特殊符号分隔符的查询"
+    relevant_clauses:
+      - source_id: "GB 50974-2014"
+        clause: "7.2.1"
+        relevance: primary
+
+  - id: "B020"
+    query: "GB 50160-2008（2018年版）"
+    query_type: exact_lookup
+    discipline: fire
+    note: "测试带括号版本号的完整规范名查询"
+    relevant_clauses:
+      - source_id: "GB 50160-2008"
+        clause: "5.2.1"
+        relevance: primary

@@ -1,0 +1,17 @@
+{
+  "name": "vdi-orchestrator-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "VDI 编排调度 MCP 服务 — 任务包创建、WBS 拆解、任务派发、里程碑跟踪",
+  "bin": {
+    "vdi-orchestrator-mcp": "./server.mjs"
+  },
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "zod": "^3.24.0"
+  }
+}

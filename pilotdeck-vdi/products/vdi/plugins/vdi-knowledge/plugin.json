@@ -1,0 +1,17 @@
+{
+  "name": "vdi-knowledge",
+  "version": "0.1.0",
+  "description": "VDI 规范与知识库检索（深集成）。MCP 工具：vdi_search_knowledge、vdi_get_citation。",
+  "mcpServers": {
+    "vdi-knowledge": {
+      "command": "node",
+      "args": ["/workspace/pilotdeck-vdi/mcp/vdi-knowledge/server.mjs"],
+      "env": {
+        "VDI_KNOWLEDGE_INDEX": "/root/.pilotdeck/vdi/knowledge-clauses.json"
+      }
+    }
+  },
+  "settings": {
+    "indexPath": "/root/.pilotdeck/vdi/knowledge-clauses.json"
+  }
+}

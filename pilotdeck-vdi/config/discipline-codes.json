@@ -1,0 +1,114 @@
+{
+  "version": "1.0.0",
+  "description": "VDI 数字工程师学科代码体系 — 三级分级架构：学科码(2) + 子专业码(1) + 职能码(1)",
+  "schema": {
+    "format": "{DD}{S}{R}",
+    "position_1_2": { "name": "discipline", "length": 2, "type": "uppercase_alpha", "description": "学科码" },
+    "position_3": { "name": "sub_discipline", "length": 1, "type": "alphanumeric", "description": "子专业码，0=专业级" },
+    "position_4": { "name": "role", "length": 1, "type": "uppercase_alpha", "description": "职能码" }
+  },
+
+  "disciplines": {
+    "WA": { "name": "给排水", "name_en": "Water Supply & Drainage", "active": true, "lead_code": "WA0L" },
+    "PR": { "name": "工艺", "name_en": "Process", "active": true, "lead_code": "PR0L" },
+    "MG": { "name": "管理", "name_en": "Management", "active": true, "lead_code": "MGDM" },
+    "PI": { "name": "管道", "name_en": "Piping", "active": false },
+    "IN": { "name": "仪控", "name_en": "Instrument", "active": false },
+    "EL": { "name": "电气", "name_en": "Electrical", "active": false },
+    "EQ": { "name": "设备", "name_en": "Equipment", "active": false },
+    "HV": { "name": "暖通", "name_en": "HVAC", "active": false },
+    "FI": { "name": "消防", "name_en": "Fire Protection", "active": false },
+    "HS": { "name": "HSE", "name_en": "HSE", "active": false },
+    "ST": { "name": "结构", "name_en": "Structure", "active": false },
+    "AR": { "name": "建筑", "name_en": "Architecture", "active": false },
+    "SI": { "name": "总图", "name_en": "Site", "active": false },
+    "TH": { "name": "热工", "name_en": "Thermal", "active": false },
+    "TC": { "name": "电信", "name_en": "Telecom", "active": false },
+    "QA": { "name": "质量", "name_en": "Quality Assurance", "active": false }
+  },
+
+  "sub_disciplines": {
+    "WA": {
+      "0": { "name": "专业级", "description": "给排水专业负责人级别" },
+      "S": { "name": "给水系统", "description": "生活/生产给水系统设计" },
+      "F": { "name": "消防给水", "description": "消防给水系统设计" },
+      "D": { "name": "排水系统", "description": "排水系统设计" },
+      "R": { "name": "雨水系统", "description": "雨水系统设计" },
+      "W": { "name": "污水处理", "description": "污水处理系统设计" },
+      "C": { "name": "循环水", "description": "循环水系统设计" },
+      "E": { "name": "设备选型", "description": "给排水设备选型" },
+      "H": { "name": "水力计算", "description": "给排水水力计算" }
+    },
+    "PR": {
+      "0": { "name": "专业级", "description": "工艺专业负责人级别" },
+      "C": { "name": "工艺计算", "description": "物料/热量/设备尺寸计算" },
+      "S": { "name": "流程模拟", "description": "Aspen/HYSYS 流程模拟" },
+      "P": { "name": "PFD/PID", "description": "PFD/P&ID 设计" },
+      "B": { "name": "物料平衡", "description": "物料热量平衡" },
+      "R": { "name": "工艺路线", "description": "工艺路线设计基础" },
+      "E": { "name": "设备数据表", "description": "工艺设备数据表" },
+      "F": { "name": "安全分析", "description": "HAZOP/SIL/安全阀" },
+      "U": { "name": "公用工程", "description": "公用工程排放" }
+    },
+    "MG": {
+      "0": { "name": "管理级", "description": "管理层级别" },
+      "D": { "name": "设计管理", "description": "设计经理" },
+      "S": { "name": "计划调度", "description": "计划调度" }
+    }
+  },
+
+  "roles": {
+    "L": { "name": "负责人", "description": "Lead — 管理子专业、派发任务、三审三校组织" },
+    "D": { "name": "设计", "description": "Designer — 独立完成子专业设计任务" },
+    "C": { "name": "计算", "description": "Calculation — 专项技术计算引擎" },
+    "E": { "name": "选型", "description": "Equipment Selection — 设备选型引擎" },
+    "M": { "name": "管理", "description": "Manager — 项目管理/进度控制" },
+    "S": { "name": "模拟", "description": "Simulation — 流程模拟引擎" },
+    "F": { "name": "安全分析", "description": "Safety Analysis — HAZOP/SIL 分析" },
+    "R": { "name": "校核", "description": "Reviewer — 校审人" },
+    "A": { "name": "审定", "description": "Approver — 最终审定人" }
+  },
+
+  "skill_code_map": {
+    "vdi-water-lead":        { "code": "WA0L", "level": 1 },
+    "vdi-water-supply":      { "code": "WASD", "level": 2 },
+    "vdi-water-fire":        { "code": "WAFD", "level": 2 },
+    "vdi-water-drainage":    { "code": "WADD", "level": 2 },
+    "vdi-water-stormwater":  { "code": "WARD", "level": 2 },
+    "vdi-water-wastewater":  { "code": "WAWD", "level": 2 },
+    "vdi-water-circulating": { "code": "WACD", "level": 2 },
+    "vdi-water-equipment":   { "code": "WAEE", "level": 3 },
+    "vdi-water-hydraulics":  { "code": "WAHC", "level": 3 },
+    "vdi-process-lead":        { "code": "PR0L", "level": 1 },
+    "vdi-process-calc":        { "code": "PRCC", "level": 3 },
+    "vdi-process-simulation":  { "code": "PRSS", "level": 3 },
+    "vdi-process-pfd-pid":     { "code": "PRPD", "level": 2 },
+    "vdi-process-balance":     { "code": "PRBD", "level": 2 },
+    "vdi-process-route":       { "code": "PRRD", "level": 2 },
+    "vdi-process-equipment":   { "code": "PRED", "level": 2 },
+    "vdi-process-safety":      { "code": "PRFD", "level": 2 },
+    "vdi-process-utilities":   { "code": "PRUD", "level": 2 },
+    "vdi-design-manager":    { "code": "MGDM", "level": 1 },
+    "vdi-scheduler-agent":   { "code": "MGSM", "level": 1 }
+  },
+
+  "discipline_slug_mapping": {
+    "water": "WA",
+    "process": "PR",
+    "design_management": "MG",
+    "scheduler": "MG",
+    "piping": "PI",
+    "instrument": "IN",
+    "electrical": "EL",
+    "equipment": "EQ",
+    "hvac": "HV",
+    "fire": "FI",
+    "hse": "HS",
+    "structure": "ST",
+    "architecture": "AR",
+    "site": "SI",
+    "thermal": "TH",
+    "telecom": "TC",
+    "qa": "QA"
+  }
+}

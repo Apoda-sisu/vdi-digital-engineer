@@ -1,0 +1,33 @@
+{
+  "mcpServers": {
+    "vdi-knowledge": {
+      "command": "node",
+      "args": ["/workspace/pilotdeck-vdi/mcp/vdi-knowledge/server-v2.mjs"],
+      "env": {
+        "VDI_KNOWLEDGE_INDEX": "/root/.pilotdeck/vdi/knowledge-clauses-v2.json"
+      }
+    },
+    "vdi-orchestrator": {
+      "command": "node",
+      "args": ["/workspace/pilotdeck-vdi/mcp/vdi-orchestrator/server.mjs"],
+      "env": {
+        "VDI_WORKSPACE_ROOT": "/workspace/workspaces"
+      }
+    },
+    "vdi-rules": {
+      "command": "node",
+      "args": ["/workspace/pilotdeck-vdi/mcp/vdi-rules/server.mjs"],
+      "env": {
+        "VDI_RULES_PATH": "/workspace/pilotdeck-vdi/mcp/vdi-rules/vdi-rules.json"
+      }
+    },
+    "vdi-events": {
+      "command": "node",
+      "args": ["/workspace/pilotdeck-vdi/mcp/vdi-events/server.mjs"],
+      "env": {
+        "VDI_WORKSPACE_ROOT": "/workspace/workspaces",
+        "VDI_EVENTS_REGISTRY": "/workspace/pilotdeck-vdi/mcp/vdi-events/event-registry.json"
+      }
+    }
+  }
+}

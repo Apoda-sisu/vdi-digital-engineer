@@ -1,0 +1,6 @@
+mcp/vdi-knowledge/node_modules/
+data/knowledge-clauses.json
+.env
+.env.local
+collector/.env
+collector/config/*.env
