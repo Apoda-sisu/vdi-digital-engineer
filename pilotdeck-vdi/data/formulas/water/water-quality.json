@@ -1,0 +1,39 @@
+{
+  "file": "water/water-quality.json",
+  "discipline": "water",
+  "category": "water_quality",
+  "formula_count": 1,
+  "formulas": [
+    {
+      "formula_id": "WA-WQ-001",
+      "name": "循环冷却水补充水量",
+      "name_en": "Cooling Tower Makeup Water",
+      "discipline": "water",
+      "category": "water_quality/circulation",
+      "type": "exact",
+      "equation_text": "M = E + D + F",
+      "equation_latex": "M = E + D + F",
+      "equation_ast": {"op": "add", "args": [{"var": "E"}, {"var": "D"}, {"var": "F"}]},
+      "variables": [
+        {"symbol": "M", "name": "补充水量", "unit": "m3/h", "role": "output"},
+        {"symbol": "E", "name": "蒸发损失量", "unit": "m3/h", "role": "input",
+          "desc": "与冷却温差和循环水量有关，E≈0.0015*R*ΔT"},
+        {"symbol": "D", "name": "风吹损失量", "unit": "m3/h", "role": "input",
+          "desc": "一般取循环水量的0.1%-0.5%"},
+        {"symbol": "F", "name": "排污损失量", "unit": "m3/h", "role": "input",
+          "desc": "取决于浓缩倍数，F=E/(N-1)-D，N为浓缩倍数"}
+      ],
+      "source": {"standard_id": "GB 50050-2017", "clause": "5.2.1"},
+      "related_formulas": [
+        {"formula_id": "WA-WQ-002", "relation": "complement", "note": "浓缩倍数计算"}
+      ],
+      "tags": ["循环冷却水", "补充水量", "水量平衡"],
+      "keywords": ["补充水量", "蒸发损失", "排污损失", "M=E+D+F", "冷却塔"],
+      "precision": "精确",
+      "created_at": "2026-06-04T00:00:00Z",
+      "updated_at": "2026-06-04T00:00:00Z",
+      "version": 1
+    }
+  ],
+  "tables": []
+}

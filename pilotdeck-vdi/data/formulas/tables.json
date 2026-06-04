@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "table_count": 3,
+  "tables": [
+    {
+      "table_id": "TBL-C-001",
+      "name": "海曾-威廉姆斯 C 值表",
+      "discipline": "water",
+      "category": "material_property",
+      "columns": [
+        {"key": "material", "name": "管材", "type": "string"},
+        {"key": "C_new", "name": "新管C值", "type": "number"},
+        {"key": "C_used", "name": "使用10年C值", "type": "number"},
+        {"key": "notes", "name": "备注", "type": "string"}
+      ],
+      "rows": [
+        {"material": "球墨铸铁管", "C_new": 130, "C_used": 120, "notes": "内衬水泥砂浆"},
+        {"material": "钢管", "C_new": 120, "C_used": 100, "notes": "内壁防腐处理"},
+        {"material": "PE管", "C_new": 140, "C_used": 140, "notes": "塑料管不老化"},
+        {"material": "HDPE管", "C_new": 140, "C_used": 140, "notes": ""},
+        {"material": "UPVC管", "C_new": 140, "C_used": 135, "notes": ""},
+        {"material": "混凝土管", "C_new": 130, "C_used": 100, "notes": "内壁粗糙"},
+        {"material": "玻璃钢管", "C_new": 150, "C_used": 145, "notes": "FRP"}
+      ],
+      "source": {"standard_id": "GB 50013-2018", "clause": "7.1.3"},
+      "referenced_by": ["WA-HYD-001"],
+      "tags": ["C值", "粗糙系数", "管材参数"]
+    },
+    {
+      "table_id": "TBL-N-001",
+      "name": "曼宁粗糙系数 n 值表",
+      "discipline": "water",
+      "category": "material_property",
+      "columns": [
+        {"key": "material", "name": "管材", "type": "string"},
+        {"key": "n", "name": "粗糙系数", "type": "number"},
+        {"key": "notes", "name": "备注", "type": "string"}
+      ],
+      "rows": [
+        {"material": "混凝土管", "n": 0.013, "notes": "普通混凝土"},
+        {"material": "钢筋混凝土管", "n": 0.013, "notes": ""},
+        {"material": "HDPE管", "n": 0.009, "notes": "双壁波纹管"},
+        {"material": "UPVC管", "n": 0.009, "notes": ""},
+        {"material": "陶土管", "n": 0.013, "notes": ""},
+        {"material": "铸铁管", "n": 0.013, "notes": "水泥砂浆内衬"},
+        {"material": "钢管", "n": 0.012, "notes": "焊接钢管"}
+      ],
+      "source": {"standard_id": "GB 50014-2021", "clause": "4.2.6"},
+      "referenced_by": ["WA-HYD-002"],
+      "tags": ["粗糙系数", "曼宁", "管材参数"]
+    },
+    {
+      "table_id": "TBL-PSI-001",
+      "name": "径流系数 ψ 值表",
+      "discipline": "water",
+      "category": "surface_property",
+      "columns": [
+        {"key": "surface", "name": "地面覆盖", "type": "string"},
+        {"key": "psi", "name": "径流系数", "type": "number"},
+        {"key": "notes", "name": "备注", "type": "string"}
+      ],
+      "rows": [
+        {"surface": "各种屋面、混凝土或沥青路面", "psi": 0.90, "notes": ""},
+        {"surface": "大块石铺砌路面、沥青表面处理碎石路面", "psi": 0.60, "notes": ""},
+        {"surface": "级配碎石路面", "psi": 0.45, "notes": ""},
+        {"surface": "干砌砖石或碎石路面", "psi": 0.40, "notes": ""},
+        {"surface": "非铺砌土地面", "psi": 0.30, "notes": ""},
+        {"surface": "公园或绿地", "psi": 0.15, "notes": ""},
+        {"surface": "透水铺装地面", "psi": 0.29, "notes": "3年重现期"}
+      ],
+      "source": {"standard_id": "GB 50014-2021", "clause": "4.2.2"},
+      "referenced_by": ["WA-RAI-001"],
+      "tags": ["径流系数", "地面覆盖", "雨水计算"]
+    }
+  ]
+}

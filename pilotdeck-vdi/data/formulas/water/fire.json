@@ -1,0 +1,67 @@
+{
+  "file": "water/fire.json",
+  "discipline": "water",
+  "category": "fire",
+  "formula_count": 2,
+  "formulas": [
+    {
+      "formula_id": "WA-FIR-001",
+      "name": "消防水池有效容积",
+      "name_en": "Fire Pool Effective Volume",
+      "discipline": "water",
+      "category": "fire/fire_pool",
+      "type": "exact",
+      "equation_text": "V = (Qf - Qb) * T",
+      "equation_latex": "V = (Q_f - Q_b) \\cdot T",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {"op": "sub", "args": [{"var": "Qf"}, {"var": "Qb"}]},
+          {"var": "T"}
+        ]
+      },
+      "variables": [
+        {"symbol": "V", "name": "消防水池有效容积", "unit": "m3", "role": "output"},
+        {"symbol": "Qf", "name": "消防用水量", "unit": "m3/h", "role": "input",
+          "desc": "室内外消防用水量之和"},
+        {"symbol": "Qb", "name": "补水量", "unit": "m3/h", "role": "input",
+          "desc": "火灾延续时间内的连续补水量，两路供水时可扣除"},
+        {"symbol": "T", "name": "火灾延续时间", "unit": "h", "role": "input",
+          "desc": "根据建筑类型确定，一般取2-3h"}
+      ],
+      "source": {"standard_id": "GB 50974-2014", "clause": "5.3.1"},
+      "tags": ["消防水池", "有效容积", "消防用水"],
+      "keywords": ["消防水池容积", "消防水池计算", "火灾延续时间"],
+      "precision": "精确",
+      "created_at": "2026-06-04T00:00:00Z",
+      "updated_at": "2026-06-04T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "WA-FIR-002",
+      "name": "消火栓系统设计流量",
+      "name_en": "Hydrant System Design Flow",
+      "discipline": "water",
+      "category": "fire/hydrant",
+      "type": "lookup",
+      "equation_text": "Qx = n * qx",
+      "equation_latex": "Q_x = n \\cdot q_x",
+      "equation_ast": {"op": "mul", "args": [{"var": "n"}, {"var": "qx"}]},
+      "variables": [
+        {"symbol": "Qx", "name": "消火栓系统设计流量", "unit": "L/s", "role": "output"},
+        {"symbol": "n", "name": "同时使用水枪数", "unit": "支", "role": "input",
+          "desc": "根据建筑类型和高度查规范表"},
+        {"symbol": "qx", "name": "每支水枪流量", "unit": "L/s", "role": "input",
+          "desc": "一般取5L/s（DN65水枪）"}
+      ],
+      "source": {"standard_id": "GB 50974-2014", "clause": "5.1.1"},
+      "tags": ["消火栓", "设计流量", "消防"],
+      "keywords": ["消火栓流量", "水枪流量", "同时使用"],
+      "precision": "精确",
+      "created_at": "2026-06-04T00:00:00Z",
+      "updated_at": "2026-06-04T00:00:00Z",
+      "version": 1
+    }
+  ],
+  "tables": []
+}

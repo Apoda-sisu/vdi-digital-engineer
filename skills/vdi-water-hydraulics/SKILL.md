@@ -28,7 +28,7 @@ metadata:
 
 ## 角色定位
 
-本 Skill 是**纯计算引擎**，被二级 Skill（supply/fire/drainage 等）调用执行原子水力计算。不接收设计任务，不输出 DisciplineOutput，不引用规范。
+本 Skill 是**公式调度器**，被二级 Skill（supply/fire/drainage 等）调用执行原子水力计算。所有计算通过 `vdi-knowledge` MCP 的公式工具（`vdi_search_formulas` → `vdi_calculate`）执行，禁止脑算。不接收设计任务，不输出 DisciplineOutput。
 
 ## 输入/输出协议
 
@@ -132,34 +132,39 @@ metadata:
 
 ## 计算方法
 
-### 给水管道（海曾-威廉姆斯公式）
-```
-Hf = 10.67 × L × Q^1.852 / (C^1.852 × D^4.87)
-D: 管径 (m), Q: 流量 (m³/s), L: 长度 (m), C: 系数（球墨铸铁=130, 钢管=120, PE=140）
-```
+> **所有计算必须通过 `vdi_calculate` MCP 工具执行，禁止脑算。**
 
-### 排水管道（曼宁公式）
-```
-V = (1/n) × R^(2/3) × S^(1/2)
-Q = A × V
-n: 粗糙系数（混凝土=0.013, HDPE=0.009）, R: 水力半径, S: 坡度
-```
+### 调用流程
 
-### 局部水头损失
-```
-Hl = Σζ × V²/(2g)
-ζ: 局部阻力系数，常规取沿程损失的 20-30%
-```
+1. 根据 `calc_type` 查找下表对应的公式 ID
+2. 调用 `vdi_search_formulas(query="<公式名称>", discipline="water")` 确认公式存在
+3. 调用 `vdi_calculate(formula_id="<ID>", inputs={...}, input_units={...})` 执行计算
+4. 如需查表参数（C 值、n 值），MCP 通过 `look_up` 机制自动从参数表获取
+5. 检查返回的 `validation.warnings`，如有警告则人工确认
+6. 将 `audit.evidence_tag` 写入输出
 
-## 常用参数速查
+### calc_type → 公式 ID 映射
 
-| 管材 | C 值（海曾-威廉姆斯） | n 值（曼宁） | 经济流速 (m/s) |
-|------|---------------------|-------------|---------------|
-| 球墨铸铁 | 130 | - | 1.5-2.0 (DN50-100) |
-| 钢管 | 120 | - | 1.5-2.5 |
-| PE/HDPE | 140 | 0.009 | 1.0-1.8 |
-| 混凝土管 | - | 0.013 | 0.6-1.0 (污水), 0.75-1.5 (雨水) |
-| UPVC | 140 | 0.009 | 1.0-1.5 |
+| calc_type | 公式 ID | 说明 |
+|-----------|---------|------|
+| water_supply_pipe | WA-HYD-001 | 海曾-威廉姆斯沿程水头损失 |
+| gravity_drain | WA-HYD-002 + WA-HYD-003 | 曼宁公式 + 流量公式 |
+| fire_pipe | WA-HYD-001 | 消防管道（同给水） |
+| worst_point_pressure | WA-HYD-001 + WA-HYD-005 | 沿程 + 局部水头损失 |
+| pump_power | WA-EQ-001 | 水泵轴功率 |
+
+### 调用示例
+
+```
+# 给水管道水头损失
+vdi_calculate(formula_id="WA-HYD-001", inputs={L: 350, Q: 0.0125, C: 130, D: 0.1})
+
+# 排水管道流速
+vdi_calculate(formula_id="WA-HYD-002", inputs={n: 0.009, R: 0.0625, S: 0.003})
+
+# 局部水头损失
+vdi_calculate(formula_id="WA-HYD-005", inputs={Hf: 11.5, k: 0.25})
+```
 
 ## 使用方式
 

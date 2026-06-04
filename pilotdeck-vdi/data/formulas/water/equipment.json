@@ -1,0 +1,70 @@
+{
+  "file": "water/equipment.json",
+  "discipline": "water",
+  "category": "equipment",
+  "formula_count": 2,
+  "formulas": [
+    {
+      "formula_id": "WA-EQ-001",
+      "name": "水泵轴功率",
+      "name_en": "Pump Shaft Power",
+      "discipline": "water",
+      "category": "equipment/pump",
+      "type": "exact",
+      "equation_text": "P = ρ * g * Q * H / (1000 * η)",
+      "equation_latex": "P = \\frac{\\rho \\cdot g \\cdot Q \\cdot H}{1000 \\cdot \\eta}",
+      "equation_ast": {
+        "op": "div",
+        "num": {"op": "mul", "args": [{"var": "ρ"}, {"var": "g"}, {"var": "Q"}, {"var": "H"}]},
+        "den": {"op": "mul", "args": [{"const": 1000}, {"var": "η"}]}
+      },
+      "variables": [
+        {"symbol": "P", "name": "水泵轴功率", "unit": "kW", "role": "output", "desc": "水泵轴功率"},
+        {"symbol": "ρ", "name": "液体密度", "unit": "kg/m3", "role": "input", "default": 1000, "desc": "清水密度1000kg/m3"},
+        {"symbol": "g", "name": "重力加速度", "unit": "m/s2", "role": "input", "default": 9.81},
+        {"symbol": "Q", "name": "流量", "unit": "m3/s", "role": "input", "constraints": {"min": 0, "exclusive_min": true},
+          "alt_units": [{"unit": "m3/h", "factor": 0.000278}, {"unit": "L/s", "factor": 0.001}]},
+        {"symbol": "H", "name": "扬程", "unit": "m", "role": "input", "constraints": {"min": 0, "exclusive_min": true},
+          "desc": "水泵总扬程"},
+        {"symbol": "η", "name": "水泵效率", "unit": "-", "role": "input", "constraints": {"min": 0.1, "max": 1.0},
+          "desc": "水泵效率，一般取0.6-0.85"}
+      ],
+      "source": {"standard_id": "GB 50015-2019", "clause": "3.8.8"},
+      "related_formulas": [
+        {"formula_id": "WA-EQ-002", "relation": "complement", "note": "电机功率=轴功率/电机效率"}
+      ],
+      "tags": ["水泵", "轴功率", "选型"],
+      "keywords": ["水泵功率", "轴功率", "泵功率计算", "P=ρgQH/η"],
+      "precision": "精确",
+      "created_at": "2026-06-04T00:00:00Z",
+      "updated_at": "2026-06-04T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "WA-EQ-002",
+      "name": "水泵电机功率",
+      "name_en": "Pump Motor Power",
+      "discipline": "water",
+      "category": "equipment/pump",
+      "type": "exact",
+      "equation_text": "Pm = P / ηm",
+      "equation_latex": "P_m = \\frac{P}{\\eta_m}",
+      "equation_ast": {"op": "div", "num": {"var": "P"}, "den": {"var": "ηm"}},
+      "variables": [
+        {"symbol": "Pm", "name": "电机功率", "unit": "kW", "role": "output", "desc": "配套电机功率"},
+        {"symbol": "P", "name": "水泵轴功率", "unit": "kW", "role": "input"},
+        {"symbol": "ηm", "name": "电机效率", "unit": "-", "role": "input", "default": 0.9,
+          "desc": "电机效率，一般取0.85-0.95"}
+      ],
+      "source": {"standard_id": "GB 50015-2019", "clause": "3.8.8"},
+      "related_formulas": [{"formula_id": "WA-EQ-001", "relation": "prerequisite", "note": "需先计算轴功率"}],
+      "tags": ["水泵", "电机功率", "选型"],
+      "keywords": ["电机功率", "配套功率", "水泵选型"],
+      "precision": "精确",
+      "created_at": "2026-06-04T00:00:00Z",
+      "updated_at": "2026-06-04T00:00:00Z",
+      "version": 1
+    }
+  ],
+  "tables": []
+}

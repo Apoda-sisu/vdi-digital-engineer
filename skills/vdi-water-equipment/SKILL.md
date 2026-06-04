@@ -27,7 +27,7 @@ metadata:
 
 ## 角色定位
 
-本 Skill 是**纯选型引擎**，被二级 Skill 调用执行设备参数匹配和构筑物尺寸估算。不接收设计任务，不输出 DisciplineOutput。
+本 Skill 是**公式调度器 + 选型引擎**，被二级 Skill 调用执行设备参数匹配和构筑物尺寸估算。功率计算等数值计算通过 `vdi-knowledge` MCP 的公式工具执行，禁止脑算。不接收设计任务，不输出 DisciplineOutput。
 
 ## 输入/输出协议
 
@@ -163,6 +163,34 @@ metadata:
   "spacing_m": 10,
   "note": "3 台 × 800m³/h（2 用 1 备），间距 ≥ 1.5 倍直径"
 }
+```
+
+## 计算方法
+
+> **所有数值计算必须通过 `vdi_calculate` MCP 工具执行，禁止脑算。**
+
+### 常用公式
+
+| 计算场景 | 公式 ID | 说明 |
+|----------|---------|------|
+| 水泵轴功率 | WA-EQ-001 | P = ρgQH/η |
+| 水泵电机功率 | WA-EQ-002 | Pm = P/ηm |
+| 消防水池容积 | WA-FIR-001 | V = (Qf-Qb)×T |
+
+### 调用流程
+
+1. 根据设备类型查找上表对应的公式 ID
+2. 调用 `vdi_calculate(formula_id="<ID>", inputs={...})` 执行计算
+3. 将计算结果中的 `audit.evidence_tag` 写入选型报告
+
+### 调用示例
+
+```
+# 水泵轴功率
+vdi_calculate(formula_id="WA-EQ-001", inputs={ρ: 1000, g: 9.81, Q: 0.0125, H: 42, η: 0.75})
+
+# 水泵电机功率
+vdi_calculate(formula_id="WA-EQ-002", inputs={P: 18.34, ηm: 0.9})
 ```
 
 ## 选型原则

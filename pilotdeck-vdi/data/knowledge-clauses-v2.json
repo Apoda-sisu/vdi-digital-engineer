@@ -1,11 +1,11 @@
 {
   "schema_version": 2,
-  "built_at": "2026-06-04T01:51:00.094Z",
+  "built_at": "2026-06-04T05:03:54.582Z",
   "knowledge_root": "/Users/apoda/Documents/Cursor/016-数字工程师/pilotdeck-vdi/data",
   "stats": {
-    "total_clauses": 514,
+    "total_clauses": 562,
     "with_cross_refs": 14,
-    "mandatory": 87,
+    "mandatory": 132,
     "total_outgoing_refs": 16,
     "disciplines": {
       "": 6,
@@ -18,7 +18,7 @@
       "instrument": 26,
       "hazop": 41
     },
-    "water_clauses": 234,
+    "water_clauses": 282,
     "files_scanned": 32
   },
   "domain_dictionary": {
@@ -18423,6 +18423,678 @@
         "系列固定消防给水设备的抽样样本"
       ],
       "created_at": "2026-06-04T01:51:00.094Z"
+    },
+    {
+      "id": "GB 27898.1-2011-4.1",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "4.1",
+      "content": "产品分类",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "产品分类"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-5.2.1",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "5.2.1",
+      "content": "设备构成",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "设备构成"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-2.1",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "2.1",
+      "content": "设备构成",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "设备构成"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-5.3.1",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "5.3.1",
+      "content": "设备外观",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "设备外观"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-3.1",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "3.1",
+      "content": "设备外观",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "设备外观"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-5.3.2",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "5.3.2",
+      "content": "设备标识",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "设备标识"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-3.2",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "3.2",
+      "content": "设备标识",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "设备标识"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-5.4",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "5.4",
+      "content": "控制功能",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "控制功能"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-5.4.1",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "5.4.1",
+      "content": "稳压运行",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "稳压运行"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-5.4.4",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "5.4.4",
+      "content": "水泵切换",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "水泵切换"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-4.4",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "4.4",
+      "content": "水泵切换",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "水泵切换"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-5.4.6",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "5.4.6",
+      "content": "运行记录",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "运行记录"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-4.6",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "4.6",
+      "content": "运行记录",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "运行记录"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-5.5",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "5.5",
+      "content": "供水能力",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "供水能力"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-5.5.2",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "5.5.2",
+      "content": "泵组供水",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "泵组供水"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-5.6",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "5.6",
+      "content": "连续运行",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "连续运行"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-5.7",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "5.7",
+      "content": "密封性能",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "密封性能"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-5.10",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "5.10",
+      "content": "气压水罐",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "气压水罐"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-5.10.1",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "5.10.1",
+      "content": "压力显示",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "压力显示"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-10.1",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "10.1",
+      "content": "压力显示",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "压力显示"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-5.10.2",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "5.10.2",
+      "content": "液位显示",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "液位显示"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-10.2",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "10.2",
+      "content": "液位显示",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "液位显示"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-5.10.3",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "5.10.3",
+      "content": "补气装置",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "补气装置"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-10.3",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "10.3",
+      "content": "补气装置",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "补气装置"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-5.10.4",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "5.10.4",
+      "content": "止气装置",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "止气装置"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-10.4",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "10.4",
+      "content": "止气装置",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "止气装置"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-10.5.2",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "10.5.2",
+      "content": "胶囊按",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "胶囊按"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-5.11",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "5.11",
+      "content": "水泵机组",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "水泵机组"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-5.11.1",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "5.11.1",
+      "content": "稳压泵组",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "稳压泵组"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-11.1",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "11.1",
+      "content": "稳压泵组",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "稳压泵组"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-5.11.2",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "5.11.2",
+      "content": "消防泵组",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "消防泵组"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-11.2",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "11.2",
+      "content": "消防泵组",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "消防泵组"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-5.12.5",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "5.12.5",
+      "content": "巡检管道",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "巡检管道"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-12.5",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "12.5",
+      "content": "巡检管道",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "巡检管道"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-5.13",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "5.13",
+      "content": "控制仪表",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "控制仪表"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-5.14",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "5.14",
+      "content": "操控装置",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "操控装置"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-5.14.1",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "5.14.1",
+      "content": "操控柜",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "操控柜"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-14.1",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "14.1",
+      "content": "操控柜",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "操控柜"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-14.9.2",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "14.9.2",
+      "content": "操控柜按",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "操控柜按"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-9.2",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "9.2",
+      "content": "操控柜按",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "操控柜按"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-14.9.3",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "14.9.3",
+      "content": "操控柜按",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "操控柜按"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-9.3",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "9.3",
+      "content": "操控柜按",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "操控柜按"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-6.11.6",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "6.11.6",
+      "content": "胶囊按",
+      "is_mandatory": false,
+      "discipline": "water",
+      "keywords": [
+        "胶囊按"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-11.6",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "11.6",
+      "content": "胶囊按",
+      "is_mandatory": false,
+      "discipline": "water",
+      "keywords": [
+        "胶囊按"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-7.1.1",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "7.1.1",
+      "content": "型式检验",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "型式检验"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-7.2",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "7.2",
+      "content": "抽样方法",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "抽样方法"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-8.1",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "8.1",
+      "content": "标志牌",
+      "is_mandatory": true,
+      "discipline": "water",
+      "keywords": [
+        "标志牌"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
+    },
+    {
+      "id": "GB 27898.1-2011-A.4",
+      "source_type": "standard",
+      "source_id": "GB 27898.1-2011",
+      "source_title": "固定消防给水设备  第1部分：消防气压给水设备",
+      "clause_id": "A.4",
+      "content": "检验判定",
+      "is_mandatory": false,
+      "discipline": "water",
+      "keywords": [
+        "检验判定"
+      ],
+      "created_at": "2026-06-04T03:55:55.375Z"
     }
   ]
 }

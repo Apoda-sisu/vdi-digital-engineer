@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "built_at": "2026-06-04T03:00:00Z",
+  "stats": {
+    "total_formulas": 14,
+    "total_tables": 3,
+    "disciplines": {
+      "water": 14
+    },
+    "categories": {
+      "hydraulic": 6,
+      "equipment": 2,
+      "fire": 2,
+      "rainwater": 3,
+      "water_quality": 1
+    },
+    "types": {
+      "exact": 11,
+      "empirical": 1,
+      "lookup": 1,
+      "approximation": 0
+    }
+  },
+  "formulas": [
+    {
+      "id": "WA-HYD-001",
+      "name": "海曾-威廉姆斯沿程水头损失",
+      "discipline": "water",
+      "category": "hydraulic/pipe_friction",
+      "type": "exact",
+      "file": "water/hydraulic.json",
+      "source_id": "GB 50013-2018",
+      "clause": "7.1.3",
+      "inputs": ["L", "Q", "C", "D"],
+      "outputs": ["Hf"],
+      "tags": ["水头损失", "沿程阻力", "管径计算"]
+    },
+    {
+      "id": "WA-HYD-002",
+      "name": "曼宁公式（重力流管道流速）",
+      "discipline": "water",
+      "category": "hydraulic/open_channel",
+      "type": "exact",
+      "file": "water/hydraulic.json",
+      "source_id": "GB 50014-2021",
+      "clause": "4.2.6",
+      "inputs": ["n", "R", "S"],
+      "outputs": ["V"],
+      "tags": ["曼宁公式", "排水管道", "重力流"]
+    },
+    {
+      "id": "WA-HYD-003",
+      "name": "管道流量公式",
+      "discipline": "water",
+      "category": "hydraulic/flow_velocity",
+      "type": "exact",
+      "file": "water/hydraulic.json",
+      "source_id": "GB 50014-2021",
+      "clause": "4.2.5",
+      "inputs": ["A", "V"],
+      "outputs": ["Q"],
+      "tags": ["流量", "流速", "断面面积"]
+    },
+    {
+      "id": "WA-HYD-004",
+      "name": "圆管满流水力半径",
+      "discipline": "water",
+      "category": "hydraulic/pipe_friction",
+      "type": "exact",
+      "file": "water/hydraulic.json",
+      "source_id": "GB 50014-2021",
+      "clause": "4.2.6",
+      "inputs": ["D"],
+      "outputs": ["R"],
+      "tags": ["水力半径", "圆管", "满流"]
+    },
+    {
+      "id": "WA-HYD-005",
+      "name": "局部水头损失估算",
+      "discipline": "water",
+      "category": "hydraulic/local_loss",
+      "type": "empirical",
+      "file": "water/hydraulic.json",
+      "source_id": "GB 50015-2019",
+      "clause": "3.6.3",
+      "inputs": ["Hf", "k"],
+      "outputs": ["Hl"],
+      "tags": ["局部损失", "经验公式"]
+    },
+    {
+      "id": "WA-HYD-006",
+      "name": "达西-魏斯巴赫沿程水头损失",
+      "discipline": "water",
+      "category": "hydraulic/pipe_friction",
+      "type": "exact",
+      "file": "water/hydraulic.json",
+      "source_id": "GB 50013-2018",
+      "clause": "7.1.3",
+      "inputs": ["f", "L", "D", "V", "g"],
+      "outputs": ["Hf"],
+      "tags": ["达西公式", "沿程损失", "摩擦系数"]
+    },
+    {
+      "id": "WA-EQ-001",
+      "name": "水泵轴功率",
+      "discipline": "water",
+      "category": "equipment/pump",
+      "type": "exact",
+      "file": "water/equipment.json",
+      "source_id": "GB 50015-2019",
+      "clause": "3.8.8",
+      "inputs": ["ρ", "g", "Q", "H", "η"],
+      "outputs": ["P"],
+      "tags": ["水泵", "轴功率", "选型"]
+    },
+    {
+      "id": "WA-EQ-002",
+      "name": "水泵电机功率",
+      "discipline": "water",
+      "category": "equipment/pump",
+      "type": "exact",
+      "file": "water/equipment.json",
+      "source_id": "GB 50015-2019",
+      "clause": "3.8.8",
+      "inputs": ["P", "ηm"],
+      "outputs": ["Pm"],
+      "tags": ["水泵", "电机功率", "选型"]
+    },
+    {
+      "id": "WA-FIR-001",
+      "name": "消防水池有效容积",
+      "discipline": "water",
+      "category": "fire/fire_pool",
+      "type": "exact",
+      "file": "water/fire.json",
+      "source_id": "GB 50974-2014",
+      "clause": "5.3.1",
+      "inputs": ["Qf", "Qb", "T"],
+      "outputs": ["V"],
+      "tags": ["消防水池", "有效容积"]
+    },
+    {
+      "id": "WA-FIR-002",
+      "name": "消火栓系统设计流量",
+      "discipline": "water",
+      "category": "fire/hydrant",
+      "type": "lookup",
+      "file": "water/fire.json",
+      "source_id": "GB 50974-2014",
+      "clause": "5.1.1",
+      "inputs": ["n", "qx"],
+      "outputs": ["Qx"],
+      "tags": ["消火栓", "设计流量"]
+    },
+    {
+      "id": "WA-RAI-001",
+      "name": "雨水设计流量",
+      "discipline": "water",
+      "category": "rainwater/runoff",
+      "type": "exact",
+      "file": "water/rainwater.json",
+      "source_id": "GB 50014-2021",
+      "clause": "4.2.1",
+      "inputs": ["q", "ψ", "F"],
+      "outputs": ["Q"],
+      "tags": ["雨水", "设计流量", "暴雨强度"]
+    },
+    {
+      "id": "WA-RAI-002",
+      "name": "暴雨强度公式",
+      "discipline": "water",
+      "category": "rainwater/runoff",
+      "type": "exact",
+      "file": "water/rainwater.json",
+      "source_id": "GB 50014-2021",
+      "clause": "4.2.2",
+      "inputs": ["A1", "C", "P", "t", "b", "n"],
+      "outputs": ["q"],
+      "tags": ["暴雨强度", "重现期", "降雨历时"]
+    },
+    {
+      "id": "WA-RAI-003",
+      "name": "雨水入渗量",
+      "discipline": "water",
+      "category": "rainwater/infiltration",
+      "type": "exact",
+      "file": "water/rainwater.json",
+      "source_id": "GB 50400-2016",
+      "clause": "6.2.1",
+      "inputs": ["K", "J", "A", "t"],
+      "outputs": ["Wp"],
+      "tags": ["雨水入渗", "渗透系数", "海绵城市"]
+    },
+    {
+      "id": "WA-WQ-001",
+      "name": "循环冷却水补充水量",
+      "discipline": "water",
+      "category": "water_quality/circulation",
+      "type": "exact",
+      "file": "water/water-quality.json",
+      "source_id": "GB 50050-2017",
+      "clause": "5.2.1",
+      "inputs": ["E", "D", "F"],
+      "outputs": ["M"],
+      "tags": ["循环冷却水", "补充水量", "水量平衡"]
+    }
+  ],
+  "tables": [
+    {"id": "TBL-C-001", "name": "海曾-威廉姆斯 C 值表", "file": "tables.json", "referenced_by": ["WA-HYD-001"]},
+    {"id": "TBL-N-001", "name": "曼宁粗糙系数 n 值表", "file": "tables.json", "referenced_by": ["WA-HYD-002"]},
+    {"id": "TBL-PSI-001", "name": "径流系数 ψ 值表", "file": "tables.json", "referenced_by": ["WA-RAI-001"]}
+  ]
+}
