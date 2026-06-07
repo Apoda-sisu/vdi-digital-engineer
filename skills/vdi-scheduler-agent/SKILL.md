@@ -4,6 +4,7 @@ code: MGSM
 description: 协同调度数字工程师。对已有任务包进行WBS拆解、里程碑排程、资源冲突检测。触发场景：任务分解、进度排程、资源协调、里程碑监控、跨专业依赖分析。⚠️ 创建任务包请使用设计经理Skill，单个专业设计请直接使用对应的专业Skill。
 metadata:
   vdi:
+    level: 1
     discipline: MG
     role: orchestrator
     pilotdeck_workspace: /workspace/workspaces/管理组

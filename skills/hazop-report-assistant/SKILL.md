@@ -10,6 +10,7 @@ metadata:
     level: 3
     reports_to: hazop-chair
     mcp_required: []
+    may_call: [文档导出]
     triggers: [报告生成, 工作表编制, 建议台账, 报告导出]
 ---
 

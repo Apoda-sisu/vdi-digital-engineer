@@ -1,0 +1,154 @@
+{
+  "file": "electrical/lighting.json",
+  "discipline": "electrical",
+  "category": "lighting",
+  "formula_count": 5,
+  "formulas": [
+    {
+      "formula_id": "EL-LIG-001",
+      "name": "照度计算（利用系数法）",
+      "name_en": "Illuminance Calculation (Utilization Method)",
+      "discipline": "electrical",
+      "category": "lighting/illuminance",
+      "type": "exact",
+      "equation_text": "E = (N * Φ * U * K) / A",
+      "equation_latex": "E = \\frac{N \\cdot \\Phi \\cdot U \\cdot K}{A}",
+      "equation_ast": {
+        "op": "div",
+        "num": {"op": "mul", "args": [{"var": "N"}, {"var": "Φ"}, {"var": "U"}, {"var": "K"}]},
+        "den": {"var": "A"}
+      },
+      "variables": [
+        {"symbol": "E", "name": "平均照度", "unit": "lx", "role": "output", "desc": "工作面平均照度"},
+        {"symbol": "N", "name": "灯具数量", "unit": "-", "role": "input", "constraints": {"min": 1}, "desc": "灯具数量"},
+        {"symbol": "Φ", "name": "光源光通量", "unit": "lm", "role": "input", "constraints": {"min": 100}, "desc": "单灯光源光通量"},
+        {"symbol": "U", "name": "利用系数", "unit": "-", "role": "input", "constraints": {"min": 0.1, "max": 1}, "desc": "灯具利用系数"},
+        {"symbol": "K", "name": "维护系数", "unit": "-", "role": "input", "constraints": {"min": 0.5, "max": 1}, "default": 0.8, "desc": "维护系数"},
+        {"symbol": "A", "name": "房间面积", "unit": "m²", "role": "input", "constraints": {"min": 1}, "desc": "房间面积"}
+      ],
+      "source": {"standard_id": "GB 50034", "clause": "照度计算"},
+      "tags": ["照度", "照明计算", "利用系数"],
+      "keywords": ["照度计算", "利用系数法", "照明设计"],
+      "precision": 1,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "EL-LIG-002",
+      "name": "灯具数量计算",
+      "name_en": "Number of Luminaires",
+      "discipline": "electrical",
+      "category": "lighting/quantity",
+      "type": "exact",
+      "equation_text": "N = (E * A) / (Φ * U * K)",
+      "equation_latex": "N = \\frac{E \\cdot A}{\\Phi \\cdot U \\cdot K}",
+      "equation_ast": {
+        "op": "div",
+        "num": {"op": "mul", "args": [{"var": "E"}, {"var": "A"}]},
+        "den": {"op": "mul", "args": [{"var": "Φ"}, {"var": "U"}, {"var": "K"}]}
+      },
+      "variables": [
+        {"symbol": "N", "name": "灯具数量", "unit": "-", "role": "output", "desc": "所需灯具数量"},
+        {"symbol": "E", "name": "设计照度", "unit": "lx", "role": "input", "constraints": {"min": 50}, "desc": "设计照度标准值"},
+        {"symbol": "A", "name": "房间面积", "unit": "m²", "role": "input", "constraints": {"min": 1}, "desc": "房间面积"},
+        {"symbol": "Φ", "name": "光源光通量", "unit": "lm", "role": "input", "constraints": {"min": 100}, "desc": "单灯光源光通量"},
+        {"symbol": "U", "name": "利用系数", "unit": "-", "role": "input", "constraints": {"min": 0.1, "max": 1}, "desc": "灯具利用系数"},
+        {"symbol": "K", "name": "维护系数", "unit": "-", "role": "input", "constraints": {"min": 0.5, "max": 1}, "default": 0.8, "desc": "维护系数"}
+      ],
+      "source": {"standard_id": "GB 50034", "clause": "灯具数量"},
+      "tags": ["灯具数量", "照明设计", "灯具选型"],
+      "keywords": ["灯具数量", "照明计算", "灯具选型"],
+      "precision": 1,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "EL-LIG-003",
+      "name": "照明功率密度",
+      "name_en": "Lighting Power Density",
+      "discipline": "electrical",
+      "category": "lighting/lpd",
+      "type": "exact",
+      "equation_text": "LPD = P_total / A",
+      "equation_latex": "LPD = \\frac{P_{total}}{A}",
+      "equation_ast": {
+        "op": "div",
+        "num": {"var": "P_total"},
+        "den": {"var": "A"}
+      },
+      "variables": [
+        {"symbol": "LPD", "name": "照明功率密度", "unit": "W/m²", "role": "output", "desc": "单位面积照明功率"},
+        {"symbol": "P_total", "name": "照明总功率", "unit": "W", "role": "input", "constraints": {"min": 1}, "desc": "照明系统总功率"},
+        {"symbol": "A", "name": "房间面积", "unit": "m²", "role": "input", "constraints": {"min": 1}, "desc": "房间面积"}
+      ],
+      "source": {"standard_id": "GB 50034", "clause": "节能要求"},
+      "tags": ["功率密度", "照明节能", "LPD"],
+      "keywords": ["照明功率密度", "LPD", "节能"],
+      "precision": 0.1,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "EL-LIG-004",
+      "name": "眩光指数计算",
+      "name_en": "Glare Index Calculation",
+      "discipline": "electrical",
+      "category": "lighting/glare",
+      "type": "exact",
+      "equation_text": "UGR = 8 * lg(Lb * Ω / L²)",
+      "equation_latex": "UGR = 8 \\cdot \\log\\left(\\frac{L_b \\cdot \\Omega}{L^2}\\right)",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {"const": 8},
+          {"op": "log10", "arg": {"op": "div", "num": {"op": "mul", "args": [{"var": "Lb"}, {"var": "Ω"}]}, "den": {"op": "pow", "base": {"var": "L"}, "exp": 2}}}
+        ]
+      },
+      "variables": [
+        {"symbol": "UGR", "name": "统一眩光指数", "unit": "-", "role": "output", "desc": "统一眩光评价指数"},
+        {"symbol": "Lb", "name": "背景亮度", "unit": "cd/m²", "role": "input", "constraints": {"min": 1}, "desc": "观察者视野内背景亮度"},
+        {"symbol": "Ω", "name": "灯具立体角", "unit": "sr", "role": "input", "constraints": {"min": 0.001}, "desc": "灯具在观察者眼中的立体角"},
+        {"symbol": "L", "name": "灯具亮度", "unit": "cd/m²", "role": "input", "constraints": {"min": 100}, "desc": "灯具在观察方向的亮度"}
+      ],
+      "source": {"standard_id": "GB 50034", "clause": "眩光评价"},
+      "tags": ["眩光", "照明质量", "UGR"],
+      "keywords": ["眩光指数", "UGR", "照明质量"],
+      "precision": 0.1,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "EL-LIG-005",
+      "name": "应急照明持续时间",
+      "name_en": "Emergency Lighting Duration",
+      "discipline": "electrical",
+      "category": "lighting/emergency",
+      "type": "exact",
+      "equation_text": "t = (C * U) / (P * K)",
+      "equation_latex": "t = \\frac{C \\cdot U}{P \\cdot K}",
+      "equation_ast": {
+        "op": "div",
+        "num": {"op": "mul", "args": [{"var": "C"}, {"var": "U"}]},
+        "den": {"op": "mul", "args": [{"var": "P"}, {"var": "K"}]}
+      },
+      "variables": [
+        {"symbol": "t", "name": "持续时间", "unit": "h", "role": "output", "desc": "应急照明持续时间"},
+        {"symbol": "C", "name": "电池容量", "unit": "Ah", "role": "input", "constraints": {"min": 1}, "desc": "蓄电池容量"},
+        {"symbol": "U", "name": "电池电压", "unit": "V", "role": "input", "constraints": {"min": 6}, "desc": "蓄电池电压"},
+        {"symbol": "P", "name": "应急照明功率", "unit": "W", "role": "input", "constraints": {"min": 1}, "desc": "应急照明总功率"},
+        {"symbol": "K", "name": "放电系数", "unit": "-", "role": "input", "constraints": {"min": 0.5, "max": 1}, "default": 0.8, "desc": "电池放电系数"}
+      ],
+      "source": {"standard_id": "GB 50016", "clause": "应急照明"},
+      "tags": ["应急照明", "蓄电池", "持续时间"],
+      "keywords": ["应急照明", "蓄电池", "持续时间"],
+      "precision": 0.1,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    }
+  ]
+}

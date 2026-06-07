@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PilotDeck-VDI 系统架构总览</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#e2e8f0;min-height:100vh;padding:40px 20px}
+
+.container{max-width:1100px;margin:0 auto}
+
+/* Header */
+.header{text-align:center;margin-bottom:48px}
+.header h1{font-size:32px;font-weight:700;background:linear-gradient(135deg,#60a5fa,#a78bfa,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px;letter-spacing:-0.5px}
+.header .sub{font-size:14px;color:#94a3b8;font-weight:400}
+.header .badge{display:inline-block;margin-top:12px;padding:4px 14px;background:rgba(96,165,250,.15);border:1px solid rgba(96,165,250,.3);border-radius:20px;font-size:12px;color:#60a5fa}
+
+/* Stats row */
+.stats{display:flex;justify-content:center;gap:32px;margin-bottom:48px;flex-wrap:wrap}
+.stat{text-align:center}
+.stat .num{font-size:36px;font-weight:700;background:linear-gradient(135deg,#60a5fa,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat .label{font-size:12px;color:#64748b;margin-top:2px;letter-spacing:1px;text-transform:uppercase}
+
+/* Architecture layers */
+.arch{display:flex;flex-direction:column;gap:16px;margin-bottom:48px}
+.layer{background:rgba(30,41,59,.8);border:1px solid rgba(148,163,184,.1);border-radius:16px;padding:24px 28px;backdrop-filter:blur(10px);transition:all .3s}
+.layer:hover{border-color:rgba(96,165,250,.3);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.2)}
+.layer-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.layer-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.layer-title{font-size:16px;font-weight:600;color:#f1f5f9}
+.layer-desc{font-size:12px;color:#64748b;margin-top:2px}
+.layer-items{display:flex;flex-wrap:wrap;gap:8px}
+.item{padding:6px 14px;border-radius:8px;font-size:12px;font-weight:500;letter-spacing:0.3px;transition:all .2s}
+.item:hover{transform:scale(1.05)}
+
+/* Color themes for each layer */
+.l-disc .layer-icon{background:linear-gradient(135deg,#1e40af,#3b82f6)}
+.l-disc .item{background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.25);color:#93c5fd}
+.l-skill .layer-icon{background:linear-gradient(135deg,#065f46,#10b981)}
+.l-skill .item{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);color:#6ee7b7}
+.l-mcp .layer-icon{background:linear-gradient(135deg,#92400e,#f59e0b)}
+.l-mcp .item{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);color:#fcd34d}
+.l-data .layer-icon{background:linear-gradient(135deg,#581c87,#a855f7)}
+.l-data .item{background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.25);color:#c4b5fd}
+.l-event .layer-icon{background:linear-gradient(135deg,#991b1b,#ef4444)}
+.l-event .item{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);color:#fca5a5}
+
+/* Connections diagram */
+.connections{margin-bottom:48px}
+.connections h2{text-align:center;font-size:18px;font-weight:600;color:#f1f5f9;margin-bottom:24px;letter-spacing:-0.3px}
+.conn-grid{display:grid;grid-template-columns:1fr;gap:12px;max-width:700px;margin:0 auto}
+.conn{display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(30,41,59,.6);border:1px solid rgba(148,163,184,.08);border-radius:10px;transition:all .2s}
+.conn:hover{border-color:rgba(96,165,250,.2);background:rgba(30,41,59,.9)}
+.conn-from{min-width:120px;text-align:right;font-size:13px;font-weight:500;color:#94a3b8}
+.conn-arrow{color:#3b82f6;font-size:16px;flex-shrink:0}
+.conn-to{font-size:13px;font-weight:500;color:#94a3b8}
+.conn-label{margin-left:auto;font-size:11px;color:#475569;background:rgba(71,85,105,.2);padding:2px 8px;border-radius:4px}
+
+/* Data highlights */
+.highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:48px}
+.hl{background:rgba(30,41,59,.8);border:1px solid rgba(148,163,184,.1);border-radius:12px;padding:20px;text-align:center}
+.hl .icon{font-size:24px;margin-bottom:8px}
+.hl .val{font-size:28px;font-weight:700;color:#f1f5f9}
+.hl .desc{font-size:12px;color:#64748b;margin-top:4px}
+
+/* Footer */
+.footer{text-align:center;padding:24px 0;border-top:1px solid rgba(148,163,184,.1);margin-top:24px}
+.footer .tech{font-size:11px;color:#475569;line-height:1.8}
+.footer .tech span{display:inline-block;margin:0 6px;padding:2px 8px;background:rgba(71,85,105,.15);border-radius:4px}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>PilotDeck-VDI 数字工程师系统</h1>
+  <div class="sub">化工工程设计多智能体协同平台 — 系统架构总览</div>
+  <div class="badge">2026 年 6 月 · 最新状态</div>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="num">35</div><div class="label">数字工程师</div></div>
+  <div class="stat"><div class="num">4</div><div class="label">MCP 微服务</div></div>
+  <div class="stat"><div class="num">128</div><div class="label">工程公式</div></div>
+  <div class="stat"><div class="num">562</div><div class="label">规范条文</div></div>
+  <div class="stat"><div class="num">14</div><div class="label">事件类型</div></div>
+  <div class="stat"><div class="num">95.8</div><div class="label">健康评分</div></div>
+</div>
+
+<!-- Architecture Layers -->
+<div class="arch">
+  <div class="layer l-disc">
+    <div class="layer-head">
+      <div class="layer-icon">🏗️</div>
+      <div><div class="layer-title">专业覆盖层</div><div class="layer-desc">涵盖化工设计全流程 6 大专业领域</div></div>
+    </div>
+    <div class="layer-items">
+      <div class="item">工艺 (PR) · 44 条公式</div>
+      <div class="item">给排水 (WA) · 37 条公式</div>
+      <div class="item">管道 (PI) · 25 条公式</div>
+      <div class="item">电气 (EL) · 20 条公式</div>
+      <div class="item">HSE (HS) · 2 条公式</div>
+      <div class="item">管理 (MG)</div>
+    </div>
+  </div>
+
+  <div class="layer l-skill">
+    <div class="layer-head">
+      <div class="layer-icon">👤</div>
+      <div><div class="layer-title">数字工程师层</div><div class="layer-desc">35 个 AI 角色，三级指挥体系</div></div>
+    </div>
+    <div class="layer-items">
+      <div class="item">一级 · 负责人 5 人</div>
+      <div class="item">二级 · 子专业 15 人</div>
+      <div class="item">三级 · 执行工具 3 人</div>
+      <div class="item">HAZOP 团队 12 人</div>
+    </div>
+  </div>
+
+  <div class="layer l-mcp">
+    <div class="layer-head">
+      <div class="layer-icon">⚙️</div>
+      <div><div class="layer-title">MCP 服务层</div><div class="layer-desc">4 个微服务，29 个标准化工具接口</div></div>
+    </div>
+    <div class="layer-items">
+      <div class="item">vdi-knowledge · 9 工具（知识检索 + 公式计算）</div>
+      <div class="item">vdi-orchestrator · 11 工具（任务编排）</div>
+      <div class="item">vdi-rules · 4 工具（规则校验）</div>
+      <div class="item">vdi-events · 5 工具（事件总线）</div>
+    </div>
+  </div>
+
+  <div class="layer l-data">
+    <div class="layer-head">
+      <div class="layer-icon">📚</div>
+      <div><div class="layer-title">数据资源层</div><div class="layer-desc">知识库、公式库、参数表，持续扩展中</div></div>
+    </div>
+    <div class="layer-items">
+      <div class="item">562 条国家规范条文</div>
+      <div class="item">128 条工程计算公式</div>
+      <div class="item">26 个参数速查表</div>
+      <div class="item">703 个检索关键词</div>
+    </div>
+  </div>
+
+  <div class="layer l-event">
+    <div class="layer-head">
+      <div class="layer-icon">🔗</div>
+      <div><div class="layer-title">事件驱动层</div><div class="layer-desc">跨专业异步协作，松耦合架构</div></div>
+    </div>
+    <div class="layer-items">
+      <div class="item">设计基础变更</div>
+      <div class="item">专业成果提交</div>
+      <div class="item">校审闸门通过/驳回</div>
+      <div class="item">里程碑预警</div>
+      <div class="item">人工数据请求</div>
+    </div>
+  </div>
+</div>
+
+<!-- Key Connections -->
+<div class="connections">
+  <h2>核心协作关系</h2>
+  <div class="conn-grid">
+    <div class="conn">
+      <div class="conn-from">工艺专业</div>
+      <div class="conn-arrow">→</div>
+      <div class="conn-to">设计基础变更</div>
+      <div class="conn-arrow">→</div>
+      <div class="conn-to">给排水 / 管道 / 电气</div>
+      <div class="conn-label">事件驱动</div>
+    </div>
+    <div class="conn">
+      <div class="conn-from">设计经理</div>
+      <div class="conn-arrow">→</div>
+      <div class="conn-to">任务编排</div>
+      <div class="conn-arrow">→</div>
+      <div class="conn-to">各专业负责人</div>
+      <div class="conn-label">WBS 分解</div>
+    </div>
+    <div class="conn">
+      <div class="conn-from">所有工程师</div>
+      <div class="conn-arrow">→</div>
+      <div class="conn-to">vdi-knowledge</div>
+      <div class="conn-arrow">→</div>
+      <div class="conn-to">规范 + 公式 + 计算</div>
+      <div class="conn-label">30 个 Skill 依赖</div>
+    </div>
+    <div class="conn">
+      <div class="conn-from">校审流程</div>
+      <div class="conn-arrow">→</div>
+      <div class="conn-to">vdi-rules</div>
+      <div class="conn-arrow">→</div>
+      <div class="conn-to">红线检查 + 契约校验</div>
+      <div class="conn-label">15 个 Skill 依赖</div>
+    </div>
+    <div class="conn">
+      <div class="conn-from">HAZOP 主席</div>
+      <div class="conn-arrow">→</div>
+      <div class="conn-to">5 位领域专家</div>
+      <div class="conn-arrow">→</div>
+      <div class="conn-to">6 位执行助理</div>
+      <div class="conn-label">三级 HAZOP 团队</div>
+    </div>
+  </div>
+</div>
+
+<!-- Highlights -->
+<div class="highlights">
+  <div class="hl">
+    <div class="icon">🔬</div>
+    <div class="val">5</div>
+    <div class="desc">工程专业覆盖</div>
+  </div>
+  <div class="hl">
+    <div class="icon">🤖</div>
+    <div class="val">35</div>
+    <div class="desc">AI 数字工程师</div>
+  </div>
+  <div class="hl">
+    <div class="icon">📐</div>
+    <div class="val">128</div>
+    <div class="desc">内置工程公式</div>
+  </div>
+  <div class="hl">
+    <div class="icon">📖</div>
+    <div class="val">562</div>
+    <div class="desc">规范条文知识库</div>
+  </div>
+  <div class="hl">
+    <div class="icon">⚡</div>
+    <div class="val">29</div>
+    <div class="desc">标准化工具接口</div>
+  </div>
+  <div class="hl">
+    <div class="icon">✅</div>
+    <div class="val">95.8</div>
+    <div class="desc">系统健康评分</div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="tech">
+    技术栈：<span>MCP 协议</span><span>事件驱动</span><span>AST 公式引擎</span><span>四层漏斗检索</span><span>JSON Schema</span><span>Mermaid</span>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

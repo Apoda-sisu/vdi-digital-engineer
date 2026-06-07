@@ -4,12 +4,16 @@ code: MGDM
 description: 设计经理数字工程师。接收完整项目设计任务，创建任务包、拆解WBS、派发到各专业负责人。触发场景：设计策划、任务下达、设计评审、变更管理、设计交底、项目验收。⚠️ 单个专业的设计执行请直接使用对应的专业负责人Skill，无需经过设计经理。
 metadata:
   vdi:
+    level: 1
     discipline: MG
     role: manager
     pilotdeck_workspace: /workspace/workspaces/管理组
     mcp_required:
       - vdi-orchestrator
       - vdi-knowledge
+    may_call:
+      - 文档导出
+      - 文档解读
     outputs:
       - TaskPackage
       - DesignPlan

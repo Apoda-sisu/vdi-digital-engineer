@@ -22,6 +22,9 @@ metadata:
     shared_utils:
       - 给排水水力计算
       - 给排水设备选型
+    may_call:
+      - 文档导出
+      - 文档解读
     triggers:
       - 给排水任务下达
       - 给排水策划

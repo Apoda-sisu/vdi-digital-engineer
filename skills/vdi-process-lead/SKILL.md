@@ -22,6 +22,9 @@ metadata:
     shared_utils:
       - 工艺计算
       - 流程模拟
+    may_call:
+      - 文档导出
+      - 文档解读
     downstream_disciplines:
       - piping
       - instrument

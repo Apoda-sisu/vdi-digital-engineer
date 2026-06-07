@@ -11,6 +11,9 @@ metadata:
     reports_to: 项目负责人
     manages: [hazop-expert-process, hazop-expert-instrument, hazop-expert-equipment, hazop-expert-safety, hazop-expert-operation]
     mcp_required: [vdi-knowledge, vdi-rules]
+    may_call:
+      - 文档导出
+      - 文档解读
     triggers: [HAZOP, 危险与可操作性分析, 节点确认, 风险审核]
 ---
 

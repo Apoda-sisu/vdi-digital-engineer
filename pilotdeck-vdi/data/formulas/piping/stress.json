@@ -1,0 +1,201 @@
+{
+  "file": "piping/stress.json",
+  "discipline": "piping",
+  "category": "stress",
+  "formula_count": 3,
+  "formulas": [
+    {
+      "formula_id": "PI-STR-001",
+      "name": "管道最小壁厚",
+      "name_en": "Minimum Pipe Wall Thickness",
+      "discipline": "piping",
+      "category": "stress",
+      "type": "exact",
+      "equation_text": "t = P*D/(2*S*E+P) + C",
+      "equation_latex": "t = \\frac{P \\cdot D}{2 \\cdot S \\cdot E + P} + C",
+      "equation_ast": {
+        "op": "add",
+        "lhs": {
+          "op": "div",
+          "num": {
+            "op": "mul",
+            "args": [{"var": "P"}, {"var": "D"}]
+          },
+          "den": {
+            "op": "add",
+            "lhs": {
+              "op": "mul",
+              "args": [{"const": 2}, {"var": "S"}, {"var": "E"}]
+            },
+            "rhs": {"var": "P"}
+          }
+        },
+        "rhs": {"var": "C"}
+      },
+      "variables": [
+        {
+          "symbol": "t",
+          "name": "管道最小壁厚",
+          "role": "output",
+          "unit": "mm",
+          "desc": "管道最小壁厚"
+        },
+        {
+          "symbol": "P",
+          "name": "设计压力",
+          "role": "input",
+          "unit": "MPa",
+          "desc": "设计压力"
+        },
+        {
+          "symbol": "D",
+          "name": "管道外径",
+          "role": "input",
+          "unit": "mm",
+          "desc": "管道外径"
+        },
+        {
+          "symbol": "S",
+          "name": "许用应力",
+          "role": "input",
+          "unit": "MPa",
+          "desc": "许用应力",
+          "default": null
+        },
+        {
+          "symbol": "E",
+          "name": "焊缝系数",
+          "role": "input",
+          "unit": "-",
+          "desc": "焊缝系数",
+          "default": 1.0
+        },
+        {
+          "symbol": "C",
+          "name": "腐蚀余量",
+          "role": "input",
+          "unit": "mm",
+          "desc": "腐蚀余量",
+          "default": 1.5
+        }
+      ],
+      "source": {"standard_id": "GB/T 20801.3", "clause": "通用"},
+      "tags": ["管道壁厚", "压力管道", "壁厚计算"],
+      "keywords": ["壁厚", "压力", "管道", "应力"],
+      "precision": 0.1,
+      "created_at": "2026-06-04T00:00:00Z",
+      "updated_at": "2026-06-04T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PI-VOL-001",
+      "name": "管道容积",
+      "name_en": "Pipe Volume",
+      "discipline": "piping",
+      "category": "volume",
+      "type": "exact",
+      "equation_text": "V = π/4 * D² * L",
+      "equation_latex": "V = \\frac{\\pi}{4} \\cdot D^2 \\cdot L",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {"const": 0.7854},
+          {
+            "op": "pow",
+            "base": {"var": "D"},
+            "exp": {"const": 2}
+          },
+          {"var": "L"}
+        ]
+      },
+      "variables": [
+        {
+          "symbol": "V",
+          "name": "管道容积",
+          "role": "output",
+          "unit": "m3",
+          "desc": "管道容积"
+        },
+        {
+          "symbol": "D",
+          "name": "管道内径",
+          "role": "input",
+          "unit": "m",
+          "desc": "管道内径"
+        },
+        {
+          "symbol": "L",
+          "name": "管道长度",
+          "role": "input",
+          "unit": "m",
+          "desc": "管道长度"
+        }
+      ],
+      "source": {"standard_id": "通用", "clause": "通用"},
+      "tags": ["管道容积", "几何计算"],
+      "keywords": ["容积", "管道", "体积"],
+      "precision": 0.001,
+      "created_at": "2026-06-04T00:00:00Z",
+      "updated_at": "2026-06-04T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PI-VEL-001",
+      "name": "管道流速限制验算",
+      "name_en": "Pipe Flow Velocity Check",
+      "discipline": "piping",
+      "category": "velocity",
+      "type": "exact",
+      "equation_text": "V = 4*Q/(π*D²)",
+      "equation_latex": "V = \\frac{4 \\cdot Q}{\\pi \\cdot D^2}",
+      "equation_ast": {
+        "op": "div",
+        "num": {
+          "op": "mul",
+          "args": [{"const": 4}, {"var": "Q"}]
+        },
+        "den": {
+          "op": "mul",
+          "args": [
+            {"const": 3.14159},
+            {
+              "op": "pow",
+              "base": {"var": "D"},
+              "exp": {"const": 2}
+            }
+          ]
+        }
+      },
+      "variables": [
+        {
+          "symbol": "V",
+          "name": "流速",
+          "role": "output",
+          "unit": "m/s",
+          "desc": "流速"
+        },
+        {
+          "symbol": "Q",
+          "name": "体积流量",
+          "role": "input",
+          "unit": "m3/s",
+          "desc": "体积流量"
+        },
+        {
+          "symbol": "D",
+          "name": "管道内径",
+          "role": "input",
+          "unit": "m",
+          "desc": "管道内径"
+        }
+      ],
+      "source": {"standard_id": "GB 50316", "clause": "通用"},
+      "tags": ["流速", "管道", "流量验算"],
+      "keywords": ["流速", "流量", "管道", "验算"],
+      "precision": 0.01,
+      "created_at": "2026-06-04T00:00:00Z",
+      "updated_at": "2026-06-04T00:00:00Z",
+      "version": 1
+    }
+  ]
+}

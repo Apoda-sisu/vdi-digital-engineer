@@ -1,0 +1,17 @@
+{
+  "name": "vdi-documents-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "VDI 文档处理 MCP 服务 — Word/Excel/PDF 导出与解读（基于 Dokumen-Pintar）",
+  "bin": {
+    "vdi-documents-mcp": "./server.mjs"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "check": "python3 -c \"import dokumen_pintar; print('dokumen-pintar OK')\""
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1"
+  }
+}

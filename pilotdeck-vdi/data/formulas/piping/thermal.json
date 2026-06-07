@@ -1,0 +1,177 @@
+{
+  "file": "piping/thermal.json",
+  "discipline": "piping",
+  "category": "thermal",
+  "formula_count": 6,
+  "formulas": [
+    {
+      "formula_id": "PI-STR-002",
+      "name": "管道热膨胀量",
+      "name_en": "Pipe Thermal Expansion",
+      "discipline": "piping",
+      "category": "thermal/expansion",
+      "type": "exact",
+      "equation_text": "ΔL = α * L * ΔT",
+      "equation_latex": "\\Delta L = \\alpha \\cdot L \\cdot \\Delta T",
+      "equation_ast": {
+        "op": "mul",
+        "args": [{"var": "α"}, {"var": "L"}, {"var": "ΔT"}]
+      },
+      "variables": [
+        {"symbol": "ΔL", "name": "热膨胀量", "unit": "mm", "role": "output", "desc": "管道热膨胀伸长量"},
+        {"symbol": "α", "name": "线膨胀系数", "unit": "mm/(m·℃)", "role": "input", "constraints": {"min": 1e-6}, "desc": "材料线膨胀系数",
+          "look_up": {"type": "material_property", "table_ref": "TBL-ALPHA-001", "default": 0.012}},
+        {"symbol": "L", "name": "管道长度", "unit": "m", "role": "input", "constraints": {"min": 0.1, "max": 1000}, "desc": "管道长度"},
+        {"symbol": "ΔT", "name": "温差", "unit": "℃", "role": "input", "desc": "安装温度与操作温度之差"}
+      ],
+      "source": {"standard_id": "GB/T 20801.3", "clause": "管道热补偿"},
+      "tags": ["热膨胀", "管道伸长", "温差"],
+      "keywords": ["热膨胀", "管道伸长", "线膨胀系数", "温差应力"],
+      "precision": 0.1,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PI-STR-003",
+      "name": "管道热应力",
+      "name_en": "Pipe Thermal Stress",
+      "discipline": "piping",
+      "category": "thermal/stress",
+      "type": "exact",
+      "equation_text": "σ = E * α * ΔT",
+      "equation_latex": "\\sigma = E \\cdot \\alpha \\cdot \\Delta T",
+      "equation_ast": {
+        "op": "mul",
+        "args": [{"var": "E"}, {"var": "α"}, {"var": "ΔT"}]
+      },
+      "variables": [
+        {"symbol": "σ", "name": "热应力", "unit": "MPa", "role": "output", "desc": "管道热应力"},
+        {"symbol": "E", "name": "弹性模量", "unit": "MPa", "role": "input", "constraints": {"min": 10000}, "desc": "材料弹性模量"},
+        {"symbol": "α", "name": "线膨胀系数", "unit": "1/℃", "role": "input", "constraints": {"min": 1e-6}, "desc": "材料线膨胀系数"},
+        {"symbol": "ΔT", "name": "温差", "unit": "℃", "role": "input", "desc": "安装温度与操作温度之差"}
+      ],
+      "source": {"standard_id": "GB/T 20801.3", "clause": "应力分析"},
+      "tags": ["热应力", "温差应力", "管道应力"],
+      "keywords": ["热应力", "温差应力", "弹性模量"],
+      "precision": 0.01,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PI-STR-004",
+      "name": "∏型补偿器臂长",
+      "name_en": "U-Bend Compensator Arm Length",
+      "discipline": "piping",
+      "category": "thermal/compensator",
+      "type": "exact",
+      "equation_text": "L = 0.5 * √(D * ΔL * 1000)",
+      "equation_latex": "L = 0.5 \\cdot \\sqrt{D \\cdot \\Delta L \\cdot 1000}",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {"const": 0.5},
+          {"op": "sqrt", "arg": {"op": "mul", "args": [{"var": "D"}, {"var": "ΔL"}, {"const": 1000}]}}
+        ]
+      },
+      "variables": [
+        {"symbol": "L", "name": "补偿器臂长", "unit": "mm", "role": "output", "desc": "∏型补偿器水平臂长度"},
+        {"symbol": "D", "name": "管道外径", "unit": "mm", "role": "input", "constraints": {"min": 10, "max": 2000}, "desc": "管道外径"},
+        {"symbol": "ΔL", "name": "热膨胀量", "unit": "m", "role": "input", "constraints": {"min": 0.001}, "desc": "管道热膨胀量"}
+      ],
+      "source": {"standard_id": "GB 50316", "clause": "热补偿设计"},
+      "tags": ["补偿器", "∏型弯", "热补偿"],
+      "keywords": ["∏型补偿器", "补偿臂长", "热补偿设计"],
+      "precision": 1,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PI-STR-005",
+      "name": "管道柔性系数",
+      "name_en": "Pipe Flexibility Factor",
+      "discipline": "piping",
+      "category": "thermal/flexibility",
+      "type": "exact",
+      "equation_text": "K = ΔL / (L * α * ΔT)",
+      "equation_latex": "K = \\frac{\\Delta L}{L \\cdot \\alpha \\cdot \\Delta T}",
+      "equation_ast": {
+        "op": "div",
+        "num": {"var": "ΔL"},
+        "den": {"op": "mul", "args": [{"var": "L"}, {"var": "α"}, {"var": "ΔT"}]}
+      },
+      "variables": [
+        {"symbol": "K", "name": "柔性系数", "unit": "-", "role": "output", "desc": "管道系统柔性系数"},
+        {"symbol": "ΔL", "name": "实际膨胀量", "unit": "mm", "role": "input", "constraints": {"min": 0}, "desc": "管道实际膨胀量"},
+        {"symbol": "L", "name": "管道长度", "unit": "m", "role": "input", "constraints": {"min": 0.1}, "desc": "管道长度"},
+        {"symbol": "α", "name": "线膨胀系数", "unit": "1/℃", "role": "input", "constraints": {"min": 1e-6}, "desc": "材料线膨胀系数"},
+        {"symbol": "ΔT", "name": "温差", "unit": "℃", "role": "input", "desc": "温度变化"}
+      ],
+      "source": {"standard_id": "GB/T 20801.3", "clause": "柔性分析"},
+      "tags": ["柔性系数", "管道柔性", "应力分析"],
+      "keywords": ["柔性系数", "管道柔性", "柔性分析"],
+      "precision": 0.01,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PI-STR-006",
+      "name": "管道内压环向应力",
+      "name_en": "Pipe Hoop Stress",
+      "discipline": "piping",
+      "category": "stress/pressure",
+      "type": "exact",
+      "equation_text": "σh = P*D/(2*t)",
+      "equation_latex": "\\sigma_h = \\frac{P \\cdot D}{2 \\cdot t}",
+      "equation_ast": {
+        "op": "div",
+        "num": {"op": "mul", "args": [{"var": "P"}, {"var": "D"}]},
+        "den": {"op": "mul", "args": [{"const": 2}, {"var": "t"}]}
+      },
+      "variables": [
+        {"symbol": "σh", "name": "环向应力", "unit": "MPa", "role": "output", "desc": "内压引起的环向应力"},
+        {"symbol": "P", "name": "设计压力", "unit": "MPa", "role": "input", "constraints": {"min": 0.01}, "desc": "设计压力"},
+        {"symbol": "D", "name": "管道内径", "unit": "mm", "role": "input", "constraints": {"min": 10}, "desc": "管道内径"},
+        {"symbol": "t", "name": "管道壁厚", "unit": "mm", "role": "input", "constraints": {"min": 1}, "desc": "管道壁厚"}
+      ],
+      "source": {"standard_id": "GB/T 20801.3", "clause": "强度计算"},
+      "tags": ["环向应力", "内压应力", "管道强度"],
+      "keywords": ["环向应力", "内压应力", "薄膜应力"],
+      "precision": 0.01,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PI-STR-007",
+      "name": "管道内压轴向应力",
+      "name_en": "Pipe Axial Stress",
+      "discipline": "piping",
+      "category": "stress/pressure",
+      "type": "exact",
+      "equation_text": "σa = P*D/(4*t)",
+      "equation_latex": "\\sigma_a = \\frac{P \\cdot D}{4 \\cdot t}",
+      "equation_ast": {
+        "op": "div",
+        "num": {"op": "mul", "args": [{"var": "P"}, {"var": "D"}]},
+        "den": {"op": "mul", "args": [{"const": 4}, {"var": "t"}]}
+      },
+      "variables": [
+        {"symbol": "σa", "name": "轴向应力", "unit": "MPa", "role": "output", "desc": "内压引起的轴向应力"},
+        {"symbol": "P", "name": "设计压力", "unit": "MPa", "role": "input", "constraints": {"min": 0.01}, "desc": "设计压力"},
+        {"symbol": "D", "name": "管道内径", "unit": "mm", "role": "input", "constraints": {"min": 10}, "desc": "管道内径"},
+        {"symbol": "t", "name": "管道壁厚", "unit": "mm", "role": "input", "constraints": {"min": 1}, "desc": "管道壁厚"}
+      ],
+      "source": {"standard_id": "GB/T 20801.3", "clause": "强度计算"},
+      "tags": ["轴向应力", "内压应力", "管道强度"],
+      "keywords": ["轴向应力", "内压应力", "管道强度"],
+      "precision": 0.01,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "file": "electrical/power.json",
+  "discipline": "electrical",
+  "category": "power",
+  "formula_count": 3,
+  "formulas": [
+    {
+      "formula_id": "EL-POW-001",
+      "name": "三相电机有功功率",
+      "name_en": "Three-phase Motor Active Power",
+      "discipline": "electrical",
+      "category": "power",
+      "type": "exact",
+      "equation_text": "P = √3 * U * I * cosφ",
+      "equation_latex": "P = \\sqrt{3} \\cdot U \\cdot I \\cdot \\cos\\varphi",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {"const": 1.732},
+          {"var": "U"},
+          {"var": "I"},
+          {"var": "cosphi"}
+        ]
+      },
+      "variables": [
+        {
+          "symbol": "P",
+          "name": "有功功率",
+          "role": "output",
+          "unit": "kW",
+          "desc": "有功功率"
+        },
+        {
+          "symbol": "U",
+          "name": "线电压",
+          "role": "input",
+          "unit": "kV",
+          "desc": "线电压"
+        },
+        {
+          "symbol": "I",
+          "name": "线电流",
+          "role": "input",
+          "unit": "A",
+          "desc": "线电流"
+        },
+        {
+          "symbol": "cosphi",
+          "name": "功率因数",
+          "role": "input",
+          "unit": "-",
+          "desc": "功率因数",
+          "default": 0.85
+        }
+      ],
+      "source": {"standard_id": "GB 50055", "clause": "通用"},
+      "tags": ["三相电机", "有功功率", "功率计算"],
+      "keywords": ["电机", "功率", "三相", "功率因数"],
+      "precision": 0.01,
+      "created_at": "2026-06-04T00:00:00Z",
+      "updated_at": "2026-06-04T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "EL-VOL-001",
+      "name": "电压降百分比",
+      "name_en": "Voltage Drop Percentage",
+      "discipline": "electrical",
+      "category": "voltage",
+      "type": "exact",
+      "equation_text": "ΔU% = (√3 * I * L * (R*cosφ + X*sinφ)) / U * 100",
+      "equation_latex": "\\Delta U\\% = \\frac{\\sqrt{3} \\cdot I \\cdot L \\cdot (R \\cdot \\cos\\varphi + X \\cdot \\sin\\varphi)}{U} \\times 100",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {
+            "op": "div",
+            "num": {
+              "op": "mul",
+              "args": [
+                {"const": 1.732},
+                {"var": "I"},
+                {"var": "L"},
+                {
+                  "op": "add",
+                  "lhs": {
+                    "op": "mul",
+                    "args": [{"var": "R"}, {"var": "cosphi"}]
+                  },
+                  "rhs": {
+                    "op": "mul",
+                    "args": [{"var": "X"}, {"var": "sinphi"}]
+                  }
+                }
+              ]
+            },
+            "den": {
+              "op": "mul",
+              "args": [{"var": "U"}, {"const": 1000}]
+            }
+          },
+          {"const": 100}
+        ]
+      },
+      "variables": [
+        {
+          "symbol": "ΔU",
+          "name": "电压降百分比",
+          "role": "output",
+          "unit": "%",
+          "desc": "电压降百分比"
+        },
+        {
+          "symbol": "I",
+          "name": "工作电流",
+          "role": "input",
+          "unit": "A",
+          "desc": "工作电流"
+        },
+        {
+          "symbol": "L",
+          "name": "线路长度",
+          "role": "input",
+          "unit": "km",
+          "desc": "线路长度"
+        },
+        {
+          "symbol": "R",
+          "name": "线路电阻",
+          "role": "input",
+          "unit": "Ω/km",
+          "desc": "线路电阻"
+        },
+        {
+          "symbol": "X",
+          "name": "线路电抗",
+          "role": "input",
+          "unit": "Ω/km",
+          "desc": "线路电抗"
+        },
+        {
+          "symbol": "cosphi",
+          "name": "功率因数",
+          "role": "input",
+          "unit": "-",
+          "desc": "功率因数",
+          "default": 0.85
+        },
+        {
+          "symbol": "sinphi",
+          "name": "无功因数",
+          "role": "input",
+          "unit": "-",
+          "desc": "无功因数",
+          "default": 0.527
+        },
+        {
+          "symbol": "U",
+          "name": "额定电压",
+          "role": "input",
+          "unit": "V",
+          "desc": "额定电压"
+        }
+      ],
+      "source": {"standard_id": "GB 50052", "clause": "通用"},
+      "tags": ["电压降", "线路计算", "配电设计"],
+      "keywords": ["电压降", "线路", "电阻", "电抗"],
+      "precision": 0.01,
+      "created_at": "2026-06-04T00:00:00Z",
+      "updated_at": "2026-06-04T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "EL-POW-002",
+      "name": "电机额定电流",
+      "name_en": "Motor Rated Current",
+      "discipline": "electrical",
+      "category": "power",
+      "type": "exact",
+      "equation_text": "I = P / (√3 * U * cosφ * η)",
+      "equation_latex": "I = \\frac{P}{\\sqrt{3} \\cdot U \\cdot \\cos\\varphi \\cdot \\eta}",
+      "equation_ast": {
+        "op": "div",
+        "num": {"var": "P"},
+        "den": {
+          "op": "mul",
+          "args": [
+            {"const": 1.732},
+            {"var": "U"},
+            {"var": "cosphi"},
+            {"var": "eta"}
+          ]
+        }
+      },
+      "variables": [
+        {
+          "symbol": "I",
+          "name": "额定电流",
+          "role": "output",
+          "unit": "A",
+          "desc": "额定电流"
+        },
+        {
+          "symbol": "P",
+          "name": "电机功率",
+          "role": "input",
+          "unit": "kW",
+          "desc": "电机功率"
+        },
+        {
+          "symbol": "U",
+          "name": "额定电压",
+          "role": "input",
+          "unit": "kV",
+          "desc": "额定电压"
+        },
+        {
+          "symbol": "cosphi",
+          "name": "功率因数",
+          "role": "input",
+          "unit": "-",
+          "desc": "功率因数",
+          "default": 0.85
+        },
+        {
+          "symbol": "eta",
+          "name": "电机效率",
+          "role": "input",
+          "unit": "-",
+          "desc": "电机效率",
+          "default": 0.9
+        }
+      ],
+      "source": {"standard_id": "GB 50055", "clause": "通用"},
+      "tags": ["电机电流", "额定电流", "选型计算"],
+      "keywords": ["电流", "电机", "额定", "效率"],
+      "precision": 0.1,
+      "created_at": "2026-06-04T00:00:00Z",
+      "updated_at": "2026-06-04T00:00:00Z",
+      "version": 1
+    }
+  ]
+}

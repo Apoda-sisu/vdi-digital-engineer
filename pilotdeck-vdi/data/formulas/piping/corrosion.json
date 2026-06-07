@@ -1,0 +1,118 @@
+{
+  "file": "piping/corrosion.json",
+  "discipline": "piping",
+  "category": "corrosion",
+  "formula_count": 4,
+  "formulas": [
+    {
+      "formula_id": "PI-COR-001",
+      "name": "腐蚀速率",
+      "name_en": "Corrosion Rate",
+      "discipline": "piping",
+      "category": "corrosion/rate",
+      "type": "exact",
+      "equation_text": "CR = (ΔW)/(ρ*A*t)",
+      "equation_latex": "CR = \\frac{\\Delta W}{\\rho \\cdot A \\cdot t}",
+      "equation_ast": {
+        "op": "div",
+        "num": {"var": "ΔW"},
+        "den": {"op": "mul", "args": [{"var": "ρ"}, {"var": "A"}, {"var": "t"}]}
+      },
+      "variables": [
+        {"symbol": "CR", "name": "腐蚀速率", "unit": "mm/yr", "role": "output", "desc": "年腐蚀速率"},
+        {"symbol": "ΔW", "name": "质量损失", "unit": "g", "role": "input", "constraints": {"min": 0}, "desc": "试片质量损失"},
+        {"symbol": "ρ", "name": "材料密度", "unit": "g/cm³", "role": "input", "constraints": {"min": 1}, "desc": "材料密度"},
+        {"symbol": "A", "name": "试片面积", "unit": "cm²", "role": "input", "constraints": {"min": 1}, "desc": "试片暴露面积"},
+        {"symbol": "t", "name": "暴露时间", "unit": "yr", "role": "input", "constraints": {"min": 0.01}, "desc": "暴露时间"}
+      ],
+      "source": {"standard_id": "GB/T 20801.3", "clause": "腐蚀裕量"},
+      "tags": ["腐蚀速率", "腐蚀评估", "质量损失"],
+      "keywords": ["腐蚀速率", "年腐蚀量", "腐蚀评估"],
+      "precision": 0.001,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PI-COR-002",
+      "name": "剩余寿命估算",
+      "name_en": "Remaining Life Estimation",
+      "discipline": "piping",
+      "category": "corrosion/life",
+      "type": "exact",
+      "equation_text": "RL = (t_actual - t_min) / CR",
+      "equation_latex": "RL = \\frac{t_{actual} - t_{min}}{CR}",
+      "equation_ast": {
+        "op": "div",
+        "num": {"op": "sub", "args": [{"var": "t_actual"}, {"var": "t_min"}]},
+        "den": {"var": "CR"}
+      },
+      "variables": [
+        {"symbol": "RL", "name": "剩余寿命", "unit": "yr", "role": "output", "desc": "管道剩余使用寿命"},
+        {"symbol": "t_actual", "name": "实测壁厚", "unit": "mm", "role": "input", "constraints": {"min": 1}, "desc": "当前实测壁厚"},
+        {"symbol": "t_min", "name": "最小允许壁厚", "unit": "mm", "role": "input", "constraints": {"min": 0.5}, "desc": "结构强度要求的最小壁厚"},
+        {"symbol": "CR", "name": "腐蚀速率", "unit": "mm/yr", "role": "input", "constraints": {"min": 0.001}, "desc": "年腐蚀速率"}
+      ],
+      "source": {"standard_id": "GB/T 20801.3", "clause": "寿命评估"},
+      "tags": ["剩余寿命", "寿命评估", "腐蚀"],
+      "keywords": ["剩余寿命", "使用寿命", "寿命评估"],
+      "precision": 0.1,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PI-COR-003",
+      "name": "腐蚀裕量计算",
+      "name_en": "Corrosion Allowance",
+      "discipline": "piping",
+      "category": "corrosion/allowance",
+      "type": "exact",
+      "equation_text": "C = CR * design_life",
+      "equation_latex": "C = CR \\cdot design\\_life",
+      "equation_ast": {
+        "op": "mul",
+        "args": [{"var": "CR"}, {"var": "design_life"}]
+      },
+      "variables": [
+        {"symbol": "C", "name": "腐蚀裕量", "unit": "mm", "role": "output", "desc": "设计腐蚀裕量"},
+        {"symbol": "CR", "name": "腐蚀速率", "unit": "mm/yr", "role": "input", "constraints": {"min": 0.001}, "desc": "年腐蚀速率"},
+        {"symbol": "design_life", "name": "设计寿命", "unit": "yr", "role": "input", "constraints": {"min": 1, "max": 50}, "desc": "管道设计寿命"}
+      ],
+      "source": {"standard_id": "GB/T 20801.3", "clause": "壁厚设计"},
+      "tags": ["腐蚀裕量", "壁厚设计", "设计寿命"],
+      "keywords": ["腐蚀裕量", "设计寿命", "壁厚裕量"],
+      "precision": 0.1,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PI-COR-004",
+      "name": "点蚀深度评估",
+      "name_en": "Pitting Depth Assessment",
+      "discipline": "piping",
+      "category": "corrosion/pitting",
+      "type": "exact",
+      "equation_text": "CRp = d_max / t",
+      "equation_latex": "CR_p = \\frac{d_{max}}{t}",
+      "equation_ast": {
+        "op": "div",
+        "num": {"var": "d_max"},
+        "den": {"var": "t"}
+      },
+      "variables": [
+        {"symbol": "CRp", "name": "点蚀速率", "unit": "mm/yr", "role": "output", "desc": "最大点蚀速率"},
+        {"symbol": "d_max", "name": "最大点蚀深度", "unit": "mm", "role": "input", "constraints": {"min": 0}, "desc": "测量的最大点蚀深度"},
+        {"symbol": "t", "name": "暴露时间", "unit": "yr", "role": "input", "constraints": {"min": 0.1}, "desc": "暴露时间"}
+      ],
+      "source": {"standard_id": "GB/T 20801.3", "clause": "点蚀评估"},
+      "tags": ["点蚀", "局部腐蚀", "腐蚀评估"],
+      "keywords": ["点蚀", "点蚀速率", "局部腐蚀"],
+      "precision": 0.001,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    }
+  ]
+}

@@ -24,9 +24,7 @@
           "desc": "取决于浓缩倍数，F=E/(N-1)-D，N为浓缩倍数"}
       ],
       "source": {"standard_id": "GB 50050-2017", "clause": "5.2.1"},
-      "related_formulas": [
-        {"formula_id": "WA-WQ-002", "relation": "complement", "note": "浓缩倍数计算"}
-      ],
+      "related_formulas": [],
       "tags": ["循环冷却水", "补充水量", "水量平衡"],
       "keywords": ["补充水量", "蒸发损失", "排污损失", "M=E+D+F", "冷却塔"],
       "precision": "精确",

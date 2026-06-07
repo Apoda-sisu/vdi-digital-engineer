@@ -1,0 +1,257 @@
+{
+  "file": "process/flow.json",
+  "discipline": "process",
+  "category": "flow",
+  "formula_count": 8,
+  "formulas": [
+    {
+      "formula_id": "PR-FLO-002",
+      "name": "伯努利方程（完整版）",
+      "name_en": "Bernoulli Equation (Complete)",
+      "discipline": "process",
+      "category": "flow/energy",
+      "type": "exact",
+      "equation_text": "P1/ρg + V1²/2g + Z1 = P2/ρg + V2²/2g + Z2 + Hf + Hl",
+      "equation_latex": "\\frac{P_1}{\\rho g} + \\frac{V_1^2}{2g} + Z_1 = \\frac{P_2}{\\rho g} + \\frac{V_2^2}{2g} + Z_2 + H_f + H_l",
+      "equation_ast": {
+        "op": "add",
+        "args": [
+          {"op": "div", "num": {"var": "P1"}, "den": {"op": "mul", "args": [{"var": "ρ"}, {"var": "g"}]}},
+          {"op": "div", "num": {"op": "pow", "base": {"var": "V1"}, "exp": 2}, "den": {"op": "mul", "args": [{"const": 2}, {"var": "g"}]}},
+          {"var": "Z1"}
+        ]
+      },
+      "variables": [
+        {"symbol": "P1", "name": "入口压力", "unit": "Pa", "role": "input", "desc": "截面1处的压力"},
+        {"symbol": "V1", "name": "入口流速", "unit": "m/s", "role": "input", "desc": "截面1处的流速"},
+        {"symbol": "Z1", "name": "入口高度", "unit": "m", "role": "input", "desc": "截面1处的高度"},
+        {"symbol": "ρ", "name": "流体密度", "unit": "kg/m³", "role": "input", "default": 1000, "desc": "流体密度"},
+        {"symbol": "g", "name": "重力加速度", "unit": "m/s²", "role": "constant", "default": 9.81, "desc": "重力加速度"},
+        {"symbol": "P2", "name": "出口压力", "unit": "Pa", "role": "input", "desc": "截面2处的压力"},
+        {"symbol": "V2", "name": "出口流速", "unit": "m/s", "role": "input", "desc": "截面2处的流速"},
+        {"symbol": "Z2", "name": "出口高度", "unit": "m", "role": "input", "desc": "截面2处的高度"},
+        {"symbol": "Hf", "name": "沿程损失", "unit": "m", "role": "input", "constraints": {"min": 0}, "desc": "沿程水头损失"},
+        {"symbol": "Hl", "name": "局部损失", "unit": "m", "role": "input", "constraints": {"min": 0}, "desc": "局部水头损失"}
+      ],
+      "source": {"standard_id": "化工原理", "clause": "流体力学"},
+      "tags": ["伯努利", "能量守恒", "流体力学"],
+      "keywords": ["伯努利方程", "能量守恒", "压力能", "动能", "位能"],
+      "precision": 0.001,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PR-FLO-003",
+      "name": "管路特性曲线方程",
+      "name_en": "Pipeline Characteristic Curve",
+      "discipline": "process",
+      "category": "flow/pipeline",
+      "type": "exact",
+      "equation_text": "H = Hst + K*Q²",
+      "equation_latex": "H = H_{st} + K \\cdot Q^2",
+      "equation_ast": {
+        "op": "add",
+        "args": [
+          {"var": "Hst"},
+          {"op": "mul", "args": [{"var": "K"}, {"op": "pow", "base": {"var": "Q"}, "exp": 2}]}
+        ]
+      },
+      "variables": [
+        {"symbol": "H", "name": "管路所需扬程", "unit": "m", "role": "output", "desc": "管路系统所需总扬程"},
+        {"symbol": "Hst", "name": "静扬程", "unit": "m", "role": "input", "constraints": {"min": 0}, "desc": "几何高差"},
+        {"symbol": "K", "name": "管路阻力系数", "unit": "s²/m⁵", "role": "input", "constraints": {"min": 0}, "desc": "管路总阻力系数"},
+        {"symbol": "Q", "name": "流量", "unit": "m³/s", "role": "input", "constraints": {"min": 0}, "desc": "管路流量"}
+      ],
+      "source": {"standard_id": "化工原理", "clause": "流体输送"},
+      "tags": ["管路特性", "阻力曲线", "泵选型"],
+      "keywords": ["管路特性", "阻力曲线", "扬程", "流量关系"],
+      "precision": 0.01,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PR-FLO-004",
+      "name": "泵的相似定律",
+      "name_en": "Pump Similarity Laws",
+      "discipline": "process",
+      "category": "flow/pump",
+      "type": "exact",
+      "equation_text": "Q1/Q2 = n1/n2, H1/H2 = (n1/n2)², P1/P2 = (n1/n2)³",
+      "equation_latex": "\\frac{Q_1}{Q_2} = \\frac{n_1}{n_2}, \\frac{H_1}{H_2} = \\left(\\frac{n_1}{n_2}\\right)^2, \\frac{P_1}{P_2} = \\left(\\frac{n_1}{n_2}\\right)^3",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {"var": "Q1"},
+          {"op": "pow", "base": {"op": "div", "num": {"var": "n2"}, "den": {"var": "n1"}}, "exp": 1}
+        ]
+      },
+      "variables": [
+        {"symbol": "Q2", "name": "调速后流量", "unit": "m³/h", "role": "output", "desc": "转速变化后的流量"},
+        {"symbol": "Q1", "name": "原流量", "unit": "m³/h", "role": "input", "constraints": {"min": 0}, "desc": "原转速下的流量"},
+        {"symbol": "n1", "name": "原转速", "unit": "rpm", "role": "input", "constraints": {"min": 100}, "desc": "原转速"},
+        {"symbol": "n2", "name": "新转速", "unit": "rpm", "role": "input", "constraints": {"min": 100}, "desc": "调速后的转速"}
+      ],
+      "source": {"standard_id": "化工原理", "clause": "流体输送"},
+      "tags": ["相似定律", "泵特性", "变频调速"],
+      "keywords": ["相似定律", "泵特性", "变频", "调速"],
+      "precision": 0.01,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PR-FLO-005",
+      "name": "气体压缩功（等温）",
+      "name_en": "Isothermal Compression Work",
+      "discipline": "process",
+      "category": "flow/compression",
+      "type": "exact",
+      "equation_text": "W = nRT * ln(P2/P1)",
+      "equation_latex": "W = nRT \\cdot \\ln\\left(\\frac{P_2}{P_1}\\right)",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {"var": "n"},
+          {"var": "R"},
+          {"var": "T"},
+          {"op": "log", "arg": {"op": "div", "num": {"var": "P2"}, "den": {"var": "P1"}}}
+        ]
+      },
+      "variables": [
+        {"symbol": "W", "name": "压缩功", "unit": "J", "role": "output", "desc": "等温压缩功"},
+        {"symbol": "n", "name": "物质的量", "unit": "mol", "role": "input", "constraints": {"min": 0.001}, "desc": "气体物质的量"},
+        {"symbol": "R", "name": "气体常数", "unit": "J/(mol·K)", "role": "constant", "default": 8.314, "desc": "理想气体常数"},
+        {"symbol": "T", "name": "温度", "unit": "K", "role": "input", "constraints": {"min": 200, "max": 800}, "desc": "气体温度"},
+        {"symbol": "P1", "name": "初始压力", "unit": "Pa", "role": "input", "constraints": {"min": 1000}, "desc": "压缩前压力"},
+        {"symbol": "P2", "name": "终了压力", "unit": "Pa", "role": "input", "constraints": {"min": 1000}, "desc": "压缩后压力"}
+      ],
+      "source": {"standard_id": "化工原理", "clause": "气体压缩"},
+      "tags": ["压缩功", "等温过程", "气体压缩"],
+      "keywords": ["压缩功", "等温压缩", "气体压缩", "功耗"],
+      "precision": 0.01,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PR-FLO-006",
+      "name": "气体压缩功（绝热）",
+      "name_en": "Adiabatic Compression Work",
+      "discipline": "process",
+      "category": "flow/compression",
+      "type": "exact",
+      "equation_text": "W = [k/(k-1)] * P1V1 * [(P2/P1)^((k-1)/k) - 1]",
+      "equation_latex": "W = \\frac{k}{k-1} \\cdot P_1 V_1 \\cdot \\left[\\left(\\frac{P_2}{P_1}\\right)^{\\frac{k-1}{k}} - 1\\right]",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {"op": "div", "num": {"var": "k"}, "den": {"op": "sub", "args": [{"var": "k"}, {"const": 1}]}},
+          {"var": "P1"},
+          {"var": "V1"},
+          {"op": "sub", "args": [
+            {"op": "pow", "base": {"op": "div", "num": {"var": "P2"}, "den": {"var": "P1"}}, "exp": {"op": "div", "num": {"op": "sub", "args": [{"var": "k"}, {"const": 1}]}, "den": {"var": "k"}}},
+            {"const": 1}
+          ]}
+        ]
+      },
+      "variables": [
+        {"symbol": "W", "name": "压缩功", "unit": "J", "role": "output", "desc": "绝热压缩功"},
+        {"symbol": "k", "name": "绝热指数", "unit": "-", "role": "input", "constraints": {"min": 1.1, "max": 1.67}, "default": 1.4, "desc": "气体绝热指数（Cp/Cv）"},
+        {"symbol": "P1", "name": "初始压力", "unit": "Pa", "role": "input", "constraints": {"min": 1000}, "desc": "压缩前压力"},
+        {"symbol": "V1", "name": "初始体积", "unit": "m³", "role": "input", "constraints": {"min": 0.001}, "desc": "压缩前体积"},
+        {"symbol": "P2", "name": "终了压力", "unit": "Pa", "role": "input", "constraints": {"min": 1000}, "desc": "压缩后压力"}
+      ],
+      "source": {"standard_id": "化工原理", "clause": "气体压缩"},
+      "tags": ["压缩功", "绝热过程", "气体压缩"],
+      "keywords": ["绝热压缩", "压缩功", "多变过程"],
+      "precision": 0.01,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PR-FLO-007",
+      "name": "雷诺数计算",
+      "name_en": "Reynolds Number",
+      "discipline": "process",
+      "category": "flow/regime",
+      "type": "exact",
+      "equation_text": "Re = ρVD/μ",
+      "equation_latex": "Re = \\frac{\\rho V D}{\\mu}",
+      "equation_ast": {
+        "op": "div",
+        "num": {"op": "mul", "args": [{"var": "ρ"}, {"var": "V"}, {"var": "D"}]},
+        "den": {"var": "μ"}
+      },
+      "variables": [
+        {"symbol": "Re", "name": "雷诺数", "unit": "-", "role": "output", "desc": "流体雷诺数"},
+        {"symbol": "ρ", "name": "流体密度", "unit": "kg/m³", "role": "input", "constraints": {"min": 0.1}, "desc": "流体密度"},
+        {"symbol": "V", "name": "流速", "unit": "m/s", "role": "input", "constraints": {"min": 0.001}, "desc": "流体流速"},
+        {"symbol": "D", "name": "特征长度", "unit": "m", "role": "input", "constraints": {"min": 0.001}, "desc": "管道直径或特征长度"},
+        {"symbol": "μ", "name": "动力粘度", "unit": "Pa·s", "role": "input", "constraints": {"min": 1e-6}, "desc": "流体动力粘度"}
+      ],
+      "source": {"standard_id": "化工原理", "clause": "流体力学"},
+      "tags": ["雷诺数", "流态判别", "湍流"],
+      "keywords": ["雷诺数", "流态", "湍流", "层流"],
+      "precision": 0.01,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PR-FLO-008",
+      "name": "范宁摩擦因子（层流）",
+      "name_en": "Fanning Friction Factor (Laminar)",
+      "discipline": "process",
+      "category": "flow/friction",
+      "type": "exact",
+      "equation_text": "f = 16/Re",
+      "equation_latex": "f = \\frac{16}{Re}",
+      "equation_ast": {
+        "op": "div",
+        "num": {"const": 16},
+        "den": {"var": "Re"}
+      },
+      "variables": [
+        {"symbol": "f", "name": "范宁摩擦因子", "unit": "-", "role": "output", "desc": "范宁摩擦因子"},
+        {"symbol": "Re", "name": "雷诺数", "unit": "-", "role": "input", "constraints": {"max": 2100}, "desc": "雷诺数（层流范围）"}
+      ],
+      "source": {"standard_id": "化工原理", "clause": "流体力学"},
+      "tags": ["摩擦因子", "层流", "范宁"],
+      "keywords": ["范宁摩擦因子", "层流", "摩擦系数"],
+      "precision": 0.001,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PR-FLO-009",
+      "name": "管路并联流量分配",
+      "name_en": "Parallel Pipe Flow Distribution",
+      "discipline": "process",
+      "category": "flow/pipeline",
+      "type": "exact",
+      "equation_text": "Q_total = Q1 + Q2 + ... + Qn",
+      "equation_latex": "Q_{total} = \\sum_{i=1}^{n} Q_i",
+      "equation_ast": {
+        "op": "add",
+        "args": [{"var": "Q1"}, {"var": "Q2"}, {"var": "Q3"}]
+      },
+      "variables": [
+        {"symbol": "Q_total", "name": "总流量", "unit": "m³/h", "role": "output", "desc": "并联管路总流量"},
+        {"symbol": "Q1", "name": "支管1流量", "unit": "m³/h", "role": "input", "constraints": {"min": 0}, "desc": "支管1流量"},
+        {"symbol": "Q2", "name": "支管2流量", "unit": "m³/h", "role": "input", "constraints": {"min": 0}, "desc": "支管2流量"},
+        {"symbol": "Q3", "name": "支管3流量", "unit": "m³/h", "role": "input", "constraints": {"min": 0}, "desc": "支管3流量"}
+      ],
+      "source": {"standard_id": "化工原理", "clause": "流体输送"},
+      "tags": ["并联管路", "流量分配", "管网"],
+      "keywords": ["并联管路", "流量分配", "管网计算"],
+      "precision": 0.01,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "file": "electrical/protection.json",
+  "discipline": "electrical",
+  "category": "protection",
+  "formula_count": 6,
+  "formulas": [
+    {
+      "formula_id": "EL-PRO-001",
+      "name": "短路电流计算（对称分量法）",
+      "name_en": "Short Circuit Current (Symmetrical Components)",
+      "discipline": "electrical",
+      "category": "protection/short-circuit",
+      "type": "exact",
+      "equation_text": "Ik = U / (√3 * Zk)",
+      "equation_latex": "I_k = \\frac{U}{\\sqrt{3} \\cdot Z_k}",
+      "equation_ast": {
+        "op": "div",
+        "num": {"var": "U"},
+        "den": {"op": "mul", "args": [{"const": 1.732}, {"var": "Zk"}]}
+      },
+      "variables": [
+        {"symbol": "Ik", "name": "短路电流", "unit": "kA", "role": "output", "desc": "三相短路电流"},
+        {"symbol": "U", "name": "系统电压", "unit": "kV", "role": "input", "constraints": {"min": 0.38, "max": 220}, "desc": "系统标称电压"},
+        {"symbol": "Zk", "name": "短路阻抗", "unit": "Ω", "role": "input", "constraints": {"min": 0.001}, "desc": "系统短路阻抗"}
+      ],
+      "source": {"standard_id": "GB 50054", "clause": "短路保护"},
+      "tags": ["短路电流", "保护计算", "对称分量"],
+      "keywords": ["短路电流", "三相短路", "保护整定"],
+      "precision": 0.01,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "EL-PRO-002",
+      "name": "断路器分断能力校验",
+      "name_en": "Circuit Breaker Breaking Capacity Check",
+      "discipline": "electrical",
+      "category": "protection/breaker",
+      "type": "exact",
+      "equation_text": "Ics ≥ Ik",
+      "equation_latex": "I_{cs} \\geq I_k",
+      "equation_ast": {
+        "op": "div",
+        "num": {"var": "Ics"},
+        "den": {"var": "Ik"}
+      },
+      "variables": [
+        {"symbol": "Ics", "name": "额定分断电流", "unit": "kA", "role": "input", "constraints": {"min": 1}, "desc": "断路器额定分断电流"},
+        {"symbol": "Ik", "name": "短路电流", "unit": "kA", "role": "input", "constraints": {"min": 0.1}, "desc": "安装处短路电流"}
+      ],
+      "source": {"standard_id": "GB 50054", "clause": "保护电器选择"},
+      "tags": ["断路器", "分断能力", "保护校验"],
+      "keywords": ["断路器", "分断能力", "短路校验"],
+      "precision": 0.1,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "EL-PRO-003",
+      "name": "熔断器选择",
+      "name_en": "Fuse Selection",
+      "discipline": "electrical",
+      "category": "protection/fuse",
+      "type": "exact",
+      "equation_text": "Ifuse ≥ 1.5 * Imotor",
+      "equation_latex": "I_{fuse} \\geq 1.5 \\cdot I_{motor}",
+      "equation_ast": {
+        "op": "mul",
+        "args": [{"const": 1.5}, {"var": "Imotor"}]
+      },
+      "variables": [
+        {"symbol": "Ifuse", "name": "熔断器额定电流", "unit": "A", "role": "output", "desc": "熔断器最小额定电流"},
+        {"symbol": "Imotor", "name": "电机额定电流", "unit": "A", "role": "input", "constraints": {"min": 1}, "desc": "电机额定电流"}
+      ],
+      "source": {"standard_id": "GB 50055", "clause": "电机保护"},
+      "tags": ["熔断器", "电机保护", "过载保护"],
+      "keywords": ["熔断器", "电机保护", "过载"],
+      "precision": 1,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "EL-PRO-004",
+      "name": "接地电阻计算",
+      "name_en": "Grounding Resistance Calculation",
+      "discipline": "electrical",
+      "category": "protection/grounding",
+      "type": "exact",
+      "equation_text": "R = ρ/(2πL) * (ln(4L/d) - 1)",
+      "equation_latex": "R = \\frac{\\rho}{2\\pi L} \\cdot \\left(\\ln\\frac{4L}{d} - 1\\right)",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {"op": "div", "num": {"var": "ρ"}, "den": {"op": "mul", "args": [{"const": 6.2832}, {"var": "L"}]}},
+          {"op": "sub", "args": [
+            {"op": "log", "arg": {"op": "div", "num": {"op": "mul", "args": [{"const": 4}, {"var": "L"}]}, "den": {"var": "d"}}},
+            {"const": 1}
+          ]}
+        ]
+      },
+      "variables": [
+        {"symbol": "R", "name": "接地电阻", "unit": "Ω", "role": "output", "desc": "垂直接地极接地电阻"},
+        {"symbol": "ρ", "name": "土壤电阻率", "unit": "Ω·m", "role": "input", "constraints": {"min": 1, "max": 10000}, "desc": "土壤电阻率"},
+        {"symbol": "L", "name": "接地极长度", "unit": "m", "role": "input", "constraints": {"min": 1, "max": 10}, "desc": "垂直接地极长度"},
+        {"symbol": "d", "name": "接地极直径", "unit": "m", "role": "input", "constraints": {"min": 0.01}, "desc": "接地极直径"}
+      ],
+      "source": {"standard_id": "GB 50065", "clause": "接地计算"},
+      "tags": ["接地电阻", "接地设计", "防雷接地"],
+      "keywords": ["接地电阻", "土壤电阻率", "接地极"],
+      "precision": 0.01,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "EL-PRO-005",
+      "name": "漏电保护动作电流",
+      "name_en": "RCD Operating Current",
+      "discipline": "electrical",
+      "category": "protection/rcd",
+      "type": "exact",
+      "equation_text": "IΔn ≥ 3 * Ileak",
+      "equation_latex": "I_{\\Delta n} \\geq 3 \\cdot I_{leak}",
+      "equation_ast": {
+        "op": "mul",
+        "args": [{"const": 3}, {"var": "Ileak"}]
+      },
+      "variables": [
+        {"symbol": "IΔn", "name": "漏电保护额定动作电流", "unit": "mA", "role": "output", "desc": "漏电保护器额定动作电流"},
+        {"symbol": "Ileak", "name": "系统漏电流", "unit": "mA", "role": "input", "constraints": {"min": 1}, "desc": "系统正常泄漏电流"}
+      ],
+      "source": {"standard_id": "GB 50054", "clause": "漏电保护"},
+      "tags": ["漏电保护", "RCD", "接地故障"],
+      "keywords": ["漏电保护", "RCD", "动作电流"],
+      "precision": 1,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "EL-PRO-006",
+      "name": "热稳定校验",
+      "name_en": "Thermal Stability Check",
+      "discipline": "electrical",
+      "category": "protection/thermal",
+      "type": "exact",
+      "equation_text": "Ith² * t ≥ Ik² * tk",
+      "equation_latex": "I_{th}^2 \\cdot t \\geq I_k^2 \\cdot t_k",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {"op": "pow", "base": {"var": "Ith"}, "exp": 2},
+          {"var": "t"}
+        ]
+      },
+      "variables": [
+        {"symbol": "Ith", "name": "设备热稳定电流", "unit": "kA", "role": "input", "constraints": {"min": 1}, "desc": "设备额定短时耐受电流"},
+        {"symbol": "t", "name": "设备热稳定时间", "unit": "s", "role": "input", "constraints": {"min": 0.1}, "desc": "设备额定短时耐受时间"},
+        {"symbol": "Ik", "name": "短路电流", "unit": "kA", "role": "input", "constraints": {"min": 0.1}, "desc": "系统短路电流"},
+        {"symbol": "tk", "name": "保护切除时间", "unit": "s", "role": "input", "constraints": {"min": 0.01}, "desc": "保护装置切除故障时间"}
+      ],
+      "source": {"standard_id": "GB 50060", "clause": "热稳定校验"},
+      "tags": ["热稳定", "短路校验", "设备选择"],
+      "keywords": ["热稳定", "短时耐受", "热稳定校验"],
+      "precision": 0.01,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    }
+  ]
+}

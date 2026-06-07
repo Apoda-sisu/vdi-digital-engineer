@@ -1,0 +1,182 @@
+{
+  "file": "process/separation.json",
+  "discipline": "process",
+  "category": "separation",
+  "formula_count": 6,
+  "formulas": [
+    {
+      "formula_id": "PR-SEP-001",
+      "name": "精馏塔理论板数（McCabe-Thiele法）",
+      "name_en": "Distillation Theoretical Plates",
+      "discipline": "process",
+      "category": "separation/distillation",
+      "type": "exact",
+      "equation_text": "N = ln[(xD/(1-xD)) * ((1-xB)/xB)] / ln(α)",
+      "equation_latex": "N = \\frac{\\ln\\left[\\frac{x_D}{1-x_D} \\cdot \\frac{1-x_B}{x_B}\\right]}{\\ln(\\alpha)}",
+      "equation_ast": {
+        "op": "div",
+        "num": {"op": "log", "arg": {"op": "mul", "args": [
+          {"op": "div", "num": {"var": "xD"}, "den": {"op": "sub", "args": [{"const": 1}, {"var": "xD"}]}},
+          {"op": "div", "num": {"op": "sub", "args": [{"const": 1}, {"var": "xB"}]}, "den": {"var": "xB"}}
+        ]}},
+        "den": {"op": "log", "arg": {"var": "α"}}
+      },
+      "variables": [
+        {"symbol": "N", "name": "理论板数", "unit": "-", "role": "output", "desc": "最小理论板数"},
+        {"symbol": "xD", "name": "馏出液组成", "unit": "-", "role": "input", "constraints": {"min": 0.01, "max": 0.99}, "desc": "馏出液中轻组分摩尔分数"},
+        {"symbol": "xB", "name": "釜液组成", "unit": "-", "role": "input", "constraints": {"min": 0.01, "max": 0.99}, "desc": "釜液中轻组分摩尔分数"},
+        {"symbol": "α", "name": "相对挥发度", "unit": "-", "role": "input", "constraints": {"min": 1.01}, "desc": "轻重组分相对挥发度"}
+      ],
+      "source": {"standard_id": "化工原理", "clause": "蒸馏"},
+      "tags": ["精馏", "理论板数", "McCabe-Thiele"],
+      "keywords": ["精馏塔", "理论板数", "McCabe-Thiele", "相对挥发度"],
+      "precision": 0.1,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PR-SEP-002",
+      "name": "吸收塔高度计算",
+      "name_en": "Absorption Tower Height",
+      "discipline": "process",
+      "category": "separation/absorption",
+      "type": "exact",
+      "equation_text": "H = HETP * NT",
+      "equation_latex": "H = HETP \\cdot N_T",
+      "equation_ast": {
+        "op": "mul",
+        "args": [{"var": "HETP"}, {"var": "NT"}]
+      },
+      "variables": [
+        {"symbol": "H", "name": "塔高", "unit": "m", "role": "output", "desc": "吸收塔填料层高度"},
+        {"symbol": "HETP", "name": "理论板当量高度", "unit": "m", "role": "input", "constraints": {"min": 0.1, "max": 2}, "desc": "每块理论板对应的填料高度"},
+        {"symbol": "NT", "name": "理论板数", "unit": "-", "role": "input", "constraints": {"min": 1}, "desc": "所需理论板数"}
+      ],
+      "source": {"standard_id": "化工原理", "clause": "吸收"},
+      "tags": ["吸收塔", "填料塔", "HETP"],
+      "keywords": ["吸收塔高度", "HETP", "填料塔设计"],
+      "precision": 0.01,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PR-SEP-003",
+      "name": "萃取分配系数",
+      "name_en": "Extraction Distribution Coefficient",
+      "discipline": "process",
+      "category": "separation/extraction",
+      "type": "exact",
+      "equation_text": "K = C_extract / C_raffinate",
+      "equation_latex": "K = \\frac{C_{extract}}{C_{raffinate}}",
+      "equation_ast": {
+        "op": "div",
+        "num": {"var": "C_extract"},
+        "den": {"var": "C_raffinate"}
+      },
+      "variables": [
+        {"symbol": "K", "name": "分配系数", "unit": "-", "role": "output", "desc": "萃取分配系数"},
+        {"symbol": "C_extract", "name": "萃取相浓度", "unit": "kg/m³", "role": "input", "constraints": {"min": 0}, "desc": "萃取相中溶质浓度"},
+        {"symbol": "C_raffinate", "name": "萃余相浓度", "unit": "kg/m³", "role": "input", "constraints": {"min": 0}, "desc": "萃余相中溶质浓度"}
+      ],
+      "source": {"standard_id": "化工原理", "clause": "萃取"},
+      "tags": ["萃取", "分配系数", "液液萃取"],
+      "keywords": ["萃取", "分配系数", "液液萃取"],
+      "precision": 0.001,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PR-SEP-004",
+      "name": "干燥速率方程",
+      "name_en": "Drying Rate Equation",
+      "discipline": "process",
+      "category": "separation/drying",
+      "type": "exact",
+      "equation_text": "N = Gc * dX / (A * dθ)",
+      "equation_latex": "N = \\frac{G_c \\cdot dX}{A \\cdot d\\theta}",
+      "equation_ast": {
+        "op": "div",
+        "num": {"op": "mul", "args": [{"var": "Gc"}, {"var": "dX"}]},
+        "den": {"op": "mul", "args": [{"var": "A"}, {"var": "dθ"}]}
+      },
+      "variables": [
+        {"symbol": "N", "name": "干燥速率", "unit": "kg/(m²·s)", "role": "output", "desc": "单位面积干燥速率"},
+        {"symbol": "Gc", "name": "绝干物料量", "unit": "kg", "role": "input", "constraints": {"min": 0.001}, "desc": "绝干物料质量"},
+        {"symbol": "dX", "name": "含水量变化", "unit": "kg/kg", "role": "input", "desc": "物料含水量变化"},
+        {"symbol": "A", "name": "干燥面积", "unit": "m²", "role": "input", "constraints": {"min": 0.001}, "desc": "物料干燥面积"},
+        {"symbol": "dθ", "name": "时间变化", "unit": "s", "role": "input", "constraints": {"min": 0.001}, "desc": "时间间隔"}
+      ],
+      "source": {"standard_id": "化工原理", "clause": "干燥"},
+      "tags": ["干燥", "干燥速率", "物料干燥"],
+      "keywords": ["干燥速率", "干燥计算", "含水量"],
+      "precision": 0.0001,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PR-SEP-005",
+      "name": "过滤速率方程（达西定律）",
+      "name_en": "Filtration Rate (Darcy's Law)",
+      "discipline": "process",
+      "category": "separation/filtration",
+      "type": "exact",
+      "equation_text": "Q = A * ΔP / (μ * R)",
+      "equation_latex": "Q = \\frac{A \\cdot \\Delta P}{\\mu \\cdot R}",
+      "equation_ast": {
+        "op": "div",
+        "num": {"op": "mul", "args": [{"var": "A"}, {"var": "ΔP"}]},
+        "den": {"op": "mul", "args": [{"var": "μ"}, {"var": "R"}]}
+      },
+      "variables": [
+        {"symbol": "Q", "name": "过滤速率", "unit": "m³/s", "role": "output", "desc": "滤液流量"},
+        {"symbol": "A", "name": "过滤面积", "unit": "m²", "role": "input", "constraints": {"min": 0.001}, "desc": "过滤面积"},
+        {"symbol": "ΔP", "name": "过滤压差", "unit": "Pa", "role": "input", "constraints": {"min": 1000}, "desc": "过滤推动力"},
+        {"symbol": "μ", "name": "滤液粘度", "unit": "Pa·s", "role": "input", "constraints": {"min": 1e-6}, "desc": "滤液动力粘度"},
+        {"symbol": "R", "name": "滤饼阻力", "unit": "1/m", "role": "input", "constraints": {"min": 1e6}, "desc": "滤饼比阻"}
+      ],
+      "source": {"standard_id": "化工原理", "clause": "过滤"},
+      "tags": ["过滤", "达西定律", "滤饼"],
+      "keywords": ["过滤速率", "达西定律", "滤饼阻力"],
+      "precision": 0.001,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PR-SEP-006",
+      "name": "离心分离因数",
+      "name_en": "Centrifugal Separation Factor",
+      "discipline": "process",
+      "category": "separation/centrifuge",
+      "type": "exact",
+      "equation_text": "α = ω²R/g = n²π²R/(900g)",
+      "equation_latex": "\\alpha = \\frac{\\omega^2 R}{g} = \\frac{n^2 \\pi^2 R}{900g}",
+      "equation_ast": {
+        "op": "div",
+        "num": {"op": "mul", "args": [
+          {"op": "pow", "base": {"var": "n"}, "exp": 2},
+          {"const": 9.8696},
+          {"var": "R"}
+        ]},
+        "den": {"op": "mul", "args": [{"const": 900}, {"var": "g"}]}
+      },
+      "variables": [
+        {"symbol": "α", "name": "分离因数", "unit": "-", "role": "output", "desc": "离心分离因数"},
+        {"symbol": "n", "name": "转速", "unit": "rpm", "role": "input", "constraints": {"min": 100}, "desc": "离心机转速"},
+        {"symbol": "R", "name": "转鼓半径", "unit": "m", "role": "input", "constraints": {"min": 0.01}, "desc": "离心机转鼓半径"},
+        {"symbol": "g", "name": "重力加速度", "unit": "m/s²", "role": "constant", "default": 9.81, "desc": "重力加速度"}
+      ],
+      "source": {"standard_id": "化工原理", "clause": "离心分离"},
+      "tags": ["离心分离", "分离因数", "离心机"],
+      "keywords": ["离心分离", "分离因数", "离心机选型"],
+      "precision": 0.1,
+      "created_at": "2026-06-05T00:00:00Z",
+      "updated_at": "2026-06-05T00:00:00Z",
+      "version": 1
+    }
+  ]
+}

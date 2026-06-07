@@ -36,6 +36,10 @@ const DEFAULT_INDEX = path.resolve(__dirname, "../../data/knowledge-clauses-v2.j
 const ENTITY_INDEX = path.resolve(__dirname, "../../data/indices/entity-index.json");
 const CROSS_REFS = path.resolve(__dirname, "../../data/indices/cross-refs.json");
 const DOMAIN_DICT = path.resolve(__dirname, "../../data/domain-dictionary.yaml");
+const FORMULAS_DIR = path.resolve(__dirname, "../../data/formulas");
+const FORMULA_INDEX = path.resolve(__dirname, "../../data/formulas/index.json");
+const FORMULA_KW_INDEX = path.resolve(__dirname, "../../data/formulas-indices/formula-keyword-index.json");
+const FORMULA_PARAM_INDEX = path.resolve(__dirname, "../../data/formulas-indices/formula-param-index.json");
 
 // ============================================================
 // 索引加载（启动时一次性加载到内存）
@@ -44,6 +48,13 @@ let clauses = [];
 let entityIndex = {};
 let crossRefGraph = { outgoing: {}, incoming: {} };
 let domainDict = {};
+
+// 公式库数据
+let formulaIndex = null;
+let formulaCache = {};       // formula_id → full formula object
+let formulaKeywordIndex = {};
+let formulaParamIndex = {};
+let formulaTables = null;
 
 function loadAllIndices() {
   const indexPath = process.env.VDI_KNOWLEDGE_INDEX || DEFAULT_INDEX;
@@ -82,6 +93,55 @@ function loadAllIndices() {
   }
 
   console.error(`[vdi-knowledge V2] 已加载 ${clauses.length} 条条款, ${Object.keys(entityIndex).length} 个实体索引键`);
+
+  // 加载公式库
+  loadFormulas();
+}
+
+function loadFormulas() {
+  // 加载公式主索引
+  if (fs.existsSync(FORMULA_INDEX)) {
+    formulaIndex = JSON.parse(fs.readFileSync(FORMULA_INDEX, "utf8"));
+    console.error(`[vdi-knowledge V2] 已加载 ${formulaIndex.formulas?.length || 0} 条公式, ${formulaIndex.tables?.length || 0} 个参数表`);
+  }
+
+  // 加载关键词索引（数据在 .index 键下）
+  if (fs.existsSync(FORMULA_KW_INDEX)) {
+    const raw = JSON.parse(fs.readFileSync(FORMULA_KW_INDEX, "utf8"));
+    formulaKeywordIndex = raw.index || raw;
+  }
+
+  // 加载参数索引（数据在 .index 键下）
+  if (fs.existsSync(FORMULA_PARAM_INDEX)) {
+    const raw = JSON.parse(fs.readFileSync(FORMULA_PARAM_INDEX, "utf8"));
+    formulaParamIndex = raw.index || raw;
+  }
+
+  // 加载参数表
+  const tablesPath = path.join(FORMULAS_DIR, "tables.json");
+  if (fs.existsSync(tablesPath)) {
+    formulaTables = JSON.parse(fs.readFileSync(tablesPath, "utf8"));
+  }
+}
+
+// 加载单个公式完整数据（懒加载缓存）
+function loadFormulaDetail(formulaId) {
+  if (formulaCache[formulaId]) return formulaCache[formulaId];
+
+  // 从索引找到文件路径
+  const entry = formulaIndex?.formulas?.find(f => f.id === formulaId);
+  if (!entry) return null;
+
+  const filePath = path.join(FORMULAS_DIR, entry.file);
+  if (!fs.existsSync(filePath)) return null;
+
+  const fileData = JSON.parse(fs.readFileSync(filePath, "utf8"));
+  const formulas = Array.isArray(fileData) ? fileData : (fileData.formulas || []);
+  const formula = formulas.find(f => f.formula_id === formulaId);
+  if (formula) {
+    formulaCache[formulaId] = formula;
+  }
+  return formula || null;
 }
 
 // ============================================================
@@ -454,6 +514,170 @@ function formatSearchResults(results, withCrossRefs = false) {
   return formatted;
 }
 
+// ============================================================
+// 单公式计算（内部可复用）
+// ============================================================
+function executeSingleFormula(formulaId, inputs, inputUnits = {}) {
+  const formula = loadFormulaDetail(formulaId);
+  if (!formula) throw new Error(`公式 ${formulaId} 未找到`);
+  if (!formula.equation_ast) throw new Error(`公式 ${formulaId} 缺少 AST`);
+
+  // 单位转换
+  const convertedInputs = {};
+  const conversionLog = [];
+  for (const v of formula.variables || []) {
+    if (v.role !== "input") continue;
+    let val = inputs[v.symbol];
+    if (val === undefined) {
+      if (v.default !== undefined) {
+        val = v.default;
+      } else {
+        throw new Error(`缺少输入参数 ${v.symbol}（${v.name}，单位 ${v.unit}）`);
+      }
+    }
+    const requestedUnit = inputUnits[v.symbol];
+    if (requestedUnit && requestedUnit !== v.unit) {
+      const alt = (v.alt_units || []).find(a => a.unit === requestedUnit);
+      if (alt) {
+        const originalVal = val;
+        val = val * (alt.factor || 1) + (alt.offset || 0);
+        conversionLog.push({ symbol: v.symbol, from: `${originalVal} ${requestedUnit}`, to: `${val} ${v.unit}` });
+      }
+    }
+    if (v.constraints) {
+      const c = v.constraints;
+      if (c.min !== undefined && val < c.min) throw new Error(`${v.symbol}=${val} < min(${c.min})`);
+      if (c.max !== undefined && val > c.max) throw new Error(`${v.symbol}=${val} > max(${c.max})`);
+    }
+    convertedInputs[v.symbol] = val;
+  }
+
+  const result = evaluateAST(formula.equation_ast, convertedInputs);
+  const outputVar = (formula.variables || []).find(v => v.role === "output");
+  const outputSymbol = outputVar?.symbol || "result";
+  const outputUnit = outputVar?.unit || "";
+
+  return {
+    formula_id: formulaId,
+    formula_name: formula.name,
+    equation: formula.equation_text,
+    inputs: convertedInputs,
+    conversions: conversionLog,
+    result: { [outputSymbol]: Math.round(result * 1e8) / 1e8, unit: outputUnit },
+    result_value: result,
+    result_symbol: outputSymbol,
+    audit: {
+      formula_id: formulaId,
+      formula_name: formula.name,
+      evidence_tag: `[${formula.source?.standard_id} §${formula.source?.clause}]`,
+      source: `${formula.source?.standard_id} §${formula.source?.clause}`,
+      precision: formula.precision || "精确",
+      type: formula.type,
+      confidence: formula.confidence,
+    },
+  };
+}
+
+// ============================================================
+// AST 求值引擎
+// ============================================================
+function evaluateAST(node, vars) {
+  if (!node || typeof node !== "object") {
+    throw new Error(`Invalid AST node: ${JSON.stringify(node)}`);
+  }
+
+  // 变量引用
+  if (node.var !== undefined) {
+    const val = vars[node.var];
+    if (val === undefined) throw new Error(`Missing variable: ${node.var}`);
+    return val;
+  }
+
+  // 常量
+  if (node.const !== undefined) {
+    return node.const;
+  }
+
+  // div 节点（num / den 结构）
+  if (node.op === "div" && node.num !== undefined && node.den !== undefined) {
+    const num = evaluateAST(node.num, vars);
+    const den = evaluateAST(node.den, vars);
+    if (den === 0) throw new Error("Division by zero");
+    return num / den;
+  }
+
+  // lhs/rhs 二元运算
+  if (node.op && node.lhs !== undefined && node.rhs !== undefined) {
+    const l = evaluateAST(node.lhs, vars);
+    const r = evaluateAST(node.rhs, vars);
+    switch (node.op) {
+      case "add": return l + r;
+      case "sub": return l - r;
+      case "mul": return l * r;
+      case "div": {
+        if (r === 0) throw new Error("Division by zero");
+        return l / r;
+      }
+      case "pow": return Math.pow(l, r);
+      default: throw new Error(`Unknown lhs/rhs op: ${node.op}`);
+    }
+  }
+
+  // 带 args 的多参数运算
+  if (node.op && node.args) {
+    const evaluated = node.args.map(a => evaluateAST(a, vars));
+    switch (node.op) {
+      case "add": case "+": return evaluated.reduce((s, v) => s + v, 0);
+      case "sub": case "-": return evaluated[0] - (evaluated.length > 1 ? evaluated[1] : 0);
+      case "mul": case "*": return evaluated.reduce((p, v) => p * v, 1);
+      case "div": case "/": {
+        if (evaluated[1] === 0) throw new Error("Division by zero");
+        return evaluated[0] / evaluated[1];
+      }
+      case "pow": case "^": return Math.pow(evaluated[0], evaluated[1]);
+      case "sum": return evaluated.reduce((s, v) => s + v, 0);
+      default: throw new Error(`Unknown AST op: ${node.op}`);
+    }
+  }
+
+  // 带 arg 的单参数函数（如 log10）
+  if (node.arg !== undefined && node.op) {
+    const arg = evaluateAST(node.arg, vars);
+    switch (node.op) {
+      case "log10": return Math.log10(arg);
+      case "log": case "ln": return Math.log(arg);
+      case "sqrt": return Math.sqrt(arg);
+      case "abs": return Math.abs(arg);
+      case "neg": return -arg;
+      case "exp": return Math.exp(arg);
+      default: throw new Error(`Unknown unary op: ${node.op}`);
+    }
+  }
+
+  // 带 base/exp 的幂运算
+  if (node.base !== undefined) {
+    const base = evaluateAST(node.base, vars);
+    if (node.exp !== undefined) {
+      return Math.pow(base, node.exp);
+    }
+    // 单参数函数
+    switch (node.op) {
+      case "sqrt": return Math.sqrt(base);
+      case "abs": return Math.abs(base);
+      case "neg": return -base;
+      case "log": case "ln": return Math.log(base);
+      case "log10": return Math.log10(base);
+      case "exp": return Math.exp(base);
+      case "sin": return Math.sin(base);
+      case "cos": return Math.cos(base);
+      case "tan": return Math.tan(base);
+      default: break;
+    }
+  }
+
+  throw new Error(`Unrecognized AST structure: ${JSON.stringify(Object.keys(node))}`);
+}
+
 async function main() {
   loadAllIndices();
 
@@ -526,6 +750,70 @@ async function main() {
           properties: {
             discipline: { type: "string", description: "按专业过滤" },
           },
+        },
+      },
+      // --- 公式库工具 ---
+      {
+        name: "vdi_search_formulas",
+        description: "【公式库】按关键词、专业、类别搜索工程计算公式。返回匹配的公式摘要（ID、名称、输入输出参数）。",
+        inputSchema: {
+          type: "object",
+          properties: {
+            query: { type: "string", description: "搜索关键词，如：水头损失、水泵功率、消防水池" },
+            discipline: { type: "string", description: "专业过滤：water/process/piping/electrical/instrument/hse/equipment/general" },
+            category: { type: "string", description: "类别过滤，如：hydraulic、equipment、fire" },
+            limit: { type: "number", description: "返回条数（默认5，最大20）" },
+          },
+          required: ["query"],
+        },
+      },
+      {
+        name: "vdi_get_formula",
+        description: "【公式库】根据公式ID获取完整公式定义，包括变量、约束、AST、来源规范等。",
+        inputSchema: {
+          type: "object",
+          properties: {
+            formula_id: { type: "string", description: "公式ID，如 WA-HYD-001" },
+          },
+          required: ["formula_id"],
+        },
+      },
+      {
+        name: "vdi_calculate",
+        description: "【公式库】执行单个工程计算。根据公式ID和输入参数，通过AST求值获得精确结果，自动执行单位转换和约束校验。返回带 evidence_tag 的审计记录。",
+        inputSchema: {
+          type: "object",
+          properties: {
+            formula_id: { type: "string", description: "公式ID，如 WA-HYD-001" },
+            inputs: { type: "object", description: "输入参数键值对，如 {\"L\": 100, \"Q\": 0.05, \"C\": 130, \"D\": 0.2}" },
+            input_units: { type: "object", description: "可选：非标准输入单位，如 {\"L\": \"km\"}，默认使用公式定义的标准单位" },
+          },
+          required: ["formula_id", "inputs"],
+        },
+      },
+      {
+        name: "vdi_calculate_composite",
+        description: "【公式库】组合计算：按步骤串联多个公式，前序公式输出自动传递给后续公式作为输入。适用于需要多个公式联合计算的场景（如：沿程损失→局部损失→总水头→水泵功率）。每步可指定公式ID、输入来源（用户输入 或 前序步骤输出）。",
+        inputSchema: {
+          type: "object",
+          properties: {
+            pipeline: {
+              type: "array",
+              description: "计算步骤数组，按执行顺序排列",
+              items: {
+                type: "object",
+                properties: {
+                  step: { type: "number", description: "步骤序号（从1开始）" },
+                  formula_id: { type: "string", description: "公式ID" },
+                  inputs: { type: "object", description: "输入参数。值可以是数值，也可以是 {\"from_step\": N, \"symbol\": \"X\"} 引用前序步骤输出" },
+                  input_units: { type: "object", description: "可选：输入单位覆盖" },
+                },
+                required: ["step", "formula_id", "inputs"],
+              },
+            },
+            global_inputs: { type: "object", description: "全局共享输入参数（所有步骤可引用，避免重复指定）" },
+          },
+          required: ["pipeline"],
         },
       },
     ],
@@ -726,6 +1014,259 @@ async function main() {
               total_standards: standards.length,
               total_clauses: standards.reduce((s, st) => s + st.clause_count, 0),
               standards,
+            }, null, 2),
+          }],
+        };
+      }
+
+      // ========================================
+      // 公式库工具实现
+      // ========================================
+
+      // --- vdi_search_formulas ---
+      if (name === "vdi_search_formulas") {
+        const query = (args?.query || "").trim().toLowerCase();
+        const discipline = args?.discipline || null;
+        const category = args?.category || null;
+        const limit = args?.limit || 5;
+
+        if (!formulaIndex) {
+          return { content: [{ type: "text", text: JSON.stringify({ error: "formula_index_not_loaded" }) }], isError: true };
+        }
+
+        // 从关键词索引查找
+        const kwHits = new Set();
+        const queryTokens = query.split(/[\s,，、]+/).filter(t => t.length > 0);
+        for (const token of queryTokens) {
+          // 精确匹配
+          if (formulaKeywordIndex[token]) {
+            formulaKeywordIndex[token].forEach(id => kwHits.add(id));
+          }
+          // 模糊匹配
+          for (const [kw, ids] of Object.entries(formulaKeywordIndex)) {
+            if (kw.includes(token) || token.includes(kw)) {
+              ids.forEach(id => kwHits.add(id));
+            }
+          }
+        }
+
+        // 也从参数索引查找
+        for (const token of queryTokens) {
+          if (formulaParamIndex[token]) {
+            formulaParamIndex[token].forEach(id => kwHits.add(id));
+          }
+        }
+
+        // 从索引条目中过滤
+        let candidates = formulaIndex.formulas || [];
+        if (kwHits.size > 0) {
+          candidates = candidates.filter(f => kwHits.has(f.id));
+        }
+        if (discipline) {
+          candidates = candidates.filter(f => f.discipline === discipline);
+        }
+        if (category) {
+          candidates = candidates.filter(f => f.category?.startsWith(category));
+        }
+
+        // 如果关键词索引无命中，回退到全量名称/标签模糊匹配
+        if (kwHits.size === 0) {
+          candidates = candidates.filter(f => {
+            const text = `${f.name} ${(f.tags || []).join(" ")}`.toLowerCase();
+            return queryTokens.some(t => text.includes(t));
+          });
+        }
+
+        const results = candidates.slice(0, limit).map(f => ({
+          formula_id: f.id,
+          name: f.name,
+          discipline: f.discipline,
+          category: f.category,
+          type: f.type,
+          inputs: f.inputs,
+          outputs: f.outputs,
+          source: `${f.source_id} §${f.clause}`,
+          tags: f.tags,
+        }));
+
+        return {
+          content: [{
+            type: "text",
+            text: JSON.stringify({ query, count: results.length, results }, null, 2),
+          }],
+        };
+      }
+
+      // --- vdi_get_formula ---
+      if (name === "vdi_get_formula") {
+        const formulaId = args?.formula_id;
+        if (!formulaId) {
+          return { content: [{ type: "text", text: JSON.stringify({ error: "missing formula_id" }) }], isError: true };
+        }
+
+        const formula = loadFormulaDetail(formulaId);
+        if (!formula) {
+          return {
+            content: [{ type: "text", text: JSON.stringify({ error: "not_found", formula_id: formulaId, suggestion: "使用 vdi_search_formulas 搜索" }) }],
+            isError: true,
+          };
+        }
+
+        // 解析查表引用，附带参数表数据
+        const resolvedTables = {};
+        for (const v of formula.variables || []) {
+          if (v.look_up?.table_ref && formulaTables) {
+            const tbl = formulaTables.tables?.find(t => t.id === v.look_up.table_ref);
+            if (tbl) {
+              resolvedTables[v.look_up.table_ref] = tbl;
+            }
+          }
+        }
+
+        return {
+          content: [{
+            type: "text",
+            text: JSON.stringify({ ...formula, resolved_tables: Object.keys(resolvedTables).length > 0 ? resolvedTables : undefined }, null, 2),
+          }],
+        };
+      }
+
+      // --- vdi_calculate ---
+      if (name === "vdi_calculate") {
+        const formulaId = args?.formula_id;
+        const inputs = args?.inputs || {};
+        const inputUnits = args?.input_units || {};
+
+        if (!formulaId) {
+          return { content: [{ type: "text", text: JSON.stringify({ error: "missing formula_id" }) }], isError: true };
+        }
+
+        try {
+          const r = executeSingleFormula(formulaId, inputs, inputUnits);
+
+          const warnings = [];
+          if (r.audit.type === "empirical" && r.audit.confidence !== undefined) {
+            warnings.push(`经验公式，置信度 ${r.audit.confidence}，建议人工复核`);
+          }
+          if (r.conversions.length > 0) {
+            warnings.push(`涉及 ${r.conversions.length} 项单位转换，请确认转换正确`);
+          }
+
+          return {
+            content: [{
+              type: "text",
+              text: JSON.stringify({
+                formula_id: r.formula_id,
+                formula_name: r.formula_name,
+                equation: r.equation,
+                inputs: r.inputs,
+                conversions: r.conversions.length > 0 ? r.conversions : undefined,
+                result: r.result,
+                audit: { ...r.audit, computed_at: new Date().toISOString() },
+                validation: { passed: true, warnings: warnings.length > 0 ? warnings : undefined },
+              }, null, 2),
+            }],
+          };
+        } catch (err) {
+          return { content: [{ type: "text", text: JSON.stringify({ error: "calculation_failed", message: String(err) }) }], isError: true };
+        }
+      }
+
+      // --- vdi_calculate_composite ---
+      if (name === "vdi_calculate_composite") {
+        const pipeline = args?.pipeline || [];
+        const globalInputs = args?.global_inputs || {};
+
+        if (pipeline.length === 0) {
+          return { content: [{ type: "text", text: JSON.stringify({ error: "empty_pipeline" }) }], isError: true };
+        }
+
+        // 按 step 排序
+        const sorted = [...pipeline].sort((a, b) => (a.step || 0) - (b.step || 0));
+        const stepResults = {};
+        const allEvidenceTags = [];
+        const errors = [];
+
+        for (const step of sorted) {
+          // 解析输入：合并全局输入 + 步骤输入 + 前序输出
+          const resolvedInputs = {};
+
+          // 先放全局输入
+          for (const [k, v] of Object.entries(globalInputs)) {
+            resolvedInputs[k] = v;
+          }
+
+          // 再放步骤输入（可能包含 from_step 引用）
+          for (const [k, v] of Object.entries(step.inputs || {})) {
+            if (v && typeof v === "object" && v.from_step !== undefined) {
+              // 引用前序步骤输出
+              const refResult = stepResults[v.from_step];
+              if (!refResult) {
+                errors.push({ step: step.step, error: `步骤 ${v.from_step} 的结果不存在` });
+                break;
+              }
+              const refValue = refResult.result_value;
+              if (refValue === undefined) {
+                errors.push({ step: step.step, error: `步骤 ${v.from_step} 没有输出值` });
+                break;
+              }
+              resolvedInputs[k] = refValue;
+            } else {
+              resolvedInputs[k] = v;
+            }
+          }
+
+          if (errors.length > 0) break;
+
+          // 执行单公式计算
+          try {
+            const stepResult = executeSingleFormula(step.formula_id, resolvedInputs, step.input_units || {});
+            stepResults[step.step] = stepResult;
+            allEvidenceTags.push(stepResult.audit.evidence_tag);
+          } catch (err) {
+            errors.push({ step: step.step, formula_id: step.formula_id, error: String(err) });
+            break;
+          }
+        }
+
+        if (errors.length > 0) {
+          return {
+            content: [{ type: "text", text: JSON.stringify({
+              error: "composite_calculation_failed",
+              completed_steps: Object.keys(stepResults).map(Number),
+              failed_at: errors[0],
+              partial_results: stepResults,
+            }, null, 2) }],
+            isError: true,
+          };
+        }
+
+        // 汇总结果
+        const lastStep = sorted[sorted.length - 1].step;
+        const finalResult = stepResults[lastStep];
+
+        return {
+          content: [{
+            type: "text",
+            text: JSON.stringify({
+              pipeline_steps: sorted.length,
+              step_results: Object.fromEntries(
+                Object.entries(stepResults).map(([k, v]) => [k, {
+                  formula_id: v.formula_id,
+                  formula_name: v.formula_name,
+                  equation: v.equation,
+                  inputs: v.inputs,
+                  result: v.result,
+                  evidence_tag: v.audit.evidence_tag,
+                }])
+              ),
+              final_result: finalResult.result,
+              all_evidence_tags: allEvidenceTags,
+              audit: {
+                pipeline_steps: sorted.map(s => ({ step: s.step, formula_id: s.formula_id })),
+                evidence_tags: allEvidenceTags,
+                computed_at: new Date().toISOString(),
+              },
             }, null, 2),
           }],
         };

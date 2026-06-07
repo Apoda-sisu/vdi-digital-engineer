@@ -1,40 +1,1640 @@
 {
   "schema_version": 1,
   "description": "公式专用检索索引：变量符号 → 公式ID列表",
-  "built_at": "2026-06-04T03:00:00Z",
+  "built_at": "2026-06-05T18:05:37.586Z",
+  "total_params": 215,
+  "total_formulas": 128,
   "index": {
-    "Hf": {"formulas": ["WA-HYD-001", "WA-HYD-005", "WA-HYD-006"], "name": "沿程水头损失"},
-    "L": {"formulas": ["WA-HYD-001", "WA-HYD-006"], "name": "管道长度"},
-    "Q": {"formulas": ["WA-HYD-001", "WA-HYD-003", "WA-RAI-001"], "name": "流量"},
-    "C": {"formulas": ["WA-HYD-001"], "name": "海曾-威廉姆斯系数"},
-    "D": {"formulas": ["WA-HYD-001", "WA-HYD-004", "WA-HYD-006"], "name": "管径"},
-    "V": {"formulas": ["WA-HYD-002", "WA-HYD-003", "WA-HYD-006"], "name": "流速"},
-    "n": {"formulas": ["WA-HYD-002"], "name": "粗糙系数"},
-    "R": {"formulas": ["WA-HYD-002", "WA-HYD-004"], "name": "水力半径"},
-    "S": {"formulas": ["WA-HYD-002"], "name": "水力坡度"},
-    "A": {"formulas": ["WA-HYD-003", "WA-RAI-003"], "name": "过水断面面积"},
-    "k": {"formulas": ["WA-HYD-005"], "name": "局部损失系数"},
-    "f": {"formulas": ["WA-HYD-006"], "name": "达西摩擦系数"},
-    "g": {"formulas": ["WA-HYD-006", "WA-EQ-001"], "name": "重力加速度"},
-    "P": {"formulas": ["WA-EQ-001", "WA-RAI-002"], "name": "水泵轴功率/重现期"},
-    "ρ": {"formulas": ["WA-EQ-001"], "name": "液体密度"},
-    "H": {"formulas": ["WA-EQ-001"], "name": "扬程"},
-    "η": {"formulas": ["WA-EQ-001"], "name": "水泵效率"},
-    "Pm": {"formulas": ["WA-EQ-002"], "name": "电机功率"},
-    "ηm": {"formulas": ["WA-EQ-002"], "name": "电机效率"},
-    "Qf": {"formulas": ["WA-FIR-001"], "name": "消防用水量"},
-    "Qb": {"formulas": ["WA-FIR-001"], "name": "补水量"},
-    "T": {"formulas": ["WA-FIR-001"], "name": "火灾延续时间"},
-    "n": {"formulas": ["WA-FIR-002"], "name": "同时使用水枪数"},
-    "qx": {"formulas": ["WA-FIR-002"], "name": "每支水枪流量"},
-    "q": {"formulas": ["WA-RAI-001", "WA-RAI-002"], "name": "暴雨强度"},
-    "ψ": {"formulas": ["WA-RAI-001"], "name": "径流系数"},
-    "F": {"formulas": ["WA-RAI-001", "WA-WQ-001"], "name": "汇水面积/排污损失"},
-    "K": {"formulas": ["WA-RAI-003"], "name": "土壤渗透系数"},
-    "J": {"formulas": ["WA-RAI-003"], "name": "水力坡降"},
-    "t": {"formulas": ["WA-RAI-002", "WA-RAI-003"], "name": "时间"},
-    "E": {"formulas": ["WA-WQ-001"], "name": "蒸发损失量"},
-    "D": {"formulas": ["WA-WQ-001"], "name": "风吹损失量"},
-    "M": {"formulas": ["WA-WQ-001"], "name": "补充水量"}
+    "I_corrected": {
+      "formulas": [
+        "EL-CAB-001"
+      ],
+      "name": "校正后载流量"
+    },
+    "I_base": {
+      "formulas": [
+        "EL-CAB-001"
+      ],
+      "name": "基准载流量"
+    },
+    "Kt": {
+      "formulas": [
+        "EL-CAB-001"
+      ],
+      "name": "温度校正系数"
+    },
+    "Kd": {
+      "formulas": [
+        "EL-CAB-001"
+      ],
+      "name": "土壤热阻校正系数"
+    },
+    "Kg": {
+      "formulas": [
+        "EL-CAB-001"
+      ],
+      "name": "敷设方式校正系数"
+    },
+    "S": {
+      "formulas": [
+        "EL-CAB-002",
+        "EL-CAB-004",
+        "PI-STR-001",
+        "PR-CAT-003",
+        "WA-HYD-002",
+        "WA-HYD-019"
+      ],
+      "name": "电缆截面"
+    },
+    "I": {
+      "formulas": [
+        "EL-CAB-002",
+        "EL-CAB-003",
+        "EL-CAB-005",
+        "EL-POW-001",
+        "EL-VOL-001",
+        "EL-POW-002",
+        "PI-VIB-001",
+        "PI-VIB-002",
+        "WA-EQ-007"
+      ],
+      "name": "截面惯性矩"
+    },
+    "J": {
+      "formulas": [
+        "EL-CAB-002",
+        "WA-RAI-003"
+      ],
+      "name": "经济电流密度"
+    },
+    "ΔU": {
+      "formulas": [
+        "EL-CAB-003",
+        "EL-VOL-001"
+      ],
+      "name": "电压降百分比"
+    },
+    "L": {
+      "formulas": [
+        "EL-CAB-003",
+        "EL-CAB-005",
+        "EL-LIG-004",
+        "EL-VOL-001",
+        "EL-PRO-004",
+        "PI-VOL-002",
+        "PI-VOL-003",
+        "PI-VEL-004",
+        "PI-VOL-001",
+        "PI-STR-002",
+        "PI-STR-004",
+        "PI-STR-005",
+        "PI-VIB-001",
+        "PI-VIB-002",
+        "PR-HEA-003",
+        "PR-HEA-008",
+        "PR-RCT-003",
+        "WA-HYD-001",
+        "WA-HYD-006",
+        "WA-HYD-018"
+      ],
+      "name": "接地极长度"
+    },
+    "R": {
+      "formulas": [
+        "EL-CAB-003",
+        "EL-CAB-005",
+        "EL-VOL-001",
+        "EL-PRO-004",
+        "PR-FLO-005",
+        "PR-REA-001",
+        "PR-SEP-005",
+        "PR-SEP-006",
+        "PR-REA-003",
+        "PR-VAP-001",
+        "WA-HYD-002",
+        "WA-HYD-004",
+        "WA-HYD-019"
+      ],
+      "name": "电缆电阻"
+    },
+    "X": {
+      "formulas": [
+        "EL-CAB-003",
+        "EL-VOL-001",
+        "PR-REA-002",
+        "PR-RCT-004"
+      ],
+      "name": "电缆电抗"
+    },
+    "cosphi": {
+      "formulas": [
+        "EL-CAB-003",
+        "EL-POW-001",
+        "EL-VOL-001",
+        "EL-POW-002"
+      ],
+      "name": "功率因数"
+    },
+    "sinphi": {
+      "formulas": [
+        "EL-CAB-003",
+        "EL-VOL-001"
+      ],
+      "name": "无功因数"
+    },
+    "Ik": {
+      "formulas": [
+        "EL-CAB-004",
+        "EL-PRO-001",
+        "EL-PRO-002",
+        "EL-PRO-006"
+      ],
+      "name": "短路电流"
+    },
+    "t": {
+      "formulas": [
+        "EL-CAB-004",
+        "EL-LIG-005",
+        "EL-PRO-006",
+        "PI-COR-001",
+        "PI-COR-004",
+        "PI-VEL-007",
+        "PI-STR-001",
+        "PI-STR-006",
+        "PI-STR-007",
+        "PI-VIB-004",
+        "PR-CAT-002",
+        "PR-REA-004",
+        "WA-EQ-007",
+        "WA-RAI-002",
+        "WA-RAI-003"
+      ],
+      "name": "设备热稳定时间"
+    },
+    "K": {
+      "formulas": [
+        "EL-CAB-004",
+        "EL-LIG-001",
+        "EL-LIG-002",
+        "EL-LIG-005",
+        "PI-VEL-005",
+        "PI-VEL-006",
+        "PI-STR-005",
+        "PI-VIB-002",
+        "PI-VIB-004",
+        "PR-FLO-003",
+        "PR-SEP-003",
+        "PR-REA-005",
+        "WA-FIR-006",
+        "WA-RAI-003"
+      ],
+      "name": "局部阻力系数"
+    },
+    "P_loss": {
+      "formulas": [
+        "EL-CAB-005"
+      ],
+      "name": "电缆损耗"
+    },
+    "η": {
+      "formulas": [
+        "EL-CAB-006",
+        "WA-EQ-001"
+      ],
+      "name": "水泵效率"
+    },
+    "A_cables": {
+      "formulas": [
+        "EL-CAB-006"
+      ],
+      "name": "电缆截面积"
+    },
+    "A_tray": {
+      "formulas": [
+        "EL-CAB-006"
+      ],
+      "name": "桥架截面积"
+    },
+    "E": {
+      "formulas": [
+        "EL-LIG-001",
+        "EL-LIG-002",
+        "PI-STR-001",
+        "PI-STR-003",
+        "PI-VIB-001",
+        "PI-VIB-002",
+        "PI-VIB-004",
+        "WA-WQ-001"
+      ],
+      "name": "管材弹性模量"
+    },
+    "N": {
+      "formulas": [
+        "EL-LIG-001",
+        "EL-LIG-002",
+        "PR-SEP-001",
+        "PR-SEP-004",
+        "WA-EQ-005",
+        "WA-EQ-006"
+      ],
+      "name": "每日进水次数"
+    },
+    "Φ": {
+      "formulas": [
+        "EL-LIG-001",
+        "EL-LIG-002"
+      ],
+      "name": "光源光通量"
+    },
+    "U": {
+      "formulas": [
+        "EL-LIG-001",
+        "EL-LIG-002",
+        "EL-LIG-005",
+        "EL-POW-001",
+        "EL-VOL-001",
+        "EL-POW-002",
+        "EL-PRO-001",
+        "PR-HEA-005",
+        "PR-HEA-001",
+        "PR-RCT-005"
+      ],
+      "name": "总传热系数"
+    },
+    "A": {
+      "formulas": [
+        "EL-LIG-001",
+        "EL-LIG-002",
+        "EL-LIG-003",
+        "PI-COR-001",
+        "PI-VOL-003",
+        "PI-VEL-002",
+        "PI-VEL-003",
+        "PR-HEA-002",
+        "PR-HEA-003",
+        "PR-HEA-004",
+        "PR-FLO-001",
+        "PR-HEA-001",
+        "PR-RCT-005",
+        "PR-SEP-004",
+        "PR-SEP-005",
+        "PR-REA-003",
+        "WA-FIR-003",
+        "WA-HYD-003",
+        "WA-HYD-007",
+        "WA-HYD-009",
+        "WA-HYD-019",
+        "WA-RAI-003"
+      ],
+      "name": "过水断面面积"
+    },
+    "LPD": {
+      "formulas": [
+        "EL-LIG-003"
+      ],
+      "name": "照明功率密度"
+    },
+    "P_total": {
+      "formulas": [
+        "EL-LIG-003",
+        "PR-VAP-003"
+      ],
+      "name": "照明总功率"
+    },
+    "UGR": {
+      "formulas": [
+        "EL-LIG-004"
+      ],
+      "name": "统一眩光指数"
+    },
+    "Lb": {
+      "formulas": [
+        "EL-LIG-004"
+      ],
+      "name": "背景亮度"
+    },
+    "Ω": {
+      "formulas": [
+        "EL-LIG-004"
+      ],
+      "name": "灯具立体角"
+    },
+    "C": {
+      "formulas": [
+        "EL-LIG-005",
+        "PI-COR-003",
+        "PI-STR-001",
+        "PR-FLO-001",
+        "WA-FIR-006",
+        "WA-HYD-001",
+        "WA-RAI-002"
+      ],
+      "name": "海曾-威廉姆斯系数"
+    },
+    "P": {
+      "formulas": [
+        "EL-LIG-005",
+        "EL-POW-001",
+        "EL-POW-002",
+        "PI-STR-001",
+        "PI-STR-006",
+        "PI-STR-007",
+        "PR-REA-001",
+        "PR-RCT-006",
+        "PR-VAP-002",
+        "WA-EQ-001",
+        "WA-EQ-002",
+        "WA-RAI-002"
+      ],
+      "name": "应急照明功率"
+    },
+    "eta": {
+      "formulas": [
+        "EL-POW-002"
+      ],
+      "name": "电机效率"
+    },
+    "Zk": {
+      "formulas": [
+        "EL-PRO-001"
+      ],
+      "name": "短路阻抗"
+    },
+    "Ics": {
+      "formulas": [
+        "EL-PRO-002"
+      ],
+      "name": "额定分断电流"
+    },
+    "Ifuse": {
+      "formulas": [
+        "EL-PRO-003"
+      ],
+      "name": "熔断器额定电流"
+    },
+    "Imotor": {
+      "formulas": [
+        "EL-PRO-003"
+      ],
+      "name": "电机额定电流"
+    },
+    "ρ": {
+      "formulas": [
+        "EL-PRO-004",
+        "PI-COR-001",
+        "PI-VOL-002",
+        "PI-VEL-002",
+        "PI-VEL-004",
+        "PI-VEL-005",
+        "PI-VIB-003",
+        "PI-VIB-004",
+        "PR-FLO-002",
+        "PR-FLO-007",
+        "PR-FLO-001",
+        "PR-RCT-001",
+        "PR-RCT-006",
+        "WA-EQ-001"
+      ],
+      "name": "土壤电阻率"
+    },
+    "d": {
+      "formulas": [
+        "EL-PRO-004",
+        "PI-VOL-002"
+      ],
+      "name": "接地极直径"
+    },
+    "IΔn": {
+      "formulas": [
+        "EL-PRO-005"
+      ],
+      "name": "漏电保护额定动作电流"
+    },
+    "Ileak": {
+      "formulas": [
+        "EL-PRO-005"
+      ],
+      "name": "系统漏电流"
+    },
+    "Ith": {
+      "formulas": [
+        "EL-PRO-006"
+      ],
+      "name": "设备热稳定电流"
+    },
+    "tk": {
+      "formulas": [
+        "EL-PRO-006"
+      ],
+      "name": "保护切除时间"
+    },
+    "Q": {
+      "formulas": [
+        "HS-VEN-001",
+        "HS-VEN-002",
+        "PI-VEL-002",
+        "PI-VEL-001",
+        "PR-FLO-003",
+        "PR-HEA-002",
+        "PR-HEA-003",
+        "PR-HEA-004",
+        "PR-HEA-007",
+        "PR-HEA-008",
+        "PR-FLO-001",
+        "PR-HEA-001",
+        "PR-RCT-003",
+        "PR-RCT-004",
+        "PR-RCT-005",
+        "PR-SEP-005",
+        "WA-EQ-001",
+        "WA-FIR-003",
+        "WA-FIR-006",
+        "WA-HYD-001",
+        "WA-HYD-003",
+        "WA-HYD-009",
+        "WA-HYD-019",
+        "WA-HYD-020",
+        "WA-RAI-001"
+      ],
+      "name": "泡沫混合液流量"
+    },
+    "n": {
+      "formulas": [
+        "HS-VEN-001",
+        "PR-FLO-005",
+        "PR-REA-001",
+        "PR-RCT-006",
+        "PR-SEP-006",
+        "WA-FIR-002",
+        "WA-HYD-002",
+        "WA-HYD-019",
+        "WA-RAI-002"
+      ],
+      "name": "同时使用水枪数"
+    },
+    "V": {
+      "formulas": [
+        "HS-VEN-001",
+        "PI-VEL-002",
+        "PI-VEL-004",
+        "PI-VEL-005",
+        "PI-VOL-001",
+        "PI-VEL-001",
+        "PR-FLO-007",
+        "PR-REA-001",
+        "PR-RCT-003",
+        "PR-RCT-004",
+        "WA-EQ-005",
+        "WA-FIR-001",
+        "WA-HYD-002",
+        "WA-HYD-003",
+        "WA-HYD-006",
+        "WA-HYD-008",
+        "WA-HYD-009",
+        "WA-HYD-014"
+      ],
+      "name": "消防水池有效容积"
+    },
+    "M": {
+      "formulas": [
+        "HS-VEN-002",
+        "WA-WQ-001"
+      ],
+      "name": "有害物质散发量"
+    },
+    "C_out": {
+      "formulas": [
+        "HS-VEN-002"
+      ],
+      "name": "允许浓度（排风浓度）"
+    },
+    "C_in": {
+      "formulas": [
+        "HS-VEN-002"
+      ],
+      "name": "进风浓度"
+    },
+    "CR": {
+      "formulas": [
+        "PI-COR-001",
+        "PI-COR-002",
+        "PI-COR-003"
+      ],
+      "name": "腐蚀速率"
+    },
+    "ΔW": {
+      "formulas": [
+        "PI-COR-001"
+      ],
+      "name": "质量损失"
+    },
+    "RL": {
+      "formulas": [
+        "PI-COR-002"
+      ],
+      "name": "剩余寿命"
+    },
+    "t_actual": {
+      "formulas": [
+        "PI-COR-002"
+      ],
+      "name": "实测壁厚"
+    },
+    "t_min": {
+      "formulas": [
+        "PI-COR-002"
+      ],
+      "name": "最小允许壁厚"
+    },
+    "design_life": {
+      "formulas": [
+        "PI-COR-003"
+      ],
+      "name": "设计寿命"
+    },
+    "CRp": {
+      "formulas": [
+        "PI-COR-004"
+      ],
+      "name": "点蚀速率"
+    },
+    "d_max": {
+      "formulas": [
+        "PI-COR-004"
+      ],
+      "name": "最大点蚀深度"
+    },
+    "W": {
+      "formulas": [
+        "PI-VOL-002",
+        "PR-FLO-005",
+        "PR-FLO-006"
+      ],
+      "name": "管道重量"
+    },
+    "D": {
+      "formulas": [
+        "PI-VOL-002",
+        "PI-VOL-003",
+        "PI-VEL-004",
+        "PI-VEL-006",
+        "PI-STR-001",
+        "PI-VOL-001",
+        "PI-VEL-001",
+        "PI-STR-004",
+        "PI-STR-006",
+        "PI-STR-007",
+        "PI-VIB-004",
+        "PR-FLO-007",
+        "PR-RCT-003",
+        "PR-RCT-006",
+        "WA-EQ-007",
+        "WA-HYD-001",
+        "WA-HYD-004",
+        "WA-HYD-006",
+        "WA-HYD-007",
+        "WA-HYD-008",
+        "WA-HYD-013",
+        "WA-WQ-001"
+      ],
+      "name": "反应器直径"
+    },
+    "Vsg": {
+      "formulas": [
+        "PI-VEL-003"
+      ],
+      "name": "表观气速"
+    },
+    "G": {
+      "formulas": [
+        "PI-VEL-003"
+      ],
+      "name": "质量流量"
+    },
+    "ρg": {
+      "formulas": [
+        "PI-VEL-003"
+      ],
+      "name": "气相密度"
+    },
+    "ρl": {
+      "formulas": [
+        "PI-VEL-003"
+      ],
+      "name": "液相密度"
+    },
+    "ΔP": {
+      "formulas": [
+        "PI-VEL-004",
+        "PI-VEL-005",
+        "PI-VIB-003",
+        "PR-FLO-001",
+        "PR-SEP-005"
+      ],
+      "name": "局部压降"
+    },
+    "f": {
+      "formulas": [
+        "PI-VEL-004",
+        "PI-VEL-006",
+        "PR-FLO-008",
+        "WA-HYD-006",
+        "WA-HYD-013"
+      ],
+      "name": "范宁摩擦因子"
+    },
+    "Le": {
+      "formulas": [
+        "PI-VEL-006"
+      ],
+      "name": "等效长度"
+    },
+    "δ": {
+      "formulas": [
+        "PI-VEL-007",
+        "PR-HEA-005"
+      ],
+      "name": "保温厚度"
+    },
+    "P_heat": {
+      "formulas": [
+        "PI-VEL-007"
+      ],
+      "name": "热价"
+    },
+    "λ": {
+      "formulas": [
+        "PI-VEL-007"
+      ],
+      "name": "保温材料导热系数"
+    },
+    "P_insul": {
+      "formulas": [
+        "PI-VEL-007"
+      ],
+      "name": "保温材料价格"
+    },
+    "ΔT": {
+      "formulas": [
+        "PI-VEL-007",
+        "PI-STR-002",
+        "PI-STR-003",
+        "PI-STR-005"
+      ],
+      "name": "温差"
+    },
+    "r1": {
+      "formulas": [
+        "PI-VEL-007",
+        "PR-HEA-008"
+      ],
+      "name": "管道外半径"
+    },
+    "ΔL": {
+      "formulas": [
+        "PI-STR-002",
+        "PI-STR-004",
+        "PI-STR-005"
+      ],
+      "name": "实际膨胀量"
+    },
+    "α": {
+      "formulas": [
+        "PI-STR-002",
+        "PI-STR-003",
+        "PI-STR-005",
+        "PR-SEP-001",
+        "PR-SEP-006"
+      ],
+      "name": "线膨胀系数"
+    },
+    "σ": {
+      "formulas": [
+        "PI-STR-003",
+        "PR-CAT-004",
+        "PR-HEA-004"
+      ],
+      "name": "斯蒂芬-玻尔兹曼常数"
+    },
+    "σh": {
+      "formulas": [
+        "PI-STR-006"
+      ],
+      "name": "环向应力"
+    },
+    "σa": {
+      "formulas": [
+        "PI-STR-007"
+      ],
+      "name": "轴向应力"
+    },
+    "fn": {
+      "formulas": [
+        "PI-VIB-001"
+      ],
+      "name": "固有频率"
+    },
+    "m": {
+      "formulas": [
+        "PI-VIB-001",
+        "PI-VIB-002"
+      ],
+      "name": "单位长度质量"
+    },
+    "g": {
+      "formulas": [
+        "PI-VIB-002",
+        "PR-FLO-002",
+        "PR-RCT-002",
+        "PR-SEP-006",
+        "WA-EQ-001",
+        "WA-HYD-006",
+        "WA-HYD-014",
+        "WA-HYD-020"
+      ],
+      "name": "重力加速度"
+    },
+    "c": {
+      "formulas": [
+        "PI-VIB-003",
+        "PI-VIB-004"
+      ],
+      "name": "水击波速"
+    },
+    "ΔV": {
+      "formulas": [
+        "PI-VIB-003"
+      ],
+      "name": "流速变化"
+    },
+    "STY": {
+      "formulas": [
+        "PR-CAT-001"
+      ],
+      "name": "空时收率"
+    },
+    "F_product": {
+      "formulas": [
+        "PR-CAT-001"
+      ],
+      "name": "产品流量"
+    },
+    "W_cat": {
+      "formulas": [
+        "PR-CAT-001",
+        "PR-CAT-004",
+        "PR-CAT-005"
+      ],
+      "name": "催化剂装填量"
+    },
+    "V_bed": {
+      "formulas": [
+        "PR-CAT-001"
+      ],
+      "name": "床层体积"
+    },
+    "a": {
+      "formulas": [
+        "PR-CAT-002"
+      ],
+      "name": "催化剂活性"
+    },
+    "k_d": {
+      "formulas": [
+        "PR-CAT-002"
+      ],
+      "name": "失活速率常数"
+    },
+    "n_product": {
+      "formulas": [
+        "PR-CAT-003"
+      ],
+      "name": "产品物质的量"
+    },
+    "M_product": {
+      "formulas": [
+        "PR-CAT-003"
+      ],
+      "name": "产品摩尔质量"
+    },
+    "n_reactant": {
+      "formulas": [
+        "PR-CAT-003"
+      ],
+      "name": "反应物物质的量"
+    },
+    "M_reactant": {
+      "formulas": [
+        "PR-CAT-003"
+      ],
+      "name": "反应物摩尔质量"
+    },
+    "Sg": {
+      "formulas": [
+        "PR-CAT-004",
+        "PR-CAT-006"
+      ],
+      "name": "比表面积"
+    },
+    "V_ads": {
+      "formulas": [
+        "PR-CAT-004"
+      ],
+      "name": "吸附气体体积"
+    },
+    "N_A": {
+      "formulas": [
+        "PR-CAT-004"
+      ],
+      "name": "阿伏伽德罗常数"
+    },
+    "V_m": {
+      "formulas": [
+        "PR-CAT-004"
+      ],
+      "name": "摩尔体积"
+    },
+    "Vp": {
+      "formulas": [
+        "PR-CAT-005",
+        "PR-CAT-006"
+      ],
+      "name": "孔容"
+    },
+    "W_water": {
+      "formulas": [
+        "PR-CAT-005"
+      ],
+      "name": "水吸收量"
+    },
+    "ρ_water": {
+      "formulas": [
+        "PR-CAT-005"
+      ],
+      "name": "水密度"
+    },
+    "Dp": {
+      "formulas": [
+        "PR-CAT-006"
+      ],
+      "name": "平均孔径"
+    },
+    "P1": {
+      "formulas": [
+        "PR-FLO-002",
+        "PR-FLO-005",
+        "PR-FLO-006",
+        "PR-VAP-001",
+        "PR-VAP-003",
+        "WA-EQ-004",
+        "WA-EQ-006"
+      ],
+      "name": "低压侧蒸汽压"
+    },
+    "V1": {
+      "formulas": [
+        "PR-FLO-002",
+        "PR-FLO-006"
+      ],
+      "name": "入口流速"
+    },
+    "Z1": {
+      "formulas": [
+        "PR-FLO-002"
+      ],
+      "name": "入口高度"
+    },
+    "P2": {
+      "formulas": [
+        "PR-FLO-002",
+        "PR-FLO-005",
+        "PR-FLO-006",
+        "PR-VAP-001",
+        "PR-VAP-003",
+        "WA-EQ-004",
+        "WA-EQ-006"
+      ],
+      "name": "高压侧蒸汽压"
+    },
+    "V2": {
+      "formulas": [
+        "PR-FLO-002"
+      ],
+      "name": "出口流速"
+    },
+    "Z2": {
+      "formulas": [
+        "PR-FLO-002"
+      ],
+      "name": "出口高度"
+    },
+    "Hf": {
+      "formulas": [
+        "PR-FLO-002",
+        "WA-FIR-004",
+        "WA-HYD-001",
+        "WA-HYD-005",
+        "WA-HYD-006",
+        "WA-HYD-010",
+        "WA-HYD-015",
+        "WA-HYD-018"
+      ],
+      "name": "管道沿程损失"
+    },
+    "Hl": {
+      "formulas": [
+        "PR-FLO-002",
+        "WA-FIR-004",
+        "WA-HYD-005",
+        "WA-HYD-010",
+        "WA-HYD-012",
+        "WA-HYD-014",
+        "WA-HYD-015"
+      ],
+      "name": "局部水头损失"
+    },
+    "H": {
+      "formulas": [
+        "PR-FLO-003",
+        "PR-SEP-002",
+        "WA-EQ-001",
+        "WA-FIR-004",
+        "WA-HYD-015",
+        "WA-HYD-020"
+      ],
+      "name": "管路所需扬程"
+    },
+    "Hst": {
+      "formulas": [
+        "PR-FLO-003",
+        "WA-HYD-015"
+      ],
+      "name": "静扬程"
+    },
+    "Q2": {
+      "formulas": [
+        "PR-FLO-004",
+        "PR-FLO-009",
+        "WA-HYD-011"
+      ],
+      "name": "调速后流量"
+    },
+    "Q1": {
+      "formulas": [
+        "PR-FLO-004",
+        "PR-FLO-009",
+        "WA-HYD-011"
+      ],
+      "name": "支管1流量"
+    },
+    "n1": {
+      "formulas": [
+        "PR-FLO-004",
+        "WA-EQ-004"
+      ],
+      "name": "额定转速"
+    },
+    "n2": {
+      "formulas": [
+        "PR-FLO-004",
+        "WA-EQ-004"
+      ],
+      "name": "调速后转速"
+    },
+    "T": {
+      "formulas": [
+        "PR-FLO-005",
+        "PR-REA-001",
+        "PR-REA-003",
+        "WA-EQ-005",
+        "WA-FIR-001",
+        "WA-FIR-006"
+      ],
+      "name": "水箱进水时间"
+    },
+    "k": {
+      "formulas": [
+        "PR-FLO-006",
+        "PR-HEA-003",
+        "PR-HEA-005",
+        "PR-HEA-008",
+        "PR-REA-003",
+        "PR-REA-004",
+        "WA-HYD-005"
+      ],
+      "name": "保温材料导热系数"
+    },
+    "Re": {
+      "formulas": [
+        "PR-FLO-007",
+        "PR-FLO-008",
+        "WA-HYD-008",
+        "WA-HYD-013"
+      ],
+      "name": "雷诺数"
+    },
+    "μ": {
+      "formulas": [
+        "PR-FLO-007",
+        "PR-RCT-001",
+        "PR-RCT-002",
+        "PR-SEP-005"
+      ],
+      "name": "动力粘度"
+    },
+    "Q_total": {
+      "formulas": [
+        "PR-FLO-009",
+        "WA-HYD-011"
+      ],
+      "name": "总流量"
+    },
+    "Q3": {
+      "formulas": [
+        "PR-FLO-009"
+      ],
+      "name": "支管3流量"
+    },
+    "h": {
+      "formulas": [
+        "PR-HEA-002",
+        "PR-HEA-008"
+      ],
+      "name": "对流传热系数"
+    },
+    "Tw": {
+      "formulas": [
+        "PR-HEA-002"
+      ],
+      "name": "壁面温度"
+    },
+    "Tf": {
+      "formulas": [
+        "PR-HEA-002"
+      ],
+      "name": "流体温度"
+    },
+    "T1": {
+      "formulas": [
+        "PR-HEA-003",
+        "PR-HEA-004",
+        "PR-VAP-001"
+      ],
+      "name": "高温物体温度"
+    },
+    "T2": {
+      "formulas": [
+        "PR-HEA-003",
+        "PR-HEA-004",
+        "PR-VAP-001"
+      ],
+      "name": "低温物体温度"
+    },
+    "ε": {
+      "formulas": [
+        "PR-HEA-004",
+        "PR-HEA-007",
+        "PR-RCT-001",
+        "WA-HYD-013"
+      ],
+      "name": "管道绝对粗糙度"
+    },
+    "h1": {
+      "formulas": [
+        "PR-HEA-005"
+      ],
+      "name": "热侧传热系数"
+    },
+    "h2": {
+      "formulas": [
+        "PR-HEA-005"
+      ],
+      "name": "冷侧传热系数"
+    },
+    "ΔTlm": {
+      "formulas": [
+        "PR-HEA-006"
+      ],
+      "name": "对数平均温差"
+    },
+    "ΔT1": {
+      "formulas": [
+        "PR-HEA-006"
+      ],
+      "name": "大温差"
+    },
+    "ΔT2": {
+      "formulas": [
+        "PR-HEA-006"
+      ],
+      "name": "小温差"
+    },
+    "Cmin": {
+      "formulas": [
+        "PR-HEA-007"
+      ],
+      "name": "最小热容流率"
+    },
+    "Th_in": {
+      "formulas": [
+        "PR-HEA-007"
+      ],
+      "name": "热流体入口温度"
+    },
+    "Tc_in": {
+      "formulas": [
+        "PR-HEA-007"
+      ],
+      "name": "冷流体入口温度"
+    },
+    "Ts": {
+      "formulas": [
+        "PR-HEA-008"
+      ],
+      "name": "管壁温度"
+    },
+    "Ta": {
+      "formulas": [
+        "PR-HEA-008"
+      ],
+      "name": "环境温度"
+    },
+    "r2": {
+      "formulas": [
+        "PR-HEA-008"
+      ],
+      "name": "保温层外径"
+    },
+    "Rtotal": {
+      "formulas": [
+        "PR-HEA-009"
+      ],
+      "name": "总热阻"
+    },
+    "R1": {
+      "formulas": [
+        "PR-HEA-009"
+      ],
+      "name": "热侧对流热阻"
+    },
+    "R2": {
+      "formulas": [
+        "PR-HEA-009"
+      ],
+      "name": "导热热阻"
+    },
+    "R3": {
+      "formulas": [
+        "PR-HEA-009"
+      ],
+      "name": "冷侧对流热阻"
+    },
+    "N_in": {
+      "formulas": [
+        "PR-REA-002"
+      ],
+      "name": "入口物质的量"
+    },
+    "N_out": {
+      "formulas": [
+        "PR-REA-002"
+      ],
+      "name": "出口物质的量"
+    },
+    "ΔTm": {
+      "formulas": [
+        "PR-HEA-001",
+        "PR-RCT-005"
+      ],
+      "name": "对数平均温差"
+    },
+    "ΔP/L": {
+      "formulas": [
+        "PR-RCT-001"
+      ],
+      "name": "单位长度压降"
+    },
+    "dp": {
+      "formulas": [
+        "PR-RCT-001",
+        "PR-RCT-002"
+      ],
+      "name": "催化剂颗粒直径"
+    },
+    "u": {
+      "formulas": [
+        "PR-RCT-001"
+      ],
+      "name": "空塔速度"
+    },
+    "Umf": {
+      "formulas": [
+        "PR-RCT-002"
+      ],
+      "name": "最小流化速度"
+    },
+    "ρp": {
+      "formulas": [
+        "PR-RCT-002"
+      ],
+      "name": "颗粒密度"
+    },
+    "ρf": {
+      "formulas": [
+        "PR-RCT-002"
+      ],
+      "name": "流体密度"
+    },
+    "τ": {
+      "formulas": [
+        "PR-RCT-003"
+      ],
+      "name": "停留时间"
+    },
+    "CA0": {
+      "formulas": [
+        "PR-RCT-004",
+        "PR-REA-004"
+      ],
+      "name": "进料浓度"
+    },
+    "rA": {
+      "formulas": [
+        "PR-RCT-004"
+      ],
+      "name": "反应速率"
+    },
+    "Np": {
+      "formulas": [
+        "PR-RCT-006"
+      ],
+      "name": "功率准数"
+    },
+    "xD": {
+      "formulas": [
+        "PR-SEP-001"
+      ],
+      "name": "馏出液组成"
+    },
+    "xB": {
+      "formulas": [
+        "PR-SEP-001"
+      ],
+      "name": "釜液组成"
+    },
+    "HETP": {
+      "formulas": [
+        "PR-SEP-002"
+      ],
+      "name": "理论板当量高度"
+    },
+    "NT": {
+      "formulas": [
+        "PR-SEP-002"
+      ],
+      "name": "理论板数"
+    },
+    "C_extract": {
+      "formulas": [
+        "PR-SEP-003"
+      ],
+      "name": "萃取相浓度"
+    },
+    "C_raffinate": {
+      "formulas": [
+        "PR-SEP-003"
+      ],
+      "name": "萃余相浓度"
+    },
+    "Gc": {
+      "formulas": [
+        "PR-SEP-004"
+      ],
+      "name": "绝干物料量"
+    },
+    "dX": {
+      "formulas": [
+        "PR-SEP-004"
+      ],
+      "name": "含水量变化"
+    },
+    "dθ": {
+      "formulas": [
+        "PR-SEP-004"
+      ],
+      "name": "时间变化"
+    },
+    "Ea": {
+      "formulas": [
+        "PR-REA-003"
+      ],
+      "name": "活化能"
+    },
+    "CA": {
+      "formulas": [
+        "PR-REA-004"
+      ],
+      "name": "反应物浓度"
+    },
+    "kf": {
+      "formulas": [
+        "PR-REA-005"
+      ],
+      "name": "正反应速率常数"
+    },
+    "kb": {
+      "formulas": [
+        "PR-REA-005"
+      ],
+      "name": "逆反应速率常数"
+    },
+    "ΔHvap": {
+      "formulas": [
+        "PR-VAP-001"
+      ],
+      "name": "汽化潜热"
+    },
+    "x": {
+      "formulas": [
+        "PR-VAP-002"
+      ],
+      "name": "液相摩尔分数"
+    },
+    "P0": {
+      "formulas": [
+        "PR-VAP-002"
+      ],
+      "name": "纯组分蒸汽压"
+    },
+    "P3": {
+      "formulas": [
+        "PR-VAP-003"
+      ],
+      "name": "组分3分压"
+    },
+    "Pm": {
+      "formulas": [
+        "WA-EQ-002"
+      ],
+      "name": "电机功率"
+    },
+    "ηm": {
+      "formulas": [
+        "WA-EQ-002"
+      ],
+      "name": "电机效率"
+    },
+    "NPSHa": {
+      "formulas": [
+        "WA-EQ-003"
+      ],
+      "name": "有效汽蚀余量"
+    },
+    "Ha": {
+      "formulas": [
+        "WA-EQ-003"
+      ],
+      "name": "大气压力水头"
+    },
+    "Hs": {
+      "formulas": [
+        "WA-EQ-003"
+      ],
+      "name": "吸水几何高度"
+    },
+    "Hv": {
+      "formulas": [
+        "WA-EQ-003",
+        "WA-HYD-015"
+      ],
+      "name": "饱和蒸汽压力水头"
+    },
+    "Hf_s": {
+      "formulas": [
+        "WA-EQ-003"
+      ],
+      "name": "吸入管路损失"
+    },
+    "Qd": {
+      "formulas": [
+        "WA-EQ-005"
+      ],
+      "name": "最高日用水量"
+    },
+    "Vt": {
+      "formulas": [
+        "WA-EQ-006"
+      ],
+      "name": "气压罐调节容积"
+    },
+    "Qp": {
+      "formulas": [
+        "WA-EQ-006"
+      ],
+      "name": "水泵流量"
+    },
+    "Qf": {
+      "formulas": [
+        "WA-FIR-001"
+      ],
+      "name": "消防用水量"
+    },
+    "Qb": {
+      "formulas": [
+        "WA-FIR-001"
+      ],
+      "name": "补水量"
+    },
+    "Qx": {
+      "formulas": [
+        "WA-FIR-002"
+      ],
+      "name": "消火栓系统设计流量"
+    },
+    "qx": {
+      "formulas": [
+        "WA-FIR-002"
+      ],
+      "name": "每支水枪流量"
+    },
+    "q": {
+      "formulas": [
+        "WA-FIR-003",
+        "WA-RAI-001",
+        "WA-RAI-002"
+      ],
+      "name": "设计暴雨强度"
+    },
+    "Hg": {
+      "formulas": [
+        "WA-FIR-004"
+      ],
+      "name": "几何高差"
+    },
+    "Hr": {
+      "formulas": [
+        "WA-FIR-004"
+      ],
+      "name": "最不利点水压"
+    },
+    "Qs": {
+      "formulas": [
+        "WA-FIR-005"
+      ],
+      "name": "稳压泵流量"
+    },
+    "Ql": {
+      "formulas": [
+        "WA-FIR-005"
+      ],
+      "name": "管网漏水量"
+    },
+    "Vf": {
+      "formulas": [
+        "WA-FIR-006"
+      ],
+      "name": "泡沫液储罐容积"
+    },
+    "ν": {
+      "formulas": [
+        "WA-HYD-008"
+      ],
+      "name": "运动粘度"
+    },
+    "H2": {
+      "formulas": [
+        "WA-HYD-010"
+      ],
+      "name": "下游总水头"
+    },
+    "H1": {
+      "formulas": [
+        "WA-HYD-010"
+      ],
+      "name": "上游总水头"
+    },
+    "Qn": {
+      "formulas": [
+        "WA-HYD-011"
+      ],
+      "name": "支管n流量"
+    },
+    "H_total": {
+      "formulas": [
+        "WA-HYD-012"
+      ],
+      "name": "总水头损失"
+    },
+    "Hf1": {
+      "formulas": [
+        "WA-HYD-012",
+        "WA-HYD-017"
+      ],
+      "name": "管段1沿程损失"
+    },
+    "Hf2": {
+      "formulas": [
+        "WA-HYD-012",
+        "WA-HYD-017"
+      ],
+      "name": "管段2沿程损失"
+    },
+    "Hfn": {
+      "formulas": [
+        "WA-HYD-012"
+      ],
+      "name": "管段n沿程损失"
+    },
+    "ξ_total": {
+      "formulas": [
+        "WA-HYD-014"
+      ],
+      "name": "总局部阻力系数"
+    },
+    "ΔQ": {
+      "formulas": [
+        "WA-HYD-016"
+      ],
+      "name": "流量不平衡量"
+    },
+    "Q_in": {
+      "formulas": [
+        "WA-HYD-016"
+      ],
+      "name": "流入流量"
+    },
+    "Q_out": {
+      "formulas": [
+        "WA-HYD-016"
+      ],
+      "name": "流出流量"
+    },
+    "ΔH": {
+      "formulas": [
+        "WA-HYD-017"
+      ],
+      "name": "环路水头闭合差"
+    },
+    "Hf3": {
+      "formulas": [
+        "WA-HYD-017"
+      ],
+      "name": "管段3水头损失"
+    },
+    "Hf4": {
+      "formulas": [
+        "WA-HYD-017"
+      ],
+      "name": "管段4水头损失"
+    },
+    "i": {
+      "formulas": [
+        "WA-HYD-018"
+      ],
+      "name": "水力坡降"
+    },
+    "Cd": {
+      "formulas": [
+        "WA-HYD-020"
+      ],
+      "name": "流量系数"
+    },
+    "B": {
+      "formulas": [
+        "WA-HYD-020"
+      ],
+      "name": "堰宽"
+    },
+    "ψ": {
+      "formulas": [
+        "WA-RAI-001"
+      ],
+      "name": "径流系数"
+    },
+    "F": {
+      "formulas": [
+        "WA-RAI-001",
+        "WA-WQ-001"
+      ],
+      "name": "排污损失量"
+    },
+    "A1": {
+      "formulas": [
+        "WA-RAI-002"
+      ],
+      "name": "雨力参数"
+    },
+    "b": {
+      "formulas": [
+        "WA-RAI-002"
+      ],
+      "name": "降雨历时参数"
+    },
+    "Wp": {
+      "formulas": [
+        "WA-RAI-003"
+      ],
+      "name": "渗透量"
+    }
   }
 }

@@ -1,7 +1,7 @@
 ---
 name: 工艺计算
 code: PRCC
-description: 工艺计算引擎。用户可直接调用：物料平衡、热量平衡、设备尺寸（反应器/塔/换热器/泵）、管径估算、安全阀泄放量计算。输入工艺参数即可获得计算结果，无需通过专业负责人。触发场景：物料平衡、热量平衡、设备尺寸、管径估算、安全阀计算。
+description: 工艺计算引擎。用户可直接调用：物料平衡、热量平衡、设备尺寸（反应器/塔/换热器/泵）、管径估算、安全阀泄放量计算、催化剂相关计算、反应器设计计算。输入工艺参数即可获得计算结果，无需通过专业负责人。触发场景：物料平衡、热量平衡、设备尺寸、管径估算、安全阀计算、催化剂计算、反应器设计。
 metadata:
   vdi:
     discipline: PR
@@ -17,7 +17,7 @@ metadata:
     pilotdeck_workspace: /workspace/workspaces/工艺组
     mcp_required: [vdi-knowledge]
     standalone: false
-    triggers: [物料平衡, 热量平衡, 设备尺寸, 管径, 安全阀]
+    triggers: [物料平衡, 热量平衡, 设备尺寸, 管径, 安全阀, 催化剂, 反应器]
 ---
 
 # 工艺计算专项工程师（三级）
@@ -185,6 +185,221 @@ metadata:
   "relief_load_kgh": 12500, "required_orifice_mm2": 1840,
   "selected_orifice": "L", "inlet_dn": 80, "outlet_dn": 100,
   "set_pressure_MPaG": 3.0
+}
+```
+
+## 催化剂相关计算
+
+### 催化剂空时收率计算
+
+**输入**：
+```json
+{
+  "calc_type": "catalyst_sty",
+  "product_flow_kgh": 5000,
+  "catalyst_weight_kg": 2500,
+  "bed_volume_m3": 2.5
+}
+```
+
+**输出**：
+```json
+{
+  "sty_kg_kg_h": 0.8,
+  "catalyst_productivity": "中等",
+  "verdict": "催化剂活性正常"
+}
+```
+
+### 催化剂失活动力学计算
+
+**输入**：
+```json
+{
+  "calc_type": "catalyst_deactivation",
+  "deactivation_rate_h": 0.001,
+  "operation_time_h": 500
+}
+```
+
+**输出**：
+```json
+{
+  "activity": 0.607,
+  "remaining_life_pct": 60.7,
+  "verdict": "催化剂活性衰减至60.7%"
+}
+```
+
+### 催化剂选择性计算
+
+**输入**：
+```json
+{
+  "calc_type": "catalyst_selectivity",
+  "product_mol": 100,
+  "product_molwt": 32,
+  "reactant_mol": 120,
+  "reactant_molwt": 16
+}
+```
+
+**输出**：
+```json
+{
+  "selectivity_pct": 166.7,
+  "verdict": "选择性异常，需检查数据"
+}
+```
+
+## 反应器设计计算
+
+### 固定床反应器压降计算（Ergun方程）
+
+**输入**：
+```json
+{
+  "calc_type": "fixed_bed_pressure_drop",
+  "viscosity_Pa_s": 1e-5,
+  "void_fraction": 0.4,
+  "particle_diameter_m": 0.003,
+  "fluid_density_kgm3": 10,
+  "superficial_velocity_ms": 0.5,
+  "bed_length_m": 5
+}
+```
+
+**输出**：
+```json
+{
+  "pressure_drop_Pa_m": 1250,
+  "total_pressure_drop_kPa": 6.25,
+  "verdict": "压降在可接受范围内"
+}
+```
+
+### 流化床最小流化速度计算
+
+**输入**：
+```json
+{
+  "calc_type": "minimum_fluidization",
+  "particle_diameter_m": 0.0005,
+  "particle_density_kgm3": 1500,
+  "fluid_density_kgm3": 1.2,
+  "viscosity_Pa_s": 1.8e-5
+}
+```
+
+**输出**：
+```json
+{
+  "umf_ms": 0.003,
+  "regime": "层流区",
+  "verdict": "最小流化速度0.003 m/s"
+}
+```
+
+### 管式反应器停留时间计算
+
+**输入**：
+```json
+{
+  "calc_type": "pfr_residence_time",
+  "reactor_diameter_m": 0.1,
+  "reactor_length_m": 10,
+  "volumetric_flow_m3s": 0.001
+}
+```
+
+**输出**：
+```json
+{
+  "reactor_volume_m3": 0.0785,
+  "residence_time_s": 78.5,
+  "verdict": "停留时间78.5秒"
+}
+```
+
+### 全混流反应器设计计算
+
+**输入**：
+```json
+{
+  "calc_type": "cstr_design",
+  "volumetric_flow_m3s": 0.001,
+  "feed_concentration_molm3": 100,
+  "conversion": 0.9,
+  "reaction_rate_molm3s": 0.5
+}
+```
+
+**输出**：
+```json
+{
+  "reactor_volume_m3": 0.18,
+  "residence_time_s": 180,
+  "verdict": "反应器体积0.18 m³"
+}
+```
+
+## 催化剂物理性质计算
+
+### 催化剂比表面积计算
+
+**输入**：
+```json
+{
+  "calc_type": "catalyst_surface_area",
+  "adsorbed_gas_volume_cm3": 50,
+  "molecular_cross_section_m2": 0.162e-18,
+  "catalyst_weight_g": 1.0
+}
+```
+
+**输出**：
+```json
+{
+  "surface_area_m2g": 218,
+  "verdict": "比表面积218 m²/g"
+}
+```
+
+### 催化剂孔容计算
+
+**输入**：
+```json
+{
+  "calc_type": "catalyst_pore_volume",
+  "water_absorption_g": 0.5,
+  "catalyst_weight_g": 1.0
+}
+```
+
+**输出**：
+```json
+{
+  "pore_volume_mLg": 0.5,
+  "verdict": "孔容0.5 mL/g"
+}
+```
+
+### 催化剂平均孔径计算
+
+**输入**：
+```json
+{
+  "calc_type": "catalyst_pore_diameter",
+  "pore_volume_mLg": 0.5,
+  "surface_area_m2g": 218
+}
+```
+
+**输出**：
+```json
+{
+  "pore_diameter_nm": 9.2,
+  "verdict": "平均孔径9.2 nm"
 }
 ```
 
