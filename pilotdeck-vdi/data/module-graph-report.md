@@ -1,54 +1,45 @@
 # PilotDeck 模块关联关系图
 
-> 自动生成于 2026-06-07T03:35:45.806Z
-> 节点: 270 | 边: 375
+> 自动生成于 2026-06-08T05:28:44.182Z
+> 节点: 307 | 边: 365
 
 ## 总览
 
 | 模块类型 | 数量 |
 |----------|------|
-| Skill | 37 |
-| MCP 服务 | 5 |
+| Skill | 25 |
+| MCP 服务 | 6 |
 | MCP 工具 | 49 |
-| 公式 | 128 |
+| 公式 | 162 |
 | 参数表 | 27 |
-| 事件类型 | 14 |
+| 事件类型 | 28 |
 | 专业 | 10 |
 
 ## 关联关系统计
 
 | 关联类型 | 数量 | 说明 |
 |----------|------|------|
-| SKILL_MCP | 52 | Skill → MCP |
-| SKILL_MAY_CALL | 10 | Skill 可调用 |
-| SKILL_DISCIPLINE | 37 | Skill 专业 |
-| SKILL_REPORTS_TO | 14 | Skill 汇报 |
-| SKILL_MANAGES | 17 | Skill 管理 |
+| SKILL_MCP | 28 | Skill → MCP |
+| SKILL_DISCIPLINE | 25 | Skill 专业 |
+| SKILL_REPORTS_TO | 12 | Skill 汇报 |
+| SKILL_MANAGES | 12 | Skill 管理 |
 | MCP_TOOL | 49 | MCP 工具 |
-| FORMULA_DISCIPLINE | 128 | 公式专业 |
+| FORMULA_DISCIPLINE | 162 | 公式专业 |
 | FORMULA_TABLE | 11 | 公式→参数表 |
 | FORMULA_RELATED | 42 | 公式关联 |
-| EVENT_PRODUCER | 6 | 事件发布 |
-| EVENT_CONSUMER | 9 | 事件消费 |
+| EVENT_PRODUCER | 8 | 事件发布 |
+| EVENT_CONSUMER | 16 | 事件消费 |
 
 ## Skill → MCP 依赖详情
 
 | Skill | MCP 依赖 |
 |-------|----------|
 | 设计经理 | vdi-orchestrator, vdi-knowledge |
-| 物料热量平衡 | vdi-knowledge, vdi-rules |
-| 工艺计算 | vdi-knowledge |
-| 工艺数据管理 | vdi-knowledge |
-| 工艺文档生成 | vdi-knowledge |
-| 工艺设备数据表 | vdi-knowledge, vdi-rules |
+| 文档导出 | documents |
+| 文档解读 | documents, vdi-knowledge |
 | 工艺专业负责人 | vdi-orchestrator, vdi-knowledge, vdi-rules |
-| PFD-PID设计 | vdi-knowledge, vdi-rules |
-| 工艺路线设计基础 | vdi-knowledge, vdi-rules |
-| 工艺安全分析 | vdi-knowledge, vdi-rules |
-| 流程模拟 | vdi-knowledge |
-| 公用工程排放 | vdi-knowledge, vdi-rules |
 | 计划调度 | vdi-orchestrator, vdi-knowledge |
-| 系统健康检查 | vdi-knowledge |
+| "系统健康检查" | "vdi-knowledge" |
 | 循环水系统设计 | vdi-knowledge, vdi-rules |
 | 排水系统设计 | vdi-knowledge, vdi-rules |
 | 给排水设备选型 | vdi-knowledge |
@@ -58,15 +49,6 @@
 | 雨水系统设计 | vdi-knowledge, vdi-rules |
 | 给水系统设计 | vdi-knowledge, vdi-rules |
 | 污水处理设计 | vdi-knowledge, vdi-rules |
-| HAZOP分析主席 | vdi-knowledge, vdi-rules |
-| HAZOP工艺专家 | vdi-knowledge |
-| HAZOP仪表专家 | vdi-knowledge |
-| HAZOP设备专家 | vdi-knowledge |
-| HAZOP安全专家 | vdi-knowledge |
-| HAZOP操作专家 | vdi-knowledge |
-| HAZOP本质安全评估助理 | vdi-knowledge |
-| 文档导出 | documents |
-| 文档解读 | documents, vdi-knowledge |
 
 ## MCP 工具详情
 
@@ -96,13 +78,6 @@
 - `vdi_calculate`
 - `vdi_calculate_composite`
 
-### vdi-rules（4 个工具）
-
-- `vdi_check_redlines`
-- `vdi_validate_discipline_output`
-- `vdi_check_data_completeness`
-- `vdi_check_review_gate`
-
 ### documents（20 个工具）
 
 - `content_read`
@@ -125,6 +100,16 @@
 - `version_list`
 - `version_diff`
 - `version_restore`
+
+### vdi-rules（4 个工具）
+
+- `vdi_check_redlines`
+- `vdi_validate_discipline_output`
+- `vdi_check_data_completeness`
+- `vdi_check_review_gate`
+
+### "vdi-knowledge"（0 个工具）
+
 
 ### vdi-events（5 个工具）
 
@@ -150,11 +135,6 @@
 - **给排水专业负责人** 管理 → 雨水系统设计
 - **给排水专业负责人** 管理 → 污水处理设计
 - **给排水专业负责人** 管理 → 循环水系统设计
-- **HAZOP分析主席** 管理 → HAZOP工艺专家
-- **HAZOP分析主席** 管理 → HAZOP仪表专家
-- **HAZOP分析主席** 管理 → HAZOP设备专家
-- **HAZOP分析主席** 管理 → HAZOP安全专家
-- **HAZOP分析主席** 管理 → HAZOP操作专家
 
 ### 汇报链
 
@@ -170,16 +150,15 @@
 - 雨水系统设计 → 汇报至 **给排水专业负责人**
 - 给水系统设计 → 汇报至 **给排水专业负责人**
 - 污水处理设计 → 汇报至 **给排水专业负责人**
-- 文档导出 → 汇报至 **设计经理**
-- 文档解读 → 汇报至 **设计经理**
 
 ## 公式库分布
 
 | 专业 | 公式数量 |
 |------|----------|
-| electrical | 20 |
+| electrical | 30 |
 | hse | 2 |
-| piping | 25 |
+| instrument | 14 |
+| piping | 35 |
 | process | 44 |
 | water | 37 |
 
@@ -265,6 +244,46 @@
 - 消费者: (无)
 
 ### `condition.changed`
+- 发布者: WA
+- 消费者: (无)
+
+### `piping_layout.updated`
+- 发布者: (无)
+- 消费者: WA
+
+### `instrument_location.updated`
+- 发布者: (无)
+- 消费者: (无)
+
+### `electrical_layout.updated`
+- 发布者: (无)
+- 消费者: (无)
+
+### `structural_condition.updated`
+- 发布者: (无)
+- 消费者: WA
+
+### `equipment_data.updated`
+- 发布者: (无)
+- 消费者: WA
+
+### `water_condition.updated`
+- 发布者: WA
+- 消费者: (无)
+
+### `fire_condition.updated`
+- 发布者: (无)
+- 消费者: WA
+
+### `hvac_condition.updated`
+- 发布者: (无)
+- 消费者: WA
+
+### `material_data.updated`
+- 发布者: (无)
+- 消费者: (无)
+
+### `stress_analysis.completed`
 - 发布者: (无)
 - 消费者: (无)
 
@@ -303,3 +322,19 @@
 ### `human.review_resolved`
 - 发布者: MG
 - 消费者: (无)
+
+### `procurement.requested`
+- 发布者: (无)
+- 消费者: (无)
+
+### `procurement.acknowledged`
+- 发布者: (无)
+- 消费者: (无)
+
+### `model_review.scheduled`
+- 发布者: (无)
+- 消费者: WA
+
+### `model_review.completed`
+- 发布者: (无)
+- 消费者: MG

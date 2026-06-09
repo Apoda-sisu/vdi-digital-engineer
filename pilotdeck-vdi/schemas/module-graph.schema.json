@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "pilotdeck-module-graph",
+  "title": "PilotDeck Module Graph",
+  "description": "模块依赖图结构约束",
+  "type": "object",
+  "required": ["nodes", "edges", "meta"],
+  "properties": {
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "name"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^(skill|mcp|tool|disc|event):[a-z0-9._-]+$",
+            "description": "节点ID，格式: {type}:{name}"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["skill", "mcp", "tool", "discipline", "event"]
+          },
+          "name": { "type": "string", "minLength": 1 },
+          "group": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["from", "to", "type"],
+        "properties": {
+          "from": { "type": "string" },
+          "to": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": [
+              "MCP_DEPENDENCY",
+              "MAY_CALL",
+              "REPORTS_TO",
+              "MANAGES",
+              "BELONGS_TO",
+              "EVENT_PRODUCER",
+              "EVENT_CONSUMER",
+              "TOOL_PROVIDER"
+            ]
+          },
+          "label": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "meta": {
+      "type": "object",
+      "required": ["node_count", "edge_count"],
+      "properties": {
+        "generated_at": { "type": "string", "format": "date-time" },
+        "node_count": { "type": "integer", "minimum": 0 },
+        "edge_count": { "type": "integer", "minimum": 0 },
+        "by_type": {
+          "type": "object",
+          "additionalProperties": { "type": "integer" }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

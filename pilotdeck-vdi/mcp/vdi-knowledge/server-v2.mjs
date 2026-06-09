@@ -55,6 +55,7 @@ let formulaCache = {};       // formula_id → full formula object
 let formulaKeywordIndex = {};
 let formulaParamIndex = {};
 let formulaTables = null;
+let formulaFileMap = {};     // formula_id → 文件相对路径
 
 function loadAllIndices() {
   const indexPath = process.env.VDI_KNOWLEDGE_INDEX || DEFAULT_INDEX;
@@ -122,22 +123,56 @@ function loadFormulas() {
   if (fs.existsSync(tablesPath)) {
     formulaTables = JSON.parse(fs.readFileSync(tablesPath, "utf8"));
   }
+
+  // 构建 formulaFileMap: formula_id → 文件相对路径
+  // 扫描所有专业子目录下的公式文件
+  buildFormulaFileMap();
+}
+
+function buildFormulaFileMap() {
+  const disciplines = ["electrical", "hse", "instrument", "piping", "process", "water"];
+  for (const disc of disciplines) {
+    const discDir = path.join(FORMULAS_DIR, disc);
+    if (!fs.existsSync(discDir)) continue;
+    const files = fs.readdirSync(discDir).filter(f => f.endsWith(".json"));
+    for (const file of files) {
+      const filePath = path.join(discDir, file);
+      try {
+        const fileData = JSON.parse(fs.readFileSync(filePath, "utf8"));
+        const formulas = Array.isArray(fileData) ? fileData : (fileData.formulas || []);
+        const relPath = `${disc}/${file}`;
+        for (const f of formulas) {
+          const fid = f.formula_id || f.id;
+          if (fid) formulaFileMap[fid] = relPath;
+        }
+      } catch { /* skip broken files */ }
+    }
+  }
+  console.error(`[vdi-knowledge V2] 构建公式文件映射: ${Object.keys(formulaFileMap).length} 个公式`);
 }
 
 // 加载单个公式完整数据（懒加载缓存）
 function loadFormulaDetail(formulaId) {
   if (formulaCache[formulaId]) return formulaCache[formulaId];
 
-  // 从索引找到文件路径
-  const entry = formulaIndex?.formulas?.find(f => f.id === formulaId);
-  if (!entry) return null;
+  // 优先从 formulaFileMap 查找文件路径
+  let filePath = null;
+  const relPath = formulaFileMap[formulaId];
+  if (relPath) {
+    filePath = path.join(FORMULAS_DIR, relPath);
+  } else {
+    // 回退：从索引找到文件路径（兼容旧格式）
+    const entry = formulaIndex?.formulas?.find(f => f.formula_id === formulaId);
+    if (entry && entry.file) {
+      filePath = path.join(FORMULAS_DIR, entry.file);
+    }
+  }
 
-  const filePath = path.join(FORMULAS_DIR, entry.file);
-  if (!fs.existsSync(filePath)) return null;
+  if (!filePath || !fs.existsSync(filePath)) return null;
 
   const fileData = JSON.parse(fs.readFileSync(filePath, "utf8"));
   const formulas = Array.isArray(fileData) ? fileData : (fileData.formulas || []);
-  const formula = formulas.find(f => f.formula_id === formulaId);
+  const formula = formulas.find(f => (f.formula_id || f.id) === formulaId);
   if (formula) {
     formulaCache[formulaId] = formula;
   }
@@ -760,7 +795,7 @@ async function main() {
           type: "object",
           properties: {
             query: { type: "string", description: "搜索关键词，如：水头损失、水泵功率、消防水池" },
-            discipline: { type: "string", description: "专业过滤：water/process/piping/electrical/instrument/hse/equipment/general" },
+            discipline: { type: "string", description: "专业过滤（支持短代码或全名）：WA/water=给排水 PR/process=工艺 PI/piping=管道 EL/electrical=电气 IN/instrument=仪控 HS/hse=HSE EQ/equipment=设备 FI/fire=消防" },
             category: { type: "string", description: "类别过滤，如：hydraulic、equipment、fire" },
             limit: { type: "number", description: "返回条数（默认5，最大20）" },
           },
@@ -1026,9 +1061,15 @@ async function main() {
       // --- vdi_search_formulas ---
       if (name === "vdi_search_formulas") {
         const query = (args?.query || "").trim().toLowerCase();
-        const discipline = args?.discipline || null;
+        let discipline = args?.discipline || null;
         const category = args?.category || null;
         const limit = args?.limit || 5;
+
+        // 专业短代码→全名映射
+        const discCodeToName = { WA: "water", PR: "process", PI: "piping", EL: "electrical", IN: "instrument", HS: "hse", EQ: "equipment", FI: "fire" };
+        if (discipline && discCodeToName[discipline.toUpperCase()]) {
+          discipline = discCodeToName[discipline.toUpperCase()];
+        }
 
         if (!formulaIndex) {
           return { content: [{ type: "text", text: JSON.stringify({ error: "formula_index_not_loaded" }) }], isError: true };
@@ -1060,7 +1101,7 @@ async function main() {
         // 从索引条目中过滤
         let candidates = formulaIndex.formulas || [];
         if (kwHits.size > 0) {
-          candidates = candidates.filter(f => kwHits.has(f.id));
+          candidates = candidates.filter(f => kwHits.has(f.formula_id));
         }
         if (discipline) {
           candidates = candidates.filter(f => f.discipline === discipline);
@@ -1078,14 +1119,13 @@ async function main() {
         }
 
         const results = candidates.slice(0, limit).map(f => ({
-          formula_id: f.id,
+          formula_id: f.formula_id,
           name: f.name,
           discipline: f.discipline,
           category: f.category,
           type: f.type,
           inputs: f.inputs,
           outputs: f.outputs,
-          source: `${f.source_id} §${f.clause}`,
           tags: f.tags,
         }));
 

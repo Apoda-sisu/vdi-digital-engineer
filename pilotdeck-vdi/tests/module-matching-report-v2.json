@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-06-08T05:32:37.363Z",
+  "statistics": {
+    "total_checks": 81,
+    "passed": 79,
+    "failed": 0,
+    "warnings": 2
+  },
+  "issues": [
+    {
+      "level": "warning",
+      "category": "公式匹配",
+      "message": "专业 \"system\" 有 1 个Skill但没有公式",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "知识库匹配",
+      "message": "专业 \"system\" 有 1 个Skill但没有知识库条文",
+      "details": null
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "pilotdeck-event-registry",
+  "title": "PilotDeck Event Registry",
+  "description": "事件注册表结构约束",
+  "type": "object",
+  "required": ["version", "event_types"],
+  "properties": {
+    "version": { "type": "string" },
+    "event_types": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["description", "produced_by"],
+        "properties": {
+          "description": { "type": "string" },
+          "produced_by": {
+            "type": "array",
+            "items": { "type": "string" },
+            "minItems": 1,
+            "description": "生产者专业代码列表"
+          },
+          "subscribers": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "订阅者专业代码列表"
+          },
+          "subscribers_by_discipline": {
+            "type": "object",
+            "description": "按专业分组的订阅者"
+          },
+          "priority": {
+            "type": "string",
+            "enum": ["low", "medium", "high", "critical"]
+          },
+          "requires_ack": { "type": "boolean" },
+          "ttl_hours": { "type": "number", "minimum": 1 },
+          "schema": {
+            "type": "object",
+            "properties": {
+              "required_payload_fields": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "discipline_code_mapping": {
+      "type": "object",
+      "description": "专业代码到 skill_group 的映射"
+    }
+  },
+  "additionalProperties": true
+}

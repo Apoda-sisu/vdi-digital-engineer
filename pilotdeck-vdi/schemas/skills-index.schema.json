@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "pilotdeck-skills-index",
+  "title": "PilotDeck Skills Index",
+  "description": "skills/index.json 结构约束",
+  "type": "object",
+  "required": ["version", "skills"],
+  "properties": {
+    "version": { "type": "string" },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["group", "name", "discipline", "role", "level"],
+        "properties": {
+          "group": {
+            "type": "string",
+            "pattern": "^vdi-[a-z-]+$",
+            "description": "skill group 标识符"
+          },
+          "name": { "type": "string" },
+          "discipline": { "type": "string" },
+          "role": {
+            "type": "string",
+            "enum": ["lead", "specialist", "tool", "manager", "agent"]
+          },
+          "level": { "type": "integer", "enum": [1, 2, 3] },
+          "reports_to": {
+            "type": "string",
+            "description": "汇报对象 group 名称"
+          },
+          "manages": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "mcp_required": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,397 @@
+{
+  "version": "2.0.0",
+  "description": "VDI 事件类型定义与订阅者注册表 — 基于公司实际业务流程",
+  "_code_registry": "pilotdeck-vdi/config/discipline-codes.json",
+  "_update_note": "基于石油化工设计院各专业业务流程更新",
+
+  "event_types": {
+    "design_basis.updated": {
+      "description": "工艺设计基础变更（介质、温度、压力、流量等关键参数更新）",
+      "produced_by": ["PR", "SY"],
+      "subscribers": ["PI", "IN", "EQ", "WA", "HS", "MA", "EL"],
+      "priority": "high",
+      "requires_ack": true,
+      "ttl_hours": 72,
+      "schema": {
+        "required_payload_fields": ["object_id", "object_type", "discipline", "basis_items"],
+        "payload_example": {
+          "object_id": "BASIS-001",
+          "object_type": "DesignBasis",
+          "discipline": "PR",
+          "basis_items": [
+            { "tag_id": "EQP-R-1001", "parameter": "design_pressure", "value": 1.6, "unit": "MPa" },
+            { "tag_id": "EQP-R-1001", "parameter": "design_temperature", "value": 250, "unit": "°C" },
+            { "tag_id": "EQP-R-1001", "parameter": "flow_rate", "value": 100, "unit": "m³/h" }
+          ]
+        }
+      }
+    },
+
+    "design_basis.acknowledged": {
+      "description": "下游专业确认已收到并处理设计基础变更",
+      "produced_by": ["PI", "IN", "EQ", "WA", "HS", "MA", "EL"],
+      "subscribers": ["PR", "SY"],
+      "priority": "medium",
+      "requires_ack": false,
+      "ttl_hours": 24
+    },
+
+    "discipline_output.submitted": {
+      "description": "专业提交 DisciplineOutput（status=draft），触发校审流程",
+      "produced_by": ["*"],
+      "subscribers": ["QA"],
+      "priority": "medium",
+      "requires_ack": true,
+      "ttl_hours": 168
+    },
+
+    "discipline_output.published": {
+      "description": "专业 DisciplineOutput 通过校审发布（status=published），下游专业据此开展设计",
+      "produced_by": ["*"],
+      "subscribers_by_discipline": {
+        "PR": ["PI", "IN", "EQ", "WA", "HS", "MA"],
+        "SY": ["PR", "PI", "EQ", "MP"],
+        "PI": ["IN", "ST", "WA", "MA", "EL"],
+        "IN": ["EL", "PI", "ST", "AR"],
+        "EQ": ["ST", "PI", "IN"],
+        "WA": ["FI", "EL", "PI", "MA"],
+        "EL": ["IN", "PI", "AR", "ST"],
+        "HS": ["PR", "WA"],
+        "MA": ["PI", "IN"],
+        "ST": ["AR", "PI"],
+        "AR": ["ST", "PI", "WA"]
+      },
+      "priority": "high",
+      "requires_ack": true,
+      "ttl_hours": 168
+    },
+
+    "condition.changed": {
+      "description": "外部条件变更（如总图竖向标高、建筑防火分区调整、供电容量变化）",
+      "produced_by": ["SI", "AR", "EL", "ST", "WA"],
+      "subscribers_by_discipline": {
+        "SI": ["PI", "WA", "EL", "AR"],
+        "AR": ["WA", "EL", "HV", "PI", "ST"],
+        "EL": ["IN", "EQ", "WA", "HV", "PI"],
+        "ST": ["PI", "WA", "EL", "AR"],
+        "WA": ["PI", "IN", "EL"]
+      },
+      "priority": "high",
+      "requires_ack": true,
+      "ttl_hours": 48
+    },
+
+    "piping_layout.updated": {
+      "description": "管道布置更新（管道走向、标高、支架位置变更）",
+      "produced_by": ["PI"],
+      "subscribers": ["IN", "EL", "ST", "WA", "MA"],
+      "priority": "high",
+      "requires_ack": true,
+      "ttl_hours": 72,
+      "schema": {
+        "required_payload_fields": ["project_id", "drawing_number", "revision", "changes"],
+        "payload_example": {
+          "project_id": "VDI-PILOT-A",
+          "drawing_number": "PL-001",
+          "revision": "B",
+          "changes": [
+            { "line_number": "1001", "parameter": "elevation", "old_value": "EL.100.000", "new_value": "EL.100.500" }
+          ]
+        }
+      }
+    },
+
+    "instrument_location.updated": {
+      "description": "仪表位置更新（仪表安装位置、安装方式变更）",
+      "produced_by": ["IN"],
+      "subscribers": ["PI", "EL", "ST"],
+      "priority": "medium",
+      "requires_ack": true,
+      "ttl_hours": 48
+    },
+
+    "electrical_layout.updated": {
+      "description": "电气布置更新（电缆桥架走向、配电盘位置变更）",
+      "produced_by": ["EL"],
+      "subscribers": ["PI", "IN", "ST", "AR"],
+      "priority": "medium",
+      "requires_ack": true,
+      "ttl_hours": 48
+    },
+
+    "structural_condition.updated": {
+      "description": "结构条件更新（基础、预埋件、开孔条件变更）",
+      "produced_by": ["ST"],
+      "subscribers": ["PI", "IN", "EQ", "WA"],
+      "priority": "high",
+      "requires_ack": true,
+      "ttl_hours": 72
+    },
+
+    "equipment_data.updated": {
+      "description": "设备数据更新（设备参数、管口方位变更）",
+      "produced_by": ["EQ"],
+      "subscribers": ["PI", "IN", "WA", "ST"],
+      "priority": "high",
+      "requires_ack": true,
+      "ttl_hours": 72
+    },
+
+    "water_condition.updated": {
+      "description": "给排水条件更新（用水量、排水量、水质参数变更）",
+      "produced_by": ["WA"],
+      "subscribers": ["FI", "EL", "PI", "IN"],
+      "priority": "medium",
+      "requires_ack": true,
+      "ttl_hours": 48
+    },
+
+    "fire_condition.updated": {
+      "description": "消防条件更新（消防用水量、消防设施变更）",
+      "produced_by": ["FI"],
+      "subscribers": ["WA", "EL", "PI"],
+      "priority": "high",
+      "requires_ack": true,
+      "ttl_hours": 48
+    },
+
+    "hvac_condition.updated": {
+      "description": "暖通条件更新（通风、空调参数变更）",
+      "produced_by": ["HV"],
+      "subscribers": ["WA", "EL", "PI"],
+      "priority": "medium",
+      "requires_ack": true,
+      "ttl_hours": 48
+    },
+
+    "material_data.updated": {
+      "description": "材料数据更新（管道等级、材料规格变更）",
+      "produced_by": ["MA"],
+      "subscribers": ["PI", "IN"],
+      "priority": "medium",
+      "requires_ack": true,
+      "ttl_hours": 72
+    },
+
+    "stress_analysis.completed": {
+      "description": "应力分析完成（临界管系应力分析结果）",
+      "produced_by": ["ST"],
+      "subscribers": ["PI"],
+      "priority": "high",
+      "requires_ack": true,
+      "ttl_hours": 72
+    },
+
+    "review_gate.passed": {
+      "description": "校审闸门通过（design/checking/review/approval）",
+      "produced_by": ["*"],
+      "subscribers": ["MG"],
+      "priority": "medium",
+      "requires_ack": false,
+      "ttl_hours": 72
+    },
+
+    "review_gate.failed": {
+      "description": "校审闸门未通过，需设计人整改",
+      "produced_by": ["QA", "*"],
+      "subscribers": ["MG"],
+      "priority": "high",
+      "requires_ack": true,
+      "ttl_hours": 72
+    },
+
+    "task.status_changed": {
+      "description": "WBS 任务状态变更（in_progress/completed/blocked/failed）",
+      "produced_by": ["*"],
+      "subscribers": ["MG"],
+      "priority": "low",
+      "requires_ack": false,
+      "ttl_hours": 24
+    },
+
+    "milestone.at_risk": {
+      "description": "里程碑存在滞后风险（偏差 ≥ 2 天）",
+      "produced_by": ["MG"],
+      "subscribers": ["MG"],
+      "priority": "critical",
+      "requires_ack": true,
+      "ttl_hours": 48
+    },
+
+    "milestone.achieved": {
+      "description": "里程碑达成",
+      "produced_by": ["MG"],
+      "subscribers": ["MG", "QA"],
+      "priority": "medium",
+      "requires_ack": false,
+      "ttl_hours": 72
+    },
+
+    "human.data_requested": {
+      "description": "Skill 在 CP-0 阶段发现 MUST 数据缺失，向人类发出数据补充请求。任务自动进入 paused 状态。",
+      "produced_by": ["*"],
+      "subscribers": ["MG"],
+      "priority": "critical",
+      "requires_ack": true,
+      "ttl_hours": 72,
+      "schema": {
+        "required_payload_fields": ["project_id", "wbs_id", "discipline", "sub_discipline", "missing_fields"],
+        "payload_example": {
+          "project_id": "VDI-PILOT-A",
+          "wbs_id": "1",
+          "discipline": "WA",
+          "sub_discipline": "S",
+          "checkpoint": "CP-0",
+          "missing_fields": [
+            { "field": "Q_process_m3d", "label": "工艺用水量（m³/d）", "source": "工艺专业 DesignBasis" }
+          ]
+        }
+      }
+    },
+
+    "human.data_supplied": {
+      "description": "人类已补充缺失数据，Skill 可以恢复执行。",
+      "produced_by": ["MG"],
+      "subscribers": ["*"],
+      "priority": "high",
+      "requires_ack": false,
+      "ttl_hours": 48,
+      "schema": {
+        "required_payload_fields": ["project_id", "wbs_id", "request_event_id", "supplied_data"],
+        "payload_example": {
+          "project_id": "VDI-PILOT-A",
+          "wbs_id": "1",
+          "request_event_id": "EVT-xxx",
+          "supplied_data": { "Q_process_m3d": 320 }
+        }
+      }
+    },
+
+    "human.review_requested": {
+      "description": "Skill 到达 CP-1/CP-2/CP-3 检查点，请求人类审核确认。任务进入 paused 状态。",
+      "produced_by": ["*"],
+      "subscribers": ["MG"],
+      "priority": "high",
+      "requires_ack": true,
+      "ttl_hours": 72,
+      "schema": {
+        "required_payload_fields": ["project_id", "wbs_id", "discipline_code", "checkpoint", "summary"],
+        "payload_example": {
+          "project_id": "VDI-PILOT-A",
+          "wbs_id": "1",
+          "discipline_code": "WASD",
+          "checkpoint": "CP-1",
+          "summary": "方案确定：环状管网 DN200，离心泵 Q=45m³/h H=42m",
+          "options": ["确认", "修改", "退回"]
+        }
+      }
+    },
+
+    "human.review_resolved": {
+      "description": "人类对检查点做出决策：批准/驳回/修改。Skill 根据决策继续执行或回退修改。",
+      "produced_by": ["MG"],
+      "subscribers": ["*"],
+      "priority": "high",
+      "requires_ack": false,
+      "ttl_hours": 48,
+      "schema": {
+        "required_payload_fields": ["project_id", "wbs_id", "request_event_id", "decision", "comment"],
+        "payload_example": {
+          "project_id": "VDI-PILOT-A",
+          "wbs_id": "1",
+          "request_event_id": "EVT-xxx",
+          "decision": "approved",
+          "comment": "方案合理，继续"
+        }
+      }
+    },
+
+    "procurement.requested": {
+      "description": "采购请求（仪表、设备采购技术要求）",
+      "produced_by": ["IN", "EQ"],
+      "subscribers": ["PROC"],
+      "priority": "high",
+      "requires_ack": true,
+      "ttl_hours": 168,
+      "schema": {
+        "required_payload_fields": ["project_id", "discipline", "item_type", "specifications"],
+        "payload_example": {
+          "project_id": "VDI-PILOT-A",
+          "discipline": "IN",
+          "item_type": "instrument",
+          "specifications": [
+            { "tag": "FT-1001", "type": "flow_transmitter", "range": "0-100 m³/h", "accuracy": "0.5%" }
+          ]
+        }
+      }
+    },
+
+    "procurement.acknowledged": {
+      "description": "采购部门确认收到采购请求",
+      "produced_by": ["PROC"],
+      "subscribers": ["IN", "EQ"],
+      "priority": "medium",
+      "requires_ack": false,
+      "ttl_hours": 48
+    },
+
+    "model_review.scheduled": {
+      "description": "模型审查安排（30%/60%/90%模型审查）",
+      "produced_by": ["PI"],
+      "subscribers": ["IN", "EL", "ST", "EQ", "WA"],
+      "priority": "high",
+      "requires_ack": true,
+      "ttl_hours": 72
+    },
+
+    "model_review.completed": {
+      "description": "模型审查完成",
+      "produced_by": ["PI"],
+      "subscribers": ["MG", "QA"],
+      "priority": "medium",
+      "requires_ack": false,
+      "ttl_hours": 48
+    }
+  },
+
+  "subscriber_lookup": {
+    "PR": { "subscribes_to": ["design_basis.acknowledged", "review_gate.failed"], "lead_code": "PR0L" },
+    "SY": { "subscribes_to": ["design_basis.acknowledged", "discipline_output.published"], "lead_code": null },
+    "WA": { "subscribes_to": ["design_basis.updated", "condition.changed", "discipline_output.published"], "lead_code": "WA0L" },
+    "PI": { "subscribes_to": ["design_basis.updated", "discipline_output.published", "condition.changed", "piping_layout.updated", "instrument_location.updated", "electrical_layout.updated", "structural_condition.updated", "equipment_data.updated"], "lead_code": null },
+    "IN": { "subscribes_to": ["design_basis.updated", "discipline_output.published", "condition.changed", "piping_layout.updated", "electrical_layout.updated", "material_data.updated"], "lead_code": null },
+    "EQ": { "subscribes_to": ["design_basis.updated", "discipline_output.published", "condition.changed", "structural_condition.updated"], "lead_code": null },
+    "EL": { "subscribes_to": ["discipline_output.published", "condition.changed", "piping_layout.updated", "instrument_location.updated", "water_condition.updated"], "lead_code": null },
+    "HS": { "subscribes_to": ["design_basis.updated"], "lead_code": null },
+    "FI": { "subscribes_to": ["discipline_output.published", "condition.changed", "water_condition.updated"], "lead_code": null },
+    "HV": { "subscribes_to": ["condition.changed", "electrical_layout.updated"], "lead_code": null },
+    "ST": { "subscribes_to": ["discipline_output.published", "condition.changed", "piping_layout.updated", "instrument_location.updated", "electrical_layout.updated", "equipment_data.updated"], "lead_code": null },
+    "AR": { "subscribes_to": ["condition.changed", "electrical_layout.updated"], "lead_code": null },
+    "MA": { "subscribes_to": ["discipline_output.published", "piping_layout.updated"], "lead_code": null },
+    "PROC": { "subscribes_to": ["procurement.requested"], "lead_code": null },
+    "MG": { "subscribes_to": ["review_gate.passed", "review_gate.failed", "task.status_changed", "milestone.at_risk", "milestone.achieved", "human.data_requested", "human.review_requested", "model_review.completed"], "lead_code": "MGDM" },
+    "QA": { "subscribes_to": ["discipline_output.submitted", "review_gate.passed", "milestone.achieved", "model_review.completed"], "lead_code": null }
+  },
+
+  "_active_disciplines": ["WA", "PR", "MG", "PI", "IN", "EL", "EQ"],
+  "_pending_disciplines": ["HV", "FI", "HS", "ST", "AR", "SI", "MA", "PROC", "QA"],
+  "_note": "基于公司实际业务流程更新，增加了管道布置、仪表位置、电气布置、结构条件等事件类型",
+  "_discipline_codes": {
+    "PR": "工艺专业",
+    "SY": "系统专业",
+    "WA": "给排水专业",
+    "PI": "管道专业",
+    "IN": "自控专业",
+    "EQ": "设备专业",
+    "EL": "电气专业",
+    "HS": "安全专业",
+    "FI": "消防专业",
+    "HV": "暖通专业",
+    "ST": "结构专业",
+    "AR": "建筑专业",
+    "MA": "材料专业",
+    "PROC": "采购部门",
+    "MG": "管理部门",
+    "QA": "质量部门"
+  }
+}

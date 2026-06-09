@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "pilotdeck-cross-refs",
+  "title": "PilotDeck Cross References",
+  "description": "知识库跨引用关系图结构约束",
+  "type": "object",
+  "required": ["version", "graph"],
+  "properties": {
+    "version": { "type": "integer", "minimum": 1 },
+    "built_at": { "type": "string" },
+    "total_outgoing": { "type": "integer", "minimum": 0 },
+    "total_incoming": { "type": "integer", "minimum": 0 },
+    "graph": {
+      "type": "object",
+      "required": ["outgoing", "incoming"],
+      "properties": {
+        "outgoing": {
+          "type": "object",
+          "description": "clause_id -> [{target_standard, type, context}]",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["target_standard", "type"],
+              "properties": {
+                "target_standard": { "type": "string" },
+                "type": { "type": "string", "enum": ["normative", "informative", "related"] },
+                "context": { "type": "string" }
+              }
+            }
+          }
+        },
+        "incoming": {
+          "type": "object",
+          "description": "standard -> [clause_ids]",
+          "additionalProperties": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

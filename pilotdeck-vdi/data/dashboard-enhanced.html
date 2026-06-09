@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VDI 数字工程师 - 智能设计平台</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #8b5cf6;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #3b82f6;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #6b7280;
+            --border: #e5e7eb;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: var(--dark);
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        /* 头部样式 */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .logo-text p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .header-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* 统计卡片 */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .stat-card-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .stat-card-change {
+            font-size: 0.8rem;
+            padding: 4px 8px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        .stat-card-change.positive {
+            background: #d1fae5;
+            color: #059669;
+        }
+        
+        .stat-card-change.negative {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        
+        .stat-card-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .stat-card-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        /* 主要内容区域 */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .card-title-icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+        
+        /* 专业分布图 */
+        .discipline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        
+        .discipline-item {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .discipline-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+        
+        .discipline-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        
+        .discipline-name {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .discipline-count {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .discipline-label {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        
+        /* 事件时间线 */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--primary);
+        }
+        
+        .timeline-time {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-bottom: 5px;
+        }
+        
+        .timeline-title {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .timeline-desc {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .timeline-status {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+        
+        .timeline-status.completed {
+            background: #d1fae5;
+            color: #059669;
+        }
+        
+        .timeline-status.pending {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        
+        .timeline-status.in-progress {
+            background: #dbeafe;
+            color: #2563eb;
+        }
+        
+        /* 公式库统计 */
+        .formula-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .formula-stat-item {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .formula-stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .formula-stat-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        /* 知识库统计 */
+        .knowledge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+        }
+        
+        .knowledge-item {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border-radius: 10px;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .knowledge-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .knowledge-label {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        
+        /* 图表容器 */
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin-top: 20px;
+        }
+        
+        /* 标签页 */
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .tab {
+            padding: 8px 16px;
+            border: none;
+            background: transparent;
+            color: var(--gray);
+            font-size: 0.9rem;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .tab.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .tab:hover:not(.active) {
+            background: #f3f4f6;
+        }
+        
+        /* 搜索框 */
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 12px 20px;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+        
+        /* 表格样式 */
+        .table-container {
+            overflow-x: auto;
+        }
+        
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .table th,
+        .table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .table th {
+            background: #f9fafb;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .table tr:hover {
+            background: #f9fafb;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .badge-primary {
+            background: #dbeafe;
+            color: #2563eb;
+        }
+        
+        .badge-success {
+            background: #d1fae5;
+            color: #059669;
+        }
+        
+        .badge-warning {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        
+        .badge-danger {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        
+        /* 底部信息 */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            opacity: 0.8;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .discipline-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* 动画 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        
+        /* 工具提示 */
+        .tooltip {
+            position: relative;
+        }
+        
+        .tooltip::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--dark);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .tooltip:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* 进度条 */
+        .progress-bar {
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+        
+        /* 加载动画 */
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #e5e7eb;
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* 模态框 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .modal-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .modal-close {
+            width: 30px;
+            height: 30px;
+            border: none;
+            background: #f3f4f6;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--gray);
+        }
+        
+        .modal-close:hover {
+            background: #e5e7eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header class="header animate-in">
+            <div class="header-top">
+                <div class="logo">
+                    <div class="logo-icon">🚀</div>
+                    <div class="logo-text">
+                        <h1>VDI 数字工程师</h1>
+                        <p>智能设计平台 · 实时监控 · 数据驱动</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-outline" onclick="refreshData()">🔄 刷新数据</button>
+                    <button class="btn btn-primary" onclick="exportReport()">📊 导出报告</button>
+                </div>
+            </div>
+            
+            <!-- 统计卡片 -->
+            <div class="stats-grid">
+                <div class="stat-card animate-in delay-1">
+                    <div class="stat-card-header">
+                        <div class="stat-card-icon" style="background: #dbeafe; color: #2563eb;">👥</div>
+                        <span class="stat-card-change positive">+12%</span>
+                    </div>
+                    <div class="stat-card-value" id="totalSkills">37</div>
+                    <div class="stat-card-label">活跃 Skills</div>
+                </div>
+                
+                <div class="stat-card animate-in delay-2">
+                    <div class="stat-card-header">
+                        <div class="stat-card-icon" style="background: #d1fae5; color: #059669;">📚</div>
+                        <span class="stat-card-change positive">+8%</span>
+                    </div>
+                    <div class="stat-card-value" id="totalClauses">651</div>
+                    <div class="stat-card-label">规范条文</div>
+                </div>
+                
+                <div class="stat-card animate-in delay-3">
+                    <div class="stat-card-header">
+                        <div class="stat-card-icon" style="background: #fef3c7; color: #d97706;">📐</div>
+                        <span class="stat-card-change positive">+15%</span>
+                    </div>
+                    <div class="stat-card-value" id="totalFormulas">162</div>
+                    <div class="stat-card-label">计算公式</div>
+                </div>
+                
+                <div class="stat-card animate-in delay-4">
+                    <div class="stat-card-header">
+                        <div class="stat-card-icon" style="background: #fee2e2; color: #dc2626;">⚡</div>
+                        <span class="stat-card-change positive">+20%</span>
+                    </div>
+                    <div class="stat-card-value" id="totalEvents">28</div>
+                    <div class="stat-card-label">事件类型</div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- 主要内容 -->
+        <div class="main-content">
+            <!-- 左侧：专业分布和图表 -->
+            <div>
+                <!-- 专业分布 -->
+                <div class="card animate-in delay-2">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <div class="card-title-icon" style="background: #dbeafe; color: #2563eb;">🏗️</div>
+                            专业分布
+                        </div>
+                        <div class="tabs">
+                            <button class="tab active" onclick="switchTab('skills')">Skills</button>
+                            <button class="tab" onclick="switchTab('clauses')">规范</button>
+                            <button class="tab" onclick="switchTab('formulas')">公式</button>
+                        </div>
+                    </div>
+                    
+                    <div class="discipline-grid" id="disciplineGrid">
+                        <!-- 动态生成 -->
+                    </div>
+                    
+                    <div class="chart-container">
+                        <canvas id="disciplineChart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- 公式库详情 -->
+                <div class="card animate-in delay-3" style="margin-top: 20px;">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <div class="card-title-icon" style="background: #fef3c7; color: #d97706;">📐</div>
+                            公式库详情
+                        </div>
+                    </div>
+                    
+                    <div class="formula-stats" id="formulaStats">
+                        <!-- 动态生成 -->
+                    </div>
+                    
+                    <div class="chart-container">
+                        <canvas id="formulaChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 右侧：事件和知识库 -->
+            <div>
+                <!-- 事件时间线 -->
+                <div class="card animate-in delay-3">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <div class="card-title-icon" style="background: #d1fae5; color: #059669;">⚡</div>
+                            最新事件
+                        </div>
+                        <button class="btn btn-outline" style="padding: 6px 12px; font-size: 0.8rem;">查看全部</button>
+                    </div>
+                    
+                    <div class="timeline" id="eventTimeline">
+                        <!-- 动态生成 -->
+                    </div>
+                </div>
+                
+                <!-- 知识库统计 -->
+                <div class="card animate-in delay-4" style="margin-top: 20px;">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <div class="card-title-icon" style="background: #fee2e2; color: #dc2626;">📚</div>
+                            知识库统计
+                        </div>
+                    </div>
+                    
+                    <div class="knowledge-grid" id="knowledgeGrid">
+                        <!-- 动态生成 -->
+                    </div>
+                    
+                    <div class="chart-container" style="height: 200px;">
+                        <canvas id="knowledgeChart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- 系统健康 -->
+                <div class="card animate-in delay-4" style="margin-top: 20px;">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <div class="card-title-icon" style="background: #dbeafe; color: #2563eb;">💚</div>
+                            系统健康
+                        </div>
+                        <span class="badge badge-success">正常</span>
+                    </div>
+                    
+                    <div style="space-y: 15px;">
+                        <div style="margin-bottom: 15px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                <span style="font-size: 0.9rem; color: var(--gray);">MCP 服务</span>
+                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--success);">5/5 运行中</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%; background: linear-gradient(90deg, #10b981, #34d399);"></div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                <span style="font-size: 0.9rem; color: var(--gray);">事件总线</span>
+                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--success);">活跃</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 95%; background: linear-gradient(90deg, #10b981, #34d399);"></div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                <span style="font-size: 0.9rem; color: var(--gray);">知识库</span>
+                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--success);">已同步</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%; background: linear-gradient(90deg, #10b981, #34d399);"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                <span style="font-size: 0.9rem; color: var(--gray);">公式库</span>
+                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--success);">162 个公式</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%; background: linear-gradient(90deg, #10b981, #34d399);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 底部表格 -->
+        <div class="card animate-in delay-4">
+            <div class="card-header">
+                <div class="card-title">
+                    <div class="card-title-icon" style="background: #f3e8ff; color: #7c3aed;">📋</div>
+                    最近活动
+                </div>
+                <div class="search-box" style="margin-bottom: 0;">
+                    <input type="text" class="search-input" placeholder="搜索活动..." style="width: 250px;">
+                </div>
+            </div>
+            
+            <div class="table-container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>时间</th>
+                            <th>专业</th>
+                            <th>活动</th>
+                            <th>状态</th>
+                            <th>详情</th>
+                        </tr>
+                    </thead>
+                    <tbody id="activityTable">
+                        <!-- 动态生成 -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- 底部信息 -->
+        <footer class="footer">
+            <p>VDI 数字工程师 © 2026 | 最后更新: <span id="lastUpdate">2026-06-08 00:20</span></p>
+        </footer>
+    </div>
+    
+    <!-- 模态框 -->
+    <div class="modal" id="detailModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">详情</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="modalBody">
+                <!-- 动态内容 -->
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 模拟数据
+        const mockData = {
+            disciplines: [
+                { name: '工艺', code: 'PR', skills: 12, clauses: 40, formulas: 44, color: '#6366f1' },
+                { name: '给排水', code: 'WA', skills: 10, clauses: 282, formulas: 37, color: '#8b5cf6' },
+                { name: '电气', code: 'EL', skills: 4, clauses: 82, formulas: 30, color: '#a78bfa' },
+                { name: '管道', code: 'PI', skills: 5, clauses: 38, formulas: 35, color: '#c4b5fd' },
+                { name: '仪控', code: 'IN', skills: 3, clauses: 26, formulas: 14, color: '#ddd6fe' },
+                { name: '设备', code: 'EQ', skills: 2, clauses: 35, formulas: 2, color: '#ede9fe' },
+                { name: 'HSE', code: 'HS', skills: 1, clauses: 101, formulas: 2, color: '#f5f3ff' },
+                { name: 'HAZOP', code: 'HZ', skills: 7, clauses: 41, formulas: 0, color: '#e0e7ff' }
+            ],
+            events: [
+                { time: '10:30', discipline: '工艺', type: 'design_basis.updated', status: 'completed', desc: '发布设计基础更新' },
+                { time: '10:15', discipline: '管道', type: 'piping_layout.updated', status: 'in-progress', desc: '管道布置更新' },
+                { time: '10:00', discipline: '电气', type: 'electrical_layout.updated', status: 'pending', desc: '电气布置更新' },
+                { time: '09:45', discipline: '仪控', type: 'instrument_location.updated', status: 'completed', desc: '仪表位置更新' },
+                { time: '09:30', discipline: '结构', type: 'structural_condition.updated', status: 'completed', desc: '结构条件更新' }
+            ],
+            activities: [
+                { time: '2026-06-08 10:30', discipline: '工艺', activity: '发布设计基础更新', status: 'completed' },
+                { time: '2026-06-08 10:15', discipline: '管道', activity: '管道布置更新', status: 'in-progress' },
+                { time: '2026-06-08 10:00', discipline: '电气', activity: '电气布置更新', status: 'pending' },
+                { time: '2026-06-08 09:45', discipline: '仪控', activity: '仪表位置更新', status: 'completed' },
+                { time: '2026-06-08 09:30', discipline: '结构', activity: '结构条件更新', status: 'completed' }
+            ]
+        };
+        
+        // 当前标签页
+        let currentTab = 'skills';
+        
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            renderDisciplineGrid();
+            renderEventTimeline();
+            renderKnowledgeGrid();
+            renderFormulaStats();
+            renderActivityTable();
+            initCharts();
+        });
+        
+        // 渲染专业分布
+        function renderDisciplineGrid() {
+            const grid = document.getElementById('disciplineGrid');
+            grid.innerHTML = mockData.disciplines.map(d => `
+                <div class="discipline-item" onclick="showDisciplineDetail('${d.code}')">
+                    <div class="discipline-icon" style="background: ${d.color}20; color: ${d.color};">
+                        ${getDisciplineIcon(d.code)}
+                    </div>
+                    <div class="discipline-name">${d.name}</div>
+                    <div class="discipline-count">${d[currentTab]}</div>
+                    <div class="discipline-label">${getTabLabel()}</div>
+                </div>
+            `).join('');
+        }
+        
+        // 获取专业图标
+        function getDisciplineIcon(code) {
+            const icons = {
+                'PR': '⚗️',
+                'WA': '💧',
+                'EL': '⚡',
+                'PI': '🔧',
+                'IN': '📊',
+                'EQ': '🏭',
+                'HS': '🛡️',
+                'HZ': '⚠️'
+            };
+            return icons[code] || '📋';
+        }
+        
+        // 获取标签页标签
+        function getTabLabel() {
+            const labels = {
+                'skills': '个 Skills',
+                'clauses': '条规范',
+                'formulas': '个公式'
+            };
+            return labels[currentTab];
+        }
+        
+        // 切换标签页
+        function switchTab(tab) {
+            currentTab = tab;
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+            renderDisciplineGrid();
+        }
+        
+        // 渲染事件时间线
+        function renderEventTimeline() {
+            const timeline = document.getElementById('eventTimeline');
+            timeline.innerHTML = mockData.events.map(e => `
+                <div class="timeline-item">
+                    <div class="timeline-time">${e.time}</div>
+                    <div class="timeline-title">${e.discipline} · ${e.type}</div>
+                    <div class="timeline-desc">${e.desc}</div>
+                    <span class="timeline-status ${e.status}">${getStatusLabel(e.status)}</span>
+                </div>
+            `).join('');
+        }
+        
+        // 获取状态标签
+        function getStatusLabel(status) {
+            const labels = {
+                'completed': '已完成',
+                'in-progress': '进行中',
+                'pending': '待处理'
+            };
+            return labels[status] || status;
+        }
+        
+        // 渲染知识库统计
+        function renderKnowledgeGrid() {
+            const grid = document.getElementById('knowledgeGrid');
+            const stats = [
+                { value: '651', label: '总条文' },
+                { value: '132', label: '强制性' },
+                { value: '14', label: '交叉引用' },
+                { value: '32', label: '规范文件' }
+            ];
+            grid.innerHTML = stats.map(s => `
+                <div class="knowledge-item">
+                    <div class="knowledge-value">${s.value}</div>
+                    <div class="knowledge-label">${s.label}</div>
+                </div>
+            `).join('');
+        }
+        
+        // 渲染公式库统计
+        function renderFormulaStats() {
+            const container = document.getElementById('formulaStats');
+            const stats = [
+                { value: '162', label: '总公式数' },
+                { value: '6', label: '专业覆盖' },
+                { value: '35', label: '类别数' },
+                { value: '133', label: '精确公式' }
+            ];
+            container.innerHTML = stats.map(s => `
+                <div class="formula-stat-item">
+                    <div class="formula-stat-value">${s.value}</div>
+                    <div class="formula-stat-label">${s.label}</div>
+                </div>
+            `).join('');
+        }
+        
+        // 渲染活动表格
+        function renderActivityTable() {
+            const tbody = document.getElementById('activityTable');
+            tbody.innerHTML = mockData.activities.map(a => `
+                <tr>
+                    <td>${a.time}</td>
+                    <td><span class="badge badge-primary">${a.discipline}</span></td>
+                    <td>${a.activity}</td>
+                    <td><span class="badge badge-${getStatusBadge(a.status)}">${getStatusLabel(a.status)}</span></td>
+                    <td><button class="btn btn-outline" style="padding: 4px 8px; font-size: 0.8rem;" onclick="showDetail('${a.activity}')">查看</button></td>
+                </tr>
+            `).join('');
+        }
+        
+        // 获取状态徽章
+        function getStatusBadge(status) {
+            const badges = {
+                'completed': 'success',
+                'in-progress': 'warning',
+                'pending': 'danger'
+            };
+            return badges[status] || 'primary';
+        }
+        
+        // 初始化图表
+        function initCharts() {
+            // 专业分布图
+            const disciplineCtx = document.getElementById('disciplineChart').getContext('2d');
+            new Chart(disciplineCtx, {
+                type: 'bar',
+                data: {
+                    labels: mockData.disciplines.map(d => d.name),
+                    datasets: [
+                        {
+                            label: 'Skills',
+                            data: mockData.disciplines.map(d => d.skills),
+                            backgroundColor: '#6366f1',
+                            borderRadius: 5
+                        },
+                        {
+                            label: '规范',
+                            data: mockData.disciplines.map(d => d.clauses),
+                            backgroundColor: '#8b5cf6',
+                            borderRadius: 5
+                        },
+                        {
+                            label: '公式',
+                            data: mockData.disciplines.map(d => d.formulas),
+                            backgroundColor: '#a78bfa',
+                            borderRadius: 5
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            
+            // 公式分布图
+            const formulaCtx = document.getElementById('formulaChart').getContext('2d');
+            new Chart(formulaCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: mockData.disciplines.map(d => d.name),
+                    datasets: [{
+                        data: mockData.disciplines.map(d => d.formulas),
+                        backgroundColor: mockData.disciplines.map(d => d.color),
+                        borderWidth: 2,
+                        borderColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        }
+                    }
+                }
+            });
+            
+            // 知识库分布图
+            const knowledgeCtx = document.getElementById('knowledgeChart').getContext('2d');
+            new Chart(knowledgeCtx, {
+                type: 'pie',
+                data: {
+                    labels: mockData.disciplines.map(d => d.name),
+                    datasets: [{
+                        data: mockData.disciplines.map(d => d.clauses),
+                        backgroundColor: mockData.disciplines.map(d => d.color),
+                        borderWidth: 2,
+                        borderColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        }
+                    }
+                }
+            });
+        }
+        
+        // 显示专业详情
+        function showDisciplineDetail(code) {
+            const discipline = mockData.disciplines.find(d => d.code === code);
+            if (!discipline) return;
+            
+            document.getElementById('modalTitle').textContent = `${discipline.name}专业详情`;
+            document.getElementById('modalBody').innerHTML = `
+                <div style="space-y: 20px;">
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="margin-bottom: 10px; color: var(--dark);">基本信息</h4>
+                        <p><strong>专业代码：</strong>${discipline.code}</p>
+                        <p><strong>Skills 数量：</strong>${discipline.skills}</p>
+                        <p><strong>规范条文：</strong>${discipline.clauses}</p>
+                        <p><strong>计算公式：</strong>${discipline.formulas}</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="margin-bottom: 10px; color: var(--dark);">主要职责</h4>
+                        <ul style="padding-left: 20px; color: var(--gray);">
+                            <li>负责本专业的设计计算</li>
+                            <li>生成专业设计文档</li>
+                            <li>与其他专业协作提资</li>
+                            <li>参与设计评审和校审</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 style="margin-bottom: 10px; color: var(--dark);">相关事件</h4>
+                        <p style="color: var(--gray);">最近 24 小时内有 ${Math.floor(Math.random() * 10)} 个事件</p>
+                    </div>
+                </div>
+            `;
+            document.getElementById('detailModal').classList.add('active');
+        }
+        
+        // 显示详情
+        function showDetail(activity) {
+            document.getElementById('modalTitle').textContent = '活动详情';
+            document.getElementById('modalBody').innerHTML = `
+                <div>
+                    <p><strong>活动：</strong>${activity}</p>
+                    <p><strong>时间：</strong>2026-06-08 10:30</p>
+                    <p><strong>状态：</strong>已完成</p>
+                    <p style="margin-top: 15px; color: var(--gray);">这是活动的详细描述，包含了具体的操作内容和结果。</p>
+                </div>
+            `;
+            document.getElementById('detailModal').classList.add('active');
+        }
+        
+        // 关闭模态框
+        function closeModal() {
+            document.getElementById('detailModal').classList.remove('active');
+        }
+        
+        // 刷新数据
+        function refreshData() {
+            // 模拟刷新
+            const btn = event.target;
+            btn.textContent = '刷新中...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.textContent = '🔄 刷新数据';
+                btn.disabled = false;
+                alert('数据已刷新！');
+            }, 1000);
+        }
+        
+        // 导出报告
+        function exportReport() {
+            alert('报告导出功能开发中...');
+        }
+        
+        // 点击模态框外部关闭
+        document.getElementById('detailModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

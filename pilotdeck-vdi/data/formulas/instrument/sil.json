@@ -1,0 +1,172 @@
+{
+  "file": "instrument/sil.json",
+  "discipline": "instrument",
+  "category": "sil",
+  "formula_count": 6,
+  "formulas": [
+    {
+      "formula_id": "IN-SIL-001",
+      "name": "安全完整性等级计算（SIL）",
+      "name_en": "Safety Integrity Level Calculation",
+      "discipline": "instrument",
+      "category": "sil/level",
+      "type": "exact",
+      "equation_text": "SIL = min(SIL_target, SIL_achievable)",
+      "equation_latex": "SIL = \\min(SIL_{target}, SIL_{achievable})",
+      "equation_ast": {
+        "op": "min",
+        "args": [{"var": "SIL_target"}, {"var": "SIL_achievable"}]
+      },
+      "variables": [
+        {"symbol": "SIL", "name": "安全完整性等级", "unit": "-", "role": "output", "desc": "最终确定的安全完整性等级"},
+        {"symbol": "SIL_target", "name": "目标SIL等级", "unit": "-", "role": "input", "constraints": {"min": 1, "max": 4}, "desc": "风险评估确定的目标SIL等级"},
+        {"symbol": "SIL_achievable", "name": "可达SIL等级", "unit": "-", "role": "input", "constraints": {"min": 1, "max": 4}, "desc": "SIF回路可达的SIL等级"}
+      ],
+      "source": {"standard_id": "GB/T 21109", "clause": "SIL确定"},
+      "tags": ["SIL", "安全完整性", "SIF回路"],
+      "keywords": ["SIL", "安全完整性等级", "SIF"],
+      "precision": 1,
+      "created_at": "2026-06-07T00:00:00Z",
+      "updated_at": "2026-06-07T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "IN-SIL-002",
+      "name": "平均失效概率（PFDavg）",
+      "name_en": "Average Probability of Failure on Demand",
+      "discipline": "instrument",
+      "category": "sil/pfd",
+      "type": "exact",
+      "equation_text": "PFDavg = (λdu * T1) / 2 + (λdd * T2) / 2",
+      "equation_latex": "PFD_{avg} = \\frac{\\lambda_{du} \\cdot T_1}{2} + \\frac{\\lambda_{dd} \\cdot T_2}{2}",
+      "equation_ast": {
+        "op": "add",
+        "args": [
+          {"op": "div", "num": {"op": "mul", "args": [{"var": "λdu"}, {"var": "T1"}]}, "den": {"const": 2}},
+          {"op": "div", "num": {"op": "mul", "args": [{"var": "λdd"}, {"var": "T2"}]}, "den": {"const": 2}}
+        ]
+      },
+      "variables": [
+        {"symbol": "PFDavg", "name": "平均失效概率", "unit": "-", "role": "output", "desc": "安全功能在需求时的平均失效概率"},
+        {"symbol": "λdu", "name": "危险未检测失效率", "unit": "1/h", "role": "input", "constraints": {"min": 1e-9, "max": 1e-3}, "desc": "每小时危险未检测失效次数"},
+        {"symbol": "T1", "name": "检验测试间隔", "unit": "h", "role": "input", "constraints": {"min": 1, "max": 8760}, "desc": "定期检验测试的时间间隔"},
+        {"symbol": "λdd", "name": "危险可检测失效率", "unit": "1/h", "role": "input", "constraints": {"min": 0, "max": 1e-4}, "desc": "每小时危险可检测失效次数"},
+        {"symbol": "T2", "name": "修复时间", "unit": "h", "role": "input", "constraints": {"min": 0.1, "max": 100}, "default": 8, "desc": "平均修复时间"}
+      ],
+      "source": {"standard_id": "GB/T 21109", "clause": "PFD计算"},
+      "tags": ["PFDavg", "失效概率", "SIL验证"],
+      "keywords": ["PFDavg", "平均失效概率", "失效率"],
+      "precision": 0.0001,
+      "created_at": "2026-06-07T00:00:00Z",
+      "updated_at": "2026-06-07T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "IN-SIL-003",
+      "name": "安全失效分数（SFF）",
+      "name_en": "Safe Failure Fraction",
+      "discipline": "instrument",
+      "category": "sil/sff",
+      "type": "exact",
+      "equation_text": "SFF = (λs + λdd) / (λs + λd)",
+      "equation_latex": "SFF = \\frac{\\lambda_s + \\lambda_{dd}}{\\lambda_s + \\lambda_d}",
+      "equation_ast": {
+        "op": "div",
+        "num": {"op": "add", "args": [{"var": "λs"}, {"var": "λdd"}]},
+        "den": {"op": "add", "args": [{"var": "λs"}, {"var": "λd"}]}
+      },
+      "variables": [
+        {"symbol": "SFF", "name": "安全失效分数", "unit": "%", "role": "output", "desc": "安全失效占总失效的比例"},
+        {"symbol": "λs", "name": "安全失效率", "unit": "1/h", "role": "input", "constraints": {"min": 0, "max": 1e-3}, "desc": "每小时安全失效次数"},
+        {"symbol": "λdd", "name": "危险可检测失效率", "unit": "1/h", "role": "input", "constraints": {"min": 0, "max": 1e-4}, "desc": "每小时危险可检测失效次数"},
+        {"symbol": "λd", "name": "危险失效率", "unit": "1/h", "role": "input", "constraints": {"min": 1e-9, "max": 1e-3}, "desc": "每小时危险失效总次数"}
+      ],
+      "source": {"standard_id": "GB/T 21109", "clause": "SFF计算"},
+      "tags": ["SFF", "安全失效", "失效率分析"],
+      "keywords": ["SFF", "安全失效分数", "失效率"],
+      "precision": 0.01,
+      "created_at": "2026-06-07T00:00:00Z",
+      "updated_at": "2026-06-07T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "IN-SIL-004",
+      "name": "硬件故障裕度（HFT）",
+      "name_en": "Hardware Fault Tolerance",
+      "discipline": "instrument",
+      "category": "sil/hft",
+      "type": "lookup",
+      "equation_text": "HFT = N - 1 (N为冗余通道数)",
+      "equation_latex": "HFT = N - 1",
+      "equation_ast": {
+        "op": "sub",
+        "args": [{"var": "N"}, {"const": 1}]
+      },
+      "variables": [
+        {"symbol": "HFT", "name": "硬件故障裕度", "unit": "-", "role": "output", "desc": "系统可容忍的硬件故障数量"},
+        {"symbol": "N", "name": "冗余通道数", "unit": "-", "role": "input", "constraints": {"min": 1, "max": 4}, "desc": "安全功能的冗余通道数量"}
+      ],
+      "source": {"standard_id": "GB/T 21109", "clause": "HFT要求"},
+      "tags": ["HFT", "硬件故障裕度", "冗余设计"],
+      "keywords": ["HFT", "硬件故障裕度", "冗余"],
+      "precision": 1,
+      "created_at": "2026-06-07T00:00:00Z",
+      "updated_at": "2026-06-07T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "IN-SIL-005",
+      "name": "过程危险时间（T_process）",
+      "name_en": "Process Hazard Time",
+      "discipline": "instrument",
+      "category": "sil/time",
+      "type": "exact",
+      "equation_text": "T_process = T_detector + T_logic + T_final + T_response",
+      "equation_latex": "T_{process} = T_{detector} + T_{logic} + T_{final} + T_{response}",
+      "equation_ast": {
+        "op": "add",
+        "args": [{"var": "T_detector"}, {"var": "T_logic"}, {"var": "T_final"}, {"var": "T_response"}]
+      },
+      "variables": [
+        {"symbol": "T_process", "name": "过程危险时间", "unit": "s", "role": "output", "desc": "从危险发生到安全功能完成的总时间"},
+        {"symbol": "T_detector", "name": "检测器响应时间", "unit": "s", "role": "input", "constraints": {"min": 0.1, "max": 60}, "desc": "传感器检测危险条件的时间"},
+        {"symbol": "T_logic", "name": "逻辑控制器处理时间", "unit": "s", "role": "input", "constraints": {"min": 0.01, "max": 10}, "desc": "安全PLC处理信号的时间"},
+        {"symbol": "T_final", "name": "最终元件动作时间", "unit": "s", "role": "input", "constraints": {"min": 0.1, "max": 120}, "desc": "执行机构完成安全动作的时间"},
+        {"symbol": "T_response", "name": "过程响应时间", "unit": "s", "role": "input", "constraints": {"min": 0.1, "max": 300}, "desc": "过程变量达到安全状态的时间"}
+      ],
+      "source": {"standard_id": "GB/T 21109", "clause": "响应时间"},
+      "tags": ["响应时间", "安全时间", "SIF设计"],
+      "keywords": ["响应时间", "危险时间", "安全功能"],
+      "precision": 0.1,
+      "created_at": "2026-06-07T00:00:00Z",
+      "updated_at": "2026-06-07T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "IN-SIL-006",
+      "name": "安全功能需求率（RFD）",
+      "name_en": "Rate of Failure on Demand",
+      "discipline": "instrument",
+      "category": "sil/frequency",
+      "type": "exact",
+      "equation_text": "RFD = 1 / T_proof",
+      "equation_latex": "RFD = \\frac{1}{T_{proof}}",
+      "equation_ast": {
+        "op": "div",
+        "num": {"const": 1},
+        "den": {"var": "T_proof"}
+      },
+      "variables": [
+        {"symbol": "RFD", "name": "安全功能需求率", "unit": "1/h", "role": "output", "desc": "安全功能被需求的频率"},
+        {"symbol": "T_proof", "name": "检验测试间隔", "unit": "h", "role": "input", "constraints": {"min": 1, "max": 8760}, "desc": "定期检验测试的时间间隔"}
+      ],
+      "source": {"standard_id": "GB/T 21109", "clause": "需求率"},
+      "tags": ["需求率", "检验测试", "SIL验证"],
+      "keywords": ["需求率", "检验测试间隔", "RFD"],
+      "precision": 0.0001,
+      "created_at": "2026-06-07T00:00:00Z",
+      "updated_at": "2026-06-07T00:00:00Z",
+      "version": 1
+    }
+  ]
+}

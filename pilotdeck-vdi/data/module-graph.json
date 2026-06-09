@@ -25,16 +25,28 @@
       "group": "discipline"
     },
     {
+      "id": "skill:vdi-doc-export",
+      "type": "skill",
+      "name": "文档导出",
+      "group": "MG"
+    },
+    {
+      "id": "mcp:documents",
+      "type": "mcp",
+      "name": "documents",
+      "group": "mcp"
+    },
+    {
+      "id": "skill:vdi-doc-ingest",
+      "type": "skill",
+      "name": "文档解读",
+      "group": "MG"
+    },
+    {
       "id": "skill:vdi-process-balance",
       "type": "skill",
       "name": "物料热量平衡",
       "group": "PR"
-    },
-    {
-      "id": "mcp:vdi-rules",
-      "type": "mcp",
-      "name": "vdi-rules",
-      "group": "mcp"
     },
     {
       "id": "disc:PR",
@@ -71,6 +83,12 @@
       "type": "skill",
       "name": "工艺专业负责人",
       "group": "PR"
+    },
+    {
+      "id": "mcp:vdi-rules",
+      "type": "mcp",
+      "name": "vdi-rules",
+      "group": "mcp"
     },
     {
       "id": "skill:vdi-process-pfd-pid",
@@ -111,13 +129,19 @@
     {
       "id": "skill:vdi-system-health",
       "type": "skill",
-      "name": "系统健康检查",
-      "group": "system"
+      "name": "\"系统健康检查\"",
+      "group": "\"system\""
     },
     {
-      "id": "disc:system",
+      "id": "mcp:\"vdi-knowledge\"",
+      "type": "mcp",
+      "name": "\"vdi-knowledge\"",
+      "group": "mcp"
+    },
+    {
+      "id": "disc:\"system\"",
       "type": "discipline",
-      "name": "system",
+      "name": "\"system\"",
       "group": "discipline"
     },
     {
@@ -179,102 +203,6 @@
       "type": "skill",
       "name": "污水处理设计",
       "group": "WA"
-    },
-    {
-      "id": "skill:hazop-chair",
-      "type": "skill",
-      "name": "HAZOP分析主席",
-      "group": "HAZOP"
-    },
-    {
-      "id": "disc:HAZOP",
-      "type": "discipline",
-      "name": "HAZOP",
-      "group": "discipline"
-    },
-    {
-      "id": "skill:hazop-expert-process",
-      "type": "skill",
-      "name": "HAZOP工艺专家",
-      "group": "HAZOP"
-    },
-    {
-      "id": "skill:hazop-expert-instrument",
-      "type": "skill",
-      "name": "HAZOP仪表专家",
-      "group": "HAZOP"
-    },
-    {
-      "id": "skill:hazop-expert-equipment",
-      "type": "skill",
-      "name": "HAZOP设备专家",
-      "group": "HAZOP"
-    },
-    {
-      "id": "skill:hazop-expert-safety",
-      "type": "skill",
-      "name": "HAZOP安全专家",
-      "group": "HAZOP"
-    },
-    {
-      "id": "skill:hazop-expert-operation",
-      "type": "skill",
-      "name": "HAZOP操作专家",
-      "group": "HAZOP"
-    },
-    {
-      "id": "skill:hazop-prep-assistant",
-      "type": "skill",
-      "name": "HAZOP Prep助理",
-      "group": "HAZOP"
-    },
-    {
-      "id": "skill:hazop-matrix-assistant",
-      "type": "skill",
-      "name": "HAZOP Matrix助理",
-      "group": "HAZOP"
-    },
-    {
-      "id": "skill:hazop-scenario-assistant",
-      "type": "skill",
-      "name": "HAZOP Scenario助理",
-      "group": "HAZOP"
-    },
-    {
-      "id": "skill:hazop-qa-assistant",
-      "type": "skill",
-      "name": "HAZOP QA助理",
-      "group": "HAZOP"
-    },
-    {
-      "id": "skill:hazop-report-assistant",
-      "type": "skill",
-      "name": "HAZOP Report助理",
-      "group": "HAZOP"
-    },
-    {
-      "id": "skill:hazop-inherent-safety",
-      "type": "skill",
-      "name": "HAZOP本质安全评估助理",
-      "group": "HAZOP"
-    },
-    {
-      "id": "skill:vdi-doc-export",
-      "type": "skill",
-      "name": "文档导出",
-      "group": "MG"
-    },
-    {
-      "id": "mcp:documents",
-      "type": "mcp",
-      "name": "documents",
-      "group": "mcp"
-    },
-    {
-      "id": "skill:vdi-doc-ingest",
-      "type": "skill",
-      "name": "文档解读",
-      "group": "MG"
     },
     {
       "id": "tool:content_read",
@@ -649,6 +577,66 @@
       "group": "electrical"
     },
     {
+      "id": "formula:EL-LOAD-001",
+      "type": "formula",
+      "name": "EL-LOAD-001",
+      "group": "electrical"
+    },
+    {
+      "id": "formula:EL-LOAD-002",
+      "type": "formula",
+      "name": "EL-LOAD-002",
+      "group": "electrical"
+    },
+    {
+      "id": "formula:EL-LOAD-003",
+      "type": "formula",
+      "name": "EL-LOAD-003",
+      "group": "electrical"
+    },
+    {
+      "id": "formula:EL-LOAD-004",
+      "type": "formula",
+      "name": "EL-LOAD-004",
+      "group": "electrical"
+    },
+    {
+      "id": "formula:EL-LOAD-005",
+      "type": "formula",
+      "name": "EL-LOAD-005",
+      "group": "electrical"
+    },
+    {
+      "id": "formula:EL-LOAD-006",
+      "type": "formula",
+      "name": "EL-LOAD-006",
+      "group": "electrical"
+    },
+    {
+      "id": "formula:EL-LOAD-007",
+      "type": "formula",
+      "name": "EL-LOAD-007",
+      "group": "electrical"
+    },
+    {
+      "id": "formula:EL-LOAD-008",
+      "type": "formula",
+      "name": "EL-LOAD-008",
+      "group": "electrical"
+    },
+    {
+      "id": "formula:EL-LOAD-009",
+      "type": "formula",
+      "name": "EL-LOAD-009",
+      "group": "electrical"
+    },
+    {
+      "id": "formula:EL-LOAD-010",
+      "type": "formula",
+      "name": "EL-LOAD-010",
+      "group": "electrical"
+    },
+    {
       "id": "formula:EL-POW-001",
       "type": "formula",
       "name": "EL-POW-001",
@@ -721,6 +709,96 @@
       "group": "hse"
     },
     {
+      "id": "formula:IN-SEL-001",
+      "type": "formula",
+      "name": "IN-SEL-001",
+      "group": "instrument"
+    },
+    {
+      "id": "disc:instrument",
+      "type": "discipline",
+      "name": "instrument",
+      "group": "discipline"
+    },
+    {
+      "id": "formula:IN-SEL-002",
+      "type": "formula",
+      "name": "IN-SEL-002",
+      "group": "instrument"
+    },
+    {
+      "id": "formula:IN-SEL-003",
+      "type": "formula",
+      "name": "IN-SEL-003",
+      "group": "instrument"
+    },
+    {
+      "id": "formula:IN-SEL-004",
+      "type": "formula",
+      "name": "IN-SEL-004",
+      "group": "instrument"
+    },
+    {
+      "id": "formula:IN-SEL-005",
+      "type": "formula",
+      "name": "IN-SEL-005",
+      "group": "instrument"
+    },
+    {
+      "id": "formula:IN-SEL-006",
+      "type": "formula",
+      "name": "IN-SEL-006",
+      "group": "instrument"
+    },
+    {
+      "id": "formula:IN-SEL-007",
+      "type": "formula",
+      "name": "IN-SEL-007",
+      "group": "instrument"
+    },
+    {
+      "id": "formula:IN-SEL-008",
+      "type": "formula",
+      "name": "IN-SEL-008",
+      "group": "instrument"
+    },
+    {
+      "id": "formula:IN-SIL-001",
+      "type": "formula",
+      "name": "IN-SIL-001",
+      "group": "instrument"
+    },
+    {
+      "id": "formula:IN-SIL-002",
+      "type": "formula",
+      "name": "IN-SIL-002",
+      "group": "instrument"
+    },
+    {
+      "id": "formula:IN-SIL-003",
+      "type": "formula",
+      "name": "IN-SIL-003",
+      "group": "instrument"
+    },
+    {
+      "id": "formula:IN-SIL-004",
+      "type": "formula",
+      "name": "IN-SIL-004",
+      "group": "instrument"
+    },
+    {
+      "id": "formula:IN-SIL-005",
+      "type": "formula",
+      "name": "IN-SIL-005",
+      "group": "instrument"
+    },
+    {
+      "id": "formula:IN-SIL-006",
+      "type": "formula",
+      "name": "IN-SIL-006",
+      "group": "instrument"
+    },
+    {
       "id": "formula:PI-COR-001",
       "type": "formula",
       "name": "PI-COR-001",
@@ -748,6 +826,66 @@
       "id": "formula:PI-COR-004",
       "type": "formula",
       "name": "PI-COR-004",
+      "group": "piping"
+    },
+    {
+      "id": "formula:PI-FLOW-001",
+      "type": "formula",
+      "name": "PI-FLOW-001",
+      "group": "piping"
+    },
+    {
+      "id": "formula:PI-FLOW-002",
+      "type": "formula",
+      "name": "PI-FLOW-002",
+      "group": "piping"
+    },
+    {
+      "id": "formula:PI-FLOW-003",
+      "type": "formula",
+      "name": "PI-FLOW-003",
+      "group": "piping"
+    },
+    {
+      "id": "formula:PI-FLOW-004",
+      "type": "formula",
+      "name": "PI-FLOW-004",
+      "group": "piping"
+    },
+    {
+      "id": "formula:PI-FLOW-005",
+      "type": "formula",
+      "name": "PI-FLOW-005",
+      "group": "piping"
+    },
+    {
+      "id": "formula:PI-FLOW-006",
+      "type": "formula",
+      "name": "PI-FLOW-006",
+      "group": "piping"
+    },
+    {
+      "id": "formula:PI-FLOW-007",
+      "type": "formula",
+      "name": "PI-FLOW-007",
+      "group": "piping"
+    },
+    {
+      "id": "formula:PI-FLOW-008",
+      "type": "formula",
+      "name": "PI-FLOW-008",
+      "group": "piping"
+    },
+    {
+      "id": "formula:PI-FLOW-009",
+      "type": "formula",
+      "name": "PI-FLOW-009",
+      "group": "piping"
+    },
+    {
+      "id": "formula:PI-FLOW-010",
+      "type": "formula",
+      "name": "PI-FLOW-010",
       "group": "piping"
     },
     {
@@ -1571,6 +1709,66 @@
       "group": "event"
     },
     {
+      "id": "event:piping_layout.updated",
+      "type": "event",
+      "name": "piping_layout.updated",
+      "group": "event"
+    },
+    {
+      "id": "event:instrument_location.updated",
+      "type": "event",
+      "name": "instrument_location.updated",
+      "group": "event"
+    },
+    {
+      "id": "event:electrical_layout.updated",
+      "type": "event",
+      "name": "electrical_layout.updated",
+      "group": "event"
+    },
+    {
+      "id": "event:structural_condition.updated",
+      "type": "event",
+      "name": "structural_condition.updated",
+      "group": "event"
+    },
+    {
+      "id": "event:equipment_data.updated",
+      "type": "event",
+      "name": "equipment_data.updated",
+      "group": "event"
+    },
+    {
+      "id": "event:water_condition.updated",
+      "type": "event",
+      "name": "water_condition.updated",
+      "group": "event"
+    },
+    {
+      "id": "event:fire_condition.updated",
+      "type": "event",
+      "name": "fire_condition.updated",
+      "group": "event"
+    },
+    {
+      "id": "event:hvac_condition.updated",
+      "type": "event",
+      "name": "hvac_condition.updated",
+      "group": "event"
+    },
+    {
+      "id": "event:material_data.updated",
+      "type": "event",
+      "name": "material_data.updated",
+      "group": "event"
+    },
+    {
+      "id": "event:stress_analysis.completed",
+      "type": "event",
+      "name": "stress_analysis.completed",
+      "group": "event"
+    },
+    {
       "id": "event:review_gate.passed",
       "type": "event",
       "name": "review_gate.passed",
@@ -1623,6 +1821,30 @@
       "type": "event",
       "name": "human.review_resolved",
       "group": "event"
+    },
+    {
+      "id": "event:procurement.requested",
+      "type": "event",
+      "name": "procurement.requested",
+      "group": "event"
+    },
+    {
+      "id": "event:procurement.acknowledged",
+      "type": "event",
+      "name": "procurement.acknowledged",
+      "group": "event"
+    },
+    {
+      "id": "event:model_review.scheduled",
+      "type": "event",
+      "name": "model_review.scheduled",
+      "group": "event"
+    },
+    {
+      "id": "event:model_review.completed",
+      "type": "event",
+      "name": "model_review.completed",
+      "group": "event"
     }
   ],
   "edges": [
@@ -1640,33 +1862,39 @@
     },
     {
       "from": "skill:vdi-design-manager",
-      "to": "skill:vdi-doc-export",
-      "type": "SKILL_MAY_CALL",
-      "label": "可调用"
-    },
-    {
-      "from": "skill:vdi-design-manager",
-      "to": "skill:vdi-doc-ingest",
-      "type": "SKILL_MAY_CALL",
-      "label": "可调用"
-    },
-    {
-      "from": "skill:vdi-design-manager",
       "to": "disc:MG",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-process-balance",
+      "from": "skill:vdi-doc-export",
+      "to": "mcp:documents",
+      "type": "SKILL_MCP",
+      "label": "依赖"
+    },
+    {
+      "from": "skill:vdi-doc-export",
+      "to": "disc:MG",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:vdi-doc-ingest",
+      "to": "mcp:documents",
+      "type": "SKILL_MCP",
+      "label": "依赖"
+    },
+    {
+      "from": "skill:vdi-doc-ingest",
       "to": "mcp:vdi-knowledge",
       "type": "SKILL_MCP",
       "label": "依赖"
     },
     {
-      "from": "skill:vdi-process-balance",
-      "to": "mcp:vdi-rules",
-      "type": "SKILL_MCP",
-      "label": "依赖"
+      "from": "skill:vdi-doc-ingest",
+      "to": "disc:MG",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
     },
     {
       "from": "skill:vdi-process-balance",
@@ -1682,57 +1910,21 @@
     },
     {
       "from": "skill:vdi-process-calc",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-process-calc",
       "to": "disc:PR",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "skill:vdi-process-data-mgmt",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-process-data-mgmt",
       "to": "disc:PR",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "skill:vdi-process-docgen",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-process-docgen",
-      "to": "skill:vdi-doc-export",
-      "type": "SKILL_MAY_CALL",
-      "label": "可调用"
-    },
-    {
-      "from": "skill:vdi-process-docgen",
       "to": "disc:PR",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
-    },
-    {
-      "from": "skill:vdi-process-equipment",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-process-equipment",
-      "to": "mcp:vdi-rules",
-      "type": "SKILL_MCP",
-      "label": "依赖"
     },
     {
       "from": "skill:vdi-process-equipment",
@@ -1802,33 +1994,9 @@
     },
     {
       "from": "skill:vdi-process-lead",
-      "to": "skill:vdi-doc-export",
-      "type": "SKILL_MAY_CALL",
-      "label": "可调用"
-    },
-    {
-      "from": "skill:vdi-process-lead",
-      "to": "skill:vdi-doc-ingest",
-      "type": "SKILL_MAY_CALL",
-      "label": "可调用"
-    },
-    {
-      "from": "skill:vdi-process-lead",
       "to": "disc:PR",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
-    },
-    {
-      "from": "skill:vdi-process-pfd-pid",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-process-pfd-pid",
-      "to": "mcp:vdi-rules",
-      "type": "SKILL_MCP",
-      "label": "依赖"
     },
     {
       "from": "skill:vdi-process-pfd-pid",
@@ -1844,18 +2012,6 @@
     },
     {
       "from": "skill:vdi-process-route",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-process-route",
-      "to": "mcp:vdi-rules",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-process-route",
       "to": "skill:vdi-process-lead",
       "type": "SKILL_REPORTS_TO",
       "label": "汇报"
@@ -1865,18 +2021,6 @@
       "to": "disc:PR",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
-    },
-    {
-      "from": "skill:vdi-process-safety",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-process-safety",
-      "to": "mcp:vdi-rules",
-      "type": "SKILL_MCP",
-      "label": "依赖"
     },
     {
       "from": "skill:vdi-process-safety",
@@ -1892,27 +2036,9 @@
     },
     {
       "from": "skill:vdi-process-simulation",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-process-simulation",
       "to": "disc:PR",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
-    },
-    {
-      "from": "skill:vdi-process-utilities",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-process-utilities",
-      "to": "mcp:vdi-rules",
-      "type": "SKILL_MCP",
-      "label": "依赖"
     },
     {
       "from": "skill:vdi-process-utilities",
@@ -1946,13 +2072,13 @@
     },
     {
       "from": "skill:vdi-system-health",
-      "to": "mcp:vdi-knowledge",
+      "to": "mcp:\"vdi-knowledge\"",
       "type": "SKILL_MCP",
       "label": "依赖"
     },
     {
       "from": "skill:vdi-system-health",
-      "to": "disc:system",
+      "to": "disc:\"system\"",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
@@ -2108,18 +2234,6 @@
     },
     {
       "from": "skill:vdi-water-lead",
-      "to": "skill:vdi-doc-export",
-      "type": "SKILL_MAY_CALL",
-      "label": "可调用"
-    },
-    {
-      "from": "skill:vdi-water-lead",
-      "to": "skill:vdi-doc-ingest",
-      "type": "SKILL_MAY_CALL",
-      "label": "可调用"
-    },
-    {
-      "from": "skill:vdi-water-lead",
       "to": "disc:WA",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
@@ -2193,216 +2307,6 @@
     {
       "from": "skill:vdi-water-wastewater",
       "to": "disc:WA",
-      "type": "SKILL_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "skill:hazop-chair",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:hazop-chair",
-      "to": "mcp:vdi-rules",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:hazop-chair",
-      "to": "skill:hazop-expert-process",
-      "type": "SKILL_MANAGES",
-      "label": "管理"
-    },
-    {
-      "from": "skill:hazop-chair",
-      "to": "skill:hazop-expert-instrument",
-      "type": "SKILL_MANAGES",
-      "label": "管理"
-    },
-    {
-      "from": "skill:hazop-chair",
-      "to": "skill:hazop-expert-equipment",
-      "type": "SKILL_MANAGES",
-      "label": "管理"
-    },
-    {
-      "from": "skill:hazop-chair",
-      "to": "skill:hazop-expert-safety",
-      "type": "SKILL_MANAGES",
-      "label": "管理"
-    },
-    {
-      "from": "skill:hazop-chair",
-      "to": "skill:hazop-expert-operation",
-      "type": "SKILL_MANAGES",
-      "label": "管理"
-    },
-    {
-      "from": "skill:hazop-chair",
-      "to": "skill:vdi-doc-export",
-      "type": "SKILL_MAY_CALL",
-      "label": "可调用"
-    },
-    {
-      "from": "skill:hazop-chair",
-      "to": "skill:vdi-doc-ingest",
-      "type": "SKILL_MAY_CALL",
-      "label": "可调用"
-    },
-    {
-      "from": "skill:hazop-chair",
-      "to": "disc:HAZOP",
-      "type": "SKILL_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "skill:hazop-expert-process",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:hazop-expert-process",
-      "to": "disc:HAZOP",
-      "type": "SKILL_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "skill:hazop-expert-instrument",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:hazop-expert-instrument",
-      "to": "disc:HAZOP",
-      "type": "SKILL_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "skill:hazop-expert-equipment",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:hazop-expert-equipment",
-      "to": "disc:HAZOP",
-      "type": "SKILL_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "skill:hazop-expert-safety",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:hazop-expert-safety",
-      "to": "disc:HAZOP",
-      "type": "SKILL_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "skill:hazop-expert-operation",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:hazop-expert-operation",
-      "to": "disc:HAZOP",
-      "type": "SKILL_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "skill:hazop-prep-assistant",
-      "to": "disc:HAZOP",
-      "type": "SKILL_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "skill:hazop-matrix-assistant",
-      "to": "disc:HAZOP",
-      "type": "SKILL_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "skill:hazop-scenario-assistant",
-      "to": "disc:HAZOP",
-      "type": "SKILL_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "skill:hazop-qa-assistant",
-      "to": "disc:HAZOP",
-      "type": "SKILL_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "skill:hazop-report-assistant",
-      "to": "skill:vdi-doc-export",
-      "type": "SKILL_MAY_CALL",
-      "label": "可调用"
-    },
-    {
-      "from": "skill:hazop-report-assistant",
-      "to": "disc:HAZOP",
-      "type": "SKILL_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "skill:hazop-inherent-safety",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:hazop-inherent-safety",
-      "to": "disc:HAZOP",
-      "type": "SKILL_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "skill:vdi-doc-export",
-      "to": "mcp:documents",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-doc-export",
-      "to": "skill:vdi-design-manager",
-      "type": "SKILL_REPORTS_TO",
-      "label": "汇报"
-    },
-    {
-      "from": "skill:vdi-doc-export",
-      "to": "disc:MG",
-      "type": "SKILL_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "skill:vdi-doc-ingest",
-      "to": "mcp:documents",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-doc-ingest",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-doc-ingest",
-      "to": "skill:vdi-design-manager",
-      "type": "SKILL_REPORTS_TO",
-      "label": "汇报"
-    },
-    {
-      "from": "skill:vdi-doc-ingest",
-      "to": "disc:MG",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
@@ -2767,6 +2671,66 @@
       "label": "所属专业"
     },
     {
+      "from": "formula:EL-LOAD-001",
+      "to": "disc:electrical",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:EL-LOAD-002",
+      "to": "disc:electrical",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:EL-LOAD-003",
+      "to": "disc:electrical",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:EL-LOAD-004",
+      "to": "disc:electrical",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:EL-LOAD-005",
+      "to": "disc:electrical",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:EL-LOAD-006",
+      "to": "disc:electrical",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:EL-LOAD-007",
+      "to": "disc:electrical",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:EL-LOAD-008",
+      "to": "disc:electrical",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:EL-LOAD-009",
+      "to": "disc:electrical",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:EL-LOAD-010",
+      "to": "disc:electrical",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
       "from": "formula:EL-POW-001",
       "to": "disc:electrical",
       "type": "FORMULA_DISCIPLINE",
@@ -2833,6 +2797,90 @@
       "label": "所属专业"
     },
     {
+      "from": "formula:IN-SEL-001",
+      "to": "disc:instrument",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:IN-SEL-002",
+      "to": "disc:instrument",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:IN-SEL-003",
+      "to": "disc:instrument",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:IN-SEL-004",
+      "to": "disc:instrument",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:IN-SEL-005",
+      "to": "disc:instrument",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:IN-SEL-006",
+      "to": "disc:instrument",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:IN-SEL-007",
+      "to": "disc:instrument",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:IN-SEL-008",
+      "to": "disc:instrument",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:IN-SIL-001",
+      "to": "disc:instrument",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:IN-SIL-002",
+      "to": "disc:instrument",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:IN-SIL-003",
+      "to": "disc:instrument",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:IN-SIL-004",
+      "to": "disc:instrument",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:IN-SIL-005",
+      "to": "disc:instrument",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:IN-SIL-006",
+      "to": "disc:instrument",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
       "from": "formula:PI-COR-001",
       "to": "disc:piping",
       "type": "FORMULA_DISCIPLINE",
@@ -2852,6 +2900,66 @@
     },
     {
       "from": "formula:PI-COR-004",
+      "to": "disc:piping",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PI-FLOW-001",
+      "to": "disc:piping",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PI-FLOW-002",
+      "to": "disc:piping",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PI-FLOW-003",
+      "to": "disc:piping",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PI-FLOW-004",
+      "to": "disc:piping",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PI-FLOW-005",
+      "to": "disc:piping",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PI-FLOW-006",
+      "to": "disc:piping",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PI-FLOW-007",
+      "to": "disc:piping",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PI-FLOW-008",
+      "to": "disc:piping",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PI-FLOW-009",
+      "to": "disc:piping",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PI-FLOW-010",
       "to": "disc:piping",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
@@ -3811,6 +3919,48 @@
       "label": "订阅"
     },
     {
+      "from": "disc:WA",
+      "to": "event:condition.changed",
+      "type": "EVENT_PRODUCER",
+      "label": "发布"
+    },
+    {
+      "from": "event:piping_layout.updated",
+      "to": "disc:WA",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:structural_condition.updated",
+      "to": "disc:WA",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:equipment_data.updated",
+      "to": "disc:WA",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "disc:WA",
+      "to": "event:water_condition.updated",
+      "type": "EVENT_PRODUCER",
+      "label": "发布"
+    },
+    {
+      "from": "event:fire_condition.updated",
+      "to": "disc:WA",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:hvac_condition.updated",
+      "to": "disc:WA",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
       "from": "event:review_gate.passed",
       "to": "disc:MG",
       "type": "EVENT_CONSUMER",
@@ -3875,38 +4025,50 @@
       "to": "event:human.review_resolved",
       "type": "EVENT_PRODUCER",
       "label": "发布"
+    },
+    {
+      "from": "event:model_review.scheduled",
+      "to": "disc:WA",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:model_review.completed",
+      "to": "disc:MG",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
     }
   ],
   "meta": {
-    "generated_at": "2026-06-07T03:35:45.806Z",
-    "node_count": 270,
-    "edge_count": 375,
+    "generated_at": "2026-06-08T05:28:44.182Z",
+    "node_count": 307,
+    "edge_count": 365,
     "by_type": {
-      "skill": 37,
-      "mcp": 5,
+      "skill": 25,
+      "mcp": 6,
       "tool": 49,
-      "formula": 128,
+      "formula": 162,
       "table": 27,
-      "event": 14,
+      "event": 28,
       "discipline": 10
     },
     "by_edge_type": {
-      "SKILL_MCP": 52,
-      "SKILL_MAY_CALL": 10,
-      "SKILL_DISCIPLINE": 37,
-      "SKILL_REPORTS_TO": 14,
-      "SKILL_MANAGES": 17,
+      "SKILL_MCP": 28,
+      "SKILL_DISCIPLINE": 25,
+      "SKILL_REPORTS_TO": 12,
+      "SKILL_MANAGES": 12,
       "MCP_TOOL": 49,
-      "FORMULA_DISCIPLINE": 128,
+      "FORMULA_DISCIPLINE": 162,
       "FORMULA_TABLE": 11,
       "FORMULA_RELATED": 42,
-      "EVENT_PRODUCER": 6,
-      "EVENT_CONSUMER": 9
+      "EVENT_PRODUCER": 8,
+      "EVENT_CONSUMER": 16
     },
     "formula_disciplines": {
-      "electrical": 20,
+      "electrical": 30,
       "hse": 2,
-      "piping": 25,
+      "instrument": 14,
+      "piping": 35,
       "process": 44,
       "water": 37
     }

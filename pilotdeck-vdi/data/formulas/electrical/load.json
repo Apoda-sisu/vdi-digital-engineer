@@ -1,0 +1,327 @@
+{
+  "file": "electrical/load.json",
+  "discipline": "electrical",
+  "category": "load",
+  "formula_count": 10,
+  "formulas": [
+    {
+      "formula_id": "EL-LOAD-001",
+      "name": "三相功率计算",
+      "name_en": "Three-Phase Power",
+      "discipline": "electrical",
+      "category": "load",
+      "type": "exact",
+      "equation_text": "P = √3 * U * I * cosφ",
+      "equation_latex": "P = \\sqrt{3} \\cdot U \\cdot I \\cdot \\cos\\phi",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {"const": 1.732},
+          {"var": "U"},
+          {"var": "I"},
+          {"var": "cosφ"}
+        ]
+      },
+      "variables": [
+        {"symbol": "P", "name": "有功功率", "unit": "W", "role": "output", "desc": "三相有功功率"},
+        {"symbol": "U", "name": "线电压", "unit": "V", "role": "input", "constraints": {"min": 100}, "desc": "线电压"},
+        {"symbol": "I", "name": "线电流", "unit": "A", "role": "input", "constraints": {"min": 0.1}, "desc": "线电流"},
+        {"symbol": "cosφ", "name": "功率因数", "unit": "-", "role": "input", "constraints": {"min": 0.1, "max": 1.0}, "desc": "功率因数"}
+      ],
+      "source": {"standard_id": "GB 50052", "clause": "负荷计算"},
+      "tags": ["三相功率", "有功功率", "功率因数"],
+      "keywords": ["三相功率", "有功功率", "功率计算"],
+      "precision": 0.1,
+      "created_at": "2026-06-08T00:00:00Z",
+      "updated_at": "2026-06-08T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "EL-LOAD-002",
+      "name": "视在功率计算",
+      "name_en": "Apparent Power",
+      "discipline": "electrical",
+      "category": "load",
+      "type": "exact",
+      "equation_text": "S = √3 * U * I",
+      "equation_latex": "S = \\sqrt{3} \\cdot U \\cdot I",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {"const": 1.732},
+          {"var": "U"},
+          {"var": "I"}
+        ]
+      },
+      "variables": [
+        {"symbol": "S", "name": "视在功率", "unit": "VA", "role": "output", "desc": "三相视在功率"},
+        {"symbol": "U", "name": "线电压", "unit": "V", "role": "input", "constraints": {"min": 100}, "desc": "线电压"},
+        {"symbol": "I", "name": "线电流", "unit": "A", "role": "input", "constraints": {"min": 0.1}, "desc": "线电流"}
+      ],
+      "source": {"standard_id": "GB 50052", "clause": "负荷计算"},
+      "tags": ["视在功率", "功率计算", "三相"],
+      "keywords": ["视在功率", "功率计算", "三相功率"],
+      "precision": 0.1,
+      "created_at": "2026-06-08T00:00:00Z",
+      "updated_at": "2026-06-08T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "EL-LOAD-003",
+      "name": "无功功率计算",
+      "name_en": "Reactive Power",
+      "discipline": "electrical",
+      "category": "load",
+      "type": "exact",
+      "equation_text": "Q = √3 * U * I * sinφ",
+      "equation_latex": "Q = \\sqrt{3} \\cdot U \\cdot I \\cdot \\sin\\phi",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {"const": 1.732},
+          {"var": "U"},
+          {"var": "I"},
+          {"var": "sinφ"}
+        ]
+      },
+      "variables": [
+        {"symbol": "Q", "name": "无功功率", "unit": "var", "role": "output", "desc": "三相无功功率"},
+        {"symbol": "U", "name": "线电压", "unit": "V", "role": "input", "constraints": {"min": 100}, "desc": "线电压"},
+        {"symbol": "I", "name": "线电流", "unit": "A", "role": "input", "constraints": {"min": 0.1}, "desc": "线电流"},
+        {"symbol": "sinφ", "name": "无功因数", "unit": "-", "role": "input", "constraints": {"min": 0, "max": 1.0}, "desc": "无功因数"}
+      ],
+      "source": {"standard_id": "GB 50052", "clause": "负荷计算"},
+      "tags": ["无功功率", "功率计算", "三相"],
+      "keywords": ["无功功率", "功率计算", "三相功率"],
+      "precision": 0.1,
+      "created_at": "2026-06-08T00:00:00Z",
+      "updated_at": "2026-06-08T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "EL-LOAD-004",
+      "name": "电流计算",
+      "name_en": "Current Calculation",
+      "discipline": "electrical",
+      "category": "load",
+      "type": "exact",
+      "equation_text": "I = P / (√3 * U * cosφ)",
+      "equation_latex": "I = \\frac{P}{\\sqrt{3} \\cdot U \\cdot \\cos\\phi}",
+      "equation_ast": {
+        "op": "div",
+        "args": [
+          {"var": "P"},
+          {"op": "mul", "args": [
+            {"const": 1.732},
+            {"var": "U"},
+            {"var": "cosφ"}
+          ]}
+        ]
+      },
+      "variables": [
+        {"symbol": "I", "name": "线电流", "unit": "A", "role": "output", "desc": "线电流"},
+        {"symbol": "P", "name": "有功功率", "unit": "W", "role": "input", "constraints": {"min": 100}, "desc": "有功功率"},
+        {"symbol": "U", "name": "线电压", "unit": "V", "role": "input", "constraints": {"min": 100}, "desc": "线电压"},
+        {"symbol": "cosφ", "name": "功率因数", "unit": "-", "role": "input", "constraints": {"min": 0.1, "max": 1.0}, "desc": "功率因数"}
+      ],
+      "source": {"standard_id": "GB 50052", "clause": "电流计算"},
+      "tags": ["电流计算", "负荷电流", "三相"],
+      "keywords": ["电流计算", "负荷电流", "三相电流"],
+      "precision": 0.1,
+      "created_at": "2026-06-08T00:00:00Z",
+      "updated_at": "2026-06-08T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "EL-LOAD-005",
+      "name": "电压降计算",
+      "name_en": "Voltage Drop",
+      "discipline": "electrical",
+      "category": "load",
+      "type": "exact",
+      "equation_text": "ΔU = I * R * L",
+      "equation_latex": "\\Delta U = I \\cdot R \\cdot L",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {"var": "I"},
+          {"var": "R"},
+          {"var": "L"}
+        ]
+      },
+      "variables": [
+        {"symbol": "ΔU", "name": "电压降", "unit": "V", "role": "output", "desc": "电压降"},
+        {"symbol": "I", "name": "电流", "unit": "A", "role": "input", "constraints": {"min": 0.1}, "desc": "线路电流"},
+        {"symbol": "R", "name": "单位电阻", "unit": "Ω/km", "role": "input", "constraints": {"min": 0.01}, "desc": "导线单位电阻"},
+        {"symbol": "L", "name": "线路长度", "unit": "km", "role": "input", "constraints": {"min": 0.01}, "desc": "线路长度"}
+      ],
+      "source": {"standard_id": "GB 50052", "clause": "电压降"},
+      "tags": ["电压降", "线路压降", "电缆"],
+      "keywords": ["电压降", "线路压降", "电缆压降"],
+      "precision": 0.1,
+      "created_at": "2026-06-08T00:00:00Z",
+      "updated_at": "2026-06-08T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "EL-LOAD-006",
+      "name": "电缆截面选择",
+      "name_en": "Cable Cross-Section",
+      "discipline": "electrical",
+      "category": "load",
+      "type": "exact",
+      "equation_text": "S = I / J",
+      "equation_latex": "S = \\frac{I}{J}",
+      "equation_ast": {
+        "op": "div",
+        "args": [
+          {"var": "I"},
+          {"var": "J"}
+        ]
+      },
+      "variables": [
+        {"symbol": "S", "name": "电缆截面", "unit": "mm²", "role": "output", "desc": "电缆截面积"},
+        {"symbol": "I", "name": "计算电流", "unit": "A", "role": "input", "constraints": {"min": 0.1}, "desc": "计算电流"},
+        {"symbol": "J", "name": "经济电流密度", "unit": "A/mm²", "role": "input", "constraints": {"min": 0.5, "max": 5}, "desc": "经济电流密度"}
+      ],
+      "source": {"standard_id": "GB 50052", "clause": "电缆选择"},
+      "tags": ["电缆截面", "电流密度", "电缆选择"],
+      "keywords": ["电缆截面", "电缆选择", "电流密度"],
+      "precision": 0.1,
+      "created_at": "2026-06-08T00:00:00Z",
+      "updated_at": "2026-06-08T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "EL-LOAD-007",
+      "name": "变压器容量选择",
+      "name_en": "Transformer Capacity",
+      "discipline": "electrical",
+      "category": "load",
+      "type": "exact",
+      "equation_text": "S_t = P_load / (cosφ * η)",
+      "equation_latex": "S_t = \\frac{P_{load}}{\\cos\\phi \\cdot \\eta}",
+      "equation_ast": {
+        "op": "div",
+        "args": [
+          {"var": "P_load"},
+          {"op": "mul", "args": [
+            {"var": "cosφ"},
+            {"var": "η"}
+          ]}
+        ]
+      },
+      "variables": [
+        {"symbol": "S_t", "name": "变压器容量", "unit": "VA", "role": "output", "desc": "变压器容量"},
+        {"symbol": "P_load", "name": "负荷功率", "unit": "W", "role": "input", "constraints": {"min": 1000}, "desc": "负荷有功功率"},
+        {"symbol": "cosφ", "name": "功率因数", "unit": "-", "role": "input", "constraints": {"min": 0.1, "max": 1.0}, "desc": "功率因数"},
+        {"symbol": "η", "name": "变压器效率", "unit": "-", "role": "input", "constraints": {"min": 0.9, "max": 1.0}, "desc": "变压器效率"}
+      ],
+      "source": {"standard_id": "GB 50052", "clause": "变压器选择"},
+      "tags": ["变压器容量", "容量选择", "负荷计算"],
+      "keywords": ["变压器容量", "容量选择", "变压器选择"],
+      "precision": 100,
+      "created_at": "2026-06-08T00:00:00Z",
+      "updated_at": "2026-06-08T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "EL-LOAD-008",
+      "name": "短路电流计算",
+      "name_en": "Short Circuit Current",
+      "discipline": "electrical",
+      "category": "load",
+      "type": "exact",
+      "equation_text": "I_sc = U / (√3 * Z)",
+      "equation_latex": "I_{sc} = \\frac{U}{\\sqrt{3} \\cdot Z}",
+      "equation_ast": {
+        "op": "div",
+        "args": [
+          {"var": "U"},
+          {"op": "mul", "args": [
+            {"const": 1.732},
+            {"var": "Z"}
+          ]}
+        ]
+      },
+      "variables": [
+        {"symbol": "I_sc", "name": "短路电流", "unit": "A", "role": "output", "desc": "三相短路电流"},
+        {"symbol": "U", "name": "线电压", "unit": "V", "role": "input", "constraints": {"min": 100}, "desc": "线电压"},
+        {"symbol": "Z", "name": "短路阻抗", "unit": "Ω", "role": "input", "constraints": {"min": 0.01}, "desc": "短路阻抗"}
+      ],
+      "source": {"standard_id": "GB 50052", "clause": "短路计算"},
+      "tags": ["短路电流", "短路计算", "保护"],
+      "keywords": ["短路电流", "短路计算", "故障电流"],
+      "precision": 1,
+      "created_at": "2026-06-08T00:00:00Z",
+      "updated_at": "2026-06-08T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "EL-LOAD-009",
+      "name": "功率因数校正",
+      "name_en": "Power Factor Correction",
+      "discipline": "electrical",
+      "category": "load",
+      "type": "exact",
+      "equation_text": "Q_c = P * (tanφ1 - tanφ2)",
+      "equation_latex": "Q_c = P \\cdot (\\tan\\phi_1 - \\tan\\phi_2)",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {"var": "P"},
+          {"op": "sub", "args": [
+            {"var": "tanφ1"},
+            {"var": "tanφ2"}
+          ]}
+        ]
+      },
+      "variables": [
+        {"symbol": "Q_c", "name": "补偿容量", "unit": "var", "role": "output", "desc": "无功补偿容量"},
+        {"symbol": "P", "name": "有功功率", "unit": "W", "role": "input", "constraints": {"min": 1000}, "desc": "有功功率"},
+        {"symbol": "tanφ1", "name": "补偿前功率因数角正切", "unit": "-", "role": "input", "constraints": {"min": 0.1}, "desc": "补偿前功率因数角正切"},
+        {"symbol": "tanφ2", "name": "补偿后功率因数角正切", "unit": "-", "role": "input", "constraints": {"min": 0.1}, "desc": "补偿后功率因数角正切"}
+      ],
+      "source": {"standard_id": "GB 50052", "clause": "功率因数校正"},
+      "tags": ["功率因数", "无功补偿", "电容器"],
+      "keywords": ["功率因数校正", "无功补偿", "电容器补偿"],
+      "precision": 100,
+      "created_at": "2026-06-08T00:00:00Z",
+      "updated_at": "2026-06-08T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "EL-LOAD-010",
+      "name": "电缆载流量校正",
+      "name_en": "Cable Current Rating Correction",
+      "discipline": "electrical",
+      "category": "load",
+      "type": "exact",
+      "equation_text": "I_corrected = I_base * K1 * K2 * K3",
+      "equation_latex": "I_{corrected} = I_{base} \\cdot K_1 \\cdot K_2 \\cdot K_3",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {"var": "I_base"},
+          {"var": "K1"},
+          {"var": "K2"},
+          {"var": "K3"}
+        ]
+      },
+      "variables": [
+        {"symbol": "I_corrected", "name": "校正后载流量", "unit": "A", "role": "output", "desc": "校正后载流量"},
+        {"symbol": "I_base", "name": "基准载流量", "unit": "A", "role": "input", "constraints": {"min": 1}, "desc": "基准载流量"},
+        {"symbol": "K1", "name": "温度校正系数", "unit": "-", "role": "input", "constraints": {"min": 0.5, "max": 1.2}, "desc": "温度校正系数"},
+        {"symbol": "K2", "name": "敷设方式校正系数", "unit": "-", "role": "input", "constraints": {"min": 0.5, "max": 1.2}, "desc": "敷设方式校正系数"},
+        {"symbol": "K3", "name": "土壤热阻校正系数", "unit": "-", "role": "input", "constraints": {"min": 0.5, "max": 1.2}, "desc": "土壤热阻校正系数"}
+      ],
+      "source": {"standard_id": "GB 50052", "clause": "载流量校正"},
+      "tags": ["载流量", "校正系数", "电缆选择"],
+      "keywords": ["载流量校正", "电缆载流量", "温度校正"],
+      "precision": 0.1,
+      "created_at": "2026-06-08T00:00:00Z",
+      "updated_at": "2026-06-08T00:00:00Z",
+      "version": 1
+    }
+  ]
+}

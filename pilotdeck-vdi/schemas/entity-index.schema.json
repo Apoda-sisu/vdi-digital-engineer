@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "pilotdeck-entity-index",
+  "title": "PilotDeck Entity Index",
+  "description": "知识库实体索引结构约束",
+  "type": "object",
+  "required": ["version", "total_keys", "index"],
+  "properties": {
+    "version": { "type": "integer", "minimum": 1 },
+    "built_at": { "type": "string" },
+    "total_keys": { "type": "integer", "minimum": 0 },
+    "index": {
+      "type": "object",
+      "description": "键格式: {source_id}|{clause}，值: [clause_id]",
+      "additionalProperties": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,635 @@
+{
+  "generated_at": "2026-06-08T05:18:45.600Z",
+  "statistics": {
+    "total_checks": 151,
+    "passed": 47,
+    "failed": 15,
+    "warnings": 89
+  },
+  "issues": [
+    {
+      "level": "warning",
+      "category": "Skill层级",
+      "message": "vdi-process-balance 汇报给 vdi-process-lead 但模块图中缺少SKILL_REPORTS_TO边",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "Skill层级",
+      "message": "vdi-process-equipment 汇报给 vdi-process-lead 但模块图中缺少SKILL_REPORTS_TO边",
+      "details": null
+    },
+    {
+      "level": "error",
+      "category": "Skill层级",
+      "message": "Skill vdi-process-lead 管理的 工艺路线设计基础 不存在",
+      "details": null
+    },
+    {
+      "level": "error",
+      "category": "Skill层级",
+      "message": "Skill vdi-process-lead 管理的 物料热量平衡 不存在",
+      "details": null
+    },
+    {
+      "level": "error",
+      "category": "Skill层级",
+      "message": "Skill vdi-process-lead 管理的 PFD-PID设计 不存在",
+      "details": null
+    },
+    {
+      "level": "error",
+      "category": "Skill层级",
+      "message": "Skill vdi-process-lead 管理的 工艺设备数据表 不存在",
+      "details": null
+    },
+    {
+      "level": "error",
+      "category": "Skill层级",
+      "message": "Skill vdi-process-lead 管理的 工艺安全分析 不存在",
+      "details": null
+    },
+    {
+      "level": "error",
+      "category": "Skill层级",
+      "message": "Skill vdi-process-lead 管理的 公用工程排放 不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "Skill层级",
+      "message": "vdi-process-pfd-pid 汇报给 vdi-process-lead 但模块图中缺少SKILL_REPORTS_TO边",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "Skill层级",
+      "message": "vdi-process-route 汇报给 vdi-process-lead 但模块图中缺少SKILL_REPORTS_TO边",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "Skill层级",
+      "message": "vdi-process-safety 汇报给 vdi-process-lead 但模块图中缺少SKILL_REPORTS_TO边",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "Skill层级",
+      "message": "vdi-process-utilities 汇报给 vdi-process-lead 但模块图中缺少SKILL_REPORTS_TO边",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "Skill层级",
+      "message": "vdi-water-circulating 汇报给 vdi-water-lead 但模块图中缺少SKILL_REPORTS_TO边",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "Skill层级",
+      "message": "vdi-water-drainage 汇报给 vdi-water-lead 但模块图中缺少SKILL_REPORTS_TO边",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "Skill层级",
+      "message": "vdi-water-fire 汇报给 vdi-water-lead 但模块图中缺少SKILL_REPORTS_TO边",
+      "details": null
+    },
+    {
+      "level": "error",
+      "category": "Skill层级",
+      "message": "Skill vdi-water-lead 管理的 给水系统设计 不存在",
+      "details": null
+    },
+    {
+      "level": "error",
+      "category": "Skill层级",
+      "message": "Skill vdi-water-lead 管理的 消防给水设计 不存在",
+      "details": null
+    },
+    {
+      "level": "error",
+      "category": "Skill层级",
+      "message": "Skill vdi-water-lead 管理的 排水系统设计 不存在",
+      "details": null
+    },
+    {
+      "level": "error",
+      "category": "Skill层级",
+      "message": "Skill vdi-water-lead 管理的 雨水系统设计 不存在",
+      "details": null
+    },
+    {
+      "level": "error",
+      "category": "Skill层级",
+      "message": "Skill vdi-water-lead 管理的 污水处理设计 不存在",
+      "details": null
+    },
+    {
+      "level": "error",
+      "category": "Skill层级",
+      "message": "Skill vdi-water-lead 管理的 循环水系统设计 不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "Skill层级",
+      "message": "vdi-water-stormwater 汇报给 vdi-water-lead 但模块图中缺少SKILL_REPORTS_TO边",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "Skill层级",
+      "message": "vdi-water-supply 汇报给 vdi-water-lead 但模块图中缺少SKILL_REPORTS_TO边",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "Skill层级",
+      "message": "vdi-water-wastewater 汇报给 vdi-water-lead 但模块图中缺少SKILL_REPORTS_TO边",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 design_basis.updated 的生产者 SY 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 design_basis.updated 的订阅者 PI 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 design_basis.updated 的订阅者 IN 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 design_basis.updated 的订阅者 EQ 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 design_basis.updated 的订阅者 HS 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 design_basis.updated 的订阅者 MA 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 design_basis.updated 的订阅者 EL 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 design_basis.acknowledged 的生产者 PI 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 design_basis.acknowledged 的生产者 IN 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 design_basis.acknowledged 的生产者 EQ 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 design_basis.acknowledged 的生产者 HS 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 design_basis.acknowledged 的生产者 MA 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 design_basis.acknowledged 的生产者 EL 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 design_basis.acknowledged 的订阅者 SY 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 discipline_output.submitted 的订阅者 QA 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 condition.changed 的生产者 SI 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 condition.changed 的生产者 AR 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 condition.changed 的生产者 EL 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 condition.changed 的生产者 ST 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 piping_layout.updated 的生产者 PI 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 piping_layout.updated 的订阅者 IN 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 piping_layout.updated 的订阅者 EL 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 piping_layout.updated 的订阅者 ST 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 piping_layout.updated 的订阅者 MA 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 instrument_location.updated 的生产者 IN 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 instrument_location.updated 的订阅者 PI 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 instrument_location.updated 的订阅者 EL 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 instrument_location.updated 的订阅者 ST 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 electrical_layout.updated 的生产者 EL 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 electrical_layout.updated 的订阅者 PI 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 electrical_layout.updated 的订阅者 IN 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 electrical_layout.updated 的订阅者 ST 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 electrical_layout.updated 的订阅者 AR 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 structural_condition.updated 的生产者 ST 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 structural_condition.updated 的订阅者 PI 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 structural_condition.updated 的订阅者 IN 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 structural_condition.updated 的订阅者 EQ 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 equipment_data.updated 的生产者 EQ 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 equipment_data.updated 的订阅者 PI 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 equipment_data.updated 的订阅者 IN 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 equipment_data.updated 的订阅者 ST 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 water_condition.updated 的订阅者 FI 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 water_condition.updated 的订阅者 EL 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 water_condition.updated 的订阅者 PI 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 water_condition.updated 的订阅者 IN 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 fire_condition.updated 的生产者 FI 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 fire_condition.updated 的订阅者 EL 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 fire_condition.updated 的订阅者 PI 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 hvac_condition.updated 的生产者 HV 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 hvac_condition.updated 的订阅者 EL 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 hvac_condition.updated 的订阅者 PI 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 material_data.updated 的生产者 MA 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 material_data.updated 的订阅者 PI 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 material_data.updated 的订阅者 IN 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 stress_analysis.completed 的生产者 ST 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 stress_analysis.completed 的订阅者 PI 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 review_gate.failed 的生产者 QA 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 milestone.achieved 的订阅者 QA 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 procurement.requested 的生产者 IN 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 procurement.requested 的生产者 EQ 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 procurement.requested 的订阅者 PROC 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 procurement.acknowledged 的生产者 PROC 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 procurement.acknowledged 的订阅者 IN 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 procurement.acknowledged 的订阅者 EQ 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 model_review.scheduled 的生产者 PI 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 model_review.scheduled 的订阅者 IN 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 model_review.scheduled 的订阅者 EL 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 model_review.scheduled 的订阅者 ST 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 model_review.scheduled 的订阅者 EQ 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 model_review.completed 的生产者 PI 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "事件匹配",
+      "message": "事件 model_review.completed 的订阅者 QA 在Skill中不存在",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "公式匹配",
+      "message": "专业 PR 有 11 个Skill但没有公式",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "公式匹配",
+      "message": "专业 \"system\" 有 1 个Skill但没有公式",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "公式匹配",
+      "message": "专业 WA 有 9 个Skill但没有公式",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "知识库匹配",
+      "message": "专业 PR 有 11 个Skill但没有知识库条文",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "知识库匹配",
+      "message": "专业 \"system\" 有 1 个Skill但没有知识库条文",
+      "details": null
+    },
+    {
+      "level": "warning",
+      "category": "知识库匹配",
+      "message": "专业 WA 有 9 个Skill但没有知识库条文",
+      "details": null
+    },
+    {
+      "level": "error",
+      "category": "跨专业提资",
+      "message": "关键事件 design_basis.updated 不存在",
+      "details": null
+    },
+    {
+      "level": "error",
+      "category": "跨专业提资",
+      "message": "关键事件 discipline_output.published 不存在",
+      "details": null
+    },
+    {
+      "level": "error",
+      "category": "跨专业提资",
+      "message": "关键事件 condition.changed 不存在",
+      "details": null
+    }
+  ]
+}

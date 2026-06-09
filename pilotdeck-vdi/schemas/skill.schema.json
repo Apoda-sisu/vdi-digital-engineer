@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "pilotdeck-skill",
+  "title": "PilotDeck Skill Definition",
+  "description": "SKILL.md frontmatter 必须满足的结构约束",
+  "type": "object",
+  "required": ["name", "code", "description", "metadata"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 50,
+      "description": "Skill 中文名称"
+    },
+    "code": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}[A-Z0-9]{1,4}$",
+      "description": "专业短代码，如 WA0L、PR1C"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 10,
+      "description": "功能描述"
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["vdi"],
+      "properties": {
+        "vdi": {
+          "type": "object",
+          "required": ["discipline", "role", "level"],
+          "properties": {
+            "discipline": {
+              "type": "string",
+              "enum": ["PR", "WA", "PI", "IN", "EL", "EQ", "HS", "ST", "AR", "MA", "HV", "FI", "SI", "PROC", "QA", "MG", "SY", "MP", "system"],
+              "description": "专业代码"
+            },
+            "role": {
+              "type": "string",
+              "enum": ["lead", "specialist", "tool", "manager", "agent"],
+              "description": "角色类型"
+            },
+            "level": {
+              "type": "integer",
+              "enum": [1, 2, 3],
+              "description": "层级：1=负责人, 2=专业工程师, 3=工具层"
+            },
+            "reports_to": {
+              "type": "string",
+              "description": "汇报对象的 group 名称"
+            },
+            "manages": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "管理的子 skill"
+            },
+            "mcp_required": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "依赖的 MCP 服务名"
+            },
+            "may_call": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "可调用的其他 skill"
+            },
+            "event_subscriptions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["type"],
+                "properties": {
+                  "type": { "type": "string" },
+                  "sources": { "type": "array", "items": { "type": "string" } },
+                  "handler": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

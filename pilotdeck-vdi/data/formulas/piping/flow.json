@@ -1,0 +1,325 @@
+{
+  "file": "piping/flow.json",
+  "discipline": "piping",
+  "category": "flow",
+  "formula_count": 10,
+  "formulas": [
+    {
+      "formula_id": "PI-FLOW-001",
+      "name": "管道流量计算",
+      "name_en": "Pipe Flow Rate",
+      "discipline": "piping",
+      "category": "flow",
+      "type": "exact",
+      "equation_text": "Q = A * v",
+      "equation_latex": "Q = A \\cdot v",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {"var": "A"},
+          {"var": "v"}
+        ]
+      },
+      "variables": [
+        {"symbol": "Q", "name": "流量", "unit": "m³/s", "role": "output", "desc": "体积流量"},
+        {"symbol": "A", "name": "管道截面积", "unit": "m²", "role": "input", "constraints": {"min": 0.0001}, "desc": "管道截面积"},
+        {"symbol": "v", "name": "流速", "unit": "m/s", "role": "input", "constraints": {"min": 0.01, "max": 10}, "desc": "流体流速"}
+      ],
+      "source": {"standard_id": "GB 50316", "clause": "流量计算"},
+      "tags": ["流量", "流速", "截面积"],
+      "keywords": ["管道流量", "体积流量", "流速计算"],
+      "precision": 0.01,
+      "created_at": "2026-06-08T00:00:00Z",
+      "updated_at": "2026-06-08T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PI-FLOW-002",
+      "name": "雷诺数计算",
+      "name_en": "Reynolds Number",
+      "discipline": "piping",
+      "category": "flow",
+      "type": "exact",
+      "equation_text": "Re = ρ * v * D / μ",
+      "equation_latex": "Re = \\frac{\\rho \\cdot v \\cdot D}{\\mu}",
+      "equation_ast": {
+        "op": "div",
+        "args": [
+          {"op": "mul", "args": [
+            {"var": "ρ"},
+            {"var": "v"},
+            {"var": "D"}
+          ]},
+          {"var": "μ"}
+        ]
+      },
+      "variables": [
+        {"symbol": "Re", "name": "雷诺数", "unit": "-", "role": "output", "desc": "雷诺数"},
+        {"symbol": "ρ", "name": "流体密度", "unit": "kg/m³", "role": "input", "constraints": {"min": 0.1}, "desc": "流体密度"},
+        {"symbol": "v", "name": "流速", "unit": "m/s", "role": "input", "constraints": {"min": 0.01}, "desc": "流体流速"},
+        {"symbol": "D", "name": "管道直径", "unit": "m", "role": "input", "constraints": {"min": 0.001}, "desc": "管道内径"},
+        {"symbol": "μ", "name": "动力粘度", "unit": "Pa·s", "role": "input", "constraints": {"min": 0.000001}, "desc": "流体动力粘度"}
+      ],
+      "source": {"standard_id": "GB 50316", "clause": "流动特性"},
+      "tags": ["雷诺数", "流动特性", "湍流"],
+      "keywords": ["雷诺数", "流动状态", "湍流判断"],
+      "precision": 0.1,
+      "created_at": "2026-06-08T00:00:00Z",
+      "updated_at": "2026-06-08T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PI-FLOW-003",
+      "name": "达西摩擦系数",
+      "name_en": "Darcy Friction Factor",
+      "discipline": "piping",
+      "category": "flow",
+      "type": "exact",
+      "equation_text": "f = 64 / Re (层流)",
+      "equation_latex": "f = \\frac{64}{Re} (层流)",
+      "equation_ast": {
+        "op": "div",
+        "args": [
+          {"const": 64},
+          {"var": "Re"}
+        ]
+      },
+      "variables": [
+        {"symbol": "f", "name": "达西摩擦系数", "unit": "-", "role": "output", "desc": "达西摩擦系数"},
+        {"symbol": "Re", "name": "雷诺数", "unit": "-", "role": "input", "constraints": {"max": 2300}, "desc": "雷诺数（层流条件）"}
+      ],
+      "source": {"standard_id": "GB 50316", "clause": "摩擦系数"},
+      "tags": ["摩擦系数", "层流", "达西"],
+      "keywords": ["达西摩擦系数", "层流摩擦", "管道阻力"],
+      "precision": 0.001,
+      "created_at": "2026-06-08T00:00:00Z",
+      "updated_at": "2026-06-08T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PI-FLOW-004",
+      "name": "管道压降计算",
+      "name_en": "Pipe Pressure Drop",
+      "discipline": "piping",
+      "category": "flow",
+      "type": "exact",
+      "equation_text": "ΔP = f * L/D * ρ*v²/2",
+      "equation_latex": "\\Delta P = f \\cdot \\frac{L}{D} \\cdot \\frac{\\rho v^2}{2}",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {"var": "f"},
+          {"op": "div", "args": [{"var": "L"}, {"var": "D"}]},
+          {"op": "div", "args": [
+            {"op": "mul", "args": [
+              {"var": "ρ"},
+              {"op": "pow", "base": {"var": "v"}, "exp": 2}
+            ]},
+            {"const": 2}
+          ]}
+        ]
+      },
+      "variables": [
+        {"symbol": "ΔP", "name": "压降", "unit": "Pa", "role": "output", "desc": "管道压降"},
+        {"symbol": "f", "name": "摩擦系数", "unit": "-", "role": "input", "constraints": {"min": 0.001}, "desc": "达西摩擦系数"},
+        {"symbol": "L", "name": "管道长度", "unit": "m", "role": "input", "constraints": {"min": 0.1}, "desc": "管道长度"},
+        {"symbol": "D", "name": "管道直径", "unit": "m", "role": "input", "constraints": {"min": 0.001}, "desc": "管道内径"},
+        {"symbol": "ρ", "name": "流体密度", "unit": "kg/m³", "role": "input", "constraints": {"min": 0.1}, "desc": "流体密度"},
+        {"symbol": "v", "name": "流速", "unit": "m/s", "role": "input", "constraints": {"min": 0.01}, "desc": "流体流速"}
+      ],
+      "source": {"standard_id": "GB 50316", "clause": "压降计算"},
+      "tags": ["压降", "摩擦损失", "管道阻力"],
+      "keywords": ["管道压降", "压力损失", "摩擦压降"],
+      "precision": 1,
+      "created_at": "2026-06-08T00:00:00Z",
+      "updated_at": "2026-06-08T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PI-FLOW-005",
+      "name": "局部压降计算",
+      "name_en": "Local Pressure Drop",
+      "discipline": "piping",
+      "category": "flow",
+      "type": "exact",
+      "equation_text": "ΔP = K * ρ*v²/2",
+      "equation_latex": "\\Delta P = K \\cdot \\frac{\\rho v^2}{2}",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {"var": "K"},
+          {"op": "div", "args": [
+            {"op": "mul", "args": [
+              {"var": "ρ"},
+              {"op": "pow", "base": {"var": "v"}, "exp": 2}
+            ]},
+            {"const": 2}
+          ]}
+        ]
+      },
+      "variables": [
+        {"symbol": "ΔP", "name": "局部压降", "unit": "Pa", "role": "output", "desc": "局部压降"},
+        {"symbol": "K", "name": "局部阻力系数", "unit": "-", "role": "input", "constraints": {"min": 0}, "desc": "局部阻力系数"},
+        {"symbol": "ρ", "name": "流体密度", "unit": "kg/m³", "role": "input", "constraints": {"min": 0.1}, "desc": "流体密度"},
+        {"symbol": "v", "name": "流速", "unit": "m/s", "role": "input", "constraints": {"min": 0.01}, "desc": "流体流速"}
+      ],
+      "source": {"standard_id": "GB 50316", "clause": "局部压降"},
+      "tags": ["局部压降", "阻力系数", "管件"],
+      "keywords": ["局部压降", "管件压降", "阀门压降"],
+      "precision": 1,
+      "created_at": "2026-06-08T00:00:00Z",
+      "updated_at": "2026-06-08T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PI-FLOW-006",
+      "name": "管道水锤压力",
+      "name_en": "Water Hammer Pressure",
+      "discipline": "piping",
+      "category": "flow",
+      "type": "exact",
+      "equation_text": "ΔP = ρ * c * Δv",
+      "equation_latex": "\\Delta P = \\rho \\cdot c \\cdot \\Delta v",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {"var": "ρ"},
+          {"var": "c"},
+          {"var": "Δv"}
+        ]
+      },
+      "variables": [
+        {"symbol": "ΔP", "name": "水锤压力", "unit": "Pa", "role": "output", "desc": "水锤压力"},
+        {"symbol": "ρ", "name": "流体密度", "unit": "kg/m³", "role": "input", "constraints": {"min": 0.1}, "desc": "流体密度"},
+        {"symbol": "c", "name": "波速", "unit": "m/s", "role": "input", "constraints": {"min": 100}, "desc": "压力波传播速度"},
+        {"symbol": "Δv", "name": "流速变化", "unit": "m/s", "role": "input", "constraints": {"min": 0.01}, "desc": "流速变化量"}
+      ],
+      "source": {"standard_id": "GB 50316", "clause": "水锤计算"},
+      "tags": ["水锤", "压力波", "瞬态"],
+      "keywords": ["水锤压力", "压力冲击", "瞬态压力"],
+      "precision": 100,
+      "created_at": "2026-06-08T00:00:00Z",
+      "updated_at": "2026-06-08T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PI-FLOW-007",
+      "name": "管道临界流速",
+      "name_en": "Critical Flow Velocity",
+      "discipline": "piping",
+      "category": "flow",
+      "type": "exact",
+      "equation_text": "v_c = sqrt(2*ΔP/ρ)",
+      "equation_latex": "v_c = \\sqrt{\\frac{2 \\Delta P}{\\rho}}",
+      "equation_ast": {
+        "op": "sqrt",
+        "args": [
+          {"op": "div", "args": [
+            {"op": "mul", "args": [{"const": 2}, {"var": "ΔP"}]},
+            {"var": "ρ"}
+          ]}
+        ]
+      },
+      "variables": [
+        {"symbol": "v_c", "name": "临界流速", "unit": "m/s", "role": "output", "desc": "临界流速"},
+        {"symbol": "ΔP", "name": "压差", "unit": "Pa", "role": "input", "constraints": {"min": 1000}, "desc": "上下游压差"},
+        {"symbol": "ρ", "name": "流体密度", "unit": "kg/m³", "role": "input", "constraints": {"min": 0.1}, "desc": "流体密度"}
+      ],
+      "source": {"standard_id": "GB 50316", "clause": "临界流速"},
+      "tags": ["临界流速", "流速限制", "安全流速"],
+      "keywords": ["临界流速", "最大流速", "安全流速"],
+      "precision": 0.1,
+      "created_at": "2026-06-08T00:00:00Z",
+      "updated_at": "2026-06-08T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PI-FLOW-008",
+      "name": "管道质量流量",
+      "name_en": "Mass Flow Rate",
+      "discipline": "piping",
+      "category": "flow",
+      "type": "exact",
+      "equation_text": "ṁ = ρ * Q",
+      "equation_latex": "\\dot{m} = \\rho \\cdot Q",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {"var": "ρ"},
+          {"var": "Q"}
+        ]
+      },
+      "variables": [
+        {"symbol": "ṁ", "name": "质量流量", "unit": "kg/s", "role": "output", "desc": "质量流量"},
+        {"symbol": "ρ", "name": "流体密度", "unit": "kg/m³", "role": "input", "constraints": {"min": 0.1}, "desc": "流体密度"},
+        {"symbol": "Q", "name": "体积流量", "unit": "m³/s", "role": "input", "constraints": {"min": 0.0001}, "desc": "体积流量"}
+      ],
+      "source": {"standard_id": "GB 50316", "clause": "质量流量"},
+      "tags": ["质量流量", "流量转换", "密度"],
+      "keywords": ["质量流量", "流量计算", "密度转换"],
+      "precision": 0.01,
+      "created_at": "2026-06-08T00:00:00Z",
+      "updated_at": "2026-06-08T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PI-FLOW-009",
+      "name": "管道流速限制",
+      "name_en": "Flow Velocity Limit",
+      "discipline": "piping",
+      "category": "flow",
+      "type": "empirical",
+      "equation_text": "v_max = 3.0 m/s (水), 20 m/s (蒸汽)",
+      "equation_latex": "v_{max} = 3.0 \\text{ m/s (水)}, 20 \\text{ m/s (蒸汽)}",
+      "equation_ast": null,
+      "variables": [
+        {"symbol": "v_max", "name": "最大流速", "unit": "m/s", "role": "output", "desc": "最大允许流速"},
+        {"symbol": "介质", "name": "介质类型", "unit": "-", "role": "input", "desc": "流体介质类型"}
+      ],
+      "source": {"standard_id": "GB 50316", "clause": "流速限制"},
+      "tags": ["流速限制", "设计准则", "经验数据"],
+      "keywords": ["最大流速", "流速限制", "设计流速"],
+      "precision": 0.1,
+      "created_at": "2026-06-08T00:00:00Z",
+      "updated_at": "2026-06-08T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "PI-FLOW-010",
+      "name": "管道流量测量",
+      "name_en": "Flow Measurement",
+      "discipline": "piping",
+      "category": "flow",
+      "type": "exact",
+      "equation_text": "Q = C * A * sqrt(2*ΔP/ρ)",
+      "equation_latex": "Q = C \\cdot A \\cdot \\sqrt{\\frac{2 \\Delta P}{\\rho}}",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {"var": "C"},
+          {"var": "A"},
+          {"op": "sqrt", "args": [
+            {"op": "div", "args": [
+              {"op": "mul", "args": [{"const": 2}, {"var": "ΔP"}]},
+              {"var": "ρ"}
+            ]}
+          ]}
+        ]
+      },
+      "variables": [
+        {"symbol": "Q", "name": "流量", "unit": "m³/s", "role": "output", "desc": "测量流量"},
+        {"symbol": "C", "name": "流量系数", "unit": "-", "role": "input", "constraints": {"min": 0.5, "max": 1.0}, "desc": "流量系数"},
+        {"symbol": "A", "name": "测量截面积", "unit": "m²", "role": "input", "constraints": {"min": 0.0001}, "desc": "测量装置截面积"},
+        {"symbol": "ΔP", "name": "压差", "unit": "Pa", "role": "input", "constraints": {"min": 100}, "desc": "测量压差"},
+        {"symbol": "ρ", "name": "流体密度", "unit": "kg/m³", "role": "input", "constraints": {"min": 0.1}, "desc": "流体密度"}
+      ],
+      "source": {"standard_id": "GB 50316", "clause": "流量测量"},
+      "tags": ["流量测量", "孔板", "文丘里"],
+      "keywords": ["流量测量", "差压流量计", "孔板流量"],
+      "precision": 0.01,
+      "created_at": "2026-06-08T00:00:00Z",
+      "updated_at": "2026-06-08T00:00:00Z",
+      "version": 1
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "pilotdeck-formula-index",
+  "title": "PilotDeck Formula Index",
+  "description": "公式索引结构约束",
+  "type": "object",
+  "required": ["schema_version", "stats", "formulas"],
+  "properties": {
+    "schema_version": { "type": "number" },
+    "stats": {
+      "type": "object",
+      "required": ["total_formulas", "disciplines"],
+      "properties": {
+        "total_formulas": { "type": "number", "minimum": 0 },
+        "disciplines": {
+          "type": "object",
+          "additionalProperties": { "type": "number" }
+        }
+      }
+    },
+    "formulas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["formula_id", "name", "discipline"],
+        "properties": {
+          "formula_id": {
+            "type": "string",
+            "pattern": "^[A-Z]{2}-[A-Z]+-\\d{3}$",
+            "description": "公式ID，如 WA-HYD-001"
+          },
+          "name": { "type": "string" },
+          "discipline": { "type": "string" },
+          "category": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": ["exact", "empirical", "lookup", "equation"]
+          },
+          "variables": { "type": "array" },
+          "tags": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

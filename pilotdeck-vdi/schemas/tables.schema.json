@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "pilotdeck-tables",
+  "title": "PilotDeck Parameter Tables",
+  "description": "公式参数查表数据结构约束",
+  "type": "object",
+  "required": ["schema_version", "table_count", "tables"],
+  "properties": {
+    "schema_version": { "type": "integer", "minimum": 1 },
+    "table_count": { "type": "integer", "minimum": 0 },
+    "tables": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["table_id", "name", "discipline", "category", "columns", "rows"],
+        "properties": {
+          "table_id": {
+            "type": "string",
+            "pattern": "^TBL-[A-Z]+-\\d{3}$",
+            "description": "参数表唯一ID"
+          },
+          "name": { "type": "string", "minLength": 1 },
+          "discipline": { "type": "string" },
+          "category": { "type": "string" },
+          "columns": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["key", "name", "type"],
+              "properties": {
+                "key": { "type": "string" },
+                "name": { "type": "string" },
+                "type": { "type": "string", "enum": ["string", "number", "boolean"] }
+              }
+            }
+          },
+          "rows": {
+            "type": "array",
+            "items": { "type": "object" }
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "standard_id": { "type": "string" },
+              "clause": { "type": "string" }
+            }
+          },
+          "referenced_by": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "tags": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

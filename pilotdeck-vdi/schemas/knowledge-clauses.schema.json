@@ -1,0 +1,136 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "pilotdeck-knowledge-clauses",
+  "title": "PilotDeck Knowledge Clauses",
+  "description": "知识库条款数据结构约束",
+  "type": "object",
+  "required": ["schema_version", "stats", "clauses"],
+  "properties": {
+    "schema_version": { "type": "integer", "minimum": 1 },
+    "built_at": { "type": "string", "format": "date-time" },
+    "knowledge_root": { "type": "string" },
+    "stats": {
+      "type": "object",
+      "required": ["total_clauses"],
+      "properties": {
+        "total_clauses": { "type": "integer", "minimum": 0 },
+        "with_cross_refs": { "type": "integer", "minimum": 0 },
+        "mandatory": { "type": "integer", "minimum": 0 },
+        "total_outgoing_refs": { "type": "integer", "minimum": 0 },
+        "disciplines": {
+          "type": "object",
+          "additionalProperties": { "type": "integer" }
+        },
+        "water_clauses": { "type": "integer", "minimum": 0 },
+        "files_scanned": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "domain_dictionary": {
+      "type": "object",
+      "properties": {
+        "synonyms": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "discipline_aliases": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "standard_aliases": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "clauses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["clause_id", "source_type", "source_id", "discipline", "clause", "content"],
+        "properties": {
+          "clause_id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{12}$",
+            "description": "条款唯一ID（12位hex）"
+          },
+          "source_type": {
+            "type": "string",
+            "enum": ["standard", "law", "regulation", "guide", "manual"],
+            "description": "来源类型"
+          },
+          "source_id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "来源标识，如 GB 50013-2018、安全生产法"
+          },
+          "version": { "type": "string", "description": "版本号" },
+          "effective_date": { "type": "string", "format": "date" },
+          "discipline": {
+            "type": "string",
+            "description": "专业代码或名称"
+          },
+          "clause": {
+            "type": "string",
+            "minLength": 1,
+            "description": "条款号"
+          },
+          "content": {
+            "type": "string",
+            "minLength": 5,
+            "description": "条款正文"
+          },
+          "keywords": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "tokens": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "file": { "type": "string" },
+          "hierarchy": {
+            "type": "object",
+            "properties": {
+              "raw": { "type": "string" },
+              "chapter": { "type": "string" },
+              "section": { "type": "string" },
+              "article": { "type": "string" }
+            }
+          },
+          "mandatory": { "type": "boolean" },
+          "outgoing_refs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "target_standard": { "type": "string" },
+                "type": { "type": "string", "enum": ["normative", "informative", "related"] },
+                "context": { "type": "string" }
+              }
+            }
+          },
+          "incoming_refs": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "has_table": { "type": "boolean" },
+          "tables": {
+            "type": "array",
+            "items": { "type": "object" }
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

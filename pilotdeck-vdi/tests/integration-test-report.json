@@ -1,0 +1,354 @@
+{
+  "timestamp": "2026-06-07T14:18:24.116Z",
+  "summary": {
+    "total_tests": 5,
+    "passed": 4,
+    "failed": 0,
+    "warnings": 1
+  },
+  "details": {
+    "formulaLibrary": {
+      "totalFormulas": 142,
+      "disciplines": {
+        "electrical": 20,
+        "hse": 2,
+        "instrument": 14,
+        "piping": 25,
+        "process": 44,
+        "water": 37
+      },
+      "categories": {
+        "cable": 6,
+        "lighting": 5,
+        "power": 2,
+        "voltage": 1,
+        "protection": 6,
+        "ventilation": 2,
+        "selection": 8,
+        "sil": 6,
+        "corrosion": 4,
+        "weight": 1,
+        "surface": 1,
+        "velocity": 3,
+        "pressure": 3,
+        "insulation": 1,
+        "stress": 3,
+        "volume": 1,
+        "thermal": 4,
+        "vibration": 4,
+        "catalyst": 6,
+        "flow": 9,
+        "heat": 9,
+        "reaction": 5,
+        "reactor": 6,
+        "separation": 6,
+        "thermodynamics": 3,
+        "equipment": 7,
+        "fire": 6,
+        "hydraulic": 20,
+        "rainwater": 3,
+        "water_quality": 1
+      },
+      "types": {
+        "exact": 133,
+        "lookup": 2,
+        "equation": 4,
+        "empirical": 3
+      },
+      "validation": []
+    },
+    "skillConfiguration": {
+      "totalSkills": 37,
+      "disciplines": {
+        "MG": 4,
+        "PR": 11,
+        "system": 1,
+        "WA": 9,
+        "HAZOP": 12
+      },
+      "levels": {
+        "1": 6,
+        "2": 17,
+        "3": 14
+      },
+      "mcpDependencies": {
+        "vdi-orchestrator": 4,
+        "vdi-knowledge": 31,
+        "vdi-rules": 15,
+        "documents": 2
+      },
+      "validation": [
+        {
+          "name": "设计经理",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "物料热量平衡",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "工艺计算",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "工艺数据管理",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "工艺文档生成",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "工艺设备数据表",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "工艺专业负责人",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "PFD-PID设计",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "工艺路线设计基础",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "工艺安全分析",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "流程模拟",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "公用工程排放",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "计划调度",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "系统健康检查",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "循环水系统设计",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "排水系统设计",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "给排水设备选型",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "消防给水设计",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "给排水水力计算",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "给排水专业负责人",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "雨水系统设计",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "给水系统设计",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "污水处理设计",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "HAZOP分析主席",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "HAZOP工艺专家",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "HAZOP仪表专家",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "HAZOP设备专家",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "HAZOP安全专家",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "HAZOP操作专家",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "HAZOP Prep助理",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "HAZOP Matrix助理",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "HAZOP Scenario助理",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "HAZOP QA助理",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "HAZOP Report助理",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "HAZOP本质安全评估助理",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "文档导出",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        },
+        {
+          "name": "文档解读",
+          "status": "missing",
+          "reason": "SKILL.md文件不存在"
+        }
+      ]
+    },
+    "eventBus": {
+      "eventTypes": 14,
+      "subscribers": 16,
+      "testEvents": [],
+      "validation": []
+    },
+    "knowledgeBase": {
+      "totalClauses": 562,
+      "standards": 360,
+      "crossRefs": 10,
+      "validation": []
+    },
+    "integration": {
+      "mcpServices": {
+        "vdi-knowledge": {
+          "command": "node",
+          "args": [
+            "/workspace/pilotdeck-vdi/mcp/vdi-knowledge/server-v2.mjs"
+          ],
+          "env": {
+            "VDI_KNOWLEDGE_INDEX": "/root/.pilotdeck/vdi/knowledge-clauses-v2.json"
+          }
+        },
+        "vdi-orchestrator": {
+          "command": "node",
+          "args": [
+            "/workspace/pilotdeck-vdi/mcp/vdi-orchestrator/server.mjs"
+          ],
+          "env": {
+            "VDI_WORKSPACE_ROOT": "/workspace/workspaces"
+          }
+        },
+        "vdi-rules": {
+          "command": "node",
+          "args": [
+            "/workspace/pilotdeck-vdi/mcp/vdi-rules/server.mjs"
+          ],
+          "env": {
+            "VDI_RULES_PATH": "/workspace/pilotdeck-vdi/mcp/vdi-rules/vdi-rules.json"
+          }
+        },
+        "vdi-events": {
+          "command": "node",
+          "args": [
+            "/workspace/pilotdeck-vdi/mcp/vdi-events/server.mjs"
+          ],
+          "env": {
+            "VDI_WORKSPACE_ROOT": "/workspace/workspaces",
+            "VDI_EVENTS_REGISTRY": "/workspace/pilotdeck-vdi/mcp/vdi-events/event-registry.json"
+          }
+        }
+      },
+      "workspaceStructure": [
+        "HAZOP分析",
+        "VDI-PILOT-A",
+        "VDI-PILOT-B",
+        "VDI-PILOT-B-TEST2",
+        "VDI-给水排水-试点A",
+        "VDI-跨专业提资-试点B",
+        "分析化验组",
+        "工艺组",
+        "建筑组",
+        "总图组",
+        "技术经济组",
+        "施工组",
+        "暖通组",
+        "热工组",
+        "电信组",
+        "电气组",
+        "石化厂区给排水",
+        "程序检测",
+        "管理组",
+        "管道组",
+        "系统组",
+        "给排水组",
+        "设备组",
+        "采购组"
+      ],
+      "configFiles": {
+        "pilotdeck-vdi/config/discipline-codes.json": "存在",
+        "pilotdeck-vdi/config/mcp.json": "存在",
+        "skills/index.json": "存在"
+      },
+      "validation": []
+    }
+  }
+}

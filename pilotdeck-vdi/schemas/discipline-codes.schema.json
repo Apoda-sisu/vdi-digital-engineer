@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "pilotdeck-discipline-codes",
+  "title": "PilotDeck Discipline Codes",
+  "description": "专业代码映射配置结构约束",
+  "type": "object",
+  "required": ["version", "mappings", "reverse_mappings"],
+  "properties": {
+    "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "description": { "type": "string" },
+    "mappings": {
+      "type": "object",
+      "description": "专业代码 -> 专业定义",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["name", "full_name", "skill_group", "lead_skill"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "full_name": { "type": "string", "minLength": 1 },
+          "skill_group": { "type": "string", "pattern": "^(vdi-|hazop-)[a-z-]+$" },
+          "lead_skill": { "type": "string" },
+          "sub_skills": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "shared_utils": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "mcp_required": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "color": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+          "icon": { "type": "string" },
+          "status": { "type": "string", "enum": ["active", "pending", "deprecated"] },
+          "note": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "reverse_mappings": {
+      "type": "object",
+      "description": "skill_group -> 专业代码",
+      "additionalProperties": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

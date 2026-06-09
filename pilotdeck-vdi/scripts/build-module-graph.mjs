@@ -149,7 +149,9 @@ function buildGraph() {
       }
 
       if (s.reports_to) {
-        const parent = skillsIndex.skills.find(x => x.name === s.reports_to);
+        // 先尝试按group查找，再按name查找
+        const parent = skillsIndex.skills.find(x => x.group === s.reports_to) || 
+                       skillsIndex.skills.find(x => x.name === s.reports_to);
         if (parent) addEdge(sid, `skill:${parent.group}`, "SKILL_REPORTS_TO", "汇报");
       }
 

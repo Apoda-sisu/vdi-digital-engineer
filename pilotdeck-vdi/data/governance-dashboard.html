@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PilotDeck 治理仪表板</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #e2e8f0; padding: 24px; }
+    .header { text-align: center; margin-bottom: 32px; }
+    .header h1 { font-size: 28px; color: #f8fafc; margin-bottom: 8px; }
+    .header .subtitle { color: #94a3b8; font-size: 14px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+    .card { background: #1e293b; border-radius: 12px; padding: 24px; border: 1px solid #334155; }
+    .card h2 { font-size: 16px; color: #94a3b8; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
+    .score { font-size: 48px; font-weight: 700; text-align: center; margin: 16px 0; }
+    .score.healthy { color: #22c55e; }
+    .score.warning { color: #eab308; }
+    .score.critical { color: #ef4444; }
+    .stat-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #334155; }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-label { color: #94a3b8; }
+    .stat-value { font-weight: 600; }
+    .stat-value.pass { color: #22c55e; }
+    .stat-value.warn { color: #eab308; }
+    .stat-value.fail { color: #ef4444; }
+    .stat-value.fixed { color: #3b82f6; }
+    .bar { height: 8px; background: #334155; border-radius: 4px; overflow: hidden; margin: 8px 0; }
+    .bar-fill { height: 100%; border-radius: 4px; transition: width 0.5s; }
+    .bar-fill.green { background: #22c55e; }
+    .bar-fill.yellow { background: #eab308; }
+    .bar-fill.red { background: #ef4444; }
+    .check-list { max-height: 400px; overflow-y: auto; }
+    .check-item { padding: 8px 12px; margin: 4px 0; border-radius: 6px; font-size: 13px; }
+    .check-item.pass { background: #052e16; border-left: 3px solid #22c55e; }
+    .check-item.warn { background: #422006; border-left: 3px solid #eab308; }
+    .check-item.fail { background: #450a0a; border-left: 3px solid #ef4444; }
+    .check-item.fixed { background: #0c1a3d; border-left: 3px solid #3b82f6; }
+    .check-id { font-family: monospace; color: #64748b; margin-right: 8px; }
+    .schema-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .schema-item { padding: 8px; background: #0f172a; border-radius: 6px; font-size: 12px; }
+    .schema-item .name { color: #e2e8f0; }
+    .schema-item .status { float: right; }
+    .footer { text-align: center; margin-top: 32px; color: #475569; font-size: 12px; }
+    .tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+    .tab { padding: 6px 16px; border-radius: 6px; cursor: pointer; background: #334155; color: #94a3b8; border: none; font-size: 13px; }
+    .tab.active { background: #3b82f6; color: white; }
+    .hidden { display: none; }
+    .legend { display: flex; gap: 16px; justify-content: center; margin: 16px 0; font-size: 12px; }
+    .legend-item { display: flex; align-items: center; gap: 4px; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>PilotDeck 治理仪表板</h1>
+    <div class="subtitle" id="timestamp">加载中...</div>
+  </div>
+
+  <div class="grid">
+    <!-- 健康分数卡片 -->
+    <div class="card">
+      <h2>系统健康分数</h2>
+      <div class="score" id="health-score">--</div>
+      <div class="bar"><div class="bar-fill" id="health-bar" style="width: 0%"></div></div>
+      <div style="text-align: center; margin-top: 8px;">
+        <span id="health-status" style="font-size: 14px;">--</span>
+      </div>
+    </div>
+
+    <!-- 门禁汇总卡片 -->
+    <div class="card">
+      <h2>门禁校验汇总</h2>
+      <div class="stat-row">
+        <span class="stat-label">通过</span>
+        <span class="stat-value pass" id="gate-pass">--</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">警告</span>
+        <span class="stat-value warn" id="gate-warn">--</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">失败</span>
+        <span class="stat-value fail" id="gate-fail">--</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">已修复</span>
+        <span class="stat-value fixed" id="gate-fixed">--</span>
+      </div>
+    </div>
+
+    <!-- 校验维度覆盖 -->
+    <div class="card">
+      <h2>校验维度覆盖</h2>
+      <div class="schema-grid" id="schema-list">
+        <div class="schema-item"><span class="name">Schema 合规性</span><span class="status" id="dim-schema">--</span></div>
+        <div class="schema-item"><span class="name">引用完整性</span><span class="status" id="dim-ref">--</span></div>
+        <div class="schema-item"><span class="name">跨文件一致性</span><span class="status" id="dim-consist">--</span></div>
+        <div class="schema-item"><span class="name">索引完整性</span><span class="status" id="dim-index">--</span></div>
+        <div class="schema-item"><span class="name">数据质量</span><span class="status" id="dim-quality">--</span></div>
+        <div class="schema-item"><span class="name">自动修复</span><span class="status" id="dim-fix">--</span></div>
+      </div>
+    </div>
+
+    <!-- 检查详情 -->
+    <div class="card" style="grid-column: span 2;">
+      <h2>检查详情</h2>
+      <div class="tabs">
+        <button class="tab active" onclick="showTab('all')">全部</button>
+        <button class="tab" onclick="showTab('fail')">失败</button>
+        <button class="tab" onclick="showTab('warn')">警告</button>
+        <button class="tab" onclick="showTab('pass')">通过</button>
+      </div>
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#22c55e"></div> 通过</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#eab308"></div> 警告</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#ef4444"></div> 失败</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div> 已修复</div>
+      </div>
+      <div class="check-list" id="check-list">
+        <div style="text-align: center; color: #64748b; padding: 32px;">加载中...</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    PilotDeck 系统治理 v2 | 统一编号 GOV-xxx | 数据来源: gate-report.json + health-report-*.json
+  </div>
+
+  <script>
+    // 内联报告数据（运行时替换）
+    const GATE_REPORT = {"version":"2.0","timestamp":"2026-06-09T08:42:12.662Z","mode":"full","fix_enabled":true,"target":null,"summary":{"pass":17,"warn":7,"fail":0,"fixed":1},"blocked":false,"details":[{"id":"GOV-001","status":"pass","msg":"全部 25 个 Skill frontmatter 合规 (1 个目录跳过)"},{"id":"GOV-002","status":"pass","msg":"event-registry.json 包含 28 个事件类型"},{"id":"GOV-003","status":"pass","msg":"公式索引 162 条，formula_id 格式全部正确"},{"id":"GOV-004:id","status":"warn","msg":"13/651 条条款缺少 clause_id（数据生成时可能使用了不同格式）"},{"id":"GOV-004:src","status":"warn","msg":"89/651 条条款缺少 source_id"},{"id":"GOV-004:content","status":"pass","msg":"全部 651 条条款内容字段存在"},{"id":"GOV-005","status":"pass","msg":"discipline-codes.json 包含 17 个专业映射"},{"id":"GOV-010","status":"pass","msg":"12 个 reports_to 引用有效"},{"id":"GOV-011","status":"pass","msg":"所有 manages 引用有效"},{"id":"GOV-012","status":"pass","msg":"28 个 mcp_required 引用有效"},{"id":"GOV-020","status":"pass","msg":"全部 162 个索引公式在文件中存在"},{"id":"GOV-021","status":"pass","msg":"所有文件公式已被索引"},{"id":"GOV-022","status":"pass","msg":"公式统计数一致: 162"},{"id":"GOV-023","status":"pass","msg":"全部 18 个专业代码在 mapping 中有定义"},{"id":"GOV-024","status":"pass","msg":"index.json 与 SKILL.md discipline 一致"},{"id":"GOV-030","status":"pass","msg":"关键词索引公式 ID 全部有效"},{"id":"GOV-031","status":"pass","msg":"参数索引公式 ID 全部有效"},{"id":"GOV-032","status":"pass","msg":"全部 10 个参数表引用有效"},{"id":"GOV-040","status":"warn","msg":"48 条条款内容过短或为空"},{"id":"GOV-041","status":"warn","msg":"100 条条款缺少关键词 (15.4%)"},{"id":"GOV-042","status":"warn","msg":"6 条条款缺少专业标签"},{"id":"GOV-043","status":"warn","msg":"3 个公式缺少 input 或 output 变量定义"},{"id":"GOV-044","status":"warn","msg":"26 个 Skill 缺少触发词: vdi-cad-drawing, vdi-design-manager, vdi-doc-export"},{"id":"GOV-045","status":"pass","msg":"全部 162 个公式有标准来源引用"},{"id":"GOV-061","status":"fixed","msg":"已修复 3 个引号包裹字段"}]};
+    const HEALTH_REPORT = {"report_id":"HEALTH-2026-06-09-453720","timestamp":"2026-06-09T03:07:33.720Z","duration_ms":126,"summary":{"total_checks":24,"passed":22,"failed":0,"warnings":2,"health_score":91.7,"critical_failures":0,"high_failures":0},"checks":[{"id":"KB-001","name":"条款数据完整性","status":"passed","message":"包含 651 条条款","details":{"count":651},"severity":"medium","timestamp":"2026-06-09T03:07:33.597Z"},{"id":"KB-002","name":"规范索引有效性","status":"passed","message":"索引包含 360 个键","details":{"keys":360},"severity":"medium","timestamp":"2026-06-09T03:07:33.598Z"},{"id":"KB-003","name":"跨引用关系完整性","status":"passed","message":"包含 10 条出向引用","details":{"outgoing":10},"severity":"medium","timestamp":"2026-06-09T03:07:33.598Z"},{"id":"FL-001","name":"公式数据完整性","status":"passed","message":"索引包含 162 条公式","details":{"count":162},"severity":"medium","timestamp":"2026-06-09T03:07:33.599Z"},{"id":"FL-002","name":"AST 语法树有效性","status":"warning","message":"4 个公式 AST 无效（含 lookup 型）","details":{"errors":["IN-SIL-001: AST 求值失败 - Unknown AST op: min","PI-FLOW-007: AST 求值失败 - Unknown AST op: sqrt","PI-FLOW-009: 缺少 AST","PI-FLOW-010: AST 求值失败 - Unknown AST op: sqrt"]},"severity":"medium","timestamp":"2026-06-09T03:07:33.603Z"},{"id":"FL-003","name":"参数表关联正确性","status":"passed","message":"包含 26 个参数表","details":{"count":26},"severity":"medium","timestamp":"2026-06-09T03:07:33.603Z"},{"id":"FL-004","name":"索引文件一致性","status":"passed","message":"索引公式数与统计数一致: 162","details":{"indexed":162,"stats":162},"severity":"medium","timestamp":"2026-06-09T03:07:33.604Z"},{"id":"FL-005","name":"关键词索引有效性","status":"passed","message":"包含 703 个关键词","details":{"count":703},"severity":"medium","timestamp":"2026-06-09T03:07:33.604Z"},{"id":"FL-006","name":"公式参数表引用完整性","status":"passed","message":"全部 10 个参数表引用有效","details":{"refs":10},"severity":"medium","timestamp":"2026-06-09T03:07:33.607Z"},{"id":"FL-007","name":"公式 related_formulas 引用完整性","status":"passed","message":"所有 related_formulas 引用有效","details":null,"severity":"medium","timestamp":"2026-06-09T03:07:33.609Z"},{"id":"FL-008","name":"公式索引与实际文件一致性","status":"passed","message":"全部 162 个索引条目与实际文件一致","details":null,"severity":"medium","timestamp":"2026-06-09T03:07:33.611Z"},{"id":"FL-009","name":"参数索引公式 ID 有效性","status":"passed","message":"所有参数索引中的公式 ID 有效","details":null,"severity":"medium","timestamp":"2026-06-09T03:07:33.614Z"},{"id":"FL-010","name":"关键词索引公式 ID 有效性","status":"passed","message":"所有关键词索引中的公式 ID 有效","details":null,"severity":"medium","timestamp":"2026-06-09T03:07:33.617Z"},{"id":"SC-001","name":"SKILL.md 文件格式","status":"passed","message":"全部 25 个 Skill 配置有效","details":{"valid":25},"severity":"medium","timestamp":"2026-06-09T03:07:33.619Z"},{"id":"SC-002","name":"触发词配置","status":"passed","message":"所有 Skill 都有触发词配置","details":null,"severity":"medium","timestamp":"2026-06-09T03:07:33.619Z"},{"id":"SC-004","name":"层级关系定义","status":"passed","message":"所有 Skill 都有层级定义","details":null,"severity":"medium","timestamp":"2026-06-09T03:07:33.619Z"},{"id":"SC-003","name":"MCP 依赖声明有效性","status":"passed","message":"所有 MCP 依赖声明有效","details":null,"severity":"medium","timestamp":"2026-06-09T03:07:33.620Z"},{"id":"SC-005","name":"Skill may_call 引用有效性","status":"passed","message":"所有 may_call 引用有效","details":null,"severity":"medium","timestamp":"2026-06-09T03:07:33.621Z"},{"id":"SC-007","name":"Skill 层级关系一致性","status":"passed","message":"所有 Skill 层级值有效 (1-3)","details":null,"severity":"medium","timestamp":"2026-06-09T03:07:33.623Z"},{"id":"SC-008","name":"Skill 跨工作空间一致性","status":"warning","message":"33 个 Skill 在工作空间中版本不一致","details":{"inconsistent":[{"skill":"vdi-design-manager","workspace":"/Users/apoda/Documents/Cursor/016-数字工程师/workspaces/工艺组/VDI-跨专业提资-试点B/.pilotdeck/skills/vdi-design-manager/SKILL.md"},{"skill":"vdi-design-manager","workspace":"/Users/apoda/Documents/Cursor/016-数字工程师/workspaces/管理组/.pilotdeck/skills/vdi-design-manager/SKILL.md"},{"skill":"vdi-process-balance","workspace":"/Users/apoda/Documents/Cursor/016-数字工程师/workspaces/工艺组/.pilotdeck/skills/vdi-process-balance/SKILL.md"}]},"severity":"medium","timestamp":"2026-06-09T03:07:33.715Z"},{"id":"MC-001","name":"服务可用性","status":"passed","message":"发现 5 个 MCP 服务目录","details":{"total":5,"valid":5,"details":[{"mcp":"documents","status":"valid","server":"server.mjs"},{"mcp":"vdi-events","status":"valid","server":"server.mjs"},{"mcp":"vdi-knowledge","status":"valid","server":"server-v2.mjs"},{"mcp":"vdi-orchestrator","status":"valid","server":"server.mjs"},{"mcp":"vdi-rules","status":"valid","server":"server.mjs"}]},"severity":"medium","timestamp":"2026-06-09T03:07:33.716Z"},{"id":"MC-002","name":"工具注册状态","status":"passed","message":"MCP 服务文件存在，工具注册需运行时验证","details":null,"severity":"medium","timestamp":"2026-06-09T03:07:33.716Z"},{"id":"MC-003","name":"数据加载状态","status":"passed","message":"2 个数据源可访问","details":{"sources":[{"source":"knowledge","count":651},{"source":"formulas","count":162}]},"severity":"medium","timestamp":"2026-06-09T03:07:33.719Z"},{"id":"MC-004","name":"MCP 工具定义完整性","status":"passed","message":"发现 36 个工具定义","details":{"mcpTools":[{"mcp":"documents","server":"server.mjs","tools":[]},{"mcp":"vdi-events","server":"server.mjs","tools":["vdi-events","vdi_publish_event","vdi_consume_pending","vdi_ack_event","vdi_get_event_status","vdi_list_subscribers"]},{"mcp":"vdi-knowledge","server":"server-v2.mjs","tools":["vdi-knowledge-v2","vdi_search_knowledge","vdi_get_citation","vdi_search_by_entity","vdi_resolve_cross_refs","vdi_list_standards","vdi_search_formulas","vdi_get_formula","vdi_calculate","vdi_calculate_composite"]},{"mcp":"vdi-knowledge","server":"server.mjs","tools":["vdi-knowledge","vdi_search_knowledge","vdi_get_citation"]},{"mcp":"vdi-orchestrator","server":"server.mjs","tools":["vdi-orchestrator","vdi_create_task_package","vdi_decompose_tasks","vdi_dispatch_task","vdi_check_milestone","vdi_get_dependency_graph","vdi_trigger_alert","vdi_update_task_status","vdi_request_human_review","vdi_resolve_human_review","vdi_check_stale_tasks","vdi_attempt_recovery"]},{"mcp":"vdi-rules","server":"server.mjs","tools":["vdi-rules","vdi_check_redlines","vdi_validate_discipline_output","vdi_check_data_completeness","vdi_check_review_gate"]}]},"severity":"medium","timestamp":"2026-06-09T03:07:33.719Z"}],"recommendations":["处理 warning 级别问题以优化系统"],"status":"healthy"};
+
+    function init() {
+      // 时间戳
+      const ts = GATE_REPORT?.timestamp || HEALTH_REPORT?.timestamp || new Date().toISOString();
+      document.getElementById('timestamp').textContent = `最后更新: ${new Date(ts).toLocaleString('zh-CN')}`;
+
+      // 健康分数
+      const score = HEALTH_REPORT?.summary?.health_score ?? '--';
+      const scoreEl = document.getElementById('health-score');
+      scoreEl.textContent = typeof score === 'number' ? score + '%' : score;
+      scoreEl.className = 'score ' + (score >= 90 ? 'healthy' : score >= 70 ? 'warning' : 'critical');
+
+      const barEl = document.getElementById('health-bar');
+      barEl.style.width = (typeof score === 'number' ? score : 0) + '%';
+      barEl.className = 'bar-fill ' + (score >= 90 ? 'green' : score >= 70 ? 'yellow' : 'red');
+
+      const statusMap = { healthy: '健康', degraded: '降级', critical: '严重' };
+      document.getElementById('health-status').textContent = statusMap[HEALTH_REPORT?.status] || '--';
+
+      // 门禁汇总
+      const g = GATE_REPORT?.summary || {};
+      document.getElementById('gate-pass').textContent = g.pass ?? '--';
+      document.getElementById('gate-warn').textContent = g.warn ?? '--';
+      document.getElementById('gate-fail').textContent = g.fail ?? '--';
+      document.getElementById('gate-fixed').textContent = g.fixed ?? '--';
+
+      // 维度覆盖
+      const details = GATE_REPORT?.details || [];
+      const dims = {
+        'GOV-00': { el: 'dim-schema', label: 'Schema' },
+        'GOV-01': { el: 'dim-ref', label: '引用' },
+        'GOV-02': { el: 'dim-consist', label: '一致性' },
+        'GOV-03': { el: 'dim-index', label: '索引' },
+        'GOV-04': { el: 'dim-quality', label: '质量' },
+        'GOV-06': { el: 'dim-fix', label: '修复' },
+      };
+
+      for (const [prefix, config] of Object.entries(dims)) {
+        const items = details.filter(d => d.id.startsWith(prefix));
+        const fails = items.filter(d => d.status === 'fail').length;
+        const el = document.getElementById(config.el);
+        if (items.length === 0) {
+          el.textContent = '--';
+          el.style.color = '#64748b';
+        } else if (fails > 0) {
+          el.textContent = fails + ' 失败';
+          el.style.color = '#ef4444';
+        } else {
+          el.textContent = '通过';
+          el.style.color = '#22c55e';
+        }
+      }
+
+      // 检查详情
+      window._allDetails = details;
+      showTab('all');
+    }
+
+    function showTab(type) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const details = window._allDetails || [];
+      let filtered = details;
+      if (type === 'fail') filtered = details.filter(d => d.status === 'fail');
+      else if (type === 'warn') filtered = details.filter(d => d.status === 'warn');
+      else if (type === 'pass') filtered = details.filter(d => d.status === 'pass');
+
+      const list = document.getElementById('check-list');
+      if (filtered.length === 0) {
+        list.innerHTML = '<div style="text-align:center;color:#64748b;padding:32px;">无匹配项</div>';
+        return;
+      }
+
+      list.innerHTML = filtered.map(d => `
+        <div class="check-item ${d.status}">
+          <span class="check-id">${d.id}</span>
+          ${d.msg}
+          ${d.fixable ? ' <span style="color:#3b82f6;font-size:11px;">[可修复]</span>' : ''}
+        </div>
+      `).join('');
+    }
+
+    init();
+  </script>
+</body>
+</html>

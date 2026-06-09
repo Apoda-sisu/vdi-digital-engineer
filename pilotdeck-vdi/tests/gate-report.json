@@ -1,0 +1,66 @@
+{
+  "version": "2.0",
+  "timestamp": "2026-06-09T12:46:24.557Z",
+  "mode": "quick",
+  "fix_enabled": false,
+  "target": null,
+  "summary": {
+    "pass": 8,
+    "warn": 2,
+    "fail": 0,
+    "fixed": 0
+  },
+  "blocked": false,
+  "details": [
+    {
+      "id": "GOV-001",
+      "status": "pass",
+      "msg": "全部 25 个 Skill frontmatter 合规 (1 个目录跳过)"
+    },
+    {
+      "id": "GOV-002",
+      "status": "pass",
+      "msg": "event-registry.json 包含 28 个事件类型"
+    },
+    {
+      "id": "GOV-003",
+      "status": "pass",
+      "msg": "公式索引 162 条，formula_id 格式全部正确"
+    },
+    {
+      "id": "GOV-004:id",
+      "status": "warn",
+      "msg": "13/651 条条款缺少 clause_id（数据生成时可能使用了不同格式）"
+    },
+    {
+      "id": "GOV-004:src",
+      "status": "warn",
+      "msg": "89/651 条条款缺少 source_id"
+    },
+    {
+      "id": "GOV-004:content",
+      "status": "pass",
+      "msg": "全部 651 条条款内容字段存在"
+    },
+    {
+      "id": "GOV-005",
+      "status": "pass",
+      "msg": "discipline-codes.json 包含 17 个专业映射"
+    },
+    {
+      "id": "GOV-010",
+      "status": "pass",
+      "msg": "12 个 reports_to 引用有效"
+    },
+    {
+      "id": "GOV-011",
+      "status": "pass",
+      "msg": "所有 manages 引用有效"
+    },
+    {
+      "id": "GOV-012",
+      "status": "pass",
+      "msg": "28 个 mcp_required 引用有效"
+    }
+  ]
+}
