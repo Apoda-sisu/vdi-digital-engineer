@@ -1,5 +1,6 @@
 ---
 name: "系统健康检查"
+code: "SYS0L"
 description: "系统健康检查：验证 PilotDeck 各模块（Skill、知识库、公式库、MCP）的调用链和数据完整性"
 metadata:
   vdi:

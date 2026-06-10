@@ -1,11 +1,12 @@
 ---
 name: 文档解读
 code: MGDI
-description: 文档解读工程师。读取并解析 Word（.docx）、Excel（.xlsx）、PDF（.pdf）文件内容，提取结构化数据供系统使用。触发场景：读取文档、解析 Excel、提取 PDF、导入数据、解读报告。
+description: 文档解读工程师。读取并解析 Word（.docx）、Excel（.xlsx）、PDF（.pdf）及图片（.png/.jpg）中的文字与表格，提取结构化数据供系统使用。触发场景：读取文档、解析 Excel、提取 PDF、解读图片、导入数据、解读报告。
 metadata:
   vdi:
     discipline: MG
     sub_discipline: DI
+    role: 执行层
     level: 3
     called_by:
       - 给排水专业负责人
@@ -16,16 +17,17 @@ metadata:
     pilotdeck_workspace: /workspace/workspaces/项目管理组
     mcp_required:
       - documents
+      - vdi-vision
       - vdi-knowledge
     standalone: false
-    triggers: [读取文档, 解析 Excel, 提取 PDF, 导入数据, 解读报告, 读取 Word, 读取 PDF, 读取 Excel]
+    triggers: [读取文档, 解析 Excel, 提取 PDF, 解读图片, 导入数据, 解读报告, 读取 Word, 读取 PDF, 读取 Excel, 图片表格, 截图解读]
 ---
 
 # 文档解读工程师（三级）
 
 ## 角色定位
 
-文档解析引擎。被二级 Skill 或用户直接调用，读取外部文档并提取结构化数据。所有文件操作通过 `documents` MCP（Dokumen-Pintar）执行。提取的数据可写入知识库（通过 `vdi-knowledge`）。
+文档解析引擎。被二级 Skill 或用户直接调用，读取外部文档并提取结构化数据。文本类文件通过 `documents` MCP（Dokumen-Pintar）执行；图片中的文字与表格通过 `vdi-vision` MCP 执行。提取的数据可写入知识库（通过 `vdi-knowledge`）。
 
 ## 支持的输入格式
 
@@ -35,6 +37,9 @@ metadata:
 | Excel | .xlsx | 单元格、范围、工作表、结构化查询 |
 | PDF | .pdf | 逐页提取、大纲、元数据、表格识别 |
 | CSV | .csv | 行列解析、结构化访问 |
+| 图片 | .png / .jpg / .jpeg / .webp | 文字块、表格、键值对（通过 vdi-vision） |
+
+> 图片解读仅覆盖**文字与表格**类内容（截图、扫描页、照片内文档），不解读工程图纸符号。
 
 ## 解读操作
 
@@ -114,6 +119,41 @@ structured_get(path="uploads/规范文件.pdf", expr="outline")
 search_in_format(path="uploads/设计基础.xlsx", query="设计压力")
 ```
 
+### 解读图片（文字/表格）
+
+**触发词**：解读图片、图片表格、截图解读、读取 PNG/JPG
+
+**调用流程**：
+1. 确认图片已放入 `uploads/` 或 `workspaces/` 目录
+2. 使用 `vdi_analyze_image` 提取文字块与表格
+3. 可选：调用 `vdi_vision_status` 检查当前后端（本地 Ollama / 云端 API）
+4. 将结构化结果供下游 Skill 或写入知识库
+
+**后端切换**（环境变量 `VISION_PROVIDER`）：
+- `openai` — 云端 OpenAI 兼容 API（需 `VISION_API_KEY`）
+- `ollama` — 本地 Ollama（需 `ollama pull llava` 或配置 `VISION_MODEL_OLLAMA`）
+
+**示例调用**：
+```
+# 检查 Vision 后端
+vdi_vision_status()
+
+# 解读图片（使用默认后端）
+vdi_analyze_image(file_path="uploads/设备参数表.png")
+
+# 指定本地 Ollama
+vdi_analyze_image(file_path="uploads/扫描页.jpg", provider="ollama")
+
+# 带关注重点
+vdi_analyze_image(file_path="uploads/样本截图.png", focus="提取流量扬程表格")
+```
+
+**HTTP API**（Docker 部署）：
+```
+POST http://localhost:3004/api/analyze
+Body: { "file_path": "uploads/设备参数表.png", "provider": "openai" }
+```
+
 ## 典型应用场景
 
 ### 场景1：导入设计基础数据
@@ -158,6 +198,16 @@ search_in_format(path="uploads/设计基础.xlsx", query="设计压力")
 3. 返回结构化变更数据
 ```
 
+### 场景5：解读截图或扫描页中的表格
+
+```
+用户：这张图片里是厂家样本的参数表，帮我提取出来
+流程：
+1. vdi_analyze_image(file_path="uploads/样本页.png", focus="设备参数表")
+2. 从 result.tables 提取 headers 与 rows
+3. 结构化为 JSON 输出
+```
+
 ## 输出格式
 
 所有解读结果以 JSON 格式返回，便于下游 Skill 消费：
@@ -181,7 +231,28 @@ search_in_format(path="uploads/设计基础.xlsx", query="设计压力")
 }
 ```
 
+图片解读结果示例：
+
+```json
+{
+  "source_file": "uploads/参数表.png",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "result": {
+    "content_type": "table",
+    "tables": [{
+      "title": "泵性能参数",
+      "headers": ["流量 m³/h", "扬程 m", "效率 %"],
+      "rows": [["100", "50", "78"]]
+    }],
+    "summary": "泵样本性能参数表",
+    "confidence": "high"
+  },
+  "verdict": "解析成功"
+}
+```
+
 ---
 
-**版本**：V1.0（三级专项）
-**更新日期**：2026-06-06
+**版本**：V1.1（新增图片解读）
+**更新日期**：2026-06-09

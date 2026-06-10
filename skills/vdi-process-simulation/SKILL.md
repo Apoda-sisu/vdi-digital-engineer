@@ -6,6 +6,7 @@ metadata:
   vdi:
     discipline: PR
     sub_discipline: S
+    role: 执行层
     level: 3
     called_by:
       - 工艺路线设计基础

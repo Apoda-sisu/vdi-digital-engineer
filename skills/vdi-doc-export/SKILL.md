@@ -6,6 +6,7 @@ metadata:
   vdi:
     discipline: MG
     sub_discipline: DE
+    role: 执行层
     level: 3
     called_by:
       - 给排水专业负责人

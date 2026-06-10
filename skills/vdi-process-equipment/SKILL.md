@@ -6,8 +6,9 @@ metadata:
   vdi:
     discipline: PR
     sub_discipline: E
+    role: 分析层
     level: 2
-    reports_to: 工艺专业负责人
+    reports_to: vdi-process-lead
     pilotdeck_workspace: /workspace/workspaces/工艺组
     mcp_required: [vdi-knowledge, vdi-rules]
     may_call: [工艺计算]

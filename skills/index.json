@@ -1,10 +1,12 @@
 {
   "version": "1.2",
-  "generated": "2026-06-07T03:23:00.000Z",
-  "total": 37,
-  "note": "补充 6 个 Skill 的 may_call 字段，建立文档导出/解读调用链路",
+  "generated": "2026-06-08T04:53:27.681Z",
+  "total": 25,
+  "note": "从SKILL.md文件自动重新生成",
   "groups": [
     "vdi-design-manager",
+    "vdi-doc-export",
+    "vdi-doc-ingest",
     "vdi-process-balance",
     "vdi-process-calc",
     "vdi-process-data-mgmt",
@@ -26,24 +28,12 @@
     "vdi-water-lead",
     "vdi-water-stormwater",
     "vdi-water-supply",
-    "vdi-water-wastewater",
-    "hazop-chair",
-    "hazop-expert-process",
-    "hazop-expert-instrument",
-    "hazop-expert-equipment",
-    "hazop-expert-safety",
-    "hazop-expert-operation",
-    "hazop-prep-assistant",
-    "hazop-matrix-assistant",
-    "hazop-scenario-assistant",
-    "hazop-qa-assistant",
-    "hazop-report-assistant",
-    "hazop-inherent-safety",
-    "vdi-doc-export",
-    "vdi-doc-ingest"
+    "vdi-water-wastewater"
   ],
   "breakdown": {
     "vdi-design-manager": 1,
+    "vdi-doc-export": 1,
+    "vdi-doc-ingest": 1,
     "vdi-process-balance": 1,
     "vdi-process-calc": 1,
     "vdi-process-data-mgmt": 1,
@@ -65,21 +55,7 @@
     "vdi-water-lead": 1,
     "vdi-water-stormwater": 1,
     "vdi-water-supply": 1,
-    "vdi-water-wastewater": 1,
-    "hazop-chair": 1,
-    "hazop-expert-process": 1,
-    "hazop-expert-instrument": 1,
-    "hazop-expert-equipment": 1,
-    "hazop-expert-safety": 1,
-    "hazop-expert-operation": 1,
-    "hazop-prep-assistant": 1,
-    "hazop-matrix-assistant": 1,
-    "hazop-scenario-assistant": 1,
-    "hazop-qa-assistant": 1,
-    "hazop-report-assistant": 1,
-    "hazop-inherent-safety": 1,
-    "vdi-doc-export": 1,
-    "vdi-doc-ingest": 1
+    "vdi-water-wastewater": 1
   },
   "skills": [
     {
@@ -89,13 +65,60 @@
       "discipline": "MG",
       "sub_discipline": "",
       "level": 1,
-      "role": "管理层",
+      "role": "manager",
       "reports_to": "",
       "manages": [],
-      "mcp_required": ["vdi-orchestrator", "vdi-knowledge"],
-      "may_call": ["文档导出", "文档解读"],
-      "standalone": true,
-      "triggers": ["设计计划", "任务派发", "设计评审", "变更管理", "设计交底", "项目验收", "开工报告"]
+      "mcp_required": [
+        "vdi-orchestrator",
+        "vdi-knowledge"
+      ],
+      "may_call": [],
+      "standalone": false,
+      "triggers": [
+        "设计计划",
+        "任务派发",
+        "设计评审",
+        "变更管理",
+        "设计交底",
+        "项目验收",
+        "开工报告"
+      ]
+    },
+    {
+      "name": "文档导出",
+      "path": "skills/vdi-doc-export",
+      "group": "vdi-doc-export",
+      "discipline": "MG",
+      "sub_discipline": "DE",
+      "level": 3,
+      "role": "执行层",
+      "reports_to": "",
+      "manages": [],
+      "mcp_required": [
+        "documents"
+      ],
+      "may_call": [],
+      "standalone": false,
+      "triggers": []
+    },
+    {
+      "name": "文档解读",
+      "path": "skills/vdi-doc-ingest",
+      "group": "vdi-doc-ingest",
+      "discipline": "MG",
+      "sub_discipline": "DI",
+      "level": 3,
+      "role": "执行层",
+      "reports_to": "",
+      "manages": [],
+      "mcp_required": [
+        "documents",
+        "vdi-vision",
+        "vdi-knowledge"
+      ],
+      "may_call": [],
+      "standalone": false,
+      "triggers": []
     },
     {
       "name": "物料热量平衡",
@@ -105,11 +128,12 @@
       "sub_discipline": "B",
       "level": 2,
       "role": "分析层",
-      "reports_to": "工艺专业负责人",
+      "reports_to": "vdi-process-lead",
       "manages": [],
-      "mcp_required": ["vdi-knowledge", "vdi-rules"],
+      "mcp_required": [],
+      "may_call": [],
       "standalone": false,
-      "triggers": ["物料平衡", "热量平衡", "公用工程", "三废"]
+      "triggers": []
     },
     {
       "name": "工艺计算",
@@ -121,9 +145,10 @@
       "role": "执行层",
       "reports_to": "",
       "manages": [],
-      "mcp_required": ["vdi-knowledge"],
+      "mcp_required": [],
+      "may_call": [],
       "standalone": false,
-      "triggers": ["物料平衡", "热量平衡", "设备尺寸", "管径", "安全阀", "催化剂", "反应器"]
+      "triggers": []
     },
     {
       "name": "工艺数据管理",
@@ -135,9 +160,10 @@
       "role": "执行层",
       "reports_to": "",
       "manages": [],
-      "mcp_required": ["vdi-knowledge"],
+      "mcp_required": [],
+      "may_call": [],
       "standalone": false,
-      "triggers": ["数据版本", "数据一致性", "数据追溯", "数据备份", "数据恢复"]
+      "triggers": []
     },
     {
       "name": "工艺文档生成",
@@ -149,10 +175,10 @@
       "role": "执行层",
       "reports_to": "",
       "manages": [],
-      "mcp_required": ["vdi-knowledge"],
-      "may_call": ["文档导出"],
+      "mcp_required": [],
+      "may_call": [],
       "standalone": false,
-      "triggers": ["设计说明书", "计算书", "设备数据表", "管道表", "仪表索引", "文档模板"]
+      "triggers": []
     },
     {
       "name": "工艺设备数据表",
@@ -162,11 +188,12 @@
       "sub_discipline": "E",
       "level": 2,
       "role": "分析层",
-      "reports_to": "工艺专业负责人",
+      "reports_to": "vdi-process-lead",
       "manages": [],
-      "mcp_required": ["vdi-knowledge", "vdi-rules"],
+      "mcp_required": [],
+      "may_call": [],
       "standalone": false,
-      "triggers": ["设备数据表", "技术规格书", "设备选型"]
+      "triggers": []
     },
     {
       "name": "工艺专业负责人",
@@ -175,13 +202,30 @@
       "discipline": "PR",
       "sub_discipline": "",
       "level": 1,
-      "role": "决策层",
+      "role": "lead",
       "reports_to": "",
-      "manages": ["vdi-process-route", "vdi-process-balance", "vdi-process-pfd-pid", "vdi-process-equipment", "vdi-process-safety", "vdi-process-utilities"],
-      "mcp_required": ["vdi-orchestrator", "vdi-knowledge", "vdi-rules"],
-      "may_call": ["文档导出", "文档解读"],
+      "manages": [
+        "vdi-process-route",
+        "vdi-process-balance",
+        "vdi-process-pfd-pid",
+        "vdi-process-equipment",
+        "vdi-process-safety",
+        "vdi-process-utilities"
+      ],
+      "mcp_required": [
+        "vdi-orchestrator",
+        "vdi-knowledge",
+        "vdi-rules"
+      ],
+      "may_call": [],
       "standalone": false,
-      "triggers": ["工艺任务下达", "工艺策划", "工艺校审", "工艺提条件", "工艺进度"]
+      "triggers": [
+        "工艺任务下达",
+        "工艺策划",
+        "工艺校审",
+        "工艺提条件",
+        "工艺进度"
+      ]
     },
     {
       "name": "PFD-PID设计",
@@ -191,11 +235,12 @@
       "sub_discipline": "P",
       "level": 2,
       "role": "分析层",
-      "reports_to": "工艺专业负责人",
+      "reports_to": "vdi-process-lead",
       "manages": [],
-      "mcp_required": ["vdi-knowledge", "vdi-rules"],
+      "mcp_required": [],
+      "may_call": [],
       "standalone": false,
-      "triggers": ["PFD", "P&ID", "管道表", "界区接点"]
+      "triggers": []
     },
     {
       "name": "工艺路线设计基础",
@@ -205,11 +250,12 @@
       "sub_discipline": "R",
       "level": 2,
       "role": "分析层",
-      "reports_to": "工艺专业负责人",
+      "reports_to": "vdi-process-lead",
       "manages": [],
-      "mcp_required": ["vdi-knowledge", "vdi-rules"],
+      "mcp_required": [],
+      "may_call": [],
       "standalone": false,
-      "triggers": ["工艺路线", "设计基础", "操作参数", "工艺比选"]
+      "triggers": []
     },
     {
       "name": "工艺安全分析",
@@ -219,11 +265,12 @@
       "sub_discipline": "F",
       "level": 2,
       "role": "分析层",
-      "reports_to": "工艺专业负责人",
+      "reports_to": "vdi-process-lead",
       "manages": [],
-      "mcp_required": ["vdi-knowledge", "vdi-rules"],
+      "mcp_required": [],
+      "may_call": [],
       "standalone": false,
-      "triggers": ["HAZOP", "SIL", "安全阀", "泄压", "ESD", "防爆分区"]
+      "triggers": []
     },
     {
       "name": "流程模拟",
@@ -235,9 +282,10 @@
       "role": "执行层",
       "reports_to": "",
       "manages": [],
-      "mcp_required": ["vdi-knowledge"],
+      "mcp_required": [],
+      "may_call": [],
       "standalone": false,
-      "triggers": ["流程模拟", "物性方法", "灵敏度", "工况", "反应器", "分离", "验证"]
+      "triggers": []
     },
     {
       "name": "公用工程排放",
@@ -247,11 +295,12 @@
       "sub_discipline": "U",
       "level": 2,
       "role": "分析层",
-      "reports_to": "工艺专业负责人",
+      "reports_to": "vdi-process-lead",
       "manages": [],
-      "mcp_required": ["vdi-knowledge", "vdi-rules"],
+      "mcp_required": [],
+      "may_call": [],
       "standalone": false,
-      "triggers": ["蒸汽平衡", "循环水", "废水", "废气", "公用工程"]
+      "triggers": []
     },
     {
       "name": "计划调度",
@@ -260,12 +309,23 @@
       "discipline": "MG",
       "sub_discipline": "",
       "level": 1,
-      "role": "管理层",
+      "role": "orchestrator",
       "reports_to": "",
       "manages": [],
-      "mcp_required": ["vdi-orchestrator", "vdi-knowledge"],
-      "standalone": true,
-      "triggers": ["任务拆解", "WBS 生成", "里程碑预警", "资源冲突", "进度偏差", "依赖分析"]
+      "mcp_required": [
+        "vdi-orchestrator",
+        "vdi-knowledge"
+      ],
+      "may_call": [],
+      "standalone": false,
+      "triggers": [
+        "任务拆解",
+        "WBS 生成",
+        "里程碑预警",
+        "资源冲突",
+        "进度偏差",
+        "依赖分析"
+      ]
     },
     {
       "name": "系统健康检查",
@@ -274,12 +334,22 @@
       "discipline": "system",
       "sub_discipline": "",
       "level": 1,
-      "role": "管理层",
+      "role": "系统验证工程师",
       "reports_to": "",
       "manages": [],
-      "mcp_required": ["vdi-knowledge"],
-      "standalone": true,
-      "triggers": ["系统检查", "健康检查", "模块验证", "系统诊断", "检查调用链", "验证模块"]
+      "mcp_required": [
+        "vdi-knowledge"
+      ],
+      "may_call": [],
+      "standalone": false,
+      "triggers": [
+        "\"系统检查\"",
+        "\"健康检查\"",
+        "\"模块验证\"",
+        "\"系统诊断\"",
+        "\"检查调用链\"",
+        "\"验证模块\""
+      ]
     },
     {
       "name": "循环水系统设计",
@@ -289,11 +359,20 @@
       "sub_discipline": "C",
       "level": 2,
       "role": "分析层",
-      "reports_to": "给排水专业负责人",
+      "reports_to": "vdi-water-lead",
       "manages": [],
-      "mcp_required": ["vdi-knowledge", "vdi-rules"],
+      "mcp_required": [
+        "vdi-knowledge",
+        "vdi-rules"
+      ],
+      "may_call": [],
       "standalone": false,
-      "triggers": ["循环水", "冷却塔", "水质稳定", "旁滤"]
+      "triggers": [
+        "循环水",
+        "冷却塔",
+        "水质稳定",
+        "旁滤"
+      ]
     },
     {
       "name": "排水系统设计",
@@ -303,11 +382,20 @@
       "sub_discipline": "D",
       "level": 2,
       "role": "分析层",
-      "reports_to": "给排水专业负责人",
+      "reports_to": "vdi-water-lead",
       "manages": [],
-      "mcp_required": ["vdi-knowledge", "vdi-rules"],
+      "mcp_required": [
+        "vdi-knowledge",
+        "vdi-rules"
+      ],
+      "may_call": [],
       "standalone": false,
-      "triggers": ["排水设计", "排水管计算", "排水泵站", "清污分流"]
+      "triggers": [
+        "排水设计",
+        "排水管计算",
+        "排水泵站",
+        "清污分流"
+      ]
     },
     {
       "name": "给排水设备选型",
@@ -319,9 +407,16 @@
       "role": "执行层",
       "reports_to": "",
       "manages": [],
-      "mcp_required": ["vdi-knowledge"],
+      "mcp_required": [
+        "vdi-knowledge"
+      ],
+      "may_call": [],
       "standalone": false,
-      "triggers": ["水泵选型", "设备参数", "构筑物尺寸"]
+      "triggers": [
+        "水泵选型",
+        "设备参数",
+        "构筑物尺寸"
+      ]
     },
     {
       "name": "消防给水设计",
@@ -331,11 +426,20 @@
       "sub_discipline": "F",
       "level": 2,
       "role": "分析层",
-      "reports_to": "给排水专业负责人",
+      "reports_to": "vdi-water-lead",
       "manages": [],
-      "mcp_required": ["vdi-knowledge", "vdi-rules"],
+      "mcp_required": [
+        "vdi-knowledge",
+        "vdi-rules"
+      ],
+      "may_call": [],
       "standalone": false,
-      "triggers": ["消防给水", "消火栓设计", "自动喷水", "消防水池"]
+      "triggers": [
+        "消防给水",
+        "消火栓设计",
+        "自动喷水",
+        "消防水池"
+      ]
     },
     {
       "name": "给排水水力计算",
@@ -347,9 +451,17 @@
       "role": "执行层",
       "reports_to": "",
       "manages": [],
-      "mcp_required": ["vdi-knowledge"],
+      "mcp_required": [
+        "vdi-knowledge"
+      ],
+      "may_call": [],
       "standalone": false,
-      "triggers": ["管径计算", "水头损失", "压力校核", "排水水力"]
+      "triggers": [
+        "管径计算",
+        "水头损失",
+        "压力校核",
+        "排水水力"
+      ]
     },
     {
       "name": "给排水专业负责人",
@@ -358,13 +470,30 @@
       "discipline": "WA",
       "sub_discipline": "",
       "level": 1,
-      "role": "决策层",
+      "role": "lead",
       "reports_to": "",
-      "manages": ["vdi-water-supply", "vdi-water-fire", "vdi-water-drainage", "vdi-water-stormwater", "vdi-water-wastewater", "vdi-water-circulating"],
-      "mcp_required": ["vdi-orchestrator", "vdi-knowledge", "vdi-rules"],
-      "may_call": ["文档导出", "文档解读"],
+      "manages": [
+        "vdi-water-supply",
+        "vdi-water-fire",
+        "vdi-water-drainage",
+        "vdi-water-stormwater",
+        "vdi-water-wastewater",
+        "vdi-water-circulating"
+      ],
+      "mcp_required": [
+        "vdi-orchestrator",
+        "vdi-knowledge",
+        "vdi-rules"
+      ],
+      "may_call": [],
       "standalone": false,
-      "triggers": ["给排水任务下达", "给排水策划", "给排水校审", "给排水进度", "给排水接口"]
+      "triggers": [
+        "给排水任务下达",
+        "给排水策划",
+        "给排水校审",
+        "给排水进度",
+        "给排水接口"
+      ]
     },
     {
       "name": "雨水系统设计",
@@ -374,11 +503,20 @@
       "sub_discipline": "R",
       "level": 2,
       "role": "分析层",
-      "reports_to": "给排水专业负责人",
+      "reports_to": "vdi-water-lead",
       "manages": [],
-      "mcp_required": ["vdi-knowledge", "vdi-rules"],
+      "mcp_required": [
+        "vdi-knowledge",
+        "vdi-rules"
+      ],
+      "may_call": [],
       "standalone": false,
-      "triggers": ["雨水设计", "暴雨强度", "雨水管网", "雨水收集"]
+      "triggers": [
+        "雨水设计",
+        "暴雨强度",
+        "雨水管网",
+        "雨水收集"
+      ]
     },
     {
       "name": "给水系统设计",
@@ -388,11 +526,20 @@
       "sub_discipline": "S",
       "level": 2,
       "role": "分析层",
-      "reports_to": "给排水专业负责人",
+      "reports_to": "vdi-water-lead",
       "manages": [],
-      "mcp_required": ["vdi-knowledge", "vdi-rules"],
+      "mcp_required": [
+        "vdi-knowledge",
+        "vdi-rules"
+      ],
+      "may_call": [],
       "standalone": false,
-      "triggers": ["给水设计", "用水量计算", "管径计算", "给水泵选型"]
+      "triggers": [
+        "给水设计",
+        "用水量计算",
+        "管径计算",
+        "给水泵选型"
+      ]
     },
     {
       "name": "污水处理设计",
@@ -402,209 +549,21 @@
       "sub_discipline": "W",
       "level": 2,
       "role": "分析层",
-      "reports_to": "给排水专业负责人",
+      "reports_to": "vdi-water-lead",
       "manages": [],
-      "mcp_required": ["vdi-knowledge", "vdi-rules"],
+      "mcp_required": [
+        "vdi-knowledge",
+        "vdi-rules"
+      ],
+      "may_call": [],
       "standalone": false,
-      "triggers": ["污水处理", "工艺比选", "构筑物设计", "污泥处理", "排放标准"]
-    },
-    {
-      "name": "HAZOP分析主席",
-      "path": "skills/hazop-chair",
-      "group": "hazop-chair",
-      "discipline": "HAZOP",
-      "sub_discipline": "chair",
-      "level": 1,
-      "role": "决策层",
-      "reports_to": "项目负责人",
-      "manages": ["hazop-expert-process", "hazop-expert-instrument", "hazop-expert-equipment", "hazop-expert-safety", "hazop-expert-operation"],
-      "mcp_required": ["vdi-knowledge", "vdi-rules"],
-      "may_call": ["文档导出", "文档解读"],
-      "standalone": false,
-      "triggers": ["HAZOP", "危险与可操作性分析", "节点确认", "风险审核"]
-    },
-    {
-      "name": "HAZOP工艺专家",
-      "path": "skills/hazop-expert-process",
-      "group": "hazop-expert-process",
-      "discipline": "HAZOP",
-      "sub_discipline": "process",
-      "level": 2,
-      "role": "分析层",
-      "reports_to": "hazop-chair",
-      "manages": [],
-      "mcp_required": ["vdi-knowledge"],
-      "standalone": false,
-      "triggers": ["偏差识别", "工艺原因", "流量偏差", "压力偏差", "温度偏差", "液位偏差"]
-    },
-    {
-      "name": "HAZOP仪表专家",
-      "path": "skills/hazop-expert-instrument",
-      "group": "hazop-expert-instrument",
-      "discipline": "HAZOP",
-      "sub_discipline": "instrument",
-      "level": 2,
-      "role": "分析层",
-      "reports_to": "hazop-chair",
-      "manages": [],
-      "mcp_required": ["vdi-knowledge"],
-      "standalone": false,
-      "triggers": ["联锁保护", "SIL定级", "BPCS", "SIS", "仪表故障"]
-    },
-    {
-      "name": "HAZOP设备专家",
-      "path": "skills/hazop-expert-equipment",
-      "group": "hazop-expert-equipment",
-      "discipline": "HAZOP",
-      "sub_discipline": "equipment",
-      "level": 2,
-      "role": "分析层",
-      "reports_to": "hazop-chair",
-      "manages": [],
-      "mcp_required": ["vdi-knowledge"],
-      "standalone": false,
-      "triggers": ["设备故障", "机械失效", "设备完整性", "泄漏分析"]
-    },
-    {
-      "name": "HAZOP安全专家",
-      "path": "skills/hazop-expert-safety",
-      "group": "hazop-expert-safety",
-      "discipline": "HAZOP",
-      "sub_discipline": "safety",
-      "level": 2,
-      "role": "分析层",
-      "reports_to": "hazop-chair",
-      "manages": [],
-      "mcp_required": ["vdi-knowledge"],
-      "standalone": false,
-      "triggers": ["后果评估", "风险等级", "防护措施", "火灾爆炸"]
-    },
-    {
-      "name": "HAZOP操作专家",
-      "path": "skills/hazop-expert-operation",
-      "group": "hazop-expert-operation",
-      "discipline": "HAZOP",
-      "sub_discipline": "operation",
-      "level": 2,
-      "role": "分析层",
-      "reports_to": "hazop-chair",
-      "manages": [],
-      "mcp_required": ["vdi-knowledge"],
-      "standalone": false,
-      "triggers": ["操作偏差", "人为因素", "操作规程", "培训需求"]
-    },
-    {
-      "name": "HAZOP Prep助理",
-      "path": "skills/hazop-prep-assistant",
-      "group": "hazop-prep-assistant",
-      "discipline": "HAZOP",
-      "sub_discipline": "prep",
-      "level": 3,
-      "role": "执行层",
-      "reports_to": "hazop-chair",
-      "manages": [],
-      "mcp_required": [],
-      "standalone": false,
-      "triggers": ["会前准备", "资料解析", "节点提取", "工艺描述"]
-    },
-    {
-      "name": "HAZOP Matrix助理",
-      "path": "skills/hazop-matrix-assistant",
-      "group": "hazop-matrix-assistant",
-      "discipline": "HAZOP",
-      "sub_discipline": "matrix",
-      "level": 3,
-      "role": "执行层",
-      "reports_to": "hazop-chair",
-      "manages": [],
-      "mcp_required": [],
-      "standalone": false,
-      "triggers": ["偏差矩阵", "引导词应用", "偏差识别", "探查问题"]
-    },
-    {
-      "name": "HAZOP Scenario助理",
-      "path": "skills/hazop-scenario-assistant",
-      "group": "hazop-scenario-assistant",
-      "discipline": "HAZOP",
-      "sub_discipline": "scenario",
-      "level": 3,
-      "role": "执行层",
-      "reports_to": "hazop-chair",
-      "manages": [],
-      "mcp_required": [],
-      "standalone": false,
-      "triggers": ["场景分析", "六步分析", "偏差分析", "风险评估"]
-    },
-    {
-      "name": "HAZOP QA助理",
-      "path": "skills/hazop-qa-assistant",
-      "group": "hazop-qa-assistant",
-      "discipline": "HAZOP",
-      "sub_discipline": "qa",
-      "level": 3,
-      "role": "执行层",
-      "reports_to": "hazop-chair",
-      "manages": [],
-      "mcp_required": [],
-      "standalone": false,
-      "triggers": ["质量审查", "完整性检查", "合规验证", "摘要生成"]
-    },
-    {
-      "name": "HAZOP Report助理",
-      "path": "skills/hazop-report-assistant",
-      "group": "hazop-report-assistant",
-      "discipline": "HAZOP",
-      "sub_discipline": "report",
-      "level": 3,
-      "role": "执行层",
-      "reports_to": "hazop-chair",
-      "manages": [],
-      "mcp_required": [],
-      "may_call": ["文档导出"],
-      "standalone": false,
-      "triggers": ["报告生成", "工作表编制", "建议台账", "报告导出"]
-    },
-    {
-      "name": "HAZOP本质安全评估助理",
-      "path": "skills/hazop-inherent-safety",
-      "group": "hazop-inherent-safety",
-      "discipline": "HAZOP",
-      "sub_discipline": "inherent_safety",
-      "level": 3,
-      "role": "执行层",
-      "reports_to": "hazop-chair",
-      "manages": [],
-      "mcp_required": ["vdi-knowledge"],
-      "standalone": false,
-      "triggers": ["本质安全", "inherent safety", "本质安全评估", "本质安全检查", "物料替代", "工艺简化"]
-    },
-    {
-      "name": "文档导出",
-      "path": "skills/vdi-doc-export",
-      "group": "vdi-doc-export",
-      "discipline": "MG",
-      "sub_discipline": "DE",
-      "level": 3,
-      "role": "执行层",
-      "reports_to": "设计经理",
-      "manages": [],
-      "mcp_required": ["documents"],
-      "standalone": false,
-      "triggers": ["导出 Word", "导出 Excel", "导出 PDF", "生成报告", "下载文档", "export docx", "export xlsx", "export pdf"]
-    },
-    {
-      "name": "文档解读",
-      "path": "skills/vdi-doc-ingest",
-      "group": "vdi-doc-ingest",
-      "discipline": "MG",
-      "sub_discipline": "DI",
-      "level": 3,
-      "role": "执行层",
-      "reports_to": "设计经理",
-      "manages": [],
-      "mcp_required": ["documents", "vdi-knowledge"],
-      "standalone": false,
-      "triggers": ["读取文档", "解析 Excel", "提取 PDF", "导入数据", "解读报告", "读取 Word", "读取 PDF", "读取 Excel"]
+      "triggers": [
+        "污水处理",
+        "工艺比选",
+        "构筑物设计",
+        "污泥处理",
+        "排放标准"
+      ]
     }
   ]
 }

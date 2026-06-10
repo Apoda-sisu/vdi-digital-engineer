@@ -6,6 +6,7 @@ metadata:
   vdi:
     discipline: WA
     sub_discipline: E
+    role: 执行层
     level: 3
     called_by:
       - 给水系统设计

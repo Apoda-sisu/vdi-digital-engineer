@@ -28,6 +28,14 @@
         "VDI_WORKSPACE_ROOT": "/workspace/workspaces",
         "VDI_EVENTS_REGISTRY": "/workspace/pilotdeck-vdi/mcp/vdi-events/event-registry.json"
       }
+    },
+    "vdi-vision": {
+      "command": "node",
+      "args": ["/workspace/pilotdeck-vdi/mcp/vdi-vision/server.mjs"]
+    },
+    "documents": {
+      "command": "node",
+      "args": ["/workspace/pilotdeck-vdi/mcp/documents/server.mjs"]
     }
   }
 }

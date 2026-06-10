@@ -6,8 +6,9 @@ metadata:
   vdi:
     discipline: WA
     sub_discipline: W
+    role: 分析层
     level: 2
-    reports_to: 给排水专业负责人
+    reports_to: vdi-water-lead
     pilotdeck_workspace: /workspace/workspaces/给排水组
     mcp_required:
       - vdi-knowledge
