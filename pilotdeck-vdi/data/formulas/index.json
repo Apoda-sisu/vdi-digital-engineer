@@ -1336,7 +1336,7 @@
           "symbol": "Ik",
           "name": "短路电流",
           "unit": "kA",
-          "role": "input"
+          "role": "output"
         }
       ],
       "tags": [
@@ -1492,7 +1492,7 @@
           "symbol": "tk",
           "name": "保护切除时间",
           "unit": "s",
-          "role": "input"
+          "role": "output"
         }
       ],
       "tags": [
@@ -4149,7 +4149,7 @@
           "symbol": "Hl",
           "name": "局部损失",
           "unit": "m",
-          "role": "input"
+          "role": "output"
         }
       ],
       "tags": [

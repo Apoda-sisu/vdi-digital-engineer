@@ -133,7 +133,11 @@ function parseSkillFrontmatter(skillDir) {
     if (val === "" || val === "[]") {
       const isList = val === "[]" || keysWithListItems.has(`${spaces}:${key}`);
       parent[key] = isList ? [] : {};
-      stack.push({ obj: parent[key], indent: spaces, lastKey: key });
+      if (!isList) {
+        stack.push({ obj: parent[key], indent: spaces, lastKey: key });
+      } else {
+        stack[stack.length - 1].lastKey = key;
+      }
     } else if (val.startsWith("[")) {
       parent[key] = val.replace(/^\[|\]$/g, "").split(",").map(s => s.trim().replace(/^["']|["']$/g, ""));
       stack[stack.length - 1].lastKey = key;
@@ -585,7 +589,7 @@ function validateDataQuality() {
   // GOV-044: Skill 触发词覆盖
   if (!TARGET || TARGET === "skill") {
     const skillDirs = fs.readdirSync(SKILLS_DIR, { withFileTypes: true })
-      .filter(d => d.isDirectory() && d.name !== "index.json")
+      .filter(d => d.isDirectory() && d.name !== "index.json" && fs.existsSync(path.join(SKILLS_DIR, d.name, "SKILL.md")))
       .map(d => path.join(SKILLS_DIR, d.name));
 
     let withTriggers = 0;
@@ -593,7 +597,11 @@ function validateDataQuality() {
     for (const dir of skillDirs) {
       const name = path.basename(dir);
       const fm = parseSkillFrontmatter(dir);
-      if (fm?.triggers && Array.isArray(fm.triggers) && fm.triggers.length > 0) {
+      // Check triggers at top level or nested in metadata.vdi
+      const triggers = fm?.triggers 
+        || fm?.metadata?.vdi?.triggers 
+        || fm?.metadata?.triggers;
+      if (triggers && Array.isArray(triggers) && triggers.length > 0) {
         withTriggers++;
       } else {
         withoutTriggers.push(name);

@@ -99,7 +99,16 @@
       ],
       "may_call": [],
       "standalone": false,
-      "triggers": []
+      "triggers": [
+        "导出 Word",
+        "导出 Excel",
+        "导出 PDF",
+        "生成报告",
+        "下载文档",
+        "export docx",
+        "export xlsx",
+        "export pdf"
+      ]
     },
     {
       "name": "文档解读",
@@ -118,7 +127,19 @@
       ],
       "may_call": [],
       "standalone": false,
-      "triggers": []
+      "triggers": [
+        "读取文档",
+        "解析 Excel",
+        "提取 PDF",
+        "解读图片",
+        "导入数据",
+        "解读报告",
+        "读取 Word",
+        "读取 PDF",
+        "读取 Excel",
+        "图片表格",
+        "截图解读"
+      ]
     },
     {
       "name": "物料热量平衡",
@@ -133,7 +154,12 @@
       "mcp_required": [],
       "may_call": [],
       "standalone": false,
-      "triggers": []
+      "triggers": [
+        "物料平衡",
+        "热量平衡",
+        "公用工程",
+        "三废"
+      ]
     },
     {
       "name": "工艺计算",
@@ -148,7 +174,15 @@
       "mcp_required": [],
       "may_call": [],
       "standalone": false,
-      "triggers": []
+      "triggers": [
+        "物料平衡",
+        "热量平衡",
+        "设备尺寸",
+        "管径",
+        "安全阀",
+        "催化剂",
+        "反应器"
+      ]
     },
     {
       "name": "工艺数据管理",
@@ -163,7 +197,13 @@
       "mcp_required": [],
       "may_call": [],
       "standalone": false,
-      "triggers": []
+      "triggers": [
+        "数据版本",
+        "数据一致性",
+        "数据追溯",
+        "数据备份",
+        "数据恢复"
+      ]
     },
     {
       "name": "工艺文档生成",
@@ -178,7 +218,14 @@
       "mcp_required": [],
       "may_call": [],
       "standalone": false,
-      "triggers": []
+      "triggers": [
+        "设计说明书",
+        "计算书",
+        "设备数据表",
+        "管道表",
+        "仪表索引",
+        "文档模板"
+      ]
     },
     {
       "name": "工艺设备数据表",
@@ -193,7 +240,11 @@
       "mcp_required": [],
       "may_call": [],
       "standalone": false,
-      "triggers": []
+      "triggers": [
+        "设备数据表",
+        "技术规格书",
+        "设备选型"
+      ]
     },
     {
       "name": "工艺专业负责人",
@@ -240,7 +291,12 @@
       "mcp_required": [],
       "may_call": [],
       "standalone": false,
-      "triggers": []
+      "triggers": [
+        "PFD",
+        "P&ID",
+        "管道表",
+        "界区接点"
+      ]
     },
     {
       "name": "工艺路线设计基础",
@@ -255,7 +311,12 @@
       "mcp_required": [],
       "may_call": [],
       "standalone": false,
-      "triggers": []
+      "triggers": [
+        "工艺路线",
+        "设计基础",
+        "操作参数",
+        "工艺比选"
+      ]
     },
     {
       "name": "工艺安全分析",
@@ -270,7 +331,17 @@
       "mcp_required": [],
       "may_call": [],
       "standalone": false,
-      "triggers": []
+      "triggers": [
+        "HAZOP",
+        "SIL",
+        "安全阀",
+        "泄压",
+        "ESD",
+        "防爆分区",
+        "危险与可操作性分析",
+        "节点确认",
+        "风险审核"
+      ]
     },
     {
       "name": "流程模拟",
@@ -285,7 +356,15 @@
       "mcp_required": [],
       "may_call": [],
       "standalone": false,
-      "triggers": []
+      "triggers": [
+        "流程模拟",
+        "物性方法",
+        "灵敏度",
+        "工况",
+        "反应器",
+        "分离",
+        "验证"
+      ]
     },
     {
       "name": "公用工程排放",
@@ -300,7 +379,13 @@
       "mcp_required": [],
       "may_call": [],
       "standalone": false,
-      "triggers": []
+      "triggers": [
+        "蒸汽平衡",
+        "循环水",
+        "废水",
+        "废气",
+        "公用工程"
+      ]
     },
     {
       "name": "计划调度",

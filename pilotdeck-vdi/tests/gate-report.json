@@ -1,12 +1,12 @@
 {
   "version": "2.0",
-  "timestamp": "2026-06-09T13:20:43.666Z",
-  "mode": "quick",
+  "timestamp": "2026-06-10T12:32:17.080Z",
+  "mode": "full",
   "fix_enabled": false,
   "target": null,
   "summary": {
-    "pass": 8,
-    "warn": 2,
+    "pass": 23,
+    "warn": 1,
     "fail": 0,
     "fixed": 0
   },
@@ -29,13 +29,13 @@
     },
     {
       "id": "GOV-004:id",
-      "status": "warn",
-      "msg": "13/651 条条款缺少 clause_id（数据生成时可能使用了不同格式）"
+      "status": "pass",
+      "msg": "全部 651 条条款 clause_id 存在"
     },
     {
       "id": "GOV-004:src",
-      "status": "warn",
-      "msg": "89/651 条条款缺少 source_id"
+      "status": "pass",
+      "msg": "全部 651 条条款 source_id 存在"
     },
     {
       "id": "GOV-004:content",
@@ -60,7 +60,77 @@
     {
       "id": "GOV-012",
       "status": "pass",
-      "msg": "28 个 mcp_required 引用有效"
+      "msg": "29 个 mcp_required 引用有效"
+    },
+    {
+      "id": "GOV-020",
+      "status": "pass",
+      "msg": "全部 162 个索引公式在文件中存在"
+    },
+    {
+      "id": "GOV-021",
+      "status": "pass",
+      "msg": "所有文件公式已被索引"
+    },
+    {
+      "id": "GOV-022",
+      "status": "pass",
+      "msg": "公式统计数一致: 162"
+    },
+    {
+      "id": "GOV-023",
+      "status": "pass",
+      "msg": "全部 18 个专业代码在 mapping 中有定义"
+    },
+    {
+      "id": "GOV-024",
+      "status": "pass",
+      "msg": "index.json 与 SKILL.md discipline 一致"
+    },
+    {
+      "id": "GOV-030",
+      "status": "pass",
+      "msg": "关键词索引公式 ID 全部有效"
+    },
+    {
+      "id": "GOV-031",
+      "status": "pass",
+      "msg": "参数索引公式 ID 全部有效"
+    },
+    {
+      "id": "GOV-032",
+      "status": "pass",
+      "msg": "全部 10 个参数表引用有效"
+    },
+    {
+      "id": "GOV-040",
+      "status": "warn",
+      "msg": "48 条条款内容过短或为空"
+    },
+    {
+      "id": "GOV-041",
+      "status": "pass",
+      "msg": "关键词覆盖率良好 (100.0%)"
+    },
+    {
+      "id": "GOV-042",
+      "status": "pass",
+      "msg": "全部条款有专业标签"
+    },
+    {
+      "id": "GOV-043",
+      "status": "pass",
+      "msg": "全部 162 个公式变量定义完整"
+    },
+    {
+      "id": "GOV-044",
+      "status": "pass",
+      "msg": "全部 25 个 Skill 有触发词配置"
+    },
+    {
+      "id": "GOV-045",
+      "status": "pass",
+      "msg": "全部 162 个公式有标准来源引用"
     }
   ]
 }
