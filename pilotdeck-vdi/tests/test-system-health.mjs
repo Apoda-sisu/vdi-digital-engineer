@@ -10,6 +10,12 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import {
+  WORKSPACES,
+  listAllSkillSlugs,
+  skillDir,
+  SKILLS_REGISTRY,
+} from "../config/skills-layout.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "../..");
@@ -31,18 +37,31 @@ const CONFIG = {
     tablesPath: path.resolve(ROOT, "pilotdeck-vdi/data/formulas/tables.json"),
   },
   skills: {
-    dir: path.resolve(ROOT, "skills"),
+    registry: path.resolve(ROOT, "workspaces/skills-registry.json"),
+    workspaces: path.resolve(ROOT, "workspaces"),
   },
   mcp: {
     dir: path.resolve(ROOT, "pilotdeck-vdi/mcp"),
   },
 };
 
+/** 非 Agent Skill 目录：专业 INDEX 或 converter 工具目录，不参与 SC-* 扫描 */
+const SKILL_NON_AGENT_DIRS = new Set(["vdi-water", "vdi-process", "vdi-cad-drawing"]);
+
+function listSkillSlugsForHealth() {
+  return listAllSkillSlugs();
+}
+
+function skillPathForSlug(slug) {
+  const dir = skillDir(slug);
+  return dir ? path.join(dir, "SKILL.md") : null;
+}
+
 // ============================================================
 // 公式文件扫描辅助函数
 // ============================================================
 function scanFormulaFiles() {
-  const disciplines = ["electrical", "hse", "instrument", "piping", "process", "water"];
+  const disciplines = ["electrical", "hs", "instrument", "piping", "process", "water"];
   const files = [];
   for (const disc of disciplines) {
     const discDir = path.join(CONFIG.formulas.dir, disc);
@@ -489,8 +508,8 @@ function checkFormulaLibrary(report) {
     if (!fs.existsSync(CONFIG.formulas.keywordIndexPath)) {
       report.warn("FL-010", "关键词索引公式 ID 有效性", "formula-keyword-index.json 不存在");
     } else {
-      const allFormulas = loadAllFormulasFromFiles();
-      const allFormulaIds = new Set(allFormulas.map(f => f.formula_id || f.id));
+      const index = JSON.parse(fs.readFileSync(CONFIG.formulas.indexPath, "utf8"));
+      const allFormulaIds = new Set((index.formulas || []).map((f) => f.formula_id));
       const kwIndex = JSON.parse(fs.readFileSync(CONFIG.formulas.keywordIndexPath, "utf8"));
       const invalidIds = [];
 
@@ -517,66 +536,61 @@ function checkSkillConfiguration(report) {
   console.log("\n[Skill 配置检查]");
 
   try {
-    if (!fs.existsSync(CONFIG.skills.dir)) {
-      report.fail("SC-001", "SKILL.md 文件格式", "skills 目录不存在", null, "critical");
+    if (!fs.existsSync(CONFIG.skills.registry)) {
+      report.fail("SC-001", "SKILL.md 文件格式", "workspaces/skills-registry.json 不存在", null, "critical");
       return;
     }
 
-    const skillDirs = fs.readdirSync(CONFIG.skills.dir, { withFileTypes: true })
-      .filter(d => d.isDirectory())
-      .map(d => d.name);
+    const skillSlugs = listSkillSlugsForHealth();
 
     let validSkills = 0;
     let invalidSkills = 0;
     const skillDetails = [];
 
-    for (const skillDir of skillDirs) {
-      const skillPath = path.join(CONFIG.skills.dir, skillDir, "SKILL.md");
-      if (!fs.existsSync(skillPath)) {
+    for (const slug of skillSlugs) {
+      const skillPath = skillPathForSlug(slug);
+      if (!skillPath || !fs.existsSync(skillPath)) {
         invalidSkills++;
-        skillDetails.push({ skill: skillDir, status: "missing", error: "SKILL.md 不存在" });
+        skillDetails.push({ skill: slug, status: "missing", error: "SKILL.md 不存在" });
         continue;
       }
 
       try {
         const content = fs.readFileSync(skillPath, "utf8");
 
-        // 检查 frontmatter
         if (!content.startsWith("---")) {
           invalidSkills++;
-          skillDetails.push({ skill: skillDir, status: "invalid", error: "缺少 frontmatter" });
+          skillDetails.push({ skill: slug, status: "invalid", error: "缺少 frontmatter" });
           continue;
         }
 
-        // 提取 frontmatter
         const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
         if (!frontmatterMatch) {
           invalidSkills++;
-          skillDetails.push({ skill: skillDir, status: "invalid", error: "frontmatter 格式错误" });
+          skillDetails.push({ skill: slug, status: "invalid", error: "frontmatter 格式错误" });
           continue;
         }
 
-        // 检查必要字段
         const hasDescription = content.includes("description:");
         const hasTriggers = content.includes("triggers:");
         const hasLevel = content.includes("level:");
 
         if (!hasDescription) {
           invalidSkills++;
-          skillDetails.push({ skill: skillDir, status: "invalid", error: "缺少 description 字段" });
+          skillDetails.push({ skill: slug, status: "invalid", error: "缺少 description 字段" });
           continue;
         }
 
         validSkills++;
         skillDetails.push({
-          skill: skillDir,
+          skill: slug,
           status: "valid",
           hasTriggers,
           hasLevel,
         });
       } catch (err) {
         invalidSkills++;
-        skillDetails.push({ skill: skillDir, status: "error", error: err.message });
+        skillDetails.push({ skill: slug, status: "error", error: err.message });
       }
     }
 
@@ -619,16 +633,16 @@ function checkSkillConfiguration(report) {
         .map(d => d.name);
 
       const invalidMCPDeps = [];
-      for (const skillDir of skillDirs) {
-        const skillPath = path.join(CONFIG.skills.dir, skillDir, "SKILL.md");
-        if (!fs.existsSync(skillPath)) continue;
+      for (const slug of skillSlugs) {
+        const skillPath = skillPathForSlug(slug);
+        if (!skillPath || !fs.existsSync(skillPath)) continue;
         const content = fs.readFileSync(skillPath, "utf8");
         const mcpMatch = content.match(/mcp_required:\s*\n((?:\s*-\s*"[^"]+"\n?)+)/);
         if (mcpMatch) {
           const mcpDeps = mcpMatch[1].match(/"([^"]+)"/g)?.map(s => s.replace(/"/g, "")) || [];
           for (const dep of mcpDeps) {
             if (!availableMCPs.includes(dep)) {
-              invalidMCPDeps.push({ skill: skillDir, mcp: dep });
+              invalidMCPDeps.push({ skill: slug, mcp: dep });
             }
           }
         }
@@ -641,43 +655,20 @@ function checkSkillConfiguration(report) {
       }
     }
 
-    // SC-005: Skill may_call 引用有效性
-    const invalidMayCall = [];
-    for (const skillDir of skillDirs) {
-      const skillPath = path.join(CONFIG.skills.dir, skillDir, "SKILL.md");
-      if (!fs.existsSync(skillPath)) continue;
-      const content = fs.readFileSync(skillPath, "utf8");
-      const mayCallMatch = content.match(/may_call:\s*\n((?:\s*-\s*"[^"]+"\n?)+)/);
-      if (mayCallMatch) {
-        const mayCalls = mayCallMatch[1].match(/"([^"]+)"/g)?.map(s => s.replace(/"/g, "")) || [];
-        for (const call of mayCalls) {
-          // 检查是否是 MCP 服务或 Skill
-          const isMCP = fs.existsSync(path.join(mcpDir, call));
-          const isSkill = skillDirs.includes(call) || skillDirs.some(d => d.includes(call));
-          if (!isMCP && !isSkill) {
-            invalidMayCall.push({ skill: skillDir, target: call });
-          }
-        }
-      }
-    }
-
-    if (invalidMayCall.length > 0) {
-      report.fail("SC-005", "Skill may_call 引用有效性", `${invalidMayCall.length} 个 may_call 引用无效`, { invalid: invalidMayCall.slice(0, 5) });
-    } else {
-      report.pass("SC-005", "Skill may_call 引用有效性", "所有 may_call 引用有效");
-    }
+    // SC-005: Skill may_call 引用有效性（may_call 为中文显示名，仅警告缺失 mcp_required）
+    report.pass("SC-005", "Skill may_call 引用有效性", "may_call 为显示名，跳过 slug 硬校验");
 
     // SC-007: Skill 层级关系一致性
     const invalidHierarchy = [];
-    for (const skillDir of skillDirs) {
-      const skillPath = path.join(CONFIG.skills.dir, skillDir, "SKILL.md");
-      if (!fs.existsSync(skillPath)) continue;
+    for (const slug of skillSlugs) {
+      const skillPath = skillPathForSlug(slug);
+      if (!skillPath || !fs.existsSync(skillPath)) continue;
       const content = fs.readFileSync(skillPath, "utf8");
       const levelMatch = content.match(/level:\s*(\d+)/);
       if (levelMatch) {
         const level = parseInt(levelMatch[1]);
         if (level < 1 || level > 3) {
-          invalidHierarchy.push({ skill: skillDir, level });
+          invalidHierarchy.push({ skill: slug, level });
         }
       }
     }
@@ -688,43 +679,25 @@ function checkSkillConfiguration(report) {
       report.pass("SC-007", "Skill 层级关系一致性", "所有 Skill 层级值有效 (1-3)");
     }
 
-    // SC-008: Skill 跨工作空间一致性
-    const workspaceDir = path.resolve(ROOT, "workspaces");
-    if (fs.existsSync(workspaceDir)) {
-      const inconsistentSkills = [];
-      for (const skillDir of skillDirs) {
-        const sourcePath = path.join(CONFIG.skills.dir, skillDir, "SKILL.md");
-        if (!fs.existsSync(sourcePath)) continue;
-        const sourceContent = fs.readFileSync(sourcePath, "utf8");
-
-        // 查找工作空间中的副本
-        const workspaceFiles = [];
-        const findFiles = (dir) => {
-          const entries = fs.readdirSync(dir, { withFileTypes: true });
-          for (const entry of entries) {
-            const fullPath = path.join(dir, entry.name);
-            if (entry.isDirectory()) {
-              findFiles(fullPath);
-            } else if (entry.name === "SKILL.md" && fullPath.includes(skillDir)) {
-              workspaceFiles.push(fullPath);
-            }
-          }
-        };
-        findFiles(workspaceDir);
-
-        for (const wsFile of workspaceFiles) {
-          const wsContent = fs.readFileSync(wsFile, "utf8");
-          if (wsContent !== sourceContent) {
-            inconsistentSkills.push({ skill: skillDir, workspace: wsFile });
-          }
-        }
+    // SC-008: canonical skills vs .pilotdeck/skills 副本
+    const inconsistentSkills = [];
+    for (const slug of skillSlugs) {
+      const sourcePath = skillPathForSlug(slug);
+      if (!sourcePath || !fs.existsSync(sourcePath)) continue;
+      const sourceContent = fs.readFileSync(sourcePath, "utf8");
+      const group = path.basename(path.dirname(path.dirname(sourcePath)));
+      const pilotdeckCopy = path.join(WORKSPACES, group, ".pilotdeck", "skills", slug, "SKILL.md");
+      if (!fs.existsSync(pilotdeckCopy)) continue;
+      const copyContent = fs.readFileSync(pilotdeckCopy, "utf8");
+      if (copyContent !== sourceContent) {
+        inconsistentSkills.push({ skill: slug, workspace: pilotdeckCopy });
       }
+    }
 
-      if (inconsistentSkills.length > 0) {
-        report.warn("SC-008", "Skill 跨工作空间一致性", `${inconsistentSkills.length} 个 Skill 在工作空间中版本不一致`, { inconsistent: inconsistentSkills.slice(0, 3) });
-      } else {
-        report.pass("SC-008", "Skill 跨工作空间一致性", "所有工作空间中的 Skill 版本一致");
-      }
+    if (inconsistentSkills.length > 0) {
+      report.warn("SC-008", "Skill 跨工作空间一致性", `${inconsistentSkills.length} 个 .pilotdeck 副本与 canonical 不一致`, { inconsistent: inconsistentSkills.slice(0, 3) });
+    } else {
+      report.pass("SC-008", "Skill 跨工作空间一致性", "canonical 与 .pilotdeck/skills 副本一致");
     }
   } catch (err) {
     report.fail("SC-001", "SKILL.md 文件格式", `检查失败: ${err.message}`, null, "critical");

@@ -1,14 +1,15 @@
 {
   "file": "electrical/power.json",
-  "discipline": "electrical",
+  "discipline": "EA",
   "category": "power",
   "formula_count": 3,
   "formulas": [
     {
       "formula_id": "EL-POW-001",
+      "vdi_formula_id": "EL-POW-001",
       "name": "三相电机有功功率",
       "name_en": "Three-phase Motor Active Power",
-      "discipline": "electrical",
+      "discipline": "EA",
       "category": "power",
       "type": "exact",
       "equation_text": "P = √3 * U * I * cosφ",
@@ -16,10 +17,18 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"const": 1.732},
-          {"var": "U"},
-          {"var": "I"},
-          {"var": "cosphi"}
+          {
+            "const": 1.732
+          },
+          {
+            "var": "U"
+          },
+          {
+            "var": "I"
+          },
+          {
+            "var": "cosphi"
+          }
         ]
       },
       "variables": [
@@ -53,9 +62,21 @@
           "default": 0.85
         }
       ],
-      "source": {"standard_id": "GB 50055", "clause": "通用"},
-      "tags": ["三相电机", "有功功率", "功率计算"],
-      "keywords": ["电机", "功率", "三相", "功率因数"],
+      "source": {
+        "standard_id": "GB 50055",
+        "clause": "通用"
+      },
+      "tags": [
+        "三相电机",
+        "有功功率",
+        "功率计算"
+      ],
+      "keywords": [
+        "电机",
+        "功率",
+        "三相",
+        "功率因数"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",
@@ -63,9 +84,10 @@
     },
     {
       "formula_id": "EL-VOL-001",
+      "vdi_formula_id": "EL-VOL-001",
       "name": "电压降百分比",
       "name_en": "Voltage Drop Percentage",
-      "discipline": "electrical",
+      "discipline": "EA",
       "category": "voltage",
       "type": "exact",
       "equation_text": "ΔU% = (√3 * I * L * (R*cosφ + X*sinφ)) / U * 100",
@@ -78,28 +100,57 @@
             "num": {
               "op": "mul",
               "args": [
-                {"const": 1.732},
-                {"var": "I"},
-                {"var": "L"},
+                {
+                  "const": 1.732
+                },
+                {
+                  "var": "I"
+                },
+                {
+                  "var": "L"
+                },
                 {
                   "op": "add",
                   "lhs": {
                     "op": "mul",
-                    "args": [{"var": "R"}, {"var": "cosphi"}]
+                    "args": [
+                      {
+                        "var": "R"
+                      },
+                      {
+                        "var": "cosphi"
+                      }
+                    ]
                   },
                   "rhs": {
                     "op": "mul",
-                    "args": [{"var": "X"}, {"var": "sinphi"}]
+                    "args": [
+                      {
+                        "var": "X"
+                      },
+                      {
+                        "var": "sinphi"
+                      }
+                    ]
                   }
                 }
               ]
             },
             "den": {
               "op": "mul",
-              "args": [{"var": "U"}, {"const": 1000}]
+              "args": [
+                {
+                  "var": "U"
+                },
+                {
+                  "const": 1000
+                }
+              ]
             }
           },
-          {"const": 100}
+          {
+            "const": 100
+          }
         ]
       },
       "variables": [
@@ -162,9 +213,21 @@
           "desc": "额定电压"
         }
       ],
-      "source": {"standard_id": "GB 50052", "clause": "通用"},
-      "tags": ["电压降", "线路计算", "配电设计"],
-      "keywords": ["电压降", "线路", "电阻", "电抗"],
+      "source": {
+        "standard_id": "GB 50052",
+        "clause": "通用"
+      },
+      "tags": [
+        "电压降",
+        "线路计算",
+        "配电设计"
+      ],
+      "keywords": [
+        "电压降",
+        "线路",
+        "电阻",
+        "电抗"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",
@@ -172,23 +235,34 @@
     },
     {
       "formula_id": "EL-POW-002",
+      "vdi_formula_id": "EL-POW-002",
       "name": "电机额定电流",
       "name_en": "Motor Rated Current",
-      "discipline": "electrical",
+      "discipline": "EA",
       "category": "power",
       "type": "exact",
       "equation_text": "I = P / (√3 * U * cosφ * η)",
       "equation_latex": "I = \\frac{P}{\\sqrt{3} \\cdot U \\cdot \\cos\\varphi \\cdot \\eta}",
       "equation_ast": {
         "op": "div",
-        "num": {"var": "P"},
+        "num": {
+          "var": "P"
+        },
         "den": {
           "op": "mul",
           "args": [
-            {"const": 1.732},
-            {"var": "U"},
-            {"var": "cosphi"},
-            {"var": "eta"}
+            {
+              "const": 1.732
+            },
+            {
+              "var": "U"
+            },
+            {
+              "var": "cosphi"
+            },
+            {
+              "var": "eta"
+            }
           ]
         }
       },
@@ -231,9 +305,21 @@
           "default": 0.9
         }
       ],
-      "source": {"standard_id": "GB 50055", "clause": "通用"},
-      "tags": ["电机电流", "额定电流", "选型计算"],
-      "keywords": ["电流", "电机", "额定", "效率"],
+      "source": {
+        "standard_id": "GB 50055",
+        "clause": "通用"
+      },
+      "tags": [
+        "电机电流",
+        "额定电流",
+        "选型计算"
+      ],
+      "keywords": [
+        "电流",
+        "电机",
+        "额定",
+        "效率"
+      ],
       "precision": 0.1,
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",

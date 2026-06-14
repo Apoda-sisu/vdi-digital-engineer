@@ -16,6 +16,7 @@ import {
   ListToolsRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
 import { z } from "zod";
+import { resolveCanonicalDiscipline, getDisciplineSlugMapping } from "../../config/cfihos-discipline-resolve.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const WORKSPACE_ROOT = process.env.VDI_WORKSPACE_ROOT || "/workspace/workspaces";
@@ -51,12 +52,12 @@ function loadDisciplineCodes() {
   return _disciplineCodes;
 }
 
-/** 将 slug（如 "water"）转换为 2 字母学科码（如 "WA"），已是代码则原样返回 */
+/** slug / legacy VDI / CFIHOS → canonical discipline code */
 function resolveDiscipline(input) {
   if (!input || typeof input !== "string") return input;
-  const codes = loadDisciplineCodes();
-  const mapping = codes.discipline_slug_mapping || {};
-  return mapping[input] || input;
+  const slugMap = getDisciplineSlugMapping(loadDisciplineCodes());
+  if (slugMap[input]) return slugMap[input];
+  return resolveCanonicalDiscipline(input);
 }
 
 // ---------------------------------------------------------------------------

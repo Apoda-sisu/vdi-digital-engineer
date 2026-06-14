@@ -1,0 +1,51 @@
+{
+  "symbol_id": "VALVE-GLOBE-001",
+  "name": "截止阀",
+  "name_en": "Globe Valve",
+  "standard": "GB/T 2625-1981",
+  "category": "valves",
+  "description": "直通式截止阀",
+  "parameters": {
+    "diameter": {
+      "type": "string",
+      "description": "公称直径",
+      "examples": ["DN15", "DN25", "DN50"]
+    },
+    "pressure_rating": {
+      "type": "string",
+      "description": "压力等级",
+      "examples": ["PN16", "PN25", "PN40"]
+    }
+  },
+  "connections": {
+    "inlet": {
+      "position": {"x": -12, "y": 0},
+      "direction": "left"
+    },
+    "outlet": {
+      "position": {"x": 12, "y": 0},
+      "direction": "right"
+    }
+  },
+  "geometry": {
+    "components": [
+      {
+        "type": "circle",
+        "params": {"radius": 10},
+        "description": "阀体"
+      },
+      {
+        "type": "line",
+        "params": {"start": [0, 10], "end": [0, 18]},
+        "description": "阀杆"
+      },
+      {
+        "type": "line",
+        "params": {"start": [-6, 18], "end": [6, 18]},
+        "description": "手轮"
+      }
+    ]
+  },
+  "related_standards": ["GB/T 12233", "GB/T 12235", "API 602"],
+  "typical_applications": ["流量调节", "截断", "节流"]
+}

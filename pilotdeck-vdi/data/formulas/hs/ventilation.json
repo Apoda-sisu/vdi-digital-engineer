@@ -1,0 +1,147 @@
+{
+  "file": "hs/ventilation.json",
+  "discipline": "HS",
+  "category": "ventilation",
+  "formula_count": 2,
+  "formulas": [
+    {
+      "formula_id": "HS-VEN-001",
+      "vdi_formula_id": "HS-VEN-001",
+      "name": "通风换气次数法",
+      "name_en": "Ventilation Air Change Rate Method",
+      "discipline": "HS",
+      "category": "ventilation",
+      "type": "exact",
+      "equation_text": "Q = n * V",
+      "equation_latex": "Q = n \\cdot V",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {
+            "var": "n"
+          },
+          {
+            "var": "V"
+          }
+        ]
+      },
+      "variables": [
+        {
+          "symbol": "Q",
+          "name": "通风量",
+          "role": "output",
+          "unit": "m3/h",
+          "desc": "通风量"
+        },
+        {
+          "symbol": "n",
+          "name": "换气次数",
+          "role": "input",
+          "unit": "次/h",
+          "desc": "换气次数"
+        },
+        {
+          "symbol": "V",
+          "name": "房间体积",
+          "role": "input",
+          "unit": "m3",
+          "desc": "房间体积"
+        }
+      ],
+      "source": {
+        "standard_id": "GB 50019",
+        "clause": "通用"
+      },
+      "tags": [
+        "通风",
+        "换气次数",
+        "通风量"
+      ],
+      "keywords": [
+        "通风",
+        "换气",
+        "次数",
+        "体积"
+      ],
+      "precision": 1,
+      "created_at": "2026-06-04T00:00:00Z",
+      "updated_at": "2026-06-04T00:00:00Z",
+      "version": 1
+    },
+    {
+      "formula_id": "HS-VEN-002",
+      "vdi_formula_id": "HS-VEN-002",
+      "name": "有害物质稀释通风",
+      "name_en": "Hazardous Substance Dilution Ventilation",
+      "discipline": "HS",
+      "category": "ventilation",
+      "type": "exact",
+      "equation_text": "Q = M / (C_out - C_in)",
+      "equation_latex": "Q = \\frac{M}{C_{out} - C_{in}}",
+      "equation_ast": {
+        "op": "div",
+        "num": {
+          "var": "M"
+        },
+        "den": {
+          "op": "sub",
+          "lhs": {
+            "var": "C_out"
+          },
+          "rhs": {
+            "var": "C_in"
+          }
+        }
+      },
+      "variables": [
+        {
+          "symbol": "Q",
+          "name": "所需通风量",
+          "role": "output",
+          "unit": "m3/s",
+          "desc": "所需通风量"
+        },
+        {
+          "symbol": "M",
+          "name": "有害物质散发量",
+          "role": "input",
+          "unit": "g/s",
+          "desc": "有害物质散发量"
+        },
+        {
+          "symbol": "C_out",
+          "name": "允许浓度（排风浓度）",
+          "role": "input",
+          "unit": "g/m3",
+          "desc": "允许浓度（排风浓度）"
+        },
+        {
+          "symbol": "C_in",
+          "name": "进风浓度",
+          "role": "input",
+          "unit": "g/m3",
+          "desc": "进风浓度"
+        }
+      ],
+      "source": {
+        "standard_id": "GB 50019",
+        "clause": "通用"
+      },
+      "tags": [
+        "稀释通风",
+        "有害物质",
+        "通风计算"
+      ],
+      "keywords": [
+        "稀释",
+        "有害物质",
+        "浓度",
+        "通风"
+      ],
+      "precision": 0.001,
+      "created_at": "2026-06-04T00:00:00Z",
+      "updated_at": "2026-06-04T00:00:00Z",
+      "version": 1
+    }
+  ]
+}

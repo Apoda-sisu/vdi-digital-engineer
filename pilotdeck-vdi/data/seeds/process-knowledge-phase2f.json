@@ -1,0 +1,3350 @@
+{
+  "seed_version": "2f",
+  "discipline": "process",
+  "description": "Sprint 6 Phase 2f — 目标 450 条",
+  "clauses": [
+    {
+      "clause_id": "SHT31212022-3-2-f",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "PX",
+      "clause": "3.2",
+      "content": "甲醇合成装置工艺设计应明确合成气 H2/CO 比、CO2 含量及惰性组分上限。",
+      "keywords": [
+        "甲醇合成",
+        "合成气",
+        "H2/CO"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-甲醇"
+    },
+    {
+      "clause_id": "SHT31212022-3-3-f",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "PX",
+      "clause": "3.3",
+      "content": "甲醇精馏段应给出粗甲醇、产品甲醇及废液中甲醇含量控制指标。",
+      "keywords": [
+        "甲醇精馏",
+        "粗甲醇"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-D04"
+      ],
+      "category": "SH/T3121-甲醇"
+    },
+    {
+      "clause_id": "SHT31212022-3-4-f",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "PX",
+      "clause": "3.4",
+      "content": "变换/甲醇合成反应器设计应明确催化剂床层温升及紧急泄压策略。",
+      "keywords": [
+        "变换",
+        "温升",
+        "紧急泄压"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-S03"
+      ],
+      "category": "SH/T3121-甲醇"
+    },
+    {
+      "clause_id": "SHT31212022-4-8-f",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "PX",
+      "clause": "4.8",
+      "content": "对含 CO 合成气系统，P&ID 应标注有毒介质标识及泄漏检测点。",
+      "keywords": [
+        "CO",
+        "有毒介质",
+        "泄漏检测"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-X01"
+      ],
+      "category": "SH/T3121-甲醇"
+    },
+    {
+      "clause_id": "SHT31212022-5-6-f",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "PX",
+      "clause": "5.6",
+      "content": "甲醇装置物料平衡应区分气相、液相及水相流股，并标注甲醇回收率。",
+      "keywords": [
+        "物料平衡",
+        "甲醇回收"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03"
+      ],
+      "category": "SH/T3121-甲醇"
+    },
+    {
+      "clause_id": "SHT31212022-6-1-f",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "PX",
+      "clause": "6.1",
+      "content": "火炬系统设计输入应包含各 PSV 最大泄放量汇总及组分分析。",
+      "keywords": [
+        "火炬",
+        "PSV汇总"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-S04"
+      ],
+      "category": "SH/T3121-甲醇"
+    },
+    {
+      "clause_id": "SHT31212022-7-8-f",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "PX",
+      "clause": "7.8",
+      "content": "合成气压缩机喘振控制应在控制哲学中明确防喘振阀逻辑。",
+      "keywords": [
+        "压缩机",
+        "喘振",
+        "防喘振"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-D05"
+      ],
+      "category": "SH/T3121-甲醇"
+    },
+    {
+      "clause_id": "SHT31212022-8-7-f",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "PX",
+      "clause": "8.7",
+      "content": "甲醇储罐应明确浮顶/固定顶选型、氮封及呼吸阀设定。",
+      "keywords": [
+        "甲醇储罐",
+        "氮封",
+        "呼吸阀"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-S03"
+      ],
+      "category": "SH/T3121-甲醇"
+    },
+    {
+      "clause_id": "HGT205702015-4-8-f",
+      "source_type": "standard",
+      "source_id": "HG/T 20570-2015",
+      "version": "2015",
+      "discipline": "PX",
+      "clause": "4.8",
+      "content": "P&ID 控制阀应标注 fail 位置（FO/FC/FL）及气源/电源失效行为。",
+      "keywords": [
+        "控制阀",
+        "fail位置",
+        "FO/FC"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-S05"
+      ],
+      "category": "HG20570-PID-深化"
+    },
+    {
+      "clause_id": "HGT205702015-4-9-f",
+      "source_type": "standard",
+      "source_id": "HG/T 20570-2015",
+      "version": "2015",
+      "discipline": "PX",
+      "clause": "4.9",
+      "content": "P&ID 应区分工艺管道与公用工程管道编号规则，避免混用。",
+      "keywords": [
+        "管道编号",
+        "公用工程"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01"
+      ],
+      "category": "HG20570-PID-深化"
+    },
+    {
+      "clause_id": "HGT205702015-5-4-f",
+      "source_type": "standard",
+      "source_id": "HG/T 20570-2015",
+      "version": "2015",
+      "discipline": "PX",
+      "clause": "5.4",
+      "content": "Line List 应包含设计/操作温度压力、介质相态、管道等级及绝热类型。",
+      "keywords": [
+        "Line List",
+        "管道等级",
+        "绝热"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-S02"
+      ],
+      "category": "HG20570-PID-深化"
+    },
+    {
+      "clause_id": "HGT205702015-5-5-f",
+      "source_type": "standard",
+      "source_id": "HG/T 20570-2015",
+      "version": "2015",
+      "discipline": "PX",
+      "clause": "5.5",
+      "content": "对两相流管道，Line List 应标注预期流型及最低输送速度要求。",
+      "keywords": [
+        "两相流",
+        "流型"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-S02"
+      ],
+      "category": "HG20570-PID-深化"
+    },
+    {
+      "clause_id": "HGT205702015-5-6-f",
+      "source_type": "standard",
+      "source_id": "HG/T 20570-2015",
+      "version": "2015",
+      "discipline": "PX",
+      "clause": "5.6",
+      "content": "P&ID 与 Line List 变更应同步升版，版次号保持一致。",
+      "keywords": [
+        "版次",
+        "变更同步"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01"
+      ],
+      "category": "HG20570-PID-深化"
+    },
+    {
+      "clause_id": "HGT205702015-6-1-f",
+      "source_type": "standard",
+      "source_id": "HG/T 20570-2015",
+      "version": "2015",
+      "discipline": "PX",
+      "clause": "6.1",
+      "content": "P&ID 30% 版应完成主要设备位号及进出料管线连接关系。",
+      "keywords": [
+        "30% P&ID",
+        "设备位号"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01"
+      ],
+      "category": "HG20570-PID-深化"
+    },
+    {
+      "clause_id": "HGT205702015-6-2-f",
+      "source_type": "standard",
+      "source_id": "HG/T 20570-2015",
+      "version": "2015",
+      "discipline": "PX",
+      "clause": "6.2",
+      "content": "P&ID 60% 版应完成主要管道尺寸及管道等级表。",
+      "keywords": [
+        "60% P&ID",
+        "管径"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-S02"
+      ],
+      "category": "HG20570-PID-深化"
+    },
+    {
+      "clause_id": "HGT205702015-6-3-f",
+      "source_type": "standard",
+      "source_id": "HG/T 20570-2015",
+      "version": "2015",
+      "discipline": "PX",
+      "clause": "6.3",
+      "content": "P&ID 90% 版应完成在线分析仪表、取样冷却器及导淋/放空细节。",
+      "keywords": [
+        "90% P&ID",
+        "在线分析"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-X02"
+      ],
+      "category": "HG20570-PID-深化"
+    },
+    {
+      "clause_id": "HGT205492020-3-5-f",
+      "source_type": "standard",
+      "source_id": "HG/T 20549-2020",
+      "version": "2020",
+      "discipline": "PX",
+      "clause": "3.5",
+      "content": "工艺管道初算管径应基于物料平衡流量及允许压降，并留 10~20% 裕量。",
+      "keywords": [
+        "管径初算",
+        "压降",
+        "裕量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S02"
+      ],
+      "category": "HG20549-水力"
+    },
+    {
+      "clause_id": "HGT205492020-3-6-f",
+      "source_type": "standard",
+      "source_id": "HG/T 20549-2020",
+      "version": "2020",
+      "discipline": "PX",
+      "clause": "3.6",
+      "content": "两相管道水力计算应校核最低输送速度，防止积液或堵塞。",
+      "keywords": [
+        "两相",
+        "最低速度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S02"
+      ],
+      "category": "HG20549-水力"
+    },
+    {
+      "clause_id": "HGT205492020-4-2-f",
+      "source_type": "standard",
+      "source_id": "HG/T 20549-2020",
+      "version": "2020",
+      "discipline": "PX",
+      "clause": "4.2",
+      "content": "泵吸入管道应满足 NPSHa > NPSHr + 0.5m 余量（一般要求）。",
+      "keywords": [
+        "NPSH",
+        "泵吸入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S02",
+        "PR-T05"
+      ],
+      "category": "HG20549-水力"
+    },
+    {
+      "clause_id": "HGT205492020-4-3-f",
+      "source_type": "standard",
+      "source_id": "HG/T 20549-2020",
+      "version": "2020",
+      "discipline": "PX",
+      "clause": "4.3",
+      "content": "蒸汽管道应校核临界流速及冷凝水排放能力。",
+      "keywords": [
+        "蒸汽",
+        "冷凝水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S02",
+        "PR-S04"
+      ],
+      "category": "HG20549-水力"
+    },
+    {
+      "clause_id": "APIRP520-8-2-f",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "PX",
+      "clause": "8.2",
+      "content": "对 fire case 泄放，应明确受火面积假设及环境因子选取依据。",
+      "keywords": [
+        "fire case",
+        "受火面积"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-T07"
+      ],
+      "category": "API520-深化"
+    },
+    {
+      "clause_id": "APIRP520-8-3-f",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "PX",
+      "clause": "8.3",
+      "content": "多个 PSV 并联时应评估进口管道压降对整定压力的影响。",
+      "keywords": [
+        "PSV并联",
+        "进口压降"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API520-深化"
+    },
+    {
+      "clause_id": "APIRP520-8-4-f",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "PX",
+      "clause": "8.4",
+      "content": "爆破片与 PSV 串联时，应标注爆破片更换周期及监测要求。",
+      "keywords": [
+        "爆破片",
+        "串联"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API520-深化"
+    },
+    {
+      "clause_id": "APIRP520-9-1-f",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "PX",
+      "clause": "9.1",
+      "content": "火炬分液罐设计应接收 PSV 排放液体量及携带液滴评估。",
+      "keywords": [
+        "火炬分液",
+        "液滴"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-S04"
+      ],
+      "category": "API520-深化"
+    },
+    {
+      "clause_id": "SHT31212022-9-6-f",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "PX",
+      "clause": "9.6",
+      "content": "紧急停车（ESD）系统应独立于 DCS，关键联锁应纳入 SIS。",
+      "keywords": [
+        "ESD",
+        "SIS",
+        "联锁"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05"
+      ],
+      "category": "SH/T3121-控制"
+    },
+    {
+      "clause_id": "SHT31212022-9-7-f",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "PX",
+      "clause": "9.7",
+      "content": "控制回路应标注 PV/SP/MV 及控制模式（手动/自动/串级）。",
+      "keywords": [
+        "控制回路",
+        "PV/SP/MV"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05"
+      ],
+      "category": "SH/T3121-控制"
+    },
+    {
+      "clause_id": "SHT31212022-9-8-f",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "PX",
+      "clause": "9.8",
+      "content": "对 Batch 或间歇操作，控制哲学应说明各阶段切换条件。",
+      "keywords": [
+        "Batch",
+        "间歇操作"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-D02"
+      ],
+      "category": "SH/T3121-控制"
+    },
+    {
+      "clause_id": "SHT31212022-10-1-f",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "PX",
+      "clause": "10.1",
+      "content": "分析仪表样品处理系统应满足响应时间及样品代表性要求。",
+      "keywords": [
+        "分析仪表",
+        "样品处理"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-X02"
+      ],
+      "category": "SH/T3121-控制"
+    },
+    {
+      "clause_id": "GBT509332013-5-3-8-f",
+      "source_type": "standard",
+      "source_id": "GB/T 50933-2013",
+      "version": "2013",
+      "discipline": "PX",
+      "clause": "5.3.8",
+      "content": "基础设计应提交主要取样点表，含取样位置、频次及分析项目。",
+      "keywords": [
+        "取样点",
+        "分析项目"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X02",
+        "PR-S01"
+      ],
+      "category": "GB50933-化验"
+    },
+    {
+      "clause_id": "GBT509332013-5-3-9-f",
+      "source_type": "standard",
+      "source_id": "GB/T 50933-2013",
+      "version": "2013",
+      "discipline": "PX",
+      "clause": "5.3.9",
+      "content": "对在线分析仪表，应明确样品条件（温度、压力、过滤）及排放去向。",
+      "keywords": [
+        "在线分析",
+        "样品条件"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X02",
+        "PR-S05"
+      ],
+      "category": "GB50933-化验"
+    },
+    {
+      "clause_id": "GBT509332013-6-2-6-f",
+      "source_type": "standard",
+      "source_id": "GB/T 50933-2013",
+      "version": "2013",
+      "discipline": "PX",
+      "clause": "6.2.6",
+      "content": "详细设计应提交分析化验室消耗品及标气清单（工艺侧需求）。",
+      "keywords": [
+        "标气",
+        "化验室"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X02"
+      ],
+      "category": "GB50933-化验"
+    },
+    {
+      "clause_id": "VDI-PR-MEOH-001-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-MEOH-001",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "MEOH-100 试点 P&ID 30% 应覆盖 48 个设备位号及 12 条主要控制回路。",
+      "keywords": [
+        "MEOH-100",
+        "P&ID 30%"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01"
+      ],
+      "category": "VDI工艺规则-MEOH"
+    },
+    {
+      "clause_id": "VDI-PR-MEOH-002-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-MEOH-002",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "MEOH-100 Line List 初稿应与 CAD fixture 32 条管线编号一致。",
+      "keywords": [
+        "MEOH-100",
+        "Line List"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-MEOH"
+    },
+    {
+      "clause_id": "VDI-PR-MEOH-003-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-MEOH-003",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "甲醇合成气管道应标注 H2/CO 比设计值及操作范围。",
+      "keywords": [
+        "合成气",
+        "H2/CO比"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-D02"
+      ],
+      "category": "VDI工艺规则-MEOH"
+    },
+    {
+      "clause_id": "VDI-PR-MEOH-004-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-MEOH-004",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "精馏塔 T-201 塔径试算应使用 PX1206-007，balance 后复核。",
+      "keywords": [
+        "T-201",
+        "PR-COL-001"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-T03",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-MEOH"
+    },
+    {
+      "clause_id": "VDI-PR-MEOH-005-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-MEOH-005",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "工艺包输出应包含 catalyst 装填量及预期更换周期（甲醇合成段）。",
+      "keywords": [
+        "催化剂",
+        "工艺包"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D01",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-MEOH"
+    },
+    {
+      "clause_id": "VDI-PR-MEOH-006-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-MEOH-006",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "PFD 发布前应完成物料平衡 closure 误差 < 1%。",
+      "keywords": [
+        "物料平衡",
+        "closure"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-D04"
+      ],
+      "category": "VDI工艺规则-MEOH"
+    },
+    {
+      "clause_id": "VDI-PR-MEOH-007-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-MEOH-007",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "PSV 位号清单应在 P&ID 30% 版标注，泄放量计算派 PX0504。",
+      "keywords": [
+        "PSV位号",
+        "派单"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-S03"
+      ],
+      "category": "VDI工艺规则-MEOH"
+    },
+    {
+      "clause_id": "VDI-PR-MEOH-008-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-MEOH-008",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "控制哲学初稿应在 P&ID 60% 前冻结主要回路设定。",
+      "keywords": [
+        "控制哲学",
+        "冻结"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-S01"
+      ],
+      "category": "VDI工艺规则-MEOH"
+    },
+    {
+      "clause_id": "VDI-PR-MEOH-009-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-MEOH-009",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "公用工程平衡应区分不同等级蒸汽及循环水用户清单。",
+      "keywords": [
+        "公用工程平衡"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S04",
+        "PR-D03"
+      ],
+      "category": "VDI工艺规则-MEOH"
+    },
+    {
+      "clause_id": "VDI-PR-MEOH-010-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-MEOH-010",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "HAZOP 前 P&ID 应完成节点划分及主要偏差清单。",
+      "keywords": [
+        "HAZOP",
+        "节点划分"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X01",
+        "PR-S01"
+      ],
+      "category": "VDI工艺规则-MEOH"
+    },
+    {
+      "clause_id": "VDI-PR-PFD-002-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-PFD-002",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "PFD 应标注主要控制回路功能描述，不限于位号。",
+      "keywords": [
+        "PFD",
+        "控制回路"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D04",
+        "PR-S05"
+      ],
+      "category": "VDI工艺规则-MEOH"
+    },
+    {
+      "clause_id": "VDI-PR-PFD-003-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-PFD-003",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "PFD 设备符号应与 P&ID 位号一一对应，作为位号唯一来源。",
+      "keywords": [
+        "PFD",
+        "位号对应"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D04",
+        "PR-S01"
+      ],
+      "category": "VDI工艺规则-MEOH"
+    },
+    {
+      "clause_id": "VDI-PR-BAL-002-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-BAL-002",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "热量平衡应给出主要换热器热负荷及冷却/加热公用工程需求。",
+      "keywords": [
+        "热量平衡",
+        "热负荷"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-S04"
+      ],
+      "category": "VDI工艺规则-MEOH"
+    },
+    {
+      "clause_id": "VDI-PR-BAL-003-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-BAL-003",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "对_recycle 流股，应明确循环量及累积杂质趋势分析。",
+      "keywords": [
+        "循环流股",
+        "杂质累积"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03"
+      ],
+      "category": "VDI工艺规则-MEOH"
+    },
+    {
+      "clause_id": "VDI-PR-EQP-003-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-EQP-003",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "塔器数据表应含理论板数、进料位置及侧线抽出方案。",
+      "keywords": [
+        "塔器",
+        "理论板数"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-T03"
+      ],
+      "category": "VDI工艺规则-MEOH"
+    },
+    {
+      "clause_id": "VDI-PR-EQP-004-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-EQP-004",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "反应器数据表应含催化剂体积、空速及预期转化率。",
+      "keywords": [
+        "反应器",
+        "空速",
+        "转化率"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-T04"
+      ],
+      "category": "VDI工艺规则-MEOH"
+    },
+    {
+      "clause_id": "VDI-PR-EQP-005-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-EQP-005",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "泵数据表应区分正常/最小/最大流量及 NPSH 可用条件。",
+      "keywords": [
+        "泵",
+        "NPSH",
+        "流量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-MEOH"
+    },
+    {
+      "clause_id": "VDI-PR-INT-004-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-INT-004",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "与配管接口：提供 Line List、管道等级初稿及特殊件清单。",
+      "keywords": [
+        "配管接口",
+        "Line List"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01"
+      ],
+      "category": "VDI工艺规则-MEOH"
+    },
+    {
+      "clause_id": "VDI-PR-INT-005-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-INT-005",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "与设备专业接口：提供设备数据表及 PFD/P&ID 设备一览。",
+      "keywords": [
+        "设备接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-S01"
+      ],
+      "category": "VDI工艺规则-MEOH"
+    },
+    {
+      "clause_id": "VDI-PR-STG-004-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-STG-004",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "IFC 版 P&ID 应完成所有管道编号、仪表位号及 PSV 整定值。",
+      "keywords": [
+        "IFC",
+        "P&ID终版"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01"
+      ],
+      "category": "VDI工艺规则-MEOH"
+    },
+    {
+      "clause_id": "HG2055711993-3-4-f",
+      "source_type": "standard",
+      "source_id": "HG 20557.1-1993",
+      "version": "1993",
+      "discipline": "PX",
+      "clause": "3.4",
+      "content": "PFD 应表示主要工艺设备、主要物流及公用工程接入点。",
+      "keywords": [
+        "PFD",
+        "公用工程接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D04"
+      ],
+      "category": "HG20557-PFD"
+    },
+    {
+      "clause_id": "HG2055711993-3-5-f",
+      "source_type": "standard",
+      "source_id": "HG 20557.1-1993",
+      "version": "1993",
+      "discipline": "PX",
+      "clause": "3.5",
+      "content": "PFD 可不表示次要阀门及详细管道编号。",
+      "keywords": [
+        "PFD",
+        "次要阀门"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D04"
+      ],
+      "category": "HG20557-PFD"
+    },
+    {
+      "clause_id": "GBT509332013-4-2-3-f",
+      "source_type": "standard",
+      "source_id": "GB/T 50933-2013",
+      "version": "2013",
+      "discipline": "PX",
+      "clause": "4.2.3",
+      "content": "工艺路线比选应给出技术、经济及安全环保对比结论。",
+      "keywords": [
+        "路线比选"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "GB50933-路线"
+    },
+    {
+      "clause_id": "GBT509332013-4-2-4-f",
+      "source_type": "standard",
+      "source_id": "GB/T 50933-2013",
+      "version": "2013",
+      "discipline": "PX",
+      "clause": "4.2.4",
+      "content": "工艺包应明确专利/专有技术边界及业主与供应商职责。",
+      "keywords": [
+        "工艺包",
+        "专有技术"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D01"
+      ],
+      "category": "GB50933-工艺包"
+    },
+    {
+      "clause_id": "SHT30112017-5-2-f",
+      "source_type": "standard",
+      "source_id": "SH/T 3011-2017",
+      "version": "2017",
+      "discipline": "PX",
+      "clause": "5.2",
+      "content": "装置布置设计输入应包含风向、火炬方位及主导运输路线。",
+      "keywords": [
+        "布置输入",
+        "风向"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D04"
+      ],
+      "category": "SH3011-布置"
+    },
+    {
+      "clause_id": "SHT30112017-6-3-f",
+      "source_type": "standard",
+      "source_id": "SH/T 3011-2017",
+      "version": "2017",
+      "discipline": "PX",
+      "clause": "6.3",
+      "content": "毒性介质设备应设置泄漏检测及紧急隔离措施。",
+      "keywords": [
+        "毒性",
+        "泄漏检测"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X01",
+        "PR-S01"
+      ],
+      "category": "SH3011-安全"
+    },
+    {
+      "clause_id": "APIRP521-4-1-f",
+      "source_type": "standard",
+      "source_id": "API RP 521",
+      "version": "2020",
+      "discipline": "PX",
+      "clause": "4.1",
+      "content": "泄压系统下游应评估火焰辐射及毒性组分扩散影响。",
+      "keywords": [
+        "泄压下游",
+        "火焰辐射"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API521"
+    },
+    {
+      "clause_id": "APIRP521-4-2-f",
+      "source_type": "standard",
+      "source_id": "API RP 521",
+      "version": "2020",
+      "discipline": "PX",
+      "clause": "4.2",
+      "content": "封闭泄压系统应校核背压对 PSV 泄放能力的影响。",
+      "keywords": [
+        "背压",
+        "泄放能力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-T07"
+      ],
+      "category": "API521"
+    },
+    {
+      "clause_id": "VDIPRSAF001-1-0-f",
+      "source_type": "standard",
+      "source_id": "VDI-PR-SAF-001",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "工艺安全分析输入应包含最新版 P&ID、操作指南及偏离清单。",
+      "keywords": [
+        "工艺安全",
+        "HAZOP输入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X01"
+      ],
+      "category": "VDI安全"
+    },
+    {
+      "clause_id": "VDIPRSAF002-1-0-f",
+      "source_type": "standard",
+      "source_id": "VDI-PR-SAF-002",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "LOPA 场景应基于 HAZOP 偏差，明确 IPL 及 PFD 要求。",
+      "keywords": [
+        "LOPA",
+        "IPL"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X01"
+      ],
+      "category": "VDI安全"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-001-精馏-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-001-精馏",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "精馏塔回流比应基于物料平衡及热力学模型确定。",
+      "keywords": [
+        "回流比",
+        "精馏"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-T03"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-001-吸收-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-001-吸收",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "吸收塔应明确吸收剂循环量及再生能耗。",
+      "keywords": [
+        "吸收塔",
+        "吸收剂"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-001-换热-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-001-换热",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "换热器选型应比较壳程/管程介质分配及清洗要求。",
+      "keywords": [
+        "换热器",
+        "壳程管程"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-T02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-001-泵-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-001-泵",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "离心泵最小流量应满足制造商曲线及工艺防喘振要求。",
+      "keywords": [
+        "离心泵",
+        "最小流量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-001-压缩机-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-001-压缩机",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "压缩机 antisurge 阀应能在最快响应时间内打开。",
+      "keywords": [
+        "压缩机",
+        "antisurge"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-001-储罐-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-001-储罐",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "储罐呼吸损失应估算并纳入 VOCs 排放清单。",
+      "keywords": [
+        "呼吸损失",
+        "VOCs"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-001-管道-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-001-管道",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "高温管道应明确热膨胀补偿方式及固定点位置。",
+      "keywords": [
+        "热膨胀",
+        "固定点"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-001-仪表-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-001-仪表",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "液位仪表应区分界面/总液位测量需求。",
+      "keywords": [
+        "液位",
+        "界面"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-S01"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-001-取样-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-001-取样",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "高温高压取样应设冷却/减压至安全条件。",
+      "keywords": [
+        "取样",
+        "冷却减压"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-001-火炬-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-001-火炬",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "火炬助燃气应保证无烟燃烧及最小热值要求。",
+      "keywords": [
+        "火炬",
+        "助燃气"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-S04"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-002-精馏-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-002-精馏",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "精馏塔回流比应基于物料平衡及热力学模型确定。",
+      "keywords": [
+        "回流比",
+        "精馏"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-T03"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-002-吸收-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-002-吸收",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "吸收塔应明确吸收剂循环量及再生能耗。",
+      "keywords": [
+        "吸收塔",
+        "吸收剂"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-002-换热-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-002-换热",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "换热器选型应比较壳程/管程介质分配及清洗要求。",
+      "keywords": [
+        "换热器",
+        "壳程管程"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-T02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-002-泵-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-002-泵",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "离心泵最小流量应满足制造商曲线及工艺防喘振要求。",
+      "keywords": [
+        "离心泵",
+        "最小流量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-002-压缩机-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-002-压缩机",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "压缩机 antisurge 阀应能在最快响应时间内打开。",
+      "keywords": [
+        "压缩机",
+        "antisurge"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-002-储罐-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-002-储罐",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "储罐呼吸损失应估算并纳入 VOCs 排放清单。",
+      "keywords": [
+        "呼吸损失",
+        "VOCs"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-002-管道-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-002-管道",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "高温管道应明确热膨胀补偿方式及固定点位置。",
+      "keywords": [
+        "热膨胀",
+        "固定点"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-002-仪表-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-002-仪表",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "液位仪表应区分界面/总液位测量需求。",
+      "keywords": [
+        "液位",
+        "界面"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-S01"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-002-取样-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-002-取样",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "高温高压取样应设冷却/减压至安全条件。",
+      "keywords": [
+        "取样",
+        "冷却减压"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-002-火炬-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-002-火炬",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "火炬助燃气应保证无烟燃烧及最小热值要求。",
+      "keywords": [
+        "火炬",
+        "助燃气"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-S04"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-003-精馏-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-003-精馏",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "精馏塔回流比应基于物料平衡及热力学模型确定。",
+      "keywords": [
+        "回流比",
+        "精馏"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-T03"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-003-吸收-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-003-吸收",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "吸收塔应明确吸收剂循环量及再生能耗。",
+      "keywords": [
+        "吸收塔",
+        "吸收剂"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-003-换热-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-003-换热",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "换热器选型应比较壳程/管程介质分配及清洗要求。",
+      "keywords": [
+        "换热器",
+        "壳程管程"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-T02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-003-泵-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-003-泵",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "离心泵最小流量应满足制造商曲线及工艺防喘振要求。",
+      "keywords": [
+        "离心泵",
+        "最小流量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-003-压缩机-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-003-压缩机",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "压缩机 antisurge 阀应能在最快响应时间内打开。",
+      "keywords": [
+        "压缩机",
+        "antisurge"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-003-储罐-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-003-储罐",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "储罐呼吸损失应估算并纳入 VOCs 排放清单。",
+      "keywords": [
+        "呼吸损失",
+        "VOCs"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-003-管道-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-003-管道",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "高温管道应明确热膨胀补偿方式及固定点位置。",
+      "keywords": [
+        "热膨胀",
+        "固定点"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-003-仪表-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-003-仪表",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "液位仪表应区分界面/总液位测量需求。",
+      "keywords": [
+        "液位",
+        "界面"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-S01"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-003-取样-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-003-取样",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "高温高压取样应设冷却/减压至安全条件。",
+      "keywords": [
+        "取样",
+        "冷却减压"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-003-火炬-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-003-火炬",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "火炬助燃气应保证无烟燃烧及最小热值要求。",
+      "keywords": [
+        "火炬",
+        "助燃气"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-S04"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-004-精馏-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-004-精馏",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "精馏塔回流比应基于物料平衡及热力学模型确定。",
+      "keywords": [
+        "回流比",
+        "精馏"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-T03"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-004-吸收-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-004-吸收",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "吸收塔应明确吸收剂循环量及再生能耗。",
+      "keywords": [
+        "吸收塔",
+        "吸收剂"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-004-换热-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-004-换热",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "换热器选型应比较壳程/管程介质分配及清洗要求。",
+      "keywords": [
+        "换热器",
+        "壳程管程"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-T02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-004-泵-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-004-泵",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "离心泵最小流量应满足制造商曲线及工艺防喘振要求。",
+      "keywords": [
+        "离心泵",
+        "最小流量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-004-压缩机-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-004-压缩机",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "压缩机 antisurge 阀应能在最快响应时间内打开。",
+      "keywords": [
+        "压缩机",
+        "antisurge"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-004-储罐-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-004-储罐",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "储罐呼吸损失应估算并纳入 VOCs 排放清单。",
+      "keywords": [
+        "呼吸损失",
+        "VOCs"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-004-管道-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-004-管道",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "高温管道应明确热膨胀补偿方式及固定点位置。",
+      "keywords": [
+        "热膨胀",
+        "固定点"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-004-仪表-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-004-仪表",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "液位仪表应区分界面/总液位测量需求。",
+      "keywords": [
+        "液位",
+        "界面"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-S01"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-004-取样-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-004-取样",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "高温高压取样应设冷却/减压至安全条件。",
+      "keywords": [
+        "取样",
+        "冷却减压"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-004-火炬-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-004-火炬",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "火炬助燃气应保证无烟燃烧及最小热值要求。",
+      "keywords": [
+        "火炬",
+        "助燃气"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-S04"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-005-精馏-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-005-精馏",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "精馏塔回流比应基于物料平衡及热力学模型确定。",
+      "keywords": [
+        "回流比",
+        "精馏"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-T03"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-005-吸收-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-005-吸收",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "吸收塔应明确吸收剂循环量及再生能耗。",
+      "keywords": [
+        "吸收塔",
+        "吸收剂"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-005-换热-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-005-换热",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "换热器选型应比较壳程/管程介质分配及清洗要求。",
+      "keywords": [
+        "换热器",
+        "壳程管程"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-T02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-005-泵-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-005-泵",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "离心泵最小流量应满足制造商曲线及工艺防喘振要求。",
+      "keywords": [
+        "离心泵",
+        "最小流量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-005-压缩机-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-005-压缩机",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "压缩机 antisurge 阀应能在最快响应时间内打开。",
+      "keywords": [
+        "压缩机",
+        "antisurge"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-005-储罐-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-005-储罐",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "储罐呼吸损失应估算并纳入 VOCs 排放清单。",
+      "keywords": [
+        "呼吸损失",
+        "VOCs"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-005-管道-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-005-管道",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "高温管道应明确热膨胀补偿方式及固定点位置。",
+      "keywords": [
+        "热膨胀",
+        "固定点"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-005-仪表-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-005-仪表",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "液位仪表应区分界面/总液位测量需求。",
+      "keywords": [
+        "液位",
+        "界面"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-S01"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-005-取样-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-005-取样",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "高温高压取样应设冷却/减压至安全条件。",
+      "keywords": [
+        "取样",
+        "冷却减压"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-005-火炬-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-005-火炬",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "火炬助燃气应保证无烟燃烧及最小热值要求。",
+      "keywords": [
+        "火炬",
+        "助燃气"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-S04"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-006-精馏-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-006-精馏",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "精馏塔回流比应基于物料平衡及热力学模型确定。",
+      "keywords": [
+        "回流比",
+        "精馏"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-T03"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-006-吸收-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-006-吸收",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "吸收塔应明确吸收剂循环量及再生能耗。",
+      "keywords": [
+        "吸收塔",
+        "吸收剂"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-006-换热-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-006-换热",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "换热器选型应比较壳程/管程介质分配及清洗要求。",
+      "keywords": [
+        "换热器",
+        "壳程管程"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-T02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-006-泵-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-006-泵",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "离心泵最小流量应满足制造商曲线及工艺防喘振要求。",
+      "keywords": [
+        "离心泵",
+        "最小流量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-006-压缩机-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-006-压缩机",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "压缩机 antisurge 阀应能在最快响应时间内打开。",
+      "keywords": [
+        "压缩机",
+        "antisurge"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-006-储罐-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-006-储罐",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "储罐呼吸损失应估算并纳入 VOCs 排放清单。",
+      "keywords": [
+        "呼吸损失",
+        "VOCs"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-006-管道-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-006-管道",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "高温管道应明确热膨胀补偿方式及固定点位置。",
+      "keywords": [
+        "热膨胀",
+        "固定点"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-006-仪表-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-006-仪表",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "液位仪表应区分界面/总液位测量需求。",
+      "keywords": [
+        "液位",
+        "界面"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-S01"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-006-取样-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-006-取样",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "高温高压取样应设冷却/减压至安全条件。",
+      "keywords": [
+        "取样",
+        "冷却减压"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-006-火炬-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-006-火炬",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "火炬助燃气应保证无烟燃烧及最小热值要求。",
+      "keywords": [
+        "火炬",
+        "助燃气"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-S04"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-007-精馏-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-007-精馏",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "精馏塔回流比应基于物料平衡及热力学模型确定。",
+      "keywords": [
+        "回流比",
+        "精馏"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-T03"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-007-吸收-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-007-吸收",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "吸收塔应明确吸收剂循环量及再生能耗。",
+      "keywords": [
+        "吸收塔",
+        "吸收剂"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-007-换热-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-007-换热",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "换热器选型应比较壳程/管程介质分配及清洗要求。",
+      "keywords": [
+        "换热器",
+        "壳程管程"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-T02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-007-泵-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-007-泵",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "离心泵最小流量应满足制造商曲线及工艺防喘振要求。",
+      "keywords": [
+        "离心泵",
+        "最小流量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-007-压缩机-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-007-压缩机",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "压缩机 antisurge 阀应能在最快响应时间内打开。",
+      "keywords": [
+        "压缩机",
+        "antisurge"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-007-储罐-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-007-储罐",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "储罐呼吸损失应估算并纳入 VOCs 排放清单。",
+      "keywords": [
+        "呼吸损失",
+        "VOCs"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-007-管道-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-007-管道",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "高温管道应明确热膨胀补偿方式及固定点位置。",
+      "keywords": [
+        "热膨胀",
+        "固定点"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-007-仪表-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-007-仪表",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "液位仪表应区分界面/总液位测量需求。",
+      "keywords": [
+        "液位",
+        "界面"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-S01"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-007-取样-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-007-取样",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "高温高压取样应设冷却/减压至安全条件。",
+      "keywords": [
+        "取样",
+        "冷却减压"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-007-火炬-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-007-火炬",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "火炬助燃气应保证无烟燃烧及最小热值要求。",
+      "keywords": [
+        "火炬",
+        "助燃气"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-S04"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-008-精馏-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-008-精馏",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "精馏塔回流比应基于物料平衡及热力学模型确定。",
+      "keywords": [
+        "回流比",
+        "精馏"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-T03"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-008-吸收-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-008-吸收",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "吸收塔应明确吸收剂循环量及再生能耗。",
+      "keywords": [
+        "吸收塔",
+        "吸收剂"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-008-换热-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-008-换热",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "换热器选型应比较壳程/管程介质分配及清洗要求。",
+      "keywords": [
+        "换热器",
+        "壳程管程"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-T02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-008-泵-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-008-泵",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "离心泵最小流量应满足制造商曲线及工艺防喘振要求。",
+      "keywords": [
+        "离心泵",
+        "最小流量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-008-压缩机-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-008-压缩机",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "压缩机 antisurge 阀应能在最快响应时间内打开。",
+      "keywords": [
+        "压缩机",
+        "antisurge"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-008-储罐-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-008-储罐",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "储罐呼吸损失应估算并纳入 VOCs 排放清单。",
+      "keywords": [
+        "呼吸损失",
+        "VOCs"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-008-管道-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-008-管道",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "高温管道应明确热膨胀补偿方式及固定点位置。",
+      "keywords": [
+        "热膨胀",
+        "固定点"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-008-仪表-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-008-仪表",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "液位仪表应区分界面/总液位测量需求。",
+      "keywords": [
+        "液位",
+        "界面"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-S01"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-008-取样-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-008-取样",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "高温高压取样应设冷却/减压至安全条件。",
+      "keywords": [
+        "取样",
+        "冷却减压"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-008-火炬-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-008-火炬",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "火炬助燃气应保证无烟燃烧及最小热值要求。",
+      "keywords": [
+        "火炬",
+        "助燃气"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-S04"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-009-精馏-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-009-精馏",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "精馏塔回流比应基于物料平衡及热力学模型确定。",
+      "keywords": [
+        "回流比",
+        "精馏"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-T03"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-009-吸收-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-009-吸收",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "吸收塔应明确吸收剂循环量及再生能耗。",
+      "keywords": [
+        "吸收塔",
+        "吸收剂"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-009-换热-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-009-换热",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "换热器选型应比较壳程/管程介质分配及清洗要求。",
+      "keywords": [
+        "换热器",
+        "壳程管程"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-T02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-009-泵-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-009-泵",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "离心泵最小流量应满足制造商曲线及工艺防喘振要求。",
+      "keywords": [
+        "离心泵",
+        "最小流量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-009-压缩机-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-009-压缩机",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "压缩机 antisurge 阀应能在最快响应时间内打开。",
+      "keywords": [
+        "压缩机",
+        "antisurge"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-009-储罐-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-009-储罐",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "储罐呼吸损失应估算并纳入 VOCs 排放清单。",
+      "keywords": [
+        "呼吸损失",
+        "VOCs"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-009-管道-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-009-管道",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "高温管道应明确热膨胀补偿方式及固定点位置。",
+      "keywords": [
+        "热膨胀",
+        "固定点"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-009-仪表-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-009-仪表",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "液位仪表应区分界面/总液位测量需求。",
+      "keywords": [
+        "液位",
+        "界面"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-S01"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-009-取样-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-009-取样",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "高温高压取样应设冷却/减压至安全条件。",
+      "keywords": [
+        "取样",
+        "冷却减压"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-009-火炬-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-009-火炬",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "火炬助燃气应保证无烟燃烧及最小热值要求。",
+      "keywords": [
+        "火炬",
+        "助燃气"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-S04"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-010-精馏-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-010-精馏",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "精馏塔回流比应基于物料平衡及热力学模型确定。",
+      "keywords": [
+        "回流比",
+        "精馏"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-T03"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-010-吸收-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-010-吸收",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "吸收塔应明确吸收剂循环量及再生能耗。",
+      "keywords": [
+        "吸收塔",
+        "吸收剂"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-010-换热-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-010-换热",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "换热器选型应比较壳程/管程介质分配及清洗要求。",
+      "keywords": [
+        "换热器",
+        "壳程管程"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-T02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-010-泵-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-010-泵",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "离心泵最小流量应满足制造商曲线及工艺防喘振要求。",
+      "keywords": [
+        "离心泵",
+        "最小流量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-010-压缩机-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-010-压缩机",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "压缩机 antisurge 阀应能在最快响应时间内打开。",
+      "keywords": [
+        "压缩机",
+        "antisurge"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-010-储罐-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-010-储罐",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "储罐呼吸损失应估算并纳入 VOCs 排放清单。",
+      "keywords": [
+        "呼吸损失",
+        "VOCs"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-010-管道-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-010-管道",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "高温管道应明确热膨胀补偿方式及固定点位置。",
+      "keywords": [
+        "热膨胀",
+        "固定点"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-010-仪表-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-010-仪表",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "液位仪表应区分界面/总液位测量需求。",
+      "keywords": [
+        "液位",
+        "界面"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-S01"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-010-取样-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-010-取样",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "高温高压取样应设冷却/减压至安全条件。",
+      "keywords": [
+        "取样",
+        "冷却减压"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-010-火炬-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-010-火炬",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "火炬助燃气应保证无烟燃烧及最小热值要求。",
+      "keywords": [
+        "火炬",
+        "助燃气"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-S04"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-011-精馏-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-011-精馏",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "精馏塔回流比应基于物料平衡及热力学模型确定。",
+      "keywords": [
+        "回流比",
+        "精馏"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-T03"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-011-吸收-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-011-吸收",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "吸收塔应明确吸收剂循环量及再生能耗。",
+      "keywords": [
+        "吸收塔",
+        "吸收剂"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-011-换热-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-011-换热",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "换热器选型应比较壳程/管程介质分配及清洗要求。",
+      "keywords": [
+        "换热器",
+        "壳程管程"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-T02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-011-泵-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-011-泵",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "离心泵最小流量应满足制造商曲线及工艺防喘振要求。",
+      "keywords": [
+        "离心泵",
+        "最小流量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-011-压缩机-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-011-压缩机",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "压缩机 antisurge 阀应能在最快响应时间内打开。",
+      "keywords": [
+        "压缩机",
+        "antisurge"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-011-储罐-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-011-储罐",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "储罐呼吸损失应估算并纳入 VOCs 排放清单。",
+      "keywords": [
+        "呼吸损失",
+        "VOCs"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-011-管道-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-011-管道",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "高温管道应明确热膨胀补偿方式及固定点位置。",
+      "keywords": [
+        "热膨胀",
+        "固定点"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-011-仪表-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-011-仪表",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "液位仪表应区分界面/总液位测量需求。",
+      "keywords": [
+        "液位",
+        "界面"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-S01"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-011-取样-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-011-取样",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "高温高压取样应设冷却/减压至安全条件。",
+      "keywords": [
+        "取样",
+        "冷却减压"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-011-火炬-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-011-火炬",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "火炬助燃气应保证无烟燃烧及最小热值要求。",
+      "keywords": [
+        "火炬",
+        "助燃气"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-S04"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-012-精馏-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-012-精馏",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "精馏塔回流比应基于物料平衡及热力学模型确定。",
+      "keywords": [
+        "回流比",
+        "精馏"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-T03"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-012-吸收-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-012-吸收",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "吸收塔应明确吸收剂循环量及再生能耗。",
+      "keywords": [
+        "吸收塔",
+        "吸收剂"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-012-换热-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-012-换热",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "换热器选型应比较壳程/管程介质分配及清洗要求。",
+      "keywords": [
+        "换热器",
+        "壳程管程"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-T02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-012-泵-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-012-泵",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "离心泵最小流量应满足制造商曲线及工艺防喘振要求。",
+      "keywords": [
+        "离心泵",
+        "最小流量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-012-压缩机-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-012-压缩机",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "压缩机 antisurge 阀应能在最快响应时间内打开。",
+      "keywords": [
+        "压缩机",
+        "antisurge"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-012-储罐-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-012-储罐",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "储罐呼吸损失应估算并纳入 VOCs 排放清单。",
+      "keywords": [
+        "呼吸损失",
+        "VOCs"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-通用"
+    },
+    {
+      "clause_id": "VDI-PR-GEN-012-管道-f",
+      "source_type": "rule",
+      "source_id": "VDI-PR-GEN-012-管道",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "高温管道应明确热膨胀补偿方式及固定点位置。",
+      "keywords": [
+        "热膨胀",
+        "固定点"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-S02"
+      ],
+      "category": "VDI工艺规则-通用"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "symbol_id": "FITTING-ELBOW45-001",
+  "name": "45°弯头",
+  "name_en": "45° Elbow",
+  "standard": "GB/T 12459",
+  "category": "piping",
+  "sub_category": "fittings",
+  "description": "45°弯头",
+  "parameters": {
+    "diameter": {
+      "type": "string",
+      "description": "公称直径"
+    },
+    "material": {
+      "type": "string",
+      "description": "材质"
+    }
+  },
+  "connections": {
+    "inlet": {
+      "position": {"x": -15, "y": 0},
+      "direction": "left"
+    },
+    "outlet": {
+      "position": {"x": 10, "y": 10},
+      "direction": "up-right"
+    }
+  },
+  "geometry": {
+    "components": [
+      {
+        "type": "arc",
+        "params": {"radius": 15, "start_angle": 0, "end_angle": 45},
+        "description": "弯头弧线"
+      }
+    ]
+  },
+  "related_standards": ["GB/T 12459", "ASME B16.9"],
+  "typical_applications": ["管道转向"]
+}

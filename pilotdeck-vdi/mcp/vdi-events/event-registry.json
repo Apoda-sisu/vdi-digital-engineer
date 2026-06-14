@@ -7,17 +7,17 @@
     "design_basis.updated": {
       "description": "工艺设计基础变更（介质、温度、压力、流量等关键参数更新）",
       "produced_by": [
-        "PR",
-        "SY"
+        "PX",
+        "JA"
       ],
       "subscribers": [
-        "PI",
+        "MP",
         "IN",
-        "EQ",
-        "WA",
+        "MX",
+        "CI",
         "HS",
-        "MA",
-        "EL"
+        "RA",
+        "EA"
       ],
       "priority": "high",
       "requires_ack": true,
@@ -32,7 +32,7 @@
         "payload_example": {
           "object_id": "BASIS-001",
           "object_type": "DesignBasis",
-          "discipline": "PR",
+          "discipline": "PX",
           "basis_items": [
             {
               "tag_id": "EQP-R-1001",
@@ -59,17 +59,17 @@
     "design_basis.acknowledged": {
       "description": "下游专业确认已收到并处理设计基础变更",
       "produced_by": [
-        "PI",
+        "MP",
         "IN",
-        "EQ",
-        "WA",
+        "MX",
+        "CI",
         "HS",
-        "MA",
-        "EL"
+        "RA",
+        "EA"
       ],
       "subscribers": [
-        "PR",
-        "SY"
+        "PX",
+        "JA"
       ],
       "priority": "medium",
       "requires_ack": false,
@@ -93,66 +93,65 @@
         "*"
       ],
       "subscribers_by_discipline": {
-        "PR": [
-          "PI",
+        "PX": [
+          "MP",
           "IN",
-          "EQ",
-          "WA",
+          "MX",
+          "CI",
           "HS",
-          "MA"
+          "RA"
         ],
-        "SY": [
-          "PR",
-          "PI",
-          "EQ",
-          "MP"
+        "JA": [
+          "PX",
+          "MP",
+          "MX"
         ],
-        "PI": [
+        "MP": [
           "IN",
-          "ST",
-          "WA",
-          "MA",
-          "EL"
+          "CS",
+          "CI",
+          "RA",
+          "EA"
         ],
         "IN": [
-          "EL",
-          "PI",
-          "ST",
-          "AR"
+          "EA",
+          "MP",
+          "CS",
+          "CB"
         ],
-        "EQ": [
-          "ST",
-          "PI",
+        "MX": [
+          "CS",
+          "MP",
           "IN"
         ],
-        "WA": [
-          "FI",
-          "EL",
-          "PI",
-          "MA"
+        "CI": [
+          "HX",
+          "EA",
+          "MP",
+          "RA"
         ],
-        "EL": [
+        "EA": [
           "IN",
-          "PI",
-          "AR",
-          "ST"
+          "MP",
+          "CB",
+          "CS"
         ],
         "HS": [
-          "PR",
-          "WA"
+          "PX",
+          "CI"
         ],
-        "MA": [
-          "PI",
+        "RA": [
+          "MP",
           "IN"
         ],
-        "ST": [
-          "AR",
-          "PI"
+        "CS": [
+          "CB",
+          "MP"
         ],
-        "AR": [
-          "ST",
-          "PI",
-          "WA"
+        "CB": [
+          "CS",
+          "MP",
+          "CI"
         ]
       },
       "priority": "high",
@@ -163,42 +162,42 @@
       "description": "外部条件变更（如总图竖向标高、建筑防火分区调整、供电容量变化）",
       "produced_by": [
         "SI",
-        "AR",
-        "EL",
-        "ST",
-        "WA"
+        "CB",
+        "EA",
+        "CS",
+        "CI"
       ],
       "subscribers_by_discipline": {
         "SI": [
-          "PI",
-          "WA",
-          "EL",
-          "AR"
+          "MP",
+          "CI",
+          "EA",
+          "CB"
         ],
-        "AR": [
-          "WA",
-          "EL",
-          "HV",
-          "PI",
-          "ST"
+        "CB": [
+          "CI",
+          "EA",
+          "MH",
+          "MP",
+          "CS"
         ],
-        "EL": [
+        "EA": [
           "IN",
-          "EQ",
-          "WA",
-          "HV",
-          "PI"
+          "MX",
+          "CI",
+          "MH",
+          "MP"
         ],
-        "ST": [
-          "PI",
-          "WA",
-          "EL",
-          "AR"
+        "CS": [
+          "MP",
+          "CI",
+          "EA",
+          "CB"
         ],
-        "WA": [
-          "PI",
+        "CI": [
+          "MP",
           "IN",
-          "EL"
+          "EA"
         ]
       },
       "priority": "high",
@@ -208,14 +207,14 @@
     "piping_layout.updated": {
       "description": "管道布置更新（管道走向、标高、支架位置变更）",
       "produced_by": [
-        "PI"
+        "MP"
       ],
       "subscribers": [
         "IN",
-        "EL",
-        "ST",
-        "WA",
-        "MA"
+        "EA",
+        "CS",
+        "CI",
+        "RA"
       ],
       "priority": "high",
       "requires_ack": true,
@@ -248,9 +247,9 @@
         "IN"
       ],
       "subscribers": [
-        "PI",
-        "EL",
-        "ST"
+        "MP",
+        "EA",
+        "CS"
       ],
       "priority": "medium",
       "requires_ack": true,
@@ -259,13 +258,13 @@
     "electrical_layout.updated": {
       "description": "电气布置更新（电缆桥架走向、配电盘位置变更）",
       "produced_by": [
-        "EL"
+        "EA"
       ],
       "subscribers": [
-        "PI",
+        "MP",
         "IN",
-        "ST",
-        "AR"
+        "CS",
+        "CB"
       ],
       "priority": "medium",
       "requires_ack": true,
@@ -274,13 +273,13 @@
     "structural_condition.updated": {
       "description": "结构条件更新（基础、预埋件、开孔条件变更）",
       "produced_by": [
-        "ST"
+        "CS"
       ],
       "subscribers": [
-        "PI",
+        "MP",
         "IN",
-        "EQ",
-        "WA"
+        "MX",
+        "CI"
       ],
       "priority": "high",
       "requires_ack": true,
@@ -289,13 +288,13 @@
     "equipment_data.updated": {
       "description": "设备数据更新（设备参数、管口方位变更）",
       "produced_by": [
-        "EQ"
+        "MX"
       ],
       "subscribers": [
-        "PI",
+        "MP",
         "IN",
-        "WA",
-        "ST"
+        "CI",
+        "CS"
       ],
       "priority": "high",
       "requires_ack": true,
@@ -304,12 +303,12 @@
     "water_condition.updated": {
       "description": "给排水条件更新（用水量、排水量、水质参数变更）",
       "produced_by": [
-        "WA"
+        "CI"
       ],
       "subscribers": [
-        "FI",
-        "EL",
-        "PI",
+        "HX",
+        "EA",
+        "MP",
         "IN"
       ],
       "priority": "medium",
@@ -319,12 +318,12 @@
     "fire_condition.updated": {
       "description": "消防条件更新（消防用水量、消防设施变更）",
       "produced_by": [
-        "FI"
+        "HX"
       ],
       "subscribers": [
-        "WA",
-        "EL",
-        "PI"
+        "CI",
+        "EA",
+        "MP"
       ],
       "priority": "high",
       "requires_ack": true,
@@ -333,12 +332,12 @@
     "hvac_condition.updated": {
       "description": "暖通条件更新（通风、空调参数变更）",
       "produced_by": [
-        "HV"
+        "MH"
       ],
       "subscribers": [
-        "WA",
-        "EL",
-        "PI"
+        "CI",
+        "EA",
+        "MP"
       ],
       "priority": "medium",
       "requires_ack": true,
@@ -347,10 +346,10 @@
     "material_data.updated": {
       "description": "材料数据更新（管道等级、材料规格变更）",
       "produced_by": [
-        "MA"
+        "RA"
       ],
       "subscribers": [
-        "PI",
+        "MP",
         "IN"
       ],
       "priority": "medium",
@@ -360,10 +359,10 @@
     "stress_analysis.completed": {
       "description": "应力分析完成（临界管系应力分析结果）",
       "produced_by": [
-        "ST"
+        "CS"
       ],
       "subscribers": [
-        "PI"
+        "MP"
       ],
       "priority": "high",
       "requires_ack": true,
@@ -375,7 +374,7 @@
         "*"
       ],
       "subscribers": [
-        "MG"
+        "AA"
       ],
       "priority": "medium",
       "requires_ack": false,
@@ -388,7 +387,7 @@
         "*"
       ],
       "subscribers": [
-        "MG"
+        "AA"
       ],
       "priority": "high",
       "requires_ack": true,
@@ -400,7 +399,7 @@
         "*"
       ],
       "subscribers": [
-        "MG"
+        "AA"
       ],
       "priority": "low",
       "requires_ack": false,
@@ -409,10 +408,10 @@
     "milestone.at_risk": {
       "description": "里程碑存在滞后风险（偏差 ≥ 2 天）",
       "produced_by": [
-        "MG"
+        "AA"
       ],
       "subscribers": [
-        "MG"
+        "AA"
       ],
       "priority": "critical",
       "requires_ack": true,
@@ -421,10 +420,10 @@
     "milestone.achieved": {
       "description": "里程碑达成",
       "produced_by": [
-        "MG"
+        "AA"
       ],
       "subscribers": [
-        "MG",
+        "AA",
         "QA"
       ],
       "priority": "medium",
@@ -437,7 +436,7 @@
         "*"
       ],
       "subscribers": [
-        "MG"
+        "AA"
       ],
       "priority": "critical",
       "requires_ack": true,
@@ -453,7 +452,7 @@
         "payload_example": {
           "project_id": "VDI-PILOT-A",
           "wbs_id": "1",
-          "discipline": "WA",
+          "discipline": "CI",
           "sub_discipline": "S",
           "checkpoint": "CP-0",
           "missing_fields": [
@@ -469,7 +468,7 @@
     "human.data_supplied": {
       "description": "人类已补充缺失数据，Skill 可以恢复执行。",
       "produced_by": [
-        "MG"
+        "AA"
       ],
       "subscribers": [
         "*"
@@ -500,7 +499,7 @@
         "*"
       ],
       "subscribers": [
-        "MG"
+        "AA"
       ],
       "priority": "high",
       "requires_ack": true,
@@ -530,7 +529,7 @@
     "human.review_resolved": {
       "description": "人类对检查点做出决策：批准/驳回/修改。Skill 根据决策继续执行或回退修改。",
       "produced_by": [
-        "MG"
+        "AA"
       ],
       "subscribers": [
         "*"
@@ -559,10 +558,10 @@
       "description": "采购请求（仪表、设备采购技术要求）",
       "produced_by": [
         "IN",
-        "EQ"
+        "MX"
       ],
       "subscribers": [
-        "PROC"
+        "VA"
       ],
       "priority": "high",
       "requires_ack": true,
@@ -592,11 +591,11 @@
     "procurement.acknowledged": {
       "description": "采购部门确认收到采购请求",
       "produced_by": [
-        "PROC"
+        "VA"
       ],
       "subscribers": [
         "IN",
-        "EQ"
+        "MX"
       ],
       "priority": "medium",
       "requires_ack": false,
@@ -605,14 +604,14 @@
     "model_review.scheduled": {
       "description": "模型审查安排（30%/60%/90%模型审查）",
       "produced_by": [
-        "PI"
+        "MP"
       ],
       "subscribers": [
         "IN",
-        "EL",
-        "ST",
-        "EQ",
-        "WA"
+        "EA",
+        "CS",
+        "MX",
+        "CI"
       ],
       "priority": "high",
       "requires_ack": true,
@@ -621,10 +620,10 @@
     "model_review.completed": {
       "description": "模型审查完成",
       "produced_by": [
-        "PI"
+        "MP"
       ],
       "subscribers": [
-        "MG",
+        "AA",
         "QA"
       ],
       "priority": "medium",
@@ -633,21 +632,21 @@
     }
   },
   "subscriber_lookup": {
-    "PR": {
+    "PX": {
       "subscribes_to": [
         "design_basis.acknowledged",
         "review_gate.failed"
       ],
       "lead_code": "PR0L"
     },
-    "SY": {
+    "JA": {
       "subscribes_to": [
         "design_basis.acknowledged",
         "discipline_output.published"
       ],
       "lead_code": null
     },
-    "WA": {
+    "CI": {
       "subscribes_to": [
         "design_basis.updated",
         "condition.changed",
@@ -655,18 +654,10 @@
       ],
       "lead_code": "WA0L"
     },
-    "PI": {
-      "subscribes_to": [
-        "design_basis.updated",
-        "discipline_output.published",
-        "condition.changed",
-        "piping_layout.updated",
-        "instrument_location.updated",
-        "electrical_layout.updated",
-        "structural_condition.updated",
-        "equipment_data.updated"
-      ],
-      "lead_code": null
+    "MP": {
+      "name": "配管工程",
+      "skill_group": "vdi-piping-lead",
+      "status": "active"
     },
     "IN": {
       "subscribes_to": [
@@ -679,7 +670,7 @@
       ],
       "lead_code": null
     },
-    "EQ": {
+    "MX": {
       "subscribes_to": [
         "design_basis.updated",
         "discipline_output.published",
@@ -688,7 +679,7 @@
       ],
       "lead_code": null
     },
-    "EL": {
+    "EA": {
       "subscribes_to": [
         "discipline_output.published",
         "condition.changed",
@@ -704,7 +695,7 @@
       ],
       "lead_code": null
     },
-    "FI": {
+    "HX": {
       "subscribes_to": [
         "discipline_output.published",
         "condition.changed",
@@ -712,14 +703,14 @@
       ],
       "lead_code": null
     },
-    "HV": {
+    "MH": {
       "subscribes_to": [
         "condition.changed",
         "electrical_layout.updated"
       ],
       "lead_code": null
     },
-    "ST": {
+    "CS": {
       "subscribes_to": [
         "discipline_output.published",
         "condition.changed",
@@ -730,27 +721,27 @@
       ],
       "lead_code": null
     },
-    "AR": {
+    "CB": {
       "subscribes_to": [
         "condition.changed",
         "electrical_layout.updated"
       ],
       "lead_code": null
     },
-    "MA": {
+    "RA": {
       "subscribes_to": [
         "discipline_output.published",
         "piping_layout.updated"
       ],
       "lead_code": null
     },
-    "PROC": {
+    "VA": {
       "subscribes_to": [
         "procurement.requested"
       ],
       "lead_code": null
     },
-    "MG": {
+    "AA": {
       "subscribes_to": [
         "review_gate.passed",
         "review_gate.failed",
@@ -774,60 +765,59 @@
     }
   },
   "_active_disciplines": [
-    "WA",
-    "PR",
-    "MG",
-    "PI",
+    "CI",
+    "PX",
+    "AA",
+    "MP",
     "IN",
-    "EL",
-    "EQ"
+    "EA",
+    "MX"
   ],
   "_pending_disciplines": [
-    "HV",
-    "FI",
+    "MH",
+    "HX",
     "HS",
-    "ST",
-    "AR",
+    "CS",
+    "CB",
     "SI",
-    "MA",
-    "PROC",
+    "RA",
+    "VA",
     "QA"
   ],
   "_note": "基于公司实际业务流程更新，增加了管道布置、仪表位置、电气布置、结构条件等事件类型",
   "_discipline_codes": {
-    "PR": "工艺专业",
-    "SY": "系统专业",
-    "WA": "给排水专业",
-    "PI": "管道专业",
+    "PX": "工艺专业",
+    "JA": "系统专业",
+    "CI": "给排水专业",
+    "MP": "管道专业",
     "IN": "自控专业",
-    "EQ": "设备专业",
-    "EL": "电气专业",
+    "MX": "设备专业",
+    "EA": "电气专业",
     "HS": "安全专业",
-    "FI": "消防专业",
-    "HV": "暖通专业",
-    "ST": "结构专业",
-    "AR": "建筑专业",
-    "MA": "材料专业",
-    "PROC": "采购部门",
-    "MG": "管理部门",
+    "HX": "消防专业",
+    "MH": "暖通专业",
+    "CS": "结构专业",
+    "CB": "建筑专业",
+    "RA": "材料专业",
+    "VA": "采购部门",
+    "AA": "管理部门",
     "QA": "质量部门"
   },
   "discipline_code_mapping": {
-    "PR": {
+    "PX": {
       "name": "工艺",
       "skill_group": "vdi-process-lead",
       "status": "active"
     },
-    "WA": {
+    "CI": {
       "name": "给排水",
       "skill_group": "vdi-water-lead",
       "status": "active"
     },
-    "PI": {
-      "name": "管道",
-      "skill_group": null,
-      "status": "pending",
-      "note": "待创建管道专业Skill"
+    "MP": {
+      "name": "项目管理",
+      "skill_group": "vdi-design-manager",
+      "status": "active"
     },
     "IN": {
       "name": "仪控",
@@ -835,49 +825,49 @@
       "status": "pending",
       "note": "待创建仪控专业Skill"
     },
-    "EL": {
+    "EA": {
       "name": "电气",
       "skill_group": null,
       "status": "pending",
       "note": "待创建电气专业Skill"
     },
-    "EQ": {
+    "MX": {
       "name": "设备",
       "skill_group": null,
       "status": "pending",
       "note": "待创建设备专业Skill"
     },
     "HS": {
-      "name": "HSE",
+      "name": "HS",
       "skill_group": null,
       "status": "pending",
       "note": "待创建HSE专业Skill"
     },
-    "ST": {
+    "CS": {
       "name": "结构",
       "skill_group": null,
       "status": "pending",
       "note": "待创建结构专业Skill"
     },
-    "AR": {
+    "CB": {
       "name": "建筑",
       "skill_group": null,
       "status": "pending",
       "note": "待创建建筑专业Skill"
     },
-    "MA": {
+    "RA": {
       "name": "材料",
       "skill_group": null,
       "status": "pending",
       "note": "待创建材料专业Skill"
     },
-    "HV": {
+    "MH": {
       "name": "暖通",
       "skill_group": null,
       "status": "pending",
       "note": "待创建暖通专业Skill"
     },
-    "FI": {
+    "HX": {
       "name": "消防",
       "skill_group": null,
       "status": "pending",
@@ -889,7 +879,7 @@
       "status": "pending",
       "note": "待创建总图专业Skill"
     },
-    "PROC": {
+    "VA": {
       "name": "采购",
       "skill_group": null,
       "status": "pending",
@@ -901,19 +891,14 @@
       "status": "pending",
       "note": "待创建质量部门Skill"
     },
-    "MG": {
+    "AA": {
       "name": "管理",
       "skill_group": "vdi-design-manager",
       "status": "active"
     },
-    "SY": {
+    "JA": {
       "name": "系统",
       "skill_group": "vdi-system-health",
-      "status": "active"
-    },
-    "MP": {
-      "name": "项目管理",
-      "skill_group": "vdi-design-manager",
       "status": "active"
     }
   }

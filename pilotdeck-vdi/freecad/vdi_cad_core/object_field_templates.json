@@ -1,0 +1,68 @@
+{
+  "version": "1.0",
+  "classes": {
+    "Equipment": {
+      "label": "设备",
+      "fields": [
+        { "key": "equipment_type", "label": "设备类型", "order": 1 },
+        { "key": "design_P_MPaG", "label": "设计压力", "unit": "MPa(g)", "order": 2 },
+        { "key": "design_T_C", "label": "设计温度", "unit": "°C", "order": 3 },
+        { "key": "oper_P_MPaG", "label": "操作压力", "unit": "MPa(g)", "order": 4 },
+        { "key": "oper_T_C", "label": "操作温度", "unit": "°C", "order": 5 },
+        { "key": "material", "label": "材质", "order": 6 },
+        { "key": "symbol_id", "label": "符号 ID", "order": 7 }
+      ]
+    },
+    "PipeRun": {
+      "label": "管段",
+      "fields": [
+        { "key": "dn", "label": "公称直径", "unit": "DN", "order": 1 },
+        { "key": "fluid", "label": "介质", "order": 2 },
+        { "key": "phase", "label": "相态", "order": 3 },
+        { "key": "design_P_MPaG", "label": "设计压力", "unit": "MPa(g)", "order": 4 },
+        { "key": "design_T_C", "label": "设计温度", "unit": "°C", "order": 5 },
+        { "key": "material", "label": "材质", "order": 6 },
+        { "key": "insulation", "label": "绝热", "order": 7 },
+        { "key": "from_tag", "label": "起点", "order": 8 },
+        { "key": "to_tag", "label": "终点", "order": 9 }
+      ]
+    },
+    "Instrument": {
+      "label": "仪表",
+      "fields": [
+        { "key": "inst_type", "label": "仪表类型", "order": 1 },
+        { "key": "loop_id", "label": "回路号", "order": 2 },
+        { "key": "range", "label": "量程", "order": 3 },
+        { "key": "signal", "label": "信号", "order": 4 },
+        { "key": "on_line", "label": "所在管线", "order": 5 }
+      ]
+    },
+    "Valve": {
+      "label": "阀门",
+      "fields": [
+        { "key": "valve_type", "label": "阀门类型", "order": 1 },
+        { "key": "dn", "label": "公称直径", "unit": "DN", "order": 2 },
+        { "key": "fail_position", "label": "故障位置", "order": 3 },
+        { "key": "on_line", "label": "所在管线", "order": 4 }
+      ]
+    },
+    "SafetyValve": {
+      "label": "安全阀",
+      "fields": [
+        { "key": "set_P_MPaG", "label": "整定压力", "unit": "MPa(g)", "order": 1 },
+        { "key": "protected_equipment", "label": "保护设备", "order": 2 },
+        { "key": "discharge", "label": "排放去向", "order": 3 }
+      ]
+    },
+    "Stream": {
+      "label": "物流",
+      "fields": [
+        { "key": "stream_no", "label": "物流号", "order": 1 },
+        { "key": "flow_kgh", "label": "流量", "unit": "kg/h", "order": 2 },
+        { "key": "P_MPaG", "label": "压力", "unit": "MPa(g)", "order": 3 },
+        { "key": "T_C", "label": "温度", "unit": "°C", "order": 4 },
+        { "key": "phase", "label": "相态", "order": 5 }
+      ]
+    }
+  }
+}

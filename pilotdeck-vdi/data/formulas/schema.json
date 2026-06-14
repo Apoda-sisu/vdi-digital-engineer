@@ -4,7 +4,15 @@
   "title": "VDI 公式库公式实体",
   "description": "VDI 工程计算公式的结构化数据模型",
   "type": "object",
-  "required": ["formula_id", "name", "discipline", "category", "equation_text", "variables", "source"],
+  "required": [
+    "formula_id",
+    "name",
+    "discipline",
+    "category",
+    "equation_text",
+    "variables",
+    "source"
+  ],
   "properties": {
     "formula_id": {
       "type": "string",
@@ -21,7 +29,16 @@
     },
     "discipline": {
       "type": "string",
-      "enum": ["water", "process", "piping", "electrical", "instrument", "hse", "equipment", "general"],
+      "enum": [
+        "water",
+        "process",
+        "piping",
+        "electrical",
+        "instrument",
+        "hs",
+        "equipment",
+        "general"
+      ],
       "description": "所属专业"
     },
     "category": {
@@ -30,7 +47,12 @@
     },
     "type": {
       "type": "string",
-      "enum": ["exact", "empirical", "approximation", "lookup"],
+      "enum": [
+        "exact",
+        "empirical",
+        "approximation",
+        "lookup"
+      ],
       "default": "exact",
       "description": "公式类型：exact=精确公式, empirical=经验公式, approximation=近似公式, lookup=查表"
     },
@@ -46,12 +68,24 @@
       "type": "object",
       "description": "抽象语法树，供程序解析执行",
       "properties": {
-        "op": { "type": "string" },
-        "args": { "type": "array" },
-        "var": { "type": "string" },
-        "const": { "type": "number" },
-        "base": { "type": "object" },
-        "exp": { "type": "number" }
+        "op": {
+          "type": "string"
+        },
+        "args": {
+          "type": "array"
+        },
+        "var": {
+          "type": "string"
+        },
+        "const": {
+          "type": "number"
+        },
+        "base": {
+          "type": "object"
+        },
+        "exp": {
+          "type": "number"
+        }
       }
     },
     "variables": {
@@ -59,32 +93,75 @@
       "description": "公式变量定义",
       "items": {
         "type": "object",
-        "required": ["symbol", "name", "unit", "role"],
+        "required": [
+          "symbol",
+          "name",
+          "unit",
+          "role"
+        ],
         "properties": {
-          "symbol": { "type": "string", "description": "变量符号" },
-          "name": { "type": "string", "description": "变量中文名" },
-          "unit": { "type": "string", "description": "单位" },
-          "role": { "type": "string", "enum": ["input", "output", "intermediate"], "description": "角色" },
-          "desc": { "type": "string", "description": "描述" },
+          "symbol": {
+            "type": "string",
+            "description": "变量符号"
+          },
+          "name": {
+            "type": "string",
+            "description": "变量中文名"
+          },
+          "unit": {
+            "type": "string",
+            "description": "单位"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "input",
+              "output",
+              "intermediate"
+            ],
+            "description": "角色"
+          },
+          "desc": {
+            "type": "string",
+            "description": "描述"
+          },
           "constraints": {
             "type": "object",
             "properties": {
-              "min": { "type": "number" },
-              "max": { "type": "number" },
-              "exclusive_min": { "type": "boolean" },
-              "exclusive_max": { "type": "boolean" }
+              "min": {
+                "type": "number"
+              },
+              "max": {
+                "type": "number"
+              },
+              "exclusive_min": {
+                "type": "boolean"
+              },
+              "exclusive_max": {
+                "type": "boolean"
+              }
             }
           },
-          "default": { "description": "默认值" },
+          "default": {
+            "description": "默认值"
+          },
           "alt_units": {
             "type": "array",
             "items": {
               "type": "object",
               "properties": {
-                "unit": { "type": "string" },
-                "factor": { "type": "number" },
-                "offset": { "type": "number" },
-                "lookup": { "type": "string" }
+                "unit": {
+                  "type": "string"
+                },
+                "factor": {
+                  "type": "number"
+                },
+                "offset": {
+                  "type": "number"
+                },
+                "lookup": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -92,10 +169,18 @@
             "type": "object",
             "description": "查表引用",
             "properties": {
-              "type": { "type": "string" },
-              "table_ref": { "type": "string" },
-              "column": { "type": "string" },
-              "key_column": { "type": "string" }
+              "type": {
+                "type": "string"
+              },
+              "table_ref": {
+                "type": "string"
+              },
+              "column": {
+                "type": "string"
+              },
+              "key_column": {
+                "type": "string"
+              }
             }
           }
         }
@@ -107,33 +192,83 @@
       "items": {
         "type": "object",
         "properties": {
-          "name": { "type": "string" },
-          "symbol": { "type": "string" },
-          "range": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 },
-          "default": { "type": "number" },
-          "condition": { "type": "string" },
-          "note": { "type": "string" }
+          "name": {
+            "type": "string"
+          },
+          "symbol": {
+            "type": "string"
+          },
+          "range": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "default": {
+            "type": "number"
+          },
+          "condition": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
         }
       }
     },
     "source": {
       "type": "object",
-      "required": ["standard_id", "clause"],
+      "required": [
+        "standard_id",
+        "clause"
+      ],
       "properties": {
-        "standard_id": { "type": "string", "description": "来源规范编号" },
-        "clause": { "type": "string", "description": "条款号" },
-        "page": { "type": "number" },
-        "note": { "type": "string" }
+        "standard_id": {
+          "type": "string",
+          "description": "来源规范编号"
+        },
+        "clause": {
+          "type": "string",
+          "description": "条款号"
+        },
+        "page": {
+          "type": "number"
+        },
+        "note": {
+          "type": "string"
+        }
       }
     },
     "applicable_scope": {
       "type": "object",
       "description": "适用范围",
       "properties": {
-        "pipe_types": { "type": "array", "items": { "type": "string" } },
-        "flow_regimes": { "type": "array", "items": { "type": "string" } },
-        "materials": { "type": "array", "items": { "type": "string" } },
-        "exclusions": { "type": "array", "items": { "type": "string" } }
+        "pipe_types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "flow_regimes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "materials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "exclusions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
     },
     "related_formulas": {
@@ -141,18 +276,61 @@
       "items": {
         "type": "object",
         "properties": {
-          "formula_id": { "type": "string" },
-          "relation": { "type": "string", "enum": ["special_case", "complement", "alternative", "prerequisite"] },
-          "note": { "type": "string" }
+          "formula_id": {
+            "type": "string"
+          },
+          "relation": {
+            "type": "string",
+            "enum": [
+              "special_case",
+              "complement",
+              "alternative",
+              "prerequisite"
+            ]
+          },
+          "note": {
+            "type": "string"
+          }
         }
       }
     },
-    "tags": { "type": "array", "items": { "type": "string" } },
-    "keywords": { "type": "array", "items": { "type": "string" } },
-    "precision": { "type": "string", "enum": ["精确", "估算", "近似"], "default": "精确" },
-    "confidence": { "type": "number", "minimum": 0, "maximum": 1, "description": "置信度（经验公式用）" },
-    "created_at": { "type": "string", "format": "date-time" },
-    "updated_at": { "type": "string", "format": "date-time" },
-    "version": { "type": "number" }
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "precision": {
+      "type": "string",
+      "enum": [
+        "精确",
+        "估算",
+        "近似"
+      ],
+      "default": "精确"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "置信度（经验公式用）"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "number"
+    }
   }
 }

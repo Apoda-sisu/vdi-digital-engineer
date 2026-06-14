@@ -1,221 +1,263 @@
 {
-  "version": "1.0.0",
-  "description": "专业代码映射配置",
+  "version": "1.3.0",
+  "description": "专业代码映射（CFIHOS canonical；给排水 canonical = CI）",
   "mappings": {
-    "PR": {
+    "PX": {
       "name": "工艺",
       "full_name": "工艺专业",
       "skill_group": "vdi-process-lead",
       "lead_skill": "vdi-process-lead",
       "sub_skills": [
+        "vdi-process-package",
         "vdi-process-route",
         "vdi-process-balance",
-        "vdi-process-pfd-pid",
+        "vdi-process-pfd",
+        "vdi-process-pid",
         "vdi-process-equipment",
+        "vdi-process-hydraulics",
+        "vdi-process-relief",
+        "vdi-process-utilities",
+        "vdi-process-control",
         "vdi-process-safety",
-        "vdi-process-utilities"
+        "vdi-process-lab"
       ],
       "shared_utils": [
         "vdi-process-calc",
-        "vdi-process-simulation"
+        "vdi-process-simulation",
+        "vdi-process-calc-column",
+        "vdi-process-calc-hx",
+        "vdi-process-calc-reactor",
+        "vdi-process-calc-pump",
+        "vdi-process-calc-psv",
+        "vdi-process-data-mgmt",
+        "vdi-process-docgen"
       ],
-      "mcp_required": ["vdi-orchestrator", "vdi-knowledge", "vdi-rules"],
+      "mcp_required": [
+        "vdi-orchestrator",
+        "vdi-knowledge",
+        "vdi-rules"
+      ],
       "color": "#6366f1",
-      "icon": "⚗️"
+      "icon": "⚗️",
+      "cfihos_discipline_code": "PX",
+      "cfihos_unique_code": "CFIHOS-20000026",
+      "vdi_runtime_key": "PR"
     },
-    "WA": {
-      "name": "给排水",
-      "full_name": "给排水专业",
-      "skill_group": "vdi-water-lead",
-      "lead_skill": "vdi-water-lead",
-      "sub_skills": [
-        "vdi-water-supply",
-        "vdi-water-fire",
-        "vdi-water-drainage",
-        "vdi-water-stormwater",
-        "vdi-water-wastewater",
-        "vdi-water-circulating"
-      ],
-      "shared_utils": [
-        "vdi-water-hydraulics",
-        "vdi-water-equipment"
-      ],
-      "mcp_required": ["vdi-orchestrator", "vdi-knowledge", "vdi-rules"],
-      "color": "#8b5cf6",
-      "icon": "💧"
-    },
-    "PI": {
+    "MP": {
       "name": "管道",
       "full_name": "管道专业",
       "skill_group": "vdi-piping-lead",
       "lead_skill": "vdi-piping-lead",
-      "sub_skills": [],
-      "shared_utils": [],
-      "mcp_required": ["vdi-orchestrator", "vdi-knowledge", "vdi-rules"],
+      "sub_skills": [
+        "vdi-piping-material-class",
+        "vdi-piping-line-list",
+        "vdi-piping-layout",
+        "vdi-piping-equipment-connect",
+        "vdi-piping-rack-layout",
+        "vdi-piping-routing",
+        "vdi-piping-support",
+        "vdi-piping-stress",
+        "vdi-piping-insulation",
+        "vdi-piping-isometric",
+        "vdi-piping-valve-spec",
+        "vdi-piping-underground",
+        "vdi-piping-cad-3d"
+      ],
+      "shared_utils": [
+        "vdi-piping-hydraulics",
+        "vdi-piping-stress-calc",
+        "vdi-piping-corrosion-calc",
+        "vdi-piping-vibration-calc",
+        "vdi-piping-weight-calc",
+        "vdi-piping-data-mgmt"
+      ],
+      "mcp_required": [
+        "vdi-orchestrator",
+        "vdi-knowledge",
+        "vdi-rules"
+      ],
       "color": "#a78bfa",
       "icon": "🔧",
-      "status": "pending",
-      "note": "待创建Skill定义"
+      "status": "active",
+      "note": "Sprint 11-18 全量建设完成",
+      "cfihos_discipline_code": "MP",
+      "cfihos_unique_code": "CFIHOS-20000020",
+      "vdi_runtime_key": "PI"
     },
     "IN": {
       "name": "仪控",
       "full_name": "仪控专业",
       "skill_group": "vdi-instrument-lead",
       "lead_skill": "vdi-instrument-lead",
-      "sub_skills": [],
+      "sub_skills": [
+        "vdi-instrument-index",
+        "vdi-instrument-loop",
+        "vdi-instrument-interlock",
+        "vdi-instrument-dcs",
+        "vdi-instrument-cable",
+        "vdi-instrument-valve",
+        "vdi-instrument-analytical",
+        "vdi-instrument-telecom",
+        "vdi-instrument-calc-sil",
+        "vdi-instrument-selection",
+        "vdi-instrument-io-count",
+        "vdi-instrument-cable-mto"
+      ],
       "shared_utils": [],
-      "mcp_required": ["vdi-orchestrator", "vdi-knowledge", "vdi-rules"],
+      "mcp_required": [
+        "vdi-orchestrator",
+        "vdi-knowledge",
+        "vdi-rules"
+      ],
       "color": "#c4b5fd",
       "icon": "📊",
-      "status": "pending",
-      "note": "待创建Skill定义"
+      "status": "active",
+      "note": "1014 V1.1：8 L2 + 4 L3 全量",
+      "cfihos_discipline_code": "IN",
+      "cfihos_unique_code": "CFIHOS-20000015",
+      "vdi_runtime_key": "IN"
     },
-    "EL": {
+    "EA": {
       "name": "电气",
       "full_name": "电气专业",
       "skill_group": "vdi-electrical-lead",
       "lead_skill": "vdi-electrical-lead",
       "sub_skills": [],
       "shared_utils": [],
-      "mcp_required": ["vdi-orchestrator", "vdi-knowledge", "vdi-rules"],
+      "mcp_required": [
+        "vdi-orchestrator",
+        "vdi-knowledge",
+        "vdi-rules"
+      ],
       "color": "#ddd6fe",
       "icon": "⚡",
       "status": "pending",
-      "note": "待创建Skill定义"
+      "note": "待创建Skill定义",
+      "cfihos_discipline_code": "EA",
+      "cfihos_unique_code": "CFIHOS-20000008",
+      "vdi_runtime_key": "EL"
     },
-    "EQ": {
+    "MX": {
       "name": "设备",
       "full_name": "设备专业",
       "skill_group": "vdi-equipment-lead",
       "lead_skill": "vdi-equipment-lead",
       "sub_skills": [],
       "shared_utils": [],
-      "mcp_required": ["vdi-orchestrator", "vdi-knowledge", "vdi-rules"],
+      "mcp_required": [
+        "vdi-orchestrator",
+        "vdi-knowledge",
+        "vdi-rules"
+      ],
       "color": "#ede9fe",
       "icon": "🏭",
       "status": "pending",
-      "note": "待创建Skill定义"
+      "note": "待创建Skill定义",
+      "cfihos_discipline_code": "MX",
+      "cfihos_unique_code": "CFIHOS-20000023",
+      "vdi_runtime_key": "EQ"
     },
     "HS": {
-      "name": "HSE",
-      "full_name": "健康安全环保专业",
+      "name": "安全",
+      "full_name": "安全专业",
+      "cfihos_name_en": "safety",
       "skill_group": "vdi-hse-lead",
       "lead_skill": "vdi-hse-lead",
       "sub_skills": [],
       "shared_utils": [],
-      "mcp_required": ["vdi-orchestrator", "vdi-knowledge", "vdi-rules"],
+      "mcp_required": [
+        "vdi-orchestrator",
+        "vdi-knowledge",
+        "vdi-rules"
+      ],
       "color": "#f5f3ff",
       "icon": "🛡️",
       "status": "pending",
-      "note": "待创建Skill定义"
+      "note": "待创建Skill定义；范围对齐 CFIHOS HS（safety），非 HX 宏观 HSE",
+      "cfihos_discipline_code": "HS",
+      "cfihos_unique_code": "CFIHOS-20000013",
+      "vdi_runtime_key": "HS"
     },
-    "ST": {
+    "CS": {
       "name": "结构",
       "full_name": "结构专业",
       "skill_group": "vdi-structural-lead",
       "lead_skill": "vdi-structural-lead",
       "sub_skills": [],
       "shared_utils": [],
-      "mcp_required": ["vdi-orchestrator", "vdi-knowledge", "vdi-rules"],
+      "mcp_required": [
+        "vdi-orchestrator",
+        "vdi-knowledge",
+        "vdi-rules"
+      ],
       "color": "#e0e7ff",
       "icon": "🏗️",
       "status": "pending",
-      "note": "待创建Skill定义"
+      "note": "待创建Skill定义",
+      "cfihos_discipline_code": "CS",
+      "cfihos_unique_code": "CFIHOS-20000006",
+      "vdi_runtime_key": "ST"
     },
-    "AR": {
+    "CB": {
       "name": "建筑",
       "full_name": "建筑专业",
       "skill_group": "vdi-architectural-lead",
       "lead_skill": "vdi-architectural-lead",
       "sub_skills": [],
       "shared_utils": [],
-      "mcp_required": ["vdi-orchestrator", "vdi-knowledge", "vdi-rules"],
+      "mcp_required": [
+        "vdi-orchestrator",
+        "vdi-knowledge",
+        "vdi-rules"
+      ],
       "color": "#dbeafe",
       "icon": "🏛️",
       "status": "pending",
-      "note": "待创建Skill定义"
+      "note": "待创建Skill定义",
+      "cfihos_discipline_code": "CB",
+      "cfihos_unique_code": "CFIHOS-20000003",
+      "vdi_runtime_key": "AR"
     },
-    "MA": {
+    "RA": {
       "name": "材料",
       "full_name": "材料专业",
       "skill_group": "vdi-material-lead",
       "lead_skill": "vdi-material-lead",
       "sub_skills": [],
       "shared_utils": [],
-      "mcp_required": ["vdi-orchestrator", "vdi-knowledge"],
+      "mcp_required": [
+        "vdi-orchestrator",
+        "vdi-knowledge"
+      ],
       "color": "#bfdbfe",
       "icon": "🔩",
       "status": "pending",
-      "note": "待创建Skill定义"
+      "note": "待创建Skill定义",
+      "cfihos_discipline_code": "RA",
+      "cfihos_unique_code": "CFIHOS-20000028",
+      "vdi_runtime_key": "MA"
     },
-    "HV": {
+    "MH": {
       "name": "暖通",
       "full_name": "暖通专业",
       "skill_group": "vdi-hvac-lead",
       "lead_skill": "vdi-hvac-lead",
       "sub_skills": [],
       "shared_utils": [],
-      "mcp_required": ["vdi-orchestrator", "vdi-knowledge", "vdi-rules"],
+      "mcp_required": [
+        "vdi-orchestrator",
+        "vdi-knowledge",
+        "vdi-rules"
+      ],
       "color": "#93c5fd",
       "icon": "🌡️",
       "status": "pending",
-      "note": "待创建Skill定义"
+      "note": "待创建Skill定义",
+      "cfihos_discipline_code": "MH",
+      "cfihos_unique_code": "CFIHOS-20000019",
+      "vdi_runtime_key": "HV"
     },
-    "FI": {
-      "name": "消防",
-      "full_name": "消防专业",
-      "skill_group": "vdi-fire-lead",
-      "lead_skill": "vdi-fire-lead",
-      "sub_skills": [],
-      "shared_utils": [],
-      "mcp_required": ["vdi-orchestrator", "vdi-knowledge", "vdi-rules"],
-      "color": "#60a5fa",
-      "icon": "🚒",
-      "status": "pending",
-      "note": "待创建Skill定义"
-    },
-    "PROC": {
-      "name": "采购",
-      "full_name": "采购部门",
-      "skill_group": "vdi-procurement",
-      "lead_skill": "vdi-procurement",
-      "sub_skills": [],
-      "shared_utils": [],
-      "mcp_required": ["vdi-orchestrator"],
-      "color": "#3b82f6",
-      "icon": "📦",
-      "status": "pending",
-      "note": "待创建Skill定义"
-    },
-    "QA": {
-      "name": "质量",
-      "full_name": "质量部门",
-      "skill_group": "vdi-quality-assurance",
-      "lead_skill": "vdi-quality-assurance",
-      "sub_skills": [],
-      "shared_utils": [],
-      "mcp_required": ["vdi-orchestrator", "vdi-rules"],
-      "color": "#2563eb",
-      "icon": "✅",
-      "status": "pending",
-      "note": "待创建Skill定义"
-    },
-    "MG": {
-      "name": "管理",
-      "full_name": "项目管理",
-      "skill_group": "vdi-design-manager",
-      "lead_skill": "vdi-design-manager",
-      "sub_skills": [
-        "vdi-scheduler-agent",
-        "vdi-doc-export",
-        "vdi-doc-ingest"
-      ],
-      "shared_utils": [],
-      "mcp_required": ["vdi-orchestrator", "vdi-knowledge"],
-      "color": "#1d4ed8",
-      "icon": "👔"
-    },
-    "HAZOP": {
+    "HX": {
       "name": "HAZOP",
       "full_name": "HAZOP分析",
       "skill_group": "hazop-chair",
@@ -234,39 +276,1226 @@
         "hazop-inherent-safety"
       ],
       "shared_utils": [],
-      "mcp_required": ["vdi-knowledge", "vdi-rules"],
+      "mcp_required": [
+        "vdi-knowledge",
+        "vdi-rules"
+      ],
       "color": "#7c3aed",
-      "icon": "⚠️"
+      "icon": "⚠️",
+      "cfihos_discipline_code": "HX",
+      "cfihos_unique_code": "CFIHOS-20000014",
+      "vdi_runtime_key": "HAZOP"
     },
-    "SY": {
+    "VA": {
+      "name": "采购",
+      "full_name": "采购部门",
+      "skill_group": "vdi-procurement",
+      "lead_skill": "vdi-procurement",
+      "sub_skills": [],
+      "shared_utils": [],
+      "mcp_required": [
+        "vdi-orchestrator"
+      ],
+      "color": "#3b82f6",
+      "icon": "📦",
+      "status": "pending",
+      "note": "待创建Skill定义",
+      "cfihos_discipline_code": "VA",
+      "cfihos_unique_code": "CFIHOS-20000032",
+      "vdi_runtime_key": "PROC"
+    },
+    "QA": {
+      "name": "质量",
+      "full_name": "质量部门",
+      "skill_group": "vdi-quality-assurance",
+      "lead_skill": "vdi-quality-assurance",
+      "sub_skills": [],
+      "shared_utils": [],
+      "mcp_required": [
+        "vdi-orchestrator",
+        "vdi-rules"
+      ],
+      "color": "#2563eb",
+      "icon": "✅",
+      "status": "pending",
+      "note": "待创建Skill定义",
+      "cfihos_discipline_code": "QA",
+      "cfihos_unique_code": "CFIHOS-20000027",
+      "vdi_runtime_key": "QA"
+    },
+    "AA": {
+      "name": "管理",
+      "full_name": "项目管理",
+      "skill_group": "vdi-design-manager",
+      "lead_skill": "vdi-design-manager",
+      "sub_skills": [
+        "vdi-scheduler-agent",
+        "vdi-doc-export",
+        "vdi-doc-ingest"
+      ],
+      "shared_utils": [],
+      "mcp_required": [
+        "vdi-orchestrator",
+        "vdi-knowledge"
+      ],
+      "color": "#1d4ed8",
+      "icon": "👔",
+      "cfihos_discipline_code": "AA",
+      "cfihos_unique_code": "CFIHOS-20000001",
+      "vdi_runtime_key": "MG"
+    },
+    "JA": {
       "name": "系统",
       "full_name": "系统管理",
       "skill_group": "vdi-system-health",
       "lead_skill": "vdi-system-health",
       "sub_skills": [],
       "shared_utils": [],
-      "mcp_required": ["vdi-knowledge"],
+      "mcp_required": [
+        "vdi-knowledge"
+      ],
       "color": "#6b7280",
-      "icon": "⚙️"
+      "icon": "⚙️",
+      "cfihos_discipline_code": "JA",
+      "cfihos_unique_code": "CFIHOS-20000016",
+      "vdi_runtime_key": "SY"
+    },
+    "CI": {
+      "name": "给排水",
+      "full_name": "给排水专业",
+      "skill_group": "vdi-water-lead",
+      "lead_skill": "vdi-water-lead",
+      "sub_skills": [
+        "vdi-water-supply",
+        "vdi-water-fire",
+        "vdi-water-drainage",
+        "vdi-water-stormwater",
+        "vdi-water-wastewater",
+        "vdi-water-circulating"
+      ],
+      "shared_utils": [
+        "vdi-water-hydraulics",
+        "vdi-water-equipment"
+      ],
+      "mcp_required": [
+        "vdi-orchestrator",
+        "vdi-knowledge",
+        "vdi-rules"
+      ],
+      "color": "#8b5cf6",
+      "icon": "💧",
+      "cfihos_discipline_code": "CI",
+      "cfihos_unique_code": "CFIHOS-20000005",
+      "vdi_runtime_key": "WA"
     }
   },
   "reverse_mappings": {
-    "vdi-process-lead": "PR",
+    "vdi-process-lead": "PX",
     "vdi-water-lead": "WA",
-    "vdi-piping-lead": "PI",
+    "vdi-piping-lead": "MP",
     "vdi-instrument-lead": "IN",
-    "vdi-electrical-lead": "EL",
-    "vdi-equipment-lead": "EQ",
+    "vdi-electrical-lead": "EA",
+    "vdi-equipment-lead": "MX",
     "vdi-hse-lead": "HS",
-    "vdi-structural-lead": "ST",
-    "vdi-architectural-lead": "AR",
-    "vdi-material-lead": "MA",
-    "vdi-hvac-lead": "HV",
-    "vdi-fire-lead": "FI",
-    "vdi-procurement": "PROC",
+    "vdi-structural-lead": "CS",
+    "vdi-architectural-lead": "CB",
+    "vdi-material-lead": "RA",
+    "vdi-hvac-lead": "MH",
+    "vdi-fire-lead": "HX",
+    "vdi-procurement": "VA",
     "vdi-quality-assurance": "QA",
-    "vdi-design-manager": "MG",
-    "hazop-chair": "HAZOP",
-    "vdi-system-health": "SY"
-  }
+    "vdi-design-manager": "AA",
+    "hazop-chair": "HX",
+    "vdi-system-health": "JA"
+  },
+  "cfihos_registry": "pilotdeck-vdi/data/cfihos-disciplines.json",
+  "vdi_to_cfihos": {
+    "_description": "VDI 内部学科码 → CFIHOS discipline code。mappings 键（PR/WA/PI…）为 VDI 运行时编码，cfihos 为对外/交付语义层编码。",
+    "_cfihos_registry": "pilotdeck-vdi/data/cfihos-disciplines.json",
+    "PR": {
+      "cfihos": "PX",
+      "cfihos_unique_code": "CFIHOS-20000026",
+      "mapping_type": "direct",
+      "note": "工艺 → process engineering"
+    },
+    "PI": {
+      "cfihos": "MP",
+      "cfihos_unique_code": "CFIHOS-20000020",
+      "mapping_type": "direct",
+      "note": "管道 → piping engineering"
+    },
+    "IN": {
+      "cfihos": "IN",
+      "cfihos_unique_code": "CFIHOS-20000015",
+      "mapping_type": "direct",
+      "note": "仪控 → instrumentation engineering（代号相同）"
+    },
+    "WA": {
+      "cfihos": "CI",
+      "cfihos_unique_code": "CFIHOS-20000005",
+      "mapping_type": "bridge",
+      "blocked_cfihos": "WA",
+      "blocked_cfihos_unique_code": "CFIHOS-20000033",
+      "conflict_note": "VDI.WA=给排水/市政与工业水系统；CFIHOS.WA=ocean engineering（海洋环境分析）。二者同字母不同义，桥接时禁止映射为 CFIHOS.WA。",
+      "conflict_rules": [
+        "metadata.vdi.discipline 使用 CI",
+        "禁止将给排水映射为 CFIHOS.WA（海洋工程）"
+      ],
+      "note": "给排水 → infrastructure engineering（含 sewer/utilities 语义，最接近 CFIHOS 给排水类交付）"
+    },
+    "EL": {
+      "cfihos": "EA",
+      "cfihos_unique_code": "CFIHOS-20000008",
+      "mapping_type": "direct",
+      "note": "电气 → electrical engineering"
+    },
+    "EQ": {
+      "cfihos": "MX",
+      "cfihos_unique_code": "CFIHOS-20000023",
+      "mapping_type": "macro",
+      "note": "设备（VDI 宏观）→ mechanical engineering macro；细分为 MR/MS 待设备 Skill 建设时再拆"
+    },
+    "HS": {
+      "cfihos": "HS",
+      "cfihos_unique_code": "CFIHOS-20000013",
+      "mapping_type": "direct",
+      "note": "安全 → CFIHOS safety（与 CFIHOS HS 同码同义；环境/健康/安保见 HE/HH/HP/HX）"
+    },
+    "ST": {
+      "cfihos": "CS",
+      "cfihos_unique_code": "CFIHOS-20000006",
+      "mapping_type": "direct",
+      "note": "结构 → structural engineering"
+    },
+    "AR": {
+      "cfihos": "CB",
+      "cfihos_unique_code": "CFIHOS-20000003",
+      "mapping_type": "direct",
+      "note": "建筑 → architectural engineering"
+    },
+    "MA": {
+      "cfihos": "RA",
+      "cfihos_unique_code": "CFIHOS-20000028",
+      "mapping_type": "direct",
+      "note": "材料 → materials engineering"
+    },
+    "HV": {
+      "cfihos": "MH",
+      "cfihos_unique_code": "CFIHOS-20000019",
+      "mapping_type": "direct",
+      "note": "暖通 → HVAC"
+    },
+    "FI": {
+      "cfihos": "HX",
+      "cfihos_unique_code": "CFIHOS-20000014",
+      "mapping_type": "bridge",
+      "note": "消防（VDI 单列）→ CFIHOS HX 宏观（含防火/消防文档类型）；消防水 L2 仍在 VDI.WA/CI"
+    },
+    "PROC": {
+      "cfihos": "VA",
+      "cfihos_unique_code": "CFIHOS-20000032",
+      "mapping_type": "direct",
+      "note": "采购 → contracting and procurement management"
+    },
+    "QA": {
+      "cfihos": "QA",
+      "cfihos_unique_code": "CFIHOS-20000027",
+      "mapping_type": "direct",
+      "note": "质量 → quality management（代号相同）"
+    },
+    "MG": {
+      "cfihos": "AA",
+      "cfihos_unique_code": "CFIHOS-20000001",
+      "mapping_type": "direct",
+      "note": "项目管理 → project management and engineering"
+    },
+    "HAZOP": {
+      "cfihos": "HX",
+      "cfihos_unique_code": "CFIHOS-20000014",
+      "mapping_type": "macro",
+      "note": "HAZOP 分析 → CFIHOS HX 宏观（过程安全分析类交付）"
+    },
+    "SY": {
+      "cfihos": "JA",
+      "cfihos_unique_code": "CFIHOS-20000016",
+      "mapping_type": "direct",
+      "note": "系统健康/信息管理 → information management"
+    }
+  },
+  "cfihos_to_vdi": {
+    "PX": "PR",
+    "MP": "PI",
+    "IN": "IN",
+    "CI": null,
+    "EA": "EL",
+    "MX": "EQ",
+    "HS": "HS",
+    "HX": [
+      "FI",
+      "HAZOP"
+    ],
+    "_HX_note": "CFIHOS HX 为 HSE 宏观学科；VDI 消防（FI）与 HAZOP 桥接至此；VDI 安全（HS）直接对齐 CFIHOS HS",
+    "CS": "ST",
+    "CB": "AR",
+    "RA": "MA",
+    "MH": "HV",
+    "VA": "PROC",
+    "QA": "QA",
+    "AA": "MG",
+    "JA": "SY",
+    "WA": null,
+    "_WA_conflict": "CFIHOS.WA（海洋工程）无 VDI 学科对等；VDI 给排水见 CI↔WA 桥接"
+  },
+  "skill_code_map": {
+    "vdi-design-manager": "CFIHOS-20000001",
+    "vdi-scheduler-agent": "CFIHOS-20000744",
+    "vdi-doc-export": "CFIHOS-20000918",
+    "vdi-doc-ingest": "CFIHOS-20000909",
+    "vdi-system-health": "CFIHOS-20000016",
+    "vdi-instrument-lead": "CFIHOS-20000015",
+    "vdi-instrument-index": "CFIHOS-20001506",
+    "vdi-instrument-loop": "CFIHOS-20000862",
+    "vdi-instrument-interlock": "CFIHOS-20000884",
+    "vdi-instrument-dcs": "CFIHOS-20000858",
+    "vdi-instrument-cable": "CFIHOS-20000876",
+    "vdi-instrument-valve": "CFIHOS-20000899",
+    "vdi-instrument-analytical": "CFIHOS-20000856",
+    "vdi-instrument-telecom": "CFIHOS-20001263",
+    "vdi-instrument-calc-sil": "CFIHOS-20000804",
+    "vdi-instrument-selection": "CFIHOS-20000856",
+    "vdi-instrument-io-count": "CFIHOS-20000877",
+    "vdi-instrument-cable-mto": "CFIHOS-20000875",
+    "vdi-piping-lead": "CFIHOS-20000020",
+    "vdi-piping-material-class": "CFIHOS-20001025",
+    "vdi-piping-line-list": "CFIHOS-20001014",
+    "vdi-piping-layout": "CFIHOS-20001011",
+    "vdi-piping-equipment-connect": "CFIHOS-20001015",
+    "vdi-piping-rack-layout": "CFIHOS-20001010",
+    "vdi-piping-routing": "CFIHOS-20001011",
+    "vdi-piping-support": "CFIHOS-20001007",
+    "vdi-piping-stress": "CFIHOS-20001029",
+    "vdi-piping-insulation": "CFIHOS-20001396",
+    "vdi-piping-isometric": "CFIHOS-20001006",
+    "vdi-piping-valve-spec": "CFIHOS-20001016",
+    "vdi-piping-underground": "CFIHOS-20001364",
+    "vdi-piping-cad-3d": "CFIHOS-20001024",
+    "vdi-piping-hydraulics": "CFIHOS-20001000",
+    "vdi-piping-stress-calc": "CFIHOS-20001029",
+    "vdi-piping-corrosion-calc": "CFIHOS-20001001",
+    "vdi-piping-vibration-calc": "CFIHOS-20001543",
+    "vdi-piping-weight-calc": "CFIHOS-20001001",
+    "vdi-piping-data-mgmt": "CFIHOS-20001012",
+    "vdi-process-lead": "CFIHOS-20000026",
+    "vdi-process-package": "CFIHOS-20001481",
+    "vdi-process-route": "CFIHOS-20001387",
+    "vdi-process-balance": "CFIHOS-20001157",
+    "vdi-process-pfd": "CFIHOS-20001152",
+    "vdi-process-pid": "CFIHOS-20001151",
+    "vdi-process-equipment": "CFIHOS-20001159",
+    "vdi-process-hydraulics": "CFIHOS-20001161",
+    "vdi-process-relief": "CFIHOS-20001154",
+    "vdi-process-utilities": "CFIHOS-20001152",
+    "vdi-process-control": "CFIHOS-20001184",
+    "vdi-process-safety": "CFIHOS-20001158",
+    "vdi-process-lab": "CFIHOS-20001140",
+    "vdi-process-calc": "CFIHOS-20001145",
+    "vdi-process-calc-column": "CFIHOS-20001143",
+    "vdi-process-calc-hx": "CFIHOS-20001143",
+    "vdi-process-calc-reactor": "CFIHOS-20001143",
+    "vdi-process-calc-pump": "CFIHOS-20001143",
+    "vdi-process-calc-psv": "CFIHOS-20001154",
+    "vdi-process-simulation": "CFIHOS-20001183",
+    "vdi-process-data-mgmt": "CFIHOS-20001146",
+    "vdi-process-docgen": "CFIHOS-20001175",
+    "vdi-process-cad-2d": "CFIHOS-20001151",
+    "vdi-water-lead": "CFIHOS-20000005",
+    "vdi-water-supply": "CFIHOS-20000682",
+    "vdi-water-fire": "CFIHOS-20000832",
+    "vdi-water-drainage": "CFIHOS-20000672",
+    "vdi-water-stormwater": "CFIHOS-20000672",
+    "vdi-water-wastewater": "CFIHOS-20000682",
+    "vdi-water-circulating": "CFIHOS-20000663",
+    "vdi-water-hydraulics": "CFIHOS-20000663",
+    "vdi-water-equipment": "CFIHOS-20000629"
+  },
+  "cfihos_skill_registry": "pilotdeck-vdi/data/skill-cfihos-unique-codes.json",
+  "skill_code_detail": {
+    "vdi-design-manager": {
+      "cfihos_unique_code": "CFIHOS-20000001",
+      "document_type_short_code": "AA",
+      "document_type_name": "project management and engineering",
+      "mapping_note": "L1 项目管理",
+      "level": 1,
+      "code_tier": "discipline"
+    },
+    "vdi-scheduler-agent": {
+      "cfihos_unique_code": "CFIHOS-20000744",
+      "document_type_short_code": "FA5722",
+      "document_type_name": "engineering schedule",
+      "mapping_note": "L3 WBS/进度",
+      "level": 1,
+      "code_tier": "discipline"
+    },
+    "vdi-doc-export": {
+      "cfihos_unique_code": "CFIHOS-20000918",
+      "document_type_short_code": "JA6611",
+      "document_type_name": "master document register",
+      "mapping_note": "L3 文档导出/交付登记",
+      "level": 3,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-doc-ingest": {
+      "cfihos_unique_code": "CFIHOS-20000909",
+      "document_type_short_code": "JA4372",
+      "document_type_name": "index of documents",
+      "mapping_note": "L3 文档解读/索引",
+      "level": 3,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-system-health": {
+      "cfihos_unique_code": "CFIHOS-20000016",
+      "document_type_short_code": "JA",
+      "document_type_name": "information management",
+      "mapping_note": "系统健康 → 信息管理学科",
+      "level": 1,
+      "code_tier": "discipline"
+    },
+    "vdi-instrument-lead": {
+      "cfihos_unique_code": "CFIHOS-20000015",
+      "document_type_short_code": "IN",
+      "document_type_name": "instrumentation engineering",
+      "mapping_note": "L1 仪控",
+      "level": 1,
+      "code_tier": "discipline"
+    },
+    "vdi-instrument-index": {
+      "cfihos_unique_code": "CFIHOS-20001506",
+      "document_type_short_code": "IN4315",
+      "document_type_name": "instrument list",
+      "mapping_note": "IN-D01 仪表索引（synonym: instrument index）",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-instrument-loop": {
+      "cfihos_unique_code": "CFIHOS-20000862",
+      "document_type_short_code": "IN2347",
+      "document_type_name": "loop diagram",
+      "mapping_note": "IN-D02 控制回路",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-instrument-interlock": {
+      "cfihos_unique_code": "CFIHOS-20000884",
+      "document_type_short_code": "IN5531",
+      "document_type_name": "safeguarding philosophy",
+      "mapping_note": "IN-D03 联锁/SIS 安全理念",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-instrument-dcs": {
+      "cfihos_unique_code": "CFIHOS-20000858",
+      "document_type_short_code": "IN2312",
+      "document_type_name": "control system diagram",
+      "mapping_note": "IN-D04 DCS 系统图",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-instrument-cable": {
+      "cfihos_unique_code": "CFIHOS-20000876",
+      "document_type_short_code": "IN4308",
+      "document_type_name": "cable schedule",
+      "mapping_note": "IN-D05 电缆表",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-instrument-valve": {
+      "cfihos_unique_code": "CFIHOS-20000899",
+      "document_type_short_code": "IN7771",
+      "document_type_name": "equipment specification",
+      "mapping_note": "IN-D06 调节阀/FCE 规格",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-instrument-analytical": {
+      "cfihos_unique_code": "CFIHOS-20000856",
+      "document_type_short_code": "IN2105",
+      "document_type_name": "design datasheet",
+      "mapping_note": "IN-D07 在线分析数据表",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-instrument-telecom": {
+      "cfihos_unique_code": "CFIHOS-20001263",
+      "document_type_short_code": "TA4308",
+      "document_type_name": "cable schedule",
+      "mapping_note": "IN-D08 通信；桥接 TA 电信学科",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-instrument-calc-sil": {
+      "cfihos_unique_code": "CFIHOS-20000804",
+      "document_type_short_code": "HX1222",
+      "document_type_name": "safety integrity level calculation",
+      "mapping_note": "IN-T01 SIL 计算；桥接 HX",
+      "level": 3,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-instrument-selection": {
+      "cfihos_unique_code": "CFIHOS-20000856",
+      "document_type_short_code": "IN2105",
+      "document_type_name": "design datasheet",
+      "mapping_note": "IN-T02 选型辅助 → 数据表输入",
+      "level": 3,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-instrument-io-count": {
+      "cfihos_unique_code": "CFIHOS-20000877",
+      "document_type_short_code": "IN4327",
+      "document_type_name": "input, output list",
+      "mapping_note": "IN-T03 IO 统计",
+      "level": 3,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-instrument-cable-mto": {
+      "cfihos_unique_code": "CFIHOS-20000875",
+      "document_type_short_code": "IN4306",
+      "document_type_name": "bill of materials",
+      "mapping_note": "IN-T04 电缆 MTO",
+      "level": 3,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-piping-lead": {
+      "cfihos_unique_code": "CFIHOS-20000020",
+      "document_type_short_code": "MP",
+      "document_type_name": "piping engineering",
+      "mapping_note": "L1 配管",
+      "level": 1,
+      "code_tier": "discipline"
+    },
+    "vdi-piping-material-class": {
+      "cfihos_unique_code": "CFIHOS-20001025",
+      "document_type_short_code": "MP7737",
+      "document_type_name": "piping specification",
+      "mapping_note": "PI-D01 材料等级/管道等级",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-piping-line-list": {
+      "cfihos_unique_code": "CFIHOS-20001014",
+      "document_type_short_code": "MP4338",
+      "document_type_name": "piping line list",
+      "mapping_note": "PI-D02 管道一览表",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-piping-layout": {
+      "cfihos_unique_code": "CFIHOS-20001011",
+      "document_type_short_code": "MP4033",
+      "document_type_name": "layout diagram",
+      "mapping_note": "PI-D03 平面布置",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-piping-equipment-connect": {
+      "cfihos_unique_code": "CFIHOS-20001015",
+      "document_type_short_code": "MP4363",
+      "document_type_name": "tie-in list",
+      "mapping_note": "PI-D04 设备接管",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-piping-rack-layout": {
+      "cfihos_unique_code": "CFIHOS-20001010",
+      "document_type_short_code": "MP4024",
+      "document_type_name": "key plan",
+      "mapping_note": "PI-D05 管架布置",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-piping-routing": {
+      "cfihos_unique_code": "CFIHOS-20001011",
+      "document_type_short_code": "MP4033",
+      "document_type_name": "layout diagram",
+      "mapping_note": "PI-D06 管道路由",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-piping-support": {
+      "cfihos_unique_code": "CFIHOS-20001007",
+      "document_type_short_code": "MP2358",
+      "document_type_name": "support diagram",
+      "mapping_note": "PI-D07 支架",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-piping-stress": {
+      "cfihos_unique_code": "CFIHOS-20001029",
+      "document_type_short_code": "MP8005",
+      "document_type_name": "stress calculation",
+      "mapping_note": "PI-D08 应力分析交付",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-piping-insulation": {
+      "cfihos_unique_code": "CFIHOS-20001396",
+      "document_type_short_code": "MP0900",
+      "document_type_name": "insulation diagram",
+      "mapping_note": "PI-D09 绝热",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-piping-isometric": {
+      "cfihos_unique_code": "CFIHOS-20001006",
+      "document_type_short_code": "MP2343",
+      "document_type_name": "isometric diagram",
+      "mapping_note": "PI-D10 轴测图",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-piping-valve-spec": {
+      "cfihos_unique_code": "CFIHOS-20001016",
+      "document_type_short_code": "MP4368",
+      "document_type_name": "manual valve list",
+      "mapping_note": "PI-D11 阀门规格（手动阀；调节阀见 IN）",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-piping-underground": {
+      "cfihos_unique_code": "CFIHOS-20001364",
+      "document_type_short_code": "MP4038",
+      "document_type_name": "underground service layout diagram",
+      "mapping_note": "PI-D12 地下管道",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-piping-cad-3d": {
+      "cfihos_unique_code": "CFIHOS-20001024",
+      "document_type_short_code": "MP7402",
+      "document_type_name": "three dimensional model review report",
+      "mapping_note": "PI-CAD 三维模型",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-piping-hydraulics": {
+      "cfihos_unique_code": "CFIHOS-20001000",
+      "document_type_short_code": "MP1206",
+      "document_type_name": "design calculation",
+      "mapping_note": "PI-T01 水力计算",
+      "level": 3,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-piping-stress-calc": {
+      "cfihos_unique_code": "CFIHOS-20001029",
+      "document_type_short_code": "MP8005",
+      "document_type_name": "stress calculation",
+      "mapping_note": "PI-T02 应力计算引擎",
+      "level": 3,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-piping-corrosion-calc": {
+      "cfihos_unique_code": "CFIHOS-20001001",
+      "document_type_short_code": "MP1380",
+      "document_type_name": "general calculation",
+      "mapping_note": "PI-T03 腐蚀计算",
+      "level": 3,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-piping-vibration-calc": {
+      "cfihos_unique_code": "CFIHOS-20001543",
+      "document_type_short_code": "MP0519",
+      "document_type_name": "vibration analysis",
+      "mapping_note": "PI-T04 振动分析",
+      "level": 3,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-piping-weight-calc": {
+      "cfihos_unique_code": "CFIHOS-20001001",
+      "document_type_short_code": "MP1380",
+      "document_type_name": "general calculation",
+      "mapping_note": "PI-T05 重量计算",
+      "level": 3,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-piping-data-mgmt": {
+      "cfihos_unique_code": "CFIHOS-20001012",
+      "document_type_short_code": "MP4306",
+      "document_type_name": "bill of materials",
+      "mapping_note": "PI-T06 数据与 MTO",
+      "level": 3,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-process-lead": {
+      "cfihos_unique_code": "CFIHOS-20000026",
+      "document_type_short_code": "PX",
+      "document_type_name": "process engineering",
+      "mapping_note": "L1 工艺",
+      "level": 1,
+      "code_tier": "discipline"
+    },
+    "vdi-process-package": {
+      "cfihos_unique_code": "CFIHOS-20001481",
+      "document_type_short_code": "PX2111",
+      "document_type_name": "manufacturer datasheet",
+      "mapping_note": "PR-D01 成套设备/包",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-process-route": {
+      "cfihos_unique_code": "CFIHOS-20001387",
+      "document_type_short_code": "PX0980",
+      "document_type_name": "block diagram",
+      "mapping_note": "PR-D02 路线/块流程",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-process-balance": {
+      "cfihos_unique_code": "CFIHOS-20001157",
+      "document_type_short_code": "PX3342",
+      "document_type_name": "heat and mass balance summary",
+      "mapping_note": "PR-D03 物料衡算",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-process-pfd": {
+      "cfihos_unique_code": "CFIHOS-20001152",
+      "document_type_short_code": "PX2366",
+      "document_type_name": "process flow diagram",
+      "mapping_note": "PR-D04 PFD",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-process-pid": {
+      "cfihos_unique_code": "CFIHOS-20001151",
+      "document_type_short_code": "PX2365",
+      "document_type_name": "piping and instrumentation diagram",
+      "mapping_note": "PR-D05 P&ID（工艺主责）",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-process-equipment": {
+      "cfihos_unique_code": "CFIHOS-20001159",
+      "document_type_short_code": "PX4322",
+      "document_type_name": "equipment list",
+      "mapping_note": "PR-D06 设备表",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-process-hydraulics": {
+      "cfihos_unique_code": "CFIHOS-20001161",
+      "document_type_short_code": "PX4603",
+      "document_type_name": "hydraulic calculation",
+      "mapping_note": "PR-D07 工艺水力",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-process-relief": {
+      "cfihos_unique_code": "CFIHOS-20001154",
+      "document_type_short_code": "PX2908",
+      "document_type_name": "relief valve calculation",
+      "mapping_note": "PR-D08 泄放",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-process-utilities": {
+      "cfihos_unique_code": "CFIHOS-20001152",
+      "document_type_short_code": "PX2366",
+      "document_type_name": "process flow diagram",
+      "mapping_note": "PR-D09 公用工程（含 UFS/UFD）",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-process-control": {
+      "cfihos_unique_code": "CFIHOS-20001184",
+      "document_type_short_code": "PX8248",
+      "document_type_name": "process control, optimisation study",
+      "mapping_note": "PR-S05 控制方案",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-process-safety": {
+      "cfihos_unique_code": "CFIHOS-20001158",
+      "document_type_short_code": "PX3363",
+      "document_type_name": "safeguarding memorandum",
+      "mapping_note": "PR-S02 工艺安全",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-process-lab": {
+      "cfihos_unique_code": "CFIHOS-20001140",
+      "document_type_short_code": "PX0504",
+      "document_type_name": "fluid analysis",
+      "mapping_note": "PR-S03 化验分析",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-process-calc": {
+      "cfihos_unique_code": "CFIHOS-20001145",
+      "document_type_short_code": "PX1380",
+      "document_type_name": "general calculation",
+      "mapping_note": "PR-T00 通用计算",
+      "level": 3,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-process-calc-column": {
+      "cfihos_unique_code": "CFIHOS-20001143",
+      "document_type_short_code": "PX1206",
+      "document_type_name": "design calculation",
+      "mapping_note": "PR-T01 塔器计算",
+      "level": 3,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-process-calc-hx": {
+      "cfihos_unique_code": "CFIHOS-20001143",
+      "document_type_short_code": "PX1206",
+      "document_type_name": "design calculation",
+      "mapping_note": "PR-T02 换热器计算",
+      "level": 3,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-process-calc-reactor": {
+      "cfihos_unique_code": "CFIHOS-20001143",
+      "document_type_short_code": "PX1206",
+      "document_type_name": "design calculation",
+      "mapping_note": "PR-T03 反应器计算",
+      "level": 3,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-process-calc-pump": {
+      "cfihos_unique_code": "CFIHOS-20001143",
+      "document_type_short_code": "PX1206",
+      "document_type_name": "design calculation",
+      "mapping_note": "PR-T04 泵计算",
+      "level": 3,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-process-calc-psv": {
+      "cfihos_unique_code": "CFIHOS-20001154",
+      "document_type_short_code": "PX2908",
+      "document_type_name": "relief valve calculation",
+      "mapping_note": "PR-T05 PSV 计算",
+      "level": 3,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-process-simulation": {
+      "cfihos_unique_code": "CFIHOS-20001183",
+      "document_type_short_code": "PX8240",
+      "document_type_name": "design cases study",
+      "mapping_note": "流程模拟工况",
+      "level": 3,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-process-data-mgmt": {
+      "cfihos_unique_code": "CFIHOS-20001146",
+      "document_type_short_code": "PX1979",
+      "document_type_name": "database and data set",
+      "mapping_note": "工艺数据管理",
+      "level": 3,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-process-docgen": {
+      "cfihos_unique_code": "CFIHOS-20001175",
+      "document_type_short_code": "PX7180",
+      "document_type_name": "general report",
+      "mapping_note": "工艺文档生成",
+      "level": 3,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-process-cad-2d": {
+      "cfihos_unique_code": "CFIHOS-20001151",
+      "document_type_short_code": "PX2365",
+      "document_type_name": "piping and instrumentation diagram",
+      "mapping_note": "工艺 2D 制图输出",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-water-lead": {
+      "cfihos_unique_code": "CFIHOS-20000005",
+      "document_type_short_code": "CI",
+      "document_type_name": "infrastructure engineering",
+      "mapping_note": "L1 给排水；VDI.WA 桥接 CI，非 CFIHOS.WA 海洋工程",
+      "level": 1,
+      "code_tier": "discipline"
+    },
+    "vdi-water-supply": {
+      "cfihos_unique_code": "CFIHOS-20000682",
+      "document_type_short_code": "CX7770",
+      "document_type_name": "functional design specification",
+      "mapping_note": "WA-D01 给水；桥接 CX 土木基础设施",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-water-fire": {
+      "cfihos_unique_code": "CFIHOS-20000832",
+      "document_type_short_code": "HX6802",
+      "document_type_name": "active fire protection system specification",
+      "mapping_note": "WA-D02 消防给水；桥接 HX 消防",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-water-drainage": {
+      "cfihos_unique_code": "CFIHOS-20000672",
+      "document_type_short_code": "CX4038",
+      "document_type_name": "underground service layout diagram",
+      "mapping_note": "WA-D03 排水",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-water-stormwater": {
+      "cfihos_unique_code": "CFIHOS-20000672",
+      "document_type_short_code": "CX4038",
+      "document_type_name": "underground service layout diagram",
+      "mapping_note": "WA-D04 雨水",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-water-wastewater": {
+      "cfihos_unique_code": "CFIHOS-20000682",
+      "document_type_short_code": "CX7770",
+      "document_type_name": "functional design specification",
+      "mapping_note": "WA-D05 污水",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-water-circulating": {
+      "cfihos_unique_code": "CFIHOS-20000663",
+      "document_type_short_code": "CX1380",
+      "document_type_name": "general calculation",
+      "mapping_note": "WA-D06 循环水",
+      "level": 2,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-water-hydraulics": {
+      "cfihos_unique_code": "CFIHOS-20000663",
+      "document_type_short_code": "CX1380",
+      "document_type_name": "general calculation",
+      "mapping_note": "WA-T01 水力计算",
+      "level": 3,
+      "code_tier": "discipline_document_type"
+    },
+    "vdi-water-equipment": {
+      "cfihos_unique_code": "CFIHOS-20000629",
+      "document_type_short_code": "CI7303",
+      "document_type_name": "requisition",
+      "mapping_note": "WA-T02 设备选型/请购",
+      "level": 3,
+      "code_tier": "discipline_document_type"
+    }
+  },
+  "skill_code_format": "CFIHOS unique code（CFIHOS-20000xxx）；L1=discipline，L2/L3=discipline document type",
+  "skill_code_by_level": {
+    "L1": [
+      {
+        "slug": "vdi-design-manager",
+        "cfihos_unique_code": "CFIHOS-20000001"
+      },
+      {
+        "slug": "vdi-instrument-lead",
+        "cfihos_unique_code": "CFIHOS-20000015"
+      },
+      {
+        "slug": "vdi-piping-lead",
+        "cfihos_unique_code": "CFIHOS-20000020"
+      },
+      {
+        "slug": "vdi-process-lead",
+        "cfihos_unique_code": "CFIHOS-20000026"
+      },
+      {
+        "slug": "vdi-scheduler-agent",
+        "cfihos_unique_code": "CFIHOS-20000744"
+      },
+      {
+        "slug": "vdi-system-health",
+        "cfihos_unique_code": "CFIHOS-20000016"
+      },
+      {
+        "slug": "vdi-water-lead",
+        "cfihos_unique_code": "CFIHOS-20000005"
+      }
+    ],
+    "L2": [
+      {
+        "slug": "vdi-instrument-analytical",
+        "cfihos_unique_code": "CFIHOS-20000856"
+      },
+      {
+        "slug": "vdi-instrument-cable",
+        "cfihos_unique_code": "CFIHOS-20000876"
+      },
+      {
+        "slug": "vdi-instrument-dcs",
+        "cfihos_unique_code": "CFIHOS-20000858"
+      },
+      {
+        "slug": "vdi-instrument-index",
+        "cfihos_unique_code": "CFIHOS-20001506"
+      },
+      {
+        "slug": "vdi-instrument-interlock",
+        "cfihos_unique_code": "CFIHOS-20000884"
+      },
+      {
+        "slug": "vdi-instrument-loop",
+        "cfihos_unique_code": "CFIHOS-20000862"
+      },
+      {
+        "slug": "vdi-instrument-telecom",
+        "cfihos_unique_code": "CFIHOS-20001263"
+      },
+      {
+        "slug": "vdi-instrument-valve",
+        "cfihos_unique_code": "CFIHOS-20000899"
+      },
+      {
+        "slug": "vdi-piping-cad-3d",
+        "cfihos_unique_code": "CFIHOS-20001024"
+      },
+      {
+        "slug": "vdi-piping-equipment-connect",
+        "cfihos_unique_code": "CFIHOS-20001015"
+      },
+      {
+        "slug": "vdi-piping-insulation",
+        "cfihos_unique_code": "CFIHOS-20001396"
+      },
+      {
+        "slug": "vdi-piping-isometric",
+        "cfihos_unique_code": "CFIHOS-20001006"
+      },
+      {
+        "slug": "vdi-piping-layout",
+        "cfihos_unique_code": "CFIHOS-20001011"
+      },
+      {
+        "slug": "vdi-piping-line-list",
+        "cfihos_unique_code": "CFIHOS-20001014"
+      },
+      {
+        "slug": "vdi-piping-material-class",
+        "cfihos_unique_code": "CFIHOS-20001025"
+      },
+      {
+        "slug": "vdi-piping-rack-layout",
+        "cfihos_unique_code": "CFIHOS-20001010"
+      },
+      {
+        "slug": "vdi-piping-routing",
+        "cfihos_unique_code": "CFIHOS-20001011"
+      },
+      {
+        "slug": "vdi-piping-stress",
+        "cfihos_unique_code": "CFIHOS-20001029"
+      },
+      {
+        "slug": "vdi-piping-support",
+        "cfihos_unique_code": "CFIHOS-20001007"
+      },
+      {
+        "slug": "vdi-piping-underground",
+        "cfihos_unique_code": "CFIHOS-20001364"
+      },
+      {
+        "slug": "vdi-piping-valve-spec",
+        "cfihos_unique_code": "CFIHOS-20001016"
+      },
+      {
+        "slug": "vdi-process-balance",
+        "cfihos_unique_code": "CFIHOS-20001157"
+      },
+      {
+        "slug": "vdi-process-cad-2d",
+        "cfihos_unique_code": "CFIHOS-20001151"
+      },
+      {
+        "slug": "vdi-process-control",
+        "cfihos_unique_code": "CFIHOS-20001184"
+      },
+      {
+        "slug": "vdi-process-equipment",
+        "cfihos_unique_code": "CFIHOS-20001159"
+      },
+      {
+        "slug": "vdi-process-hydraulics",
+        "cfihos_unique_code": "CFIHOS-20001161"
+      },
+      {
+        "slug": "vdi-process-lab",
+        "cfihos_unique_code": "CFIHOS-20001140"
+      },
+      {
+        "slug": "vdi-process-package",
+        "cfihos_unique_code": "CFIHOS-20001481"
+      },
+      {
+        "slug": "vdi-process-pfd",
+        "cfihos_unique_code": "CFIHOS-20001152"
+      },
+      {
+        "slug": "vdi-process-pid",
+        "cfihos_unique_code": "CFIHOS-20001151"
+      },
+      {
+        "slug": "vdi-process-relief",
+        "cfihos_unique_code": "CFIHOS-20001154"
+      },
+      {
+        "slug": "vdi-process-route",
+        "cfihos_unique_code": "CFIHOS-20001387"
+      },
+      {
+        "slug": "vdi-process-safety",
+        "cfihos_unique_code": "CFIHOS-20001158"
+      },
+      {
+        "slug": "vdi-process-utilities",
+        "cfihos_unique_code": "CFIHOS-20001152"
+      },
+      {
+        "slug": "vdi-water-circulating",
+        "cfihos_unique_code": "CFIHOS-20000663"
+      },
+      {
+        "slug": "vdi-water-drainage",
+        "cfihos_unique_code": "CFIHOS-20000672"
+      },
+      {
+        "slug": "vdi-water-fire",
+        "cfihos_unique_code": "CFIHOS-20000832"
+      },
+      {
+        "slug": "vdi-water-stormwater",
+        "cfihos_unique_code": "CFIHOS-20000672"
+      },
+      {
+        "slug": "vdi-water-supply",
+        "cfihos_unique_code": "CFIHOS-20000682"
+      },
+      {
+        "slug": "vdi-water-wastewater",
+        "cfihos_unique_code": "CFIHOS-20000682"
+      }
+    ],
+    "L3": [
+      {
+        "slug": "vdi-doc-export",
+        "cfihos_unique_code": "CFIHOS-20000918"
+      },
+      {
+        "slug": "vdi-doc-ingest",
+        "cfihos_unique_code": "CFIHOS-20000909"
+      },
+      {
+        "slug": "vdi-instrument-cable-mto",
+        "cfihos_unique_code": "CFIHOS-20000875"
+      },
+      {
+        "slug": "vdi-instrument-calc-sil",
+        "cfihos_unique_code": "CFIHOS-20000804"
+      },
+      {
+        "slug": "vdi-instrument-io-count",
+        "cfihos_unique_code": "CFIHOS-20000877"
+      },
+      {
+        "slug": "vdi-instrument-selection",
+        "cfihos_unique_code": "CFIHOS-20000856"
+      },
+      {
+        "slug": "vdi-piping-corrosion-calc",
+        "cfihos_unique_code": "CFIHOS-20001001"
+      },
+      {
+        "slug": "vdi-piping-data-mgmt",
+        "cfihos_unique_code": "CFIHOS-20001012"
+      },
+      {
+        "slug": "vdi-piping-hydraulics",
+        "cfihos_unique_code": "CFIHOS-20001000"
+      },
+      {
+        "slug": "vdi-piping-stress-calc",
+        "cfihos_unique_code": "CFIHOS-20001029"
+      },
+      {
+        "slug": "vdi-piping-vibration-calc",
+        "cfihos_unique_code": "CFIHOS-20001543"
+      },
+      {
+        "slug": "vdi-piping-weight-calc",
+        "cfihos_unique_code": "CFIHOS-20001001"
+      },
+      {
+        "slug": "vdi-process-calc",
+        "cfihos_unique_code": "CFIHOS-20001145"
+      },
+      {
+        "slug": "vdi-process-calc-column",
+        "cfihos_unique_code": "CFIHOS-20001143"
+      },
+      {
+        "slug": "vdi-process-calc-hx",
+        "cfihos_unique_code": "CFIHOS-20001143"
+      },
+      {
+        "slug": "vdi-process-calc-psv",
+        "cfihos_unique_code": "CFIHOS-20001154"
+      },
+      {
+        "slug": "vdi-process-calc-pump",
+        "cfihos_unique_code": "CFIHOS-20001143"
+      },
+      {
+        "slug": "vdi-process-calc-reactor",
+        "cfihos_unique_code": "CFIHOS-20001143"
+      },
+      {
+        "slug": "vdi-process-data-mgmt",
+        "cfihos_unique_code": "CFIHOS-20001146"
+      },
+      {
+        "slug": "vdi-process-docgen",
+        "cfihos_unique_code": "CFIHOS-20001175"
+      },
+      {
+        "slug": "vdi-process-simulation",
+        "cfihos_unique_code": "CFIHOS-20001183"
+      },
+      {
+        "slug": "vdi-water-equipment",
+        "cfihos_unique_code": "CFIHOS-20000629"
+      },
+      {
+        "slug": "vdi-water-hydraulics",
+        "cfihos_unique_code": "CFIHOS-20000663"
+      }
+    ]
+  },
+  "canonical_discipline_policy": {
+    "source": "cfihos",
+    "exceptions": [],
+    "skill_discipline_field": "cfihos_discipline_code",
+    "deliverable_code_field": "cfihos_document_type",
+    "note": "全专业 metadata.vdi.discipline 使用 CFIHOS 两字母码；给排水为 CI（禁止 CFIHOS.WA 海洋工程）"
+  },
+  "discipline_slug_mapping": {
+    "process": "PX",
+    "piping": "MP",
+    "water": "CI",
+    "instrument": "IN",
+    "electrical": "EA",
+    "equipment": "MX",
+    "hse": "HS",
+    "hs": "HS",
+    "fire": "HX",
+    "structural": "CS",
+    "architectural": "CB",
+    "material": "RA",
+    "hvac": "MH",
+    "management": "AA",
+    "quality": "QA",
+    "procurement": "VA",
+    "hazop": "HX",
+    "system": "JA"
+  },
+  "_CI_note": "CI 为给排水 canonical；遗留入参 WA/water 在 resolve 层归一为 CI"
 }

@@ -1,14 +1,15 @@
 {
   "file": "piping/hydraulic.json",
-  "discipline": "piping",
+  "discipline": "MP",
   "category": "hydraulic",
   "formula_count": 8,
   "formulas": [
     {
       "formula_id": "PI-VOL-002",
+      "vdi_formula_id": "PI-VOL-002",
       "name": "管道重量计算",
       "name_en": "Pipe Weight Calculation",
-      "discipline": "piping",
+      "discipline": "MP",
       "category": "weight",
       "type": "exact",
       "equation_text": "W = π*(D²-d²)/4 * ρ * L",
@@ -16,25 +17,99 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"const": 0.7854},
-          {"op": "sub", "args": [
-            {"op": "pow", "base": {"var": "D"}, "exp": 2},
-            {"op": "pow", "base": {"var": "d"}, "exp": 2}
-          ]},
-          {"var": "ρ"},
-          {"var": "L"}
+          {
+            "const": 0.7854
+          },
+          {
+            "op": "sub",
+            "args": [
+              {
+                "op": "pow",
+                "base": {
+                  "var": "D"
+                },
+                "exp": 2
+              },
+              {
+                "op": "pow",
+                "base": {
+                  "var": "d"
+                },
+                "exp": 2
+              }
+            ]
+          },
+          {
+            "var": "ρ"
+          },
+          {
+            "var": "L"
+          }
         ]
       },
       "variables": [
-        {"symbol": "W", "name": "管道重量", "unit": "kg", "role": "output", "desc": "管道重量"},
-        {"symbol": "D", "name": "管道外径", "unit": "m", "role": "input", "constraints": {"min": 0.01}, "desc": "管道外径"},
-        {"symbol": "d", "name": "管道内径", "unit": "m", "role": "input", "constraints": {"min": 0.01}, "desc": "管道内径"},
-        {"symbol": "ρ", "name": "材料密度", "unit": "kg/m³", "role": "input", "constraints": {"min": 1000}, "desc": "管材密度"},
-        {"symbol": "L", "name": "管道长度", "unit": "m", "role": "input", "constraints": {"min": 0.1}, "desc": "管道长度"}
+        {
+          "symbol": "W",
+          "name": "管道重量",
+          "unit": "kg",
+          "role": "output",
+          "desc": "管道重量"
+        },
+        {
+          "symbol": "D",
+          "name": "管道外径",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.01
+          },
+          "desc": "管道外径"
+        },
+        {
+          "symbol": "d",
+          "name": "管道内径",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.01
+          },
+          "desc": "管道内径"
+        },
+        {
+          "symbol": "ρ",
+          "name": "材料密度",
+          "unit": "kg/m³",
+          "role": "input",
+          "constraints": {
+            "min": 1000
+          },
+          "desc": "管材密度"
+        },
+        {
+          "symbol": "L",
+          "name": "管道长度",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.1
+          },
+          "desc": "管道长度"
+        }
       ],
-      "source": {"standard_id": "GB 50316", "clause": "材料计算"},
-      "tags": ["管道重量", "材料计算", "荷载"],
-      "keywords": ["管道重量", "管道质量", "材料计算"],
+      "source": {
+        "standard_id": "GB 50316",
+        "clause": "材料计算"
+      },
+      "tags": [
+        "管道重量",
+        "材料计算",
+        "荷载"
+      ],
+      "keywords": [
+        "管道重量",
+        "管道质量",
+        "材料计算"
+      ],
       "precision": 0.1,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -42,25 +117,71 @@
     },
     {
       "formula_id": "PI-VOL-003",
+      "vdi_formula_id": "PI-VOL-003",
       "name": "管道表面积",
       "name_en": "Pipe Surface Area",
-      "discipline": "piping",
+      "discipline": "MP",
       "category": "surface",
       "type": "exact",
       "equation_text": "A = π * D * L",
       "equation_latex": "A = \\pi \\cdot D \\cdot L",
       "equation_ast": {
         "op": "mul",
-        "args": [{"const": 3.14159}, {"var": "D"}, {"var": "L"}]
+        "args": [
+          {
+            "const": 3.14159
+          },
+          {
+            "var": "D"
+          },
+          {
+            "var": "L"
+          }
+        ]
       },
       "variables": [
-        {"symbol": "A", "name": "表面积", "unit": "m²", "role": "output", "desc": "管道外表面积"},
-        {"symbol": "D", "name": "管道外径", "unit": "m", "role": "input", "constraints": {"min": 0.01}, "desc": "管道外径"},
-        {"symbol": "L", "name": "管道长度", "unit": "m", "role": "input", "constraints": {"min": 0.1}, "desc": "管道长度"}
+        {
+          "symbol": "A",
+          "name": "表面积",
+          "unit": "m²",
+          "role": "output",
+          "desc": "管道外表面积"
+        },
+        {
+          "symbol": "D",
+          "name": "管道外径",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.01
+          },
+          "desc": "管道外径"
+        },
+        {
+          "symbol": "L",
+          "name": "管道长度",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.1
+          },
+          "desc": "管道长度"
+        }
       ],
-      "source": {"standard_id": "通用", "clause": "几何计算"},
-      "tags": ["表面积", "几何计算", "保温面积"],
-      "keywords": ["管道表面积", "外表面积", "保温计算"],
+      "source": {
+        "standard_id": "通用",
+        "clause": "几何计算"
+      },
+      "tags": [
+        "表面积",
+        "几何计算",
+        "保温面积"
+      ],
+      "keywords": [
+        "管道表面积",
+        "外表面积",
+        "保温计算"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -68,27 +189,84 @@
     },
     {
       "formula_id": "PI-VEL-002",
+      "vdi_formula_id": "PI-VEL-002",
       "name": "蒸汽管道流速",
       "name_en": "Steam Pipe Velocity",
-      "discipline": "piping",
+      "discipline": "MP",
       "category": "velocity/steam",
       "type": "exact",
       "equation_text": "V = Q/(ρ*A)",
       "equation_latex": "V = \\frac{Q}{\\rho \\cdot A}",
       "equation_ast": {
         "op": "div",
-        "num": {"var": "Q"},
-        "den": {"op": "mul", "args": [{"var": "ρ"}, {"var": "A"}]}
+        "num": {
+          "var": "Q"
+        },
+        "den": {
+          "op": "mul",
+          "args": [
+            {
+              "var": "ρ"
+            },
+            {
+              "var": "A"
+            }
+          ]
+        }
       },
       "variables": [
-        {"symbol": "V", "name": "流速", "unit": "m/s", "role": "output", "desc": "蒸汽流速"},
-        {"symbol": "Q", "name": "质量流量", "unit": "kg/s", "role": "input", "constraints": {"min": 0.001}, "desc": "蒸汽质量流量"},
-        {"symbol": "ρ", "name": "蒸汽密度", "unit": "kg/m³", "role": "input", "constraints": {"min": 0.1}, "desc": "蒸汽密度"},
-        {"symbol": "A", "name": "管道截面积", "unit": "m²", "role": "input", "constraints": {"min": 0.0001}, "desc": "管道截面积"}
+        {
+          "symbol": "V",
+          "name": "流速",
+          "unit": "m/s",
+          "role": "output",
+          "desc": "蒸汽流速"
+        },
+        {
+          "symbol": "Q",
+          "name": "质量流量",
+          "unit": "kg/s",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "蒸汽质量流量"
+        },
+        {
+          "symbol": "ρ",
+          "name": "蒸汽密度",
+          "unit": "kg/m³",
+          "role": "input",
+          "constraints": {
+            "min": 0.1
+          },
+          "desc": "蒸汽密度"
+        },
+        {
+          "symbol": "A",
+          "name": "管道截面积",
+          "unit": "m²",
+          "role": "input",
+          "constraints": {
+            "min": 0.0001
+          },
+          "desc": "管道截面积"
+        }
       ],
-      "source": {"standard_id": "GB 50316", "clause": "蒸汽管道"},
-      "tags": ["蒸汽流速", "蒸汽管道", "流速计算"],
-      "keywords": ["蒸汽流速", "蒸汽管道", "质量流量"],
+      "source": {
+        "standard_id": "GB 50316",
+        "clause": "蒸汽管道"
+      },
+      "tags": [
+        "蒸汽流速",
+        "蒸汽管道",
+        "流速计算"
+      ],
+      "keywords": [
+        "蒸汽流速",
+        "蒸汽管道",
+        "质量流量"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -96,9 +274,10 @@
     },
     {
       "formula_id": "PI-VEL-003",
+      "vdi_formula_id": "PI-VEL-003",
       "name": "两相流流速",
       "name_en": "Two-Phase Flow Velocity",
-      "discipline": "piping",
+      "discipline": "MP",
       "category": "velocity/two-phase",
       "type": "exact",
       "equation_text": "Vsg = G/(ρg*A) + G/(ρl*A)",
@@ -106,20 +285,105 @@
       "equation_ast": {
         "op": "add",
         "args": [
-          {"op": "div", "num": {"var": "G"}, "den": {"op": "mul", "args": [{"var": "ρg"}, {"var": "A"}]}},
-          {"op": "div", "num": {"var": "G"}, "den": {"op": "mul", "args": [{"var": "ρl"}, {"var": "A"}]}}
+          {
+            "op": "div",
+            "num": {
+              "var": "G"
+            },
+            "den": {
+              "op": "mul",
+              "args": [
+                {
+                  "var": "ρg"
+                },
+                {
+                  "var": "A"
+                }
+              ]
+            }
+          },
+          {
+            "op": "div",
+            "num": {
+              "var": "G"
+            },
+            "den": {
+              "op": "mul",
+              "args": [
+                {
+                  "var": "ρl"
+                },
+                {
+                  "var": "A"
+                }
+              ]
+            }
+          }
         ]
       },
       "variables": [
-        {"symbol": "Vsg", "name": "表观气速", "unit": "m/s", "role": "output", "desc": "表观气相速度"},
-        {"symbol": "G", "name": "质量流量", "unit": "kg/s", "role": "input", "constraints": {"min": 0.001}, "desc": "总质量流量"},
-        {"symbol": "ρg", "name": "气相密度", "unit": "kg/m³", "role": "input", "constraints": {"min": 0.1}, "desc": "气相密度"},
-        {"symbol": "ρl", "name": "液相密度", "unit": "kg/m³", "role": "input", "constraints": {"min": 100}, "desc": "液相密度"},
-        {"symbol": "A", "name": "管道截面积", "unit": "m²", "role": "input", "constraints": {"min": 0.0001}, "desc": "管道截面积"}
+        {
+          "symbol": "Vsg",
+          "name": "表观气速",
+          "unit": "m/s",
+          "role": "output",
+          "desc": "表观气相速度"
+        },
+        {
+          "symbol": "G",
+          "name": "质量流量",
+          "unit": "kg/s",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "总质量流量"
+        },
+        {
+          "symbol": "ρg",
+          "name": "气相密度",
+          "unit": "kg/m³",
+          "role": "input",
+          "constraints": {
+            "min": 0.1
+          },
+          "desc": "气相密度"
+        },
+        {
+          "symbol": "ρl",
+          "name": "液相密度",
+          "unit": "kg/m³",
+          "role": "input",
+          "constraints": {
+            "min": 100
+          },
+          "desc": "液相密度"
+        },
+        {
+          "symbol": "A",
+          "name": "管道截面积",
+          "unit": "m²",
+          "role": "input",
+          "constraints": {
+            "min": 0.0001
+          },
+          "desc": "管道截面积"
+        }
       ],
-      "source": {"standard_id": "GB 50316", "clause": "两相流"},
-      "tags": ["两相流", "气液两相", "流速计算"],
-      "keywords": ["两相流", "表观气速", "气液流动"],
+      "source": {
+        "standard_id": "GB 50316",
+        "clause": "两相流"
+      },
+      "tags": [
+        "两相流",
+        "气液两相",
+        "流速计算"
+      ],
+      "keywords": [
+        "两相流",
+        "表观气速",
+        "气液流动"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -127,9 +391,10 @@
     },
     {
       "formula_id": "PI-VEL-004",
+      "vdi_formula_id": "PI-VEL-004",
       "name": "管道压力降（达西公式）",
       "name_en": "Pipe Pressure Drop (Darcy)",
-      "discipline": "piping",
+      "discipline": "MP",
       "category": "pressure/drop",
       "type": "exact",
       "equation_text": "ΔP = f*(L/D)*(ρV²/2)",
@@ -137,22 +402,115 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"var": "f"},
-          {"op": "div", "num": {"var": "L"}, "den": {"var": "D"}},
-          {"op": "div", "num": {"op": "mul", "args": [{"var": "ρ"}, {"op": "pow", "base": {"var": "V"}, "exp": 2}]}, "den": {"const": 2}}
+          {
+            "var": "f"
+          },
+          {
+            "op": "div",
+            "num": {
+              "var": "L"
+            },
+            "den": {
+              "var": "D"
+            }
+          },
+          {
+            "op": "div",
+            "num": {
+              "op": "mul",
+              "args": [
+                {
+                  "var": "ρ"
+                },
+                {
+                  "op": "pow",
+                  "base": {
+                    "var": "V"
+                  },
+                  "exp": 2
+                }
+              ]
+            },
+            "den": {
+              "const": 2
+            }
+          }
         ]
       },
       "variables": [
-        {"symbol": "ΔP", "name": "压力降", "unit": "Pa", "role": "output", "desc": "管道沿程压力降"},
-        {"symbol": "f", "name": "摩擦因子", "unit": "-", "role": "input", "constraints": {"min": 0.01, "max": 0.1}, "desc": "达西摩擦因子"},
-        {"symbol": "L", "name": "管道长度", "unit": "m", "role": "input", "constraints": {"min": 0.1}, "desc": "管道长度"},
-        {"symbol": "D", "name": "管道内径", "unit": "m", "role": "input", "constraints": {"min": 0.01}, "desc": "管道内径"},
-        {"symbol": "ρ", "name": "流体密度", "unit": "kg/m³", "role": "input", "constraints": {"min": 100}, "desc": "流体密度"},
-        {"symbol": "V", "name": "流速", "unit": "m/s", "role": "input", "constraints": {"min": 0.1}, "desc": "流体流速"}
+        {
+          "symbol": "ΔP",
+          "name": "压力降",
+          "unit": "Pa",
+          "role": "output",
+          "desc": "管道沿程压力降"
+        },
+        {
+          "symbol": "f",
+          "name": "摩擦因子",
+          "unit": "-",
+          "role": "input",
+          "constraints": {
+            "min": 0.01,
+            "max": 0.1
+          },
+          "desc": "达西摩擦因子"
+        },
+        {
+          "symbol": "L",
+          "name": "管道长度",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.1
+          },
+          "desc": "管道长度"
+        },
+        {
+          "symbol": "D",
+          "name": "管道内径",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.01
+          },
+          "desc": "管道内径"
+        },
+        {
+          "symbol": "ρ",
+          "name": "流体密度",
+          "unit": "kg/m³",
+          "role": "input",
+          "constraints": {
+            "min": 100
+          },
+          "desc": "流体密度"
+        },
+        {
+          "symbol": "V",
+          "name": "流速",
+          "unit": "m/s",
+          "role": "input",
+          "constraints": {
+            "min": 0.1
+          },
+          "desc": "流体流速"
+        }
       ],
-      "source": {"standard_id": "GB 50316", "clause": "压力降计算"},
-      "tags": ["压力降", "达西公式", "管道阻力"],
-      "keywords": ["压力降", "达西公式", "沿程损失"],
+      "source": {
+        "standard_id": "GB 50316",
+        "clause": "压力降计算"
+      },
+      "tags": [
+        "压力降",
+        "达西公式",
+        "管道阻力"
+      ],
+      "keywords": [
+        "压力降",
+        "达西公式",
+        "沿程损失"
+      ],
       "precision": 1,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -160,9 +518,10 @@
     },
     {
       "formula_id": "PI-VEL-005",
+      "vdi_formula_id": "PI-VEL-005",
       "name": "局部阻力压降",
       "name_en": "Local Resistance Pressure Drop",
-      "discipline": "piping",
+      "discipline": "MP",
       "category": "pressure/local",
       "type": "exact",
       "equation_text": "ΔP = K*(ρV²/2)",
@@ -170,19 +529,85 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"var": "K"},
-          {"op": "div", "num": {"op": "mul", "args": [{"var": "ρ"}, {"op": "pow", "base": {"var": "V"}, "exp": 2}]}, "den": {"const": 2}}
+          {
+            "var": "K"
+          },
+          {
+            "op": "div",
+            "num": {
+              "op": "mul",
+              "args": [
+                {
+                  "var": "ρ"
+                },
+                {
+                  "op": "pow",
+                  "base": {
+                    "var": "V"
+                  },
+                  "exp": 2
+                }
+              ]
+            },
+            "den": {
+              "const": 2
+            }
+          }
         ]
       },
       "variables": [
-        {"symbol": "ΔP", "name": "局部压降", "unit": "Pa", "role": "output", "desc": "局部阻力引起的压力降"},
-        {"symbol": "K", "name": "局部阻力系数", "unit": "-", "role": "input", "constraints": {"min": 0}, "desc": "阀门、弯头等局部阻力系数"},
-        {"symbol": "ρ", "name": "流体密度", "unit": "kg/m³", "role": "input", "constraints": {"min": 100}, "desc": "流体密度"},
-        {"symbol": "V", "name": "流速", "unit": "m/s", "role": "input", "constraints": {"min": 0.1}, "desc": "流体流速"}
+        {
+          "symbol": "ΔP",
+          "name": "局部压降",
+          "unit": "Pa",
+          "role": "output",
+          "desc": "局部阻力引起的压力降"
+        },
+        {
+          "symbol": "K",
+          "name": "局部阻力系数",
+          "unit": "-",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "阀门、弯头等局部阻力系数"
+        },
+        {
+          "symbol": "ρ",
+          "name": "流体密度",
+          "unit": "kg/m³",
+          "role": "input",
+          "constraints": {
+            "min": 100
+          },
+          "desc": "流体密度"
+        },
+        {
+          "symbol": "V",
+          "name": "流速",
+          "unit": "m/s",
+          "role": "input",
+          "constraints": {
+            "min": 0.1
+          },
+          "desc": "流体流速"
+        }
       ],
-      "source": {"standard_id": "GB 50316", "clause": "局部阻力"},
-      "tags": ["局部阻力", "阀门压降", "弯头压降"],
-      "keywords": ["局部阻力", "阻力系数", "阀门压降"],
+      "source": {
+        "standard_id": "GB 50316",
+        "clause": "局部阻力"
+      },
+      "tags": [
+        "局部阻力",
+        "阀门压降",
+        "弯头压降"
+      ],
+      "keywords": [
+        "局部阻力",
+        "阻力系数",
+        "阀门压降"
+      ],
       "precision": 1,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -190,27 +615,84 @@
     },
     {
       "formula_id": "PI-VEL-006",
+      "vdi_formula_id": "PI-VEL-006",
       "name": "管道等效长度",
       "name_en": "Equivalent Pipe Length",
-      "discipline": "piping",
+      "discipline": "MP",
       "category": "pressure/equivalent",
       "type": "exact",
       "equation_text": "Le = K*D/f",
       "equation_latex": "L_e = \\frac{K \\cdot D}{f}",
       "equation_ast": {
         "op": "div",
-        "num": {"op": "mul", "args": [{"var": "K"}, {"var": "D"}]},
-        "den": {"var": "f"}
+        "num": {
+          "op": "mul",
+          "args": [
+            {
+              "var": "K"
+            },
+            {
+              "var": "D"
+            }
+          ]
+        },
+        "den": {
+          "var": "f"
+        }
       },
       "variables": [
-        {"symbol": "Le", "name": "等效长度", "unit": "m", "role": "output", "desc": "局部阻力的等效管道长度"},
-        {"symbol": "K", "name": "局部阻力系数", "unit": "-", "role": "input", "constraints": {"min": 0}, "desc": "局部阻力系数"},
-        {"symbol": "D", "name": "管道内径", "unit": "m", "role": "input", "constraints": {"min": 0.01}, "desc": "管道内径"},
-        {"symbol": "f", "name": "摩擦因子", "unit": "-", "role": "input", "constraints": {"min": 0.01}, "desc": "达西摩擦因子"}
+        {
+          "symbol": "Le",
+          "name": "等效长度",
+          "unit": "m",
+          "role": "output",
+          "desc": "局部阻力的等效管道长度"
+        },
+        {
+          "symbol": "K",
+          "name": "局部阻力系数",
+          "unit": "-",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "局部阻力系数"
+        },
+        {
+          "symbol": "D",
+          "name": "管道内径",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.01
+          },
+          "desc": "管道内径"
+        },
+        {
+          "symbol": "f",
+          "name": "摩擦因子",
+          "unit": "-",
+          "role": "input",
+          "constraints": {
+            "min": 0.01
+          },
+          "desc": "达西摩擦因子"
+        }
       ],
-      "source": {"standard_id": "GB 50316", "clause": "等效长度"},
-      "tags": ["等效长度", "局部阻力", "管道计算"],
-      "keywords": ["等效长度", "当量长度", "局部阻力"],
+      "source": {
+        "standard_id": "GB 50316",
+        "clause": "等效长度"
+      },
+      "tags": [
+        "等效长度",
+        "局部阻力",
+        "管道计算"
+      ],
+      "keywords": [
+        "等效长度",
+        "当量长度",
+        "局部阻力"
+      ],
       "precision": 0.1,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -218,9 +700,10 @@
     },
     {
       "formula_id": "PI-VEL-007",
+      "vdi_formula_id": "PI-VEL-007",
       "name": "管道保温厚度（经济厚度）",
       "name_en": "Economic Insulation Thickness",
-      "discipline": "piping",
+      "discipline": "MP",
       "category": "insulation/economic",
       "type": "exact",
       "equation_text": "δ = √(P_heat*t*λ/(P_insul*ΔT)) - r1",
@@ -228,22 +711,125 @@
       "equation_ast": {
         "op": "sub",
         "args": [
-          {"op": "sqrt", "arg": {"op": "div", "num": {"op": "mul", "args": [{"var": "P_heat"}, {"var": "t"}, {"var": "λ"}]}, "den": {"op": "mul", "args": [{"var": "P_insul"}, {"var": "ΔT"}]}}},
-          {"var": "r1"}
+          {
+            "op": "sqrt",
+            "arg": {
+              "op": "div",
+              "num": {
+                "op": "mul",
+                "args": [
+                  {
+                    "var": "P_heat"
+                  },
+                  {
+                    "var": "t"
+                  },
+                  {
+                    "var": "λ"
+                  }
+                ]
+              },
+              "den": {
+                "op": "mul",
+                "args": [
+                  {
+                    "var": "P_insul"
+                  },
+                  {
+                    "var": "ΔT"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "var": "r1"
+          }
         ]
       },
       "variables": [
-        {"symbol": "δ", "name": "保温厚度", "unit": "m", "role": "output", "desc": "经济保温厚度"},
-        {"symbol": "P_heat", "name": "热价", "unit": "元/W", "role": "input", "constraints": {"min": 0.001}, "desc": "热量单价"},
-        {"symbol": "t", "name": "年运行时间", "unit": "h", "role": "input", "constraints": {"min": 100}, "desc": "年运行小时数"},
-        {"symbol": "λ", "name": "保温材料导热系数", "unit": "W/(m·K)", "role": "input", "constraints": {"min": 0.01}, "desc": "保温材料导热系数"},
-        {"symbol": "P_insul", "name": "保温材料价格", "unit": "元/m³", "role": "input", "constraints": {"min": 100}, "desc": "保温材料价格"},
-        {"symbol": "ΔT", "name": "温差", "unit": "K", "role": "input", "constraints": {"min": 10}, "desc": "管壁与环境温差"},
-        {"symbol": "r1", "name": "管道外半径", "unit": "m", "role": "input", "constraints": {"min": 0.01}, "desc": "管道外半径"}
+        {
+          "symbol": "δ",
+          "name": "保温厚度",
+          "unit": "m",
+          "role": "output",
+          "desc": "经济保温厚度"
+        },
+        {
+          "symbol": "P_heat",
+          "name": "热价",
+          "unit": "元/W",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "热量单价"
+        },
+        {
+          "symbol": "t",
+          "name": "年运行时间",
+          "unit": "h",
+          "role": "input",
+          "constraints": {
+            "min": 100
+          },
+          "desc": "年运行小时数"
+        },
+        {
+          "symbol": "λ",
+          "name": "保温材料导热系数",
+          "unit": "W/(m·K)",
+          "role": "input",
+          "constraints": {
+            "min": 0.01
+          },
+          "desc": "保温材料导热系数"
+        },
+        {
+          "symbol": "P_insul",
+          "name": "保温材料价格",
+          "unit": "元/m³",
+          "role": "input",
+          "constraints": {
+            "min": 100
+          },
+          "desc": "保温材料价格"
+        },
+        {
+          "symbol": "ΔT",
+          "name": "温差",
+          "unit": "K",
+          "role": "input",
+          "constraints": {
+            "min": 10
+          },
+          "desc": "管壁与环境温差"
+        },
+        {
+          "symbol": "r1",
+          "name": "管道外半径",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.01
+          },
+          "desc": "管道外半径"
+        }
       ],
-      "source": {"standard_id": "GB 50264", "clause": "经济厚度计算"},
-      "tags": ["保温厚度", "经济厚度", "保温设计"],
-      "keywords": ["经济保温厚度", "保温设计", "热损失优化"],
+      "source": {
+        "standard_id": "GB 50264",
+        "clause": "经济厚度计算"
+      },
+      "tags": [
+        "保温厚度",
+        "经济厚度",
+        "保温设计"
+      ],
+      "keywords": [
+        "经济保温厚度",
+        "保温设计",
+        "热损失优化"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",

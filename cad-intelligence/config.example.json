@@ -1,0 +1,10 @@
+{
+  "ai": {
+    "api_key": "YOUR_API_KEY_OR_USE_ENV_OPENAI_API_KEY",
+    "api_base": "https://api.openai.com/v1",
+    "model": "gpt-4o-mini",
+    "provider": "ollama",
+    "ollama_base": "http://127.0.0.1:11434",
+    "ollama_model": "qwen3.5:9b-mlx"
+  }
+}

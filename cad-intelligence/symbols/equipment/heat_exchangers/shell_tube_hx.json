@@ -1,0 +1,31 @@
+{
+  "symbol_id": "HEAT-EXCHANGER-001",
+  "name": "管壳式换热器",
+  "category": "equipment",
+  "subcategory": "heat_exchanger",
+  "standard": "HG/T 20559.2-1993",
+  "description": "管壳式换热器通用符号",
+  "geometry": {
+    "type": "compound",
+    "components": [
+      {
+        "type": "rectangle",
+        "params": {"width": 80, "height": 25},
+        "position": {"x": -40, "y": -12},
+        "label": "壳体"
+      },
+      {
+        "type": "line",
+        "params": {"start": [-50, 0], "end": [-40, 0]},
+        "label": "进口"
+      },
+      {
+        "type": "line",
+        "params": {"start": [40, 0], "end": [50, 0]},
+        "label": "出口"
+      }
+    ],
+    "bounding_box": {"width": 100, "height": 30}
+  },
+  "tags": ["换热器", "heat exchanger", "shell tube"]
+}

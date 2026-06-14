@@ -1,32 +1,102 @@
 {
   "file": "electrical/cable.json",
-  "discipline": "electrical",
+  "discipline": "EA",
   "category": "cable",
   "formula_count": 6,
   "formulas": [
     {
       "formula_id": "EL-CAB-001",
+      "vdi_formula_id": "EL-CAB-001",
       "name": "电缆载流量校正",
       "name_en": "Cable Current Capacity Correction",
-      "discipline": "electrical",
+      "discipline": "EA",
       "category": "cable/capacity",
       "type": "exact",
       "equation_text": "I_corrected = I_base * Kt * Kd * Kg",
       "equation_latex": "I_{corrected} = I_{base} \\cdot K_t \\cdot K_d \\cdot K_g",
       "equation_ast": {
         "op": "mul",
-        "args": [{"var": "I_base"}, {"var": "Kt"}, {"var": "Kd"}, {"var": "Kg"}]
+        "args": [
+          {
+            "var": "I_base"
+          },
+          {
+            "var": "Kt"
+          },
+          {
+            "var": "Kd"
+          },
+          {
+            "var": "Kg"
+          }
+        ]
       },
       "variables": [
-        {"symbol": "I_corrected", "name": "校正后载流量", "unit": "A", "role": "output", "desc": "校正后的电缆载流量"},
-        {"symbol": "I_base", "name": "基准载流量", "unit": "A", "role": "input", "constraints": {"min": 1}, "desc": "标准条件下电缆载流量"},
-        {"symbol": "Kt", "name": "温度校正系数", "unit": "-", "role": "input", "constraints": {"min": 0.5, "max": 1.2}, "desc": "环境温度校正系数"},
-        {"symbol": "Kd", "name": "土壤热阻校正系数", "unit": "-", "role": "input", "constraints": {"min": 0.5, "max": 1.2}, "desc": "土壤热阻校正系数"},
-        {"symbol": "Kg", "name": "敷设方式校正系数", "unit": "-", "role": "input", "constraints": {"min": 0.5, "max": 1.2}, "desc": "敷设方式校正系数"}
+        {
+          "symbol": "I_corrected",
+          "name": "校正后载流量",
+          "unit": "A",
+          "role": "output",
+          "desc": "校正后的电缆载流量"
+        },
+        {
+          "symbol": "I_base",
+          "name": "基准载流量",
+          "unit": "A",
+          "role": "input",
+          "constraints": {
+            "min": 1
+          },
+          "desc": "标准条件下电缆载流量"
+        },
+        {
+          "symbol": "Kt",
+          "name": "温度校正系数",
+          "unit": "-",
+          "role": "input",
+          "constraints": {
+            "min": 0.5,
+            "max": 1.2
+          },
+          "desc": "环境温度校正系数"
+        },
+        {
+          "symbol": "Kd",
+          "name": "土壤热阻校正系数",
+          "unit": "-",
+          "role": "input",
+          "constraints": {
+            "min": 0.5,
+            "max": 1.2
+          },
+          "desc": "土壤热阻校正系数"
+        },
+        {
+          "symbol": "Kg",
+          "name": "敷设方式校正系数",
+          "unit": "-",
+          "role": "input",
+          "constraints": {
+            "min": 0.5,
+            "max": 1.2
+          },
+          "desc": "敷设方式校正系数"
+        }
       ],
-      "source": {"standard_id": "GB 50217", "clause": "载流量校正"},
-      "tags": ["电缆载流量", "校正系数", "电缆选型"],
-      "keywords": ["载流量", "校正系数", "电缆选型"],
+      "source": {
+        "standard_id": "GB 50217",
+        "clause": "载流量校正"
+      },
+      "tags": [
+        "电缆载流量",
+        "校正系数",
+        "电缆选型"
+      ],
+      "keywords": [
+        "载流量",
+        "校正系数",
+        "电缆选型"
+      ],
       "precision": 0.1,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -34,26 +104,67 @@
     },
     {
       "formula_id": "EL-CAB-002",
+      "vdi_formula_id": "EL-CAB-002",
       "name": "电缆截面选择（按载流量）",
       "name_en": "Cable Cross-Section Selection",
-      "discipline": "electrical",
+      "discipline": "EA",
       "category": "cable/selection",
       "type": "exact",
       "equation_text": "S ≥ I / J",
       "equation_latex": "S \\geq \\frac{I}{J}",
       "equation_ast": {
         "op": "div",
-        "num": {"var": "I"},
-        "den": {"var": "J"}
+        "num": {
+          "var": "I"
+        },
+        "den": {
+          "var": "J"
+        }
       },
       "variables": [
-        {"symbol": "S", "name": "电缆截面", "unit": "mm²", "role": "output", "desc": "电缆最小截面积"},
-        {"symbol": "I", "name": "工作电流", "unit": "A", "role": "input", "constraints": {"min": 1}, "desc": "线路工作电流"},
-        {"symbol": "J", "name": "经济电流密度", "unit": "A/mm²", "role": "input", "constraints": {"min": 0.5, "max": 10}, "desc": "经济电流密度"}
+        {
+          "symbol": "S",
+          "name": "电缆截面",
+          "unit": "mm²",
+          "role": "output",
+          "desc": "电缆最小截面积"
+        },
+        {
+          "symbol": "I",
+          "name": "工作电流",
+          "unit": "A",
+          "role": "input",
+          "constraints": {
+            "min": 1
+          },
+          "desc": "线路工作电流"
+        },
+        {
+          "symbol": "J",
+          "name": "经济电流密度",
+          "unit": "A/mm²",
+          "role": "input",
+          "constraints": {
+            "min": 0.5,
+            "max": 10
+          },
+          "desc": "经济电流密度"
+        }
       ],
-      "source": {"standard_id": "GB 50217", "clause": "截面选择"},
-      "tags": ["电缆截面", "电流密度", "电缆选型"],
-      "keywords": ["电缆截面", "经济电流密度", "电缆选型"],
+      "source": {
+        "standard_id": "GB 50217",
+        "clause": "截面选择"
+      },
+      "tags": [
+        "电缆截面",
+        "电流密度",
+        "电缆选型"
+      ],
+      "keywords": [
+        "电缆截面",
+        "经济电流密度",
+        "电缆选型"
+      ],
       "precision": 0.1,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -61,9 +172,10 @@
     },
     {
       "formula_id": "EL-CAB-003",
+      "vdi_formula_id": "EL-CAB-003",
       "name": "电缆电压降校验",
       "name_en": "Cable Voltage Drop Check",
-      "discipline": "electrical",
+      "discipline": "EA",
       "category": "cable/voltage-drop",
       "type": "exact",
       "equation_text": "ΔU = √3 * I * L * (R*cosφ + X*sinφ)",
@@ -71,27 +183,131 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"const": 1.732},
-          {"var": "I"},
-          {"var": "L"},
-          {"op": "add", "args": [
-            {"op": "mul", "args": [{"var": "R"}, {"var": "cosphi"}]},
-            {"op": "mul", "args": [{"var": "X"}, {"var": "sinphi"}]}
-          ]}
+          {
+            "const": 1.732
+          },
+          {
+            "var": "I"
+          },
+          {
+            "var": "L"
+          },
+          {
+            "op": "add",
+            "args": [
+              {
+                "op": "mul",
+                "args": [
+                  {
+                    "var": "R"
+                  },
+                  {
+                    "var": "cosphi"
+                  }
+                ]
+              },
+              {
+                "op": "mul",
+                "args": [
+                  {
+                    "var": "X"
+                  },
+                  {
+                    "var": "sinphi"
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       "variables": [
-        {"symbol": "ΔU", "name": "电压降", "unit": "V", "role": "output", "desc": "线路电压降"},
-        {"symbol": "I", "name": "工作电流", "unit": "A", "role": "input", "constraints": {"min": 1}, "desc": "线路工作电流"},
-        {"symbol": "L", "name": "线路长度", "unit": "km", "role": "input", "constraints": {"min": 0.01}, "desc": "线路长度"},
-        {"symbol": "R", "name": "电缆电阻", "unit": "Ω/km", "role": "input", "constraints": {"min": 0.01}, "desc": "电缆单位长度电阻"},
-        {"symbol": "X", "name": "电缆电抗", "unit": "Ω/km", "role": "input", "constraints": {"min": 0}, "desc": "电缆单位长度电抗"},
-        {"symbol": "cosphi", "name": "功率因数", "unit": "-", "role": "input", "constraints": {"min": 0.5, "max": 1}, "default": 0.85, "desc": "负荷功率因数"},
-        {"symbol": "sinphi", "name": "无功因数", "unit": "-", "role": "input", "constraints": {"min": 0, "max": 0.8}, "default": 0.527, "desc": "负荷无功因数"}
+        {
+          "symbol": "ΔU",
+          "name": "电压降",
+          "unit": "V",
+          "role": "output",
+          "desc": "线路电压降"
+        },
+        {
+          "symbol": "I",
+          "name": "工作电流",
+          "unit": "A",
+          "role": "input",
+          "constraints": {
+            "min": 1
+          },
+          "desc": "线路工作电流"
+        },
+        {
+          "symbol": "L",
+          "name": "线路长度",
+          "unit": "km",
+          "role": "input",
+          "constraints": {
+            "min": 0.01
+          },
+          "desc": "线路长度"
+        },
+        {
+          "symbol": "R",
+          "name": "电缆电阻",
+          "unit": "Ω/km",
+          "role": "input",
+          "constraints": {
+            "min": 0.01
+          },
+          "desc": "电缆单位长度电阻"
+        },
+        {
+          "symbol": "X",
+          "name": "电缆电抗",
+          "unit": "Ω/km",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "电缆单位长度电抗"
+        },
+        {
+          "symbol": "cosphi",
+          "name": "功率因数",
+          "unit": "-",
+          "role": "input",
+          "constraints": {
+            "min": 0.5,
+            "max": 1
+          },
+          "default": 0.85,
+          "desc": "负荷功率因数"
+        },
+        {
+          "symbol": "sinphi",
+          "name": "无功因数",
+          "unit": "-",
+          "role": "input",
+          "constraints": {
+            "min": 0,
+            "max": 0.8
+          },
+          "default": 0.527,
+          "desc": "负荷无功因数"
+        }
       ],
-      "source": {"standard_id": "GB 50217", "clause": "电压降校验"},
-      "tags": ["电缆电压降", "线路压降", "配电设计"],
-      "keywords": ["电缆电压降", "线路压降", "电压损失"],
+      "source": {
+        "standard_id": "GB 50217",
+        "clause": "电压降校验"
+      },
+      "tags": [
+        "电缆电压降",
+        "线路压降",
+        "配电设计"
+      ],
+      "keywords": [
+        "电缆电压降",
+        "线路压降",
+        "电压损失"
+      ],
       "precision": 0.1,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -99,27 +315,87 @@
     },
     {
       "formula_id": "EL-CAB-004",
+      "vdi_formula_id": "EL-CAB-004",
       "name": "电缆热稳定校验",
       "name_en": "Cable Thermal Stability Check",
-      "discipline": "electrical",
+      "discipline": "EA",
       "category": "cable/thermal",
       "type": "exact",
       "equation_text": "S ≥ (Ik * √t) / K",
       "equation_latex": "S \\geq \\frac{I_k \\cdot \\sqrt{t}}{K}",
       "equation_ast": {
         "op": "div",
-        "num": {"op": "mul", "args": [{"var": "Ik"}, {"op": "sqrt", "arg": {"var": "t"}}]},
-        "den": {"var": "K"}
+        "num": {
+          "op": "mul",
+          "args": [
+            {
+              "var": "Ik"
+            },
+            {
+              "op": "sqrt",
+              "arg": {
+                "var": "t"
+              }
+            }
+          ]
+        },
+        "den": {
+          "var": "K"
+        }
       },
       "variables": [
-        {"symbol": "S", "name": "最小截面", "unit": "mm²", "role": "output", "desc": "热稳定要求的最小截面"},
-        {"symbol": "Ik", "name": "短路电流", "unit": "kA", "role": "input", "constraints": {"min": 1}, "desc": "短路电流"},
-        {"symbol": "t", "name": "短路持续时间", "unit": "s", "role": "input", "constraints": {"min": 0.01}, "desc": "短路电流持续时间"},
-        {"symbol": "K", "name": "热稳定系数", "unit": "A·s^(1/2)/mm²", "role": "input", "constraints": {"min": 50}, "desc": "导体热稳定系数"}
+        {
+          "symbol": "S",
+          "name": "最小截面",
+          "unit": "mm²",
+          "role": "output",
+          "desc": "热稳定要求的最小截面"
+        },
+        {
+          "symbol": "Ik",
+          "name": "短路电流",
+          "unit": "kA",
+          "role": "input",
+          "constraints": {
+            "min": 1
+          },
+          "desc": "短路电流"
+        },
+        {
+          "symbol": "t",
+          "name": "短路持续时间",
+          "unit": "s",
+          "role": "input",
+          "constraints": {
+            "min": 0.01
+          },
+          "desc": "短路电流持续时间"
+        },
+        {
+          "symbol": "K",
+          "name": "热稳定系数",
+          "unit": "A·s^(1/2)/mm²",
+          "role": "input",
+          "constraints": {
+            "min": 50
+          },
+          "desc": "导体热稳定系数"
+        }
       ],
-      "source": {"standard_id": "GB 50217", "clause": "热稳定校验"},
-      "tags": ["电缆热稳定", "短路校验", "电缆选型"],
-      "keywords": ["电缆热稳定", "短路热效应", "最小截面"],
+      "source": {
+        "standard_id": "GB 50217",
+        "clause": "热稳定校验"
+      },
+      "tags": [
+        "电缆热稳定",
+        "短路校验",
+        "电缆选型"
+      ],
+      "keywords": [
+        "电缆热稳定",
+        "短路热效应",
+        "最小截面"
+      ],
       "precision": 0.1,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -127,9 +403,10 @@
     },
     {
       "formula_id": "EL-CAB-005",
+      "vdi_formula_id": "EL-CAB-005",
       "name": "电缆损耗计算",
       "name_en": "Cable Power Loss Calculation",
-      "discipline": "electrical",
+      "discipline": "EA",
       "category": "cable/loss",
       "type": "exact",
       "equation_text": "P_loss = 3 * I² * R * L",
@@ -137,21 +414,77 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"const": 3},
-          {"op": "pow", "base": {"var": "I"}, "exp": 2},
-          {"var": "R"},
-          {"var": "L"}
+          {
+            "const": 3
+          },
+          {
+            "op": "pow",
+            "base": {
+              "var": "I"
+            },
+            "exp": 2
+          },
+          {
+            "var": "R"
+          },
+          {
+            "var": "L"
+          }
         ]
       },
       "variables": [
-        {"symbol": "P_loss", "name": "电缆损耗", "unit": "W", "role": "output", "desc": "三相电缆有功损耗"},
-        {"symbol": "I", "name": "工作电流", "unit": "A", "role": "input", "constraints": {"min": 1}, "desc": "线路工作电流"},
-        {"symbol": "R", "name": "电缆电阻", "unit": "Ω/km", "role": "input", "constraints": {"min": 0.01}, "desc": "电缆单位长度电阻"},
-        {"symbol": "L", "name": "电缆长度", "unit": "km", "role": "input", "constraints": {"min": 0.01}, "desc": "电缆长度"}
+        {
+          "symbol": "P_loss",
+          "name": "电缆损耗",
+          "unit": "W",
+          "role": "output",
+          "desc": "三相电缆有功损耗"
+        },
+        {
+          "symbol": "I",
+          "name": "工作电流",
+          "unit": "A",
+          "role": "input",
+          "constraints": {
+            "min": 1
+          },
+          "desc": "线路工作电流"
+        },
+        {
+          "symbol": "R",
+          "name": "电缆电阻",
+          "unit": "Ω/km",
+          "role": "input",
+          "constraints": {
+            "min": 0.01
+          },
+          "desc": "电缆单位长度电阻"
+        },
+        {
+          "symbol": "L",
+          "name": "电缆长度",
+          "unit": "km",
+          "role": "input",
+          "constraints": {
+            "min": 0.01
+          },
+          "desc": "电缆长度"
+        }
       ],
-      "source": {"standard_id": "GB 50217", "clause": "损耗计算"},
-      "tags": ["电缆损耗", "线路损耗", "节能计算"],
-      "keywords": ["电缆损耗", "线路损耗", "有功损耗"],
+      "source": {
+        "standard_id": "GB 50217",
+        "clause": "损耗计算"
+      },
+      "tags": [
+        "电缆损耗",
+        "线路损耗",
+        "节能计算"
+      ],
+      "keywords": [
+        "电缆损耗",
+        "线路损耗",
+        "有功损耗"
+      ],
       "precision": 1,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -159,9 +492,10 @@
     },
     {
       "formula_id": "EL-CAB-006",
+      "vdi_formula_id": "EL-CAB-006",
       "name": "电缆桥架填充率",
       "name_en": "Cable Tray Fill Ratio",
-      "discipline": "electrical",
+      "discipline": "EA",
       "category": "cable/tray",
       "type": "exact",
       "equation_text": "η = A_cables / A_tray * 100%",
@@ -169,18 +503,63 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"op": "div", "num": {"var": "A_cables"}, "den": {"var": "A_tray"}},
-          {"const": 100}
+          {
+            "op": "div",
+            "num": {
+              "var": "A_cables"
+            },
+            "den": {
+              "var": "A_tray"
+            }
+          },
+          {
+            "const": 100
+          }
         ]
       },
       "variables": [
-        {"symbol": "η", "name": "填充率", "unit": "%", "role": "output", "desc": "桥架电缆填充率"},
-        {"symbol": "A_cables", "name": "电缆截面积", "unit": "mm²", "role": "input", "constraints": {"min": 1}, "desc": "所有电缆截面积之和"},
-        {"symbol": "A_tray", "name": "桥架截面积", "unit": "mm²", "role": "input", "constraints": {"min": 100}, "desc": "桥架可用截面积"}
+        {
+          "symbol": "η",
+          "name": "填充率",
+          "unit": "%",
+          "role": "output",
+          "desc": "桥架电缆填充率"
+        },
+        {
+          "symbol": "A_cables",
+          "name": "电缆截面积",
+          "unit": "mm²",
+          "role": "input",
+          "constraints": {
+            "min": 1
+          },
+          "desc": "所有电缆截面积之和"
+        },
+        {
+          "symbol": "A_tray",
+          "name": "桥架截面积",
+          "unit": "mm²",
+          "role": "input",
+          "constraints": {
+            "min": 100
+          },
+          "desc": "桥架可用截面积"
+        }
       ],
-      "source": {"standard_id": "GB 50303", "clause": "桥架敷设"},
-      "tags": ["桥架", "填充率", "电缆敷设"],
-      "keywords": ["桥架填充率", "电缆敷设", "桥架选型"],
+      "source": {
+        "standard_id": "GB 50303",
+        "clause": "桥架敷设"
+      },
+      "tags": [
+        "桥架",
+        "填充率",
+        "电缆敷设"
+      ],
+      "keywords": [
+        "桥架填充率",
+        "电缆敷设",
+        "桥架选型"
+      ],
       "precision": 0.1,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",

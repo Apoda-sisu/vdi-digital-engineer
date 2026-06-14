@@ -1,0 +1,71 @@
+{
+  "manifest_version": 2,
+  "created_at": "2026-06-13",
+  "updated_at": "2026-06-13",
+  "discipline": "instrument",
+  "baseline_clauses": 26,
+  "current_clauses": 54,
+  "targets": {
+    "phase1": {
+      "deadline": "2026-07-31",
+      "clause_count": 40
+    },
+    "phase2": {
+      "deadline": "2026-09-30",
+      "clause_count": 80
+    }
+  },
+  "standards": [
+    {
+      "priority": "P0",
+      "source_id": "HG/T 20507",
+      "title": "化工装置仪表工程设计规定",
+      "target_clauses": 20,
+      "current_clauses": 25,
+      "skill_tags": ["IN-D01", "IN-D02", "IN-D06", "IN-T02"],
+      "status": "phase1"
+    },
+    {
+      "priority": "P0",
+      "source_id": "HG/T 20509",
+      "title": "化工装置仪表系统设计规定",
+      "target_clauses": 15,
+      "current_clauses": 8,
+      "skill_tags": ["IN-D05", "IN-D04"],
+      "status": "phase1"
+    },
+    {
+      "priority": "P0",
+      "source_id": "IEC 61511",
+      "title": "过程工业领域安全仪表系统的功能安全",
+      "target_clauses": 15,
+      "current_clauses": 8,
+      "skill_tags": ["IN-D03", "IN-T01"],
+      "status": "phase1"
+    },
+    {
+      "priority": "P0",
+      "source_id": "GB/T 50770",
+      "title": "石油化工安全仪表系统设计规范",
+      "target_clauses": 12,
+      "current_clauses": 10,
+      "skill_tags": ["IN-D04", "IN-D07", "IN-D08"],
+      "status": "phase1"
+    }
+  ],
+  "retrieval_regression_queries": [
+    "仪表选型 HG/T 20507",
+    "IEC 61511 SIL 联锁",
+    "控制回路 报警 联锁",
+    "仪表 位号 索引 清单",
+    "安全仪表系统 SIS",
+    "DCS 与 SIS 功能分离",
+    "量程选择 正常操作值 仪表",
+    "安全仪表系统 独立于基本过程控制系统",
+    "仪表电缆 本安 接线箱",
+    "OPC UA 上位 通信接口",
+    "HG/T 20507 涡街 流量计选型",
+    "雷达液位 储罐 非接触",
+    "防爆 本安 Zone 温度组别"
+  ]
+}

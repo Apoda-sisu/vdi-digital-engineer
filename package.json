@@ -1,0 +1,39 @@
+{
+  "name": "vdi-digital-engineer",
+  "version": "1.0.0",
+  "description": "VDI 数字工程师系统",
+  "type": "module",
+  "main": "pilotdeck-vdi/mcp/vdi-knowledge/server-v2.mjs",
+  "scripts": {
+    "start": "node pilotdeck-vdi/mcp/vdi-knowledge/server-v2.mjs",
+    "test": "node pilotdeck-vdi/tests/test-system-health.mjs",
+    "build": "node pilotdeck-vdi/scripts/build-module-graph.mjs",
+    "cad:acceptance": "npm run acceptance --prefix pilotdeck-vdi/mcp/vdi-cad",
+    "cad:acceptance:full": "npm run acceptance:full --prefix pilotdeck-vdi/mcp/vdi-cad",
+    "cad:acceptance:e2e": "npm run acceptance:e2e --prefix pilotdeck-vdi/mcp/vdi-cad",
+    "acceptance": "npm run acceptance --prefix pilotdeck-vdi/mcp/vdi-cad",
+    "acceptance:full": "npm run acceptance:full --prefix pilotdeck-vdi/mcp/vdi-cad",
+    "acceptance:e2e": "npm run acceptance:e2e --prefix pilotdeck-vdi/mcp/vdi-cad",
+    "cad:test:acceptance": "npm run test:acceptance --prefix pilotdeck-vdi/mcp/vdi-cad",
+    "cad:test:e2e": "npm run test:e2e --prefix pilotdeck-vdi/mcp/vdi-cad",
+    "cad:test:e2e:mock": "npm run test:e2e:mock --prefix pilotdeck-vdi/mcp/vdi-cad"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "compression": "^1.7.4",
+    "morgan": "^1.10.0",
+    "dotenv": "^16.3.1",
+    "node-fetch": "^3.3.2",
+    "fuse.js": "^7.0.0",
+    "mathjs": "^12.2.1"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": ["vdi", "digital-engineer", "knowledge-base"],
+  "author": "VDI Team",
+  "license": "MIT"
+}

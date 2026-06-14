@@ -8,23 +8,83 @@
       "discipline": "water",
       "category": "material_property",
       "columns": [
-        {"key": "material", "name": "管材", "type": "string"},
-        {"key": "C_new", "name": "新管C值", "type": "number"},
-        {"key": "C_used", "name": "使用10年C值", "type": "number"},
-        {"key": "notes", "name": "备注", "type": "string"}
+        {
+          "key": "material",
+          "name": "管材",
+          "type": "string"
+        },
+        {
+          "key": "C_new",
+          "name": "新管C值",
+          "type": "number"
+        },
+        {
+          "key": "C_used",
+          "name": "使用10年C值",
+          "type": "number"
+        },
+        {
+          "key": "notes",
+          "name": "备注",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"material": "球墨铸铁管", "C_new": 130, "C_used": 120, "notes": "内衬水泥砂浆"},
-        {"material": "钢管", "C_new": 120, "C_used": 100, "notes": "内壁防腐处理"},
-        {"material": "PE管", "C_new": 140, "C_used": 140, "notes": "塑料管不老化"},
-        {"material": "HDPE管", "C_new": 140, "C_used": 140, "notes": ""},
-        {"material": "UPVC管", "C_new": 140, "C_used": 135, "notes": ""},
-        {"material": "混凝土管", "C_new": 130, "C_used": 100, "notes": "内壁粗糙"},
-        {"material": "玻璃钢管", "C_new": 150, "C_used": 145, "notes": "FRP"}
+        {
+          "material": "球墨铸铁管",
+          "C_new": 130,
+          "C_used": 120,
+          "notes": "内衬水泥砂浆"
+        },
+        {
+          "material": "钢管",
+          "C_new": 120,
+          "C_used": 100,
+          "notes": "内壁防腐处理"
+        },
+        {
+          "material": "PE管",
+          "C_new": 140,
+          "C_used": 140,
+          "notes": "塑料管不老化"
+        },
+        {
+          "material": "HDPE管",
+          "C_new": 140,
+          "C_used": 140,
+          "notes": ""
+        },
+        {
+          "material": "UPVC管",
+          "C_new": 140,
+          "C_used": 135,
+          "notes": ""
+        },
+        {
+          "material": "混凝土管",
+          "C_new": 130,
+          "C_used": 100,
+          "notes": "内壁粗糙"
+        },
+        {
+          "material": "玻璃钢管",
+          "C_new": 150,
+          "C_used": 145,
+          "notes": "FRP"
+        }
       ],
-      "source": {"standard_id": "GB 50013-2018", "clause": "7.1.3"},
-      "referenced_by": ["WA-HYD-001"],
-      "tags": ["C值", "粗糙系数", "管材参数"]
+      "source": {
+        "standard_id": "GB 50013-2018",
+        "clause": "7.1.3"
+      },
+      "referenced_by": [
+        "CX1380-003"
+      ],
+      "tags": [
+        "C值",
+        "粗糙系数",
+        "管材参数"
+      ]
     },
     {
       "table_id": "TBL-N-001",
@@ -32,22 +92,71 @@
       "discipline": "water",
       "category": "material_property",
       "columns": [
-        {"key": "material", "name": "管材", "type": "string"},
-        {"key": "n", "name": "粗糙系数", "type": "number"},
-        {"key": "notes", "name": "备注", "type": "string"}
+        {
+          "key": "material",
+          "name": "管材",
+          "type": "string"
+        },
+        {
+          "key": "n",
+          "name": "粗糙系数",
+          "type": "number"
+        },
+        {
+          "key": "notes",
+          "name": "备注",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"material": "混凝土管", "n": 0.013, "notes": "普通混凝土"},
-        {"material": "钢筋混凝土管", "n": 0.013, "notes": ""},
-        {"material": "HDPE管", "n": 0.009, "notes": "双壁波纹管"},
-        {"material": "UPVC管", "n": 0.009, "notes": ""},
-        {"material": "陶土管", "n": 0.013, "notes": ""},
-        {"material": "铸铁管", "n": 0.013, "notes": "水泥砂浆内衬"},
-        {"material": "钢管", "n": 0.012, "notes": "焊接钢管"}
+        {
+          "material": "混凝土管",
+          "n": 0.013,
+          "notes": "普通混凝土"
+        },
+        {
+          "material": "钢筋混凝土管",
+          "n": 0.013,
+          "notes": ""
+        },
+        {
+          "material": "HDPE管",
+          "n": 0.009,
+          "notes": "双壁波纹管"
+        },
+        {
+          "material": "UPVC管",
+          "n": 0.009,
+          "notes": ""
+        },
+        {
+          "material": "陶土管",
+          "n": 0.013,
+          "notes": ""
+        },
+        {
+          "material": "铸铁管",
+          "n": 0.013,
+          "notes": "水泥砂浆内衬"
+        },
+        {
+          "material": "钢管",
+          "n": 0.012,
+          "notes": "焊接钢管"
+        }
       ],
-      "source": {"standard_id": "GB 50014-2021", "clause": "4.2.6"},
-      "referenced_by": ["WA-HYD-002"],
-      "tags": ["粗糙系数", "曼宁", "管材参数"]
+      "source": {
+        "standard_id": "GB 50014-2021",
+        "clause": "4.2.6"
+      },
+      "referenced_by": [
+        "CX1380-004"
+      ],
+      "tags": [
+        "粗糙系数",
+        "曼宁",
+        "管材参数"
+      ]
     },
     {
       "table_id": "TBL-PSI-001",
@@ -55,22 +164,71 @@
       "discipline": "water",
       "category": "surface_property",
       "columns": [
-        {"key": "surface", "name": "地面覆盖", "type": "string"},
-        {"key": "psi", "name": "径流系数", "type": "number"},
-        {"key": "notes", "name": "备注", "type": "string"}
+        {
+          "key": "surface",
+          "name": "地面覆盖",
+          "type": "string"
+        },
+        {
+          "key": "psi",
+          "name": "径流系数",
+          "type": "number"
+        },
+        {
+          "key": "notes",
+          "name": "备注",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"surface": "各种屋面、混凝土或沥青路面", "psi": 0.90, "notes": ""},
-        {"surface": "大块石铺砌路面、沥青表面处理碎石路面", "psi": 0.60, "notes": ""},
-        {"surface": "级配碎石路面", "psi": 0.45, "notes": ""},
-        {"surface": "干砌砖石或碎石路面", "psi": 0.40, "notes": ""},
-        {"surface": "非铺砌土地面", "psi": 0.30, "notes": ""},
-        {"surface": "公园或绿地", "psi": 0.15, "notes": ""},
-        {"surface": "透水铺装地面", "psi": 0.29, "notes": "3年重现期"}
+        {
+          "surface": "各种屋面、混凝土或沥青路面",
+          "psi": 0.9,
+          "notes": ""
+        },
+        {
+          "surface": "大块石铺砌路面、沥青表面处理碎石路面",
+          "psi": 0.6,
+          "notes": ""
+        },
+        {
+          "surface": "级配碎石路面",
+          "psi": 0.45,
+          "notes": ""
+        },
+        {
+          "surface": "干砌砖石或碎石路面",
+          "psi": 0.4,
+          "notes": ""
+        },
+        {
+          "surface": "非铺砌土地面",
+          "psi": 0.3,
+          "notes": ""
+        },
+        {
+          "surface": "公园或绿地",
+          "psi": 0.15,
+          "notes": ""
+        },
+        {
+          "surface": "透水铺装地面",
+          "psi": 0.29,
+          "notes": "3年重现期"
+        }
       ],
-      "source": {"standard_id": "GB 50014-2021", "clause": "4.2.2"},
-      "referenced_by": ["WA-RAI-001"],
-      "tags": ["径流系数", "地面覆盖", "雨水计算"]
+      "source": {
+        "standard_id": "GB 50014-2021",
+        "clause": "4.2.2"
+      },
+      "referenced_by": [
+        "CX1380-023"
+      ],
+      "tags": [
+        "径流系数",
+        "地面覆盖",
+        "雨水计算"
+      ]
     },
     {
       "table_id": "TBL-NU-001",
@@ -78,25 +236,86 @@
       "discipline": "water",
       "category": "fluid_property",
       "columns": [
-        {"key": "temperature", "name": "温度", "type": "number"},
-        {"key": "nu", "name": "运动粘度", "type": "number"},
-        {"key": "unit", "name": "单位", "type": "string"}
+        {
+          "key": "temperature",
+          "name": "温度",
+          "type": "number"
+        },
+        {
+          "key": "nu",
+          "name": "运动粘度",
+          "type": "number"
+        },
+        {
+          "key": "unit",
+          "name": "单位",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"temperature": 0, "nu": 1.787e-6, "unit": "m2/s"},
-        {"temperature": 5, "nu": 1.519e-6, "unit": "m2/s"},
-        {"temperature": 10, "nu": 1.307e-6, "unit": "m2/s"},
-        {"temperature": 15, "nu": 1.139e-6, "unit": "m2/s"},
-        {"temperature": 20, "nu": 1.004e-6, "unit": "m2/s"},
-        {"temperature": 25, "nu": 0.893e-6, "unit": "m2/s"},
-        {"temperature": 30, "nu": 0.801e-6, "unit": "m2/s"},
-        {"temperature": 40, "nu": 0.658e-6, "unit": "m2/s"},
-        {"temperature": 50, "nu": 0.553e-6, "unit": "m2/s"},
-        {"temperature": 60, "nu": 0.475e-6, "unit": "m2/s"}
+        {
+          "temperature": 0,
+          "nu": 0.000001787,
+          "unit": "m2/s"
+        },
+        {
+          "temperature": 5,
+          "nu": 0.000001519,
+          "unit": "m2/s"
+        },
+        {
+          "temperature": 10,
+          "nu": 0.000001307,
+          "unit": "m2/s"
+        },
+        {
+          "temperature": 15,
+          "nu": 0.000001139,
+          "unit": "m2/s"
+        },
+        {
+          "temperature": 20,
+          "nu": 0.000001004,
+          "unit": "m2/s"
+        },
+        {
+          "temperature": 25,
+          "nu": 8.93e-7,
+          "unit": "m2/s"
+        },
+        {
+          "temperature": 30,
+          "nu": 8.01e-7,
+          "unit": "m2/s"
+        },
+        {
+          "temperature": 40,
+          "nu": 6.58e-7,
+          "unit": "m2/s"
+        },
+        {
+          "temperature": 50,
+          "nu": 5.53e-7,
+          "unit": "m2/s"
+        },
+        {
+          "temperature": 60,
+          "nu": 4.75e-7,
+          "unit": "m2/s"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "附录"},
-      "referenced_by": ["WA-HYD-008"],
-      "tags": ["运动粘度", "流体性质", "雷诺数"]
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "附录"
+      },
+      "referenced_by": [
+        "CX1380-010"
+      ],
+      "tags": [
+        "运动粘度",
+        "流体性质",
+        "雷诺数"
+      ]
     },
     {
       "table_id": "TBL-K-001",
@@ -104,23 +323,76 @@
       "discipline": "water",
       "category": "soil_property",
       "columns": [
-        {"key": "soil_type", "name": "土壤类型", "type": "string"},
-        {"key": "K", "name": "渗透系数", "type": "number"},
-        {"key": "unit", "name": "单位", "type": "string"}
+        {
+          "key": "soil_type",
+          "name": "土壤类型",
+          "type": "string"
+        },
+        {
+          "key": "K",
+          "name": "渗透系数",
+          "type": "number"
+        },
+        {
+          "key": "unit",
+          "name": "单位",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"soil_type": "粘土", "K": 1e-8, "unit": "m/s"},
-        {"soil_type": "粉质粘土", "K": 1e-7, "unit": "m/s"},
-        {"soil_type": "粉土", "K": 1e-6, "unit": "m/s"},
-        {"soil_type": "粉砂", "K": 1e-5, "unit": "m/s"},
-        {"soil_type": "细砂", "K": 1e-4, "unit": "m/s"},
-        {"soil_type": "中砂", "K": 1e-3, "unit": "m/s"},
-        {"soil_type": "粗砂", "K": 1e-2, "unit": "m/s"},
-        {"soil_type": "砾石", "K": 1e-1, "unit": "m/s"}
+        {
+          "soil_type": "粘土",
+          "K": 1e-8,
+          "unit": "m/s"
+        },
+        {
+          "soil_type": "粉质粘土",
+          "K": 1e-7,
+          "unit": "m/s"
+        },
+        {
+          "soil_type": "粉土",
+          "K": 0.000001,
+          "unit": "m/s"
+        },
+        {
+          "soil_type": "粉砂",
+          "K": 0.00001,
+          "unit": "m/s"
+        },
+        {
+          "soil_type": "细砂",
+          "K": 0.0001,
+          "unit": "m/s"
+        },
+        {
+          "soil_type": "中砂",
+          "K": 0.001,
+          "unit": "m/s"
+        },
+        {
+          "soil_type": "粗砂",
+          "K": 0.01,
+          "unit": "m/s"
+        },
+        {
+          "soil_type": "砾石",
+          "K": 0.1,
+          "unit": "m/s"
+        }
       ],
-      "source": {"standard_id": "GB 50400-2016", "clause": "6.2.1"},
-      "referenced_by": ["WA-RAI-003"],
-      "tags": ["渗透系数", "土壤性质", "海绵城市"]
+      "source": {
+        "standard_id": "GB 50400-2016",
+        "clause": "6.2.1"
+      },
+      "referenced_by": [
+        "CX1380-025"
+      ],
+      "tags": [
+        "渗透系数",
+        "土壤性质",
+        "海绵城市"
+      ]
     },
     {
       "table_id": "TBL-ROUGH-001",
@@ -128,25 +400,95 @@
       "discipline": "water",
       "category": "material_property",
       "columns": [
-        {"key": "material", "name": "管材", "type": "string"},
-        {"key": "roughness", "name": "绝对粗糙度(mm)", "type": "number"},
-        {"key": "condition", "name": "工况", "type": "string"},
-        {"key": "notes", "name": "备注", "type": "string"}
+        {
+          "key": "material",
+          "name": "管材",
+          "type": "string"
+        },
+        {
+          "key": "roughness",
+          "name": "绝对粗糙度(mm)",
+          "type": "number"
+        },
+        {
+          "key": "condition",
+          "name": "工况",
+          "type": "string"
+        },
+        {
+          "key": "notes",
+          "name": "备注",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"material": "新钢管", "roughness": 0.05, "condition": "新安装", "notes": ""},
-        {"material": "使用5年钢管", "roughness": 0.15, "condition": "正常使用", "notes": ""},
-        {"material": "使用10年钢管", "roughness": 0.30, "condition": "轻度腐蚀", "notes": ""},
-        {"material": "铸铁管", "roughness": 0.25, "condition": "新安装", "notes": "水泥砂浆内衬"},
-        {"material": "PVC管", "roughness": 0.0015, "condition": "新安装", "notes": ""},
-        {"material": "PE管", "roughness": 0.007, "condition": "新安装", "notes": ""},
-        {"material": "玻璃钢管", "roughness": 0.003, "condition": "新安装", "notes": "FRP"},
-        {"material": "混凝土管", "roughness": 0.30, "condition": "新安装", "notes": ""},
-        {"material": "不锈钢管", "roughness": 0.015, "condition": "新安装", "notes": ""}
+        {
+          "material": "新钢管",
+          "roughness": 0.05,
+          "condition": "新安装",
+          "notes": ""
+        },
+        {
+          "material": "使用5年钢管",
+          "roughness": 0.15,
+          "condition": "正常使用",
+          "notes": ""
+        },
+        {
+          "material": "使用10年钢管",
+          "roughness": 0.3,
+          "condition": "轻度腐蚀",
+          "notes": ""
+        },
+        {
+          "material": "铸铁管",
+          "roughness": 0.25,
+          "condition": "新安装",
+          "notes": "水泥砂浆内衬"
+        },
+        {
+          "material": "PVC管",
+          "roughness": 0.0015,
+          "condition": "新安装",
+          "notes": ""
+        },
+        {
+          "material": "PE管",
+          "roughness": 0.007,
+          "condition": "新安装",
+          "notes": ""
+        },
+        {
+          "material": "玻璃钢管",
+          "roughness": 0.003,
+          "condition": "新安装",
+          "notes": "FRP"
+        },
+        {
+          "material": "混凝土管",
+          "roughness": 0.3,
+          "condition": "新安装",
+          "notes": ""
+        },
+        {
+          "material": "不锈钢管",
+          "roughness": 0.015,
+          "condition": "新安装",
+          "notes": ""
+        }
       ],
-      "source": {"standard_id": "GB 50013-2018", "clause": "7.1.3"},
-      "referenced_by": ["WA-HYD-013"],
-      "tags": ["粗糙度", "管材参数", "摩擦因子"]
+      "source": {
+        "standard_id": "GB 50013-2018",
+        "clause": "7.1.3"
+      },
+      "referenced_by": [
+        "CX1380-015"
+      ],
+      "tags": [
+        "粗糙度",
+        "管材参数",
+        "摩擦因子"
+      ]
     },
     {
       "table_id": "TBL-HV-001",
@@ -154,30 +496,125 @@
       "discipline": "water",
       "category": "fluid_property",
       "columns": [
-        {"key": "temperature", "name": "温度(℃)", "type": "number"},
-        {"key": "pressure", "name": "蒸汽压力(kPa)", "type": "number"},
-        {"key": "head", "name": "水头(m)", "type": "number"},
-        {"key": "notes", "name": "备注", "type": "string"}
+        {
+          "key": "temperature",
+          "name": "温度(℃)",
+          "type": "number"
+        },
+        {
+          "key": "pressure",
+          "name": "蒸汽压力(kPa)",
+          "type": "number"
+        },
+        {
+          "key": "head",
+          "name": "水头(m)",
+          "type": "number"
+        },
+        {
+          "key": "notes",
+          "name": "备注",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"temperature": 0, "pressure": 0.61, "head": 0.06, "notes": ""},
-        {"temperature": 5, "pressure": 0.87, "head": 0.09, "notes": ""},
-        {"temperature": 10, "pressure": 1.23, "head": 0.12, "notes": ""},
-        {"temperature": 15, "pressure": 1.71, "head": 0.17, "notes": ""},
-        {"temperature": 20, "pressure": 2.34, "head": 0.24, "notes": "常温"},
-        {"temperature": 25, "pressure": 3.17, "head": 0.32, "notes": ""},
-        {"temperature": 30, "pressure": 4.24, "head": 0.43, "notes": ""},
-        {"temperature": 40, "pressure": 7.38, "head": 0.75, "notes": ""},
-        {"temperature": 50, "pressure": 12.34, "head": 1.26, "notes": ""},
-        {"temperature": 60, "pressure": 19.92, "head": 2.03, "notes": ""},
-        {"temperature": 70, "pressure": 31.16, "head": 3.18, "notes": ""},
-        {"temperature": 80, "pressure": 47.36, "head": 4.83, "notes": ""},
-        {"temperature": 90, "pressure": 70.11, "head": 7.15, "notes": ""},
-        {"temperature": 100, "pressure": 101.33, "head": 10.33, "notes": "沸点"}
+        {
+          "temperature": 0,
+          "pressure": 0.61,
+          "head": 0.06,
+          "notes": ""
+        },
+        {
+          "temperature": 5,
+          "pressure": 0.87,
+          "head": 0.09,
+          "notes": ""
+        },
+        {
+          "temperature": 10,
+          "pressure": 1.23,
+          "head": 0.12,
+          "notes": ""
+        },
+        {
+          "temperature": 15,
+          "pressure": 1.71,
+          "head": 0.17,
+          "notes": ""
+        },
+        {
+          "temperature": 20,
+          "pressure": 2.34,
+          "head": 0.24,
+          "notes": "常温"
+        },
+        {
+          "temperature": 25,
+          "pressure": 3.17,
+          "head": 0.32,
+          "notes": ""
+        },
+        {
+          "temperature": 30,
+          "pressure": 4.24,
+          "head": 0.43,
+          "notes": ""
+        },
+        {
+          "temperature": 40,
+          "pressure": 7.38,
+          "head": 0.75,
+          "notes": ""
+        },
+        {
+          "temperature": 50,
+          "pressure": 12.34,
+          "head": 1.26,
+          "notes": ""
+        },
+        {
+          "temperature": 60,
+          "pressure": 19.92,
+          "head": 2.03,
+          "notes": ""
+        },
+        {
+          "temperature": 70,
+          "pressure": 31.16,
+          "head": 3.18,
+          "notes": ""
+        },
+        {
+          "temperature": 80,
+          "pressure": 47.36,
+          "head": 4.83,
+          "notes": ""
+        },
+        {
+          "temperature": 90,
+          "pressure": 70.11,
+          "head": 7.15,
+          "notes": ""
+        },
+        {
+          "temperature": 100,
+          "pressure": 101.33,
+          "head": 10.33,
+          "notes": "沸点"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "附录"},
-      "referenced_by": ["WA-EQ-003"],
-      "tags": ["蒸汽压力", "NPSH", "水泵汽蚀"]
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "附录"
+      },
+      "referenced_by": [
+        "CI7303-003"
+      ],
+      "tags": [
+        "蒸汽压力",
+        "NPSH",
+        "水泵汽蚀"
+      ]
     },
     {
       "table_id": "TBL-SPK-001",
@@ -185,25 +622,102 @@
       "discipline": "water",
       "category": "fire_design",
       "columns": [
-        {"key": "hazard_class", "name": "危险等级", "type": "string"},
-        {"key": "intensity", "name": "喷水强度(L/min·m²)", "type": "number"},
-        {"key": "area", "name": "作用面积(m²)", "type": "number"},
-        {"key": "duration", "name": "持续时间(min)", "type": "number"},
-        {"key": "notes", "name": "典型场所", "type": "string"}
+        {
+          "key": "hazard_class",
+          "name": "危险等级",
+          "type": "string"
+        },
+        {
+          "key": "intensity",
+          "name": "喷水强度(L/min·m²)",
+          "type": "number"
+        },
+        {
+          "key": "area",
+          "name": "作用面积(m²)",
+          "type": "number"
+        },
+        {
+          "key": "duration",
+          "name": "持续时间(min)",
+          "type": "number"
+        },
+        {
+          "key": "notes",
+          "name": "典型场所",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"hazard_class": "轻危险级", "intensity": 4, "area": 160, "duration": 60, "notes": "住宅、办公室、医院"},
-        {"hazard_class": "中危险级I级", "intensity": 6, "area": 160, "duration": 60, "notes": "商场、餐厅、旅馆"},
-        {"hazard_class": "中危险级II级", "intensity": 8, "area": 160, "duration": 60, "notes": "汽车库、书库、舞台"},
-        {"hazard_class": "严重危险级I级", "intensity": 12, "area": 260, "duration": 60, "notes": "印刷厂、木器厂"},
-        {"hazard_class": "严重危险级II级", "intensity": 16, "area": 260, "duration": 60, "notes": "易燃液体喷雾操作"},
-        {"hazard_class": "仓库危险级I级", "intensity": 12, "area": 200, "duration": 90, "notes": "食品、木材"},
-        {"hazard_class": "仓库危险级II级", "intensity": 16, "area": 200, "duration": 90, "notes": "橡胶、塑料"},
-        {"hazard_class": "仓库危险级III级", "intensity": 20, "area": 260, "duration": 90, "notes": "易燃液体"}
+        {
+          "hazard_class": "轻危险级",
+          "intensity": 4,
+          "area": 160,
+          "duration": 60,
+          "notes": "住宅、办公室、医院"
+        },
+        {
+          "hazard_class": "中危险级I级",
+          "intensity": 6,
+          "area": 160,
+          "duration": 60,
+          "notes": "商场、餐厅、旅馆"
+        },
+        {
+          "hazard_class": "中危险级II级",
+          "intensity": 8,
+          "area": 160,
+          "duration": 60,
+          "notes": "汽车库、书库、舞台"
+        },
+        {
+          "hazard_class": "严重危险级I级",
+          "intensity": 12,
+          "area": 260,
+          "duration": 60,
+          "notes": "印刷厂、木器厂"
+        },
+        {
+          "hazard_class": "严重危险级II级",
+          "intensity": 16,
+          "area": 260,
+          "duration": 60,
+          "notes": "易燃液体喷雾操作"
+        },
+        {
+          "hazard_class": "仓库危险级I级",
+          "intensity": 12,
+          "area": 200,
+          "duration": 90,
+          "notes": "食品、木材"
+        },
+        {
+          "hazard_class": "仓库危险级II级",
+          "intensity": 16,
+          "area": 200,
+          "duration": 90,
+          "notes": "橡胶、塑料"
+        },
+        {
+          "hazard_class": "仓库危险级III级",
+          "intensity": 20,
+          "area": 260,
+          "duration": 90,
+          "notes": "易燃液体"
+        }
       ],
-      "source": {"standard_id": "GB 50084-2017", "clause": "5.0.1"},
-      "referenced_by": ["WA-FIR-003"],
-      "tags": ["喷水强度", "危险等级", "喷淋设计"]
+      "source": {
+        "standard_id": "GB 50084-2017",
+        "clause": "5.0.1"
+      },
+      "referenced_by": [
+        "HX6802-003"
+      ],
+      "tags": [
+        "喷水强度",
+        "危险等级",
+        "喷淋设计"
+      ]
     },
     {
       "table_id": "TBL-SPK-002",
@@ -211,23 +725,76 @@
       "discipline": "water",
       "category": "fire_design",
       "columns": [
-        {"key": "hazard_class", "name": "危险等级", "type": "string"},
-        {"key": "area", "name": "作用面积(m²)", "type": "number"},
-        {"key": "notes", "name": "说明", "type": "string"}
+        {
+          "key": "hazard_class",
+          "name": "危险等级",
+          "type": "string"
+        },
+        {
+          "key": "area",
+          "name": "作用面积(m²)",
+          "type": "number"
+        },
+        {
+          "key": "notes",
+          "name": "说明",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"hazard_class": "轻危险级", "area": 160, "notes": "住宅、办公室、医院"},
-        {"hazard_class": "中危险级I级", "area": 160, "notes": "商场、餐厅、旅馆"},
-        {"hazard_class": "中危险级II级", "area": 160, "notes": "汽车库、书库、舞台"},
-        {"hazard_class": "严重危险级I级", "area": 260, "notes": "印刷厂、木器厂"},
-        {"hazard_class": "严重危险级II级", "area": 260, "notes": "易燃液体喷雾操作"},
-        {"hazard_class": "仓库危险级I级", "area": 200, "notes": "食品、木材"},
-        {"hazard_class": "仓库危险级II级", "area": 200, "notes": "橡胶、塑料"},
-        {"hazard_class": "仓库危险级III级", "area": 260, "notes": "易燃液体"}
+        {
+          "hazard_class": "轻危险级",
+          "area": 160,
+          "notes": "住宅、办公室、医院"
+        },
+        {
+          "hazard_class": "中危险级I级",
+          "area": 160,
+          "notes": "商场、餐厅、旅馆"
+        },
+        {
+          "hazard_class": "中危险级II级",
+          "area": 160,
+          "notes": "汽车库、书库、舞台"
+        },
+        {
+          "hazard_class": "严重危险级I级",
+          "area": 260,
+          "notes": "印刷厂、木器厂"
+        },
+        {
+          "hazard_class": "严重危险级II级",
+          "area": 260,
+          "notes": "易燃液体喷雾操作"
+        },
+        {
+          "hazard_class": "仓库危险级I级",
+          "area": 200,
+          "notes": "食品、木材"
+        },
+        {
+          "hazard_class": "仓库危险级II级",
+          "area": 200,
+          "notes": "橡胶、塑料"
+        },
+        {
+          "hazard_class": "仓库危险级III级",
+          "area": 260,
+          "notes": "易燃液体"
+        }
       ],
-      "source": {"standard_id": "GB 50084-2017", "clause": "5.0.1"},
-      "referenced_by": ["WA-FIR-003"],
-      "tags": ["作用面积", "危险等级", "喷淋设计"]
+      "source": {
+        "standard_id": "GB 50084-2017",
+        "clause": "5.0.1"
+      },
+      "referenced_by": [
+        "HX6802-003"
+      ],
+      "tags": [
+        "作用面积",
+        "危险等级",
+        "喷淋设计"
+      ]
     },
     {
       "table_id": "TBL-ALPHA-001",
@@ -235,24 +802,89 @@
       "discipline": "piping",
       "category": "material_property",
       "columns": [
-        {"key": "material", "name": "材料", "type": "string"},
-        {"key": "alpha", "name": "线膨胀系数(1/℃)", "type": "number"},
-        {"key": "temp_range", "name": "适用温度范围(℃)", "type": "string"},
-        {"key": "notes", "name": "备注", "type": "string"}
+        {
+          "key": "material",
+          "name": "材料",
+          "type": "string"
+        },
+        {
+          "key": "alpha",
+          "name": "线膨胀系数(1/℃)",
+          "type": "number"
+        },
+        {
+          "key": "temp_range",
+          "name": "适用温度范围(℃)",
+          "type": "string"
+        },
+        {
+          "key": "notes",
+          "name": "备注",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"material": "碳钢", "alpha": 1.2e-5, "temp_range": "0~400", "notes": ""},
-        {"material": "不锈钢", "alpha": 1.7e-5, "temp_range": "0~800", "notes": "奥氏体"},
-        {"material": "铜", "alpha": 1.7e-5, "temp_range": "0~300", "notes": ""},
-        {"material": "铝", "alpha": 2.4e-5, "temp_range": "0~200", "notes": ""},
-        {"material": "PE管", "alpha": 1.5e-4, "temp_range": "0~60", "notes": "塑料管"},
-        {"material": "PVC管", "alpha": 7e-5, "temp_range": "0~60", "notes": ""},
-        {"material": "铸铁", "alpha": 1.1e-5, "temp_range": "0~400", "notes": ""},
-        {"material": "玻璃钢", "alpha": 1.8e-5, "temp_range": "0~150", "notes": "FRP"}
+        {
+          "material": "碳钢",
+          "alpha": 0.000012,
+          "temp_range": "0~400",
+          "notes": ""
+        },
+        {
+          "material": "不锈钢",
+          "alpha": 0.000017,
+          "temp_range": "0~800",
+          "notes": "奥氏体"
+        },
+        {
+          "material": "铜",
+          "alpha": 0.000017,
+          "temp_range": "0~300",
+          "notes": ""
+        },
+        {
+          "material": "铝",
+          "alpha": 0.000024,
+          "temp_range": "0~200",
+          "notes": ""
+        },
+        {
+          "material": "PE管",
+          "alpha": 0.00015,
+          "temp_range": "0~60",
+          "notes": "塑料管"
+        },
+        {
+          "material": "PVC管",
+          "alpha": 0.00007,
+          "temp_range": "0~60",
+          "notes": ""
+        },
+        {
+          "material": "铸铁",
+          "alpha": 0.000011,
+          "temp_range": "0~400",
+          "notes": ""
+        },
+        {
+          "material": "玻璃钢",
+          "alpha": 0.000018,
+          "temp_range": "0~150",
+          "notes": "FRP"
+        }
       ],
-      "source": {"standard_id": "GB/T 20801.3", "clause": "附录A"},
-      "referenced_by": ["PI-STR-002"],
-      "tags": ["线膨胀系数", "热膨胀", "材料参数"]
+      "source": {
+        "standard_id": "GB/T 20801.3",
+        "clause": "附录A"
+      },
+      "referenced_by": [
+        "MP1029-002"
+      ],
+      "tags": [
+        "线膨胀系数",
+        "热膨胀",
+        "材料参数"
+      ]
     },
     {
       "table_id": "TBL-ROUGH-PIPING-001",
@@ -260,26 +892,101 @@
       "discipline": "piping",
       "category": "material_property",
       "columns": [
-        {"key": "material", "name": "管材", "type": "string"},
-        {"key": "roughness", "name": "绝对粗糙度(mm)", "type": "number"},
-        {"key": "condition", "name": "工况", "type": "string"},
-        {"key": "notes", "name": "备注", "type": "string"}
+        {
+          "key": "material",
+          "name": "管材",
+          "type": "string"
+        },
+        {
+          "key": "roughness",
+          "name": "绝对粗糙度(mm)",
+          "type": "number"
+        },
+        {
+          "key": "condition",
+          "name": "工况",
+          "type": "string"
+        },
+        {
+          "key": "notes",
+          "name": "备注",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"material": "新碳钢管", "roughness": 0.05, "condition": "新安装", "notes": ""},
-        {"material": "使用5年碳钢管", "roughness": 0.15, "condition": "正常运行", "notes": ""},
-        {"material": "使用10年碳钢管", "roughness": 0.30, "condition": "轻度腐蚀", "notes": ""},
-        {"material": "不锈钢管", "roughness": 0.015, "condition": "新安装", "notes": ""},
-        {"material": "铸铁管", "roughness": 0.25, "condition": "新安装", "notes": "水泥砂浆内衬"},
-        {"material": "玻璃钢管", "roughness": 0.003, "condition": "新安装", "notes": "FRP"},
-        {"material": "PE管", "roughness": 0.007, "condition": "新安装", "notes": ""},
-        {"material": "PVC管", "roughness": 0.0015, "condition": "新安装", "notes": ""},
-        {"material": "铜管", "roughness": 0.003, "condition": "新安装", "notes": ""},
-        {"material": "混凝土管", "roughness": 0.30, "condition": "新安装", "notes": ""}
+        {
+          "material": "新碳钢管",
+          "roughness": 0.05,
+          "condition": "新安装",
+          "notes": ""
+        },
+        {
+          "material": "使用5年碳钢管",
+          "roughness": 0.15,
+          "condition": "正常运行",
+          "notes": ""
+        },
+        {
+          "material": "使用10年碳钢管",
+          "roughness": 0.3,
+          "condition": "轻度腐蚀",
+          "notes": ""
+        },
+        {
+          "material": "不锈钢管",
+          "roughness": 0.015,
+          "condition": "新安装",
+          "notes": ""
+        },
+        {
+          "material": "铸铁管",
+          "roughness": 0.25,
+          "condition": "新安装",
+          "notes": "水泥砂浆内衬"
+        },
+        {
+          "material": "玻璃钢管",
+          "roughness": 0.003,
+          "condition": "新安装",
+          "notes": "FRP"
+        },
+        {
+          "material": "PE管",
+          "roughness": 0.007,
+          "condition": "新安装",
+          "notes": ""
+        },
+        {
+          "material": "PVC管",
+          "roughness": 0.0015,
+          "condition": "新安装",
+          "notes": ""
+        },
+        {
+          "material": "铜管",
+          "roughness": 0.003,
+          "condition": "新安装",
+          "notes": ""
+        },
+        {
+          "material": "混凝土管",
+          "roughness": 0.3,
+          "condition": "新安装",
+          "notes": ""
+        }
       ],
-      "source": {"standard_id": "GB 50316", "clause": "附录"},
-      "referenced_by": ["PI-VEL-004"],
-      "tags": ["粗糙度", "管材参数", "压力降"]
+      "source": {
+        "standard_id": "GB 50316",
+        "clause": "附录"
+      },
+      "referenced_by": [
+        "MP1000-014"
+      ],
+      "tags": [
+        "粗糙度",
+        "管材参数",
+        "压力降"
+      ]
     },
     {
       "table_id": "TBL-K-PIPING-001",
@@ -287,28 +994,101 @@
       "discipline": "piping",
       "category": "fitting_property",
       "columns": [
-        {"key": "fitting", "name": "管件类型", "type": "string"},
-        {"key": "K", "name": "阻力系数", "type": "number"},
-        {"key": "notes", "name": "备注", "type": "string"}
+        {
+          "key": "fitting",
+          "name": "管件类型",
+          "type": "string"
+        },
+        {
+          "key": "K",
+          "name": "阻力系数",
+          "type": "number"
+        },
+        {
+          "key": "notes",
+          "name": "备注",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"fitting": "90°标准弯头", "K": 0.75, "notes": "R/D=1"},
-        {"fitting": "90°长半径弯头", "K": 0.45, "notes": "R/D=1.5"},
-        {"fitting": "45°弯头", "K": 0.35, "notes": ""},
-        {"fitting": "180°回弯", "K": 1.5, "notes": ""},
-        {"fitting": "闸阀（全开）", "K": 0.2, "notes": ""},
-        {"fitting": "截止阀（全开）", "K": 10, "notes": ""},
-        {"fitting": "止回阀", "K": 2.5, "notes": "旋启式"},
-        {"fitting": "蝶阀（全开）", "K": 0.3, "notes": ""},
-        {"fitting": "球阀（全开）", "K": 0.05, "notes": ""},
-        {"fitting": "三通（直通）", "K": 1.0, "notes": ""},
-        {"fitting": "三通（分支）", "K": 1.5, "notes": ""},
-        {"fitting": "管入口（锐边）", "K": 0.5, "notes": ""},
-        {"fitting": "管出口", "K": 1.0, "notes": ""}
+        {
+          "fitting": "90°标准弯头",
+          "K": 0.75,
+          "notes": "R/D=1"
+        },
+        {
+          "fitting": "90°长半径弯头",
+          "K": 0.45,
+          "notes": "R/D=1.5"
+        },
+        {
+          "fitting": "45°弯头",
+          "K": 0.35,
+          "notes": ""
+        },
+        {
+          "fitting": "180°回弯",
+          "K": 1.5,
+          "notes": ""
+        },
+        {
+          "fitting": "闸阀（全开）",
+          "K": 0.2,
+          "notes": ""
+        },
+        {
+          "fitting": "截止阀（全开）",
+          "K": 10,
+          "notes": ""
+        },
+        {
+          "fitting": "止回阀",
+          "K": 2.5,
+          "notes": "旋启式"
+        },
+        {
+          "fitting": "蝶阀（全开）",
+          "K": 0.3,
+          "notes": ""
+        },
+        {
+          "fitting": "球阀（全开）",
+          "K": 0.05,
+          "notes": ""
+        },
+        {
+          "fitting": "三通（直通）",
+          "K": 1,
+          "notes": ""
+        },
+        {
+          "fitting": "三通（分支）",
+          "K": 1.5,
+          "notes": ""
+        },
+        {
+          "fitting": "管入口（锐边）",
+          "K": 0.5,
+          "notes": ""
+        },
+        {
+          "fitting": "管出口",
+          "K": 1,
+          "notes": ""
+        }
       ],
-      "source": {"standard_id": "GB 50316", "clause": "附录"},
-      "referenced_by": ["PI-VEL-005"],
-      "tags": ["局部阻力", "阀门", "弯头"]
+      "source": {
+        "standard_id": "GB 50316",
+        "clause": "附录"
+      },
+      "referenced_by": [
+        "MP1000-015"
+      ],
+      "tags": [
+        "局部阻力",
+        "阀门",
+        "弯头"
+      ]
     },
     {
       "table_id": "TBL-EL-CABLE-001",
@@ -316,22 +1096,77 @@
       "discipline": "electrical",
       "category": "cable_property",
       "columns": [
-        {"key": "cable_type", "name": "电缆类型", "type": "string"},
-        {"key": "max_current", "name": "最大电流密度(A/mm²)", "type": "number"},
-        {"key": "economic_current", "name": "经济电流密度(A/mm²)", "type": "number"},
-        {"key": "notes", "name": "备注", "type": "string"}
+        {
+          "key": "cable_type",
+          "name": "电缆类型",
+          "type": "string"
+        },
+        {
+          "key": "max_current",
+          "name": "最大电流密度(A/mm²)",
+          "type": "number"
+        },
+        {
+          "key": "economic_current",
+          "name": "经济电流密度(A/mm²)",
+          "type": "number"
+        },
+        {
+          "key": "notes",
+          "name": "备注",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"cable_type": "铜芯电缆", "max_current": 6, "economic_current": 2.5, "notes": "连续运行"},
-        {"cable_type": "铝芯电缆", "max_current": 4, "economic_current": 1.5, "notes": "连续运行"},
-        {"cable_type": "铜芯电缆", "max_current": 8, "economic_current": 3.5, "notes": "间歇运行"},
-        {"cable_type": "铝芯电缆", "max_current": 5, "economic_current": 2.0, "notes": "间歇运行"},
-        {"cable_type": "铜母线", "max_current": 10, "economic_current": 4.0, "notes": ""},
-        {"cable_type": "铝母线", "max_current": 6, "economic_current": 2.5, "notes": ""}
+        {
+          "cable_type": "铜芯电缆",
+          "max_current": 6,
+          "economic_current": 2.5,
+          "notes": "连续运行"
+        },
+        {
+          "cable_type": "铝芯电缆",
+          "max_current": 4,
+          "economic_current": 1.5,
+          "notes": "连续运行"
+        },
+        {
+          "cable_type": "铜芯电缆",
+          "max_current": 8,
+          "economic_current": 3.5,
+          "notes": "间歇运行"
+        },
+        {
+          "cable_type": "铝芯电缆",
+          "max_current": 5,
+          "economic_current": 2,
+          "notes": "间歇运行"
+        },
+        {
+          "cable_type": "铜母线",
+          "max_current": 10,
+          "economic_current": 4,
+          "notes": ""
+        },
+        {
+          "cable_type": "铝母线",
+          "max_current": 6,
+          "economic_current": 2.5,
+          "notes": ""
+        }
       ],
-      "source": {"standard_id": "GB 50217", "clause": "附录"},
-      "referenced_by": ["EL-CAB-002"],
-      "tags": ["电流密度", "电缆选型", "经济性"]
+      "source": {
+        "standard_id": "GB 50217",
+        "clause": "附录"
+      },
+      "referenced_by": [
+        "EA1206-002"
+      ],
+      "tags": [
+        "电流密度",
+        "电缆选型",
+        "经济性"
+      ]
     },
     {
       "table_id": "TBL-EL-THERMAL-001",
@@ -339,23 +1174,88 @@
       "discipline": "electrical",
       "category": "material_property",
       "columns": [
-        {"key": "material", "name": "导体材料", "type": "string"},
-        {"key": "insulation", "name": "绝缘类型", "type": "string"},
-        {"key": "K", "name": "热稳定系数", "type": "number"},
-        {"key": "unit", "name": "单位", "type": "string"},
-        {"key": "notes", "name": "备注", "type": "string"}
+        {
+          "key": "material",
+          "name": "导体材料",
+          "type": "string"
+        },
+        {
+          "key": "insulation",
+          "name": "绝缘类型",
+          "type": "string"
+        },
+        {
+          "key": "K",
+          "name": "热稳定系数",
+          "type": "number"
+        },
+        {
+          "key": "unit",
+          "name": "单位",
+          "type": "string"
+        },
+        {
+          "key": "notes",
+          "name": "备注",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"material": "铜", "insulation": "PVC", "K": 115, "unit": "A·s^(1/2)/mm²", "notes": ""},
-        {"material": "铜", "insulation": "XLPE", "K": 143, "unit": "A·s^(1/2)/mm²", "notes": ""},
-        {"material": "铜", "insulation": "橡胶", "K": 131, "unit": "A·s^(1/2)/mm²", "notes": ""},
-        {"material": "铝", "insulation": "PVC", "K": 76, "unit": "A·s^(1/2)/mm²", "notes": ""},
-        {"material": "铝", "insulation": "XLPE", "K": 94, "unit": "A·s^(1/2)/mm²", "notes": ""},
-        {"material": "铝", "insulation": "橡胶", "K": 87, "unit": "A·s^(1/2)/mm²", "notes": ""}
+        {
+          "material": "铜",
+          "insulation": "PVC",
+          "K": 115,
+          "unit": "A·s^(1/2)/mm²",
+          "notes": ""
+        },
+        {
+          "material": "铜",
+          "insulation": "XLPE",
+          "K": 143,
+          "unit": "A·s^(1/2)/mm²",
+          "notes": ""
+        },
+        {
+          "material": "铜",
+          "insulation": "橡胶",
+          "K": 131,
+          "unit": "A·s^(1/2)/mm²",
+          "notes": ""
+        },
+        {
+          "material": "铝",
+          "insulation": "PVC",
+          "K": 76,
+          "unit": "A·s^(1/2)/mm²",
+          "notes": ""
+        },
+        {
+          "material": "铝",
+          "insulation": "XLPE",
+          "K": 94,
+          "unit": "A·s^(1/2)/mm²",
+          "notes": ""
+        },
+        {
+          "material": "铝",
+          "insulation": "橡胶",
+          "K": 87,
+          "unit": "A·s^(1/2)/mm²",
+          "notes": ""
+        }
       ],
-      "source": {"standard_id": "GB 50217", "clause": "附录"},
-      "referenced_by": ["EL-CAB-004"],
-      "tags": ["热稳定系数", "短路校验", "电缆选型"]
+      "source": {
+        "standard_id": "GB 50217",
+        "clause": "附录"
+      },
+      "referenced_by": [
+        "EA1206-004"
+      ],
+      "tags": [
+        "热稳定系数",
+        "短路校验",
+        "电缆选型"
+      ]
     },
     {
       "table_id": "TBL-EL-ILLUM-001",
@@ -363,30 +1263,148 @@
       "discipline": "electrical",
       "category": "lighting_standard",
       "columns": [
-        {"key": "space_type", "name": "场所类型", "type": "string"},
-        {"key": "illuminance", "name": "照度标准值(lx)", "type": "number"},
-        {"key": "UGR", "name": "眩光指数", "type": "number"},
-        {"key": "Ra", "name": "显色指数", "type": "number"},
-        {"key": "LPD", "name": "功率密度限值(W/m²)", "type": "number"},
-        {"key": "notes", "name": "备注", "type": "string"}
+        {
+          "key": "space_type",
+          "name": "场所类型",
+          "type": "string"
+        },
+        {
+          "key": "illuminance",
+          "name": "照度标准值(lx)",
+          "type": "number"
+        },
+        {
+          "key": "UGR",
+          "name": "眩光指数",
+          "type": "number"
+        },
+        {
+          "key": "Ra",
+          "name": "显色指数",
+          "type": "number"
+        },
+        {
+          "key": "LPD",
+          "name": "功率密度限值(W/m²)",
+          "type": "number"
+        },
+        {
+          "key": "notes",
+          "name": "备注",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"space_type": "办公室", "illuminance": 300, "UGR": 19, "Ra": 80, "LPD": 9, "notes": "普通办公室"},
-        {"space_type": "会议室", "illuminance": 300, "UGR": 19, "Ra": 80, "LPD": 9, "notes": ""},
-        {"space_type": "设计室", "illuminance": 500, "UGR": 19, "Ra": 80, "LPD": 15, "notes": "精细设计"},
-        {"space_type": "教室", "illuminance": 300, "UGR": 19, "Ra": 80, "LPD": 9, "notes": ""},
-        {"space_type": "阅览室", "illuminance": 300, "UGR": 19, "Ra": 80, "LPD": 9, "notes": ""},
-        {"space_type": "商场营业厅", "illuminance": 300, "UGR": 22, "Ra": 80, "LPD": 12, "notes": ""},
-        {"space_type": "餐厅", "illuminance": 200, "UGR": 22, "Ra": 80, "LPD": 8, "notes": ""},
-        {"space_type": "走廊", "illuminance": 100, "UGR": "-", "Ra": 60, "LPD": 4, "notes": ""},
-        {"space_type": "楼梯间", "illuminance": 100, "UGR": "-", "Ra": 60, "LPD": 4, "notes": ""},
-        {"space_type": "车库", "illuminance": 75, "UGR": "-", "Ra": 60, "LPD": 3, "notes": "普通车库"},
-        {"space_type": "泵房", "illuminance": 100, "UGR": "-", "Ra": 60, "LPD": 5, "notes": ""},
-        {"space_type": "变配电室", "illuminance": 200, "UGR": "-", "Ra": 60, "LPD": 8, "notes": ""}
+        {
+          "space_type": "办公室",
+          "illuminance": 300,
+          "UGR": 19,
+          "Ra": 80,
+          "LPD": 9,
+          "notes": "普通办公室"
+        },
+        {
+          "space_type": "会议室",
+          "illuminance": 300,
+          "UGR": 19,
+          "Ra": 80,
+          "LPD": 9,
+          "notes": ""
+        },
+        {
+          "space_type": "设计室",
+          "illuminance": 500,
+          "UGR": 19,
+          "Ra": 80,
+          "LPD": 15,
+          "notes": "精细设计"
+        },
+        {
+          "space_type": "教室",
+          "illuminance": 300,
+          "UGR": 19,
+          "Ra": 80,
+          "LPD": 9,
+          "notes": ""
+        },
+        {
+          "space_type": "阅览室",
+          "illuminance": 300,
+          "UGR": 19,
+          "Ra": 80,
+          "LPD": 9,
+          "notes": ""
+        },
+        {
+          "space_type": "商场营业厅",
+          "illuminance": 300,
+          "UGR": 22,
+          "Ra": 80,
+          "LPD": 12,
+          "notes": ""
+        },
+        {
+          "space_type": "餐厅",
+          "illuminance": 200,
+          "UGR": 22,
+          "Ra": 80,
+          "LPD": 8,
+          "notes": ""
+        },
+        {
+          "space_type": "走廊",
+          "illuminance": 100,
+          "UGR": "-",
+          "Ra": 60,
+          "LPD": 4,
+          "notes": ""
+        },
+        {
+          "space_type": "楼梯间",
+          "illuminance": 100,
+          "UGR": "-",
+          "Ra": 60,
+          "LPD": 4,
+          "notes": ""
+        },
+        {
+          "space_type": "车库",
+          "illuminance": 75,
+          "UGR": "-",
+          "Ra": 60,
+          "LPD": 3,
+          "notes": "普通车库"
+        },
+        {
+          "space_type": "泵房",
+          "illuminance": 100,
+          "UGR": "-",
+          "Ra": 60,
+          "LPD": 5,
+          "notes": ""
+        },
+        {
+          "space_type": "变配电室",
+          "illuminance": 200,
+          "UGR": "-",
+          "Ra": 60,
+          "LPD": 8,
+          "notes": ""
+        }
       ],
-      "source": {"standard_id": "GB 50034", "clause": "5.2"},
-      "referenced_by": ["EL-LIG-001", "EL-LIG-002"],
-      "tags": ["照度标准", "照明设计", "功率密度"]
+      "source": {
+        "standard_id": "GB 50034",
+        "clause": "5.2"
+      },
+      "referenced_by": [
+        "EA1206-007",
+        "EA1206-008"
+      ],
+      "tags": [
+        "照度标准",
+        "照明设计",
+        "功率密度"
+      ]
     },
     {
       "table_id": "TBL-EL-PROTECTION-001",
@@ -394,27 +1412,107 @@
       "discipline": "electrical",
       "category": "protection_equipment",
       "columns": [
-        {"key": "breaker_type", "name": "断路器类型", "type": "string"},
-        {"key": "rating", "name": "额定电流(A)", "type": "number"},
-        {"key": "breaking_capacity", "name": "分断能力(kA)", "type": "number"},
-        {"key": "notes", "name": "备注", "type": "string"}
+        {
+          "key": "breaker_type",
+          "name": "断路器类型",
+          "type": "string"
+        },
+        {
+          "key": "rating",
+          "name": "额定电流(A)",
+          "type": "number"
+        },
+        {
+          "key": "breaking_capacity",
+          "name": "分断能力(kA)",
+          "type": "number"
+        },
+        {
+          "key": "notes",
+          "name": "备注",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"breaker_type": "微型断路器", "rating": 6, "breaking_capacity": 6, "notes": "家用"},
-        {"breaker_type": "微型断路器", "rating": 10, "breaking_capacity": 6, "notes": ""},
-        {"breaker_type": "微型断路器", "rating": 16, "breaking_capacity": 6, "notes": ""},
-        {"breaker_type": "微型断路器", "rating": 20, "breaking_capacity": 6, "notes": ""},
-        {"breaker_type": "微型断路器", "rating": 32, "breaking_capacity": 6, "notes": ""},
-        {"breaker_type": "塑壳断路器", "rating": 100, "breaking_capacity": 25, "notes": ""},
-        {"breaker_type": "塑壳断路器", "rating": 250, "breaking_capacity": 35, "notes": ""},
-        {"breaker_type": "塑壳断路器", "rating": 400, "breaking_capacity": 50, "notes": ""},
-        {"breaker_type": "框架断路器", "rating": 630, "breaking_capacity": 50, "notes": ""},
-        {"breaker_type": "框架断路器", "rating": 1600, "breaking_capacity": 65, "notes": ""},
-        {"breaker_type": "框架断路器", "rating": 3200, "breaking_capacity": 80, "notes": ""}
+        {
+          "breaker_type": "微型断路器",
+          "rating": 6,
+          "breaking_capacity": 6,
+          "notes": "家用"
+        },
+        {
+          "breaker_type": "微型断路器",
+          "rating": 10,
+          "breaking_capacity": 6,
+          "notes": ""
+        },
+        {
+          "breaker_type": "微型断路器",
+          "rating": 16,
+          "breaking_capacity": 6,
+          "notes": ""
+        },
+        {
+          "breaker_type": "微型断路器",
+          "rating": 20,
+          "breaking_capacity": 6,
+          "notes": ""
+        },
+        {
+          "breaker_type": "微型断路器",
+          "rating": 32,
+          "breaking_capacity": 6,
+          "notes": ""
+        },
+        {
+          "breaker_type": "塑壳断路器",
+          "rating": 100,
+          "breaking_capacity": 25,
+          "notes": ""
+        },
+        {
+          "breaker_type": "塑壳断路器",
+          "rating": 250,
+          "breaking_capacity": 35,
+          "notes": ""
+        },
+        {
+          "breaker_type": "塑壳断路器",
+          "rating": 400,
+          "breaking_capacity": 50,
+          "notes": ""
+        },
+        {
+          "breaker_type": "框架断路器",
+          "rating": 630,
+          "breaking_capacity": 50,
+          "notes": ""
+        },
+        {
+          "breaker_type": "框架断路器",
+          "rating": 1600,
+          "breaking_capacity": 65,
+          "notes": ""
+        },
+        {
+          "breaker_type": "框架断路器",
+          "rating": 3200,
+          "breaking_capacity": 80,
+          "notes": ""
+        }
       ],
-      "source": {"standard_id": "GB 50054", "clause": "附录"},
-      "referenced_by": ["EL-PRO-002"],
-      "tags": ["断路器", "分断能力", "保护电器"]
+      "source": {
+        "standard_id": "GB 50054",
+        "clause": "附录"
+      },
+      "referenced_by": [
+        "EA1206-025"
+      ],
+      "tags": [
+        "断路器",
+        "分断能力",
+        "保护电器"
+      ]
     },
     {
       "table_id": "TBL-EL-CABLE-RESISTANCE-001",
@@ -422,32 +1520,152 @@
       "discipline": "electrical",
       "category": "cable_property",
       "columns": [
-        {"key": "cross_section", "name": "截面(mm²)", "type": "number"},
-        {"key": "R_cu", "name": "铜芯电阻(Ω/km)", "type": "number"},
-        {"key": "R_al", "name": "铝芯电阻(Ω/km)", "type": "number"},
-        {"key": "X", "name": "电抗(Ω/km)", "type": "number"},
-        {"key": "notes", "name": "备注", "type": "string"}
+        {
+          "key": "cross_section",
+          "name": "截面(mm²)",
+          "type": "number"
+        },
+        {
+          "key": "R_cu",
+          "name": "铜芯电阻(Ω/km)",
+          "type": "number"
+        },
+        {
+          "key": "R_al",
+          "name": "铝芯电阻(Ω/km)",
+          "type": "number"
+        },
+        {
+          "key": "X",
+          "name": "电抗(Ω/km)",
+          "type": "number"
+        },
+        {
+          "key": "notes",
+          "name": "备注",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"cross_section": 1.5, "R_cu": 12.1, "R_al": 20.1, "X": 0.10, "notes": ""},
-        {"cross_section": 2.5, "R_cu": 7.41, "R_al": 12.1, "X": 0.10, "notes": ""},
-        {"cross_section": 4, "R_cu": 4.61, "R_al": 7.41, "X": 0.09, "notes": ""},
-        {"cross_section": 6, "R_cu": 3.08, "R_al": 4.61, "X": 0.09, "notes": ""},
-        {"cross_section": 10, "R_cu": 1.83, "R_al": 3.08, "X": 0.08, "notes": ""},
-        {"cross_section": 16, "R_cu": 1.15, "R_al": 1.91, "X": 0.08, "notes": ""},
-        {"cross_section": 25, "R_cu": 0.727, "R_al": 1.20, "X": 0.08, "notes": ""},
-        {"cross_section": 35, "R_cu": 0.524, "R_al": 0.868, "X": 0.08, "notes": ""},
-        {"cross_section": 50, "R_cu": 0.387, "R_al": 0.641, "X": 0.08, "notes": ""},
-        {"cross_section": 70, "R_cu": 0.268, "R_al": 0.443, "X": 0.08, "notes": ""},
-        {"cross_section": 95, "R_cu": 0.193, "R_al": 0.320, "X": 0.08, "notes": ""},
-        {"cross_section": 120, "R_cu": 0.153, "R_al": 0.253, "X": 0.08, "notes": ""},
-        {"cross_section": 150, "R_cu": 0.124, "R_al": 0.206, "X": 0.08, "notes": ""},
-        {"cross_section": 185, "R_cu": 0.099, "R_al": 0.164, "X": 0.08, "notes": ""},
-        {"cross_section": 240, "R_cu": 0.075, "R_al": 0.125, "X": 0.08, "notes": ""}
+        {
+          "cross_section": 1.5,
+          "R_cu": 12.1,
+          "R_al": 20.1,
+          "X": 0.1,
+          "notes": ""
+        },
+        {
+          "cross_section": 2.5,
+          "R_cu": 7.41,
+          "R_al": 12.1,
+          "X": 0.1,
+          "notes": ""
+        },
+        {
+          "cross_section": 4,
+          "R_cu": 4.61,
+          "R_al": 7.41,
+          "X": 0.09,
+          "notes": ""
+        },
+        {
+          "cross_section": 6,
+          "R_cu": 3.08,
+          "R_al": 4.61,
+          "X": 0.09,
+          "notes": ""
+        },
+        {
+          "cross_section": 10,
+          "R_cu": 1.83,
+          "R_al": 3.08,
+          "X": 0.08,
+          "notes": ""
+        },
+        {
+          "cross_section": 16,
+          "R_cu": 1.15,
+          "R_al": 1.91,
+          "X": 0.08,
+          "notes": ""
+        },
+        {
+          "cross_section": 25,
+          "R_cu": 0.727,
+          "R_al": 1.2,
+          "X": 0.08,
+          "notes": ""
+        },
+        {
+          "cross_section": 35,
+          "R_cu": 0.524,
+          "R_al": 0.868,
+          "X": 0.08,
+          "notes": ""
+        },
+        {
+          "cross_section": 50,
+          "R_cu": 0.387,
+          "R_al": 0.641,
+          "X": 0.08,
+          "notes": ""
+        },
+        {
+          "cross_section": 70,
+          "R_cu": 0.268,
+          "R_al": 0.443,
+          "X": 0.08,
+          "notes": ""
+        },
+        {
+          "cross_section": 95,
+          "R_cu": 0.193,
+          "R_al": 0.32,
+          "X": 0.08,
+          "notes": ""
+        },
+        {
+          "cross_section": 120,
+          "R_cu": 0.153,
+          "R_al": 0.253,
+          "X": 0.08,
+          "notes": ""
+        },
+        {
+          "cross_section": 150,
+          "R_cu": 0.124,
+          "R_al": 0.206,
+          "X": 0.08,
+          "notes": ""
+        },
+        {
+          "cross_section": 185,
+          "R_cu": 0.099,
+          "R_al": 0.164,
+          "X": 0.08,
+          "notes": ""
+        },
+        {
+          "cross_section": 240,
+          "R_cu": 0.075,
+          "R_al": 0.125,
+          "X": 0.08,
+          "notes": ""
+        }
       ],
-      "source": {"standard_id": "GB/T 3956", "clause": "附录"},
-      "referenced_by": ["EL-CAB-003", "EL-CAB-005"],
-      "tags": ["电缆电阻", "电抗", "电压降"]
+      "source": {
+        "standard_id": "GB/T 3956",
+        "clause": "附录"
+      },
+      "referenced_by": [
+        "EA1206-003",
+        "EA1206-005"
+      ],
+      "tags": [
+        "电缆电阻",
+        "电抗",
+        "电压降"
+      ]
     },
     {
       "table_id": "TBL-EL-FAULT-001",
@@ -455,25 +1673,102 @@
       "discipline": "electrical",
       "category": "system_parameter",
       "columns": [
-        {"key": "voltage", "name": "系统电压(kV)", "type": "number"},
-        {"key": "transformer_capacity", "name": "变压器容量(kVA)", "type": "number"},
-        {"key": "impedance", "name": "短路阻抗(%)", "type": "number"},
-        {"key": "short_circuit_current", "name": "短路电流(kA)", "type": "number"},
-        {"key": "notes", "name": "备注", "type": "string"}
+        {
+          "key": "voltage",
+          "name": "系统电压(kV)",
+          "type": "number"
+        },
+        {
+          "key": "transformer_capacity",
+          "name": "变压器容量(kVA)",
+          "type": "number"
+        },
+        {
+          "key": "impedance",
+          "name": "短路阻抗(%)",
+          "type": "number"
+        },
+        {
+          "key": "short_circuit_current",
+          "name": "短路电流(kA)",
+          "type": "number"
+        },
+        {
+          "key": "notes",
+          "name": "备注",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"voltage": 0.38, "transformer_capacity": 315, "impedance": 4, "short_circuit_current": 12, "notes": "配电变压器"},
-        {"voltage": 0.38, "transformer_capacity": 500, "impedance": 4, "short_circuit_current": 19, "notes": ""},
-        {"voltage": 0.38, "transformer_capacity": 800, "impedance": 6, "short_circuit_current": 20, "notes": ""},
-        {"voltage": 0.38, "transformer_capacity": 1000, "impedance": 6, "short_circuit_current": 25, "notes": ""},
-        {"voltage": 0.38, "transformer_capacity": 1600, "impedance": 6, "short_circuit_current": 40, "notes": ""},
-        {"voltage": 10, "transformer_capacity": 500, "impedance": 4.5, "short_circuit_current": 6.4, "notes": ""},
-        {"voltage": 10, "transformer_capacity": 1000, "impedance": 6, "short_circuit_current": 9.6, "notes": ""},
-        {"voltage": 10, "transformer_capacity": 2000, "impedance": 6, "short_circuit_current": 19.2, "notes": ""}
+        {
+          "voltage": 0.38,
+          "transformer_capacity": 315,
+          "impedance": 4,
+          "short_circuit_current": 12,
+          "notes": "配电变压器"
+        },
+        {
+          "voltage": 0.38,
+          "transformer_capacity": 500,
+          "impedance": 4,
+          "short_circuit_current": 19,
+          "notes": ""
+        },
+        {
+          "voltage": 0.38,
+          "transformer_capacity": 800,
+          "impedance": 6,
+          "short_circuit_current": 20,
+          "notes": ""
+        },
+        {
+          "voltage": 0.38,
+          "transformer_capacity": 1000,
+          "impedance": 6,
+          "short_circuit_current": 25,
+          "notes": ""
+        },
+        {
+          "voltage": 0.38,
+          "transformer_capacity": 1600,
+          "impedance": 6,
+          "short_circuit_current": 40,
+          "notes": ""
+        },
+        {
+          "voltage": 10,
+          "transformer_capacity": 500,
+          "impedance": 4.5,
+          "short_circuit_current": 6.4,
+          "notes": ""
+        },
+        {
+          "voltage": 10,
+          "transformer_capacity": 1000,
+          "impedance": 6,
+          "short_circuit_current": 9.6,
+          "notes": ""
+        },
+        {
+          "voltage": 10,
+          "transformer_capacity": 2000,
+          "impedance": 6,
+          "short_circuit_current": 19.2,
+          "notes": ""
+        }
       ],
-      "source": {"standard_id": "GB 50054", "clause": "附录"},
-      "referenced_by": ["EL-PRO-001"],
-      "tags": ["短路电流", "变压器", "配电系统"]
+      "source": {
+        "standard_id": "GB 50054",
+        "clause": "附录"
+      },
+      "referenced_by": [
+        "EA1206-024"
+      ],
+      "tags": [
+        "短路电流",
+        "变压器",
+        "配电系统"
+      ]
     },
     {
       "table_id": "TBL-EL-CORROSION-001",
@@ -481,26 +1776,101 @@
       "discipline": "electrical",
       "category": "soil_property",
       "columns": [
-        {"key": "soil_type", "name": "土壤类型", "type": "string"},
-        {"key": "resistivity", "name": "电阻率(Ω·m)", "type": "number"},
-        {"key": "moisture", "name": "含水量", "type": "string"},
-        {"key": "notes", "name": "备注", "type": "string"}
+        {
+          "key": "soil_type",
+          "name": "土壤类型",
+          "type": "string"
+        },
+        {
+          "key": "resistivity",
+          "name": "电阻率(Ω·m)",
+          "type": "number"
+        },
+        {
+          "key": "moisture",
+          "name": "含水量",
+          "type": "string"
+        },
+        {
+          "key": "notes",
+          "name": "备注",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"soil_type": "粘土", "resistivity": 20, "moisture": "潮湿", "notes": ""},
-        {"soil_type": "粘土", "resistivity": 100, "moisture": "干燥", "notes": ""},
-        {"soil_type": "砂土", "resistivity": 50, "moisture": "潮湿", "notes": ""},
-        {"soil_type": "砂土", "resistivity": 300, "moisture": "干燥", "notes": ""},
-        {"soil_type": "砂砾", "resistivity": 150, "moisture": "潮湿", "notes": ""},
-        {"soil_type": "砂砾", "resistivity": 500, "moisture": "干燥", "notes": ""},
-        {"soil_type": "岩石", "resistivity": 1000, "moisture": "-", "notes": "花岗岩"},
-        {"soil_type": "岩石", "resistivity": 5000, "moisture": "-", "notes": "石灰岩"},
-        {"soil_type": "回填土", "resistivity": 50, "moisture": "正常", "notes": "含�ite"},
-        {"soil_type": "混凝土", "resistivity": 30, "moisture": "-", "notes": "普通混凝土"}
+        {
+          "soil_type": "粘土",
+          "resistivity": 20,
+          "moisture": "潮湿",
+          "notes": ""
+        },
+        {
+          "soil_type": "粘土",
+          "resistivity": 100,
+          "moisture": "干燥",
+          "notes": ""
+        },
+        {
+          "soil_type": "砂土",
+          "resistivity": 50,
+          "moisture": "潮湿",
+          "notes": ""
+        },
+        {
+          "soil_type": "砂土",
+          "resistivity": 300,
+          "moisture": "干燥",
+          "notes": ""
+        },
+        {
+          "soil_type": "砂砾",
+          "resistivity": 150,
+          "moisture": "潮湿",
+          "notes": ""
+        },
+        {
+          "soil_type": "砂砾",
+          "resistivity": 500,
+          "moisture": "干燥",
+          "notes": ""
+        },
+        {
+          "soil_type": "岩石",
+          "resistivity": 1000,
+          "moisture": "-",
+          "notes": "花岗岩"
+        },
+        {
+          "soil_type": "岩石",
+          "resistivity": 5000,
+          "moisture": "-",
+          "notes": "石灰岩"
+        },
+        {
+          "soil_type": "回填土",
+          "resistivity": 50,
+          "moisture": "正常",
+          "notes": "含�ite"
+        },
+        {
+          "soil_type": "混凝土",
+          "resistivity": 30,
+          "moisture": "-",
+          "notes": "普通混凝土"
+        }
       ],
-      "source": {"standard_id": "GB 50065", "clause": "附录"},
-      "referenced_by": ["EL-PRO-004"],
-      "tags": ["土壤电阻率", "接地设计", "防雷接地"]
+      "source": {
+        "standard_id": "GB 50065",
+        "clause": "附录"
+      },
+      "referenced_by": [
+        "EA1206-027"
+      ],
+      "tags": [
+        "土壤电阻率",
+        "接地设计",
+        "防雷接地"
+      ]
     },
     {
       "table_id": "TBL-EL-MOTOR-001",
@@ -508,36 +1878,161 @@
       "discipline": "electrical",
       "category": "motor_property",
       "columns": [
-        {"key": "power", "name": "功率(kW)", "type": "number"},
-        {"key": "efficiency", "name": "效率(%)", "type": "number"},
-        {"key": "power_factor", "name": "功率因数", "type": "number"},
-        {"key": "notes", "name": "备注", "type": "string"}
+        {
+          "key": "power",
+          "name": "功率(kW)",
+          "type": "number"
+        },
+        {
+          "key": "efficiency",
+          "name": "效率(%)",
+          "type": "number"
+        },
+        {
+          "key": "power_factor",
+          "name": "功率因数",
+          "type": "number"
+        },
+        {
+          "key": "notes",
+          "name": "备注",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"power": 0.55, "efficiency": 72, "power_factor": 0.72, "notes": ""},
-        {"power": 0.75, "efficiency": 75, "power_factor": 0.74, "notes": ""},
-        {"power": 1.1, "efficiency": 77, "power_factor": 0.76, "notes": ""},
-        {"power": 1.5, "efficiency": 79, "power_factor": 0.78, "notes": ""},
-        {"power": 2.2, "efficiency": 81, "power_factor": 0.80, "notes": ""},
-        {"power": 3, "efficiency": 83, "power_factor": 0.82, "notes": ""},
-        {"power": 4, "efficiency": 85, "power_factor": 0.83, "notes": ""},
-        {"power": 5.5, "efficiency": 86, "power_factor": 0.84, "notes": ""},
-        {"power": 7.5, "efficiency": 87, "power_factor": 0.85, "notes": ""},
-        {"power": 11, "efficiency": 88, "power_factor": 0.86, "notes": ""},
-        {"power": 15, "efficiency": 89, "power_factor": 0.86, "notes": ""},
-        {"power": 18.5, "efficiency": 90, "power_factor": 0.86, "notes": ""},
-        {"power": 22, "efficiency": 90, "power_factor": 0.86, "notes": ""},
-        {"power": 30, "efficiency": 91, "power_factor": 0.87, "notes": ""},
-        {"power": 37, "efficiency": 91, "power_factor": 0.87, "notes": ""},
-        {"power": 45, "efficiency": 92, "power_factor": 0.87, "notes": ""},
-        {"power": 55, "efficiency": 92, "power_factor": 0.88, "notes": ""},
-        {"power": 75, "efficiency": 93, "power_factor": 0.88, "notes": ""},
-        {"power": 90, "efficiency": 93, "power_factor": 0.88, "notes": ""},
-        {"power": 110, "efficiency": 93, "power_factor": 0.88, "notes": ""}
+        {
+          "power": 0.55,
+          "efficiency": 72,
+          "power_factor": 0.72,
+          "notes": ""
+        },
+        {
+          "power": 0.75,
+          "efficiency": 75,
+          "power_factor": 0.74,
+          "notes": ""
+        },
+        {
+          "power": 1.1,
+          "efficiency": 77,
+          "power_factor": 0.76,
+          "notes": ""
+        },
+        {
+          "power": 1.5,
+          "efficiency": 79,
+          "power_factor": 0.78,
+          "notes": ""
+        },
+        {
+          "power": 2.2,
+          "efficiency": 81,
+          "power_factor": 0.8,
+          "notes": ""
+        },
+        {
+          "power": 3,
+          "efficiency": 83,
+          "power_factor": 0.82,
+          "notes": ""
+        },
+        {
+          "power": 4,
+          "efficiency": 85,
+          "power_factor": 0.83,
+          "notes": ""
+        },
+        {
+          "power": 5.5,
+          "efficiency": 86,
+          "power_factor": 0.84,
+          "notes": ""
+        },
+        {
+          "power": 7.5,
+          "efficiency": 87,
+          "power_factor": 0.85,
+          "notes": ""
+        },
+        {
+          "power": 11,
+          "efficiency": 88,
+          "power_factor": 0.86,
+          "notes": ""
+        },
+        {
+          "power": 15,
+          "efficiency": 89,
+          "power_factor": 0.86,
+          "notes": ""
+        },
+        {
+          "power": 18.5,
+          "efficiency": 90,
+          "power_factor": 0.86,
+          "notes": ""
+        },
+        {
+          "power": 22,
+          "efficiency": 90,
+          "power_factor": 0.86,
+          "notes": ""
+        },
+        {
+          "power": 30,
+          "efficiency": 91,
+          "power_factor": 0.87,
+          "notes": ""
+        },
+        {
+          "power": 37,
+          "efficiency": 91,
+          "power_factor": 0.87,
+          "notes": ""
+        },
+        {
+          "power": 45,
+          "efficiency": 92,
+          "power_factor": 0.87,
+          "notes": ""
+        },
+        {
+          "power": 55,
+          "efficiency": 92,
+          "power_factor": 0.88,
+          "notes": ""
+        },
+        {
+          "power": 75,
+          "efficiency": 93,
+          "power_factor": 0.88,
+          "notes": ""
+        },
+        {
+          "power": 90,
+          "efficiency": 93,
+          "power_factor": 0.88,
+          "notes": ""
+        },
+        {
+          "power": 110,
+          "efficiency": 93,
+          "power_factor": 0.88,
+          "notes": ""
+        }
       ],
-      "source": {"standard_id": "GB 18613", "clause": "附录"},
-      "referenced_by": ["EL-POW-002"],
-      "tags": ["电机效率", "功率因数", "电机选型"]
+      "source": {
+        "standard_id": "GB 18613",
+        "clause": "附录"
+      },
+      "referenced_by": [
+        "EA1206-023"
+      ],
+      "tags": [
+        "电机效率",
+        "功率因数",
+        "电机选型"
+      ]
     },
     {
       "table_id": "TBL-EL-CABLE-TEMP-001",
@@ -545,27 +2040,107 @@
       "discipline": "electrical",
       "category": "environmental_factor",
       "columns": [
-        {"key": "ambient_temp", "name": "环境温度(℃)", "type": "number"},
-        {"key": "Kt_PVC", "name": "PVC绝缘校正系数", "type": "number"},
-        {"key": "Kt_XLPE", "name": "XLPE绝缘校正系数", "type": "number"},
-        {"key": "notes", "name": "备注", "type": "string"}
+        {
+          "key": "ambient_temp",
+          "name": "环境温度(℃)",
+          "type": "number"
+        },
+        {
+          "key": "Kt_PVC",
+          "name": "PVC绝缘校正系数",
+          "type": "number"
+        },
+        {
+          "key": "Kt_XLPE",
+          "name": "XLPE绝缘校正系数",
+          "type": "number"
+        },
+        {
+          "key": "notes",
+          "name": "备注",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"ambient_temp": 10, "Kt_PVC": 1.15, "Kt_XLPE": 1.07, "notes": ""},
-        {"ambient_temp": 15, "Kt_PVC": 1.12, "Kt_XLPE": 1.05, "notes": ""},
-        {"ambient_temp": 20, "Kt_PVC": 1.08, "Kt_XLPE": 1.03, "notes": ""},
-        {"ambient_temp": 25, "Kt_PVC": 1.04, "Kt_XLPE": 1.01, "notes": ""},
-        {"ambient_temp": 30, "Kt_PVC": 1.00, "Kt_XLPE": 1.00, "notes": "基准温度"},
-        {"ambient_temp": 35, "Kt_PVC": 0.96, "Kt_XLPE": 0.98, "notes": ""},
-        {"ambient_temp": 40, "Kt_PVC": 0.91, "Kt_XLPE": 0.96, "notes": ""},
-        {"ambient_temp": 45, "Kt_PVC": 0.87, "Kt_XLPE": 0.94, "notes": ""},
-        {"ambient_temp": 50, "Kt_PVC": 0.82, "Kt_XLPE": 0.92, "notes": ""},
-        {"ambient_temp": 55, "Kt_PVC": 0.76, "Kt_XLPE": 0.90, "notes": ""},
-        {"ambient_temp": 60, "Kt_PVC": 0.71, "Kt_XLPE": 0.88, "notes": ""}
+        {
+          "ambient_temp": 10,
+          "Kt_PVC": 1.15,
+          "Kt_XLPE": 1.07,
+          "notes": ""
+        },
+        {
+          "ambient_temp": 15,
+          "Kt_PVC": 1.12,
+          "Kt_XLPE": 1.05,
+          "notes": ""
+        },
+        {
+          "ambient_temp": 20,
+          "Kt_PVC": 1.08,
+          "Kt_XLPE": 1.03,
+          "notes": ""
+        },
+        {
+          "ambient_temp": 25,
+          "Kt_PVC": 1.04,
+          "Kt_XLPE": 1.01,
+          "notes": ""
+        },
+        {
+          "ambient_temp": 30,
+          "Kt_PVC": 1,
+          "Kt_XLPE": 1,
+          "notes": "基准温度"
+        },
+        {
+          "ambient_temp": 35,
+          "Kt_PVC": 0.96,
+          "Kt_XLPE": 0.98,
+          "notes": ""
+        },
+        {
+          "ambient_temp": 40,
+          "Kt_PVC": 0.91,
+          "Kt_XLPE": 0.96,
+          "notes": ""
+        },
+        {
+          "ambient_temp": 45,
+          "Kt_PVC": 0.87,
+          "Kt_XLPE": 0.94,
+          "notes": ""
+        },
+        {
+          "ambient_temp": 50,
+          "Kt_PVC": 0.82,
+          "Kt_XLPE": 0.92,
+          "notes": ""
+        },
+        {
+          "ambient_temp": 55,
+          "Kt_PVC": 0.76,
+          "Kt_XLPE": 0.9,
+          "notes": ""
+        },
+        {
+          "ambient_temp": 60,
+          "Kt_PVC": 0.71,
+          "Kt_XLPE": 0.88,
+          "notes": ""
+        }
       ],
-      "source": {"standard_id": "GB 50217", "clause": "附录"},
-      "referenced_by": ["EL-CAB-001"],
-      "tags": ["温度校正", "载流量", "电缆选型"]
+      "source": {
+        "standard_id": "GB 50217",
+        "clause": "附录"
+      },
+      "referenced_by": [
+        "EA1206-001"
+      ],
+      "tags": [
+        "温度校正",
+        "载流量",
+        "电缆选型"
+      ]
     },
     {
       "table_id": "TBL-EL-GROUNDING-001",
@@ -573,23 +2148,76 @@
       "discipline": "electrical",
       "category": "protection_standard",
       "columns": [
-        {"key": "system_type", "name": "系统类型", "type": "string"},
-        {"key": "resistance", "name": "接地电阻要求(Ω)", "type": "number"},
-        {"key": "notes", "name": "备注", "type": "string"}
+        {
+          "key": "system_type",
+          "name": "系统类型",
+          "type": "string"
+        },
+        {
+          "key": "resistance",
+          "name": "接地电阻要求(Ω)",
+          "type": "number"
+        },
+        {
+          "key": "notes",
+          "name": "备注",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"system_type": "低压系统接地", "resistance": 4, "notes": "一般要求"},
-        {"system_type": "变压器中性点接地", "resistance": 4, "notes": ""},
-        {"system_type": "防雷接地（一类）", "resistance": 10, "notes": "独立接地"},
-        {"system_type": "防雷接地（二类）", "resistance": 10, "notes": "可与电气接地共用"},
-        {"system_type": "防雷接地（三类）", "resistance": 30, "notes": ""},
-        {"system_type": "信息系统接地", "resistance": 1, "notes": "特殊要求"},
-        {"system_type": "石油化工装置", "resistance": 4, "notes": "防爆要求"},
-        {"system_type": "医疗设备接地", "resistance": 1, "notes": "手术室等"}
+        {
+          "system_type": "低压系统接地",
+          "resistance": 4,
+          "notes": "一般要求"
+        },
+        {
+          "system_type": "变压器中性点接地",
+          "resistance": 4,
+          "notes": ""
+        },
+        {
+          "system_type": "防雷接地（一类）",
+          "resistance": 10,
+          "notes": "独立接地"
+        },
+        {
+          "system_type": "防雷接地（二类）",
+          "resistance": 10,
+          "notes": "可与电气接地共用"
+        },
+        {
+          "system_type": "防雷接地（三类）",
+          "resistance": 30,
+          "notes": ""
+        },
+        {
+          "system_type": "信息系统接地",
+          "resistance": 1,
+          "notes": "特殊要求"
+        },
+        {
+          "system_type": "石油化工装置",
+          "resistance": 4,
+          "notes": "防爆要求"
+        },
+        {
+          "system_type": "医疗设备接地",
+          "resistance": 1,
+          "notes": "手术室等"
+        }
       ],
-      "source": {"standard_id": "GB 50065", "clause": "4.2"},
-      "referenced_by": ["EL-PRO-004"],
-      "tags": ["接地电阻", "防雷接地", "保护接地"]
+      "source": {
+        "standard_id": "GB 50065",
+        "clause": "4.2"
+      },
+      "referenced_by": [
+        "EA1206-027"
+      ],
+      "tags": [
+        "接地电阻",
+        "防雷接地",
+        "保护接地"
+      ]
     },
     {
       "table_id": "TBL-EL-CABLE-INSTALL-001",
@@ -597,26 +2225,101 @@
       "discipline": "electrical",
       "category": "installation_factor",
       "columns": [
-        {"key": "installation", "name": "敷设方式", "type": "string"},
-        {"key": "Kg", "name": "校正系数", "type": "number"},
-        {"key": "cables", "name": "电缆数量", "type": "string"},
-        {"key": "notes", "name": "备注", "type": "string"}
+        {
+          "key": "installation",
+          "name": "敷设方式",
+          "type": "string"
+        },
+        {
+          "key": "Kg",
+          "name": "校正系数",
+          "type": "number"
+        },
+        {
+          "key": "cables",
+          "name": "电缆数量",
+          "type": "string"
+        },
+        {
+          "key": "notes",
+          "name": "备注",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"installation": "空气中单根", "Kg": 1.00, "cables": "1根", "notes": "基准"},
-        {"installation": "空气中2根", "Kg": 0.85, "cables": "2根", "notes": "并排"},
-        {"installation": "空气中3根", "Kg": 0.80, "cables": "3根", "notes": "并排"},
-        {"installation": "空气中4根", "Kg": 0.75, "cables": "4根", "notes": "并排"},
-        {"installation": "电缆沟内", "Kg": 0.90, "cables": "1~3根", "notes": "通风良好"},
-        {"installation": "电缆沟内", "Kg": 0.80, "cables": "4~6根", "notes": "通风良好"},
-        {"installation": "桥架内", "Kg": 0.85, "cables": "1~3根", "notes": "单层"},
-        {"installation": "桥架内", "Kg": 0.75, "cables": "4~6根", "notes": "单层"},
-        {"installation": "穿管敷设", "Kg": 0.80, "cables": "1根", "notes": ""},
-        {"installation": "直埋敷设", "Kg": 0.90, "cables": "1根", "notes": "土壤热阻正常"}
+        {
+          "installation": "空气中单根",
+          "Kg": 1,
+          "cables": "1根",
+          "notes": "基准"
+        },
+        {
+          "installation": "空气中2根",
+          "Kg": 0.85,
+          "cables": "2根",
+          "notes": "并排"
+        },
+        {
+          "installation": "空气中3根",
+          "Kg": 0.8,
+          "cables": "3根",
+          "notes": "并排"
+        },
+        {
+          "installation": "空气中4根",
+          "Kg": 0.75,
+          "cables": "4根",
+          "notes": "并排"
+        },
+        {
+          "installation": "电缆沟内",
+          "Kg": 0.9,
+          "cables": "1~3根",
+          "notes": "通风良好"
+        },
+        {
+          "installation": "电缆沟内",
+          "Kg": 0.8,
+          "cables": "4~6根",
+          "notes": "通风良好"
+        },
+        {
+          "installation": "桥架内",
+          "Kg": 0.85,
+          "cables": "1~3根",
+          "notes": "单层"
+        },
+        {
+          "installation": "桥架内",
+          "Kg": 0.75,
+          "cables": "4~6根",
+          "notes": "单层"
+        },
+        {
+          "installation": "穿管敷设",
+          "Kg": 0.8,
+          "cables": "1根",
+          "notes": ""
+        },
+        {
+          "installation": "直埋敷设",
+          "Kg": 0.9,
+          "cables": "1根",
+          "notes": "土壤热阻正常"
+        }
       ],
-      "source": {"standard_id": "GB 50217", "clause": "附录"},
-      "referenced_by": ["EL-CAB-001"],
-      "tags": ["敷设方式", "校正系数", "电缆选型"]
+      "source": {
+        "standard_id": "GB 50217",
+        "clause": "附录"
+      },
+      "referenced_by": [
+        "EA1206-001"
+      ],
+      "tags": [
+        "敷设方式",
+        "校正系数",
+        "电缆选型"
+      ]
     },
     {
       "table_id": "TBL-EL-CABLE-SOIL-001",
@@ -624,22 +2327,77 @@
       "discipline": "electrical",
       "category": "environmental_factor",
       "columns": [
-        {"key": "soil_condition", "name": "土壤状况", "type": "string"},
-        {"key": "thermal_resistivity", "name": "热阻系数(K·m/W)", "type": "number"},
-        {"key": "Kd", "name": "校正系数", "type": "number"},
-        {"key": "notes", "name": "备注", "type": "string"}
+        {
+          "key": "soil_condition",
+          "name": "土壤状况",
+          "type": "string"
+        },
+        {
+          "key": "thermal_resistivity",
+          "name": "热阻系数(K·m/W)",
+          "type": "number"
+        },
+        {
+          "key": "Kd",
+          "name": "校正系数",
+          "type": "number"
+        },
+        {
+          "key": "notes",
+          "name": "备注",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"soil_condition": "非常潮湿", "thermal_resistivity": 0.5, "Kd": 1.10, "notes": "水田、沼泽"},
-        {"soil_condition": "潮湿", "thermal_resistivity": 0.7, "Kd": 1.05, "notes": "正常土壤"},
-        {"soil_condition": "正常", "thermal_resistivity": 1.0, "Kd": 1.00, "notes": "基准"},
-        {"soil_condition": "干燥", "thermal_resistivity": 1.5, "Kd": 0.90, "notes": "沙质土壤"},
-        {"soil_condition": "非常干燥", "thermal_resistivity": 2.0, "Kd": 0.80, "notes": "岩石、沙砾"},
-        {"soil_condition": "回填混凝土", "thermal_resistivity": 0.8, "Kd": 1.05, "notes": "管道周围"}
+        {
+          "soil_condition": "非常潮湿",
+          "thermal_resistivity": 0.5,
+          "Kd": 1.1,
+          "notes": "水田、沼泽"
+        },
+        {
+          "soil_condition": "潮湿",
+          "thermal_resistivity": 0.7,
+          "Kd": 1.05,
+          "notes": "正常土壤"
+        },
+        {
+          "soil_condition": "正常",
+          "thermal_resistivity": 1,
+          "Kd": 1,
+          "notes": "基准"
+        },
+        {
+          "soil_condition": "干燥",
+          "thermal_resistivity": 1.5,
+          "Kd": 0.9,
+          "notes": "沙质土壤"
+        },
+        {
+          "soil_condition": "非常干燥",
+          "thermal_resistivity": 2,
+          "Kd": 0.8,
+          "notes": "岩石、沙砾"
+        },
+        {
+          "soil_condition": "回填混凝土",
+          "thermal_resistivity": 0.8,
+          "Kd": 1.05,
+          "notes": "管道周围"
+        }
       ],
-      "source": {"standard_id": "GB 50217", "clause": "附录"},
-      "referenced_by": ["EL-CAB-001"],
-      "tags": ["土壤热阻", "直埋电缆", "校正系数"]
+      "source": {
+        "standard_id": "GB 50217",
+        "clause": "附录"
+      },
+      "referenced_by": [
+        "EA1206-001"
+      ],
+      "tags": [
+        "土壤热阻",
+        "直埋电缆",
+        "校正系数"
+      ]
     },
     {
       "table_id": "TBL-EL-ILLUM-MAINT-001",
@@ -647,21 +2405,71 @@
       "discipline": "electrical",
       "category": "maintenance_factor",
       "columns": [
-        {"key": "environment", "name": "环境条件", "type": "string"},
-        {"key": "cleaning_cycle", "name": "清洁周期(月)", "type": "number"},
-        {"key": "K_maint", "name": "维护系数", "type": "number"},
-        {"key": "notes", "name": "典型场所", "type": "string"}
+        {
+          "key": "environment",
+          "name": "环境条件",
+          "type": "string"
+        },
+        {
+          "key": "cleaning_cycle",
+          "name": "清洁周期(月)",
+          "type": "number"
+        },
+        {
+          "key": "K_maint",
+          "name": "维护系数",
+          "type": "number"
+        },
+        {
+          "key": "notes",
+          "name": "典型场所",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"environment": "清洁", "cleaning_cycle": 12, "K_maint": 0.80, "notes": "办公室、会议室"},
-        {"environment": "一般", "cleaning_cycle": 6, "K_maint": 0.70, "notes": "商场、餐厅"},
-        {"environment": "污染", "cleaning_cycle": 3, "K_maint": 0.60, "notes": "车间、仓库"},
-        {"environment": "严重污染", "cleaning_cycle": 1, "K_maint": 0.50, "notes": "铸造车间、水泥厂"},
-        {"environment": "室外", "cleaning_cycle": 6, "K_maint": 0.65, "notes": "道路、广场"}
+        {
+          "environment": "清洁",
+          "cleaning_cycle": 12,
+          "K_maint": 0.8,
+          "notes": "办公室、会议室"
+        },
+        {
+          "environment": "一般",
+          "cleaning_cycle": 6,
+          "K_maint": 0.7,
+          "notes": "商场、餐厅"
+        },
+        {
+          "environment": "污染",
+          "cleaning_cycle": 3,
+          "K_maint": 0.6,
+          "notes": "车间、仓库"
+        },
+        {
+          "environment": "严重污染",
+          "cleaning_cycle": 1,
+          "K_maint": 0.5,
+          "notes": "铸造车间、水泥厂"
+        },
+        {
+          "environment": "室外",
+          "cleaning_cycle": 6,
+          "K_maint": 0.65,
+          "notes": "道路、广场"
+        }
       ],
-      "source": {"standard_id": "GB 50034", "clause": "附录"},
-      "referenced_by": ["EL-LIG-001"],
-      "tags": ["维护系数", "照明计算", "灯具清洁"]
+      "source": {
+        "standard_id": "GB 50034",
+        "clause": "附录"
+      },
+      "referenced_by": [
+        "EA1206-007"
+      ],
+      "tags": [
+        "维护系数",
+        "照明计算",
+        "灯具清洁"
+      ]
     },
     {
       "table_id": "TBL-EL-LIGHTING-001",
@@ -669,27 +2477,116 @@
       "discipline": "electrical",
       "category": "lighting_design",
       "columns": [
-        {"key": "room_ratio", "name": "室形指数", "type": "number"},
-        {"key": "reflectance", "name": "顶棚反射率(%)", "type": "number"},
-        {"key": "wall_reflectance", "name": "墙面反射率(%)", "type": "number"},
-        {"key": "utilization", "name": "利用系数", "type": "number"},
-        {"key": "notes", "name": "备注", "type": "string"}
+        {
+          "key": "room_ratio",
+          "name": "室形指数",
+          "type": "number"
+        },
+        {
+          "key": "reflectance",
+          "name": "顶棚反射率(%)",
+          "type": "number"
+        },
+        {
+          "key": "wall_reflectance",
+          "name": "墙面反射率(%)",
+          "type": "number"
+        },
+        {
+          "key": "utilization",
+          "name": "利用系数",
+          "type": "number"
+        },
+        {
+          "key": "notes",
+          "name": "备注",
+          "type": "string"
+        }
       ],
       "rows": [
-        {"room_ratio": 0.6, "reflectance": 70, "wall_reflectance": 50, "utilization": 0.45, "notes": ""},
-        {"room_ratio": 0.8, "reflectance": 70, "wall_reflectance": 50, "utilization": 0.55, "notes": ""},
-        {"room_ratio": 1.0, "reflectance": 70, "wall_reflectance": 50, "utilization": 0.60, "notes": ""},
-        {"room_ratio": 1.25, "reflectance": 70, "wall_reflectance": 50, "utilization": 0.65, "notes": ""},
-        {"room_ratio": 1.5, "reflectance": 70, "wall_reflectance": 50, "utilization": 0.68, "notes": ""},
-        {"room_ratio": 2.0, "reflectance": 70, "wall_reflectance": 50, "utilization": 0.72, "notes": ""},
-        {"room_ratio": 2.5, "reflectance": 70, "wall_reflectance": 50, "utilization": 0.75, "notes": ""},
-        {"room_ratio": 3.0, "reflectance": 70, "wall_reflectance": 50, "utilization": 0.77, "notes": ""},
-        {"room_ratio": 4.0, "reflectance": 70, "wall_reflectance": 50, "utilization": 0.79, "notes": ""},
-        {"room_ratio": 5.0, "reflectance": 70, "wall_reflectance": 50, "utilization": 0.81, "notes": ""}
+        {
+          "room_ratio": 0.6,
+          "reflectance": 70,
+          "wall_reflectance": 50,
+          "utilization": 0.45,
+          "notes": ""
+        },
+        {
+          "room_ratio": 0.8,
+          "reflectance": 70,
+          "wall_reflectance": 50,
+          "utilization": 0.55,
+          "notes": ""
+        },
+        {
+          "room_ratio": 1,
+          "reflectance": 70,
+          "wall_reflectance": 50,
+          "utilization": 0.6,
+          "notes": ""
+        },
+        {
+          "room_ratio": 1.25,
+          "reflectance": 70,
+          "wall_reflectance": 50,
+          "utilization": 0.65,
+          "notes": ""
+        },
+        {
+          "room_ratio": 1.5,
+          "reflectance": 70,
+          "wall_reflectance": 50,
+          "utilization": 0.68,
+          "notes": ""
+        },
+        {
+          "room_ratio": 2,
+          "reflectance": 70,
+          "wall_reflectance": 50,
+          "utilization": 0.72,
+          "notes": ""
+        },
+        {
+          "room_ratio": 2.5,
+          "reflectance": 70,
+          "wall_reflectance": 50,
+          "utilization": 0.75,
+          "notes": ""
+        },
+        {
+          "room_ratio": 3,
+          "reflectance": 70,
+          "wall_reflectance": 50,
+          "utilization": 0.77,
+          "notes": ""
+        },
+        {
+          "room_ratio": 4,
+          "reflectance": 70,
+          "wall_reflectance": 50,
+          "utilization": 0.79,
+          "notes": ""
+        },
+        {
+          "room_ratio": 5,
+          "reflectance": 70,
+          "wall_reflectance": 50,
+          "utilization": 0.81,
+          "notes": ""
+        }
       ],
-      "source": {"standard_id": "GB 50034", "clause": "附录"},
-      "referenced_by": ["EL-LIG-001"],
-      "tags": ["利用系数", "室形指数", "照明设计"]
+      "source": {
+        "standard_id": "GB 50034",
+        "clause": "附录"
+      },
+      "referenced_by": [
+        "EA1206-007"
+      ],
+      "tags": [
+        "利用系数",
+        "室形指数",
+        "照明设计"
+      ]
     }
   ]
 }

@@ -94,7 +94,7 @@ DOMAIN_DICTIONARY = {
         "instrument": ["仪表", "自控", "仪控"],
         "electrical": ["电气", "供配电"],
         "equipment": ["设备", "静设备", "动设备"],
-        "hse": ["安全", "环保", "职业卫生", "HSE"],
+        "hs": ["安全", "safety", "HS", "HSE"],
     },
     "standard_aliases": {
         "GB 50160": ["GB50160", "GB-50160", "石化防火规范"],

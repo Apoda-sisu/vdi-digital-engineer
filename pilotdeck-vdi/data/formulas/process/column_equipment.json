@@ -1,0 +1,213 @@
+{
+  "file": "process/column_equipment.json",
+  "discipline": "PX",
+  "category": "column",
+  "formula_count": 2,
+  "formulas": [
+    {
+      "formula_id": "PR-COL-001",
+      "vdi_formula_id": "PR-COL-001",
+      "name": "精馏塔塔径（Souders-Brown）",
+      "name_en": "Distillation Column Diameter (Souders-Brown)",
+      "discipline": "PX",
+      "category": "column/sizing",
+      "type": "exact",
+      "equation_text": "D = sqrt(4 * V / (π * C * sqrt((ρL-ρV)/ρV)))",
+      "equation_latex": "D = \\sqrt{\\frac{4V}{\\pi C \\sqrt{\\frac{\\rho_L-\\rho_V}{\\rho_V}}}}",
+      "equation_ast": {
+        "op": "sqrt",
+        "arg": {
+          "op": "div",
+          "num": {
+            "op": "mul",
+            "args": [
+              {
+                "const": 4
+              },
+              {
+                "var": "V"
+              }
+            ]
+          },
+          "den": {
+            "op": "mul",
+            "args": [
+              {
+                "const": 3.14159
+              },
+              {
+                "var": "C"
+              },
+              {
+                "op": "sqrt",
+                "arg": {
+                  "op": "div",
+                  "num": {
+                    "op": "sub",
+                    "args": [
+                      {
+                        "var": "ρL"
+                      },
+                      {
+                        "var": "ρV"
+                      }
+                    ]
+                  },
+                  "den": {
+                    "var": "ρV"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "variables": [
+        {
+          "symbol": "D",
+          "name": "塔径",
+          "unit": "m",
+          "role": "output",
+          "desc": "精馏塔塔径"
+        },
+        {
+          "symbol": "V",
+          "name": "气相体积流量",
+          "unit": "m³/s",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "塔顶气相体积流量"
+        },
+        {
+          "symbol": "C",
+          "name": "Souders-Brown系数",
+          "unit": "m/s",
+          "role": "input",
+          "default": 0.08,
+          "desc": "系统因子"
+        },
+        {
+          "symbol": "ρL",
+          "name": "液相密度",
+          "unit": "kg/m³",
+          "role": "input",
+          "desc": "液相密度"
+        },
+        {
+          "symbol": "ρV",
+          "name": "气相密度",
+          "unit": "kg/m³",
+          "role": "input",
+          "desc": "气相密度"
+        }
+      ],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "精馏塔设计"
+      },
+      "tags": [
+        "塔径",
+        "Souders-Brown",
+        "精馏"
+      ],
+      "keywords": [
+        "精馏塔塔径",
+        "Souders-Brown",
+        "塔器尺寸"
+      ],
+      "skill_tags": [
+        "PX1206"
+      ],
+      "precision": 0.01,
+      "version": 1
+    },
+    {
+      "formula_id": "PR-HEA-001",
+      "vdi_formula_id": "PR-HEA-001",
+      "name": "换热器传热面积",
+      "name_en": "Heat Exchanger Area Q=UAΔTlm",
+      "discipline": "PX",
+      "category": "heat/exchanger",
+      "type": "exact",
+      "equation_text": "A = Q / (U * ΔTlm)",
+      "equation_latex": "A = \\frac{Q}{U \\cdot \\Delta T_{lm}}",
+      "equation_ast": {
+        "op": "div",
+        "num": {
+          "var": "Q"
+        },
+        "den": {
+          "op": "mul",
+          "args": [
+            {
+              "var": "U"
+            },
+            {
+              "var": "ΔTlm"
+            }
+          ]
+        }
+      },
+      "variables": [
+        {
+          "symbol": "A",
+          "name": "传热面积",
+          "unit": "m²",
+          "role": "output",
+          "desc": "所需传热面积"
+        },
+        {
+          "symbol": "Q",
+          "name": "热负荷",
+          "unit": "W",
+          "role": "input",
+          "constraints": {
+            "min": 1000
+          },
+          "desc": "换热量"
+        },
+        {
+          "symbol": "U",
+          "name": "总传热系数",
+          "unit": "W/(m²·K)",
+          "role": "input",
+          "constraints": {
+            "min": 50
+          },
+          "desc": "总传热系数"
+        },
+        {
+          "symbol": "ΔTlm",
+          "name": "对数平均温差",
+          "unit": "K",
+          "role": "input",
+          "constraints": {
+            "min": 1
+          },
+          "desc": "LMTD"
+        }
+      ],
+      "source": {
+        "standard_id": "GB/T 151",
+        "clause": "换热器设计"
+      },
+      "tags": [
+        "换热器面积",
+        "LMTD",
+        "传热"
+      ],
+      "keywords": [
+        "换热器面积",
+        "UAΔTlm",
+        "传热面积"
+      ],
+      "skill_tags": [
+        "PX1206"
+      ],
+      "precision": 0.1,
+      "version": 1
+    }
+  ]
+}

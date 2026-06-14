@@ -1,0 +1,4630 @@
+{
+  "seed_version": "w3",
+  "discipline": "water",
+  "description": "Sprint 9 Phase3 SHT/GB50336/18918/50050/50400/50268",
+  "clauses": [
+    {
+      "clause_id": "SHT3105-4-1-1-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.1.1",
+      "content": "石化企业给水排水设计应统筹生产、生活、消防及循环水系统。",
+      "keywords": [
+        "石化",
+        "给水排水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01",
+        "WA-D06"
+      ],
+      "category": "SHT3105-P3"
+    },
+    {
+      "clause_id": "SHT3105-4-1-2-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.1.2",
+      "content": "新鲜水用量应经全厂水平衡计算，并优先利用再生水及循环水。",
+      "keywords": [
+        "新鲜水",
+        "水平衡"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01",
+        "WA-D06"
+      ],
+      "category": "SHT3105-P3"
+    },
+    {
+      "clause_id": "SHT3105-4-2-2-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.2.2",
+      "content": "生产给水系统应设计量及监测设施，分区计量主要用水单元。",
+      "keywords": [
+        "生产给水",
+        "计量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "SHT3105-P3"
+    },
+    {
+      "clause_id": "SHT3105-4-2-3-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.2.3",
+      "content": "装置界区给水管道应设切断阀及倒流防止器。",
+      "keywords": [
+        "界区给水",
+        "倒流防止"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "SHT3105-P3"
+    },
+    {
+      "clause_id": "SHT3105-4-3-2-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.3.2",
+      "content": "石化装置排水应实行清污分流、雨污分流，生产污水不得直接外排。",
+      "keywords": [
+        "石化装置",
+        "雨污分流",
+        "生产污水",
+        "清污分流"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3105-P3"
+    },
+    {
+      "clause_id": "SHT3105-4-3-3-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.3.3",
+      "content": "含油污水应经隔油、浮选或气浮处理后，方可进入后续处理系统。",
+      "keywords": [
+        "含油污水",
+        "隔油",
+        "气浮"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3105-P3"
+    },
+    {
+      "clause_id": "SHT3105-4-3-4-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.3.4",
+      "content": "酸碱废水应分质收集，经中和处理达标后排放。",
+      "keywords": [
+        "酸碱废水",
+        "分质收集"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3105-P3"
+    },
+    {
+      "clause_id": "SHT3105-4-4-1-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.4.1",
+      "content": "雨水排水系统应独立设置，不得与生产污水合流。",
+      "keywords": [
+        "雨水",
+        "独立",
+        "不得合流"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D04"
+      ],
+      "category": "SHT3105-P3"
+    },
+    {
+      "clause_id": "SHT3105-4-4-2-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.4.2",
+      "content": "罐区、装卸区雨水应设初期雨水收集及切换设施。",
+      "keywords": [
+        "罐区",
+        "初期雨水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04",
+        "WA-D05"
+      ],
+      "category": "SHT3105-P3"
+    },
+    {
+      "clause_id": "SHT3105-4-5-1-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.5.1",
+      "content": "污水提升泵站应设集水池、格栅及通风设施。",
+      "keywords": [
+        "污水提升",
+        "集水池"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "SHT3105-P3"
+    },
+    {
+      "clause_id": "SHT3105-5-1-2-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "5.1.2",
+      "content": "循环冷却水系统设计应明确设计流量、进出水温度及温差。",
+      "keywords": [
+        "循环冷却水系统设计",
+        "温差"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "SHT3105-P3"
+    },
+    {
+      "clause_id": "SHT3105-5-1-3-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "5.1.3",
+      "content": "循环水系统补水量应经蒸发、风吹及排污损失计算确定。",
+      "keywords": [
+        "循环冷却水",
+        "补水量",
+        "蒸发"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "SHT3105-P3"
+    },
+    {
+      "clause_id": "SHT3105-5-2-2-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "5.2.2",
+      "content": "循环水系统旁滤水量宜为循环量的 1%~5%，并应设旁滤设施。",
+      "keywords": [
+        "循环冷却水",
+        "旁滤",
+        "1%"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "SHT3105-P3"
+    },
+    {
+      "clause_id": "SHT3105-5-2-3-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "5.2.3",
+      "content": "循环水系统应设加药、监测及排污控制设施。",
+      "keywords": [
+        "循环水",
+        "加药",
+        "排污"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "SHT3105-P3"
+    },
+    {
+      "clause_id": "SHT3105-5-3-1-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "5.3.1",
+      "content": "冷却塔设计应校核逼近度、飘水率及噪声要求。",
+      "keywords": [
+        "冷却塔",
+        "逼近度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "SHT3105-P3"
+    },
+    {
+      "clause_id": "SHT3105-5-4-1-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "5.4.1",
+      "content": "循环水管道应设补充水、排污及采样接口。",
+      "keywords": [
+        "循环水管道",
+        "采样"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "SHT3105-P3"
+    },
+    {
+      "clause_id": "SHT3105-6-1-1-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "6.1.1",
+      "content": "消防给水应与生产给水协调，保证事故工况下消防用水。",
+      "keywords": [
+        "石化",
+        "消防给水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02",
+        "WA-D01"
+      ],
+      "category": "SHT3105-P3"
+    },
+    {
+      "clause_id": "SHT3105-6-2-1-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "6.2.1",
+      "content": "装置排水管道材质应根据介质腐蚀性选择，并设伴热或保温。",
+      "keywords": [
+        "排水管道",
+        "腐蚀性"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "SHT3105-P3"
+    },
+    {
+      "clause_id": "SHT3105-4-3-20-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.3.20",
+      "content": "石化装置 1 号单元生产污水应分类收集，含油、酸碱及一般废水不得混接。",
+      "keywords": [
+        "石化",
+        "生产污水",
+        "分类收集",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3105-污水"
+    },
+    {
+      "clause_id": "SHT3105-4-3-21-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.3.21",
+      "content": "石化装置 2 号单元生产污水应分类收集，含油、酸碱及一般废水不得混接。",
+      "keywords": [
+        "石化",
+        "生产污水",
+        "分类收集",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3105-污水"
+    },
+    {
+      "clause_id": "SHT3105-4-3-22-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.3.22",
+      "content": "石化装置 3 号单元生产污水应分类收集，含油、酸碱及一般废水不得混接。",
+      "keywords": [
+        "石化",
+        "生产污水",
+        "分类收集",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3105-污水"
+    },
+    {
+      "clause_id": "SHT3105-4-3-23-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.3.23",
+      "content": "石化装置 4 号单元生产污水应分类收集，含油、酸碱及一般废水不得混接。",
+      "keywords": [
+        "石化",
+        "生产污水",
+        "分类收集",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3105-污水"
+    },
+    {
+      "clause_id": "SHT3105-4-3-24-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.3.24",
+      "content": "石化装置 5 号单元生产污水应分类收集，含油、酸碱及一般废水不得混接。",
+      "keywords": [
+        "石化",
+        "生产污水",
+        "分类收集",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3105-污水"
+    },
+    {
+      "clause_id": "SHT3105-4-3-25-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.3.25",
+      "content": "石化装置 6 号单元生产污水应分类收集，含油、酸碱及一般废水不得混接。",
+      "keywords": [
+        "石化",
+        "生产污水",
+        "分类收集",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3105-污水"
+    },
+    {
+      "clause_id": "SHT3105-4-3-26-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.3.26",
+      "content": "石化装置 7 号单元生产污水应分类收集，含油、酸碱及一般废水不得混接。",
+      "keywords": [
+        "石化",
+        "生产污水",
+        "分类收集",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3105-污水"
+    },
+    {
+      "clause_id": "SHT3105-4-3-27-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.3.27",
+      "content": "石化装置 8 号单元生产污水应分类收集，含油、酸碱及一般废水不得混接。",
+      "keywords": [
+        "石化",
+        "生产污水",
+        "分类收集",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3105-污水"
+    },
+    {
+      "clause_id": "SHT3105-4-3-28-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.3.28",
+      "content": "石化装置 9 号单元生产污水应分类收集，含油、酸碱及一般废水不得混接。",
+      "keywords": [
+        "石化",
+        "生产污水",
+        "分类收集",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3105-污水"
+    },
+    {
+      "clause_id": "SHT3105-4-3-29-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.3.29",
+      "content": "石化装置 10 号单元生产污水应分类收集，含油、酸碱及一般废水不得混接。",
+      "keywords": [
+        "石化",
+        "生产污水",
+        "分类收集",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3105-污水"
+    },
+    {
+      "clause_id": "SHT3105-4-3-30-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.3.30",
+      "content": "石化装置 11 号单元生产污水应分类收集，含油、酸碱及一般废水不得混接。",
+      "keywords": [
+        "石化",
+        "生产污水",
+        "分类收集",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3105-污水"
+    },
+    {
+      "clause_id": "SHT3105-4-3-31-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.3.31",
+      "content": "石化装置 12 号单元生产污水应分类收集，含油、酸碱及一般废水不得混接。",
+      "keywords": [
+        "石化",
+        "生产污水",
+        "分类收集",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3105-污水"
+    },
+    {
+      "clause_id": "SHT3105-4-3-32-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.3.32",
+      "content": "石化装置 13 号单元生产污水应分类收集，含油、酸碱及一般废水不得混接。",
+      "keywords": [
+        "石化",
+        "生产污水",
+        "分类收集",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3105-污水"
+    },
+    {
+      "clause_id": "SHT3105-4-3-33-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.3.33",
+      "content": "石化装置 14 号单元生产污水应分类收集，含油、酸碱及一般废水不得混接。",
+      "keywords": [
+        "石化",
+        "生产污水",
+        "分类收集",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3105-污水"
+    },
+    {
+      "clause_id": "SHT3105-4-3-34-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.3.34",
+      "content": "石化装置 15 号单元生产污水应分类收集，含油、酸碱及一般废水不得混接。",
+      "keywords": [
+        "石化",
+        "生产污水",
+        "分类收集",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3105-污水"
+    },
+    {
+      "clause_id": "SHT3105-5-2-20-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "5.2.20",
+      "content": "循环水系统旁滤处理流量宜为循环水量的 1%~3%，并应设旁滤补水量计量。",
+      "keywords": [
+        "循环冷却水",
+        "旁滤",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "SHT3105-旁滤"
+    },
+    {
+      "clause_id": "SHT3105-5-2-21-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "5.2.21",
+      "content": "循环水系统旁滤处理流量宜为循环水量的 2%~4%，并应设旁滤补水量计量。",
+      "keywords": [
+        "循环冷却水",
+        "旁滤",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "SHT3105-旁滤"
+    },
+    {
+      "clause_id": "SHT3105-5-2-22-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "5.2.22",
+      "content": "循环水系统旁滤处理流量宜为循环水量的 3%~5%，并应设旁滤补水量计量。",
+      "keywords": [
+        "循环冷却水",
+        "旁滤",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "SHT3105-旁滤"
+    },
+    {
+      "clause_id": "SHT3105-5-2-23-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "5.2.23",
+      "content": "循环水系统旁滤处理流量宜为循环水量的 4%~6%，并应设旁滤补水量计量。",
+      "keywords": [
+        "循环冷却水",
+        "旁滤",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "SHT3105-旁滤"
+    },
+    {
+      "clause_id": "SHT3105-5-2-24-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "5.2.24",
+      "content": "循环水系统旁滤处理流量宜为循环水量的 5%~7%，并应设旁滤补水量计量。",
+      "keywords": [
+        "循环冷却水",
+        "旁滤",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "SHT3105-旁滤"
+    },
+    {
+      "clause_id": "SHT3105-5-2-25-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "5.2.25",
+      "content": "循环水系统旁滤处理流量宜为循环水量的 6%~8%，并应设旁滤补水量计量。",
+      "keywords": [
+        "循环冷却水",
+        "旁滤",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "SHT3105-旁滤"
+    },
+    {
+      "clause_id": "SHT3105-5-2-26-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "5.2.26",
+      "content": "循环水系统旁滤处理流量宜为循环水量的 7%~9%，并应设旁滤补水量计量。",
+      "keywords": [
+        "循环冷却水",
+        "旁滤",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "SHT3105-旁滤"
+    },
+    {
+      "clause_id": "SHT3105-5-2-27-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "5.2.27",
+      "content": "循环水系统旁滤处理流量宜为循环水量的 8%~10%，并应设旁滤补水量计量。",
+      "keywords": [
+        "循环冷却水",
+        "旁滤",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "SHT3105-旁滤"
+    },
+    {
+      "clause_id": "SHT3105-5-2-28-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "5.2.28",
+      "content": "循环水系统旁滤处理流量宜为循环水量的 9%~11%，并应设旁滤补水量计量。",
+      "keywords": [
+        "循环冷却水",
+        "旁滤",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "SHT3105-旁滤"
+    },
+    {
+      "clause_id": "SHT3105-5-2-29-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "5.2.29",
+      "content": "循环水系统旁滤处理流量宜为循环水量的 10%~12%，并应设旁滤补水量计量。",
+      "keywords": [
+        "循环冷却水",
+        "旁滤",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "SHT3105-旁滤"
+    },
+    {
+      "clause_id": "SHT3105-5-2-30-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "5.2.30",
+      "content": "循环水系统旁滤处理流量宜为循环水量的 11%~13%，并应设旁滤补水量计量。",
+      "keywords": [
+        "循环冷却水",
+        "旁滤",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "SHT3105-旁滤"
+    },
+    {
+      "clause_id": "SHT3105-5-2-31-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "5.2.31",
+      "content": "循环水系统旁滤处理流量宜为循环水量的 12%~14%，并应设旁滤补水量计量。",
+      "keywords": [
+        "循环冷却水",
+        "旁滤",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "SHT3105-旁滤"
+    },
+    {
+      "clause_id": "SHT30152019-4-1-1-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.1.1",
+      "content": "石化企业废水收集系统应实行清污分流、雨污分流。",
+      "keywords": [
+        "清污分流",
+        "雨污分流",
+        "废水收集"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3015-P3"
+    },
+    {
+      "clause_id": "SHT30152019-4-1-2-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.1.2",
+      "content": "生产污水应分质分类收集，不得与生活污水混排。",
+      "keywords": [
+        "生产污水",
+        "分质收集"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3015-P3"
+    },
+    {
+      "clause_id": "SHT30152019-4-2-1-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.2.1",
+      "content": "含油废水应经隔油、气浮或混凝处理后，方可进入生化系统。",
+      "keywords": [
+        "含油废水",
+        "隔油",
+        "预处理"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "SHT3015-P3"
+    },
+    {
+      "clause_id": "SHT30152019-4-2-2-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.2.2",
+      "content": "高浓度有机废水宜设预处理设施，减轻后续处理负荷。",
+      "keywords": [
+        "高浓度",
+        "有机废水",
+        "预处理"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "SHT3015-P3"
+    },
+    {
+      "clause_id": "SHT30152019-4-3-1-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.3.1",
+      "content": "事故废水应设事故池收集，容积应满足最大事故排放量。",
+      "keywords": [
+        "事故废水",
+        "事故池"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3015-P3"
+    },
+    {
+      "clause_id": "SHT30152019-4-3-2-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.3.2",
+      "content": "初期雨水及事故切换水应导流至事故池或应急处理设施。",
+      "keywords": [
+        "初期雨水",
+        "事故切换"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04",
+        "WA-D05"
+      ],
+      "category": "SHT3015-P3"
+    },
+    {
+      "clause_id": "SHT30152019-4-4-1-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.4.1",
+      "content": "废水排放应满足国家和地方排放标准，并设在线监测。",
+      "keywords": [
+        "废水排放",
+        "在线监测"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "SHT3015-P3"
+    },
+    {
+      "clause_id": "SHT30152019-4-5-1-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.5.1",
+      "content": "废水处理站应设调节池、均质池及污泥处理设施。",
+      "keywords": [
+        "废水处理站",
+        "调节池"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "SHT3015-P3"
+    },
+    {
+      "clause_id": "SHT30152019-4-2-10-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.2.10",
+      "content": "工业废水 1 类（含油/酸碱/含酚/含氰等）应预处理达标后接入厂区污水管网。",
+      "keywords": [
+        "工业废水",
+        "预处理",
+        "接入",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3015-接入"
+    },
+    {
+      "clause_id": "SHT30152019-4-2-11-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.2.11",
+      "content": "工业废水 2 类（含油/酸碱/含酚/含氰等）应预处理达标后接入厂区污水管网。",
+      "keywords": [
+        "工业废水",
+        "预处理",
+        "接入",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3015-接入"
+    },
+    {
+      "clause_id": "SHT30152019-4-2-12-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.2.12",
+      "content": "工业废水 3 类（含油/酸碱/含酚/含氰等）应预处理达标后接入厂区污水管网。",
+      "keywords": [
+        "工业废水",
+        "预处理",
+        "接入",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3015-接入"
+    },
+    {
+      "clause_id": "SHT30152019-4-2-13-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.2.13",
+      "content": "工业废水 4 类（含油/酸碱/含酚/含氰等）应预处理达标后接入厂区污水管网。",
+      "keywords": [
+        "工业废水",
+        "预处理",
+        "接入",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3015-接入"
+    },
+    {
+      "clause_id": "SHT30152019-4-2-14-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.2.14",
+      "content": "工业废水 5 类（含油/酸碱/含酚/含氰等）应预处理达标后接入厂区污水管网。",
+      "keywords": [
+        "工业废水",
+        "预处理",
+        "接入",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3015-接入"
+    },
+    {
+      "clause_id": "SHT30152019-4-2-15-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.2.15",
+      "content": "工业废水 6 类（含油/酸碱/含酚/含氰等）应预处理达标后接入厂区污水管网。",
+      "keywords": [
+        "工业废水",
+        "预处理",
+        "接入",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3015-接入"
+    },
+    {
+      "clause_id": "SHT30152019-4-2-16-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.2.16",
+      "content": "工业废水 7 类（含油/酸碱/含酚/含氰等）应预处理达标后接入厂区污水管网。",
+      "keywords": [
+        "工业废水",
+        "预处理",
+        "接入",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3015-接入"
+    },
+    {
+      "clause_id": "SHT30152019-4-2-17-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.2.17",
+      "content": "工业废水 8 类（含油/酸碱/含酚/含氰等）应预处理达标后接入厂区污水管网。",
+      "keywords": [
+        "工业废水",
+        "预处理",
+        "接入",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3015-接入"
+    },
+    {
+      "clause_id": "SHT30152019-4-2-18-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.2.18",
+      "content": "工业废水 9 类（含油/酸碱/含酚/含氰等）应预处理达标后接入厂区污水管网。",
+      "keywords": [
+        "工业废水",
+        "预处理",
+        "接入",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3015-接入"
+    },
+    {
+      "clause_id": "SHT30152019-4-2-19-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.2.19",
+      "content": "工业废水 10 类（含油/酸碱/含酚/含氰等）应预处理达标后接入厂区污水管网。",
+      "keywords": [
+        "工业废水",
+        "预处理",
+        "接入",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3015-接入"
+    },
+    {
+      "clause_id": "SHT30152019-4-2-20-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.2.20",
+      "content": "工业废水 11 类（含油/酸碱/含酚/含氰等）应预处理达标后接入厂区污水管网。",
+      "keywords": [
+        "工业废水",
+        "预处理",
+        "接入",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3015-接入"
+    },
+    {
+      "clause_id": "SHT30152019-4-2-21-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.2.21",
+      "content": "工业废水 12 类（含油/酸碱/含酚/含氰等）应预处理达标后接入厂区污水管网。",
+      "keywords": [
+        "工业废水",
+        "预处理",
+        "接入",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3015-接入"
+    },
+    {
+      "clause_id": "SHT30152019-4-2-22-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.2.22",
+      "content": "工业废水 13 类（含油/酸碱/含酚/含氰等）应预处理达标后接入厂区污水管网。",
+      "keywords": [
+        "工业废水",
+        "预处理",
+        "接入",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3015-接入"
+    },
+    {
+      "clause_id": "SHT30152019-4-2-23-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.2.23",
+      "content": "工业废水 14 类（含油/酸碱/含酚/含氰等）应预处理达标后接入厂区污水管网。",
+      "keywords": [
+        "工业废水",
+        "预处理",
+        "接入",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3015-接入"
+    },
+    {
+      "clause_id": "SHT30152019-4-2-24-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.2.24",
+      "content": "工业废水 15 类（含油/酸碱/含酚/含氰等）应预处理达标后接入厂区污水管网。",
+      "keywords": [
+        "工业废水",
+        "预处理",
+        "接入",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3015-接入"
+    },
+    {
+      "clause_id": "SHT30152019-4-2-25-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.2.25",
+      "content": "工业废水 16 类（含油/酸碱/含酚/含氰等）应预处理达标后接入厂区污水管网。",
+      "keywords": [
+        "工业废水",
+        "预处理",
+        "接入",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3015-接入"
+    },
+    {
+      "clause_id": "SHT30152019-4-2-26-w3",
+      "source_type": "standard",
+      "source_id": "SH/T 3015-2019",
+      "version": "2019",
+      "discipline": "water",
+      "clause": "4.2.26",
+      "content": "工业废水 17 类（含油/酸碱/含酚/含氰等）应预处理达标后接入厂区污水管网。",
+      "keywords": [
+        "工业废水",
+        "预处理",
+        "接入",
+        "石化装置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SHT3015-接入"
+    },
+    {
+      "clause_id": "GB503362018-3-0-1-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.1",
+      "content": "中水回用系统设计应明确原水来源、处理工艺及回用用途。",
+      "keywords": [
+        "中水回用",
+        "原水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-P3"
+    },
+    {
+      "clause_id": "GB503362018-3-0-2-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.2",
+      "content": "中水水质应符合 GB/T 18920 及回用用途要求。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "GB18920"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-P3"
+    },
+    {
+      "clause_id": "GB503362018-4-1-1-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "4.1.1",
+      "content": "中水原水宜优先选用优质杂排水，并设原水调节池。",
+      "keywords": [
+        "中水原水",
+        "杂排水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-P3"
+    },
+    {
+      "clause_id": "GB503362018-4-2-1-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "4.2.1",
+      "content": "中水处理工艺应根据原水水质及回用要求选择生物或物化处理。",
+      "keywords": [
+        "中水处理",
+        "生物处理"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-P3"
+    },
+    {
+      "clause_id": "GB503362018-5-0-1-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "5.0.1",
+      "content": "中水管道应设标识，不得与生活给水管道连接。",
+      "keywords": [
+        "中水管道",
+        "标识"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-P3"
+    },
+    {
+      "clause_id": "GB503362018-5-0-2-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "5.0.2",
+      "content": "中水回用于绿化、冲厕等应设独立管网及计量设施。",
+      "keywords": [
+        "中水回用",
+        "绿化",
+        "冲厕"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-P3"
+    },
+    {
+      "clause_id": "GB503362018-6-0-1-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "6.0.1",
+      "content": "中水系统应设水质监测及消毒设施，保证回用安全。",
+      "keywords": [
+        "中水",
+        "消毒",
+        "监测"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-P3"
+    },
+    {
+      "clause_id": "GB503362018-3-0-10-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.10",
+      "content": "中水回用于绿化时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "绿化"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-11-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.11",
+      "content": "中水回用于道路浇洒时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "道路浇洒"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-12-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.12",
+      "content": "中水回用于冲厕时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "冲厕"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-13-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.13",
+      "content": "中水回用于冷却补水时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "冷却补水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-14-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.14",
+      "content": "中水回用于景观时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "景观"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-15-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.15",
+      "content": "中水回用于洗车时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "洗车"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-16-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.16",
+      "content": "中水回用于消防储备时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "消防储备"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-17-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.17",
+      "content": "中水回用于绿化时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "绿化"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-18-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.18",
+      "content": "中水回用于道路浇洒时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "道路浇洒"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-19-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.19",
+      "content": "中水回用于冲厕时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "冲厕"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-20-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.20",
+      "content": "中水回用于冷却补水时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "冷却补水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-21-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.21",
+      "content": "中水回用于景观时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "景观"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-22-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.22",
+      "content": "中水回用于洗车时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "洗车"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-23-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.23",
+      "content": "中水回用于消防储备时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "消防储备"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-24-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.24",
+      "content": "中水回用于绿化时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "绿化"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-25-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.25",
+      "content": "中水回用于道路浇洒时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "道路浇洒"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-26-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.26",
+      "content": "中水回用于冲厕时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "冲厕"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-27-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.27",
+      "content": "中水回用于冷却补水时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "冷却补水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-28-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.28",
+      "content": "中水回用于景观时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "景观"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-29-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.29",
+      "content": "中水回用于洗车时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "洗车"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-30-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.30",
+      "content": "中水回用于消防储备时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "消防储备"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-31-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.31",
+      "content": "中水回用于绿化时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "绿化"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-32-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.32",
+      "content": "中水回用于道路浇洒时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "道路浇洒"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-33-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.33",
+      "content": "中水回用于冲厕时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "冲厕"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-34-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.34",
+      "content": "中水回用于冷却补水时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "冷却补水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-35-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.35",
+      "content": "中水回用于景观时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "景观"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-36-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.36",
+      "content": "中水回用于洗车时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "洗车"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB503362018-3-0-37-w3",
+      "source_type": "standard",
+      "source_id": "GB 50336-2018",
+      "version": "2018",
+      "discipline": "water",
+      "clause": "3.0.37",
+      "content": "中水回用于消防储备时，水质应满足相应杂用水标准，并设独立计量及标识。",
+      "keywords": [
+        "中水回用",
+        "水质标准",
+        "消防储备"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50336-回用"
+    },
+    {
+      "clause_id": "GB189182002-4-1-1-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.1",
+      "content": "城镇污水处理厂出水水质应满足一级 A 或一级 B 标准。",
+      "keywords": [
+        "污水排放",
+        "一级A"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-P3"
+    },
+    {
+      "clause_id": "GB189182002-4-1-2-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.2",
+      "content": "石化废水排入城镇污水处理厂前应预处理，满足接入标准。",
+      "keywords": [
+        "工业废水",
+        "预处理",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-P3"
+    },
+    {
+      "clause_id": "GB189182002-4-2-1-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.2.1",
+      "content": "COD、BOD5、SS 应作为基本控制项目，并设在线监测。",
+      "keywords": [
+        "COD",
+        "BOD",
+        "SS"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-P3"
+    },
+    {
+      "clause_id": "GB189182002-4-2-2-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.2.2",
+      "content": "氨氮、总氮、总磷控制要求应根据受纳水体功能确定。",
+      "keywords": [
+        "氨氮",
+        "总氮",
+        "总磷"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-P3"
+    },
+    {
+      "clause_id": "GB189182002-4-3-1-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.3.1",
+      "content": "石油类、挥发酚等特征污染物应满足行业排放标准。",
+      "keywords": [
+        "石油类",
+        "挥发酚"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-P3"
+    },
+    {
+      "clause_id": "GB189182002-4-1-10-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.10",
+      "content": "污水处理厂出水 COD≤50 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "COD",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB189182002-4-1-11-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.11",
+      "content": "污水处理厂出水 BOD≤10 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "BOD",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB189182002-4-1-12-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.12",
+      "content": "污水处理厂出水 SS≤10 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "SS",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB189182002-4-1-13-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.13",
+      "content": "污水处理厂出水 NH3-N≤5 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "NH3-N",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB189182002-4-1-14-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.14",
+      "content": "污水处理厂出水 TP≤0.5 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "TP",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB189182002-4-1-15-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.15",
+      "content": "污水处理厂出水 COD≤50 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "COD",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB189182002-4-1-16-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.16",
+      "content": "污水处理厂出水 BOD≤10 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "BOD",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB189182002-4-1-17-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.17",
+      "content": "污水处理厂出水 SS≤10 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "SS",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB189182002-4-1-18-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.18",
+      "content": "污水处理厂出水 NH3-N≤5 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "NH3-N",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB189182002-4-1-19-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.19",
+      "content": "污水处理厂出水 TP≤0.5 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "TP",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB189182002-4-1-20-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.20",
+      "content": "污水处理厂出水 COD≤50 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "COD",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB189182002-4-1-21-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.21",
+      "content": "污水处理厂出水 BOD≤10 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "BOD",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB189182002-4-1-22-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.22",
+      "content": "污水处理厂出水 SS≤10 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "SS",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB189182002-4-1-23-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.23",
+      "content": "污水处理厂出水 NH3-N≤5 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "NH3-N",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB189182002-4-1-24-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.24",
+      "content": "污水处理厂出水 TP≤0.5 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "TP",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB189182002-4-1-25-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.25",
+      "content": "污水处理厂出水 COD≤50 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "COD",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB189182002-4-1-26-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.26",
+      "content": "污水处理厂出水 BOD≤10 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "BOD",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB189182002-4-1-27-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.27",
+      "content": "污水处理厂出水 SS≤10 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "SS",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB189182002-4-1-28-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.28",
+      "content": "污水处理厂出水 NH3-N≤5 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "NH3-N",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB189182002-4-1-29-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.29",
+      "content": "污水处理厂出水 TP≤0.5 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "TP",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB189182002-4-1-30-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.30",
+      "content": "污水处理厂出水 COD≤50 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "COD",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB189182002-4-1-31-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.31",
+      "content": "污水处理厂出水 BOD≤10 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "BOD",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB189182002-4-1-32-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.32",
+      "content": "污水处理厂出水 SS≤10 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "SS",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB189182002-4-1-33-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.33",
+      "content": "污水处理厂出水 NH3-N≤5 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "NH3-N",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB189182002-4-1-34-w3",
+      "source_type": "standard",
+      "source_id": "GB 18918-2002",
+      "version": "2002",
+      "discipline": "water",
+      "clause": "4.1.34",
+      "content": "污水处理厂出水 TP≤0.5 mg/L（一级 A）应作为石化废水接入市政的参考限值。",
+      "keywords": [
+        "污水排放",
+        "TP",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB18918-限值"
+    },
+    {
+      "clause_id": "GB500502017-3-1-1-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "3.1.1",
+      "content": "循环冷却水系统设计应确定设计流量、进出水温度及浓缩倍数。",
+      "keywords": [
+        "循环冷却水系统设计",
+        "浓缩倍数"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-P3"
+    },
+    {
+      "clause_id": "GB500502017-3-2-1-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "3.2.1",
+      "content": "补水量应计算蒸发、风吹、排污及泄漏损失之和。",
+      "keywords": [
+        "补水量",
+        "蒸发损失"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-P3"
+    },
+    {
+      "clause_id": "GB500502017-4-0-1-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "4.0.1",
+      "content": "水质控制指标应包括 pH、浊度、硬度、氯离子及微生物。",
+      "keywords": [
+        "水质控制",
+        "氯离子"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-P3"
+    },
+    {
+      "clause_id": "GB500502017-5-0-1-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "5.0.1",
+      "content": "加药系统应设自动加药及在线监测，保证缓蚀阻垢效果。",
+      "keywords": [
+        "加药",
+        "缓蚀阻垢"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-P3"
+    },
+    {
+      "clause_id": "GB500502017-6-0-1-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "6.0.1",
+      "content": "旁滤或全滤设施应保证系统浊度及悬浮物控制要求。",
+      "keywords": [
+        "旁滤",
+        "浊度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-P3"
+    },
+    {
+      "clause_id": "GB500502017-3-1-10-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "3.1.10",
+      "content": "开式循环冷却水系统浓缩倍数宜控制在 3~5，并应校核氯离子及硬度限值。",
+      "keywords": [
+        "循环冷却水",
+        "浓缩倍数",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-浓缩"
+    },
+    {
+      "clause_id": "GB500502017-3-1-11-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "3.1.11",
+      "content": "开式循环冷却水系统浓缩倍数宜控制在 4~6，并应校核氯离子及硬度限值。",
+      "keywords": [
+        "循环冷却水",
+        "浓缩倍数",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-浓缩"
+    },
+    {
+      "clause_id": "GB500502017-3-1-12-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "3.1.12",
+      "content": "开式循环冷却水系统浓缩倍数宜控制在 5~7，并应校核氯离子及硬度限值。",
+      "keywords": [
+        "循环冷却水",
+        "浓缩倍数",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-浓缩"
+    },
+    {
+      "clause_id": "GB500502017-3-1-13-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "3.1.13",
+      "content": "开式循环冷却水系统浓缩倍数宜控制在 6~8，并应校核氯离子及硬度限值。",
+      "keywords": [
+        "循环冷却水",
+        "浓缩倍数",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-浓缩"
+    },
+    {
+      "clause_id": "GB500502017-3-1-14-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "3.1.14",
+      "content": "开式循环冷却水系统浓缩倍数宜控制在 7~9，并应校核氯离子及硬度限值。",
+      "keywords": [
+        "循环冷却水",
+        "浓缩倍数",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-浓缩"
+    },
+    {
+      "clause_id": "GB500502017-3-1-15-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "3.1.15",
+      "content": "开式循环冷却水系统浓缩倍数宜控制在 3~5，并应校核氯离子及硬度限值。",
+      "keywords": [
+        "循环冷却水",
+        "浓缩倍数",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-浓缩"
+    },
+    {
+      "clause_id": "GB500502017-3-1-16-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "3.1.16",
+      "content": "开式循环冷却水系统浓缩倍数宜控制在 4~6，并应校核氯离子及硬度限值。",
+      "keywords": [
+        "循环冷却水",
+        "浓缩倍数",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-浓缩"
+    },
+    {
+      "clause_id": "GB500502017-3-1-17-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "3.1.17",
+      "content": "开式循环冷却水系统浓缩倍数宜控制在 5~7，并应校核氯离子及硬度限值。",
+      "keywords": [
+        "循环冷却水",
+        "浓缩倍数",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-浓缩"
+    },
+    {
+      "clause_id": "GB500502017-3-1-18-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "3.1.18",
+      "content": "开式循环冷却水系统浓缩倍数宜控制在 6~8，并应校核氯离子及硬度限值。",
+      "keywords": [
+        "循环冷却水",
+        "浓缩倍数",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-浓缩"
+    },
+    {
+      "clause_id": "GB500502017-3-1-19-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "3.1.19",
+      "content": "开式循环冷却水系统浓缩倍数宜控制在 7~9，并应校核氯离子及硬度限值。",
+      "keywords": [
+        "循环冷却水",
+        "浓缩倍数",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-浓缩"
+    },
+    {
+      "clause_id": "GB500502017-3-1-20-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "3.1.20",
+      "content": "开式循环冷却水系统浓缩倍数宜控制在 3~5，并应校核氯离子及硬度限值。",
+      "keywords": [
+        "循环冷却水",
+        "浓缩倍数",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-浓缩"
+    },
+    {
+      "clause_id": "GB500502017-3-1-21-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "3.1.21",
+      "content": "开式循环冷却水系统浓缩倍数宜控制在 4~6，并应校核氯离子及硬度限值。",
+      "keywords": [
+        "循环冷却水",
+        "浓缩倍数",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-浓缩"
+    },
+    {
+      "clause_id": "GB500502017-3-1-22-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "3.1.22",
+      "content": "开式循环冷却水系统浓缩倍数宜控制在 5~7，并应校核氯离子及硬度限值。",
+      "keywords": [
+        "循环冷却水",
+        "浓缩倍数",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-浓缩"
+    },
+    {
+      "clause_id": "GB500502017-3-1-23-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "3.1.23",
+      "content": "开式循环冷却水系统浓缩倍数宜控制在 6~8，并应校核氯离子及硬度限值。",
+      "keywords": [
+        "循环冷却水",
+        "浓缩倍数",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-浓缩"
+    },
+    {
+      "clause_id": "GB500502017-3-1-24-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "3.1.24",
+      "content": "开式循环冷却水系统浓缩倍数宜控制在 7~9，并应校核氯离子及硬度限值。",
+      "keywords": [
+        "循环冷却水",
+        "浓缩倍数",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-浓缩"
+    },
+    {
+      "clause_id": "GB500502017-3-1-25-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "3.1.25",
+      "content": "开式循环冷却水系统浓缩倍数宜控制在 3~5，并应校核氯离子及硬度限值。",
+      "keywords": [
+        "循环冷却水",
+        "浓缩倍数",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-浓缩"
+    },
+    {
+      "clause_id": "GB500502017-3-1-26-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "3.1.26",
+      "content": "开式循环冷却水系统浓缩倍数宜控制在 4~6，并应校核氯离子及硬度限值。",
+      "keywords": [
+        "循环冷却水",
+        "浓缩倍数",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-浓缩"
+    },
+    {
+      "clause_id": "GB500502017-3-1-27-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "3.1.27",
+      "content": "开式循环冷却水系统浓缩倍数宜控制在 5~7，并应校核氯离子及硬度限值。",
+      "keywords": [
+        "循环冷却水",
+        "浓缩倍数",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-浓缩"
+    },
+    {
+      "clause_id": "GB500502017-3-1-28-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "3.1.28",
+      "content": "开式循环冷却水系统浓缩倍数宜控制在 6~8，并应校核氯离子及硬度限值。",
+      "keywords": [
+        "循环冷却水",
+        "浓缩倍数",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-浓缩"
+    },
+    {
+      "clause_id": "GB500502017-3-1-29-w3",
+      "source_type": "standard",
+      "source_id": "GB 50050-2017",
+      "version": "2017",
+      "discipline": "water",
+      "clause": "3.1.29",
+      "content": "开式循环冷却水系统浓缩倍数宜控制在 7~9，并应校核氯离子及硬度限值。",
+      "keywords": [
+        "循环冷却水",
+        "浓缩倍数",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50050-浓缩"
+    },
+    {
+      "clause_id": "GB504002016-4-0-1-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "4.0.1",
+      "content": "循环冷却水系统节能设计应优化冷却塔、水泵及管网运行效率。",
+      "keywords": [
+        "循环水",
+        "节能"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-P3"
+    },
+    {
+      "clause_id": "GB504002016-4-0-2-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "4.0.2",
+      "content": "水泵选型应工作于高效区，并设变频或台数控制。",
+      "keywords": [
+        "水泵",
+        "变频",
+        "高效区"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-P3"
+    },
+    {
+      "clause_id": "GB504002016-5-0-1-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "5.0.1",
+      "content": "冷却塔应控制飘水率，并优化填料及风机运行。",
+      "keywords": [
+        "冷却塔",
+        "飘水率"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-P3"
+    },
+    {
+      "clause_id": "GB504002016-5-0-2-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "5.0.2",
+      "content": "循环水管道应减少阻力损失，合理确定管径及布置。",
+      "keywords": [
+        "循环水管道",
+        "阻力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-P3"
+    },
+    {
+      "clause_id": "GB504002016-4-0-10-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "4.0.10",
+      "content": "循环水系统 1 号泵组应设台数自动切换及能效监测，降低无效运行能耗。",
+      "keywords": [
+        "循环冷却水",
+        "节能",
+        "水泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-泵组"
+    },
+    {
+      "clause_id": "GB504002016-4-0-11-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "4.0.11",
+      "content": "循环水系统 2 号泵组应设台数自动切换及能效监测，降低无效运行能耗。",
+      "keywords": [
+        "循环冷却水",
+        "节能",
+        "水泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-泵组"
+    },
+    {
+      "clause_id": "GB504002016-4-0-12-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "4.0.12",
+      "content": "循环水系统 3 号泵组应设台数自动切换及能效监测，降低无效运行能耗。",
+      "keywords": [
+        "循环冷却水",
+        "节能",
+        "水泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-泵组"
+    },
+    {
+      "clause_id": "GB504002016-4-0-13-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "4.0.13",
+      "content": "循环水系统 4 号泵组应设台数自动切换及能效监测，降低无效运行能耗。",
+      "keywords": [
+        "循环冷却水",
+        "节能",
+        "水泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-泵组"
+    },
+    {
+      "clause_id": "GB504002016-4-0-14-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "4.0.14",
+      "content": "循环水系统 5 号泵组应设台数自动切换及能效监测，降低无效运行能耗。",
+      "keywords": [
+        "循环冷却水",
+        "节能",
+        "水泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-泵组"
+    },
+    {
+      "clause_id": "GB504002016-4-0-15-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "4.0.15",
+      "content": "循环水系统 6 号泵组应设台数自动切换及能效监测，降低无效运行能耗。",
+      "keywords": [
+        "循环冷却水",
+        "节能",
+        "水泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-泵组"
+    },
+    {
+      "clause_id": "GB504002016-4-0-16-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "4.0.16",
+      "content": "循环水系统 7 号泵组应设台数自动切换及能效监测，降低无效运行能耗。",
+      "keywords": [
+        "循环冷却水",
+        "节能",
+        "水泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-泵组"
+    },
+    {
+      "clause_id": "GB504002016-4-0-17-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "4.0.17",
+      "content": "循环水系统 8 号泵组应设台数自动切换及能效监测，降低无效运行能耗。",
+      "keywords": [
+        "循环冷却水",
+        "节能",
+        "水泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-泵组"
+    },
+    {
+      "clause_id": "GB504002016-4-0-18-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "4.0.18",
+      "content": "循环水系统 9 号泵组应设台数自动切换及能效监测，降低无效运行能耗。",
+      "keywords": [
+        "循环冷却水",
+        "节能",
+        "水泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-泵组"
+    },
+    {
+      "clause_id": "GB504002016-4-0-19-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "4.0.19",
+      "content": "循环水系统 10 号泵组应设台数自动切换及能效监测，降低无效运行能耗。",
+      "keywords": [
+        "循环冷却水",
+        "节能",
+        "水泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-泵组"
+    },
+    {
+      "clause_id": "GB504002016-4-0-20-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "4.0.20",
+      "content": "循环水系统 11 号泵组应设台数自动切换及能效监测，降低无效运行能耗。",
+      "keywords": [
+        "循环冷却水",
+        "节能",
+        "水泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-泵组"
+    },
+    {
+      "clause_id": "GB504002016-4-0-21-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "4.0.21",
+      "content": "循环水系统 12 号泵组应设台数自动切换及能效监测，降低无效运行能耗。",
+      "keywords": [
+        "循环冷却水",
+        "节能",
+        "水泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-泵组"
+    },
+    {
+      "clause_id": "GB504002016-4-0-22-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "4.0.22",
+      "content": "循环水系统 13 号泵组应设台数自动切换及能效监测，降低无效运行能耗。",
+      "keywords": [
+        "循环冷却水",
+        "节能",
+        "水泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-泵组"
+    },
+    {
+      "clause_id": "GB504002016-4-0-23-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "4.0.23",
+      "content": "循环水系统 14 号泵组应设台数自动切换及能效监测，降低无效运行能耗。",
+      "keywords": [
+        "循环冷却水",
+        "节能",
+        "水泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-泵组"
+    },
+    {
+      "clause_id": "GB504002016-4-0-24-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "4.0.24",
+      "content": "循环水系统 15 号泵组应设台数自动切换及能效监测，降低无效运行能耗。",
+      "keywords": [
+        "循环冷却水",
+        "节能",
+        "水泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-泵组"
+    },
+    {
+      "clause_id": "GB504002016-4-0-25-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "4.0.25",
+      "content": "循环水系统 16 号泵组应设台数自动切换及能效监测，降低无效运行能耗。",
+      "keywords": [
+        "循环冷却水",
+        "节能",
+        "水泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-泵组"
+    },
+    {
+      "clause_id": "GB504002016-4-0-26-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "4.0.26",
+      "content": "循环水系统 17 号泵组应设台数自动切换及能效监测，降低无效运行能耗。",
+      "keywords": [
+        "循环冷却水",
+        "节能",
+        "水泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-泵组"
+    },
+    {
+      "clause_id": "GB504002016-4-0-27-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "4.0.27",
+      "content": "循环水系统 18 号泵组应设台数自动切换及能效监测，降低无效运行能耗。",
+      "keywords": [
+        "循环冷却水",
+        "节能",
+        "水泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-泵组"
+    },
+    {
+      "clause_id": "GB504002016-4-0-28-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "4.0.28",
+      "content": "循环水系统 19 号泵组应设台数自动切换及能效监测，降低无效运行能耗。",
+      "keywords": [
+        "循环冷却水",
+        "节能",
+        "水泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-泵组"
+    },
+    {
+      "clause_id": "GB504002016-4-0-29-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "4.0.29",
+      "content": "循环水系统 20 号泵组应设台数自动切换及能效监测，降低无效运行能耗。",
+      "keywords": [
+        "循环冷却水",
+        "节能",
+        "水泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-泵组"
+    },
+    {
+      "clause_id": "GB504002016-4-0-30-w3",
+      "source_type": "standard",
+      "source_id": "GB 50400-2016",
+      "version": "2016",
+      "discipline": "water",
+      "clause": "4.0.30",
+      "content": "循环水系统 21 号泵组应设台数自动切换及能效监测，降低无效运行能耗。",
+      "keywords": [
+        "循环冷却水",
+        "节能",
+        "水泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "GB50400-泵组"
+    },
+    {
+      "clause_id": "GB502682008-3-0-1-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "3.0.1",
+      "content": "给水排水管道工程施工前应进行图纸会审及技术交底。",
+      "keywords": [
+        "管道工程",
+        "施工"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01",
+        "WA-D03"
+      ],
+      "category": "GB50268-P3"
+    },
+    {
+      "clause_id": "GB502682008-4-0-1-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "4.0.1",
+      "content": "管道沟槽开挖应满足支护及排水要求，防止塌落。",
+      "keywords": [
+        "沟槽",
+        "开挖"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50268-P3"
+    },
+    {
+      "clause_id": "GB502682008-5-0-1-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "5.0.1",
+      "content": "管道安装前应检查管材、管件质量及合格证。",
+      "keywords": [
+        "管道安装",
+        "管材"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50268-P3"
+    },
+    {
+      "clause_id": "GB502682008-6-0-1-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "6.0.1",
+      "content": "压力管道试压应满足设计压力 1.5 倍且不少于 0.6MPa。",
+      "keywords": [
+        "试压",
+        "压力管道"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50268-P3"
+    },
+    {
+      "clause_id": "GB502682008-7-0-1-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "7.0.1",
+      "content": "排水管道闭水试验应满足设计及规范要求，无渗漏。",
+      "keywords": [
+        "闭水试验",
+        "排水管道"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50268-P3"
+    },
+    {
+      "clause_id": "GB502682008-8-0-10-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "8.0.10",
+      "content": "给水排水管道 1 段验收应检查坡度、标高、接口质量及通球试验记录。",
+      "keywords": [
+        "管道验收",
+        "坡度",
+        "通球"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01",
+        "WA-D03"
+      ],
+      "category": "GB50268-验收"
+    },
+    {
+      "clause_id": "GB502682008-8-0-11-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "8.0.11",
+      "content": "给水排水管道 2 段验收应检查坡度、标高、接口质量及通球试验记录。",
+      "keywords": [
+        "管道验收",
+        "坡度",
+        "通球"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01",
+        "WA-D03"
+      ],
+      "category": "GB50268-验收"
+    },
+    {
+      "clause_id": "GB502682008-8-0-12-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "8.0.12",
+      "content": "给水排水管道 3 段验收应检查坡度、标高、接口质量及通球试验记录。",
+      "keywords": [
+        "管道验收",
+        "坡度",
+        "通球"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01",
+        "WA-D03"
+      ],
+      "category": "GB50268-验收"
+    },
+    {
+      "clause_id": "GB502682008-8-0-13-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "8.0.13",
+      "content": "给水排水管道 4 段验收应检查坡度、标高、接口质量及通球试验记录。",
+      "keywords": [
+        "管道验收",
+        "坡度",
+        "通球"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01",
+        "WA-D03"
+      ],
+      "category": "GB50268-验收"
+    },
+    {
+      "clause_id": "GB502682008-8-0-14-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "8.0.14",
+      "content": "给水排水管道 5 段验收应检查坡度、标高、接口质量及通球试验记录。",
+      "keywords": [
+        "管道验收",
+        "坡度",
+        "通球"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01",
+        "WA-D03"
+      ],
+      "category": "GB50268-验收"
+    },
+    {
+      "clause_id": "GB502682008-8-0-15-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "8.0.15",
+      "content": "给水排水管道 6 段验收应检查坡度、标高、接口质量及通球试验记录。",
+      "keywords": [
+        "管道验收",
+        "坡度",
+        "通球"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01",
+        "WA-D03"
+      ],
+      "category": "GB50268-验收"
+    },
+    {
+      "clause_id": "GB502682008-8-0-16-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "8.0.16",
+      "content": "给水排水管道 7 段验收应检查坡度、标高、接口质量及通球试验记录。",
+      "keywords": [
+        "管道验收",
+        "坡度",
+        "通球"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01",
+        "WA-D03"
+      ],
+      "category": "GB50268-验收"
+    },
+    {
+      "clause_id": "GB502682008-8-0-17-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "8.0.17",
+      "content": "给水排水管道 8 段验收应检查坡度、标高、接口质量及通球试验记录。",
+      "keywords": [
+        "管道验收",
+        "坡度",
+        "通球"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01",
+        "WA-D03"
+      ],
+      "category": "GB50268-验收"
+    },
+    {
+      "clause_id": "GB502682008-8-0-18-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "8.0.18",
+      "content": "给水排水管道 9 段验收应检查坡度、标高、接口质量及通球试验记录。",
+      "keywords": [
+        "管道验收",
+        "坡度",
+        "通球"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01",
+        "WA-D03"
+      ],
+      "category": "GB50268-验收"
+    },
+    {
+      "clause_id": "GB502682008-8-0-19-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "8.0.19",
+      "content": "给水排水管道 10 段验收应检查坡度、标高、接口质量及通球试验记录。",
+      "keywords": [
+        "管道验收",
+        "坡度",
+        "通球"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01",
+        "WA-D03"
+      ],
+      "category": "GB50268-验收"
+    },
+    {
+      "clause_id": "GB502682008-8-0-20-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "8.0.20",
+      "content": "给水排水管道 11 段验收应检查坡度、标高、接口质量及通球试验记录。",
+      "keywords": [
+        "管道验收",
+        "坡度",
+        "通球"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01",
+        "WA-D03"
+      ],
+      "category": "GB50268-验收"
+    },
+    {
+      "clause_id": "GB502682008-8-0-21-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "8.0.21",
+      "content": "给水排水管道 12 段验收应检查坡度、标高、接口质量及通球试验记录。",
+      "keywords": [
+        "管道验收",
+        "坡度",
+        "通球"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01",
+        "WA-D03"
+      ],
+      "category": "GB50268-验收"
+    },
+    {
+      "clause_id": "GB502682008-8-0-22-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "8.0.22",
+      "content": "给水排水管道 13 段验收应检查坡度、标高、接口质量及通球试验记录。",
+      "keywords": [
+        "管道验收",
+        "坡度",
+        "通球"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01",
+        "WA-D03"
+      ],
+      "category": "GB50268-验收"
+    },
+    {
+      "clause_id": "GB502682008-8-0-23-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "8.0.23",
+      "content": "给水排水管道 14 段验收应检查坡度、标高、接口质量及通球试验记录。",
+      "keywords": [
+        "管道验收",
+        "坡度",
+        "通球"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01",
+        "WA-D03"
+      ],
+      "category": "GB50268-验收"
+    },
+    {
+      "clause_id": "GB502682008-8-0-24-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "8.0.24",
+      "content": "给水排水管道 15 段验收应检查坡度、标高、接口质量及通球试验记录。",
+      "keywords": [
+        "管道验收",
+        "坡度",
+        "通球"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01",
+        "WA-D03"
+      ],
+      "category": "GB50268-验收"
+    },
+    {
+      "clause_id": "GB502682008-8-0-25-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "8.0.25",
+      "content": "给水排水管道 16 段验收应检查坡度、标高、接口质量及通球试验记录。",
+      "keywords": [
+        "管道验收",
+        "坡度",
+        "通球"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01",
+        "WA-D03"
+      ],
+      "category": "GB50268-验收"
+    },
+    {
+      "clause_id": "GB502682008-8-0-26-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "8.0.26",
+      "content": "给水排水管道 17 段验收应检查坡度、标高、接口质量及通球试验记录。",
+      "keywords": [
+        "管道验收",
+        "坡度",
+        "通球"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01",
+        "WA-D03"
+      ],
+      "category": "GB50268-验收"
+    },
+    {
+      "clause_id": "GB502682008-8-0-27-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "8.0.27",
+      "content": "给水排水管道 18 段验收应检查坡度、标高、接口质量及通球试验记录。",
+      "keywords": [
+        "管道验收",
+        "坡度",
+        "通球"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01",
+        "WA-D03"
+      ],
+      "category": "GB50268-验收"
+    },
+    {
+      "clause_id": "GB502682008-8-0-28-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "8.0.28",
+      "content": "给水排水管道 19 段验收应检查坡度、标高、接口质量及通球试验记录。",
+      "keywords": [
+        "管道验收",
+        "坡度",
+        "通球"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01",
+        "WA-D03"
+      ],
+      "category": "GB50268-验收"
+    },
+    {
+      "clause_id": "GB502682008-8-0-29-w3",
+      "source_type": "standard",
+      "source_id": "GB 50268-2008",
+      "version": "2008",
+      "discipline": "water",
+      "clause": "8.0.29",
+      "content": "给水排水管道 20 段验收应检查坡度、标高、接口质量及通球试验记录。",
+      "keywords": [
+        "管道验收",
+        "坡度",
+        "通球"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01",
+        "WA-D03"
+      ],
+      "category": "GB50268-验收"
+    },
+    {
+      "clause_id": "VDI-WA-01-1-1-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-01",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "1.1",
+      "content": "厂区排水设计应优先采用重力流，仅在埋深受限时设提升泵站。",
+      "keywords": [
+        "排水设计",
+        "重力流",
+        "提升泵站"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDI-WA-02-1-1-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-02",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "1.1",
+      "content": "石化装置雨污分流应在 PFD/P&ID 中明确切换阀及事故导流路径。",
+      "keywords": [
+        "雨污分流",
+        "石化装置",
+        "切换阀"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D04"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDI-WA-03-1-1-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-03",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "1.1",
+      "content": "排水管道水力计算应输出管径、坡度、充满度及流速校核结果。",
+      "keywords": [
+        "水力计算",
+        "充满度",
+        "坡度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDI-WA-04-1-1-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-04",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "1.1",
+      "content": "循环水系统设计应提交水平衡表，含补水、排污及蒸发损失分项。",
+      "keywords": [
+        "循环冷却水",
+        "水平衡",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDI-WA-05-1-1-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-05",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "1.1",
+      "content": "消防给水与生产给水接口应设切断阀及倒流防止，并标注在 P&ID。",
+      "keywords": [
+        "消防给水",
+        "倒流防止"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02",
+        "WA-D01"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-1-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.1",
+      "content": "给排水专业设计要点 1：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-2-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.2",
+      "content": "给排水专业设计要点 2：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-3-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.3",
+      "content": "给排水专业设计要点 3：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-4-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.4",
+      "content": "给排水专业设计要点 4：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-5-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.5",
+      "content": "给排水专业设计要点 5：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-6-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.6",
+      "content": "给排水专业设计要点 6：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-7-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.7",
+      "content": "给排水专业设计要点 7：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-8-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.8",
+      "content": "给排水专业设计要点 8：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-9-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.9",
+      "content": "给排水专业设计要点 9：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-10-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.10",
+      "content": "给排水专业设计要点 10：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-11-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.11",
+      "content": "给排水专业设计要点 11：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-12-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.12",
+      "content": "给排水专业设计要点 12：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-13-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.13",
+      "content": "给排水专业设计要点 13：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-14-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.14",
+      "content": "给排水专业设计要点 14：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-15-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.15",
+      "content": "给排水专业设计要点 15：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-16-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.16",
+      "content": "给排水专业设计要点 16：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-17-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.17",
+      "content": "给排水专业设计要点 17：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-18-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.18",
+      "content": "给排水专业设计要点 18：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-19-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.19",
+      "content": "给排水专业设计要点 19：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-20-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.20",
+      "content": "给排水专业设计要点 20：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-21-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.21",
+      "content": "给排水专业设计要点 21：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-22-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.22",
+      "content": "给排水专业设计要点 22：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-23-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.23",
+      "content": "给排水专业设计要点 23：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-24-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.24",
+      "content": "给排水专业设计要点 24：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "VDI-WA-杂项"
+    },
+    {
+      "clause_id": "VDIWAGUIDE-2-25-w3",
+      "source_type": "rule",
+      "source_id": "VDI-WA-GUIDE",
+      "version": "2026",
+      "discipline": "water",
+      "clause": "2.25",
+      "content": "给排水专业设计要点 25：子系统接口（工艺/总图/环保）数据应在 CP-0 校验 MUST 字段完整性。",
+      "keywords": [
+        "给排水",
+        "CP-0",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "VDI-WA-杂项"
+    }
+  ]
+}

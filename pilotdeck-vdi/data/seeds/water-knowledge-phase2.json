@@ -1,0 +1,4708 @@
+{
+  "seed_version": "w2",
+  "discipline": "water",
+  "description": "Sprint 9 Phase2 GB50015/50014/50974/50084/50013",
+  "clauses": [
+    {
+      "clause_id": "GB500152019-3-1-3-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.3",
+      "content": "绿化、道路浇洒及未预见用水量应计入总用水量，并单独列项。",
+      "keywords": [
+        "绿化用水",
+        "浇洒",
+        "未预见"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-3-1-5-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.5",
+      "content": "自备水源与市政管网连接时，应采取防倒流措施，不得污染市政水质。",
+      "keywords": [
+        "自备水源",
+        "防倒流",
+        "市政"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-3-2-4-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.2.4",
+      "content": "从同一城市不同水厂或不同管道取水时，应比较水质、水压及供水可靠性。",
+      "keywords": [
+        "双水源",
+        "可靠性"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-3-2-5-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.2.5",
+      "content": "工业企业自备水源应经当地水务及环保部门批准，并满足取水许可要求。",
+      "keywords": [
+        "自备水源",
+        "取水许可"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-3-3-3-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.3.3",
+      "content": "生活饮用水水质应符合 GB 5749 现行国家标准。",
+      "keywords": [
+        "饮用水",
+        "GB5749",
+        "水质"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-3-3-4-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.3.4",
+      "content": "生产用水水质应根据工艺要求确定，必要时设预处理设施。",
+      "keywords": [
+        "生产用水",
+        "预处理"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-3-4-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.4.1",
+      "content": "生活给水加压系统应保证最不利配水点所需工作压力。",
+      "keywords": [
+        "加压系统",
+        "工作压力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-3-4-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.4.2",
+      "content": "分区供水时，各分区静水压力不宜大于 0.45MPa。",
+      "keywords": [
+        "分区供水",
+        "静水压力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-3-5-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.5.2",
+      "content": "给水处理构筑物应设排空、排泥及取样设施。",
+      "keywords": [
+        "给水处理",
+        "排泥",
+        "取样"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-3-5-3-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.5.3",
+      "content": "消毒方式可采用氯消毒、二氧化氯或紫外线，并应设余氯监测。",
+      "keywords": [
+        "消毒",
+        "余氯"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-3-6-4-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.6.4",
+      "content": "热水供应系统最大小时用水量可按生活用水最大小时用水量确定。",
+      "keywords": [
+        "热水",
+        "最大小时"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-3-6-5-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.6.5",
+      "content": "公共建筑给水设计秒流量计算应考虑器具当量及同时使用系数。",
+      "keywords": [
+        "公共建筑",
+        "当量",
+        "秒流量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-3-7-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.7.2",
+      "content": "室内给水管宜采用环状或枝环结合布置，保证供水可靠性。",
+      "keywords": [
+        "室内给水",
+        "环状"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-3-7-3-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.7.3",
+      "content": "给水管穿越结构缝、沉降缝时应设补偿及保护套管。",
+      "keywords": [
+        "穿越",
+        "沉降缝",
+        "套管"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-3-7-5-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.7.5",
+      "content": "给水管网应校核事故工况下消防及生产用水保障能力。",
+      "keywords": [
+        "事故工况",
+        "消防保障"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-3-8-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.8.2",
+      "content": "生产给水管道流速应根据水质、管材及运行要求经计算确定。",
+      "keywords": [
+        "生产给水",
+        "流速"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-3-8-3-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.8.3",
+      "content": "给水管网应设必要的排气阀、泄水阀及止回阀。",
+      "keywords": [
+        "排气阀",
+        "止回阀"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-3-9-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.9.1",
+      "content": "加压泵站位置应靠近用水集中区，并便于维护管理。",
+      "keywords": [
+        "加压泵站",
+        "布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-3-9-3-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.9.3",
+      "content": "水泵机组应设振动隔离及降噪措施，满足环保要求。",
+      "keywords": [
+        "水泵",
+        "降噪"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-3-10-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.10.1",
+      "content": "贮水池有效容积应根据调节、消防及生产要求综合确定。",
+      "keywords": [
+        "贮水池",
+        "有效容积"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-3-10-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.10.2",
+      "content": "生活贮水池应设人孔、通气、溢流及防污染措施。",
+      "keywords": [
+        "生活贮水池",
+        "通气"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-4-1-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.1.2",
+      "content": "建筑排水宜采用分流制，雨水与污水应分别收集排放。",
+      "keywords": [
+        "分流制",
+        "雨水污水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-4-1-4-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.1.4",
+      "content": "医疗、实验室等特殊排水应单独收集，并预处理达标后排放。",
+      "keywords": [
+        "特殊排水",
+        "预处理"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-4-1-5-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.1.5",
+      "content": "含油废水应经隔油处理，油脂含量达标后方可进入排水管网。",
+      "keywords": [
+        "含油废水",
+        "隔油"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-4-2-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.2.2",
+      "content": "排水横管坡度应满足自清要求，并符合最小坡度规定。",
+      "keywords": [
+        "排水横管",
+        "坡度",
+        "自清"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-4-2-3-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.2.3",
+      "content": "塑料排水管最小坡度应大于铸铁管，并满足设计流量下自清。",
+      "keywords": [
+        "塑料排水管",
+        "最小坡度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-4-2-4-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.2.4",
+      "content": "排水管道充满度：重力流污水管宜为 0.5~0.6。",
+      "keywords": [
+        "充满度",
+        "重力流",
+        "污水管"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-4-2-5-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.2.5",
+      "content": "排水管道设计流速：污水不宜小于 0.6m/s，雨水不宜小于 0.75m/s。",
+      "keywords": [
+        "设计流速",
+        "污水",
+        "雨水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-4-3-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.3.1",
+      "content": "排水立管应设在靠近卫生器具或排水量最大处。",
+      "keywords": [
+        "排水立管",
+        "布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-4-3-3-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.3.3",
+      "content": "专用通气立管设置应符合建筑高度及卫生器具数量要求。",
+      "keywords": [
+        "通气立管",
+        "专用通气"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-4-3-4-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.3.4",
+      "content": "环形通气或器具通气管设置应保证排水系统气压稳定。",
+      "keywords": [
+        "环形通气",
+        "器具通气管"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-4-4-3-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.4.3",
+      "content": "化粪池容积应按停留时间及有效容积计算，并考虑清掏周期。",
+      "keywords": [
+        "化粪池",
+        "停留时间"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-4-5-4-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.5.4",
+      "content": "隔油池有效容积应根据含油污水量及停留时间确定。",
+      "keywords": [
+        "隔油池",
+        "有效容积"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-4-6-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.6.1",
+      "content": "工业废水收集系统应设检查井，间距不宜大于 40m。",
+      "keywords": [
+        "检查井",
+        "工业废水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-4-6-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.6.2",
+      "content": "排水管道应设必要的清扫口、检查口及通球设施。",
+      "keywords": [
+        "清扫口",
+        "通球"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-5-1-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "5.1.2",
+      "content": "建筑雨水排水系统应设溢流设施，防止内涝。",
+      "keywords": [
+        "雨水排水",
+        "溢流",
+        "内涝"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D04"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-5-1-3-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "5.1.3",
+      "content": "屋面雨水排水宜采用外排水或内排水系统，并校核汇水面积。",
+      "keywords": [
+        "屋面雨水",
+        "汇水面积"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-5-2-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "5.2.1",
+      "content": "雨水斗设置数量及位置应满足屋面排水能力要求。",
+      "keywords": [
+        "雨水斗",
+        "屋面排水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-5-2-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "5.2.2",
+      "content": "高层建筑雨水立管应设正压及负压防护设施。",
+      "keywords": [
+        "雨水立管",
+        "正压防护"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50015-P2"
+    },
+    {
+      "clause_id": "GB500152019-4-2-20-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.2.20",
+      "content": "建筑排水塑料管 DN50 最小设计坡度不宜小于 0.025，并应满足自清流速。",
+      "keywords": [
+        "最小坡度",
+        "DN50",
+        "塑料排水管"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50015-坡度表"
+    },
+    {
+      "clause_id": "GB500152019-4-2-21-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.2.21",
+      "content": "建筑排水塑料管 DN75 最小设计坡度不宜小于 0.015，并应满足自清流速。",
+      "keywords": [
+        "最小坡度",
+        "DN75",
+        "塑料排水管"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50015-坡度表"
+    },
+    {
+      "clause_id": "GB500152019-4-2-22-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.2.22",
+      "content": "建筑排水塑料管 DN100 最小设计坡度不宜小于 0.012，并应满足自清流速。",
+      "keywords": [
+        "最小坡度",
+        "DN100",
+        "塑料排水管"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50015-坡度表"
+    },
+    {
+      "clause_id": "GB500152019-4-2-23-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.2.23",
+      "content": "建筑排水塑料管 DN125 最小设计坡度不宜小于 0.01，并应满足自清流速。",
+      "keywords": [
+        "最小坡度",
+        "DN125",
+        "塑料排水管"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50015-坡度表"
+    },
+    {
+      "clause_id": "GB500152019-4-2-24-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.2.24",
+      "content": "建筑排水塑料管 DN150 最小设计坡度不宜小于 0.007，并应满足自清流速。",
+      "keywords": [
+        "最小坡度",
+        "DN150",
+        "塑料排水管"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50015-坡度表"
+    },
+    {
+      "clause_id": "GB500152019-4-2-25-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.2.25",
+      "content": "建筑排水塑料管 DN200 最小设计坡度不宜小于 0.005，并应满足自清流速。",
+      "keywords": [
+        "最小坡度",
+        "DN200",
+        "塑料排水管"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50015-坡度表"
+    },
+    {
+      "clause_id": "GB500152019-4-2-26-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.2.26",
+      "content": "建筑排水塑料管 DN250 最小设计坡度不宜小于 0.004，并应满足自清流速。",
+      "keywords": [
+        "最小坡度",
+        "DN250",
+        "塑料排水管"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50015-坡度表"
+    },
+    {
+      "clause_id": "GB500152019-4-2-27-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.2.27",
+      "content": "建筑排水塑料管 DN300 最小设计坡度不宜小于 0.003，并应满足自清流速。",
+      "keywords": [
+        "最小坡度",
+        "DN300",
+        "塑料排水管"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50015-坡度表"
+    },
+    {
+      "clause_id": "GB500152019-4-2-28-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.2.28",
+      "content": "建筑排水塑料管 DN400 最小设计坡度不宜小于 0.002，并应满足自清流速。",
+      "keywords": [
+        "最小坡度",
+        "DN400",
+        "塑料排水管"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50015-坡度表"
+    },
+    {
+      "clause_id": "GB500152019-4-2-29-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.2.29",
+      "content": "建筑排水塑料管 DN500 最小设计坡度不宜小于 0.0015，并应满足自清流速。",
+      "keywords": [
+        "最小坡度",
+        "DN500",
+        "塑料排水管"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50015-坡度表"
+    },
+    {
+      "clause_id": "GB500152019-3-1-20-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.20",
+      "content": "办公建筑生活用水定额宜按 50L/(人·d) 取值，卫生器具当量合计不宜小于 10。",
+      "keywords": [
+        "办公",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-21-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.21",
+      "content": "车间建筑生活用水定额宜按 40L/(人·d) 取值，卫生器具当量合计不宜小于 8。",
+      "keywords": [
+        "车间",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-22-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.22",
+      "content": "食堂建筑生活用水定额宜按 60L/(人·d) 取值，卫生器具当量合计不宜小于 12。",
+      "keywords": [
+        "食堂",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-23-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.23",
+      "content": "淋浴建筑生活用水定额宜按 100L/(人·d) 取值，卫生器具当量合计不宜小于 15。",
+      "keywords": [
+        "淋浴",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-24-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.24",
+      "content": "实验室建筑生活用水定额宜按 45L/(人·d) 取值，卫生器具当量合计不宜小于 9。",
+      "keywords": [
+        "实验室",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-25-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.25",
+      "content": "仓库建筑生活用水定额宜按 25L/(人·d) 取值，卫生器具当量合计不宜小于 5。",
+      "keywords": [
+        "仓库",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-26-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.26",
+      "content": "控制室建筑生活用水定额宜按 30L/(人·d) 取值，卫生器具当量合计不宜小于 6。",
+      "keywords": [
+        "控制室",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-27-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.27",
+      "content": "化验室建筑生活用水定额宜按 35L/(人·d) 取值，卫生器具当量合计不宜小于 7。",
+      "keywords": [
+        "化验室",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-28-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.28",
+      "content": "更衣室建筑生活用水定额宜按 80L/(人·d) 取值，卫生器具当量合计不宜小于 12。",
+      "keywords": [
+        "更衣室",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-29-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.29",
+      "content": "休息室建筑生活用水定额宜按 55L/(人·d) 取值，卫生器具当量合计不宜小于 10。",
+      "keywords": [
+        "休息室",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-30-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.30",
+      "content": "消防站建筑生活用水定额宜按 120L/(人·d) 取值，卫生器具当量合计不宜小于 15。",
+      "keywords": [
+        "消防站",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-31-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.31",
+      "content": "门卫建筑生活用水定额宜按 40L/(人·d) 取值，卫生器具当量合计不宜小于 8。",
+      "keywords": [
+        "门卫",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-32-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.32",
+      "content": "汽车库建筑生活用水定额宜按 20L/(人·d) 取值，卫生器具当量合计不宜小于 4。",
+      "keywords": [
+        "汽车库",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-33-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.33",
+      "content": "泵房建筑生活用水定额宜按 30L/(人·d) 取值，卫生器具当量合计不宜小于 6。",
+      "keywords": [
+        "泵房",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-34-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.34",
+      "content": "空压站建筑生活用水定额宜按 35L/(人·d) 取值，卫生器具当量合计不宜小于 7。",
+      "keywords": [
+        "空压站",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-35-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.35",
+      "content": "锅炉房建筑生活用水定额宜按 45L/(人·d) 取值，卫生器具当量合计不宜小于 9。",
+      "keywords": [
+        "锅炉房",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-36-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.36",
+      "content": "制冷站建筑生活用水定额宜按 40L/(人·d) 取值，卫生器具当量合计不宜小于 8。",
+      "keywords": [
+        "制冷站",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-37-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.37",
+      "content": "变配电建筑生活用水定额宜按 25L/(人·d) 取值，卫生器具当量合计不宜小于 5。",
+      "keywords": [
+        "变配电",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-38-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.38",
+      "content": "机柜间建筑生活用水定额宜按 30L/(人·d) 取值，卫生器具当量合计不宜小于 6。",
+      "keywords": [
+        "机柜间",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-39-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.39",
+      "content": "材料库建筑生活用水定额宜按 22L/(人·d) 取值，卫生器具当量合计不宜小于 4。",
+      "keywords": [
+        "材料库",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-40-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.40",
+      "content": "维修间建筑生活用水定额宜按 38L/(人·d) 取值，卫生器具当量合计不宜小于 7。",
+      "keywords": [
+        "维修间",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-41-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.41",
+      "content": "装卸区建筑生活用水定额宜按 28L/(人·d) 取值，卫生器具当量合计不宜小于 5。",
+      "keywords": [
+        "装卸区",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-42-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.42",
+      "content": "罐区操作建筑生活用水定额宜按 50L/(人·d) 取值，卫生器具当量合计不宜小于 10。",
+      "keywords": [
+        "罐区操作",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-43-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.43",
+      "content": "分析小屋建筑生活用水定额宜按 42L/(人·d) 取值，卫生器具当量合计不宜小于 8。",
+      "keywords": [
+        "分析小屋",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-44-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.44",
+      "content": "环保站建筑生活用水定额宜按 48L/(人·d) 取值，卫生器具当量合计不宜小于 9。",
+      "keywords": [
+        "环保站",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-45-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.45",
+      "content": "危废暂存建筑生活用水定额宜按 35L/(人·d) 取值，卫生器具当量合计不宜小于 7。",
+      "keywords": [
+        "危废暂存",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-46-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.46",
+      "content": "公用工程建筑生活用水定额宜按 55L/(人·d) 取值，卫生器具当量合计不宜小于 10。",
+      "keywords": [
+        "公用工程",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-47-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.47",
+      "content": "总控建筑生活用水定额宜按 45L/(人·d) 取值，卫生器具当量合计不宜小于 9。",
+      "keywords": [
+        "总控",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-48-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.48",
+      "content": "培训室建筑生活用水定额宜按 50L/(人·d) 取值，卫生器具当量合计不宜小于 10。",
+      "keywords": [
+        "培训室",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-49-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.49",
+      "content": "医务室建筑生活用水定额宜按 65L/(人·d) 取值，卫生器具当量合计不宜小于 12。",
+      "keywords": [
+        "医务室",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-50-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.50",
+      "content": "消防水池间建筑生活用水定额宜按 30L/(人·d) 取值，卫生器具当量合计不宜小于 6。",
+      "keywords": [
+        "消防水池间",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500152019-3-1-51-w2",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.51",
+      "content": "雨水泵房建筑生活用水定额宜按 35L/(人·d) 取值，卫生器具当量合计不宜小于 7。",
+      "keywords": [
+        "雨水泵房",
+        "用水定额",
+        "当量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50015-定额"
+    },
+    {
+      "clause_id": "GB500142021-3-1-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "3.1.1",
+      "content": "排水体制应根据城镇规划、环境保护及再生利用要求确定分流或合流制。",
+      "keywords": [
+        "排水体制",
+        "分流",
+        "合流"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-3-1-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "3.1.2",
+      "content": "新建工业区宜采用完全分流制，雨水与污水应分别建设独立系统。",
+      "keywords": [
+        "工业区",
+        "完全分流制"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-3-2-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "3.2.1",
+      "content": "综合生活污水量宜按用水量乘以折减系数 0.85~0.95 确定。",
+      "keywords": [
+        "综合生活污水",
+        "折减系数"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-3-2-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "3.2.2",
+      "content": "工业废水量应由工艺专业提供，并区分平均时及最大时流量。",
+      "keywords": [
+        "工业废水",
+        "最大时流量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-3-2-5-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "3.2.5",
+      "content": "地下水渗入量宜按污水量的 10%~20% 估算，并应根据地质条件调整。",
+      "keywords": [
+        "地下水渗入",
+        "渗入量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-3-3-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "3.3.1",
+      "content": "雨水设计流量应按暴雨强度公式、汇水面积及径流系数计算。",
+      "keywords": [
+        "雨水设计流量",
+        "径流系数"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-3-3-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "3.3.2",
+      "content": "径流系数应根据地面性质确定：屋面 0.9，混凝土路面 0.9，绿地 0.15。",
+      "keywords": [
+        "径流系数",
+        "屋面",
+        "绿地"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-3-4-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "3.4.1",
+      "content": "调蓄设施应结合海绵城市要求，削减峰值流量并改善径流污染。",
+      "keywords": [
+        "调蓄",
+        "海绵城市"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-3-4-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "3.4.2",
+      "content": "初期雨水应设弃流或处理设施，减少管网污染物负荷。",
+      "keywords": [
+        "初期雨水",
+        "弃流"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04",
+        "WA-D05"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-4-2-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "4.2.1",
+      "content": "雨水管渠设计重现期：一般地区 1~3 年，重要地区 3~5 年。",
+      "keywords": [
+        "雨水管渠",
+        "重现期"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-4-2-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "4.2.2",
+      "content": "立交、地下通道等低洼区域雨水重现期不应低于 10~30 年。",
+      "keywords": [
+        "立交",
+        "低洼",
+        "重现期"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-5-1-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "5.1.1",
+      "content": "污水管渠应按设计流量、充满度及最小流速进行水力计算。",
+      "keywords": [
+        "污水管渠",
+        "水力计算"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-5-1-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "5.1.2",
+      "content": "污水管道最小管径：一般地区不宜小于 DN300，小区不宜小于 DN200。",
+      "keywords": [
+        "污水管道",
+        "最小管径",
+        "DN300"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-5-2-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "5.2.2",
+      "content": "污水管道充满度：管径 300~450mm 宜为 0.55，500~900mm 宜为 0.60。",
+      "keywords": [
+        "充满度",
+        "污水管道"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-5-2-3-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "5.2.3",
+      "content": "污水管道最小流速不应小于 0.6m/s，最大流速不应大于 5.0m/s。",
+      "keywords": [
+        "最小流速",
+        "最大流速"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-5-2-4-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "5.2.4",
+      "content": "雨水管道最小流速不应小于 0.75m/s，充满度宜为 0.60~0.70。",
+      "keywords": [
+        "雨水管道",
+        "最小流速",
+        "充满度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-5-3-3-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "5.3.3",
+      "content": "石化生产污水应经预处理达标后接入厂区污水管网或市政管网。",
+      "keywords": [
+        "石化",
+        "生产污水",
+        "预处理",
+        "接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-5-3-4-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "5.3.4",
+      "content": "酸碱废水应中和处理，pH 达标后方可排入污水系统。",
+      "keywords": [
+        "酸碱废水",
+        "中和",
+        "pH"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-5-4-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "5.4.1",
+      "content": "压力排水管道应校核工作压力、水锤及排气要求。",
+      "keywords": [
+        "压力排水",
+        "水锤"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-5-5-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "5.5.1",
+      "content": "检查井间距：管径 ≤700mm 时不宜大于 50m，>700mm 时不宜大于 75m。",
+      "keywords": [
+        "检查井间距"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-6-1-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "6.1.2",
+      "content": "排水泵站设计流量应取汇水区域最大时设计流量。",
+      "keywords": [
+        "排水泵站",
+        "设计流量",
+        "集水池"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-6-1-3-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "6.1.3",
+      "content": "集水池有效容积不宜小于最大一台水泵 5min 出水量。",
+      "keywords": [
+        "集水池",
+        "有效容积"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-6-2-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "6.2.1",
+      "content": "污水泵站应设格栅或沉砂设施，防止堵塞水泵。",
+      "keywords": [
+        "污水泵站",
+        "格栅"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-6-2-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "6.2.2",
+      "content": "泵站备用泵不应少于 1 台，且不得少于工作泵台数的 50%。",
+      "keywords": [
+        "泵站",
+        "备用泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-6-3-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "6.3.1",
+      "content": "雨水泵站设计流量应按相应重现期雨水流量确定。",
+      "keywords": [
+        "雨水泵站",
+        "设计流量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-6-3-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "6.3.2",
+      "content": "立交雨水泵站应设双电源及自动切换装置。",
+      "keywords": [
+        "立交",
+        "双电源"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-P2"
+    },
+    {
+      "clause_id": "GB500142021-3-2-30-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "3.2.30",
+      "content": "汇水区域 1 类用地雨水设计重现期宜为 1 年，并应结合当地暴雨强度公式复核。",
+      "keywords": [
+        "重现期",
+        "暴雨强度",
+        "室外排水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-重现期"
+    },
+    {
+      "clause_id": "GB500142021-3-2-31-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "3.2.31",
+      "content": "汇水区域 2 类用地雨水设计重现期宜为 2 年，并应结合当地暴雨强度公式复核。",
+      "keywords": [
+        "重现期",
+        "暴雨强度",
+        "室外排水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-重现期"
+    },
+    {
+      "clause_id": "GB500142021-3-2-32-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "3.2.32",
+      "content": "汇水区域 3 类用地雨水设计重现期宜为 3 年，并应结合当地暴雨强度公式复核。",
+      "keywords": [
+        "重现期",
+        "暴雨强度",
+        "室外排水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-重现期"
+    },
+    {
+      "clause_id": "GB500142021-3-2-33-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "3.2.33",
+      "content": "汇水区域 4 类用地雨水设计重现期宜为 5 年，并应结合当地暴雨强度公式复核。",
+      "keywords": [
+        "重现期",
+        "暴雨强度",
+        "室外排水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-重现期"
+    },
+    {
+      "clause_id": "GB500142021-3-2-34-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "3.2.34",
+      "content": "汇水区域 5 类用地雨水设计重现期宜为 10 年，并应结合当地暴雨强度公式复核。",
+      "keywords": [
+        "重现期",
+        "暴雨强度",
+        "室外排水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-重现期"
+    },
+    {
+      "clause_id": "GB500142021-3-2-35-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "3.2.35",
+      "content": "汇水区域 6 类用地雨水设计重现期宜为 20 年，并应结合当地暴雨强度公式复核。",
+      "keywords": [
+        "重现期",
+        "暴雨强度",
+        "室外排水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-重现期"
+    },
+    {
+      "clause_id": "GB500142021-3-2-36-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "3.2.36",
+      "content": "汇水区域 7 类用地雨水设计重现期宜为 30 年，并应结合当地暴雨强度公式复核。",
+      "keywords": [
+        "重现期",
+        "暴雨强度",
+        "室外排水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-重现期"
+    },
+    {
+      "clause_id": "GB500142021-3-2-37-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "3.2.37",
+      "content": "汇水区域 8 类用地雨水设计重现期宜为 50 年，并应结合当地暴雨强度公式复核。",
+      "keywords": [
+        "重现期",
+        "暴雨强度",
+        "室外排水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-重现期"
+    },
+    {
+      "clause_id": "GB500142021-3-2-38-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "3.2.38",
+      "content": "汇水区域 9 类用地雨水设计重现期宜为 1 年，并应结合当地暴雨强度公式复核。",
+      "keywords": [
+        "重现期",
+        "暴雨强度",
+        "室外排水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-重现期"
+    },
+    {
+      "clause_id": "GB500142021-3-2-39-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "3.2.39",
+      "content": "汇水区域 10 类用地雨水设计重现期宜为 2 年，并应结合当地暴雨强度公式复核。",
+      "keywords": [
+        "重现期",
+        "暴雨强度",
+        "室外排水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-重现期"
+    },
+    {
+      "clause_id": "GB500142021-3-2-40-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "3.2.40",
+      "content": "汇水区域 11 类用地雨水设计重现期宜为 3 年，并应结合当地暴雨强度公式复核。",
+      "keywords": [
+        "重现期",
+        "暴雨强度",
+        "室外排水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-重现期"
+    },
+    {
+      "clause_id": "GB500142021-3-2-41-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "3.2.41",
+      "content": "汇水区域 12 类用地雨水设计重现期宜为 5 年，并应结合当地暴雨强度公式复核。",
+      "keywords": [
+        "重现期",
+        "暴雨强度",
+        "室外排水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-重现期"
+    },
+    {
+      "clause_id": "GB500142021-5-2-30-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "5.2.30",
+      "content": "雨水管道 DN200 设计时应校核充满度 0.60~0.70 及最小流速 0.75m/s 要求。",
+      "keywords": [
+        "雨水管道",
+        "DN200",
+        "充满度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-雨水管"
+    },
+    {
+      "clause_id": "GB500142021-5-2-31-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "5.2.31",
+      "content": "雨水管道 DN250 设计时应校核充满度 0.60~0.70 及最小流速 0.75m/s 要求。",
+      "keywords": [
+        "雨水管道",
+        "DN250",
+        "充满度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-雨水管"
+    },
+    {
+      "clause_id": "GB500142021-5-2-32-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "5.2.32",
+      "content": "雨水管道 DN300 设计时应校核充满度 0.60~0.70 及最小流速 0.75m/s 要求。",
+      "keywords": [
+        "雨水管道",
+        "DN300",
+        "充满度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-雨水管"
+    },
+    {
+      "clause_id": "GB500142021-5-2-33-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "5.2.33",
+      "content": "雨水管道 DN400 设计时应校核充满度 0.60~0.70 及最小流速 0.75m/s 要求。",
+      "keywords": [
+        "雨水管道",
+        "DN400",
+        "充满度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-雨水管"
+    },
+    {
+      "clause_id": "GB500142021-5-2-34-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "5.2.34",
+      "content": "雨水管道 DN500 设计时应校核充满度 0.60~0.70 及最小流速 0.75m/s 要求。",
+      "keywords": [
+        "雨水管道",
+        "DN500",
+        "充满度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-雨水管"
+    },
+    {
+      "clause_id": "GB500142021-5-2-35-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "5.2.35",
+      "content": "雨水管道 DN600 设计时应校核充满度 0.60~0.70 及最小流速 0.75m/s 要求。",
+      "keywords": [
+        "雨水管道",
+        "DN600",
+        "充满度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-雨水管"
+    },
+    {
+      "clause_id": "GB500142021-5-2-36-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "5.2.36",
+      "content": "雨水管道 DN800 设计时应校核充满度 0.60~0.70 及最小流速 0.75m/s 要求。",
+      "keywords": [
+        "雨水管道",
+        "DN800",
+        "充满度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-雨水管"
+    },
+    {
+      "clause_id": "GB500142021-5-2-37-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "5.2.37",
+      "content": "雨水管道 DN1000 设计时应校核充满度 0.60~0.70 及最小流速 0.75m/s 要求。",
+      "keywords": [
+        "雨水管道",
+        "DN1000",
+        "充满度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-雨水管"
+    },
+    {
+      "clause_id": "GB500142021-5-2-38-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "5.2.38",
+      "content": "雨水管道 DN1200 设计时应校核充满度 0.60~0.70 及最小流速 0.75m/s 要求。",
+      "keywords": [
+        "雨水管道",
+        "DN1200",
+        "充满度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-雨水管"
+    },
+    {
+      "clause_id": "GB500142021-5-2-39-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "5.2.39",
+      "content": "雨水管道 DN1500 设计时应校核充满度 0.60~0.70 及最小流速 0.75m/s 要求。",
+      "keywords": [
+        "雨水管道",
+        "DN1500",
+        "充满度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB50014-雨水管"
+    },
+    {
+      "clause_id": "GB500142021-6-1-20-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "6.1.20",
+      "content": "排水泵站 1 号集水池设计水位应满足启泵、停泵及溢流三级控制，并设液位联锁。",
+      "keywords": [
+        "排水泵站",
+        "集水池",
+        "液位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-泵站"
+    },
+    {
+      "clause_id": "GB500142021-6-1-21-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "6.1.21",
+      "content": "排水泵站 2 号集水池设计水位应满足启泵、停泵及溢流三级控制，并设液位联锁。",
+      "keywords": [
+        "排水泵站",
+        "集水池",
+        "液位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-泵站"
+    },
+    {
+      "clause_id": "GB500142021-6-1-22-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "6.1.22",
+      "content": "排水泵站 3 号集水池设计水位应满足启泵、停泵及溢流三级控制，并设液位联锁。",
+      "keywords": [
+        "排水泵站",
+        "集水池",
+        "液位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-泵站"
+    },
+    {
+      "clause_id": "GB500142021-6-1-23-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "6.1.23",
+      "content": "排水泵站 4 号集水池设计水位应满足启泵、停泵及溢流三级控制，并设液位联锁。",
+      "keywords": [
+        "排水泵站",
+        "集水池",
+        "液位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-泵站"
+    },
+    {
+      "clause_id": "GB500142021-6-1-24-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "6.1.24",
+      "content": "排水泵站 5 号集水池设计水位应满足启泵、停泵及溢流三级控制，并设液位联锁。",
+      "keywords": [
+        "排水泵站",
+        "集水池",
+        "液位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-泵站"
+    },
+    {
+      "clause_id": "GB500142021-6-1-25-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "6.1.25",
+      "content": "排水泵站 6 号集水池设计水位应满足启泵、停泵及溢流三级控制，并设液位联锁。",
+      "keywords": [
+        "排水泵站",
+        "集水池",
+        "液位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-泵站"
+    },
+    {
+      "clause_id": "GB500142021-6-1-26-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "6.1.26",
+      "content": "排水泵站 7 号集水池设计水位应满足启泵、停泵及溢流三级控制，并设液位联锁。",
+      "keywords": [
+        "排水泵站",
+        "集水池",
+        "液位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-泵站"
+    },
+    {
+      "clause_id": "GB500142021-6-1-27-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "6.1.27",
+      "content": "排水泵站 8 号集水池设计水位应满足启泵、停泵及溢流三级控制，并设液位联锁。",
+      "keywords": [
+        "排水泵站",
+        "集水池",
+        "液位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-泵站"
+    },
+    {
+      "clause_id": "GB500142021-6-1-28-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "6.1.28",
+      "content": "排水泵站 9 号集水池设计水位应满足启泵、停泵及溢流三级控制，并设液位联锁。",
+      "keywords": [
+        "排水泵站",
+        "集水池",
+        "液位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-泵站"
+    },
+    {
+      "clause_id": "GB500142021-6-1-29-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "6.1.29",
+      "content": "排水泵站 10 号集水池设计水位应满足启泵、停泵及溢流三级控制，并设液位联锁。",
+      "keywords": [
+        "排水泵站",
+        "集水池",
+        "液位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-泵站"
+    },
+    {
+      "clause_id": "GB500142021-6-1-30-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "6.1.30",
+      "content": "排水泵站 11 号集水池设计水位应满足启泵、停泵及溢流三级控制，并设液位联锁。",
+      "keywords": [
+        "排水泵站",
+        "集水池",
+        "液位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-泵站"
+    },
+    {
+      "clause_id": "GB500142021-6-1-31-w2",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "6.1.31",
+      "content": "排水泵站 12 号集水池设计水位应满足启泵、停泵及溢流三级控制，并设液位联锁。",
+      "keywords": [
+        "排水泵站",
+        "集水池",
+        "液位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB50014-泵站"
+    },
+    {
+      "clause_id": "GB509742014-3-1-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.1.1",
+      "content": "消防用水量应取各类灭火系统同时使用的最大用水量之和。",
+      "keywords": [
+        "消防用水量",
+        "同时使用"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-P2"
+    },
+    {
+      "clause_id": "GB509742014-3-1-3-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.1.3",
+      "content": "消防设计流量应取各系统设计流量之和，并校核火灾延续时间。",
+      "keywords": [
+        "消防设计流量",
+        "火灾延续"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-P2"
+    },
+    {
+      "clause_id": "GB509742014-3-2-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.2.2",
+      "content": "乙类厂房室外消火栓设计流量不应小于 25L/s。",
+      "keywords": [
+        "乙类",
+        "消火栓",
+        "设计流量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-P2"
+    },
+    {
+      "clause_id": "GB509742014-3-2-3-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.2.3",
+      "content": "丙类厂房室外消火栓设计流量不应小于 20L/s。",
+      "keywords": [
+        "丙类",
+        "消火栓"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-P2"
+    },
+    {
+      "clause_id": "GB509742014-3-3-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.3.1",
+      "content": "室外消火栓设计流量应根据建筑类别、体积及耐火等级查表确定。",
+      "keywords": [
+        "室外消火栓",
+        "GB50974"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-P2"
+    },
+    {
+      "clause_id": "GB509742014-3-3-3-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.3.3",
+      "content": "甲类储罐区室外消火栓设计流量不应小于 45L/s。",
+      "keywords": [
+        "甲类储罐",
+        "消火栓"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-P2"
+    },
+    {
+      "clause_id": "GB509742014-3-4-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.4.1",
+      "content": "室内消火栓设计流量应根据建筑高度、体积及火灾危险性确定。",
+      "keywords": [
+        "室内消火栓",
+        "设计流量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-P2"
+    },
+    {
+      "clause_id": "GB509742014-3-5-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.5.1",
+      "content": "室内消火栓设计流量查表时应考虑同时使用支数。",
+      "keywords": [
+        "室内消火栓",
+        "同时使用"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-P2"
+    },
+    {
+      "clause_id": "GB509742014-3-6-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.6.1",
+      "content": "消防水池有效容积应满足火灾延续时间内消防用水量要求。",
+      "keywords": [
+        "消防水池",
+        "有效容积"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-P2"
+    },
+    {
+      "clause_id": "GB509742014-3-6-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.6.2",
+      "content": "消防水池补水时间不宜大于 48h，且应保证连续补水能力。",
+      "keywords": [
+        "消防水池",
+        "补水",
+        "48h"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-P2"
+    },
+    {
+      "clause_id": "GB509742014-3-7-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.7.1",
+      "content": "高位消防水箱应储存初期火灾 10min 消防用水量。",
+      "keywords": [
+        "高位水箱",
+        "10min"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-P2"
+    },
+    {
+      "clause_id": "GB509742014-4-1-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "4.1.1",
+      "content": "消防给水应设专用消防泵，不得与生活或生产泵共用。",
+      "keywords": [
+        "消防泵",
+        "专用"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-P2"
+    },
+    {
+      "clause_id": "GB509742014-4-2-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "4.2.1",
+      "content": "消防泵应设备用泵，备用泵能力不应小于最大一台消防泵。",
+      "keywords": [
+        "消防泵",
+        "备用泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-P2"
+    },
+    {
+      "clause_id": "GB509742014-5-1-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "5.1.1",
+      "content": "室外消火栓布置间距不应大于 120m，距建筑外墙不宜小于 5m。",
+      "keywords": [
+        "消火栓布置间距",
+        "120m"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-P2"
+    },
+    {
+      "clause_id": "GB509742014-5-1-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "5.1.2",
+      "content": "室外消火栓距路边不宜小于 0.5m，距建筑外墙不宜大于 40m。",
+      "keywords": [
+        "消火栓",
+        "布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-P2"
+    },
+    {
+      "clause_id": "GB509742014-5-2-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "5.2.1",
+      "content": "室内消火栓布置应保证同层任何部位有 2 支水枪同时到达。",
+      "keywords": [
+        "室内消火栓",
+        "水枪",
+        "布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-P2"
+    },
+    {
+      "clause_id": "GB509742014-5-2-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "5.2.2",
+      "content": "室内消火栓间距不应大于 30m（高层）或 50m（多层）。",
+      "keywords": [
+        "消火栓间距",
+        "30m"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-P2"
+    },
+    {
+      "clause_id": "GB509742014-5-3-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "5.3.1",
+      "content": "消火栓栓口动压不应小于 0.25MPa（高层）或 0.35MPa（高层特殊）。",
+      "keywords": [
+        "栓口动压",
+        "0.25MPa"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-P2"
+    },
+    {
+      "clause_id": "GB509742014-6-1-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "6.1.1",
+      "content": "消防水泵房应设独立通风、排水及起重设施。",
+      "keywords": [
+        "消防泵房",
+        "排水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-P2"
+    },
+    {
+      "clause_id": "GB509742014-6-2-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "6.2.1",
+      "content": "消防管道应设阀门分区，便于检修及事故隔离。",
+      "keywords": [
+        "消防管道",
+        "阀门分区"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-P2"
+    },
+    {
+      "clause_id": "GB509742014-3-3-20-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.3.20",
+      "content": "甲类厂房室外消火栓设计流量不应小于 45L/s，并应查 GB 50974 表 3.3.2 复核。",
+      "keywords": [
+        "消防给水设计流量",
+        "GB50974",
+        "甲类"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-流量表"
+    },
+    {
+      "clause_id": "GB509742014-3-3-21-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.3.21",
+      "content": "乙类厂房室外消火栓设计流量不应小于 30L/s，并应查 GB 50974 表 3.3.2 复核。",
+      "keywords": [
+        "消防给水设计流量",
+        "GB50974",
+        "乙类"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-流量表"
+    },
+    {
+      "clause_id": "GB509742014-3-3-22-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.3.22",
+      "content": "丙类厂房室外消火栓设计流量不应小于 25L/s，并应查 GB 50974 表 3.3.2 复核。",
+      "keywords": [
+        "消防给水设计流量",
+        "GB50974",
+        "丙类"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-流量表"
+    },
+    {
+      "clause_id": "GB509742014-3-3-23-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.3.23",
+      "content": "丁类厂房室外消火栓设计流量不应小于 20L/s，并应查 GB 50974 表 3.3.2 复核。",
+      "keywords": [
+        "消防给水设计流量",
+        "GB50974",
+        "丁类"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-流量表"
+    },
+    {
+      "clause_id": "GB509742014-3-3-24-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.3.24",
+      "content": "戊类厂房室外消火栓设计流量不应小于 15L/s，并应查 GB 50974 表 3.3.2 复核。",
+      "keywords": [
+        "消防给水设计流量",
+        "GB50974",
+        "戊类"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-流量表"
+    },
+    {
+      "clause_id": "GB509742014-3-4-10-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.4.10",
+      "content": "建筑体积 5000m³ 时，室内消火栓设计流量应查表 3.5.2 确定，并校核同时使用支数。",
+      "keywords": [
+        "室内消火栓",
+        "设计流量",
+        "建筑体积"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-室内"
+    },
+    {
+      "clause_id": "GB509742014-3-4-11-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.4.11",
+      "content": "建筑体积 10000m³ 时，室内消火栓设计流量应查表 3.5.2 确定，并校核同时使用支数。",
+      "keywords": [
+        "室内消火栓",
+        "设计流量",
+        "建筑体积"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-室内"
+    },
+    {
+      "clause_id": "GB509742014-3-4-12-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.4.12",
+      "content": "建筑体积 15000m³ 时，室内消火栓设计流量应查表 3.5.2 确定，并校核同时使用支数。",
+      "keywords": [
+        "室内消火栓",
+        "设计流量",
+        "建筑体积"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-室内"
+    },
+    {
+      "clause_id": "GB509742014-3-4-13-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.4.13",
+      "content": "建筑体积 20000m³ 时，室内消火栓设计流量应查表 3.5.2 确定，并校核同时使用支数。",
+      "keywords": [
+        "室内消火栓",
+        "设计流量",
+        "建筑体积"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-室内"
+    },
+    {
+      "clause_id": "GB509742014-3-4-14-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.4.14",
+      "content": "建筑体积 25000m³ 时，室内消火栓设计流量应查表 3.5.2 确定，并校核同时使用支数。",
+      "keywords": [
+        "室内消火栓",
+        "设计流量",
+        "建筑体积"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-室内"
+    },
+    {
+      "clause_id": "GB509742014-3-4-15-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.4.15",
+      "content": "建筑体积 30000m³ 时，室内消火栓设计流量应查表 3.5.2 确定，并校核同时使用支数。",
+      "keywords": [
+        "室内消火栓",
+        "设计流量",
+        "建筑体积"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-室内"
+    },
+    {
+      "clause_id": "GB509742014-3-4-16-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.4.16",
+      "content": "建筑体积 35000m³ 时，室内消火栓设计流量应查表 3.5.2 确定，并校核同时使用支数。",
+      "keywords": [
+        "室内消火栓",
+        "设计流量",
+        "建筑体积"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-室内"
+    },
+    {
+      "clause_id": "GB509742014-3-4-17-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.4.17",
+      "content": "建筑体积 40000m³ 时，室内消火栓设计流量应查表 3.5.2 确定，并校核同时使用支数。",
+      "keywords": [
+        "室内消火栓",
+        "设计流量",
+        "建筑体积"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-室内"
+    },
+    {
+      "clause_id": "GB509742014-3-4-18-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.4.18",
+      "content": "建筑体积 45000m³ 时，室内消火栓设计流量应查表 3.5.2 确定，并校核同时使用支数。",
+      "keywords": [
+        "室内消火栓",
+        "设计流量",
+        "建筑体积"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-室内"
+    },
+    {
+      "clause_id": "GB509742014-3-4-19-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.4.19",
+      "content": "建筑体积 50000m³ 时，室内消火栓设计流量应查表 3.5.2 确定，并校核同时使用支数。",
+      "keywords": [
+        "室内消火栓",
+        "设计流量",
+        "建筑体积"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-室内"
+    },
+    {
+      "clause_id": "GB509742014-5-1-10-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "5.1.10",
+      "content": "室外消火栓 1 号布置点距保护对象距离不宜大于 40m，间距不宜大于 120m。",
+      "keywords": [
+        "消火栓布置间距",
+        "室外消火栓"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-布置"
+    },
+    {
+      "clause_id": "GB509742014-5-1-11-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "5.1.11",
+      "content": "室外消火栓 2 号布置点距保护对象距离不宜大于 40m，间距不宜大于 120m。",
+      "keywords": [
+        "消火栓布置间距",
+        "室外消火栓"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-布置"
+    },
+    {
+      "clause_id": "GB509742014-5-1-12-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "5.1.12",
+      "content": "室外消火栓 3 号布置点距保护对象距离不宜大于 40m，间距不宜大于 120m。",
+      "keywords": [
+        "消火栓布置间距",
+        "室外消火栓"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-布置"
+    },
+    {
+      "clause_id": "GB509742014-5-1-13-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "5.1.13",
+      "content": "室外消火栓 4 号布置点距保护对象距离不宜大于 40m，间距不宜大于 120m。",
+      "keywords": [
+        "消火栓布置间距",
+        "室外消火栓"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-布置"
+    },
+    {
+      "clause_id": "GB509742014-5-1-14-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "5.1.14",
+      "content": "室外消火栓 5 号布置点距保护对象距离不宜大于 40m，间距不宜大于 120m。",
+      "keywords": [
+        "消火栓布置间距",
+        "室外消火栓"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-布置"
+    },
+    {
+      "clause_id": "GB509742014-5-1-15-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "5.1.15",
+      "content": "室外消火栓 6 号布置点距保护对象距离不宜大于 40m，间距不宜大于 120m。",
+      "keywords": [
+        "消火栓布置间距",
+        "室外消火栓"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-布置"
+    },
+    {
+      "clause_id": "GB509742014-5-1-16-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "5.1.16",
+      "content": "室外消火栓 7 号布置点距保护对象距离不宜大于 40m，间距不宜大于 120m。",
+      "keywords": [
+        "消火栓布置间距",
+        "室外消火栓"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-布置"
+    },
+    {
+      "clause_id": "GB509742014-5-1-17-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "5.1.17",
+      "content": "室外消火栓 8 号布置点距保护对象距离不宜大于 40m，间距不宜大于 120m。",
+      "keywords": [
+        "消火栓布置间距",
+        "室外消火栓"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-布置"
+    },
+    {
+      "clause_id": "GB509742014-5-1-18-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "5.1.18",
+      "content": "室外消火栓 9 号布置点距保护对象距离不宜大于 40m，间距不宜大于 120m。",
+      "keywords": [
+        "消火栓布置间距",
+        "室外消火栓"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-布置"
+    },
+    {
+      "clause_id": "GB509742014-5-1-19-w2",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "5.1.19",
+      "content": "室外消火栓 10 号布置点距保护对象距离不宜大于 40m，间距不宜大于 120m。",
+      "keywords": [
+        "消火栓布置间距",
+        "室外消火栓"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50974-布置"
+    },
+    {
+      "clause_id": "GB500842017-5-0-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "5.0.1",
+      "content": "自动喷水灭火系统设计喷水强度及作用面积应根据危险等级确定。",
+      "keywords": [
+        "自动喷水",
+        "喷水强度",
+        "作用面积"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-P2"
+    },
+    {
+      "clause_id": "GB500842017-5-0-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "5.0.2",
+      "content": "中危险级 I 级喷水强度不应小于 6L/(min·m²)，作用面积 160m²。",
+      "keywords": [
+        "中危险级",
+        "喷水强度",
+        "6L"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-P2"
+    },
+    {
+      "clause_id": "GB500842017-5-0-3-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "5.0.3",
+      "content": "中危险级 II 级喷水强度不应小于 8L/(min·²)，作用面积 160m²。",
+      "keywords": [
+        "中危险级II",
+        "8L",
+        "喷水强度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-P2"
+    },
+    {
+      "clause_id": "GB500842017-5-0-4-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "5.0.4",
+      "content": "严重危险级喷水强度不应小于 12L/(min·m²)，作用面积 260m²。",
+      "keywords": [
+        "严重危险级",
+        "12L"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-P2"
+    },
+    {
+      "clause_id": "GB500842017-5-0-5-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "5.0.5",
+      "content": "仓库危险级设计参数应查附录 A 及专项规定。",
+      "keywords": [
+        "仓库",
+        "危险级"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-P2"
+    },
+    {
+      "clause_id": "GB500842017-6-1-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "6.1.1",
+      "content": "湿式系统适用于环境温度 4~70℃ 的场所。",
+      "keywords": [
+        "湿式系统",
+        "4~70℃"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-P2"
+    },
+    {
+      "clause_id": "GB500842017-6-2-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "6.2.1",
+      "content": "干式系统适用于环境温度低于 4℃ 或高于 70℃ 的场所。",
+      "keywords": [
+        "干式系统",
+        "防冻"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-P2"
+    },
+    {
+      "clause_id": "GB500842017-6-3-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "6.3.1",
+      "content": "预作用系统适用于严禁误喷或严禁管道充水的场所。",
+      "keywords": [
+        "预作用",
+        "误喷"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-P2"
+    },
+    {
+      "clause_id": "GB500842017-7-1-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "7.1.1",
+      "content": "喷头布置应满足保护面积及喷水强度要求，不得出现盲区。",
+      "keywords": [
+        "喷头布置",
+        "保护面积"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-P2"
+    },
+    {
+      "clause_id": "GB500842017-7-2-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "7.2.1",
+      "content": "直立型、下垂型喷头间距不宜大于表 7.2.1 规定值。",
+      "keywords": [
+        "喷头间距"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-P2"
+    },
+    {
+      "clause_id": "GB500842017-8-0-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "8.0.1",
+      "content": "报警阀组应设在便于操作及维护的位置，并设排水设施。",
+      "keywords": [
+        "报警阀",
+        "排水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-P2"
+    },
+    {
+      "clause_id": "GB500842017-9-1-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "9.1.1",
+      "content": "自动喷水灭火系统用水量应计入消防总用水量。",
+      "keywords": [
+        "自喷用水量",
+        "消防"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-P2"
+    },
+    {
+      "clause_id": "GB500842017-5-0-10-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "5.0.10",
+      "content": "轻危险级自动喷水系统设计喷水强度不应小于 4L/(min·m²)，作用面积 160m²。",
+      "keywords": [
+        "自动喷水",
+        "轻危险级",
+        "喷水强度",
+        "中危险级"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-危险级"
+    },
+    {
+      "clause_id": "GB500842017-5-0-11-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "5.0.11",
+      "content": "中危险级I自动喷水系统设计喷水强度不应小于 6L/(min·m²)，作用面积 160m²。",
+      "keywords": [
+        "自动喷水",
+        "中危险级I",
+        "喷水强度",
+        "中危险级"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-危险级"
+    },
+    {
+      "clause_id": "GB500842017-5-0-12-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "5.0.12",
+      "content": "中危险级II自动喷水系统设计喷水强度不应小于 8L/(min·m²)，作用面积 160m²。",
+      "keywords": [
+        "自动喷水",
+        "中危险级II",
+        "喷水强度",
+        "中危险级"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-危险级"
+    },
+    {
+      "clause_id": "GB500842017-5-0-13-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "5.0.13",
+      "content": "严重危险级I自动喷水系统设计喷水强度不应小于 12L/(min·m²)，作用面积 260m²。",
+      "keywords": [
+        "自动喷水",
+        "严重危险级I",
+        "喷水强度",
+        "中危险级"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-危险级"
+    },
+    {
+      "clause_id": "GB500842017-5-0-14-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "5.0.14",
+      "content": "严重危险级II自动喷水系统设计喷水强度不应小于 16L/(min·m²)，作用面积 260m²。",
+      "keywords": [
+        "自动喷水",
+        "严重危险级II",
+        "喷水强度",
+        "中危险级"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-危险级"
+    },
+    {
+      "clause_id": "GB500842017-7-2-10-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "7.2.10",
+      "content": "喷头组 1 布置时应校核障碍物遮挡及溅水盘距顶板距离 75~150mm 要求。",
+      "keywords": [
+        "喷头",
+        "布置",
+        "溅水盘"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-喷头"
+    },
+    {
+      "clause_id": "GB500842017-7-2-11-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "7.2.11",
+      "content": "喷头组 2 布置时应校核障碍物遮挡及溅水盘距顶板距离 75~150mm 要求。",
+      "keywords": [
+        "喷头",
+        "布置",
+        "溅水盘"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-喷头"
+    },
+    {
+      "clause_id": "GB500842017-7-2-12-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "7.2.12",
+      "content": "喷头组 3 布置时应校核障碍物遮挡及溅水盘距顶板距离 75~150mm 要求。",
+      "keywords": [
+        "喷头",
+        "布置",
+        "溅水盘"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-喷头"
+    },
+    {
+      "clause_id": "GB500842017-7-2-13-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "7.2.13",
+      "content": "喷头组 4 布置时应校核障碍物遮挡及溅水盘距顶板距离 75~150mm 要求。",
+      "keywords": [
+        "喷头",
+        "布置",
+        "溅水盘"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-喷头"
+    },
+    {
+      "clause_id": "GB500842017-7-2-14-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "7.2.14",
+      "content": "喷头组 5 布置时应校核障碍物遮挡及溅水盘距顶板距离 75~150mm 要求。",
+      "keywords": [
+        "喷头",
+        "布置",
+        "溅水盘"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-喷头"
+    },
+    {
+      "clause_id": "GB500842017-7-2-15-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "7.2.15",
+      "content": "喷头组 6 布置时应校核障碍物遮挡及溅水盘距顶板距离 75~150mm 要求。",
+      "keywords": [
+        "喷头",
+        "布置",
+        "溅水盘"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-喷头"
+    },
+    {
+      "clause_id": "GB500842017-7-2-16-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "7.2.16",
+      "content": "喷头组 7 布置时应校核障碍物遮挡及溅水盘距顶板距离 75~150mm 要求。",
+      "keywords": [
+        "喷头",
+        "布置",
+        "溅水盘"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-喷头"
+    },
+    {
+      "clause_id": "GB500842017-7-2-17-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "7.2.17",
+      "content": "喷头组 8 布置时应校核障碍物遮挡及溅水盘距顶板距离 75~150mm 要求。",
+      "keywords": [
+        "喷头",
+        "布置",
+        "溅水盘"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-喷头"
+    },
+    {
+      "clause_id": "GB500842017-7-2-18-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "7.2.18",
+      "content": "喷头组 9 布置时应校核障碍物遮挡及溅水盘距顶板距离 75~150mm 要求。",
+      "keywords": [
+        "喷头",
+        "布置",
+        "溅水盘"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-喷头"
+    },
+    {
+      "clause_id": "GB500842017-7-2-19-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "7.2.19",
+      "content": "喷头组 10 布置时应校核障碍物遮挡及溅水盘距顶板距离 75~150mm 要求。",
+      "keywords": [
+        "喷头",
+        "布置",
+        "溅水盘"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-喷头"
+    },
+    {
+      "clause_id": "GB500842017-7-2-20-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "7.2.20",
+      "content": "喷头组 11 布置时应校核障碍物遮挡及溅水盘距顶板距离 75~150mm 要求。",
+      "keywords": [
+        "喷头",
+        "布置",
+        "溅水盘"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-喷头"
+    },
+    {
+      "clause_id": "GB500842017-7-2-21-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "7.2.21",
+      "content": "喷头组 12 布置时应校核障碍物遮挡及溅水盘距顶板距离 75~150mm 要求。",
+      "keywords": [
+        "喷头",
+        "布置",
+        "溅水盘"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-喷头"
+    },
+    {
+      "clause_id": "GB500842017-7-2-22-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "7.2.22",
+      "content": "喷头组 13 布置时应校核障碍物遮挡及溅水盘距顶板距离 75~150mm 要求。",
+      "keywords": [
+        "喷头",
+        "布置",
+        "溅水盘"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-喷头"
+    },
+    {
+      "clause_id": "GB500842017-7-2-23-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "7.2.23",
+      "content": "喷头组 14 布置时应校核障碍物遮挡及溅水盘距顶板距离 75~150mm 要求。",
+      "keywords": [
+        "喷头",
+        "布置",
+        "溅水盘"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-喷头"
+    },
+    {
+      "clause_id": "GB500842017-7-2-24-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "7.2.24",
+      "content": "喷头组 15 布置时应校核障碍物遮挡及溅水盘距顶板距离 75~150mm 要求。",
+      "keywords": [
+        "喷头",
+        "布置",
+        "溅水盘"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-喷头"
+    },
+    {
+      "clause_id": "GB500842017-7-2-25-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "7.2.25",
+      "content": "喷头组 16 布置时应校核障碍物遮挡及溅水盘距顶板距离 75~150mm 要求。",
+      "keywords": [
+        "喷头",
+        "布置",
+        "溅水盘"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-喷头"
+    },
+    {
+      "clause_id": "GB500842017-7-2-26-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "7.2.26",
+      "content": "喷头组 17 布置时应校核障碍物遮挡及溅水盘距顶板距离 75~150mm 要求。",
+      "keywords": [
+        "喷头",
+        "布置",
+        "溅水盘"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-喷头"
+    },
+    {
+      "clause_id": "GB500842017-7-2-27-w2",
+      "source_type": "standard",
+      "source_id": "GB 50084-2017",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "7.2.27",
+      "content": "喷头组 18 布置时应校核障碍物遮挡及溅水盘距顶板距离 75~150mm 要求。",
+      "keywords": [
+        "喷头",
+        "布置",
+        "溅水盘"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB50084-喷头"
+    },
+    {
+      "clause_id": "GB500132018-3-0-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "3.0.1",
+      "content": "室外给水工程设计应统筹水源、水质、水量及水压要求。",
+      "keywords": [
+        "室外给水",
+        "水源"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-P2"
+    },
+    {
+      "clause_id": "GB500132018-4-0-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "4.0.1",
+      "content": "给水管道布置应结合城镇规划及道路走向，宜成环状。",
+      "keywords": [
+        "给水管道",
+        "环状"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-P2"
+    },
+    {
+      "clause_id": "GB500132018-5-0-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "5.0.1",
+      "content": "给水管道最小管径：一般管道不宜小于 DN100，配水管不宜小于 DN50。",
+      "keywords": [
+        "室外给水",
+        "管道",
+        "最小管径",
+        "DN100"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-P2"
+    },
+    {
+      "clause_id": "GB500132018-5-0-2-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "5.0.2",
+      "content": "给水管道设计流速：经济流速宜 0.6~2.0m/s，最大不宜大于 2.5m/s。",
+      "keywords": [
+        "给水管道",
+        "经济流速"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-P2"
+    },
+    {
+      "clause_id": "GB500132018-6-0-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "6.0.1",
+      "content": "给水管道应进行水力计算，并校核事故工况下流量及压力。",
+      "keywords": [
+        "给水管网水力计算",
+        "事故工况"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-P2"
+    },
+    {
+      "clause_id": "GB500132018-7-0-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "7.0.1",
+      "content": "管道穿越河流、铁路时应设套管或顶管，并满足防护要求。",
+      "keywords": [
+        "管道穿越",
+        "顶管"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-P2"
+    },
+    {
+      "clause_id": "GB500132018-8-0-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "8.0.1",
+      "content": "阀门井布置应便于操作，间距不宜大于 500m。",
+      "keywords": [
+        "阀门井",
+        "间距"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-P2"
+    },
+    {
+      "clause_id": "GB500132018-9-0-1-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "9.0.1",
+      "content": "给水管道应设排气阀、泄水阀及消火栓，并满足检修要求。",
+      "keywords": [
+        "排气阀",
+        "消火栓"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-P2"
+    },
+    {
+      "clause_id": "GB500132018-5-0-10-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "5.0.10",
+      "content": "室外给水主管 DN100 设计时应校核设计压力、水锤防护及最小管径要求。",
+      "keywords": [
+        "室外给水",
+        "管道",
+        "最小管径",
+        "DN100"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-管径"
+    },
+    {
+      "clause_id": "GB500132018-5-0-11-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "5.0.11",
+      "content": "室外给水主管 DN150 设计时应校核设计压力、水锤防护及最小管径要求。",
+      "keywords": [
+        "室外给水",
+        "管道",
+        "最小管径",
+        "DN150"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-管径"
+    },
+    {
+      "clause_id": "GB500132018-5-0-12-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "5.0.12",
+      "content": "室外给水主管 DN200 设计时应校核设计压力、水锤防护及最小管径要求。",
+      "keywords": [
+        "室外给水",
+        "管道",
+        "最小管径",
+        "DN200"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-管径"
+    },
+    {
+      "clause_id": "GB500132018-5-0-13-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "5.0.13",
+      "content": "室外给水主管 DN250 设计时应校核设计压力、水锤防护及最小管径要求。",
+      "keywords": [
+        "室外给水",
+        "管道",
+        "最小管径",
+        "DN250"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-管径"
+    },
+    {
+      "clause_id": "GB500132018-5-0-14-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "5.0.14",
+      "content": "室外给水主管 DN300 设计时应校核设计压力、水锤防护及最小管径要求。",
+      "keywords": [
+        "室外给水",
+        "管道",
+        "最小管径",
+        "DN300"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-管径"
+    },
+    {
+      "clause_id": "GB500132018-5-0-15-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "5.0.15",
+      "content": "室外给水主管 DN400 设计时应校核设计压力、水锤防护及最小管径要求。",
+      "keywords": [
+        "室外给水",
+        "管道",
+        "最小管径",
+        "DN400"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-管径"
+    },
+    {
+      "clause_id": "GB500132018-5-0-16-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "5.0.16",
+      "content": "室外给水主管 DN500 设计时应校核设计压力、水锤防护及最小管径要求。",
+      "keywords": [
+        "室外给水",
+        "管道",
+        "最小管径",
+        "DN500"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-管径"
+    },
+    {
+      "clause_id": "GB500132018-5-0-17-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "5.0.17",
+      "content": "室外给水主管 DN600 设计时应校核设计压力、水锤防护及最小管径要求。",
+      "keywords": [
+        "室外给水",
+        "管道",
+        "最小管径",
+        "DN600"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-管径"
+    },
+    {
+      "clause_id": "GB500132018-5-0-18-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "5.0.18",
+      "content": "室外给水主管 DN800 设计时应校核设计压力、水锤防护及最小管径要求。",
+      "keywords": [
+        "室外给水",
+        "管道",
+        "最小管径",
+        "DN800"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-管径"
+    },
+    {
+      "clause_id": "GB500132018-5-0-19-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "5.0.19",
+      "content": "室外给水主管 DN1000 设计时应校核设计压力、水锤防护及最小管径要求。",
+      "keywords": [
+        "室外给水",
+        "管道",
+        "最小管径",
+        "DN1000"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-管径"
+    },
+    {
+      "clause_id": "GB500132018-6-0-10-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "6.0.10",
+      "content": "给水管网节点 1 水力计算应保证最不利点自由水头满足用户要求，并留 0.05MPa 裕量。",
+      "keywords": [
+        "给水管网水力计算",
+        "最不利点",
+        "自由水头"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-水力"
+    },
+    {
+      "clause_id": "GB500132018-6-0-11-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "6.0.11",
+      "content": "给水管网节点 2 水力计算应保证最不利点自由水头满足用户要求，并留 0.05MPa 裕量。",
+      "keywords": [
+        "给水管网水力计算",
+        "最不利点",
+        "自由水头"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-水力"
+    },
+    {
+      "clause_id": "GB500132018-6-0-12-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "6.0.12",
+      "content": "给水管网节点 3 水力计算应保证最不利点自由水头满足用户要求，并留 0.05MPa 裕量。",
+      "keywords": [
+        "给水管网水力计算",
+        "最不利点",
+        "自由水头"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-水力"
+    },
+    {
+      "clause_id": "GB500132018-6-0-13-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "6.0.13",
+      "content": "给水管网节点 4 水力计算应保证最不利点自由水头满足用户要求，并留 0.05MPa 裕量。",
+      "keywords": [
+        "给水管网水力计算",
+        "最不利点",
+        "自由水头"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-水力"
+    },
+    {
+      "clause_id": "GB500132018-6-0-14-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "6.0.14",
+      "content": "给水管网节点 5 水力计算应保证最不利点自由水头满足用户要求，并留 0.05MPa 裕量。",
+      "keywords": [
+        "给水管网水力计算",
+        "最不利点",
+        "自由水头"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-水力"
+    },
+    {
+      "clause_id": "GB500132018-6-0-15-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "6.0.15",
+      "content": "给水管网节点 6 水力计算应保证最不利点自由水头满足用户要求，并留 0.05MPa 裕量。",
+      "keywords": [
+        "给水管网水力计算",
+        "最不利点",
+        "自由水头"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-水力"
+    },
+    {
+      "clause_id": "GB500132018-6-0-16-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "6.0.16",
+      "content": "给水管网节点 7 水力计算应保证最不利点自由水头满足用户要求，并留 0.05MPa 裕量。",
+      "keywords": [
+        "给水管网水力计算",
+        "最不利点",
+        "自由水头"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-水力"
+    },
+    {
+      "clause_id": "GB500132018-6-0-17-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "6.0.17",
+      "content": "给水管网节点 8 水力计算应保证最不利点自由水头满足用户要求，并留 0.05MPa 裕量。",
+      "keywords": [
+        "给水管网水力计算",
+        "最不利点",
+        "自由水头"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-水力"
+    },
+    {
+      "clause_id": "GB500132018-6-0-18-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "6.0.18",
+      "content": "给水管网节点 9 水力计算应保证最不利点自由水头满足用户要求，并留 0.05MPa 裕量。",
+      "keywords": [
+        "给水管网水力计算",
+        "最不利点",
+        "自由水头"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-水力"
+    },
+    {
+      "clause_id": "GB500132018-6-0-19-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "6.0.19",
+      "content": "给水管网节点 10 水力计算应保证最不利点自由水头满足用户要求，并留 0.05MPa 裕量。",
+      "keywords": [
+        "给水管网水力计算",
+        "最不利点",
+        "自由水头"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-水力"
+    },
+    {
+      "clause_id": "GB500132018-6-0-20-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "6.0.20",
+      "content": "给水管网节点 11 水力计算应保证最不利点自由水头满足用户要求，并留 0.05MPa 裕量。",
+      "keywords": [
+        "给水管网水力计算",
+        "最不利点",
+        "自由水头"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-水力"
+    },
+    {
+      "clause_id": "GB500132018-6-0-21-w2",
+      "source_type": "standard",
+      "source_id": "GB 50013-2018",
+      "version": "2018",
+      "discipline": "CI",
+      "clause": "6.0.21",
+      "content": "给水管网节点 12 水力计算应保证最不利点自由水头满足用户要求，并留 0.05MPa 裕量。",
+      "keywords": [
+        "给水管网水力计算",
+        "最不利点",
+        "自由水头"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB50013-水力"
+    }
+  ]
+}

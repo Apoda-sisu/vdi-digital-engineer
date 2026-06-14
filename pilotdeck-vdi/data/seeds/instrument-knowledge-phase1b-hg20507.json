@@ -1,0 +1,281 @@
+{
+  "seed_version": "in-phase1b-hg20507",
+  "discipline": "instrument",
+  "description": "IN-D01 Deep1b HG/T 20507 选型条款",
+  "clauses": [
+    {
+      "clause_id": "IN-HG20507-4-2-1-in1b",
+      "source_type": "standard",
+      "source_id": "HG/T 20507",
+      "version": "2014",
+      "discipline": "instrument",
+      "clause": "4.2.1",
+      "content": "变送器量程应使正常操作值位于满量程的50%～70%范围内，并兼顾最大、最小工况。",
+      "keywords": [
+        "变送器",
+        "量程",
+        "50%",
+        "70%"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D01",
+        "IN-T02"
+      ],
+      "category": "selection"
+    },
+    {
+      "clause_id": "IN-HG20507-4-2-2-in1b",
+      "source_type": "standard",
+      "source_id": "HG/T 20507",
+      "version": "2014",
+      "discipline": "instrument",
+      "clause": "4.2.2",
+      "content": "压力变送器选型应考虑介质腐蚀性、温度及取压点位置，接液材质应与工艺相容。",
+      "keywords": [
+        "压力变送器",
+        "接液材质",
+        "腐蚀性"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D01"
+      ],
+      "category": "selection"
+    },
+    {
+      "clause_id": "IN-HG20507-4-3-1-in1b",
+      "source_type": "standard",
+      "source_id": "HG/T 20507",
+      "version": "2014",
+      "discipline": "instrument",
+      "clause": "4.3.1",
+      "content": "差压式流量计适用于清洁液体、气体和蒸汽；粘稠、腐蚀或含固体介质应选用其他型式。",
+      "keywords": [
+        "差压流量计",
+        "选型",
+        "蒸汽"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D01"
+      ],
+      "category": "selection"
+    },
+    {
+      "clause_id": "IN-HG20507-4-3-2-in1b",
+      "source_type": "standard",
+      "source_id": "HG/T 20507",
+      "version": "2014",
+      "discipline": "instrument",
+      "clause": "4.3.2",
+      "content": "涡街流量计适用于洁净气体、蒸汽及低粘度液体，不适用于高粘度或脉动大的工况。",
+      "keywords": [
+        "涡街",
+        "流量计",
+        "蒸汽"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D01"
+      ],
+      "category": "selection"
+    },
+    {
+      "clause_id": "IN-HG20507-4-3-3-in1b",
+      "source_type": "standard",
+      "source_id": "HG/T 20507",
+      "version": "2014",
+      "discipline": "instrument",
+      "clause": "4.3.3",
+      "content": "电磁流量计适用于导电液体，不适用于气体、蒸汽及非导电介质。",
+      "keywords": [
+        "电磁流量计",
+        "导电",
+        "液体"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D01"
+      ],
+      "category": "selection"
+    },
+    {
+      "clause_id": "IN-HG20507-4-4-1-in1b",
+      "source_type": "standard",
+      "source_id": "HG/T 20507",
+      "version": "2014",
+      "discipline": "instrument",
+      "clause": "4.4.1",
+      "content": "液位测量应根据容器型式、介质特性选择差压、雷达、磁翻板或浮力式仪表。",
+      "keywords": [
+        "液位",
+        "雷达",
+        "差压"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D01"
+      ],
+      "category": "selection"
+    },
+    {
+      "clause_id": "IN-HG20507-4-4-2-in1b",
+      "source_type": "standard",
+      "source_id": "HG/T 20507",
+      "version": "2014",
+      "discipline": "instrument",
+      "clause": "4.4.2",
+      "content": "储罐液位宜优先选用非接触式雷达液位计；塔釜液位可采用差压液位计。",
+      "keywords": [
+        "雷达液位",
+        "储罐",
+        "塔釜"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D01"
+      ],
+      "category": "selection"
+    },
+    {
+      "clause_id": "IN-HG20507-4-5-1-in1b",
+      "source_type": "standard",
+      "source_id": "HG/T 20507",
+      "version": "2014",
+      "discipline": "instrument",
+      "clause": "4.5.1",
+      "content": "温度测量元件应根据温度范围、精度及响应时间选择 RTD 或热电偶，高温区宜设套管。",
+      "keywords": [
+        "温度",
+        "RTD",
+        "热电偶",
+        "套管"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D01"
+      ],
+      "category": "selection"
+    },
+    {
+      "clause_id": "IN-HG20507-4-6-1-in1b",
+      "source_type": "standard",
+      "source_id": "HG/T 20507",
+      "version": "2014",
+      "discipline": "instrument",
+      "clause": "4.6.1",
+      "content": "爆炸危险场所仪表防爆型式应与区域分级一致：Zone 0/1 宜本安或隔爆，并满足温度组别。",
+      "keywords": [
+        "防爆",
+        "本安",
+        "隔爆",
+        "Zone"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D01"
+      ],
+      "category": "selection"
+    },
+    {
+      "clause_id": "IN-HG20507-4-6-2-in1b",
+      "source_type": "standard",
+      "source_id": "HG/T 20507",
+      "version": "2014",
+      "discipline": "instrument",
+      "clause": "4.6.2",
+      "content": "本安回路仪表及电缆参数应进行匹配校核，避免超过关联设备允许值。",
+      "keywords": [
+        "本安",
+        "电缆",
+        "参数匹配"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D01",
+        "IN-D05"
+      ],
+      "category": "selection"
+    },
+    {
+      "clause_id": "IN-HG20507-4-7-1-in1b",
+      "source_type": "standard",
+      "source_id": "HG/T 20507",
+      "version": "2014",
+      "discipline": "instrument",
+      "clause": "4.7.1",
+      "content": "压力取压接口型式、尺寸及材质应符合 HG/T 20507 及工艺管道等级要求。",
+      "keywords": [
+        "取压",
+        "引压",
+        "接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D01"
+      ],
+      "category": "selection"
+    },
+    {
+      "clause_id": "IN-HG20507-4-8-1-in1b",
+      "source_type": "standard",
+      "source_id": "HG/T 20507",
+      "version": "2014",
+      "discipline": "instrument",
+      "clause": "4.8.1",
+      "content": "开关类仪表设定值应依据工艺操作范围及联锁要求确定，安全开关应满足 SIL 要求。",
+      "keywords": [
+        "开关",
+        "设定值",
+        "SIL"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D01",
+        "IN-D03"
+      ],
+      "category": "selection"
+    },
+    {
+      "clause_id": "IN-HG20507-4-9-1-in1b",
+      "source_type": "standard",
+      "source_id": "HG/T 20507",
+      "version": "2014",
+      "discipline": "instrument",
+      "clause": "4.9.1",
+      "content": "远传仪表供电及信号制式（4-20mA、HART、FF 等）应与 DCS I/O 类型一致。",
+      "keywords": [
+        "供电",
+        "HART",
+        "4-20mA",
+        "DCS"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D01",
+        "IN-D04"
+      ],
+      "category": "selection"
+    },
+    {
+      "clause_id": "IN-HG20507-4-10-1-in1b",
+      "source_type": "standard",
+      "source_id": "HG/T 20507",
+      "version": "2014",
+      "discipline": "instrument",
+      "clause": "4.10.1",
+      "content": "脉动或振动工况下压力/流量测量应设阻尼或缓冲元件，防止示值波动。",
+      "keywords": [
+        "脉动",
+        "阻尼",
+        "振动"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D01"
+      ],
+      "category": "selection"
+    }
+  ]
+}

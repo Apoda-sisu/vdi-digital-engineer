@@ -1,0 +1,906 @@
+{
+  "seed_version": 1,
+  "discipline": "process",
+  "description": "Phase 1 工艺专业知识库种子条文 — 交付物要求、分工边界、设计原则（基于公开标准摘要，需后续对照正式版补全）",
+  "clauses": [
+    {
+      "clause_id": "GB50933-2013-4.1.1",
+      "source_type": "standard",
+      "source_id": "GB/T 50933-2013",
+      "version": "2013",
+      "discipline": "PX",
+      "clause": "4.1.1",
+      "content": "工艺设计包是工程设计的基础，应包括工艺设计说明、工艺流程图、物料平衡、设备数据表等文件，其深度应满足开展基础工程设计的要求。",
+      "keywords": [
+        "工艺设计包",
+        "工艺包",
+        "基础设计",
+        "交付物"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX2111"
+      ],
+      "category": "工艺设计包"
+    },
+    {
+      "clause_id": "GB50933-2013-4.2.1",
+      "source_type": "standard",
+      "source_id": "GB/T 50933-2013",
+      "version": "2013",
+      "discipline": "PX",
+      "clause": "4.2.1",
+      "content": "工艺设计包设计文件应包括：工艺设计说明书、工艺流程图(PFD)、管道及仪表流程图(P&ID)、工艺设备一览表、工艺设备数据表、物料平衡表、公用物料平衡表、催化剂及化学品汇总表、取样点汇总表等。",
+      "keywords": [
+        "工艺包文件",
+        "PFD",
+        "P&ID",
+        "设备数据表",
+        "物料平衡"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX2111"
+      ],
+      "category": "工艺设计包"
+    },
+    {
+      "clause_id": "GB50933-2013-5.3.1",
+      "source_type": "standard",
+      "source_id": "GB/T 50933-2013",
+      "version": "2013",
+      "discipline": "PX",
+      "clause": "5.3.1",
+      "content": "基础工程设计阶段工艺专业应提交：工艺设计说明书、PFD、P&ID、UID/UFD、工艺设备表、工艺设备数据表、物料及能量平衡表、管道表、安全阀数据表、界区条件表等。",
+      "keywords": [
+        "基础设计",
+        "工艺交付物",
+        "初设",
+        "PFD",
+        "P&ID"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX2366",
+        "PR-S01",
+        "PR0L"
+      ],
+      "category": "基础工程设计"
+    },
+    {
+      "clause_id": "GB50933-2013-6.2.1",
+      "source_type": "standard",
+      "source_id": "GB/T 50933-2013",
+      "version": "2013",
+      "discipline": "PX",
+      "clause": "6.2.1",
+      "content": "详细工程设计阶段工艺专业应在基础设计基础上完善并终版化 P&ID、管道表、设备数据表、联锁逻辑图、因果图、操作手册等，深度应满足施工、采购和调试要求。",
+      "keywords": [
+        "详细设计",
+        "施工图设计",
+        "P&ID终版",
+        "联锁"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PX8248"
+      ],
+      "category": "详细工程设计"
+    },
+    {
+      "clause_id": "SHSG052-2003-1.0",
+      "source_type": "standard",
+      "source_id": "SHSG-052-2003",
+      "version": "2003",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "工艺包设计应由化工工艺、工艺系统、分析化验、自控、材料、安全卫生、环保等专业共同完成，设计程序与基础设计阶段工作程序相同。",
+      "keywords": [
+        "工艺包",
+        "专业协作",
+        "工艺系统",
+        "化工工艺"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX2111"
+      ],
+      "category": "工艺包编制"
+    },
+    {
+      "clause_id": "SHSG052-2003-2.1",
+      "source_type": "standard",
+      "source_id": "SHSG-052-2003",
+      "version": "2003",
+      "discipline": "PX",
+      "clause": "2.1",
+      "content": "工艺包说明书设计基础部分应分别列出原料、催化剂及化学品的名称及规格，说明设计能力、年操作时数及界区条件。",
+      "keywords": [
+        "设计基础",
+        "原料规格",
+        "界区条件",
+        "设计能力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX2111",
+        "PX0980"
+      ],
+      "category": "工艺包编制"
+    },
+    {
+      "clause_id": "SHSG052-2003-2.2",
+      "source_type": "standard",
+      "source_id": "SHSG-052-2003",
+      "version": "2003",
+      "discipline": "PX",
+      "clause": "2.2",
+      "content": "工艺包工艺设计部分应叙述工艺过程原理，列出主副反应方程式，说明催化剂；按工段及系统详细叙述工艺流程，列出主要操作条件及控制指标。",
+      "keywords": [
+        "工艺原理",
+        "反应方程式",
+        "操作条件",
+        "控制指标"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX0980"
+      ],
+      "category": "工艺包编制"
+    },
+    {
+      "clause_id": "SHSG052-2003-3.1",
+      "source_type": "standard",
+      "source_id": "SHSG-052-2003",
+      "version": "2003",
+      "discipline": "PX",
+      "clause": "3.1",
+      "content": "工艺包成品应包括：说明书、PFD、初版P&ID、设备布置建议图、工艺设备一览表、工艺设备数据表、催化剂及化学品汇总表、取样点汇总表、物性数据手册及相关计算书。",
+      "keywords": [
+        "工艺包交付",
+        "PFD",
+        "初版PID",
+        "物性手册",
+        "计算书"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX2111"
+      ],
+      "category": "工艺包编制"
+    },
+    {
+      "clause_id": "SHT3121-2022-1.0",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "本规范规定了以石油和石油产品为原料的石油化工装置的工艺设计原则及技术要求，适用于新建石油化工装置的工艺设计。",
+      "keywords": [
+        "工艺设计规范",
+        "石油化工",
+        "适用范围"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX0980"
+      ],
+      "category": "总则"
+    },
+    {
+      "clause_id": "SHT3121-2022-3.0",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "PX",
+      "clause": "3.0",
+      "content": "工艺设计应遵循技术先进、安全可靠、经济合理、节约能源、保护环境的原则，并满足国家和行业现行标准的要求。",
+      "keywords": [
+        "设计原则",
+        "安全",
+        "节能",
+        "环保"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX0980"
+      ],
+      "category": "设计原则"
+    },
+    {
+      "clause_id": "SHT3121-2022-4.0",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "PX",
+      "clause": "4.0",
+      "content": "工艺流程设计应合理选择流程方案，优化物料和能量利用，减少三废排放；流程图应清晰表示主要设备、物流和控制方案。",
+      "keywords": [
+        "工艺流程",
+        "流程优化",
+        "能量利用",
+        "三废"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX0980",
+        "PX2366"
+      ],
+      "category": "工艺流程"
+    },
+    {
+      "clause_id": "SHT3121-2022-5.0",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "PX",
+      "clause": "5.0",
+      "content": "工艺设计应进行物料平衡和能量平衡计算，作为设备选型和工艺参数确定的依据；平衡表应标注各流股的流量、组成、温度、压力。",
+      "keywords": [
+        "物料平衡",
+        "能量平衡",
+        "流股表",
+        "设备选型"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX3342"
+      ],
+      "category": "物料能量平衡"
+    },
+    {
+      "clause_id": "SHT3121-2022-6.0",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "PX",
+      "clause": "6.0",
+      "content": "工艺设计应提出装置能耗指标及节能措施，典型装置的能耗值可参考规范附录；应通过换热网络优化等手段降低单位产品能耗。",
+      "keywords": [
+        "能耗指标",
+        "节能措施",
+        "换热网络"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PX3342",
+        "PR-S04"
+      ],
+      "category": "能耗与节能"
+    },
+    {
+      "clause_id": "SHT3121-2022-8.0",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "PX",
+      "clause": "8.0",
+      "content": "工艺设计应进行安全泄压与危险介质排放设计，包括安全阀、爆破片、紧急泄压和火炬系统的设置原则，确保超压保护可靠。",
+      "keywords": [
+        "安全泄压",
+        "安全阀",
+        "爆破片",
+        "火炬",
+        "超压保护"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX0504",
+        "PR-X01"
+      ],
+      "category": "安全泄压"
+    },
+    {
+      "clause_id": "HG20557.1-1993-1.1.1",
+      "source_type": "standard",
+      "source_id": "HG 20557.1-1993",
+      "version": "1993",
+      "discipline": "PX",
+      "clause": "1.1.1",
+      "content": "工艺系统专业应根据 PFD、物料衡算表及工艺操作要求，完成生产装置管道及仪表流程图(P&ID)设计，满足正常生产、开停车及事故工况的操作与安全需要。",
+      "keywords": [
+        "工艺系统",
+        "P&ID",
+        "开停车",
+        "事故工况"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01"
+      ],
+      "category": "工艺系统职责"
+    },
+    {
+      "clause_id": "HG20557.1-1993-1.1.3",
+      "source_type": "standard",
+      "source_id": "HG 20557.1-1993",
+      "version": "1993",
+      "discipline": "PX",
+      "clause": "1.1.3",
+      "content": "工艺系统专业负责生产单元内管道水力计算并确定阀门类别。",
+      "keywords": [
+        "管道水力",
+        "管径",
+        "阀门选型",
+        "工艺系统"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX3363"
+      ],
+      "category": "工艺系统职责"
+    },
+    {
+      "clause_id": "HG20557.1-1993-1.1.4",
+      "source_type": "standard",
+      "source_id": "HG 20557.1-1993",
+      "version": "1993",
+      "discipline": "PX",
+      "clause": "1.1.4",
+      "content": "工艺系统专业负责计算和选择 P&ID 中所有安全阀、爆破片、限流孔板、疏水器及其他特殊管件，编制汇总表及采购数据表。",
+      "keywords": [
+        "安全阀",
+        "爆破片",
+        "限流孔板",
+        "特殊管件"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX0504"
+      ],
+      "category": "工艺系统职责"
+    },
+    {
+      "clause_id": "HG20557.1-1993-1.1.8",
+      "source_type": "standard",
+      "source_id": "HG 20557.1-1993",
+      "version": "1993",
+      "discipline": "PX",
+      "clause": "1.1.8",
+      "content": "工艺系统专业负责提出设备标高和机泵 NPSH 计算，确定机泵压差要求，并确定设备、管道保温（冷）类型。",
+      "keywords": [
+        "NPSH",
+        "机泵压差",
+        "设备标高",
+        "保温"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX3363",
+        "PR-T06"
+      ],
+      "category": "工艺系统职责"
+    },
+    {
+      "clause_id": "HG20570-2015-1.0",
+      "source_type": "standard",
+      "source_id": "HG/T 20570-2015",
+      "version": "2015",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "本规范适用于化工装置工艺系统工程设计，包括 P&ID 设计、管道设计条件、仪表及控制系统设计条件等内容。",
+      "keywords": [
+        "工艺系统",
+        "HG20570",
+        "P&ID",
+        "设计条件"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01"
+      ],
+      "category": "总则"
+    },
+    {
+      "clause_id": "VDI-PR-PFD-001",
+      "source_type": "rule",
+      "source_id": "VDI-PR-PFD-001",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "PFD（工艺流程图）应标注所有主要设备位号、物流号及关键操作参数（温度、压力、流量），并附物料平衡表；PFD 不包含详细管道等级、阀门类型和仪表控制回路细节。",
+      "keywords": [
+        "PFD",
+        "物流号",
+        "设备位号",
+        "物料平衡"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX2366"
+      ],
+      "category": "VDI工艺规则"
+    },
+    {
+      "clause_id": "VDI-PR-PID-001",
+      "source_type": "rule",
+      "source_id": "VDI-PR-PID-001",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "P&ID（管道及仪表流程图）是跨专业主文档，应包含全部设备、管道、阀门、仪表、控制回路、安全联锁及放空泄压设施；P&ID 是 HAZOP 分析、配管设计和仪控设计的直接依据。",
+      "keywords": [
+        "P&ID",
+        "跨专业",
+        "HAZOP",
+        "控制回路",
+        "安全联锁"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-X01"
+      ],
+      "category": "VDI工艺规则"
+    },
+    {
+      "clause_id": "VDI-PR-CTL-001",
+      "source_type": "rule",
+      "source_id": "VDI-PR-CTL-001",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "控制哲学（Control Philosophy）由工艺专业主导编制，应描述各控制回路的目的、测量点、控制策略、报警限值及联锁逻辑概要；仪控专业负责审签和细化 DCS/PLC 组态要求。",
+      "keywords": [
+        "控制哲学",
+        "控制回路",
+        "联锁",
+        "报警"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX8248"
+      ],
+      "category": "VDI工艺规则"
+    },
+    {
+      "clause_id": "VDI-PR-HMB-001",
+      "source_type": "rule",
+      "source_id": "VDI-PR-HMB-001",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "物料平衡表应标注每个流股的编号、名称、流量（质量/摩尔）、组成、温度、压力及相态；全厂总平衡与各单元平衡应分别编制，闭合误差不应超过 1%。",
+      "keywords": [
+        "物料平衡",
+        "流股",
+        "闭合误差",
+        "HMB"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX3342"
+      ],
+      "category": "VDI工艺规则"
+    },
+    {
+      "clause_id": "VDI-PR-DDS-001",
+      "source_type": "rule",
+      "source_id": "VDI-PR-DDS-001",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "工艺设备数据表应包含：设备位号、名称、型式、设计/操作温度压力、介质组成、材质要求、主要尺寸及工艺性能参数；静设备数据表由工艺提出工艺条件，设备专业补充机械设计。",
+      "keywords": [
+        "设备数据表",
+        "设计条件",
+        "操作条件",
+        "工艺设备"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX2365"
+      ],
+      "category": "VDI工艺规则"
+    },
+    {
+      "clause_id": "VDI-PR-ROUTE-001",
+      "source_type": "rule",
+      "source_id": "VDI-PR-ROUTE-001",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "工艺路线比选应至少比较三种可行方案，从投资、能耗、原料消耗、三废排放、安全性及操作灵活性等维度进行技术经济比较，最终方案由人类决策。",
+      "keywords": [
+        "工艺路线",
+        "方案比选",
+        "技术经济"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX0980"
+      ],
+      "category": "VDI工艺规则"
+    },
+    {
+      "clause_id": "VDI-PR-UTIL-001",
+      "source_type": "rule",
+      "source_id": "VDI-PR-UTIL-001",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "公用工程平衡应分别编制蒸汽（各压力等级）、循环水、冷冻水、仪表风、氮气、燃料气等系统的产用平衡表，并汇总至 UID/UFD 图。",
+      "keywords": [
+        "公用工程",
+        "蒸汽平衡",
+        "UID",
+        "UFD"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S04"
+      ],
+      "category": "VDI工艺规则"
+    },
+    {
+      "clause_id": "VDI-PR-REL-001",
+      "source_type": "rule",
+      "source_id": "VDI-PR-REL-001",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "安全阀泄放量计算应依据 API RP 520/521，考虑所有可信超压场景（火灾、Blocked outlet、冷却失效等），泄放量汇总表是火炬系统设计的输入。",
+      "keywords": [
+        "安全阀",
+        "API 520",
+        "泄放量",
+        "火炬"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX0504",
+        "PR-T07"
+      ],
+      "category": "VDI工艺规则"
+    },
+    {
+      "clause_id": "VDI-PR-HAZOP-001",
+      "source_type": "rule",
+      "source_id": "VDI-PR-HAZOP-001",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "HAZOP 分析应在 P&ID 达到 60% 深度时进行，以 P&ID 节点为分析单元，采用 IEC 61882 引导词法；工艺工程师作为工艺知识专家参与，HSE 负责主席和记录。",
+      "keywords": [
+        "HAZOP",
+        "IEC 61882",
+        "P&ID",
+        "节点"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X01"
+      ],
+      "category": "VDI工艺规则"
+    },
+    {
+      "clause_id": "VDI-PR-LAB-001",
+      "source_type": "rule",
+      "source_id": "VDI-PR-LAB-001",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "取样点汇总表应标注取样点编号、位置、取样介质、分析项目、取样频率及取样器型式；工艺包和基础设计阶段均须提交。",
+      "keywords": [
+        "取样点",
+        "分析化验",
+        "取样器"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X02",
+        "PX2111"
+      ],
+      "category": "VDI工艺规则"
+    },
+    {
+      "clause_id": "VDI-PR-HYD-001",
+      "source_type": "rule",
+      "source_id": "VDI-PR-HYD-001",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "管道水力计算应确定管径、压降及阀门压降，满足机泵 NPSHa 要求；两相流管道应进行特殊水力计算并标注流型。",
+      "keywords": [
+        "管道水力",
+        "管径",
+        "压降",
+        "NPSH",
+        "两相流"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX3363"
+      ],
+      "category": "VDI工艺规则"
+    },
+    {
+      "clause_id": "VDI-PR-SIM-001",
+      "source_type": "rule",
+      "source_id": "VDI-PR-SIM-001",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "流程模拟应覆盖正常工况及关键异常工况，物性方法选择应有依据并记录；模拟结果应输出至 H&MB 表和 PFD 流股数据。",
+      "keywords": [
+        "流程模拟",
+        "物性方法",
+        "工况",
+        "HMB"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX1206",
+        "PX3342"
+      ],
+      "category": "VDI工艺规则"
+    },
+    {
+      "clause_id": "SHT3121-2022-7.0",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "PX",
+      "clause": "7.0",
+      "content": "工艺设计应对主要工艺设备进行选型设计，包括反应器、塔器、换热器、加热炉、泵和压缩机等，设备选型应满足工艺要求和材料耐腐蚀要求。",
+      "keywords": [
+        "设备选型",
+        "反应器",
+        "塔器",
+        "换热器"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX2365"
+      ],
+      "category": "设备选型"
+    },
+    {
+      "clause_id": "SHT3121-2022-9.0",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "PX",
+      "clause": "9.0",
+      "content": "工艺设计应提出自动控制设计要求，包括主要控制回路、联锁保护及紧急停车(ESD)系统的设置原则。",
+      "keywords": [
+        "自动控制",
+        "联锁",
+        "ESD",
+        "控制回路"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX8248"
+      ],
+      "category": "自动控制"
+    },
+    {
+      "clause_id": "SHT3121-2022-10.0",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "PX",
+      "clause": "10.0",
+      "content": "工艺设计应满足环境保护和职业卫生要求，提出三废治理方案及排放指标，但详细环保设计由环保/HSE 专业完成。",
+      "keywords": [
+        "环境保护",
+        "职业卫生",
+        "三废",
+        "排放指标"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "hs"
+      ],
+      "category": "环保职业卫生"
+    },
+    {
+      "clause_id": "GB50933-2013-4.3.1",
+      "source_type": "standard",
+      "source_id": "GB/T 50933-2013",
+      "version": "2013",
+      "discipline": "PX",
+      "clause": "4.3.1",
+      "content": "工艺手册应包括工艺过程说明、正常及异常操作程序、开停车程序、安全注意事项及主要工艺参数控制范围。",
+      "keywords": [
+        "工艺手册",
+        "操作规程",
+        "开停车",
+        "异常操作"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX2111",
+        "PR-T09"
+      ],
+      "category": "工艺手册"
+    },
+    {
+      "clause_id": "GB50933-2013-5.3.2",
+      "source_type": "standard",
+      "source_id": "GB/T 50933-2013",
+      "version": "2013",
+      "discipline": "PX",
+      "clause": "5.3.2",
+      "content": "基础设计工艺说明书应包括：设计依据、设计范围、工艺方案、物料及能量平衡、主要设备选型、公用工程消耗、安全环保措施及主要技术经济指标。",
+      "keywords": [
+        "工艺说明书",
+        "基础设计",
+        "技术经济指标"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX0980",
+        "PX3342"
+      ],
+      "category": "基础工程设计"
+    },
+    {
+      "clause_id": "HG20557.1-1993-1.1.5",
+      "source_type": "standard",
+      "source_id": "HG 20557.1-1993",
+      "version": "1993",
+      "discipline": "PX",
+      "clause": "1.1.5",
+      "content": "工艺系统专业负责提出控制阀及流量测量元件的压差及有关数据表。",
+      "keywords": [
+        "控制阀",
+        "压差",
+        "流量计",
+        "数据表"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PX8248"
+      ],
+      "category": "工艺系统职责"
+    },
+    {
+      "clause_id": "HG20557.1-1993-1.1.6",
+      "source_type": "standard",
+      "source_id": "HG 20557.1-1993",
+      "version": "1993",
+      "discipline": "PX",
+      "clause": "1.1.6",
+      "content": "工艺系统专业负责确定工艺生产单元内所有非直接火加热设备的设计压力和接管要求。",
+      "keywords": [
+        "设计压力",
+        "接管要求",
+        "加热设备"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX2365",
+        "PR-S01"
+      ],
+      "category": "工艺系统职责"
+    },
+    {
+      "clause_id": "VDI-PR-BFD-001",
+      "source_type": "rule",
+      "source_id": "VDI-PR-BFD-001",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "块流程图(BFD)是全厂/全装置级物料流向概览，不标注详细设备参数；BFD 是 PFD 的前置，用于方案阶段路线比选。",
+      "keywords": [
+        "BFD",
+        "块流程图",
+        "方案设计"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PX2111",
+        "PX0980"
+      ],
+      "category": "VDI工艺规则"
+    },
+    {
+      "clause_id": "VDI-PR-LINE-001",
+      "source_type": "rule",
+      "source_id": "VDI-PR-LINE-001",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "管道表（Line List）每条管线应包含：管段号、起止设备/管线、介质、相态、设计温度/压力、操作温度/压力、管径、材质、保温/伴热及 PID 页码引用。",
+      "keywords": [
+        "管道表",
+        "Line List",
+        "管段号",
+        "设计温度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01"
+      ],
+      "category": "VDI工艺规则"
+    },
+    {
+      "clause_id": "VDI-PR-TIEIN-001",
+      "source_type": "rule",
+      "source_id": "VDI-PR-TIEIN-001",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "界区接点表应列出本装置与上下游装置/公用工程的所有连接点：接点编号、介质、设计/操作条件、管道规格及连接方式。",
+      "keywords": [
+        "界区接点",
+        "装置边界",
+        "连接点"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PX2366"
+      ],
+      "category": "VDI工艺规则"
+    },
+    {
+      "clause_id": "VDI-PR-CAE-001",
+      "source_type": "rule",
+      "source_id": "VDI-PR-CAE-001",
+      "version": "2026",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "因果图（Cause & Effect Diagram）应列出所有安全联锁和紧急停车的触发条件与执行动作，是 ESD 和 SIS 设计的输入文件。",
+      "keywords": [
+        "因果图",
+        "联锁",
+        "ESD",
+        "SIS"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX8248",
+        "PR-X01"
+      ],
+      "category": "VDI工艺规则"
+    },
+    {
+      "clause_id": "API520-INT-001",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "压力泄放装置的尺寸选型应基于所有适用超压场景的泄放量计算，取各场景最大值；计算应使用 API RP 520 规定的方法。",
+      "keywords": [
+        "API 520",
+        "泄放装置",
+        "超压场景",
+        "泄放量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PX0504",
+        "PR-T07"
+      ],
+      "category": "安全泄压"
+    },
+    {
+      "clause_id": "IEC61511-INT-001",
+      "source_type": "standard",
+      "source_id": "IEC 61511",
+      "version": "2016",
+      "discipline": "PX",
+      "clause": "1.0",
+      "content": "安全仪表功能(SIF)的 SIL 定级应基于 IEC 61511 生命周期方法，HAZOP 识别的风险场景是 SIL 评估的输入。",
+      "keywords": [
+        "SIL",
+        "SIF",
+        "IEC 61511",
+        "功能安全"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X01",
+        "PX8248"
+      ],
+      "category": "功能安全"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "seed_version": "2c",
+  "discipline": "process",
+  "description": "检索回归测试补全 — 针对 5 个失败问句优化关键词",
+  "clauses": [
+    {
+      "clause_id": "GB50933-2013-4.2.1-RET",
+      "source_type": "standard",
+      "source_id": "GB/T 50933-2013",
+      "version": "2013",
+      "discipline": "process",
+      "clause": "4.2.1",
+      "content": "工艺包应包括哪些设计文件：工艺设计说明书、工艺流程图(PFD)、管道及仪表流程图(P&ID)、工艺设备一览表、工艺设备数据表、物料平衡表、公用物料平衡表、催化剂及化学品汇总表、取样点汇总表、物性数据手册及相关计算书。",
+      "keywords": ["工艺包", "设计文件", "工艺包应包括哪些设计文件", "交付物清单"],
+      "mandatory": true,
+      "skill_tags": ["PR-D01"],
+      "category": "检索优化"
+    },
+    {
+      "clause_id": "SHT3121-2022-5.1-RET",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "5.1",
+      "content": "物料平衡表编制要求：应包括全装置总平衡和各单元详细平衡；每条流股标注编号、名称、质量/摩尔流量、组成、温度、压力、相态；总进等于总出加损失，闭合误差不超过1%。",
+      "keywords": ["物料平衡表", "物料平衡表编制要求", "流股", "闭合误差", "HMB"],
+      "mandatory": true,
+      "skill_tags": ["PR-D03"],
+      "category": "检索优化"
+    },
+    {
+      "clause_id": "VDI-PR-UTIL-RET",
+      "source_type": "rule",
+      "source_id": "VDI-PR-UTIL-001",
+      "version": "2026",
+      "discipline": "process",
+      "clause": "1.0",
+      "content": "公用工程消耗汇总表内容应包括：各压力等级蒸汽产/用/购/排量，循环水/冷冻水补充与排放量，仪表风/氮气/燃料气用量，以及对应 UID/UFD 图编号引用。",
+      "keywords": ["公用工程消耗汇总表", "公用工程消耗汇总表内容", "蒸汽平衡", "UID"],
+      "mandatory": true,
+      "skill_tags": ["PR-S04"],
+      "category": "检索优化"
+    },
+    {
+      "clause_id": "VDI-PR-CTL-RET",
+      "source_type": "rule",
+      "source_id": "VDI-PR-CTL-001",
+      "version": "2026",
+      "discipline": "process",
+      "clause": "1.0",
+      "content": "控制哲学应包含哪些内容：各控制回路控制目的、测量点位置、控制策略（单回路/串级/比值/分程）、正常及异常报警限值、联锁触发条件概要、手动/自动切换原则及 DCS/PLC 组态要求接口。",
+      "keywords": ["控制哲学", "控制哲学应包含哪些内容", "控制策略", "报警限值", "联锁"],
+      "mandatory": true,
+      "skill_tags": ["PR-S05"],
+      "category": "检索优化"
+    },
+    {
+      "clause_id": "VDI-PR-DDS-RET",
+      "source_type": "rule",
+      "source_id": "VDI-PR-DDS-001",
+      "version": "2026",
+      "discipline": "process",
+      "clause": "1.0",
+      "content": "工艺设备数据表必填字段：设备位号、设备名称、型式、数量、设计温度、设计压力、操作温度、操作压力、介质名称及组成、材质要求、主要尺寸、工艺性能参数（如换热面积、塔板数、流量/扬程）及驱动功率（动设备）。",
+      "keywords": ["工艺设备数据表", "工艺设备数据表必填字段", "设备数据表", "设计条件"],
+      "mandatory": true,
+      "skill_tags": ["PR-D05"],
+      "category": "检索优化"
+    }
+  ]
+}

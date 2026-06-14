@@ -243,30 +243,66 @@ const piAck = mcpCall(EVENTS, "vdi_ack_event", {
 });
 check("确认事件", !piAck.error, piAck.error || "OK");
 
-console.log("\n3.3 管道专业输出");
+console.log("\n3.3a 管道 D01 材料等级");
+const piD01 = mcpCall(RULES, "vdi_validate_discipline_output", {
+  discipline: "PI",
+  output: {
+    discipline: "PI",
+    output_type: "material_class",
+    payload: {
+      classes: [
+        { class_id: "A1", max_P_MPa: 1.0, max_T_C: 200, material: "20#", corrosion_mm: 1.5 },
+        { class_id: "A2", max_P_MPa: 4.0, max_T_C: 350, material: "20#", corrosion_mm: 3.0 },
+        { class_id: "B1", max_P_MPa: 4.0, max_T_C: 450, material: "Cr5Mo", corrosion_mm: 0 }
+      ]
+    },
+    citations: [{ source_type: "standard", source_id: "SH/T 3059", version: "2018", clause: "5.1" }],
+    risk_level: "high",
+    confidence: 0.92,
+    status: "draft"
+  }
+});
+check("D01 材料等级校验", !piD01.error && piD01.valid !== false, piD01.valid ? "通过" : piD01.error || "失败");
+
+console.log("\n3.3b 管道 D02 管道表");
+const piD02 = mcpCall(RULES, "vdi_validate_discipline_output", {
+  discipline: "PI",
+  output: {
+    discipline: "PI",
+    output_type: "line_list",
+    payload: {
+      lines: [
+        { line_id: "1001-P-001", from: "V-101", to: "P-101", dn: 100, design_T_C: 40, design_P_MPa: 0.6, material_class: "A1" },
+        { line_id: "1002-P-001", from: "K-101", to: "R-101", dn: 150, design_T_C: 120, design_P_MPa: 3.5, material_class: "A2" }
+      ]
+    },
+    citations: [{ source_type: "standard", source_id: "GB/T 50933", version: "2013", clause: "5.3" }],
+    risk_level: "high",
+    confidence: 0.90,
+    status: "draft"
+  }
+});
+check("D02 管道表校验", !piD02.error && piD02.valid !== false, piD02.valid ? "通过" : piD02.error || "失败");
+
+console.log("\n3.3c 管道 D06 综合路由");
 const piOutput = mcpCall(RULES, "vdi_validate_discipline_output", {
   discipline: "PI",
   output: {
     discipline: "PI",
     output_type: "piping_design",
     payload: {
-      material_classes: [
-        { class_id: "A1", description: "碳钢-常压", max_pressure_MPa: 1.0, max_temperature_C: 200, material: "20#钢" },
-        { class_id: "A2", description: "碳钢-中压", max_pressure_MPa: 4.0, max_temperature_C: 350, material: "20#钢" },
-        { class_id: "B1", description: "合金钢-高温", max_pressure_MPa: 4.0, max_temperature_C: 450, material: "Cr5Mo" }
-      ],
-      line_count: 45,
-      drawing_count: 8
+      routing_summary: { line_count: 45, rack_levels: 3 },
+      clash_report: { clashes_resolved: 2, pending: 0 }
     },
     citations: [
-      { source_type: "standard", source_id: "GB/T 50316-2000", version: "2000", clause: "6.2" }
+      { source_type: "standard", source_id: "HG/T 20519-4", version: "2009", clause: "4.1" }
     ],
     risk_level: "high",
     confidence: 0.90,
     status: "draft"
   }
 });
-check("管道输出校验", !piOutput.error && piOutput.valid !== false, piOutput.valid ? "通过" : piOutput.error || "失败");
+check("D06 综合路由校验", !piOutput.error && piOutput.valid !== false, piOutput.valid ? "通过" : piOutput.error || "失败");
 
 console.log("\n3.4 发布管道输出事件");
 const piPublish = mcpCall(EVENTS, "vdi_publish_event", {
@@ -287,6 +323,8 @@ check("发布管道输出", !piPublish.error && piPublish.event_id, piPublish.ev
 // ════════════════════════════════════════════════════════
 // 阶段 4：仪控层 — 接收条件并设计
 // ════════════════════════════════════════════════════════
+// 阶段 4：仪控层 — L1 vdi-instrument-lead 汇总 8×L2（D01~D08）为 instrument_design
+// 本段 mock 校验契约；全链 slug/benchmark 见 e2e-instrument-chain.mjs
 console.log("\n── 阶段4：仪控层（接收条件并设计）──\n");
 
 console.log("4.1 仪控专业消费事件");

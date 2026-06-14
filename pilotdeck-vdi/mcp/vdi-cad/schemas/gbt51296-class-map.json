@@ -1,0 +1,37 @@
+{
+  "version": "1.0",
+  "description": "PlantModel.class + attributes → GB/T 51296-2018 附录 C 典型工厂对象类码",
+  "mappings": {
+    "Equipment": {
+      "default": { "class_code": "EQP", "class_name": "设备" },
+      "by_equipment_type": {
+        "pump": { "class_code": "EQP-PUMP", "class_name": "泵" },
+        "vessel": { "class_code": "EQP-VES", "class_name": "容器" },
+        "reactor": { "class_code": "EQP-REA", "class_name": "反应器" },
+        "column": { "class_code": "EQP-COL", "class_name": "塔器" },
+        "heat_exchanger": { "class_code": "EQP-HX", "class_name": "换热器" },
+        "compressor": { "class_code": "EQP-CMP", "class_name": "压缩机" },
+        "tank": { "class_code": "EQP-TNK", "class_name": "储罐" },
+        "generic": { "class_code": "EQP", "class_name": "设备" }
+      }
+    },
+    "PipeRun": {
+      "default": { "class_code": "PIP-SEG", "class_name": "管道管段" }
+    },
+    "Instrument": {
+      "default": { "class_code": "INS", "class_name": "仪表" }
+    },
+    "Valve": {
+      "default": { "class_code": "VAL", "class_name": "阀门" }
+    },
+    "SafetyValve": {
+      "default": { "class_code": "PSV", "class_name": "安全阀" }
+    },
+    "Stream": {
+      "default": { "class_code": "STR", "class_name": "物流" }
+    },
+    "ControlLoop": {
+      "default": { "class_code": "CTL", "class_name": "控制回路" }
+    }
+  }
+}

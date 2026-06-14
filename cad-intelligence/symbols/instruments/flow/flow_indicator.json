@@ -1,0 +1,55 @@
+{
+  "symbol_id": "INST-FI-001",
+  "name": "流量指示",
+  "name_en": "Flow Indicator",
+  "standard": "ISA 5.1",
+  "category": "instruments",
+  "sub_category": "flow",
+  "description": "就地流量指示",
+  "parameters": {
+    "range_min": {
+      "type": "number",
+      "unit": "m³/h",
+      "description": "量程下限"
+    },
+    "range_max": {
+      "type": "number",
+      "unit": "m³/h",
+      "description": "量程上限"
+    },
+    "flow_element": {
+      "type": "string",
+      "description": "检测元件",
+      "examples": ["孔板", "涡街", "电磁", "转子"]
+    }
+  },
+  "connections": {
+    "process": {
+      "position": {"x": 0, "y": -15},
+      "direction": "down",
+      "description": "工艺连接点"
+    }
+  },
+  "geometry": {
+    "components": [
+      {
+        "type": "circle",
+        "params": {"radius": 12},
+        "description": "仪表圆"
+      },
+      {
+        "type": "text",
+        "params": {"text": "FI", "size": 8},
+        "position": {"x": 0, "y": 0},
+        "description": "字母标识"
+      },
+      {
+        "type": "line",
+        "params": {"start": [0, -12], "end": [0, -18]},
+        "description": "连接线"
+      }
+    ]
+  },
+  "related_standards": ["ISA 5.1", "GB/T 2625"],
+  "typical_applications": ["流量监测", "工艺控制"]
+}

@@ -1,0 +1,44 @@
+{
+  "symbol_id": "FLANGE-SO-001",
+  "name": "平焊法兰",
+  "name_en": "Slip-on Flange",
+  "standard": "GB/T 9116",
+  "category": "piping",
+  "sub_category": "flanges",
+  "description": "平焊法兰",
+  "parameters": {
+    "diameter": {
+      "type": "string",
+      "description": "公称直径"
+    },
+    "pressure_rating": {
+      "type": "string",
+      "description": "压力等级"
+    },
+    "material": {
+      "type": "string",
+      "description": "材质"
+    }
+  },
+  "connections": {
+    "pipe": {
+      "position": {"x": -10, "y": 0},
+      "direction": "left"
+    },
+    "flange_face": {
+      "position": {"x": 10, "y": 0},
+      "direction": "right"
+    }
+  },
+  "geometry": {
+    "components": [
+      {
+        "type": "rectangle",
+        "params": {"width": 8, "height": 28},
+        "description": "法兰盘"
+      }
+    ]
+  },
+  "related_standards": ["GB/T 9116", "ASME B16.5"],
+  "typical_applications": ["中低压管道连接"]
+}

@@ -24,16 +24,26 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import {
+  listAllSkillSlugs,
+  skillDir,
+  SKILLS_REGISTRY,
+} from "../config/skills-layout.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "../..");
 const VDI = path.resolve(__dirname, "..");
 
+function allSkillDirs() {
+  return listAllSkillSlugs()
+    .map((slug) => skillDir(slug))
+    .filter((d) => d && fs.existsSync(path.join(d, "SKILL.md")));
+}
+
 // ============================================================
 // 配置
 // ============================================================
 const SCHEMA_DIR = path.join(VDI, "schemas");
-const SKILLS_DIR = path.join(ROOT, "skills");
 const FORMULAS_DIR = path.join(VDI, "data/formulas");
 const MCP_DIR = path.join(VDI, "mcp");
 const DATA_DIR = path.join(VDI, "data");
@@ -155,7 +165,7 @@ function parseSkillFrontmatter(skillDir) {
 
 function loadAllFormulaIds() {
   const allIds = new Set();
-  const disciplines = ["electrical", "hse", "instrument", "piping", "process", "water"];
+  const disciplines = ["electrical", "hs", "instrument", "piping", "process", "water"];
   for (const disc of disciplines) {
     const discDir = path.join(FORMULAS_DIR, disc);
     if (!fs.existsSync(discDir)) continue;
@@ -178,9 +188,7 @@ function validateSchemas() {
 
   // GOV-001: Skill frontmatter 结构
   if (!TARGET || TARGET === "skill") {
-    const skillDirs = fs.readdirSync(SKILLS_DIR, { withFileTypes: true })
-      .filter(d => d.isDirectory() && d.name !== "index.json")
-      .map(d => path.join(SKILLS_DIR, d.name));
+    const skillDirs = allSkillDirs();
 
     let validCount = 0;
     let skipCount = 0;
@@ -291,9 +299,9 @@ function validateReferences() {
   console.log("\n🔗 [GOV-010~019] 引用完整性校验");
 
   if (!TARGET || TARGET === "skill") {
-    const index = readJSON(path.join(SKILLS_DIR, "index.json"));
+    const index = readJSON(SKILLS_REGISTRY);
     if (!index?.skills) {
-      fail("GOV-010", "skills/index.json 不存在或无 skills 数组");
+      fail("GOV-010", "workspaces/skills-registry.json 不存在或无 skills 数组");
       return;
     }
 
@@ -428,12 +436,12 @@ function validateConsistency() {
 
   // GOV-024: Skill index.json vs SKILL.md 一致性
   if (!TARGET || TARGET === "skill") {
-    const index = readJSON(path.join(SKILLS_DIR, "index.json"));
+    const index = readJSON(SKILLS_REGISTRY);
     if (index?.skills) {
       let inconsistent = 0;
       for (const skill of index.skills) {
-        const skillDir = path.join(SKILLS_DIR, skill.path || skill.group);
-        const fm = parseSkillFrontmatter(skillDir);
+        const dir = skill.path ? path.join(ROOT, skill.path) : skillDir(skill.group);
+        const fm = parseSkillFrontmatter(dir);
         if (fm) {
           const indexDisc = skill.discipline;
           const fmDisc = fm.metadata?.vdi?.discipline;
@@ -495,7 +503,7 @@ function validateIndexIntegrity() {
     if (tables?.tables) {
       const tableIds = new Set(tables.tables.map(t => t.table_id));
       const tableRefs = new Set();
-      const disciplines = ["electrical", "hse", "instrument", "piping", "process", "water"];
+      const disciplines = ["electrical", "hs", "instrument", "piping", "process", "water"];
       for (const disc of disciplines) {
         const discDir = path.join(FORMULAS_DIR, disc);
         if (!fs.existsSync(discDir)) continue;
@@ -558,7 +566,7 @@ function validateDataQuality() {
 
   // GOV-043: 公式变量完整性
   if (!TARGET || TARGET === "formula") {
-    const disciplines = ["electrical", "hse", "instrument", "piping", "process", "water"];
+    const disciplines = ["electrical", "hs", "instrument", "piping", "process", "water"];
     let formulasWithIssues = 0;
     let totalFormulas = 0;
 
@@ -588,9 +596,7 @@ function validateDataQuality() {
 
   // GOV-044: Skill 触发词覆盖
   if (!TARGET || TARGET === "skill") {
-    const skillDirs = fs.readdirSync(SKILLS_DIR, { withFileTypes: true })
-      .filter(d => d.isDirectory() && d.name !== "index.json" && fs.existsSync(path.join(SKILLS_DIR, d.name, "SKILL.md")))
-      .map(d => path.join(SKILLS_DIR, d.name));
+    const skillDirs = allSkillDirs();
 
     let withTriggers = 0;
     let withoutTriggers = [];
@@ -617,7 +623,7 @@ function validateDataQuality() {
 
   // GOV-045: 公式 source 标准引用
   if (!TARGET || TARGET === "formula") {
-    const disciplines = ["electrical", "hse", "instrument", "piping", "process", "water"];
+    const disciplines = ["electrical", "hs", "instrument", "piping", "process", "water"];
     let noSource = 0;
     let total = 0;
     for (const disc of disciplines) {
@@ -660,8 +666,8 @@ function performAutoFixes() {
     }
   }
 
-  // GOV-061: 修复 skills/index.json 中的引号包裹字段
-  const skillsIndex = readJSON(path.join(SKILLS_DIR, "index.json"));
+  // GOV-061: 修复 skills-registry.json 中的引号包裹字段
+  const skillsIndex = readJSON(SKILLS_REGISTRY);
   if (skillsIndex?.skills) {
     let fixCount = 0;
     for (const skill of skillsIndex.skills) {
@@ -686,7 +692,7 @@ function performAutoFixes() {
       }
     }
     if (fixCount > 0) {
-      writeJSON(path.join(SKILLS_DIR, "index.json"), skillsIndex);
+      writeJSON(SKILLS_REGISTRY, skillsIndex);
       fixed("GOV-061", `已修复 ${fixCount} 个引号包裹字段`);
     }
   }
@@ -694,11 +700,13 @@ function performAutoFixes() {
   // GOV-062: 同步 workspace 中过期的 SKILL.md
   const workspaceDir = path.join(ROOT, "workspaces");
   if (fs.existsSync(workspaceDir)) {
-    const skillsIndex2 = readJSON(path.join(SKILLS_DIR, "index.json"));
+    const skillsIndex2 = readJSON(SKILLS_REGISTRY);
     if (skillsIndex2?.skills) {
       let synced = 0;
       for (const skill of skillsIndex2.skills) {
-        const sourcePath = path.join(SKILLS_DIR, skill.path || skill.group, "SKILL.md");
+        const sourcePath = skill.path
+          ? path.join(ROOT, skill.path, "SKILL.md")
+          : path.join(skillDir(skill.group) || "", "SKILL.md");
         if (!fs.existsSync(sourcePath)) continue;
         const sourceContent = fs.readFileSync(sourcePath, "utf8");
 

@@ -1,0 +1,2058 @@
+{
+  "seed_version": "pi-phase1",
+  "discipline": "piping",
+  "description": "Sprint 11-14 管道 Phase1",
+  "clauses": [
+    {
+      "clause_id": "PI-SHT3059-4-1-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "4.1.1",
+      "content": "管道材料等级应根据设计温度、设计压力、介质特性及腐蚀条件确定。",
+      "keywords": [
+        "材料等级",
+        "设计温度",
+        "设计压力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP7737"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-4-1-2-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "4.1.2",
+      "content": "碳钢管道适用于设计温度不高于 425℃ 且介质无强腐蚀性的场合。",
+      "keywords": [
+        "碳钢",
+        "425",
+        "腐蚀性"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP7737"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-4-2-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "4.2.1",
+      "content": "管道壁厚应满足设计压力、设计温度及腐蚀裕量要求。",
+      "keywords": [
+        "壁厚",
+        "腐蚀裕量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP7737"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-4-3-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "4.3.1",
+      "content": "阀门型式应根据介质特性、操作频率及密封要求选用。",
+      "keywords": [
+        "阀门型式",
+        "密封"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-4-3-2-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "4.3.2",
+      "content": "高温高压工况宜选用截止阀或闸阀，并满足 SH/T 3059 表要求。",
+      "keywords": [
+        "截止阀",
+        "闸阀",
+        "高温"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-4-4-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "4.4.1",
+      "content": "法兰型式应与管道等级匹配，高压管道宜选用对焊法兰。",
+      "keywords": [
+        "法兰",
+        "对焊"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP7737",
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-5-1-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "5.1.1",
+      "content": "管道等级表应列出等级号、适用介质、最高 T/P、材质及壁厚系列。",
+      "keywords": [
+        "等级表",
+        "最高温度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP7737"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-5-2-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "5.2.1",
+      "content": "特殊件选用应注明标准号、压力等级及端面型式。",
+      "keywords": [
+        "特殊件",
+        "压力等级"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-6-1-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "6.1.1",
+      "content": "埋地管道应选用耐腐蚀材料或加强外防腐。",
+      "keywords": [
+        "埋地",
+        "防腐"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4038"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-6-2-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "6.2.1",
+      "content": "不锈钢管道用于腐蚀性介质时，应控制氯离子含量。",
+      "keywords": [
+        "不锈钢",
+        "氯离子"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP7737"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-7-1-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "7.1.1",
+      "content": "管道器材选用补充条款 1：材质应与工艺介质相容并满足设计寿命。",
+      "keywords": [
+        "器材选用",
+        "设计寿命"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP7737",
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-7-2-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "7.2.1",
+      "content": "管道器材选用补充条款 2：材质应与工艺介质相容并满足设计寿命。",
+      "keywords": [
+        "器材选用",
+        "设计寿命"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP7737",
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-7-3-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "7.3.1",
+      "content": "管道器材选用补充条款 3：材质应与工艺介质相容并满足设计寿命。",
+      "keywords": [
+        "器材选用",
+        "设计寿命"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP7737",
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-7-4-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "7.4.1",
+      "content": "管道器材选用补充条款 4：材质应与工艺介质相容并满足设计寿命。",
+      "keywords": [
+        "器材选用",
+        "设计寿命"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP7737",
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-7-5-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "7.5.1",
+      "content": "管道器材选用补充条款 5：材质应与工艺介质相容并满足设计寿命。",
+      "keywords": [
+        "器材选用",
+        "设计寿命"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP7737",
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-7-6-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "7.6.1",
+      "content": "管道器材选用补充条款 6：材质应与工艺介质相容并满足设计寿命。",
+      "keywords": [
+        "器材选用",
+        "设计寿命"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP7737",
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-7-7-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "7.7.1",
+      "content": "管道器材选用补充条款 7：材质应与工艺介质相容并满足设计寿命。",
+      "keywords": [
+        "器材选用",
+        "设计寿命"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP7737",
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-7-8-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "7.8.1",
+      "content": "管道器材选用补充条款 8：材质应与工艺介质相容并满足设计寿命。",
+      "keywords": [
+        "器材选用",
+        "设计寿命"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP7737",
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-7-9-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "7.9.1",
+      "content": "管道器材选用补充条款 9：材质应与工艺介质相容并满足设计寿命。",
+      "keywords": [
+        "器材选用",
+        "设计寿命"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP7737",
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-7-10-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "7.10.1",
+      "content": "管道器材选用补充条款 10：材质应与工艺介质相容并满足设计寿命。",
+      "keywords": [
+        "器材选用",
+        "设计寿命"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP7737",
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-7-11-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "7.11.1",
+      "content": "管道器材选用补充条款 11：材质应与工艺介质相容并满足设计寿命。",
+      "keywords": [
+        "器材选用",
+        "设计寿命"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP7737",
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-7-12-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "7.12.1",
+      "content": "管道器材选用补充条款 12：材质应与工艺介质相容并满足设计寿命。",
+      "keywords": [
+        "器材选用",
+        "设计寿命"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP7737",
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-7-13-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "7.13.1",
+      "content": "管道器材选用补充条款 13：材质应与工艺介质相容并满足设计寿命。",
+      "keywords": [
+        "器材选用",
+        "设计寿命"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP7737",
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-7-14-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "7.14.1",
+      "content": "管道器材选用补充条款 14：材质应与工艺介质相容并满足设计寿命。",
+      "keywords": [
+        "器材选用",
+        "设计寿命"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP7737",
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-7-15-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "7.15.1",
+      "content": "管道器材选用补充条款 15：材质应与工艺介质相容并满足设计寿命。",
+      "keywords": [
+        "器材选用",
+        "设计寿命"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP7737",
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-HGT205194-3-1-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "3.1.1",
+      "content": "管道平面布置图应表示主要设备、管架及管道走向。",
+      "keywords": [
+        "平面布置",
+        "管架",
+        "走向"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-3-1-2-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "3.1.2",
+      "content": "管道立面图应标注管段标高及坡度。",
+      "keywords": [
+        "立面",
+        "标高",
+        "坡度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-3-2-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "3.2.1",
+      "content": "管廊布置应满足工艺管道、电缆桥架及检修通道要求。",
+      "keywords": [
+        "管廊",
+        "检修通道"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4024",
+        "MP4033"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-3-3-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "3.3.1",
+      "content": "设备接管应满足设备管口方位及检修空间。",
+      "keywords": [
+        "设备接管",
+        "管口方位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-4-1-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "4.1.1",
+      "content": "管道综合设计应协调各专业碰撞并编制设计说明。",
+      "keywords": [
+        "综合设计",
+        "碰撞"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-4-2-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "4.2.1",
+      "content": "地下管道应标注埋深、覆土及与建构筑物净距。",
+      "keywords": [
+        "地下",
+        "埋深",
+        "净距"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4038"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-5-1-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "5.1.1",
+      "content": "管道布置深度规定 1：施工图应达到可采购、可施工深度。",
+      "keywords": [
+        "施工图",
+        "布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033",
+        "MP4033"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-5-2-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "5.2.1",
+      "content": "管道布置深度规定 2：施工图应达到可采购、可施工深度。",
+      "keywords": [
+        "施工图",
+        "布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033",
+        "MP4033"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-5-3-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "5.3.1",
+      "content": "管道布置深度规定 3：施工图应达到可采购、可施工深度。",
+      "keywords": [
+        "施工图",
+        "布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033",
+        "MP4033"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-5-4-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "5.4.1",
+      "content": "管道布置深度规定 4：施工图应达到可采购、可施工深度。",
+      "keywords": [
+        "施工图",
+        "布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033",
+        "MP4033"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-5-5-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "5.5.1",
+      "content": "管道布置深度规定 5：施工图应达到可采购、可施工深度。",
+      "keywords": [
+        "施工图",
+        "布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033",
+        "MP4033"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-5-6-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "5.6.1",
+      "content": "管道布置深度规定 6：施工图应达到可采购、可施工深度。",
+      "keywords": [
+        "施工图",
+        "布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033",
+        "MP4033"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-5-7-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "5.7.1",
+      "content": "管道布置深度规定 7：施工图应达到可采购、可施工深度。",
+      "keywords": [
+        "施工图",
+        "布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033",
+        "MP4033"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-5-8-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "5.8.1",
+      "content": "管道布置深度规定 8：施工图应达到可采购、可施工深度。",
+      "keywords": [
+        "施工图",
+        "布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033",
+        "MP4033"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-5-9-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "5.9.1",
+      "content": "管道布置深度规定 9：施工图应达到可采购、可施工深度。",
+      "keywords": [
+        "施工图",
+        "布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033",
+        "MP4033"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-5-10-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "5.10.1",
+      "content": "管道布置深度规定 10：施工图应达到可采购、可施工深度。",
+      "keywords": [
+        "施工图",
+        "布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033",
+        "MP4033"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-5-11-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "5.11.1",
+      "content": "管道布置深度规定 11：施工图应达到可采购、可施工深度。",
+      "keywords": [
+        "施工图",
+        "布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033",
+        "MP4033"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-5-12-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "5.12.1",
+      "content": "管道布置深度规定 12：施工图应达到可采购、可施工深度。",
+      "keywords": [
+        "施工图",
+        "布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033",
+        "MP4033"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-5-13-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "5.13.1",
+      "content": "管道布置深度规定 13：施工图应达到可采购、可施工深度。",
+      "keywords": [
+        "施工图",
+        "布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033",
+        "MP4033"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-5-14-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "5.14.1",
+      "content": "管道布置深度规定 14：施工图应达到可采购、可施工深度。",
+      "keywords": [
+        "施工图",
+        "布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033",
+        "MP4033"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-5-15-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "5.15.1",
+      "content": "管道布置深度规定 15：施工图应达到可采购、可施工深度。",
+      "keywords": [
+        "施工图",
+        "布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033",
+        "MP4033"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-5-16-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "5.16.1",
+      "content": "管道布置深度规定 16：施工图应达到可采购、可施工深度。",
+      "keywords": [
+        "施工图",
+        "布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033",
+        "MP4033"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-5-17-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "5.17.1",
+      "content": "管道布置深度规定 17：施工图应达到可采购、可施工深度。",
+      "keywords": [
+        "施工图",
+        "布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033",
+        "MP4033"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-5-18-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "5.18.1",
+      "content": "管道布置深度规定 18：施工图应达到可采购、可施工深度。",
+      "keywords": [
+        "施工图",
+        "布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033",
+        "MP4033"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-5-19-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "5.19.1",
+      "content": "管道布置深度规定 19：施工图应达到可采购、可施工深度。",
+      "keywords": [
+        "施工图",
+        "布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033",
+        "MP4033"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-5-20-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "5.20.1",
+      "content": "管道布置深度规定 20：施工图应达到可采购、可施工深度。",
+      "keywords": [
+        "施工图",
+        "布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033",
+        "MP4033"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT20645-3-1-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "3.1.1",
+      "content": "管道应力分析应识别临界管系并编制临界管系表。",
+      "keywords": [
+        "应力分析",
+        "临界管系"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-3-2-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "3.2.1",
+      "content": "管道支架选型应满足管道荷载、位移及振动要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "位移"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-4-1-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "4.1.1",
+      "content": "配管专业应向管道机械专业提供管线轴测及支承条件。",
+      "keywords": [
+        "配管",
+        "轴测",
+        "支承"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033",
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-4-2-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "4.2.1",
+      "content": "管道机械专业应向配管返回应力分析结论及支架修改建议。",
+      "keywords": [
+        "应力结论",
+        "支架修改"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005",
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-5-1-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "5.1.1",
+      "content": "管道机械设计规定 1：柔性分析应满足规范允许应力范围。",
+      "keywords": [
+        "柔性分析",
+        "允许应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-5-2-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "5.2.1",
+      "content": "管道机械设计规定 2：柔性分析应满足规范允许应力范围。",
+      "keywords": [
+        "柔性分析",
+        "允许应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-5-3-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "5.3.1",
+      "content": "管道机械设计规定 3：柔性分析应满足规范允许应力范围。",
+      "keywords": [
+        "柔性分析",
+        "允许应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-5-4-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "5.4.1",
+      "content": "管道机械设计规定 4：柔性分析应满足规范允许应力范围。",
+      "keywords": [
+        "柔性分析",
+        "允许应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-5-5-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "5.5.1",
+      "content": "管道机械设计规定 5：柔性分析应满足规范允许应力范围。",
+      "keywords": [
+        "柔性分析",
+        "允许应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-5-6-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "5.6.1",
+      "content": "管道机械设计规定 6：柔性分析应满足规范允许应力范围。",
+      "keywords": [
+        "柔性分析",
+        "允许应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-5-7-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "5.7.1",
+      "content": "管道机械设计规定 7：柔性分析应满足规范允许应力范围。",
+      "keywords": [
+        "柔性分析",
+        "允许应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-5-8-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "5.8.1",
+      "content": "管道机械设计规定 8：柔性分析应满足规范允许应力范围。",
+      "keywords": [
+        "柔性分析",
+        "允许应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-5-9-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "5.9.1",
+      "content": "管道机械设计规定 9：柔性分析应满足规范允许应力范围。",
+      "keywords": [
+        "柔性分析",
+        "允许应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-5-10-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "5.10.1",
+      "content": "管道机械设计规定 10：柔性分析应满足规范允许应力范围。",
+      "keywords": [
+        "柔性分析",
+        "允许应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-5-11-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "5.11.1",
+      "content": "管道机械设计规定 11：柔性分析应满足规范允许应力范围。",
+      "keywords": [
+        "柔性分析",
+        "允许应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-5-12-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "5.12.1",
+      "content": "管道机械设计规定 12：柔性分析应满足规范允许应力范围。",
+      "keywords": [
+        "柔性分析",
+        "允许应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-5-13-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "5.13.1",
+      "content": "管道机械设计规定 13：柔性分析应满足规范允许应力范围。",
+      "keywords": [
+        "柔性分析",
+        "允许应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-5-14-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "5.14.1",
+      "content": "管道机械设计规定 14：柔性分析应满足规范允许应力范围。",
+      "keywords": [
+        "柔性分析",
+        "允许应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-5-15-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "5.15.1",
+      "content": "管道机械设计规定 15：柔性分析应满足规范允许应力范围。",
+      "keywords": [
+        "柔性分析",
+        "允许应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-5-16-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "5.16.1",
+      "content": "管道机械设计规定 16：柔性分析应满足规范允许应力范围。",
+      "keywords": [
+        "柔性分析",
+        "允许应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-5-17-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "5.17.1",
+      "content": "管道机械设计规定 17：柔性分析应满足规范允许应力范围。",
+      "keywords": [
+        "柔性分析",
+        "允许应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-5-18-1-pi1",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "5.18.1",
+      "content": "管道机械设计规定 18：柔性分析应满足规范允许应力范围。",
+      "keywords": [
+        "柔性分析",
+        "允许应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-GBT50933-5-3-1-pi1",
+      "source_type": "standard",
+      "source_id": "GB/T 50933",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "5.3.1",
+      "content": "详细设计文件应包含管道表及管道材料等级表。",
+      "keywords": [
+        "管道表",
+        "材料等级"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4338",
+        "MP7737"
+      ],
+      "category": "GB50933"
+    },
+    {
+      "clause_id": "PI-GBT50933-5-3-2-pi1",
+      "source_type": "standard",
+      "source_id": "GB/T 50933",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "5.3.2",
+      "content": "管道表应含管线号、起止点、介质、设计/操作 T·P、材质、绝热。",
+      "keywords": [
+        "管线号",
+        "Line List"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4338"
+      ],
+      "category": "GB50933"
+    },
+    {
+      "clause_id": "PI-GBT50933-5-4-1-pi1",
+      "source_type": "standard",
+      "source_id": "GB/T 50933",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "5.4.1",
+      "content": "装置布置及配管专篇应说明布置原则及管廊划分。",
+      "keywords": [
+        "装置布置",
+        "配管"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033"
+      ],
+      "category": "GB50933"
+    },
+    {
+      "clause_id": "PI-GBT50933-6-1-1-pi1",
+      "source_type": "standard",
+      "source_id": "GB/T 50933",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "6.1.1",
+      "content": "设计文件编制 1：管道专业交付物清单应完整。",
+      "keywords": [
+        "交付物",
+        "管道专业"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4338"
+      ],
+      "category": "GB50933"
+    },
+    {
+      "clause_id": "PI-GBT50933-6-2-1-pi1",
+      "source_type": "standard",
+      "source_id": "GB/T 50933",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "6.2.1",
+      "content": "设计文件编制 2：管道专业交付物清单应完整。",
+      "keywords": [
+        "交付物",
+        "管道专业"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4338"
+      ],
+      "category": "GB50933"
+    },
+    {
+      "clause_id": "PI-GBT50933-6-3-1-pi1",
+      "source_type": "standard",
+      "source_id": "GB/T 50933",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "6.3.1",
+      "content": "设计文件编制 3：管道专业交付物清单应完整。",
+      "keywords": [
+        "交付物",
+        "管道专业"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4338"
+      ],
+      "category": "GB50933"
+    },
+    {
+      "clause_id": "PI-GBT50933-6-4-1-pi1",
+      "source_type": "standard",
+      "source_id": "GB/T 50933",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "6.4.1",
+      "content": "设计文件编制 4：管道专业交付物清单应完整。",
+      "keywords": [
+        "交付物",
+        "管道专业"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4338"
+      ],
+      "category": "GB50933"
+    },
+    {
+      "clause_id": "PI-GBT50933-6-5-1-pi1",
+      "source_type": "standard",
+      "source_id": "GB/T 50933",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "6.5.1",
+      "content": "设计文件编制 5：管道专业交付物清单应完整。",
+      "keywords": [
+        "交付物",
+        "管道专业"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4338"
+      ],
+      "category": "GB50933"
+    },
+    {
+      "clause_id": "PI-GBT50933-6-6-1-pi1",
+      "source_type": "standard",
+      "source_id": "GB/T 50933",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "6.6.1",
+      "content": "设计文件编制 6：管道专业交付物清单应完整。",
+      "keywords": [
+        "交付物",
+        "管道专业"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4338"
+      ],
+      "category": "GB50933"
+    },
+    {
+      "clause_id": "PI-GBT50933-6-7-1-pi1",
+      "source_type": "standard",
+      "source_id": "GB/T 50933",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "6.7.1",
+      "content": "设计文件编制 7：管道专业交付物清单应完整。",
+      "keywords": [
+        "交付物",
+        "管道专业"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4338"
+      ],
+      "category": "GB50933"
+    },
+    {
+      "clause_id": "PI-GBT50933-6-8-1-pi1",
+      "source_type": "standard",
+      "source_id": "GB/T 50933",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "6.8.1",
+      "content": "设计文件编制 8：管道专业交付物清单应完整。",
+      "keywords": [
+        "交付物",
+        "管道专业"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4338"
+      ],
+      "category": "GB50933"
+    },
+    {
+      "clause_id": "PI-GBT50933-6-9-1-pi1",
+      "source_type": "standard",
+      "source_id": "GB/T 50933",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "6.9.1",
+      "content": "设计文件编制 9：管道专业交付物清单应完整。",
+      "keywords": [
+        "交付物",
+        "管道专业"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4338"
+      ],
+      "category": "GB50933"
+    },
+    {
+      "clause_id": "PI-GBT50933-6-10-1-pi1",
+      "source_type": "standard",
+      "source_id": "GB/T 50933",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "6.10.1",
+      "content": "设计文件编制 10：管道专业交付物清单应完整。",
+      "keywords": [
+        "交付物",
+        "管道专业"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4338"
+      ],
+      "category": "GB50933"
+    },
+    {
+      "clause_id": "PI-GBT50933-6-11-1-pi1",
+      "source_type": "standard",
+      "source_id": "GB/T 50933",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "6.11.1",
+      "content": "设计文件编制 11：管道专业交付物清单应完整。",
+      "keywords": [
+        "交付物",
+        "管道专业"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4338"
+      ],
+      "category": "GB50933"
+    },
+    {
+      "clause_id": "PI-GBT50933-6-12-1-pi1",
+      "source_type": "standard",
+      "source_id": "GB/T 50933",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "6.12.1",
+      "content": "设计文件编制 12：管道专业交付物清单应完整。",
+      "keywords": [
+        "交付物",
+        "管道专业"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4338"
+      ],
+      "category": "GB50933"
+    },
+    {
+      "clause_id": "PI-SHT3503-4-1-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3503",
+      "version": "2017",
+      "discipline": "MP",
+      "clause": "4.1.1",
+      "content": "工艺管道试压应按试压包进行，试压包应含轴测图索引。",
+      "keywords": [
+        "试压包",
+        "轴测图"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2343",
+        "MP4306"
+      ],
+      "category": "SH3503"
+    },
+    {
+      "clause_id": "PI-SHT3503-4-2-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3503",
+      "version": "2017",
+      "discipline": "MP",
+      "clause": "4.2.1",
+      "content": "管道轴测图应标注焊口、支架及阀门位置。",
+      "keywords": [
+        "轴测",
+        "焊口",
+        "支架"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2343"
+      ],
+      "category": "SH3503"
+    },
+    {
+      "clause_id": "PI-SHT3503-5-1-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3503",
+      "version": "2017",
+      "discipline": "MP",
+      "clause": "5.1.1",
+      "content": "交工资料应含管道等级表、管道表及支架记录。",
+      "keywords": [
+        "交工",
+        "支架记录"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2343",
+        "MP2358"
+      ],
+      "category": "SH3503"
+    },
+    {
+      "clause_id": "PI-SHT3503-6-1-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3503",
+      "version": "2017",
+      "discipline": "MP",
+      "clause": "6.1.1",
+      "content": "施工验收 1：ISO 图号与 Line List 应一一对应。",
+      "keywords": [
+        "ISO",
+        "Line List"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2343"
+      ],
+      "category": "SH3503"
+    },
+    {
+      "clause_id": "PI-SHT3503-6-2-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3503",
+      "version": "2017",
+      "discipline": "MP",
+      "clause": "6.2.1",
+      "content": "施工验收 2：ISO 图号与 Line List 应一一对应。",
+      "keywords": [
+        "ISO",
+        "Line List"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2343"
+      ],
+      "category": "SH3503"
+    },
+    {
+      "clause_id": "PI-SHT3503-6-3-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3503",
+      "version": "2017",
+      "discipline": "MP",
+      "clause": "6.3.1",
+      "content": "施工验收 3：ISO 图号与 Line List 应一一对应。",
+      "keywords": [
+        "ISO",
+        "Line List"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2343"
+      ],
+      "category": "SH3503"
+    },
+    {
+      "clause_id": "PI-SHT3503-6-4-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3503",
+      "version": "2017",
+      "discipline": "MP",
+      "clause": "6.4.1",
+      "content": "施工验收 4：ISO 图号与 Line List 应一一对应。",
+      "keywords": [
+        "ISO",
+        "Line List"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2343"
+      ],
+      "category": "SH3503"
+    },
+    {
+      "clause_id": "PI-SHT3503-6-5-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3503",
+      "version": "2017",
+      "discipline": "MP",
+      "clause": "6.5.1",
+      "content": "施工验收 5：ISO 图号与 Line List 应一一对应。",
+      "keywords": [
+        "ISO",
+        "Line List"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2343"
+      ],
+      "category": "SH3503"
+    },
+    {
+      "clause_id": "PI-SHT3503-6-6-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3503",
+      "version": "2017",
+      "discipline": "MP",
+      "clause": "6.6.1",
+      "content": "施工验收 6：ISO 图号与 Line List 应一一对应。",
+      "keywords": [
+        "ISO",
+        "Line List"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2343"
+      ],
+      "category": "SH3503"
+    },
+    {
+      "clause_id": "PI-SHT3503-6-7-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3503",
+      "version": "2017",
+      "discipline": "MP",
+      "clause": "6.7.1",
+      "content": "施工验收 7：ISO 图号与 Line List 应一一对应。",
+      "keywords": [
+        "ISO",
+        "Line List"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2343"
+      ],
+      "category": "SH3503"
+    },
+    {
+      "clause_id": "PI-SHT3503-6-8-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3503",
+      "version": "2017",
+      "discipline": "MP",
+      "clause": "6.8.1",
+      "content": "施工验收 8：ISO 图号与 Line List 应一一对应。",
+      "keywords": [
+        "ISO",
+        "Line List"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2343"
+      ],
+      "category": "SH3503"
+    },
+    {
+      "clause_id": "PI-SHT3503-6-9-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3503",
+      "version": "2017",
+      "discipline": "MP",
+      "clause": "6.9.1",
+      "content": "施工验收 9：ISO 图号与 Line List 应一一对应。",
+      "keywords": [
+        "ISO",
+        "Line List"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2343"
+      ],
+      "category": "SH3503"
+    },
+    {
+      "clause_id": "PI-SHT3503-6-10-1-pi1",
+      "source_type": "standard",
+      "source_id": "SH/T 3503",
+      "version": "2017",
+      "discipline": "MP",
+      "clause": "6.10.1",
+      "content": "施工验收 10：ISO 图号与 Line List 应一一对应。",
+      "keywords": [
+        "ISO",
+        "Line List"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2343"
+      ],
+      "category": "SH3503"
+    },
+    {
+      "clause_id": "PI-GB50316-4-1-1-pi1",
+      "source_type": "standard",
+      "source_id": "GB 50316",
+      "version": "2000",
+      "discipline": "MP",
+      "clause": "4.1.1",
+      "content": "工业金属管道设计应满足强度、刚度和稳定性要求。",
+      "keywords": [
+        "强度",
+        "刚度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP7737",
+        "MP8005"
+      ],
+      "category": "GB50316"
+    },
+    {
+      "clause_id": "PI-GB50316-5-1-1-pi1",
+      "source_type": "standard",
+      "source_id": "GB 50316",
+      "version": "2000",
+      "discipline": "MP",
+      "clause": "5.1.1",
+      "content": "管道布置应便于操作、检修并减少应力集中。",
+      "keywords": [
+        "布置",
+        "检修",
+        "应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4033"
+      ],
+      "category": "GB50316"
+    },
+    {
+      "clause_id": "PI-GB50316-6-1-1-pi1",
+      "source_type": "standard",
+      "source_id": "GB 50316",
+      "version": "2000",
+      "discipline": "MP",
+      "clause": "6.1.1",
+      "content": "金属管道设计 1：设计压力不应超过材料许用应力对应值。",
+      "keywords": [
+        "设计压力",
+        "许用应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "GB50316"
+    },
+    {
+      "clause_id": "PI-GB50316-6-2-1-pi1",
+      "source_type": "standard",
+      "source_id": "GB 50316",
+      "version": "2000",
+      "discipline": "MP",
+      "clause": "6.2.1",
+      "content": "金属管道设计 2：设计压力不应超过材料许用应力对应值。",
+      "keywords": [
+        "设计压力",
+        "许用应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "GB50316"
+    },
+    {
+      "clause_id": "PI-GB50316-6-3-1-pi1",
+      "source_type": "standard",
+      "source_id": "GB 50316",
+      "version": "2000",
+      "discipline": "MP",
+      "clause": "6.3.1",
+      "content": "金属管道设计 3：设计压力不应超过材料许用应力对应值。",
+      "keywords": [
+        "设计压力",
+        "许用应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "GB50316"
+    },
+    {
+      "clause_id": "PI-GB50316-6-4-1-pi1",
+      "source_type": "standard",
+      "source_id": "GB 50316",
+      "version": "2000",
+      "discipline": "MP",
+      "clause": "6.4.1",
+      "content": "金属管道设计 4：设计压力不应超过材料许用应力对应值。",
+      "keywords": [
+        "设计压力",
+        "许用应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "GB50316"
+    },
+    {
+      "clause_id": "PI-GB50316-6-5-1-pi1",
+      "source_type": "standard",
+      "source_id": "GB 50316",
+      "version": "2000",
+      "discipline": "MP",
+      "clause": "6.5.1",
+      "content": "金属管道设计 5：设计压力不应超过材料许用应力对应值。",
+      "keywords": [
+        "设计压力",
+        "许用应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "GB50316"
+    },
+    {
+      "clause_id": "PI-GB50316-6-6-1-pi1",
+      "source_type": "standard",
+      "source_id": "GB 50316",
+      "version": "2000",
+      "discipline": "MP",
+      "clause": "6.6.1",
+      "content": "金属管道设计 6：设计压力不应超过材料许用应力对应值。",
+      "keywords": [
+        "设计压力",
+        "许用应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "GB50316"
+    },
+    {
+      "clause_id": "PI-GB50316-6-7-1-pi1",
+      "source_type": "standard",
+      "source_id": "GB 50316",
+      "version": "2000",
+      "discipline": "MP",
+      "clause": "6.7.1",
+      "content": "金属管道设计 7：设计压力不应超过材料许用应力对应值。",
+      "keywords": [
+        "设计压力",
+        "许用应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "GB50316"
+    },
+    {
+      "clause_id": "PI-GB50316-6-8-1-pi1",
+      "source_type": "standard",
+      "source_id": "GB 50316",
+      "version": "2000",
+      "discipline": "MP",
+      "clause": "6.8.1",
+      "content": "金属管道设计 8：设计压力不应超过材料许用应力对应值。",
+      "keywords": [
+        "设计压力",
+        "许用应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "GB50316"
+    }
+  ]
+}

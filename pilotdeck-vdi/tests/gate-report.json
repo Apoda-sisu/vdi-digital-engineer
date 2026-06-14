@@ -1,12 +1,12 @@
 {
   "version": "2.0",
-  "timestamp": "2026-06-10T12:32:17.080Z",
+  "timestamp": "2026-06-14T03:34:36.306Z",
   "mode": "full",
   "fix_enabled": false,
   "target": null,
   "summary": {
-    "pass": 23,
-    "warn": 1,
+    "pass": 20,
+    "warn": 2,
     "fail": 0,
     "fixed": 0
   },
@@ -15,7 +15,7 @@
     {
       "id": "GOV-001",
       "status": "pass",
-      "msg": "全部 25 个 Skill frontmatter 合规 (1 个目录跳过)"
+      "msg": "全部 70 个 Skill frontmatter 合规"
     },
     {
       "id": "GOV-002",
@@ -25,32 +25,27 @@
     {
       "id": "GOV-003",
       "status": "pass",
-      "msg": "公式索引 162 条，formula_id 格式全部正确"
+      "msg": "公式索引 167 条，formula_id 格式全部正确"
     },
     {
       "id": "GOV-004:id",
       "status": "pass",
-      "msg": "全部 651 条条款 clause_id 存在"
+      "msg": "全部 1919 条条款 clause_id 存在"
     },
     {
       "id": "GOV-004:src",
       "status": "pass",
-      "msg": "全部 651 条条款 source_id 存在"
+      "msg": "全部 1919 条条款 source_id 存在"
     },
     {
       "id": "GOV-004:content",
       "status": "pass",
-      "msg": "全部 651 条条款内容字段存在"
+      "msg": "全部 1919 条条款内容字段存在"
     },
     {
       "id": "GOV-005",
       "status": "pass",
-      "msg": "discipline-codes.json 包含 17 个专业映射"
-    },
-    {
-      "id": "GOV-010",
-      "status": "pass",
-      "msg": "12 个 reports_to 引用有效"
+      "msg": "discipline-codes.json 包含 16 个专业映射"
     },
     {
       "id": "GOV-011",
@@ -58,14 +53,9 @@
       "msg": "所有 manages 引用有效"
     },
     {
-      "id": "GOV-012",
-      "status": "pass",
-      "msg": "29 个 mcp_required 引用有效"
-    },
-    {
       "id": "GOV-020",
       "status": "pass",
-      "msg": "全部 162 个索引公式在文件中存在"
+      "msg": "全部 167 个索引公式在文件中存在"
     },
     {
       "id": "GOV-021",
@@ -75,7 +65,7 @@
     {
       "id": "GOV-022",
       "status": "pass",
-      "msg": "公式统计数一致: 162"
+      "msg": "公式统计数一致: 167"
     },
     {
       "id": "GOV-023",
@@ -120,17 +110,17 @@
     {
       "id": "GOV-043",
       "status": "pass",
-      "msg": "全部 162 个公式变量定义完整"
+      "msg": "全部 168 个公式变量定义完整"
     },
     {
       "id": "GOV-044",
-      "status": "pass",
-      "msg": "全部 25 个 Skill 有触发词配置"
+      "status": "warn",
+      "msg": "6 个 Skill 缺少触发词: vdi-piping-corrosion-calc, vdi-piping-data-mgmt, vdi-piping-hydraulics"
     },
     {
       "id": "GOV-045",
       "status": "pass",
-      "msg": "全部 162 个公式有标准来源引用"
+      "msg": "全部 168 个公式有标准来源引用"
     }
   ]
 }

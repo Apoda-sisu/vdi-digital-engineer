@@ -16,61 +16,30 @@ graph TB
   classDef disc fill:#3498DB,stroke:#2980B9,color:#fff,rx:12
 
   subgraph SG_DISC["专业层"]
-    disc_MG["MG<br/>4 Skills · 0 公式"]
-    disc_PR["PR<br/>11 Skills · 0 公式"]
-    disc__system_[""system"<br/>1 Skills · 0 公式"]
-    disc_WA["WA<br/>9 Skills · 0 公式"]
-    disc_electrical["electrical<br/>0 Skills · 30 公式"]
-    disc_hse["hse<br/>0 Skills · 2 公式"]
-    disc_instrument["instrument<br/>0 Skills · 14 公式"]
-    disc_piping["piping<br/>0 Skills · 35 公式"]
-    disc_process["process<br/>0 Skills · 44 公式"]
-    disc_water["water<br/>0 Skills · 37 公式"]
+    disc_AA["AA<br/>4 Skills · 0 公式"]
+    disc_IN["IN<br/>13 Skills · 14 公式"]
+    disc_MP["MP<br/>20 Skills · 35 公式"]
+    disc_PX["PX<br/>23 Skills · 50 公式"]
+    disc_JA["JA<br/>1 Skills · 0 公式"]
+    disc_CI["CI<br/>9 Skills · 37 公式"]
+    disc_EA["EA<br/>0 Skills · 30 公式"]
+    disc_HS["HS<br/>0 Skills · 2 公式"]
   end
 
   subgraph SG_SKILLS["Skill 层"]
-    subgraph SG_SK_MG["MG"]
-      skill_vdi_design_manager["设计经理"]
-      skill_vdi_doc_export["文档导出"]
-      skill_vdi_doc_ingest["文档解读"]
-      skill_vdi_scheduler_agent["计划调度"]
-    end
-    subgraph SG_SK_PR["PR"]
-      skill_vdi_process_balance["物料热量平衡"]
-      skill_vdi_process_calc["工艺计算"]
-      skill_vdi_process_data_mgmt["工艺数据管理"]
-      skill_vdi_process_docgen["工艺文档生成"]
-      skill_vdi_process_equipment["工艺设备数据表"]
-      skill_vdi_process_lead["工艺专业负责人"]
-      skill_vdi_process_pfd_pid["PFD-PID设计"]
-      skill_vdi_process_route["工艺路线设计基础"]
-      skill_vdi_process_safety["工艺安全分析"]
-      skill_vdi_process_simulation["流程模拟"]
-      skill_vdi_process_utilities["公用工程排放"]
-    end
-    subgraph SG_SK__system_[""system""]
-      skill_vdi_system_health[""系统健康检查""]
-    end
-    subgraph SG_SK_WA["WA"]
-      skill_vdi_water_circulating["循环水系统设计"]
-      skill_vdi_water_drainage["排水系统设计"]
-      skill_vdi_water_equipment["给排水设备选型"]
-      skill_vdi_water_fire["消防给水设计"]
-      skill_vdi_water_hydraulics["给排水水力计算"]
-      skill_vdi_water_lead["给排水专业负责人"]
-      skill_vdi_water_stormwater["雨水系统设计"]
-      skill_vdi_water_supply["给水系统设计"]
-      skill_vdi_water_wastewater["污水处理设计"]
+    subgraph SG_SK_AA["AA"]
+      skill_undefined["设计经理"]
     end
   end
 
   subgraph SG_MCP["MCP 服务层"]
-    mcp_vdi_orchestrator["vdi-orchestrator<br/>11 个工具"]
-    mcp_vdi_knowledge["vdi-knowledge<br/>9 个工具"]
     mcp_documents["documents<br/>20 个工具"]
-    mcp_vdi_rules["vdi-rules<br/>4 个工具"]
-    mcp__vdi_knowledge_[""vdi-knowledge"<br/>0 个工具"]
+    mcp_vdi_cad["vdi-cad<br/>17 个工具"]
     mcp_vdi_events["vdi-events<br/>5 个工具"]
+    mcp_vdi_knowledge["vdi-knowledge<br/>9 个工具"]
+    mcp_vdi_orchestrator["vdi-orchestrator<br/>11 个工具"]
+    mcp_vdi_rules["vdi-rules<br/>5 个工具"]
+    mcp_vdi_vision["vdi-vision<br/>2 个工具"]
   end
 
   subgraph SG_EVENTS["事件总线"]
@@ -104,117 +73,150 @@ graph TB
     event_model_review_completed["model_review.completed"]
   end
 
-  skill_vdi_design_manager -->|依赖| mcp_vdi_orchestrator
-  skill_vdi_design_manager -->|依赖| mcp_vdi_knowledge
-  skill_vdi_doc_export -->|依赖| mcp_documents
-  skill_vdi_doc_ingest -->|依赖| mcp_documents
-  skill_vdi_doc_ingest -->|依赖| mcp_vdi_knowledge
-  skill_vdi_process_lead -->|依赖| mcp_vdi_orchestrator
-  skill_vdi_process_lead -->|依赖| mcp_vdi_knowledge
-  skill_vdi_process_lead -->|依赖| mcp_vdi_rules
-  skill_vdi_scheduler_agent -->|依赖| mcp_vdi_orchestrator
-  skill_vdi_scheduler_agent -->|依赖| mcp_vdi_knowledge
-  skill_vdi_system_health -->|依赖| mcp__vdi_knowledge_
-  skill_vdi_water_circulating -->|依赖| mcp_vdi_knowledge
-  skill_vdi_water_circulating -->|依赖| mcp_vdi_rules
-  skill_vdi_water_drainage -->|依赖| mcp_vdi_knowledge
-  skill_vdi_water_drainage -->|依赖| mcp_vdi_rules
-  skill_vdi_water_equipment -->|依赖| mcp_vdi_knowledge
-  skill_vdi_water_fire -->|依赖| mcp_vdi_knowledge
-  skill_vdi_water_fire -->|依赖| mcp_vdi_rules
-  skill_vdi_water_hydraulics -->|依赖| mcp_vdi_knowledge
-  skill_vdi_water_lead -->|依赖| mcp_vdi_orchestrator
-  skill_vdi_water_lead -->|依赖| mcp_vdi_knowledge
-  skill_vdi_water_lead -->|依赖| mcp_vdi_rules
-  skill_vdi_water_stormwater -->|依赖| mcp_vdi_knowledge
-  skill_vdi_water_stormwater -->|依赖| mcp_vdi_rules
-  skill_vdi_water_supply -->|依赖| mcp_vdi_knowledge
-  skill_vdi_water_supply -->|依赖| mcp_vdi_rules
-  skill_vdi_water_wastewater -->|依赖| mcp_vdi_knowledge
-  skill_vdi_water_wastewater -->|依赖| mcp_vdi_rules
-  skill_vdi_process_lead -.->|管理| skill_vdi_process_route
-  skill_vdi_process_lead -.->|管理| skill_vdi_process_balance
-  skill_vdi_process_lead -.->|管理| skill_vdi_process_pfd_pid
-  skill_vdi_process_lead -.->|管理| skill_vdi_process_equipment
-  skill_vdi_process_lead -.->|管理| skill_vdi_process_safety
-  skill_vdi_process_lead -.->|管理| skill_vdi_process_utilities
-  skill_vdi_water_lead -.->|管理| skill_vdi_water_supply
-  skill_vdi_water_lead -.->|管理| skill_vdi_water_fire
-  skill_vdi_water_lead -.->|管理| skill_vdi_water_drainage
-  skill_vdi_water_lead -.->|管理| skill_vdi_water_stormwater
-  skill_vdi_water_lead -.->|管理| skill_vdi_water_wastewater
-  skill_vdi_water_lead -.->|管理| skill_vdi_water_circulating
-  skill_vdi_process_balance -.->|汇报| skill_vdi_process_lead
-  skill_vdi_process_equipment -.->|汇报| skill_vdi_process_lead
-  skill_vdi_process_pfd_pid -.->|汇报| skill_vdi_process_lead
-  skill_vdi_process_route -.->|汇报| skill_vdi_process_lead
-  skill_vdi_process_safety -.->|汇报| skill_vdi_process_lead
-  skill_vdi_process_utilities -.->|汇报| skill_vdi_process_lead
-  skill_vdi_water_circulating -.->|汇报| skill_vdi_water_lead
-  skill_vdi_water_drainage -.->|汇报| skill_vdi_water_lead
-  skill_vdi_water_fire -.->|汇报| skill_vdi_water_lead
-  skill_vdi_water_stormwater -.->|汇报| skill_vdi_water_lead
-  skill_vdi_water_supply -.->|汇报| skill_vdi_water_lead
-  skill_vdi_water_wastewater -.->|汇报| skill_vdi_water_lead
-  skill_vdi_design_manager -->|专业| disc_MG
-  skill_vdi_doc_export -->|专业| disc_MG
-  skill_vdi_doc_ingest -->|专业| disc_MG
-  skill_vdi_process_balance -->|专业| disc_PR
-  skill_vdi_process_calc -->|专业| disc_PR
-  skill_vdi_process_data_mgmt -->|专业| disc_PR
-  skill_vdi_process_docgen -->|专业| disc_PR
-  skill_vdi_process_equipment -->|专业| disc_PR
-  skill_vdi_process_lead -->|专业| disc_PR
-  skill_vdi_process_pfd_pid -->|专业| disc_PR
-  skill_vdi_process_route -->|专业| disc_PR
-  skill_vdi_process_safety -->|专业| disc_PR
-  skill_vdi_process_simulation -->|专业| disc_PR
-  skill_vdi_process_utilities -->|专业| disc_PR
-  skill_vdi_scheduler_agent -->|专业| disc_MG
-  skill_vdi_system_health -->|专业| disc__system_
-  skill_vdi_water_circulating -->|专业| disc_WA
-  skill_vdi_water_drainage -->|专业| disc_WA
-  skill_vdi_water_equipment -->|专业| disc_WA
-  skill_vdi_water_fire -->|专业| disc_WA
-  skill_vdi_water_hydraulics -->|专业| disc_WA
-  skill_vdi_water_lead -->|专业| disc_WA
-  skill_vdi_water_stormwater -->|专业| disc_WA
-  skill_vdi_water_supply -->|专业| disc_WA
-  skill_vdi_water_wastewater -->|专业| disc_WA
-  disc_PR ==>|发布| event_design_basis_updated
-  disc_WA ==>|发布| event_design_basis_acknowledged
-  disc_WA ==>|发布| event_condition_changed
-  disc_WA ==>|发布| event_water_condition_updated
-  disc_MG ==>|发布| event_milestone_at_risk
-  disc_MG ==>|发布| event_milestone_achieved
-  disc_MG ==>|发布| event_human_data_supplied
-  disc_MG ==>|发布| event_human_review_resolved
-  disc_WA ==>|消费| event_design_basis_updated
-  disc_PR ==>|消费| event_design_basis_acknowledged
-  disc_WA ==>|消费| event_piping_layout_updated
-  disc_WA ==>|消费| event_structural_condition_updated
-  disc_WA ==>|消费| event_equipment_data_updated
-  disc_WA ==>|消费| event_fire_condition_updated
-  disc_WA ==>|消费| event_hvac_condition_updated
-  disc_MG ==>|消费| event_review_gate_passed
-  disc_MG ==>|消费| event_review_gate_failed
-  disc_MG ==>|消费| event_task_status_changed
-  disc_MG ==>|消费| event_milestone_at_risk
-  disc_MG ==>|消费| event_milestone_achieved
-  disc_MG ==>|消费| event_human_data_requested
-  disc_MG ==>|消费| event_human_review_requested
-  disc_WA ==>|消费| event_model_review_scheduled
-  disc_MG ==>|消费| event_model_review_completed
+  skill_undefined -->|专业| disc_AA
+  skill_undefined -->|专业| disc_AA
+  skill_undefined -->|专业| disc_AA
+  skill_undefined -->|专业| disc_IN
+  skill_undefined -->|专业| disc_IN
+  skill_undefined -->|专业| disc_IN
+  skill_undefined -->|专业| disc_IN
+  skill_undefined -->|专业| disc_IN
+  skill_undefined -->|专业| disc_IN
+  skill_undefined -->|专业| disc_IN
+  skill_undefined -->|专业| disc_IN
+  skill_undefined -->|专业| disc_IN
+  skill_undefined -->|专业| disc_IN
+  skill_undefined -->|专业| disc_IN
+  skill_undefined -->|专业| disc_IN
+  skill_undefined -->|专业| disc_IN
+  skill_undefined -->|专业| disc_MP
+  skill_undefined -->|专业| disc_MP
+  skill_undefined -->|专业| disc_MP
+  skill_undefined -->|专业| disc_MP
+  skill_undefined -->|专业| disc_MP
+  skill_undefined -->|专业| disc_MP
+  skill_undefined -->|专业| disc_MP
+  skill_undefined -->|专业| disc_MP
+  skill_undefined -->|专业| disc_MP
+  skill_undefined -->|专业| disc_MP
+  skill_undefined -->|专业| disc_MP
+  skill_undefined -->|专业| disc_MP
+  skill_undefined -->|专业| disc_MP
+  skill_undefined -->|专业| disc_MP
+  skill_undefined -->|专业| disc_MP
+  skill_undefined -->|专业| disc_MP
+  skill_undefined -->|专业| disc_MP
+  skill_undefined -->|专业| disc_MP
+  skill_undefined -->|专业| disc_MP
+  skill_undefined -->|专业| disc_MP
+  skill_undefined -->|专业| disc_PX
+  skill_undefined -->|专业| disc_PX
+  skill_undefined -->|专业| disc_PX
+  skill_undefined -->|专业| disc_PX
+  skill_undefined -->|专业| disc_PX
+  skill_undefined -->|专业| disc_PX
+  skill_undefined -->|专业| disc_PX
+  skill_undefined -->|专业| disc_PX
+  skill_undefined -->|专业| disc_PX
+  skill_undefined -->|专业| disc_PX
+  skill_undefined -->|专业| disc_PX
+  skill_undefined -->|专业| disc_PX
+  skill_undefined -->|专业| disc_PX
+  skill_undefined -->|专业| disc_PX
+  skill_undefined -->|专业| disc_PX
+  skill_undefined -->|专业| disc_PX
+  skill_undefined -->|专业| disc_PX
+  skill_undefined -->|专业| disc_PX
+  skill_undefined -->|专业| disc_PX
+  skill_undefined -->|专业| disc_PX
+  skill_undefined -->|专业| disc_PX
+  skill_undefined -->|专业| disc_PX
+  skill_undefined -->|专业| disc_PX
+  skill_undefined -->|专业| disc_AA
+  skill_undefined -->|专业| disc_JA
+  skill_undefined -->|专业| disc_CI
+  skill_undefined -->|专业| disc_CI
+  skill_undefined -->|专业| disc_CI
+  skill_undefined -->|专业| disc_CI
+  skill_undefined -->|专业| disc_CI
+  skill_undefined -->|专业| disc_CI
+  skill_undefined -->|专业| disc_CI
+  skill_undefined -->|专业| disc_CI
+  skill_undefined -->|专业| disc_CI
+  disc_PX ==>|发布| event_design_basis_updated
+  disc_JA ==>|发布| event_design_basis_updated
+  disc_MP ==>|发布| event_design_basis_acknowledged
+  disc_IN ==>|发布| event_design_basis_acknowledged
+  disc_CI ==>|发布| event_design_basis_acknowledged
+  disc_HS ==>|发布| event_design_basis_acknowledged
+  disc_EA ==>|发布| event_design_basis_acknowledged
+  disc_EA ==>|发布| event_condition_changed
+  disc_CI ==>|发布| event_condition_changed
+  disc_MP ==>|发布| event_piping_layout_updated
+  disc_IN ==>|发布| event_instrument_location_updated
+  disc_EA ==>|发布| event_electrical_layout_updated
+  disc_CI ==>|发布| event_water_condition_updated
+  disc_AA ==>|发布| event_milestone_at_risk
+  disc_AA ==>|发布| event_milestone_achieved
+  disc_AA ==>|发布| event_human_data_supplied
+  disc_AA ==>|发布| event_human_review_resolved
+  disc_IN ==>|发布| event_procurement_requested
+  disc_MP ==>|发布| event_model_review_scheduled
+  disc_MP ==>|发布| event_model_review_completed
+  disc_MP ==>|消费| event_design_basis_updated
+  disc_IN ==>|消费| event_design_basis_updated
+  disc_CI ==>|消费| event_design_basis_updated
+  disc_HS ==>|消费| event_design_basis_updated
+  disc_EA ==>|消费| event_design_basis_updated
+  disc_PX ==>|消费| event_design_basis_acknowledged
+  disc_JA ==>|消费| event_design_basis_acknowledged
+  disc_IN ==>|消费| event_piping_layout_updated
+  disc_EA ==>|消费| event_piping_layout_updated
+  disc_CI ==>|消费| event_piping_layout_updated
+  disc_MP ==>|消费| event_instrument_location_updated
+  disc_EA ==>|消费| event_instrument_location_updated
+  disc_MP ==>|消费| event_electrical_layout_updated
+  disc_IN ==>|消费| event_electrical_layout_updated
+  disc_MP ==>|消费| event_structural_condition_updated
+  disc_IN ==>|消费| event_structural_condition_updated
+  disc_CI ==>|消费| event_structural_condition_updated
+  disc_MP ==>|消费| event_equipment_data_updated
+  disc_IN ==>|消费| event_equipment_data_updated
+  disc_CI ==>|消费| event_equipment_data_updated
+  disc_EA ==>|消费| event_water_condition_updated
+  disc_MP ==>|消费| event_water_condition_updated
+  disc_IN ==>|消费| event_water_condition_updated
+  disc_CI ==>|消费| event_fire_condition_updated
+  disc_EA ==>|消费| event_fire_condition_updated
+  disc_MP ==>|消费| event_fire_condition_updated
+  disc_CI ==>|消费| event_hvac_condition_updated
+  disc_EA ==>|消费| event_hvac_condition_updated
+  disc_MP ==>|消费| event_hvac_condition_updated
+  disc_MP ==>|消费| event_material_data_updated
+  disc_IN ==>|消费| event_material_data_updated
+  disc_MP ==>|消费| event_stress_analysis_completed
+  disc_AA ==>|消费| event_review_gate_passed
+  disc_AA ==>|消费| event_review_gate_failed
+  disc_AA ==>|消费| event_task_status_changed
+  disc_AA ==>|消费| event_milestone_at_risk
+  disc_AA ==>|消费| event_milestone_achieved
+  disc_AA ==>|消费| event_human_data_requested
+  disc_AA ==>|消费| event_human_review_requested
+  disc_IN ==>|消费| event_procurement_acknowledged
+  disc_IN ==>|消费| event_model_review_scheduled
+  disc_EA ==>|消费| event_model_review_scheduled
+  disc_CI ==>|消费| event_model_review_scheduled
+  disc_AA ==>|消费| event_model_review_completed
 
-  class skill_vdi_design_manager,skill_vdi_doc_export,skill_vdi_doc_ingest,skill_vdi_process_balance,skill_vdi_process_calc,skill_vdi_process_data_mgmt,skill_vdi_process_docgen,skill_vdi_process_equipment,skill_vdi_process_lead,skill_vdi_process_pfd_pid skill
-  class skill_vdi_process_route,skill_vdi_process_safety,skill_vdi_process_simulation,skill_vdi_process_utilities,skill_vdi_scheduler_agent,skill_vdi_system_health,skill_vdi_water_circulating,skill_vdi_water_drainage,skill_vdi_water_equipment,skill_vdi_water_fire skill
-  class skill_vdi_water_hydraulics,skill_vdi_water_lead,skill_vdi_water_stormwater,skill_vdi_water_supply,skill_vdi_water_wastewater skill
-  class mcp_vdi_orchestrator,mcp_vdi_knowledge,mcp_documents,mcp_vdi_rules,mcp__vdi_knowledge_,mcp_vdi_events mcp
+  class skill_undefined skill
+  class mcp_documents,mcp_vdi_cad,mcp_vdi_events,mcp_vdi_knowledge,mcp_vdi_orchestrator,mcp_vdi_rules,mcp_vdi_vision mcp
   class tool_content_read,tool_content_write,tool_content_append,tool_content_insert,tool_content_replace,tool_compose_docx,tool_compose_pdf,tool_compose_from_markdown,tool_structured_get,tool_structured_set tool
   class tool_structured_delete,tool_structured_meta,tool_search_in_format,tool_file_create,tool_file_delete,tool_file_copy,tool_file_move,tool_version_list,tool_version_diff,tool_version_restore tool
-  class tool_vdi_publish_event,tool_vdi_consume_pending,tool_vdi_ack_event,tool_vdi_get_event_status,tool_vdi_list_subscribers,tool_vdi_search_knowledge,tool_vdi_get_citation,tool_vdi_search_by_entity,tool_vdi_resolve_cross_refs,tool_vdi_list_standards tool
-  class tool_vdi_search_formulas,tool_vdi_get_formula,tool_vdi_calculate,tool_vdi_calculate_composite,tool_vdi_create_task_package,tool_vdi_decompose_tasks,tool_vdi_dispatch_task,tool_vdi_check_milestone,tool_vdi_get_dependency_graph,tool_vdi_trigger_alert tool
-  class tool_vdi_update_task_status,tool_vdi_request_human_review,tool_vdi_resolve_human_review,tool_vdi_check_stale_tasks,tool_vdi_attempt_recovery,tool_vdi_check_redlines,tool_vdi_validate_discipline_output,tool_vdi_check_data_completeness,tool_vdi_check_review_gate tool
+  class tool_vdi_cad_generate,tool_vdi_cad_status,tool_vdi_cad_export,tool_vdi_cad_screenshot,tool_vdi_cad_execute,tool_vdi_cad_extract_model,tool_vdi_cad_apply_delta,tool_vdi_cad_load_plant_model,tool_vdi_cad_validate_plant_model,tool_vdi_cad_export_object_list tool
+  class tool_vdi_cad_export_dexpi,tool_vdi_cad_export_cfihos,tool_vdi_cad_apply_plant_delta,tool_vdi_cad_get_object,tool_vdi_cad_get_drawing_manifest,tool_vdi_cad_resolve_pick,tool_vdi_cad_regenerate_drawing,tool_vdi_publish_event,tool_vdi_consume_pending,tool_vdi_ack_event tool
+  class tool_vdi_get_event_status,tool_vdi_list_subscribers,tool_vdi_search_knowledge,tool_vdi_get_citation,tool_vdi_search_by_entity,tool_vdi_resolve_cross_refs,tool_vdi_list_standards,tool_vdi_search_formulas,tool_vdi_get_formula,tool_vdi_calculate tool
+  class tool_vdi_calculate_composite,tool_vdi_create_task_package,tool_vdi_decompose_tasks,tool_vdi_dispatch_task,tool_vdi_check_milestone,tool_vdi_get_dependency_graph,tool_vdi_trigger_alert,tool_vdi_update_task_status,tool_vdi_request_human_review,tool_vdi_resolve_human_review tool
+  class tool_vdi_check_stale_tasks,tool_vdi_attempt_recovery,tool_vdi_check_redlines,tool_vdi_validate_discipline_output,tool_vdi_check_data_completeness,tool_vdi_check_review_gate,tool_vdi_validate_plant_model,tool_vdi_analyze_image,tool_vdi_vision_status tool
   class formula_EL_CAB_001,formula_EL_CAB_002,formula_EL_CAB_003,formula_EL_CAB_004,formula_EL_CAB_005,formula_EL_CAB_006,formula_EL_LIG_001,formula_EL_LIG_002,formula_EL_LIG_003,formula_EL_LIG_004 formula
   class formula_EL_LIG_005,formula_EL_LOAD_001,formula_EL_LOAD_002,formula_EL_LOAD_003,formula_EL_LOAD_004,formula_EL_LOAD_005,formula_EL_LOAD_006,formula_EL_LOAD_007,formula_EL_LOAD_008,formula_EL_LOAD_009 formula
   class formula_EL_LOAD_010,formula_EL_POW_001,formula_EL_VOL_001,formula_EL_POW_002,formula_EL_PRO_001,formula_EL_PRO_002,formula_EL_PRO_003,formula_EL_PRO_004,formula_EL_PRO_005,formula_EL_PRO_006 formula
@@ -223,22 +225,22 @@ graph TB
   class formula_PI_FLOW_001,formula_PI_FLOW_002,formula_PI_FLOW_003,formula_PI_FLOW_004,formula_PI_FLOW_005,formula_PI_FLOW_006,formula_PI_FLOW_007,formula_PI_FLOW_008,formula_PI_FLOW_009,formula_PI_FLOW_010 formula
   class formula_PI_VOL_002,formula_PI_VOL_003,formula_PI_VEL_002,formula_PI_VEL_003,formula_PI_VEL_004,formula_PI_VEL_005,formula_PI_VEL_006,formula_PI_VEL_007,formula_PI_STR_001,formula_PI_VOL_001 formula
   class formula_PI_VEL_001,formula_PI_STR_002,formula_PI_STR_003,formula_PI_STR_004,formula_PI_STR_005,formula_PI_STR_006,formula_PI_STR_007,formula_PI_VIB_001,formula_PI_VIB_002,formula_PI_VIB_003 formula
-  class formula_PI_VIB_004,formula_PR_CAT_001,formula_PR_CAT_002,formula_PR_CAT_003,formula_PR_CAT_004,formula_PR_CAT_005,formula_PR_CAT_006,formula_PR_FLO_002,formula_PR_FLO_003,formula_PR_FLO_004 formula
-  class formula_PR_FLO_005,formula_PR_FLO_006,formula_PR_FLO_007,formula_PR_FLO_008,formula_PR_FLO_009,formula_PR_HEA_002,formula_PR_HEA_003,formula_PR_HEA_004,formula_PR_HEA_005,formula_PR_HEA_006 formula
-  class formula_PR_HEA_007,formula_PR_HEA_008,formula_PR_HEA_009,formula_PR_REA_001,formula_PR_REA_002,formula_PR_FLO_001,formula_PR_HEA_001,formula_PR_RCT_001,formula_PR_RCT_002,formula_PR_RCT_003 formula
-  class formula_PR_RCT_004,formula_PR_RCT_005,formula_PR_RCT_006,formula_PR_SEP_001,formula_PR_SEP_002,formula_PR_SEP_003,formula_PR_SEP_004,formula_PR_SEP_005,formula_PR_SEP_006,formula_PR_REA_003 formula
-  class formula_PR_REA_004,formula_PR_REA_005,formula_PR_VAP_001,formula_PR_VAP_002,formula_PR_VAP_003,formula_WA_EQ_001,formula_WA_EQ_002,formula_WA_EQ_003,formula_WA_EQ_004,formula_WA_EQ_005 formula
-  class formula_WA_EQ_006,formula_WA_EQ_007,formula_WA_FIR_001,formula_WA_FIR_002,formula_WA_FIR_003,formula_WA_FIR_004,formula_WA_FIR_005,formula_WA_FIR_006,formula_WA_HYD_001,formula_WA_HYD_002 formula
-  class formula_WA_HYD_003,formula_WA_HYD_004,formula_WA_HYD_005,formula_WA_HYD_006,formula_WA_HYD_007,formula_WA_HYD_008,formula_WA_HYD_009,formula_WA_HYD_010,formula_WA_HYD_011,formula_WA_HYD_012 formula
-  class formula_WA_HYD_013,formula_WA_HYD_014,formula_WA_HYD_015,formula_WA_HYD_016,formula_WA_HYD_017,formula_WA_HYD_018,formula_WA_HYD_019,formula_WA_HYD_020,formula_WA_RAI_001,formula_WA_RAI_002 formula
-  class formula_WA_RAI_003,formula_WA_WQ_001 formula
+  class formula_PI_VIB_004,formula_PR_CAT_001,formula_PR_CAT_002,formula_PR_CAT_003,formula_PR_CAT_004,formula_PR_CAT_005,formula_PR_CAT_006,formula_PR_COL_001,formula_PR_HEA_001,formula_PR_FLO_002 formula
+  class formula_PR_FLO_003,formula_PR_FLO_004,formula_PR_FLO_005,formula_PR_FLO_006,formula_PR_FLO_007,formula_PR_FLO_008,formula_PR_FLO_009,formula_PR_HEA_002,formula_PR_HEA_003,formula_PR_HEA_004 formula
+  class formula_PR_HEA_005,formula_PR_HEA_006,formula_PR_HEA_007,formula_PR_HEA_008,formula_PR_HEA_009,formula_PR_PSV_001,formula_PR_PSV_002,formula_PR_PSV_003,formula_PR_PMP_001,formula_PR_REA_001 formula
+  class formula_PR_REA_002,formula_PR_FLO_001,formula_PR_RCT_001,formula_PR_RCT_002,formula_PR_RCT_003,formula_PR_RCT_004,formula_PR_RCT_005,formula_PR_RCT_006,formula_PR_SEP_001,formula_PR_SEP_002 formula
+  class formula_PR_SEP_003,formula_PR_SEP_004,formula_PR_SEP_005,formula_PR_SEP_006,formula_PR_REA_003,formula_PR_REA_004,formula_PR_REA_005,formula_PR_VAP_001,formula_PR_VAP_002,formula_PR_VAP_003 formula
+  class formula_WA_EQ_001,formula_WA_EQ_002,formula_WA_EQ_003,formula_WA_EQ_004,formula_WA_EQ_005,formula_WA_EQ_006,formula_WA_EQ_007,formula_WA_FIR_001,formula_WA_FIR_002,formula_WA_FIR_003 formula
+  class formula_WA_FIR_004,formula_WA_FIR_005,formula_WA_FIR_006,formula_WA_HYD_001,formula_WA_HYD_002,formula_WA_HYD_003,formula_WA_HYD_004,formula_WA_HYD_005,formula_WA_HYD_006,formula_WA_HYD_007 formula
+  class formula_WA_HYD_008,formula_WA_HYD_009,formula_WA_HYD_010,formula_WA_HYD_011,formula_WA_HYD_012,formula_WA_HYD_013,formula_WA_HYD_014,formula_WA_HYD_015,formula_WA_HYD_016,formula_WA_HYD_017 formula
+  class formula_WA_HYD_018,formula_WA_HYD_019,formula_WA_HYD_020,formula_WA_RAI_001,formula_WA_RAI_002,formula_WA_RAI_003,formula_WA_WQ_001 formula
   class table__object_Object_,table_TBL_C_001,table_TBL_N_001,table_TBL_PSI_001,table_TBL_NU_001,table_TBL_K_001,table_TBL_ROUGH_001,table_TBL_HV_001,table_TBL_SPK_001,table_TBL_SPK_002 table
   class table_TBL_ALPHA_001,table_TBL_ROUGH_PIPING_001,table_TBL_K_PIPING_001,table_TBL_EL_CABLE_001,table_TBL_EL_THERMAL_001,table_TBL_EL_ILLUM_001,table_TBL_EL_PROTECTION_001,table_TBL_EL_CABLE_RESISTANCE_001,table_TBL_EL_FAULT_001,table_TBL_EL_CORROSION_001 table
   class table_TBL_EL_MOTOR_001,table_TBL_EL_CABLE_TEMP_001,table_TBL_EL_GROUNDING_001,table_TBL_EL_CABLE_INSTALL_001,table_TBL_EL_CABLE_SOIL_001,table_TBL_EL_ILLUM_MAINT_001,table_TBL_EL_LIGHTING_001 table
   class event_design_basis_updated,event_design_basis_acknowledged,event_discipline_output_submitted,event_discipline_output_published,event_condition_changed,event_piping_layout_updated,event_instrument_location_updated,event_electrical_layout_updated,event_structural_condition_updated,event_equipment_data_updated event
   class event_water_condition_updated,event_fire_condition_updated,event_hvac_condition_updated,event_material_data_updated,event_stress_analysis_completed,event_review_gate_passed,event_review_gate_failed,event_task_status_changed,event_milestone_at_risk,event_milestone_achieved event
   class event_human_data_requested,event_human_data_supplied,event_human_review_requested,event_human_review_resolved,event_procurement_requested,event_procurement_acknowledged,event_model_review_scheduled,event_model_review_completed event
-  class disc_MG,disc_PR,disc__system_,disc_WA,disc_electrical,disc_hse,disc_instrument,disc_piping,disc_process,disc_water discipline
+  class disc_AA,disc_IN,disc_MP,disc_PX,disc_JA,disc_CI,disc_EA,disc_HS discipline
 
-  %% Generated: 2026-06-08T05:28:44.182Z
-  %% Nodes: 307 | Edges: 365
+  %% Generated: 2026-06-14T03:34:04.568Z
+  %% Nodes: 307 | Edges: 424

@@ -1,0 +1,188 @@
+{
+  "manifest_version": 1,
+  "created_at": "2026-06-11",
+  "discipline": "process",
+  "baseline_clauses": 40,
+  "current_clauses": 480,
+  "targets": {
+    "phase1": {
+      "deadline": "2026-06-25",
+      "clause_count": 200
+    },
+    "phase2": {
+      "deadline": "2026-07-23",
+      "clause_count": 450
+    },
+    "phase3": {
+      "deadline": "2026-08-20",
+      "clause_count": 800,
+      "progress": 30
+    }
+  },
+  "standards": [
+    {
+      "priority": "P0",
+      "source_id": "GB/T 50933-2013",
+      "title": "石油化工装置设计文件编制标准",
+      "chapters": [
+        "4",
+        "5.3",
+        "6.2",
+        "附录A"
+      ],
+      "target_clauses": 40,
+      "skill_tags": [
+        "PX2111",
+        "PR0L"
+      ],
+      "status": "seed_in_progress",
+      "notes": "交付物清单与深度是 Skill 边界依据"
+    },
+    {
+      "priority": "P0",
+      "source_id": "SH/T 3121-2022",
+      "title": "石油化工装置工艺设计规范",
+      "chapters": [
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "target_clauses": 80,
+      "skill_tags": [
+        "PX0980",
+        "PX3342",
+        "PX2366",
+        "PX2365"
+      ],
+      "status": "seed_in_progress"
+    },
+    {
+      "priority": "P0",
+      "source_id": "HG/T 20570-2015",
+      "title": "工艺系统工程设计技术规范",
+      "chapters": [
+        "all"
+      ],
+      "target_clauses": 60,
+      "skill_tags": [
+        "PR-S01",
+        "PX3363",
+        "PX8248"
+      ],
+      "status": "pending"
+    },
+    {
+      "priority": "P0",
+      "source_id": "SHSG-052-2003",
+      "title": "石油化工装置工艺包（成套技术）内容规定",
+      "chapters": [
+        "all"
+      ],
+      "target_clauses": 30,
+      "skill_tags": [
+        "PX2111"
+      ],
+      "status": "seed_in_progress"
+    },
+    {
+      "priority": "P1",
+      "source_id": "HG 20557.1-1993",
+      "title": "工艺系统专业的职责范围与工程设计阶段的任务",
+      "target_clauses": 15,
+      "skill_tags": [
+        "PR-S01",
+        "PX3363",
+        "PX0504"
+      ],
+      "status": "seed_in_progress"
+    },
+    {
+      "priority": "P1",
+      "source_id": "SH/T 3011-2017",
+      "title": "石油化工企业工艺装置设计规范",
+      "target_clauses": 20,
+      "skill_tags": [
+        "PX2366"
+      ],
+      "status": "pending"
+    },
+    {
+      "priority": "P1",
+      "source_id": "API RP 520",
+      "title": "Sizing and Selection of Pressure-Relieving Devices",
+      "target_clauses": 25,
+      "skill_tags": [
+        "PX0504",
+        "PR-T07"
+      ],
+      "status": "pending"
+    },
+    {
+      "priority": "P1",
+      "source_id": "API RP 521",
+      "title": "Pressure-Relieving and Depressuring Systems",
+      "target_clauses": 15,
+      "skill_tags": [
+        "PX0504",
+        "PR-X01"
+      ],
+      "status": "pending"
+    },
+    {
+      "priority": "P1",
+      "source_id": "IEC 61511",
+      "title": "Functional safety - Safety instrumented systems",
+      "target_clauses": 30,
+      "skill_tags": [
+        "PR-X01",
+        "PX8248"
+      ],
+      "status": "pending"
+    },
+    {
+      "priority": "P2",
+      "source_id": "GB/T 50483-2019",
+      "title": "化工建设项目环境保护设计规范",
+      "target_clauses": 20,
+      "skill_tags": [
+        "hs"
+      ],
+      "status": "pending",
+      "notes": "三废从 PR-S04 剥离后归 HSE"
+    }
+  ],
+  "skill_clause_minimums": {
+    "PX2111": 30,
+    "PX0980": 25,
+    "PX3342": 20,
+    "PX2366": 25,
+    "PX2365": 20,
+    "PR-S01": 40,
+    "PX3363": 20,
+    "PX0504": 30,
+    "PR-S04": 15,
+    "PX8248": 20,
+    "PR-X01": 35,
+    "PR-X02": 10
+  },
+  "retrieval_regression_queries": [
+    "SH/T 3121 工艺设计基本原则",
+    "工艺包应包括哪些设计文件",
+    "PFD 和 P&ID 的设计深度区别",
+    "工艺系统专业在 P&ID 中的职责",
+    "安全阀选型依据 API 520",
+    "物料平衡表编制要求",
+    "公用工程消耗汇总表内容",
+    "HAZOP 分析对 P&ID 的要求",
+    "控制哲学应包含哪些内容",
+    "工艺设备数据表必填字段",
+    "API RP 521 火炬同时泄放",
+    "IEC 61511 SIL 联锁",
+    "工艺包 取样点汇总表"
+  ]
+}

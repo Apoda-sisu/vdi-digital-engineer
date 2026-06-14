@@ -1,6 +1,7 @@
-# ===========================
-# 不上传的项目文档与备份
-# ===========================
+# 门禁：禁止根目录 skills/ 与 vdi-*-workspace/（canonical 在 workspaces/）
+/skills/
+/vdi-*-workspace/
+
 docs/
 backup*/
 workspaces/
@@ -76,3 +77,6 @@ pilotdeck-vdi/collector/
 # Docker 挂载卷（运行时生成）
 # ===========================
 pilotdeck-vdi/data/evaluation-report.json
+pilotdeck-vdi/tests/health-report-*.json
+pilotdeck-vdi/tests/integration-test-report.json
+pilotdeck-vdi/tests/module-matching-report.json

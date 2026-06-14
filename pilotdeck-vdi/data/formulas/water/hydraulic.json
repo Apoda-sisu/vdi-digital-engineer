@@ -1,14 +1,15 @@
 {
   "file": "water/hydraulic.json",
-  "discipline": "water",
+  "discipline": "CI",
   "category": "hydraulic",
   "formula_count": 20,
   "formulas": [
     {
       "formula_id": "WA-HYD-001",
+      "vdi_formula_id": "WA-HYD-001",
       "name": "海曾-威廉姆斯沿程水头损失",
       "name_en": "Hazen-Williams Friction Loss",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "hydraulic/pipe_friction",
       "type": "exact",
       "equation_text": "Hf = 10.67 * L * Q^1.852 / (C^1.852 * D^4.87)",
@@ -16,40 +17,165 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"const": 10.67},
-          {"var": "L"},
-          {"op": "div",
-            "num": {"op": "pow", "base": {"var": "Q"}, "exp": 1.852},
-            "den": {"op": "mul", "args": [
-              {"op": "pow", "base": {"var": "C"}, "exp": 1.852},
-              {"op": "pow", "base": {"var": "D"}, "exp": 4.87}
-            ]}
+          {
+            "const": 10.67
+          },
+          {
+            "var": "L"
+          },
+          {
+            "op": "div",
+            "num": {
+              "op": "pow",
+              "base": {
+                "var": "Q"
+              },
+              "exp": 1.852
+            },
+            "den": {
+              "op": "mul",
+              "args": [
+                {
+                  "op": "pow",
+                  "base": {
+                    "var": "C"
+                  },
+                  "exp": 1.852
+                },
+                {
+                  "op": "pow",
+                  "base": {
+                    "var": "D"
+                  },
+                  "exp": 4.87
+                }
+              ]
+            }
           }
         ]
       },
       "variables": [
-        {"symbol": "Hf", "name": "沿程水头损失", "unit": "m", "role": "output", "desc": "管道沿程摩擦损失的水头"},
-        {"symbol": "L", "name": "管道长度", "unit": "m", "role": "input", "constraints": {"min": 0, "exclusive_min": true}, "desc": "计算管段的长度"},
-        {"symbol": "Q", "name": "流量", "unit": "m3/s", "role": "input", "constraints": {"min": 0, "exclusive_min": true}, "desc": "管道内流量",
-          "alt_units": [{"unit": "L/s", "factor": 0.001}, {"unit": "m3/h", "factor": 0.000278}]},
-        {"symbol": "C", "name": "海曾-威廉姆斯系数", "unit": "-", "role": "input", "desc": "管材粗糙系数",
-          "look_up": {"type": "material_property", "table_ref": "TBL-C-001", "default": 130}},
-        {"symbol": "D", "name": "管径", "unit": "m", "role": "input", "constraints": {"min": 0.01, "max": 3.0}, "desc": "管道内径",
-          "alt_units": [{"unit": "mm", "factor": 0.001}]}
+        {
+          "symbol": "Hf",
+          "name": "沿程水头损失",
+          "unit": "m",
+          "role": "output",
+          "desc": "管道沿程摩擦损失的水头"
+        },
+        {
+          "symbol": "L",
+          "name": "管道长度",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0,
+            "exclusive_min": true
+          },
+          "desc": "计算管段的长度"
+        },
+        {
+          "symbol": "Q",
+          "name": "流量",
+          "unit": "m3/s",
+          "role": "input",
+          "constraints": {
+            "min": 0,
+            "exclusive_min": true
+          },
+          "desc": "管道内流量",
+          "alt_units": [
+            {
+              "unit": "L/s",
+              "factor": 0.001
+            },
+            {
+              "unit": "m3/h",
+              "factor": 0.000278
+            }
+          ]
+        },
+        {
+          "symbol": "C",
+          "name": "海曾-威廉姆斯系数",
+          "unit": "-",
+          "role": "input",
+          "desc": "管材粗糙系数",
+          "look_up": {
+            "type": "material_property",
+            "table_ref": "TBL-C-001",
+            "default": 130
+          }
+        },
+        {
+          "symbol": "D",
+          "name": "管径",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.01,
+            "max": 3
+          },
+          "desc": "管道内径",
+          "alt_units": [
+            {
+              "unit": "mm",
+              "factor": 0.001
+            }
+          ]
+        }
       ],
-      "source": {"standard_id": "GB 50013-2018", "clause": "7.1.3", "note": "室外给水设计标准水力计算章节"},
+      "source": {
+        "standard_id": "GB 50013-2018",
+        "clause": "7.1.3",
+        "note": "室外给水设计标准水力计算章节"
+      },
       "applicable_scope": {
-        "pipe_types": ["给水管道", "压力管道"],
-        "flow_regimes": ["turbulent"],
-        "materials": ["球墨铸铁", "钢管", "PE", "HDPE", "UPVC", "混凝土"],
-        "exclusions": ["非满流重力管道"]
+        "pipe_types": [
+          "给水管道",
+          "压力管道"
+        ],
+        "flow_regimes": [
+          "turbulent"
+        ],
+        "materials": [
+          "球墨铸铁",
+          "钢管",
+          "PE",
+          "HDPE",
+          "UPVC",
+          "混凝土"
+        ],
+        "exclusions": [
+          "非满流重力管道"
+        ]
       },
       "related_formulas": [
-        {"formula_id": "WA-HYD-005", "relation": "complement", "note": "局部水头损失叠加"},
-        {"formula_id": "WA-HYD-006", "relation": "alternative", "note": "达西公式替代"}
+        {
+          "formula_id": "WA-HYD-003",
+          "vdi_formula_id": "WA-HYD-005",
+          "relation": "complement",
+          "note": "局部水头损失叠加"
+        },
+        {
+          "formula_id": "WA-HYD-004",
+          "vdi_formula_id": "WA-HYD-006",
+          "relation": "alternative",
+          "note": "达西公式替代"
+        }
       ],
-      "tags": ["水头损失", "沿程阻力", "管径计算", "水力计算"],
-      "keywords": ["Hazen-Williams", "水头损失", "管道阻力", "摩擦损失", "沿程损失"],
+      "tags": [
+        "水头损失",
+        "沿程阻力",
+        "管径计算",
+        "水力计算"
+      ],
+      "keywords": [
+        "Hazen-Williams",
+        "水头损失",
+        "管道阻力",
+        "摩擦损失",
+        "沿程损失"
+      ],
       "precision": "精确",
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",
@@ -57,9 +183,10 @@
     },
     {
       "formula_id": "WA-HYD-002",
+      "vdi_formula_id": "WA-HYD-002",
       "name": "曼宁公式（重力流管道流速）",
       "name_en": "Manning Formula",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "hydraulic/open_channel",
       "type": "exact",
       "equation_text": "V = (1/n) * R^(2/3) * S^(1/2)",
@@ -67,32 +194,119 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"op": "div", "num": {"const": 1}, "den": {"var": "n"}},
-          {"op": "pow", "base": {"var": "R"}, "exp": 0.667},
-          {"op": "pow", "base": {"var": "S"}, "exp": 0.5}
+          {
+            "op": "div",
+            "num": {
+              "const": 1
+            },
+            "den": {
+              "var": "n"
+            }
+          },
+          {
+            "op": "pow",
+            "base": {
+              "var": "R"
+            },
+            "exp": 0.667
+          },
+          {
+            "op": "pow",
+            "base": {
+              "var": "S"
+            },
+            "exp": 0.5
+          }
         ]
       },
       "variables": [
-        {"symbol": "V", "name": "流速", "unit": "m/s", "role": "output", "desc": "管道内水流速度"},
-        {"symbol": "n", "name": "粗糙系数", "unit": "-", "role": "input", "desc": "管壁粗糙系数",
-          "look_up": {"type": "material_property", "table_ref": "TBL-N-001"}},
-        {"symbol": "R", "name": "水力半径", "unit": "m", "role": "input", "constraints": {"min": 0, "exclusive_min": true},
-          "desc": "过水断面面积/湿周，圆管满流时 R=D/4"},
-        {"symbol": "S", "name": "水力坡度", "unit": "m/m", "role": "input", "constraints": {"min": 0, "exclusive_min": true},
-          "desc": "管道坡度，等于管底坡度"}
+        {
+          "symbol": "V",
+          "name": "流速",
+          "unit": "m/s",
+          "role": "output",
+          "desc": "管道内水流速度"
+        },
+        {
+          "symbol": "n",
+          "name": "粗糙系数",
+          "unit": "-",
+          "role": "input",
+          "desc": "管壁粗糙系数",
+          "look_up": {
+            "type": "material_property",
+            "table_ref": "TBL-N-001"
+          }
+        },
+        {
+          "symbol": "R",
+          "name": "水力半径",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0,
+            "exclusive_min": true
+          },
+          "desc": "过水断面面积/湿周，圆管满流时 R=D/4"
+        },
+        {
+          "symbol": "S",
+          "name": "水力坡度",
+          "unit": "m/m",
+          "role": "input",
+          "constraints": {
+            "min": 0,
+            "exclusive_min": true
+          },
+          "desc": "管道坡度，等于管底坡度"
+        }
       ],
-      "source": {"standard_id": "GB 50014-2021", "clause": "4.2.6", "note": "室外排水设计标准排水管道水力计算"},
+      "source": {
+        "standard_id": "GB 50014-2021",
+        "clause": "4.2.6",
+        "note": "室外排水设计标准排水管道水力计算"
+      },
       "applicable_scope": {
-        "pipe_types": ["排水管道", "雨水管道", "合流管道"],
-        "flow_regimes": ["open_channel"],
-        "materials": ["混凝土", "HDPE", "UPVC", "陶土"],
-        "exclusions": ["压力管道"]
+        "pipe_types": [
+          "排水管道",
+          "雨水管道",
+          "合流管道"
+        ],
+        "flow_regimes": [
+          "open_channel"
+        ],
+        "materials": [
+          "混凝土",
+          "HDPE",
+          "UPVC",
+          "陶土"
+        ],
+        "exclusions": [
+          "压力管道"
+        ]
       },
       "related_formulas": [
-        {"formula_id": "WA-HYD-003", "relation": "complement", "note": "流量公式 Q=A*V"}
+        {
+          "formula_id": "WA-HYD-001",
+          "vdi_formula_id": "WA-HYD-003",
+          "relation": "complement",
+          "note": "流量公式 Q=A*V"
+        }
       ],
-      "tags": ["曼宁公式", "排水管道", "重力流", "流速计算"],
-      "keywords": ["Manning", "曼宁", "排水", "重力流", "坡度", "流速"],
+      "tags": [
+        "曼宁公式",
+        "排水管道",
+        "重力流",
+        "流速计算"
+      ],
+      "keywords": [
+        "Manning",
+        "曼宁",
+        "排水",
+        "重力流",
+        "坡度",
+        "流速"
+      ],
       "precision": "精确",
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",
@@ -100,23 +314,69 @@
     },
     {
       "formula_id": "WA-HYD-003",
+      "vdi_formula_id": "WA-HYD-003",
       "name": "管道流量公式",
       "name_en": "Pipe Flow Rate",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "hydraulic/flow_velocity",
       "type": "exact",
       "equation_text": "Q = A * V",
       "equation_latex": "Q = A \\cdot V",
-      "equation_ast": {"op": "mul", "args": [{"var": "A"}, {"var": "V"}]},
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {
+            "var": "A"
+          },
+          {
+            "var": "V"
+          }
+        ]
+      },
       "variables": [
-        {"symbol": "Q", "name": "流量", "unit": "m3/s", "role": "output", "desc": "管道流量"},
-        {"symbol": "A", "name": "过水断面面积", "unit": "m2", "role": "input", "constraints": {"min": 0, "exclusive_min": true},
-          "desc": "过水断面面积，圆管满流时 A=πD²/4"},
-        {"symbol": "V", "name": "流速", "unit": "m/s", "role": "input", "constraints": {"min": 0}, "desc": "水流平均流速"}
+        {
+          "symbol": "Q",
+          "name": "流量",
+          "unit": "m3/s",
+          "role": "output",
+          "desc": "管道流量"
+        },
+        {
+          "symbol": "A",
+          "name": "过水断面面积",
+          "unit": "m2",
+          "role": "input",
+          "constraints": {
+            "min": 0,
+            "exclusive_min": true
+          },
+          "desc": "过水断面面积，圆管满流时 A=πD²/4"
+        },
+        {
+          "symbol": "V",
+          "name": "流速",
+          "unit": "m/s",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "水流平均流速"
+        }
       ],
-      "source": {"standard_id": "GB 50014-2021", "clause": "4.2.5"},
-      "tags": ["流量", "流速", "断面面积"],
-      "keywords": ["流量公式", "Q=AV", "过水断面"],
+      "source": {
+        "standard_id": "GB 50014-2021",
+        "clause": "4.2.5"
+      },
+      "tags": [
+        "流量",
+        "流速",
+        "断面面积"
+      ],
+      "keywords": [
+        "流量公式",
+        "Q=AV",
+        "过水断面"
+      ],
       "precision": "精确",
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",
@@ -124,21 +384,58 @@
     },
     {
       "formula_id": "WA-HYD-004",
+      "vdi_formula_id": "WA-HYD-004",
       "name": "圆管满流水力半径",
       "name_en": "Full Pipe Hydraulic Radius",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "hydraulic/pipe_friction",
       "type": "exact",
       "equation_text": "R = D / 4",
       "equation_latex": "R = \\frac{D}{4}",
-      "equation_ast": {"op": "div", "num": {"var": "D"}, "den": {"const": 4}},
+      "equation_ast": {
+        "op": "div",
+        "num": {
+          "var": "D"
+        },
+        "den": {
+          "const": 4
+        }
+      },
       "variables": [
-        {"symbol": "R", "name": "水力半径", "unit": "m", "role": "output", "desc": "圆管满流时的水力半径"},
-        {"symbol": "D", "name": "管径", "unit": "m", "role": "input", "constraints": {"min": 0, "exclusive_min": true}, "desc": "管道内径"}
+        {
+          "symbol": "R",
+          "name": "水力半径",
+          "unit": "m",
+          "role": "output",
+          "desc": "圆管满流时的水力半径"
+        },
+        {
+          "symbol": "D",
+          "name": "管径",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0,
+            "exclusive_min": true
+          },
+          "desc": "管道内径"
+        }
       ],
-      "source": {"standard_id": "GB 50014-2021", "clause": "4.2.6", "note": "条文说明"},
-      "tags": ["水力半径", "圆管", "满流"],
-      "keywords": ["水力半径", "R=D/4", "圆管满流"],
+      "source": {
+        "standard_id": "GB 50014-2021",
+        "clause": "4.2.6",
+        "note": "条文说明"
+      },
+      "tags": [
+        "水力半径",
+        "圆管",
+        "满流"
+      ],
+      "keywords": [
+        "水力半径",
+        "R=D/4",
+        "圆管满流"
+      ],
       "precision": "精确",
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",
@@ -146,27 +443,85 @@
     },
     {
       "formula_id": "WA-HYD-005",
+      "vdi_formula_id": "WA-HYD-005",
       "name": "局部水头损失估算",
       "name_en": "Local Head Loss Estimation",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "hydraulic/local_loss",
       "type": "empirical",
       "equation_text": "Hl = k * Hf",
       "equation_latex": "H_l = k \\cdot H_f",
-      "equation_ast": {"op": "mul", "args": [{"var": "k"}, {"var": "Hf"}]},
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {
+            "var": "k"
+          },
+          {
+            "var": "Hf"
+          }
+        ]
+      },
       "variables": [
-        {"symbol": "Hl", "name": "局部水头损失", "unit": "m", "role": "output", "desc": "管道局部损失的水头"},
-        {"symbol": "Hf", "name": "沿程水头损失", "unit": "m", "role": "input", "desc": "沿程摩擦损失水头"},
-        {"symbol": "k", "name": "局部损失系数", "unit": "-", "role": "input", "desc": "局部损失占沿程损失的比例"}
+        {
+          "symbol": "Hl",
+          "name": "局部水头损失",
+          "unit": "m",
+          "role": "output",
+          "desc": "管道局部损失的水头"
+        },
+        {
+          "symbol": "Hf",
+          "name": "沿程水头损失",
+          "unit": "m",
+          "role": "input",
+          "desc": "沿程摩擦损失水头"
+        },
+        {
+          "symbol": "k",
+          "name": "局部损失系数",
+          "unit": "-",
+          "role": "input",
+          "desc": "局部损失占沿程损失的比例"
+        }
       ],
       "coefficients": [
-        {"name": "局部损失系数", "symbol": "k", "range": [0.2, 0.3], "default": 0.25,
-         "condition": "常规民用建筑给水管网", "note": "工业管道取0.15-0.20，含大量三通弯头时取0.30-0.40"}
+        {
+          "name": "局部损失系数",
+          "symbol": "k",
+          "range": [
+            0.2,
+            0.3
+          ],
+          "default": 0.25,
+          "condition": "常规民用建筑给水管网",
+          "note": "工业管道取0.15-0.20，含大量三通弯头时取0.30-0.40"
+        }
       ],
-      "source": {"standard_id": "GB 50015-2019", "clause": "3.6.3", "note": "条文说明推荐"},
-      "related_formulas": [{"formula_id": "WA-HYD-001", "relation": "prerequisite", "note": "需先计算沿程水头损失"}],
-      "tags": ["局部损失", "经验公式", "水头损失"],
-      "keywords": ["局部水头损失", "局部阻力", "弯头损失", "三通损失"],
+      "source": {
+        "standard_id": "GB 50015-2019",
+        "clause": "3.6.3",
+        "note": "条文说明推荐"
+      },
+      "related_formulas": [
+        {
+          "formula_id": "HS-VEN-001",
+          "vdi_formula_id": "WA-HYD-001",
+          "relation": "prerequisite",
+          "note": "需先计算沿程水头损失"
+        }
+      ],
+      "tags": [
+        "局部损失",
+        "经验公式",
+        "水头损失"
+      ],
+      "keywords": [
+        "局部水头损失",
+        "局部阻力",
+        "弯头损失",
+        "三通损失"
+      ],
       "precision": "估算",
       "confidence": 0.85,
       "created_at": "2026-06-04T00:00:00Z",
@@ -175,9 +530,10 @@
     },
     {
       "formula_id": "WA-HYD-006",
+      "vdi_formula_id": "WA-HYD-006",
       "name": "达西-魏斯巴赫沿程水头损失",
       "name_en": "Darcy-Weisbach Equation",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "hydraulic/pipe_friction",
       "type": "exact",
       "equation_text": "Hf = f * (L/D) * (V^2 / (2*g))",
@@ -185,26 +541,105 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"var": "f"},
-          {"op": "div", "num": {"var": "L"}, "den": {"var": "D"}},
-          {"op": "div",
-            "num": {"op": "pow", "base": {"var": "V"}, "exp": 2},
-            "den": {"op": "mul", "args": [{"const": 2}, {"var": "g"}]}
+          {
+            "var": "f"
+          },
+          {
+            "op": "div",
+            "num": {
+              "var": "L"
+            },
+            "den": {
+              "var": "D"
+            }
+          },
+          {
+            "op": "div",
+            "num": {
+              "op": "pow",
+              "base": {
+                "var": "V"
+              },
+              "exp": 2
+            },
+            "den": {
+              "op": "mul",
+              "args": [
+                {
+                  "const": 2
+                },
+                {
+                  "var": "g"
+                }
+              ]
+            }
           }
         ]
       },
       "variables": [
-        {"symbol": "Hf", "name": "沿程水头损失", "unit": "m", "role": "output"},
-        {"symbol": "f", "name": "达西摩擦系数", "unit": "-", "role": "input", "desc": "与雷诺数和管壁粗糙度有关"},
-        {"symbol": "L", "name": "管道长度", "unit": "m", "role": "input"},
-        {"symbol": "D", "name": "管径", "unit": "m", "role": "input"},
-        {"symbol": "V", "name": "流速", "unit": "m/s", "role": "input"},
-        {"symbol": "g", "name": "重力加速度", "unit": "m/s2", "role": "input", "default": 9.81}
+        {
+          "symbol": "Hf",
+          "name": "沿程水头损失",
+          "unit": "m",
+          "role": "output"
+        },
+        {
+          "symbol": "f",
+          "name": "达西摩擦系数",
+          "unit": "-",
+          "role": "input",
+          "desc": "与雷诺数和管壁粗糙度有关"
+        },
+        {
+          "symbol": "L",
+          "name": "管道长度",
+          "unit": "m",
+          "role": "input"
+        },
+        {
+          "symbol": "D",
+          "name": "管径",
+          "unit": "m",
+          "role": "input"
+        },
+        {
+          "symbol": "V",
+          "name": "流速",
+          "unit": "m/s",
+          "role": "input"
+        },
+        {
+          "symbol": "g",
+          "name": "重力加速度",
+          "unit": "m/s2",
+          "role": "input",
+          "default": 9.81
+        }
       ],
-      "source": {"standard_id": "GB 50013-2018", "clause": "7.1.3", "note": "条文说明中的通用公式"},
-      "related_formulas": [{"formula_id": "WA-HYD-001", "relation": "alternative", "note": "海曾-威廉姆斯为简化形式"}],
-      "tags": ["达西公式", "沿程损失", "摩擦系数"],
-      "keywords": ["Darcy-Weisbach", "达西", "摩擦系数", "沿程损失"],
+      "source": {
+        "standard_id": "GB 50013-2018",
+        "clause": "7.1.3",
+        "note": "条文说明中的通用公式"
+      },
+      "related_formulas": [
+        {
+          "formula_id": "HS-VEN-001",
+          "vdi_formula_id": "WA-HYD-001",
+          "relation": "alternative",
+          "note": "海曾-威廉姆斯为简化形式"
+        }
+      ],
+      "tags": [
+        "达西公式",
+        "沿程损失",
+        "摩擦系数"
+      ],
+      "keywords": [
+        "Darcy-Weisbach",
+        "达西",
+        "摩擦系数",
+        "沿程损失"
+      ],
       "precision": "精确",
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",
@@ -212,33 +647,92 @@
     },
     {
       "formula_id": "WA-HYD-007",
+      "vdi_formula_id": "WA-HYD-007",
       "name": "圆管满流过水断面面积",
       "name_en": "Full Pipe Cross-Sectional Area",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "hydraulic/geometry",
       "type": "exact",
       "equation_text": "A = π * D² / 4",
       "equation_latex": "A = \\frac{\\pi D^2}{4}",
       "equation_ast": {
         "op": "div",
-        "num": {"op": "mul", "args": [
-          {"const": 3.141592653589793},
-          {"op": "pow", "base": {"var": "D"}, "exp": 2}
-        ]},
-        "den": {"const": 4}
+        "num": {
+          "op": "mul",
+          "args": [
+            {
+              "const": 3.141592653589793
+            },
+            {
+              "op": "pow",
+              "base": {
+                "var": "D"
+              },
+              "exp": 2
+            }
+          ]
+        },
+        "den": {
+          "const": 4
+        }
       },
       "variables": [
-        {"symbol": "A", "name": "过水断面面积", "unit": "m2", "role": "output", "desc": "圆管满流时的过水断面面积"},
-        {"symbol": "D", "name": "管径", "unit": "m", "role": "input", "constraints": {"min": 0, "exclusive_min": true}, "desc": "管道内径",
-          "alt_units": [{"unit": "mm", "factor": 0.001}]}
+        {
+          "symbol": "A",
+          "name": "过水断面面积",
+          "unit": "m2",
+          "role": "output",
+          "desc": "圆管满流时的过水断面面积"
+        },
+        {
+          "symbol": "D",
+          "name": "管径",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0,
+            "exclusive_min": true
+          },
+          "desc": "管道内径",
+          "alt_units": [
+            {
+              "unit": "mm",
+              "factor": 0.001
+            }
+          ]
+        }
       ],
-      "source": {"standard_id": "GB 50014-2021", "clause": "4.2.5", "note": "排水管道水力计算基本公式"},
+      "source": {
+        "standard_id": "GB 50014-2021",
+        "clause": "4.2.5",
+        "note": "排水管道水力计算基本公式"
+      },
       "related_formulas": [
-        {"formula_id": "WA-HYD-003", "relation": "prerequisite", "note": "流量公式 Q=A*V 中的面积项"},
-        {"formula_id": "WA-HYD-004", "relation": "complement", "note": "水力半径 R=A/P=D/4"}
+        {
+          "formula_id": "WA-HYD-001",
+          "vdi_formula_id": "WA-HYD-003",
+          "relation": "prerequisite",
+          "note": "流量公式 Q=A*V 中的面积项"
+        },
+        {
+          "formula_id": "WA-HYD-002",
+          "vdi_formula_id": "WA-HYD-004",
+          "relation": "complement",
+          "note": "水力半径 R=A/P=D/4"
+        }
       ],
-      "tags": ["断面面积", "圆管", "满流", "几何参数"],
-      "keywords": ["过水断面", "圆管面积", "πD²/4", "满流面积"],
+      "tags": [
+        "断面面积",
+        "圆管",
+        "满流",
+        "几何参数"
+      ],
+      "keywords": [
+        "过水断面",
+        "圆管面积",
+        "πD²/4",
+        "满流面积"
+      ],
       "precision": "精确",
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",
@@ -246,33 +740,112 @@
     },
     {
       "formula_id": "WA-HYD-008",
+      "vdi_formula_id": "WA-HYD-008",
       "name": "雷诺数",
       "name_en": "Reynolds Number",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "hydraulic/flow_regime",
       "type": "exact",
       "equation_text": "Re = V * D / ν",
       "equation_latex": "Re = \\frac{V \\cdot D}{\\nu}",
       "equation_ast": {
         "op": "div",
-        "num": {"op": "mul", "args": [{"var": "V"}, {"var": "D"}]},
-        "den": {"var": "ν"}
+        "num": {
+          "op": "mul",
+          "args": [
+            {
+              "var": "V"
+            },
+            {
+              "var": "D"
+            }
+          ]
+        },
+        "den": {
+          "var": "ν"
+        }
       },
       "variables": [
-        {"symbol": "Re", "name": "雷诺数", "unit": "-", "role": "output", "desc": "判别流态的无量纲数，Re<2300层流，Re>4000紊流"},
-        {"symbol": "V", "name": "流速", "unit": "m/s", "role": "input", "constraints": {"min": 0, "exclusive_min": true}, "desc": "管道内平均流速"},
-        {"symbol": "D", "name": "管径", "unit": "m", "role": "input", "constraints": {"min": 0, "exclusive_min": true}, "desc": "管道内径",
-          "alt_units": [{"unit": "mm", "factor": 0.001}]},
-        {"symbol": "ν", "name": "运动粘度", "unit": "m2/s", "role": "input", "constraints": {"min": 0, "exclusive_min": true},
+        {
+          "symbol": "Re",
+          "name": "雷诺数",
+          "unit": "-",
+          "role": "output",
+          "desc": "判别流态的无量纲数，Re<2300层流，Re>4000紊流"
+        },
+        {
+          "symbol": "V",
+          "name": "流速",
+          "unit": "m/s",
+          "role": "input",
+          "constraints": {
+            "min": 0,
+            "exclusive_min": true
+          },
+          "desc": "管道内平均流速"
+        },
+        {
+          "symbol": "D",
+          "name": "管径",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0,
+            "exclusive_min": true
+          },
+          "desc": "管道内径",
+          "alt_units": [
+            {
+              "unit": "mm",
+              "factor": 0.001
+            }
+          ]
+        },
+        {
+          "symbol": "ν",
+          "name": "运动粘度",
+          "unit": "m2/s",
+          "role": "input",
+          "constraints": {
+            "min": 0,
+            "exclusive_min": true
+          },
           "desc": "水的运动粘度，20°C时约1.007×10⁻⁶ m²/s",
-          "look_up": {"type": "fluid_property", "table_ref": "TBL-NU-001", "default": 1.007e-6}}
+          "look_up": {
+            "type": "fluid_property",
+            "table_ref": "TBL-NU-001",
+            "default": 0.000001007
+          }
+        }
       ],
-      "source": {"standard_id": "GB 50013-2018", "clause": "7.1.3", "note": "条文说明中流态判别依据"},
+      "source": {
+        "standard_id": "GB 50013-2018",
+        "clause": "7.1.3",
+        "note": "条文说明中流态判别依据"
+      },
       "related_formulas": [
-        {"formula_id": "WA-HYD-006", "relation": "complement", "note": "达西公式中摩擦系数f与Re有关"}
+        {
+          "formula_id": "WA-HYD-004",
+          "vdi_formula_id": "WA-HYD-006",
+          "relation": "complement",
+          "note": "达西公式中摩擦系数f与Re有关"
+        }
       ],
-      "tags": ["雷诺数", "流态判别", "层流", "紊流", "无量纲"],
-      "keywords": ["Reynolds", "雷诺数", "流态", "层流", "紊流", "粘度"],
+      "tags": [
+        "雷诺数",
+        "流态判别",
+        "层流",
+        "紊流",
+        "无量纲"
+      ],
+      "keywords": [
+        "Reynolds",
+        "雷诺数",
+        "流态",
+        "层流",
+        "紊流",
+        "粘度"
+      ],
       "precision": "精确",
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",
@@ -280,29 +853,100 @@
     },
     {
       "formula_id": "WA-HYD-009",
+      "vdi_formula_id": "WA-HYD-009",
       "name": "管道流速公式",
       "name_en": "Pipe Velocity Formula",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "hydraulic/flow_velocity",
       "type": "exact",
       "equation_text": "V = Q / A",
       "equation_latex": "V = \\frac{Q}{A}",
-      "equation_ast": {"op": "div", "num": {"var": "Q"}, "den": {"var": "A"}},
+      "equation_ast": {
+        "op": "div",
+        "num": {
+          "var": "Q"
+        },
+        "den": {
+          "var": "A"
+        }
+      },
       "variables": [
-        {"symbol": "V", "name": "流速", "unit": "m/s", "role": "output", "desc": "管道内水流平均流速"},
-        {"symbol": "Q", "name": "流量", "unit": "m3/s", "role": "input", "constraints": {"min": 0, "exclusive_min": true}, "desc": "管道流量",
-          "alt_units": [{"unit": "L/s", "factor": 0.001}, {"unit": "m3/h", "factor": 0.000278}]},
-        {"symbol": "A", "name": "过水断面面积", "unit": "m2", "role": "input", "constraints": {"min": 0, "exclusive_min": true},
-          "desc": "管道过水断面面积，圆管满流时 A=πD²/4"}
+        {
+          "symbol": "V",
+          "name": "流速",
+          "unit": "m/s",
+          "role": "output",
+          "desc": "管道内水流平均流速"
+        },
+        {
+          "symbol": "Q",
+          "name": "流量",
+          "unit": "m3/s",
+          "role": "input",
+          "constraints": {
+            "min": 0,
+            "exclusive_min": true
+          },
+          "desc": "管道流量",
+          "alt_units": [
+            {
+              "unit": "L/s",
+              "factor": 0.001
+            },
+            {
+              "unit": "m3/h",
+              "factor": 0.000278
+            }
+          ]
+        },
+        {
+          "symbol": "A",
+          "name": "过水断面面积",
+          "unit": "m2",
+          "role": "input",
+          "constraints": {
+            "min": 0,
+            "exclusive_min": true
+          },
+          "desc": "管道过水断面面积，圆管满流时 A=πD²/4"
+        }
       ],
-      "source": {"standard_id": "GB 50014-2021", "clause": "4.2.5", "note": "连续性方程在管道中的应用"},
+      "source": {
+        "standard_id": "GB 50014-2021",
+        "clause": "4.2.5",
+        "note": "连续性方程在管道中的应用"
+      },
       "related_formulas": [
-        {"formula_id": "WA-HYD-003", "relation": "inverse", "note": "流量公式 Q=A*V 的逆运算"},
-        {"formula_id": "WA-HYD-007", "relation": "prerequisite", "note": "面积A可由圆管公式计算"},
-        {"formula_id": "WA-HYD-008", "relation": "complement", "note": "流速用于计算雷诺数"}
+        {
+          "formula_id": "WA-HYD-001",
+          "vdi_formula_id": "WA-HYD-003",
+          "relation": "inverse",
+          "note": "流量公式 Q=A*V 的逆运算"
+        },
+        {
+          "formula_id": "WA-HYD-005",
+          "vdi_formula_id": "WA-HYD-007",
+          "relation": "prerequisite",
+          "note": "面积A可由圆管公式计算"
+        },
+        {
+          "formula_id": "WA-HYD-006",
+          "vdi_formula_id": "WA-HYD-008",
+          "relation": "complement",
+          "note": "流速用于计算雷诺数"
+        }
       ],
-      "tags": ["流速", "连续性方程", "管道水力"],
-      "keywords": ["流速公式", "V=Q/A", "连续性方程", "平均流速"],
+      "tags": [
+        "流速",
+        "连续性方程",
+        "管道水力"
+      ],
+      "keywords": [
+        "流速公式",
+        "V=Q/A",
+        "连续性方程",
+        "平均流速"
+      ],
       "precision": "精确",
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",
@@ -310,9 +954,10 @@
     },
     {
       "formula_id": "WA-HYD-010",
+      "vdi_formula_id": "WA-HYD-010",
       "name": "伯努利能量方程（简化）",
       "name_en": "Simplified Bernoulli Energy Equation",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "hydraulic/energy",
       "type": "exact",
       "equation_text": "H2 = H1 - Hf - Hl",
@@ -320,25 +965,91 @@
       "equation_ast": {
         "op": "sub",
         "args": [
-          {"var": "H1"},
-          {"var": "Hf"},
-          {"var": "Hl"}
+          {
+            "var": "H1"
+          },
+          {
+            "var": "Hf"
+          },
+          {
+            "var": "Hl"
+          }
         ]
       },
       "variables": [
-        {"symbol": "H2", "name": "下游总水头", "unit": "m", "role": "output", "desc": "下游断面的总能量水头"},
-        {"symbol": "H1", "name": "上游总水头", "unit": "m", "role": "input", "desc": "上游断面的总能量水头"},
-        {"symbol": "Hf", "name": "沿程水头损失", "unit": "m", "role": "input", "constraints": {"min": 0}, "desc": "管道沿程摩擦损失水头"},
-        {"symbol": "Hl", "name": "局部水头损失", "unit": "m", "role": "input", "constraints": {"min": 0}, "desc": "管道局部阻力损失水头"}
+        {
+          "symbol": "H2",
+          "name": "下游总水头",
+          "unit": "m",
+          "role": "output",
+          "desc": "下游断面的总能量水头"
+        },
+        {
+          "symbol": "H1",
+          "name": "上游总水头",
+          "unit": "m",
+          "role": "input",
+          "desc": "上游断面的总能量水头"
+        },
+        {
+          "symbol": "Hf",
+          "name": "沿程水头损失",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "管道沿程摩擦损失水头"
+        },
+        {
+          "symbol": "Hl",
+          "name": "局部水头损失",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "管道局部阻力损失水头"
+        }
       ],
-      "source": {"standard_id": "GB 50013-2018", "clause": "7.1.2", "note": "管道水力计算能量守恒基本方程"},
+      "source": {
+        "standard_id": "GB 50013-2018",
+        "clause": "7.1.2",
+        "note": "管道水力计算能量守恒基本方程"
+      },
       "related_formulas": [
-        {"formula_id": "WA-HYD-001", "relation": "complement", "note": "沿程水头损失Hf计算"},
-        {"formula_id": "WA-HYD-005", "relation": "complement", "note": "局部水头损失Hl计算"},
-        {"formula_id": "WA-HYD-006", "relation": "complement", "note": "达西公式计算Hf"}
+        {
+          "formula_id": "HS-VEN-001",
+          "vdi_formula_id": "WA-HYD-001",
+          "relation": "complement",
+          "note": "沿程水头损失Hf计算"
+        },
+        {
+          "formula_id": "WA-HYD-003",
+          "vdi_formula_id": "WA-HYD-005",
+          "relation": "complement",
+          "note": "局部水头损失Hl计算"
+        },
+        {
+          "formula_id": "WA-HYD-004",
+          "vdi_formula_id": "WA-HYD-006",
+          "relation": "complement",
+          "note": "达西公式计算Hf"
+        }
       ],
-      "tags": ["伯努利方程", "能量守恒", "水头损失", "水力计算"],
-      "keywords": ["Bernoulli", "伯努利", "能量方程", "水头", "总水头"],
+      "tags": [
+        "伯努利方程",
+        "能量守恒",
+        "水头损失",
+        "水力计算"
+      ],
+      "keywords": [
+        "Bernoulli",
+        "伯努利",
+        "能量方程",
+        "水头",
+        "总水头"
+      ],
       "precision": "精确",
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",
@@ -346,9 +1057,10 @@
     },
     {
       "formula_id": "WA-HYD-011",
+      "vdi_formula_id": "WA-HYD-011",
       "name": "并联管道流量平衡",
       "name_en": "Parallel Pipe Flow Balance",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "hydraulic/pipe_network",
       "type": "exact",
       "equation_text": "Q_total = Q1 + Q2 + ... + Qn",
@@ -356,29 +1068,100 @@
       "equation_ast": {
         "op": "add",
         "args": [
-          {"var": "Q1"},
-          {"var": "Q2"},
-          {"var": "Qn"}
+          {
+            "var": "Q1"
+          },
+          {
+            "var": "Q2"
+          },
+          {
+            "var": "Qn"
+          }
         ]
       },
       "variables": [
-        {"symbol": "Q_total", "name": "总流量", "unit": "m3/s", "role": "output", "desc": "并联管道系统总流量"},
-        {"symbol": "Q1", "name": "支管1流量", "unit": "m3/s", "role": "input", "constraints": {"min": 0}, "desc": "第1条并联支管的流量"},
-        {"symbol": "Q2", "name": "支管2流量", "unit": "m3/s", "role": "input", "constraints": {"min": 0}, "desc": "第2条并联支管的流量"},
-        {"symbol": "Qn", "name": "支管n流量", "unit": "m3/s", "role": "input", "constraints": {"min": 0}, "desc": "第n条并联支管的流量（可扩展）"}
+        {
+          "symbol": "Q_total",
+          "name": "总流量",
+          "unit": "m3/s",
+          "role": "output",
+          "desc": "并联管道系统总流量"
+        },
+        {
+          "symbol": "Q1",
+          "name": "支管1流量",
+          "unit": "m3/s",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "第1条并联支管的流量"
+        },
+        {
+          "symbol": "Q2",
+          "name": "支管2流量",
+          "unit": "m3/s",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "第2条并联支管的流量"
+        },
+        {
+          "symbol": "Qn",
+          "name": "支管n流量",
+          "unit": "m3/s",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "第n条并联支管的流量（可扩展）"
+        }
       ],
-      "source": {"standard_id": "GB 50013-2018", "clause": "7.1.4", "note": "并联管道水力计算原则"},
+      "source": {
+        "standard_id": "GB 50013-2018",
+        "clause": "7.1.4",
+        "note": "并联管道水力计算原则"
+      },
       "applicable_scope": {
-        "pipe_types": ["并联给水管道", "环状管网"],
-        "flow_regimes": ["pressurized"],
-        "exclusions": ["串联管道"]
+        "pipe_types": [
+          "并联给水管道",
+          "环状管网"
+        ],
+        "flow_regimes": [
+          "pressurized"
+        ],
+        "exclusions": [
+          "串联管道"
+        ]
       },
       "related_formulas": [
-        {"formula_id": "WA-HYD-012", "relation": "complement", "note": "串联管道水头叠加"},
-        {"formula_id": "WA-HYD-003", "relation": "prerequisite", "note": "各支管流量Q=A*V"}
+        {
+          "formula_id": "WA-HYD-010",
+          "vdi_formula_id": "WA-HYD-012",
+          "relation": "complement",
+          "note": "串联管道水头叠加"
+        },
+        {
+          "formula_id": "WA-HYD-001",
+          "vdi_formula_id": "WA-HYD-003",
+          "relation": "prerequisite",
+          "note": "各支管流量Q=A*V"
+        }
       ],
-      "tags": ["并联管道", "流量分配", "管网计算", "水力平衡"],
-      "keywords": ["并联管道", "流量平衡", "支管流量", "环状管网", "分流"],
+      "tags": [
+        "并联管道",
+        "流量分配",
+        "管网计算",
+        "水力平衡"
+      ],
+      "keywords": [
+        "并联管道",
+        "流量平衡",
+        "支管流量",
+        "环状管网",
+        "分流"
+      ],
       "precision": "精确",
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",
@@ -386,9 +1169,10 @@
     },
     {
       "formula_id": "WA-HYD-012",
+      "vdi_formula_id": "WA-HYD-012",
       "name": "串联管道水头叠加",
       "name_en": "Series Pipe Head Loss Superposition",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "hydraulic/pipe_network",
       "type": "exact",
       "equation_text": "H_total = Hf1 + Hf2 + ... + Hfn + Hl",
@@ -396,32 +1180,119 @@
       "equation_ast": {
         "op": "add",
         "args": [
-          {"var": "Hf1"},
-          {"var": "Hf2"},
-          {"var": "Hfn"},
-          {"var": "Hl"}
+          {
+            "var": "Hf1"
+          },
+          {
+            "var": "Hf2"
+          },
+          {
+            "var": "Hfn"
+          },
+          {
+            "var": "Hl"
+          }
         ]
       },
       "variables": [
-        {"symbol": "H_total", "name": "总水头损失", "unit": "m", "role": "output", "desc": "串联管道系统总水头损失"},
-        {"symbol": "Hf1", "name": "管段1沿程损失", "unit": "m", "role": "input", "constraints": {"min": 0}, "desc": "第1段管道的沿程水头损失"},
-        {"symbol": "Hf2", "name": "管段2沿程损失", "unit": "m", "role": "input", "constraints": {"min": 0}, "desc": "第2段管道的沿程水头损失"},
-        {"symbol": "Hfn", "name": "管段n沿程损失", "unit": "m", "role": "input", "constraints": {"min": 0}, "desc": "第n段管道的沿程水头损失（可扩展）"},
-        {"symbol": "Hl", "name": "局部水头损失", "unit": "m", "role": "input", "constraints": {"min": 0}, "desc": "所有局部水头损失之和"}
+        {
+          "symbol": "H_total",
+          "name": "总水头损失",
+          "unit": "m",
+          "role": "output",
+          "desc": "串联管道系统总水头损失"
+        },
+        {
+          "symbol": "Hf1",
+          "name": "管段1沿程损失",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "第1段管道的沿程水头损失"
+        },
+        {
+          "symbol": "Hf2",
+          "name": "管段2沿程损失",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "第2段管道的沿程水头损失"
+        },
+        {
+          "symbol": "Hfn",
+          "name": "管段n沿程损失",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "第n段管道的沿程水头损失（可扩展）"
+        },
+        {
+          "symbol": "Hl",
+          "name": "局部水头损失",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "所有局部水头损失之和"
+        }
       ],
-      "source": {"standard_id": "GB 50013-2018", "clause": "7.1.4", "note": "串联管道水力计算原则"},
+      "source": {
+        "standard_id": "GB 50013-2018",
+        "clause": "7.1.4",
+        "note": "串联管道水力计算原则"
+      },
       "applicable_scope": {
-        "pipe_types": ["串联给水管道", "枝状管网"],
-        "flow_regimes": ["pressurized"],
-        "exclusions": ["并联管道"]
+        "pipe_types": [
+          "串联给水管道",
+          "枝状管网"
+        ],
+        "flow_regimes": [
+          "pressurized"
+        ],
+        "exclusions": [
+          "并联管道"
+        ]
       },
       "related_formulas": [
-        {"formula_id": "WA-HYD-011", "relation": "complement", "note": "并联管道流量平衡"},
-        {"formula_id": "WA-HYD-001", "relation": "prerequisite", "note": "各管段沿程损失计算"},
-        {"formula_id": "WA-HYD-005", "relation": "complement", "note": "局部水头损失估算"}
+        {
+          "formula_id": "WA-HYD-009",
+          "vdi_formula_id": "WA-HYD-011",
+          "relation": "complement",
+          "note": "并联管道流量平衡"
+        },
+        {
+          "formula_id": "HS-VEN-001",
+          "vdi_formula_id": "WA-HYD-001",
+          "relation": "prerequisite",
+          "note": "各管段沿程损失计算"
+        },
+        {
+          "formula_id": "WA-HYD-003",
+          "vdi_formula_id": "WA-HYD-005",
+          "relation": "complement",
+          "note": "局部水头损失估算"
+        }
       ],
-      "tags": ["串联管道", "水头叠加", "管网计算", "总损失"],
-      "keywords": ["串联管道", "水头叠加", "管段损失", "枝状管网", "沿程损失求和"],
+      "tags": [
+        "串联管道",
+        "水头叠加",
+        "管网计算",
+        "总损失"
+      ],
+      "keywords": [
+        "串联管道",
+        "水头叠加",
+        "管段损失",
+        "枝状管网",
+        "沿程损失求和"
+      ],
       "precision": "精确",
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",
@@ -429,16 +1300,19 @@
     },
     {
       "formula_id": "WA-HYD-013",
+      "vdi_formula_id": "WA-HYD-013",
       "name": "达西摩擦因子（Swamee-Jain近似）",
       "name_en": "Darcy Friction Factor (Swamee-Jain Approximation)",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "hydraulic/pipe_friction",
       "type": "empirical",
       "equation_text": "f = 0.25 / [log10(ε/(3.7*D) + 5.74/Re^0.9)]²",
       "equation_latex": "f = \\frac{0.25}{\\left[\\log_{10}\\left(\\frac{\\varepsilon}{3.7D} + \\frac{5.74}{Re^{0.9}}\\right)\\right]^2}",
       "equation_ast": {
         "op": "div",
-        "num": {"const": 0.25},
+        "num": {
+          "const": 0.25
+        },
         "den": {
           "op": "pow",
           "base": {
@@ -447,38 +1321,136 @@
               "op": "add",
               "lhs": {
                 "op": "div",
-                "num": {"var": "ε"},
-                "den": {"op": "mul", "args": [{"const": 3.7}, {"var": "D"}]}
+                "num": {
+                  "var": "ε"
+                },
+                "den": {
+                  "op": "mul",
+                  "args": [
+                    {
+                      "const": 3.7
+                    },
+                    {
+                      "var": "D"
+                    }
+                  ]
+                }
               },
               "rhs": {
                 "op": "div",
-                "num": {"const": 5.74},
-                "den": {"op": "pow", "base": {"var": "Re"}, "exp": {"const": 0.9}}
+                "num": {
+                  "const": 5.74
+                },
+                "den": {
+                  "op": "pow",
+                  "base": {
+                    "var": "Re"
+                  },
+                  "exp": {
+                    "const": 0.9
+                  }
+                }
               }
             }
           },
-          "exp": {"const": 2}
+          "exp": {
+            "const": 2
+          }
         }
       },
       "variables": [
-        {"symbol": "f", "name": "达西摩擦因子", "unit": "-", "role": "output", "desc": "达西-魏斯巴赫摩擦因子"},
-        {"symbol": "ε", "name": "管道绝对粗糙度", "unit": "mm", "role": "input", "constraints": {"min": 0.001, "max": 5}, "desc": "管道内壁绝对粗糙度",
-          "look_up": {"type": "material_property", "table_ref": "TBL-ROUGH-001", "default": 0.15}},
-        {"symbol": "D", "name": "管道内径", "unit": "mm", "role": "input", "constraints": {"min": 10, "max": 3000}, "desc": "管道内径"},
-        {"symbol": "Re", "name": "雷诺数", "unit": "-", "role": "input", "constraints": {"min": 4000, "max": 1e8}, "desc": "流体雷诺数"}
+        {
+          "symbol": "f",
+          "name": "达西摩擦因子",
+          "unit": "-",
+          "role": "output",
+          "desc": "达西-魏斯巴赫摩擦因子"
+        },
+        {
+          "symbol": "ε",
+          "name": "管道绝对粗糙度",
+          "unit": "mm",
+          "role": "input",
+          "constraints": {
+            "min": 0.001,
+            "max": 5
+          },
+          "desc": "管道内壁绝对粗糙度",
+          "look_up": {
+            "type": "material_property",
+            "table_ref": "TBL-ROUGH-001",
+            "default": 0.15
+          }
+        },
+        {
+          "symbol": "D",
+          "name": "管道内径",
+          "unit": "mm",
+          "role": "input",
+          "constraints": {
+            "min": 10,
+            "max": 3000
+          },
+          "desc": "管道内径"
+        },
+        {
+          "symbol": "Re",
+          "name": "雷诺数",
+          "unit": "-",
+          "role": "input",
+          "constraints": {
+            "min": 4000,
+            "max": 100000000
+          },
+          "desc": "流体雷诺数"
+        }
       ],
-      "source": {"standard_id": "GB 50013-2018", "clause": "7.1.3", "note": "Swamee-Jain显式近似公式，精度±1%"},
+      "source": {
+        "standard_id": "GB 50013-2018",
+        "clause": "7.1.3",
+        "note": "Swamee-Jain显式近似公式，精度±1%"
+      },
       "applicable_scope": {
-        "pipe_types": ["压力管道"],
-        "flow_regimes": ["turbulent"],
-        "exclusions": ["层流", "过渡流"]
+        "pipe_types": [
+          "压力管道"
+        ],
+        "flow_regimes": [
+          "turbulent"
+        ],
+        "exclusions": [
+          "层流",
+          "过渡流"
+        ]
       },
       "related_formulas": [
-        {"formula_id": "WA-HYD-006", "relation": "prerequisite", "note": "达西公式中使用"},
-        {"formula_id": "WA-HYD-008", "relation": "prerequisite", "note": "雷诺数计算"}
+        {
+          "formula_id": "WA-HYD-004",
+          "vdi_formula_id": "WA-HYD-006",
+          "relation": "prerequisite",
+          "note": "达西公式中使用"
+        },
+        {
+          "formula_id": "WA-HYD-006",
+          "vdi_formula_id": "WA-HYD-008",
+          "relation": "prerequisite",
+          "note": "雷诺数计算"
+        }
       ],
-      "tags": ["摩擦因子", "Colebrook", "Swamee-Jain", "湍流", "管道粗糙度"],
-      "keywords": ["摩擦因子", "Colebrook-White", "Swamee-Jain", "达西系数", "管道粗糙度", "湍流阻力"],
+      "tags": [
+        "摩擦因子",
+        "Colebrook",
+        "Swamee-Jain",
+        "湍流",
+        "管道粗糙度"
+      ],
+      "keywords": [
+        "摩擦因子",
+        "Colebrook-White",
+        "Swamee-Jain",
+        "达西系数",
+        "管道粗糙度",
+        "湍流阻力"
+      ],
       "precision": 0.0001,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -486,9 +1458,10 @@
     },
     {
       "formula_id": "WA-HYD-014",
+      "vdi_formula_id": "WA-HYD-014",
       "name": "局部阻力系数累加法",
       "name_en": "Local Loss Coefficient Summation",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "hydraulic/local_loss",
       "type": "exact",
       "equation_text": "Hl = Σ(ξi * V²/(2g))",
@@ -496,30 +1469,112 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"var": "ξ_total"},
-          {"op": "div",
-            "num": {"op": "pow", "base": {"var": "V"}, "exp": 2},
-            "den": {"op": "mul", "args": [{"const": 2}, {"var": "g"}]}
+          {
+            "var": "ξ_total"
+          },
+          {
+            "op": "div",
+            "num": {
+              "op": "pow",
+              "base": {
+                "var": "V"
+              },
+              "exp": 2
+            },
+            "den": {
+              "op": "mul",
+              "args": [
+                {
+                  "const": 2
+                },
+                {
+                  "var": "g"
+                }
+              ]
+            }
           }
         ]
       },
       "variables": [
-        {"symbol": "Hl", "name": "局部水头损失", "unit": "m", "role": "output", "desc": "所有局部阻力的总水头损失"},
-        {"symbol": "ξ_total", "name": "总局部阻力系数", "unit": "-", "role": "input", "constraints": {"min": 0}, "desc": "各局部阻力系数之和"},
-        {"symbol": "V", "name": "管道流速", "unit": "m/s", "role": "input", "constraints": {"min": 0.01, "max": 10}, "desc": "管道内流体流速"},
-        {"symbol": "g", "name": "重力加速度", "unit": "m/s²", "role": "constant", "default": 9.81, "desc": "重力加速度"}
+        {
+          "symbol": "Hl",
+          "name": "局部水头损失",
+          "unit": "m",
+          "role": "output",
+          "desc": "所有局部阻力的总水头损失"
+        },
+        {
+          "symbol": "ξ_total",
+          "name": "总局部阻力系数",
+          "unit": "-",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "各局部阻力系数之和"
+        },
+        {
+          "symbol": "V",
+          "name": "管道流速",
+          "unit": "m/s",
+          "role": "input",
+          "constraints": {
+            "min": 0.01,
+            "max": 10
+          },
+          "desc": "管道内流体流速"
+        },
+        {
+          "symbol": "g",
+          "name": "重力加速度",
+          "unit": "m/s²",
+          "role": "constant",
+          "default": 9.81,
+          "desc": "重力加速度"
+        }
       ],
-      "source": {"standard_id": "GB 50015-2019", "clause": "3.6.3", "note": "局部水头损失计算"},
+      "source": {
+        "standard_id": "GB 50015-2019",
+        "clause": "3.6.3",
+        "note": "局部水头损失计算"
+      },
       "applicable_scope": {
-        "pipe_types": ["给水管道", "排水管道"],
-        "flow_regimes": ["turbulent", "pressurized"]
+        "pipe_types": [
+          "给水管道",
+          "排水管道"
+        ],
+        "flow_regimes": [
+          "turbulent",
+          "pressurized"
+        ]
       },
       "related_formulas": [
-        {"formula_id": "WA-HYD-005", "relation": "alternative", "note": "经验系数法"},
-        {"formula_id": "WA-HYD-009", "relation": "prerequisite", "note": "流速计算"}
+        {
+          "formula_id": "WA-HYD-003",
+          "vdi_formula_id": "WA-HYD-005",
+          "relation": "alternative",
+          "note": "经验系数法"
+        },
+        {
+          "formula_id": "WA-HYD-007",
+          "vdi_formula_id": "WA-HYD-009",
+          "relation": "prerequisite",
+          "note": "流速计算"
+        }
       ],
-      "tags": ["局部损失", "阻力系数", "管件损失", "水头损失"],
-      "keywords": ["局部阻力", "阻力系数", "管件损失", "弯头损失", "阀门损失"],
+      "tags": [
+        "局部损失",
+        "阻力系数",
+        "管件损失",
+        "水头损失"
+      ],
+      "keywords": [
+        "局部阻力",
+        "阻力系数",
+        "管件损失",
+        "弯头损失",
+        "阀门损失"
+      ],
       "precision": 0.001,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -527,9 +1582,10 @@
     },
     {
       "formula_id": "WA-HYD-015",
+      "vdi_formula_id": "WA-HYD-015",
       "name": "水泵扬程计算",
       "name_en": "Pump Head Calculation",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "hydraulic/pump",
       "type": "exact",
       "equation_text": "H = Hst + Hf + Hl + Hv",
@@ -537,31 +1593,116 @@
       "equation_ast": {
         "op": "add",
         "args": [
-          {"var": "Hst"},
-          {"var": "Hf"},
-          {"var": "Hl"},
-          {"var": "Hv"}
+          {
+            "var": "Hst"
+          },
+          {
+            "var": "Hf"
+          },
+          {
+            "var": "Hl"
+          },
+          {
+            "var": "Hv"
+          }
         ]
       },
       "variables": [
-        {"symbol": "H", "name": "水泵扬程", "unit": "m", "role": "output", "desc": "水泵所需总扬程"},
-        {"symbol": "Hst", "name": "静扬程", "unit": "m", "role": "input", "constraints": {"min": 0}, "desc": "几何高差（吸水池至最高用水点）"},
-        {"symbol": "Hf", "name": "沿程水头损失", "unit": "m", "role": "input", "constraints": {"min": 0}, "desc": "管道沿程摩擦损失"},
-        {"symbol": "Hl", "name": "局部水头损失", "unit": "m", "role": "input", "constraints": {"min": 0}, "desc": "管件、阀门等局部损失"},
-        {"symbol": "Hv", "name": "富余水头", "unit": "m", "role": "input", "constraints": {"min": 0}, "default": 2, "desc": "安全富余水头（一般取2-3m）"}
+        {
+          "symbol": "H",
+          "name": "水泵扬程",
+          "unit": "m",
+          "role": "output",
+          "desc": "水泵所需总扬程"
+        },
+        {
+          "symbol": "Hst",
+          "name": "静扬程",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "几何高差（吸水池至最高用水点）"
+        },
+        {
+          "symbol": "Hf",
+          "name": "沿程水头损失",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "管道沿程摩擦损失"
+        },
+        {
+          "symbol": "Hl",
+          "name": "局部水头损失",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "管件、阀门等局部损失"
+        },
+        {
+          "symbol": "Hv",
+          "name": "富余水头",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "default": 2,
+          "desc": "安全富余水头（一般取2-3m）"
+        }
       ],
-      "source": {"standard_id": "GB 50015-2019", "clause": "3.8.5", "note": "水泵扬程确定"},
+      "source": {
+        "standard_id": "GB 50015-2019",
+        "clause": "3.8.5",
+        "note": "水泵扬程确定"
+      },
       "applicable_scope": {
-        "pipe_types": ["加压供水系统"],
-        "flow_regimes": ["pressurized"]
+        "pipe_types": [
+          "加压供水系统"
+        ],
+        "flow_regimes": [
+          "pressurized"
+        ]
       },
       "related_formulas": [
-        {"formula_id": "WA-HYD-001", "relation": "prerequisite", "note": "沿程损失计算"},
-        {"formula_id": "WA-HYD-005", "relation": "prerequisite", "note": "局部损失计算"},
-        {"formula_id": "WA-EQ-001", "relation": "complement", "note": "水泵功率计算"}
+        {
+          "formula_id": "HS-VEN-001",
+          "vdi_formula_id": "WA-HYD-001",
+          "relation": "prerequisite",
+          "note": "沿程损失计算"
+        },
+        {
+          "formula_id": "WA-HYD-003",
+          "vdi_formula_id": "WA-HYD-005",
+          "relation": "prerequisite",
+          "note": "局部损失计算"
+        },
+        {
+          "formula_id": "WA-EQ-001",
+          "vdi_formula_id": "WA-EQ-001",
+          "relation": "complement",
+          "note": "水泵功率计算"
+        }
       ],
-      "tags": ["水泵扬程", "加压供水", "扬程计算", "水泵选型"],
-      "keywords": ["水泵扬程", "总扬程", "静扬程", "水泵选型", "加压供水"],
+      "tags": [
+        "水泵扬程",
+        "加压供水",
+        "扬程计算",
+        "水泵选型"
+      ],
+      "keywords": [
+        "水泵扬程",
+        "总扬程",
+        "静扬程",
+        "水泵选型",
+        "加压供水"
+      ],
       "precision": 0.1,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -569,9 +1710,10 @@
     },
     {
       "formula_id": "WA-HYD-016",
+      "vdi_formula_id": "WA-HYD-016",
       "name": "管网节点流量平衡方程",
       "name_en": "Pipe Network Node Flow Balance",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "hydraulic/pipe_network",
       "type": "exact",
       "equation_text": "ΣQin = ΣQout (节点流量守恒)",
@@ -579,26 +1721,84 @@
       "equation_ast": {
         "op": "sub",
         "args": [
-          {"var": "Q_in"},
-          {"var": "Q_out"}
+          {
+            "var": "Q_in"
+          },
+          {
+            "var": "Q_out"
+          }
         ]
       },
       "variables": [
-        {"symbol": "ΔQ", "name": "流量不平衡量", "unit": "m³/s", "role": "output", "desc": "节点流量不平衡量（应趋近于0）"},
-        {"symbol": "Q_in", "name": "流入流量", "unit": "m³/s", "role": "input", "constraints": {"min": 0}, "desc": "流入节点的总流量"},
-        {"symbol": "Q_out", "name": "流出流量", "unit": "m³/s", "role": "input", "constraints": {"min": 0}, "desc": "流出节点的总流量"}
+        {
+          "symbol": "ΔQ",
+          "name": "流量不平衡量",
+          "unit": "m³/s",
+          "role": "output",
+          "desc": "节点流量不平衡量（应趋近于0）"
+        },
+        {
+          "symbol": "Q_in",
+          "name": "流入流量",
+          "unit": "m³/s",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "流入节点的总流量"
+        },
+        {
+          "symbol": "Q_out",
+          "name": "流出流量",
+          "unit": "m³/s",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "流出节点的总流量"
+        }
       ],
-      "source": {"standard_id": "GB 50013-2018", "clause": "7.2.1", "note": "管网水力计算基本原则"},
+      "source": {
+        "standard_id": "GB 50013-2018",
+        "clause": "7.2.1",
+        "note": "管网水力计算基本原则"
+      },
       "applicable_scope": {
-        "pipe_types": ["环状管网", "枝状管网"],
-        "flow_regimes": ["pressurized"]
+        "pipe_types": [
+          "环状管网",
+          "枝状管网"
+        ],
+        "flow_regimes": [
+          "pressurized"
+        ]
       },
       "related_formulas": [
-        {"formula_id": "WA-HYD-011", "relation": "complement", "note": "并联管道流量分配"},
-        {"formula_id": "WA-HYD-017", "relation": "complement", "note": "环路能量方程"}
+        {
+          "formula_id": "WA-HYD-009",
+          "vdi_formula_id": "WA-HYD-011",
+          "relation": "complement",
+          "note": "并联管道流量分配"
+        },
+        {
+          "formula_id": "WA-HYD-015",
+          "vdi_formula_id": "WA-HYD-017",
+          "relation": "complement",
+          "note": "环路能量方程"
+        }
       ],
-      "tags": ["管网平差", "节点平衡", "连续性方程", "流量守恒"],
-      "keywords": ["管网平差", "节点平衡", "流量守恒", "连续性方程", "环状管网"],
+      "tags": [
+        "管网平差",
+        "节点平衡",
+        "连续性方程",
+        "流量守恒"
+      ],
+      "keywords": [
+        "管网平差",
+        "节点平衡",
+        "流量守恒",
+        "连续性方程",
+        "环状管网"
+      ],
       "precision": 0.001,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -606,9 +1806,10 @@
     },
     {
       "formula_id": "WA-HYD-017",
+      "vdi_formula_id": "WA-HYD-017",
       "name": "管网环路能量方程",
       "name_en": "Pipe Network Loop Energy Equation",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "hydraulic/pipe_network",
       "type": "exact",
       "equation_text": "Σ(Hf_i) = 0 (环路水头损失代数和为零)",
@@ -616,30 +1817,97 @@
       "equation_ast": {
         "op": "add",
         "args": [
-          {"var": "Hf1"},
-          {"var": "Hf2"},
-          {"var": "Hf3"},
-          {"var": "Hf4"}
+          {
+            "var": "Hf1"
+          },
+          {
+            "var": "Hf2"
+          },
+          {
+            "var": "Hf3"
+          },
+          {
+            "var": "Hf4"
+          }
         ]
       },
       "variables": [
-        {"symbol": "ΔH", "name": "环路水头闭合差", "unit": "m", "role": "output", "desc": "环路水头闭合差（应趋近于0）"},
-        {"symbol": "Hf1", "name": "管段1水头损失", "unit": "m", "role": "input", "desc": "环路管段1的水头损失（顺时针为正）"},
-        {"symbol": "Hf2", "name": "管段2水头损失", "unit": "m", "role": "input", "desc": "环路管段2的水头损失"},
-        {"symbol": "Hf3", "name": "管段3水头损失", "unit": "m", "role": "input", "desc": "环路管段3的水头损失"},
-        {"symbol": "Hf4", "name": "管段4水头损失", "unit": "m", "role": "input", "desc": "环路管段4的水头损失"}
+        {
+          "symbol": "ΔH",
+          "name": "环路水头闭合差",
+          "unit": "m",
+          "role": "output",
+          "desc": "环路水头闭合差（应趋近于0）"
+        },
+        {
+          "symbol": "Hf1",
+          "name": "管段1水头损失",
+          "unit": "m",
+          "role": "input",
+          "desc": "环路管段1的水头损失（顺时针为正）"
+        },
+        {
+          "symbol": "Hf2",
+          "name": "管段2水头损失",
+          "unit": "m",
+          "role": "input",
+          "desc": "环路管段2的水头损失"
+        },
+        {
+          "symbol": "Hf3",
+          "name": "管段3水头损失",
+          "unit": "m",
+          "role": "input",
+          "desc": "环路管段3的水头损失"
+        },
+        {
+          "symbol": "Hf4",
+          "name": "管段4水头损失",
+          "unit": "m",
+          "role": "input",
+          "desc": "环路管段4的水头损失"
+        }
       ],
-      "source": {"standard_id": "GB 50013-2018", "clause": "7.2.2", "note": "环状管网水力计算"},
+      "source": {
+        "standard_id": "GB 50013-2018",
+        "clause": "7.2.2",
+        "note": "环状管网水力计算"
+      },
       "applicable_scope": {
-        "pipe_types": ["环状管网"],
-        "flow_regimes": ["pressurized"]
+        "pipe_types": [
+          "环状管网"
+        ],
+        "flow_regimes": [
+          "pressurized"
+        ]
       },
       "related_formulas": [
-        {"formula_id": "WA-HYD-016", "relation": "complement", "note": "节点流量平衡"},
-        {"formula_id": "WA-HYD-001", "relation": "prerequisite", "note": "各管段水头损失"}
+        {
+          "formula_id": "WA-HYD-014",
+          "vdi_formula_id": "WA-HYD-016",
+          "relation": "complement",
+          "note": "节点流量平衡"
+        },
+        {
+          "formula_id": "HS-VEN-001",
+          "vdi_formula_id": "WA-HYD-001",
+          "relation": "prerequisite",
+          "note": "各管段水头损失"
+        }
       ],
-      "tags": ["管网平差", "环路方程", "能量守恒", "Hardy-Cross"],
-      "keywords": ["环路方程", "管网平差", "Hardy-Cross", "能量守恒", "闭合差"],
+      "tags": [
+        "管网平差",
+        "环路方程",
+        "能量守恒",
+        "Hardy-Cross"
+      ],
+      "keywords": [
+        "环路方程",
+        "管网平差",
+        "Hardy-Cross",
+        "能量守恒",
+        "闭合差"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -647,33 +1915,87 @@
     },
     {
       "formula_id": "WA-HYD-018",
+      "vdi_formula_id": "WA-HYD-018",
       "name": "压力管道水力坡降",
       "name_en": "Pressure Pipe Hydraulic Gradient",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "hydraulic/pipe_friction",
       "type": "exact",
       "equation_text": "i = Hf / L",
       "equation_latex": "i = \\frac{H_f}{L}",
       "equation_ast": {
         "op": "div",
-        "num": {"var": "Hf"},
-        "den": {"var": "L"}
+        "num": {
+          "var": "Hf"
+        },
+        "den": {
+          "var": "L"
+        }
       },
       "variables": [
-        {"symbol": "i", "name": "水力坡降", "unit": "m/m", "role": "output", "desc": "单位长度的水头损失"},
-        {"symbol": "Hf", "name": "沿程水头损失", "unit": "m", "role": "input", "constraints": {"min": 0}, "desc": "管段沿程水头损失"},
-        {"symbol": "L", "name": "管道长度", "unit": "m", "role": "input", "constraints": {"min": 1, "max": 10000}, "desc": "管道长度"}
+        {
+          "symbol": "i",
+          "name": "水力坡降",
+          "unit": "m/m",
+          "role": "output",
+          "desc": "单位长度的水头损失"
+        },
+        {
+          "symbol": "Hf",
+          "name": "沿程水头损失",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "管段沿程水头损失"
+        },
+        {
+          "symbol": "L",
+          "name": "管道长度",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 1,
+            "max": 10000
+          },
+          "desc": "管道长度"
+        }
       ],
-      "source": {"standard_id": "GB 50013-2018", "clause": "7.1.3", "note": "水力坡降定义"},
+      "source": {
+        "standard_id": "GB 50013-2018",
+        "clause": "7.1.3",
+        "note": "水力坡降定义"
+      },
       "applicable_scope": {
-        "pipe_types": ["压力管道"],
-        "flow_regimes": ["pressurized"]
+        "pipe_types": [
+          "压力管道"
+        ],
+        "flow_regimes": [
+          "pressurized"
+        ]
       },
       "related_formulas": [
-        {"formula_id": "WA-HYD-001", "relation": "prerequisite", "note": "沿程损失计算"}
+        {
+          "formula_id": "HS-VEN-001",
+          "vdi_formula_id": "WA-HYD-001",
+          "relation": "prerequisite",
+          "note": "沿程损失计算"
+        }
       ],
-      "tags": ["水力坡降", "坡度", "管道设计", "水头损失率"],
-      "keywords": ["水力坡降", "坡度", "水头损失率", "单位损失", "管道坡度"],
+      "tags": [
+        "水力坡降",
+        "坡度",
+        "管道设计",
+        "水头损失率"
+      ],
+      "keywords": [
+        "水力坡降",
+        "坡度",
+        "水头损失率",
+        "单位损失",
+        "管道坡度"
+      ],
       "precision": 0.0001,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -681,9 +2003,10 @@
     },
     {
       "formula_id": "WA-HYD-019",
+      "vdi_formula_id": "WA-HYD-019",
       "name": "明渠均匀流流量（曼宁公式）",
       "name_en": "Open Channel Uniform Flow (Manning)",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "hydraulic/open_channel",
       "type": "exact",
       "equation_text": "Q = (1/n) * A * R^(2/3) * S^(1/2)",
@@ -691,31 +2014,130 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"op": "div", "num": {"const": 1}, "den": {"var": "n"}},
-          {"var": "A"},
-          {"op": "pow", "base": {"var": "R"}, "exp": {"const": 0.667}},
-          {"op": "sqrt", "arg": {"var": "S"}}
+          {
+            "op": "div",
+            "num": {
+              "const": 1
+            },
+            "den": {
+              "var": "n"
+            }
+          },
+          {
+            "var": "A"
+          },
+          {
+            "op": "pow",
+            "base": {
+              "var": "R"
+            },
+            "exp": {
+              "const": 0.667
+            }
+          },
+          {
+            "op": "sqrt",
+            "arg": {
+              "var": "S"
+            }
+          }
         ]
       },
       "variables": [
-        {"symbol": "Q", "name": "流量", "unit": "m³/s", "role": "output", "desc": "明渠均匀流流量"},
-        {"symbol": "n", "name": "曼宁粗糙系数", "unit": "-", "role": "input", "desc": "渠道壁面粗糙系数",
-          "look_up": {"type": "material_property", "table_ref": "TBL-N-001", "default": 0.013}},
-        {"symbol": "A", "name": "过水断面面积", "unit": "m²", "role": "input", "constraints": {"min": 0.001}, "desc": "过水断面面积"},
-        {"symbol": "R", "name": "水力半径", "unit": "m", "role": "input", "constraints": {"min": 0.001}, "desc": "水力半径（A/湿周）"},
-        {"symbol": "S", "name": "水面坡度", "unit": "m/m", "role": "input", "constraints": {"min": 0.0001, "max": 0.1}, "desc": "水面坡度（能量坡度）"}
+        {
+          "symbol": "Q",
+          "name": "流量",
+          "unit": "m³/s",
+          "role": "output",
+          "desc": "明渠均匀流流量"
+        },
+        {
+          "symbol": "n",
+          "name": "曼宁粗糙系数",
+          "unit": "-",
+          "role": "input",
+          "desc": "渠道壁面粗糙系数",
+          "look_up": {
+            "type": "material_property",
+            "table_ref": "TBL-N-001",
+            "default": 0.013
+          }
+        },
+        {
+          "symbol": "A",
+          "name": "过水断面面积",
+          "unit": "m²",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "过水断面面积"
+        },
+        {
+          "symbol": "R",
+          "name": "水力半径",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "水力半径（A/湿周）"
+        },
+        {
+          "symbol": "S",
+          "name": "水面坡度",
+          "unit": "m/m",
+          "role": "input",
+          "constraints": {
+            "min": 0.0001,
+            "max": 0.1
+          },
+          "desc": "水面坡度（能量坡度）"
+        }
       ],
-      "source": {"standard_id": "GB 50014-2021", "clause": "4.2.6", "note": "排水管道水力计算"},
+      "source": {
+        "standard_id": "GB 50014-2021",
+        "clause": "4.2.6",
+        "note": "排水管道水力计算"
+      },
       "applicable_scope": {
-        "pipe_types": ["排水沟", "明渠", "河道"],
-        "flow_regimes": ["uniform", "open_channel"]
+        "pipe_types": [
+          "排水沟",
+          "明渠",
+          "河道"
+        ],
+        "flow_regimes": [
+          "uniform",
+          "open_channel"
+        ]
       },
       "related_formulas": [
-        {"formula_id": "WA-HYD-002", "relation": "alternative", "note": "圆管满流曼宁公式"},
-        {"formula_id": "WA-HYD-004", "relation": "prerequisite", "note": "水力半径计算"}
+        {
+          "formula_id": "HS-VEN-002",
+          "vdi_formula_id": "WA-HYD-002",
+          "relation": "alternative",
+          "note": "圆管满流曼宁公式"
+        },
+        {
+          "formula_id": "WA-HYD-002",
+          "vdi_formula_id": "WA-HYD-004",
+          "relation": "prerequisite",
+          "note": "水力半径计算"
+        }
       ],
-      "tags": ["明渠", "曼宁公式", "均匀流", "排水沟"],
-      "keywords": ["明渠流", "曼宁公式", "均匀流", "排水沟", "水力半径"],
+      "tags": [
+        "明渠",
+        "曼宁公式",
+        "均匀流",
+        "排水沟"
+      ],
+      "keywords": [
+        "明渠流",
+        "曼宁公式",
+        "均匀流",
+        "排水沟",
+        "水力半径"
+      ],
       "precision": 0.001,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -723,9 +2145,10 @@
     },
     {
       "formula_id": "WA-HYD-020",
+      "vdi_formula_id": "WA-HYD-020",
       "name": "矩形薄壁堰流量",
       "name_en": "Rectangular Thin-Weir Flow",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "hydraulic/weir",
       "type": "empirical",
       "equation_text": "Q = Cd * (2/3) * √(2g) * B * H^(3/2)",
@@ -733,28 +2156,121 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"var": "Cd"},
-          {"const": 0.667},
-          {"op": "sqrt", "arg": {"op": "mul", "args": [{"const": 2}, {"var": "g"}]}},
-          {"var": "B"},
-          {"op": "pow", "base": {"var": "H"}, "exp": {"const": 1.5}}
+          {
+            "var": "Cd"
+          },
+          {
+            "const": 0.667
+          },
+          {
+            "op": "sqrt",
+            "arg": {
+              "op": "mul",
+              "args": [
+                {
+                  "const": 2
+                },
+                {
+                  "var": "g"
+                }
+              ]
+            }
+          },
+          {
+            "var": "B"
+          },
+          {
+            "op": "pow",
+            "base": {
+              "var": "H"
+            },
+            "exp": {
+              "const": 1.5
+            }
+          }
         ]
       },
       "variables": [
-        {"symbol": "Q", "name": "流量", "unit": "m³/s", "role": "output", "desc": "过堰流量"},
-        {"symbol": "Cd", "name": "流量系数", "unit": "-", "role": "input", "constraints": {"min": 0.6, "max": 0.7}, "default": 0.62, "desc": "堰流流量系数"},
-        {"symbol": "g", "name": "重力加速度", "unit": "m/s²", "role": "constant", "default": 9.81, "desc": "重力加速度"},
-        {"symbol": "B", "name": "堰宽", "unit": "m", "role": "input", "constraints": {"min": 0.1, "max": 50}, "desc": "堰顶宽度"},
-        {"symbol": "H", "name": "堰上水头", "unit": "m", "role": "input", "constraints": {"min": 0.02, "max": 5}, "desc": "堰顶以上水头"}
+        {
+          "symbol": "Q",
+          "name": "流量",
+          "unit": "m³/s",
+          "role": "output",
+          "desc": "过堰流量"
+        },
+        {
+          "symbol": "Cd",
+          "name": "流量系数",
+          "unit": "-",
+          "role": "input",
+          "constraints": {
+            "min": 0.6,
+            "max": 0.7
+          },
+          "default": 0.62,
+          "desc": "堰流流量系数"
+        },
+        {
+          "symbol": "g",
+          "name": "重力加速度",
+          "unit": "m/s²",
+          "role": "constant",
+          "default": 9.81,
+          "desc": "重力加速度"
+        },
+        {
+          "symbol": "B",
+          "name": "堰宽",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.1,
+            "max": 50
+          },
+          "desc": "堰顶宽度"
+        },
+        {
+          "symbol": "H",
+          "name": "堰上水头",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.02,
+            "max": 5
+          },
+          "desc": "堰顶以上水头"
+        }
       ],
-      "source": {"standard_id": "GB 50014-2021", "clause": "4.3.2", "note": "雨水口流量计算"},
+      "source": {
+        "standard_id": "GB 50014-2021",
+        "clause": "4.3.2",
+        "note": "雨水口流量计算"
+      },
       "applicable_scope": {
-        "pipe_types": ["雨水口", "溢流堰", "量水堰"],
-        "flow_regimes": ["open_channel", "free_flow"]
+        "pipe_types": [
+          "雨水口",
+          "溢流堰",
+          "量水堰"
+        ],
+        "flow_regimes": [
+          "open_channel",
+          "free_flow"
+        ]
       },
       "related_formulas": [],
-      "tags": ["堰流", "薄壁堰", "雨水口", "流量测量"],
-      "keywords": ["堰流", "薄壁堰", "堰上水头", "雨水口", "溢流"],
+      "tags": [
+        "堰流",
+        "薄壁堰",
+        "雨水口",
+        "流量测量"
+      ],
+      "keywords": [
+        "堰流",
+        "薄壁堰",
+        "堰上水头",
+        "雨水口",
+        "溢流"
+      ],
       "precision": 0.001,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",

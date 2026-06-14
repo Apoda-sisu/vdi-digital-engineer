@@ -9,6 +9,7 @@
 import { readFileSync, writeFileSync, readdirSync, statSync } from "node:fs";
 import { resolve, dirname, join, extname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { allSkillsRoots } from "../config/skills-layout.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..", "..");
@@ -124,8 +125,8 @@ function walkDir(dir, extensions) {
 // ════════════════════════════════════════════════════════
 
 const targets = [
-  // SKILL.md 文件（20 个）
-  ...walkDir(join(ROOT, "skills"), [".md"]),
+  // SKILL.md 文件
+  ...allSkillsRoots().flatMap((root) => walkDir(root, [".md"])),
   // MCP 服务器
   join(ROOT, "pilotdeck-vdi", "mcp", "vdi-orchestrator", "server.mjs"),
   join(ROOT, "pilotdeck-vdi", "mcp", "vdi-events", "event-registry.json"),

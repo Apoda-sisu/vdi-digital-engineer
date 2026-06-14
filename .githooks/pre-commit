@@ -1,0 +1,73 @@
+#!/bin/sh
+# PilotDeck pre-commit hook v3
+# =============================
+# 在 git commit 前运行系统门禁校验。
+# 根据变更文件类型自动选择校验模式：
+#   - 知识库/公式库变更 → 完整校验（含数据质量）
+#   - 其他变更 → 快速校验（Schema + 引用完整性）
+#
+# 安装方式:
+#   git config core.hooksPath .githooks
+#
+# 跳过校验（紧急情况）:
+#   git commit --no-verify -m "emergency fix"
+
+echo "🔒 PilotDeck 系统门禁 v3 运行中..."
+
+# 获取暂存区变更的文件列表
+CHANGED_FILES=$(git diff --cached --name-only --diff-filter=ACMR 2>/dev/null)
+
+# 检测是否涉及知识库或公式库变更
+NEED_FULL_VALIDATION=false
+
+for file in $CHANGED_FILES; do
+  case "$file" in
+    pilotdeck-vdi/data/knowledge*.json)
+      NEED_FULL_VALIDATION=true
+      echo "  📊 检测到知识库变更: $file"
+      ;;
+    pilotdeck-vdi/data/formulas*.json)
+      NEED_FULL_VALIDATION=true
+      echo "  📊 检测到公式库变更: $file"
+      ;;
+    pilotdeck-vdi/data/indices/*.json)
+      NEED_FULL_VALIDATION=true
+      echo "  📊 检测到索引变更: $file"
+      ;;
+    pilotdeck-vdi/data/event-registry.json)
+      NEED_FULL_VALIDATION=true
+      echo "  📊 检测到事件注册表变更: $file"
+      ;;
+  esac
+done
+
+# 根据变更类型选择校验模式
+if [ "$NEED_FULL_VALIDATION" = true ]; then
+  echo ""
+  echo "  📋 模式: 完整校验（含数据质量检查 GOV-040~049）"
+  echo ""
+  node pilotdeck-vdi/scripts/validate-system.mjs
+else
+  echo ""
+  echo "  📋 模式: 快速校验（Schema + 引用完整性）"
+  echo ""
+  node pilotdeck-vdi/scripts/validate-system.mjs --quick
+fi
+
+# Skill 路径门禁
+node scripts/guard-no-root-skills.mjs || exit 1
+
+EXIT_CODE=$?
+
+if [ $EXIT_CODE -ne 0 ]; then
+  echo ""
+  echo "❌ 系统门禁未通过，提交被阻止。"
+  echo "   查看详情: node pilotdeck-vdi/scripts/validate-system.mjs"
+  echo "   自动修复: node pilotdeck-vdi/scripts/validate-system.mjs --fix"
+  echo "   跳过校验: git commit --no-verify"
+  exit 1
+fi
+
+echo ""
+echo "✅ 系统门禁通过，允许提交。"
+exit 0

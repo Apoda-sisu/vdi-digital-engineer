@@ -1,0 +1,90 @@
+{
+  "symbol_id": "COLUMN-DISTILLATION-001",
+  "name": "精馏塔",
+  "name_en": "Distillation Column",
+  "standard": "HG/T 20559.2-1993",
+  "category": "columns",
+  "description": "板式精馏塔",
+  "parameters": {
+    "diameter": {
+      "type": "number",
+      "unit": "mm",
+      "description": "塔径"
+    },
+    "height": {
+      "type": "number",
+      "unit": "mm",
+      "description": "塔高"
+    },
+    "tray_number": {
+      "type": "number",
+      "description": "塔板数"
+    },
+    "tray_type": {
+      "type": "string",
+      "description": "塔板类型",
+      "examples": ["浮阀", "筛板", "泡罩"]
+    }
+  },
+  "connections": {
+    "overhead_vapor": {
+      "position": {"x": 0, "y": 55},
+      "direction": "up"
+    },
+    "feed": {
+      "position": {"x": 25, "y": 10},
+      "direction": "right"
+    },
+    "bottom_product": {
+      "position": {"x": 0, "y": -55},
+      "direction": "down"
+    },
+    "reboiler_return": {
+      "position": {"x": -25, "y": -30},
+      "direction": "left"
+    }
+  },
+  "geometry": {
+    "components": [
+      {
+        "type": "rectangle",
+        "params": {"width": 30, "height": 90},
+        "description": "塔体"
+      },
+      {
+        "type": "circle",
+        "params": {"radius": 15},
+        "position": {"x": 0, "y": 45},
+        "description": "顶封头"
+      },
+      {
+        "type": "circle",
+        "params": {"radius": 15},
+        "position": {"x": 0, "y": -45},
+        "description": "底封头"
+      },
+      {
+        "type": "line",
+        "params": {"start": [-12, 30], "end": [12, 30]},
+        "description": "塔板1"
+      },
+      {
+        "type": "line",
+        "params": {"start": [-12, 10], "end": [12, 10]},
+        "description": "塔板2"
+      },
+      {
+        "type": "line",
+        "params": {"start": [-12, -10], "end": [12, -10]},
+        "description": "塔板3"
+      },
+      {
+        "type": "line",
+        "params": {"start": [-12, -30], "end": [12, -30]},
+        "description": "塔板4"
+      }
+    ]
+  },
+  "related_standards": ["GB/T 150", "HG/T 20577", "API 650"],
+  "typical_applications": ["精馏", "吸收", "解吸"]
+}

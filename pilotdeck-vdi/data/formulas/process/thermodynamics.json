@@ -1,14 +1,15 @@
 {
   "file": "process/thermodynamics.json",
-  "discipline": "process",
+  "discipline": "PX",
   "category": "thermodynamics",
   "formula_count": 6,
   "formulas": [
     {
       "formula_id": "PR-REA-003",
+      "vdi_formula_id": "PR-REA-003",
       "name": "阿伦尼乌斯方程",
       "name_en": "Arrhenius Equation",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "reaction/kinetics",
       "type": "exact",
       "equation_text": "k = A * exp(-Ea/RT)",
@@ -16,20 +17,100 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"var": "A"},
-          {"op": "pow", "base": {"const": 2.7183}, "exp": {"op": "div", "num": {"op": "neg", "arg": {"var": "Ea"}}, "den": {"op": "mul", "args": [{"var": "R"}, {"var": "T"}]}}}
+          {
+            "var": "A"
+          },
+          {
+            "op": "pow",
+            "base": {
+              "const": 2.7183
+            },
+            "exp": {
+              "op": "div",
+              "num": {
+                "op": "neg",
+                "arg": {
+                  "var": "Ea"
+                }
+              },
+              "den": {
+                "op": "mul",
+                "args": [
+                  {
+                    "var": "R"
+                  },
+                  {
+                    "var": "T"
+                  }
+                ]
+              }
+            }
+          }
         ]
       },
       "variables": [
-        {"symbol": "k", "name": "反应速率常数", "unit": "1/s", "role": "output", "desc": "反应速率常数"},
-        {"symbol": "A", "name": "指前因子", "unit": "1/s", "role": "input", "constraints": {"min": 0}, "desc": "频率因子"},
-        {"symbol": "Ea", "name": "活化能", "unit": "J/mol", "role": "input", "constraints": {"min": 1000}, "desc": "反应活化能"},
-        {"symbol": "R", "name": "气体常数", "unit": "J/(mol·K)", "role": "constant", "default": 8.314, "desc": "理想气体常数"},
-        {"symbol": "T", "name": "温度", "unit": "K", "role": "input", "constraints": {"min": 200, "max": 2000}, "desc": "绝对温度"}
+        {
+          "symbol": "k",
+          "name": "反应速率常数",
+          "unit": "1/s",
+          "role": "output",
+          "desc": "反应速率常数"
+        },
+        {
+          "symbol": "A",
+          "name": "指前因子",
+          "unit": "1/s",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "频率因子"
+        },
+        {
+          "symbol": "Ea",
+          "name": "活化能",
+          "unit": "J/mol",
+          "role": "input",
+          "constraints": {
+            "min": 1000
+          },
+          "desc": "反应活化能"
+        },
+        {
+          "symbol": "R",
+          "name": "气体常数",
+          "unit": "J/(mol·K)",
+          "role": "constant",
+          "default": 8.314,
+          "desc": "理想气体常数"
+        },
+        {
+          "symbol": "T",
+          "name": "温度",
+          "unit": "K",
+          "role": "input",
+          "constraints": {
+            "min": 200,
+            "max": 2000
+          },
+          "desc": "绝对温度"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "化学反应动力学"},
-      "tags": ["阿伦尼乌斯", "反应速率", "活化能"],
-      "keywords": ["阿伦尼乌斯", "反应速率常数", "活化能", "温度影响"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "化学反应动力学"
+      },
+      "tags": [
+        "阿伦尼乌斯",
+        "反应速率",
+        "活化能"
+      ],
+      "keywords": [
+        "阿伦尼乌斯",
+        "反应速率常数",
+        "活化能",
+        "温度影响"
+      ],
       "precision": 0.001,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -37,9 +118,10 @@
     },
     {
       "formula_id": "PR-REA-004",
+      "vdi_formula_id": "PR-REA-004",
       "name": "一级反应动力学方程",
       "name_en": "First-Order Reaction Kinetics",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "reaction/kinetics",
       "type": "exact",
       "equation_text": "CA = CA0 * exp(-kt)",
@@ -47,19 +129,84 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"var": "CA0"},
-          {"op": "pow", "base": {"const": 2.7183}, "exp": {"op": "mul", "args": [{"op": "neg", "arg": {"var": "k"}}, {"var": "t"}]}}
+          {
+            "var": "CA0"
+          },
+          {
+            "op": "pow",
+            "base": {
+              "const": 2.7183
+            },
+            "exp": {
+              "op": "mul",
+              "args": [
+                {
+                  "op": "neg",
+                  "arg": {
+                    "var": "k"
+                  }
+                },
+                {
+                  "var": "t"
+                }
+              ]
+            }
+          }
         ]
       },
       "variables": [
-        {"symbol": "CA", "name": "反应物浓度", "unit": "mol/L", "role": "output", "desc": "t时刻反应物浓度"},
-        {"symbol": "CA0", "name": "初始浓度", "unit": "mol/L", "role": "input", "constraints": {"min": 0.001}, "desc": "反应物初始浓度"},
-        {"symbol": "k", "name": "反应速率常数", "unit": "1/s", "role": "input", "constraints": {"min": 0}, "desc": "一级反应速率常数"},
-        {"symbol": "t", "name": "反应时间", "unit": "s", "role": "input", "constraints": {"min": 0}, "desc": "反应时间"}
+        {
+          "symbol": "CA",
+          "name": "反应物浓度",
+          "unit": "mol/L",
+          "role": "output",
+          "desc": "t时刻反应物浓度"
+        },
+        {
+          "symbol": "CA0",
+          "name": "初始浓度",
+          "unit": "mol/L",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "反应物初始浓度"
+        },
+        {
+          "symbol": "k",
+          "name": "反应速率常数",
+          "unit": "1/s",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "一级反应速率常数"
+        },
+        {
+          "symbol": "t",
+          "name": "反应时间",
+          "unit": "s",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "反应时间"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "化学反应动力学"},
-      "tags": ["一级反应", "动力学", "浓度变化"],
-      "keywords": ["一级反应", "反应动力学", "浓度衰减"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "化学反应动力学"
+      },
+      "tags": [
+        "一级反应",
+        "动力学",
+        "浓度变化"
+      ],
+      "keywords": [
+        "一级反应",
+        "反应动力学",
+        "浓度衰减"
+      ],
       "precision": 0.001,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -67,26 +214,66 @@
     },
     {
       "formula_id": "PR-REA-005",
+      "vdi_formula_id": "PR-REA-005",
       "name": "化学平衡常数",
       "name_en": "Chemical Equilibrium Constant",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "reaction/equilibrium",
       "type": "exact",
       "equation_text": "K = kf/kb = exp(-ΔG°/RT)",
       "equation_latex": "K = \\frac{k_f}{k_b} = \\exp\\left(-\\frac{\\Delta G°}{RT}\\right)",
       "equation_ast": {
         "op": "div",
-        "num": {"var": "kf"},
-        "den": {"var": "kb"}
+        "num": {
+          "var": "kf"
+        },
+        "den": {
+          "var": "kb"
+        }
       },
       "variables": [
-        {"symbol": "K", "name": "平衡常数", "unit": "-", "role": "output", "desc": "化学反应平衡常数"},
-        {"symbol": "kf", "name": "正反应速率常数", "unit": "-", "role": "input", "constraints": {"min": 0}, "desc": "正反应速率常数"},
-        {"symbol": "kb", "name": "逆反应速率常数", "unit": "-", "role": "input", "constraints": {"min": 0.001}, "desc": "逆反应速率常数"}
+        {
+          "symbol": "K",
+          "name": "平衡常数",
+          "unit": "-",
+          "role": "output",
+          "desc": "化学反应平衡常数"
+        },
+        {
+          "symbol": "kf",
+          "name": "正反应速率常数",
+          "unit": "-",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "正反应速率常数"
+        },
+        {
+          "symbol": "kb",
+          "name": "逆反应速率常数",
+          "unit": "-",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "逆反应速率常数"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "化学平衡"},
-      "tags": ["平衡常数", "化学平衡", "热力学"],
-      "keywords": ["平衡常数", "化学平衡", "正逆反应"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "化学平衡"
+      },
+      "tags": [
+        "平衡常数",
+        "化学平衡",
+        "热力学"
+      ],
+      "keywords": [
+        "平衡常数",
+        "化学平衡",
+        "正逆反应"
+      ],
       "precision": 0.001,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -94,9 +281,10 @@
     },
     {
       "formula_id": "PR-VAP-001",
+      "vdi_formula_id": "PR-VAP-001",
       "name": "克劳修斯-克拉佩龙方程",
       "name_en": "Clausius-Clapeyron Equation",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "thermodynamics/phase",
       "type": "exact",
       "equation_text": "P2 = P1 * exp[(ΔHvap/R) * (1/T1 - 1/T2)]",
@@ -104,27 +292,126 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"var": "P1"},
-          {"op": "pow", "base": {"const": 2.7183}, "exp": {"op": "mul", "args": [
-            {"op": "div", "num": {"var": "ΔHvap"}, "den": {"var": "R"}},
-            {"op": "sub", "args": [
-              {"op": "div", "num": {"const": 1}, "den": {"var": "T1"}},
-              {"op": "div", "num": {"const": 1}, "den": {"var": "T2"}}
-            ]}
-          ]}}
+          {
+            "var": "P1"
+          },
+          {
+            "op": "pow",
+            "base": {
+              "const": 2.7183
+            },
+            "exp": {
+              "op": "mul",
+              "args": [
+                {
+                  "op": "div",
+                  "num": {
+                    "var": "ΔHvap"
+                  },
+                  "den": {
+                    "var": "R"
+                  }
+                },
+                {
+                  "op": "sub",
+                  "args": [
+                    {
+                      "op": "div",
+                      "num": {
+                        "const": 1
+                      },
+                      "den": {
+                        "var": "T1"
+                      }
+                    },
+                    {
+                      "op": "div",
+                      "num": {
+                        "const": 1
+                      },
+                      "den": {
+                        "var": "T2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
         ]
       },
       "variables": [
-        {"symbol": "P2", "name": "高压侧蒸汽压", "unit": "Pa", "role": "output", "desc": "T2温度下的蒸汽压"},
-        {"symbol": "P1", "name": "低压侧蒸汽压", "unit": "Pa", "role": "input", "constraints": {"min": 100}, "desc": "T1温度下的蒸汽压"},
-        {"symbol": "ΔHvap", "name": "汽化潜热", "unit": "J/mol", "role": "input", "constraints": {"min": 1000}, "desc": "摩尔汽化潜热"},
-        {"symbol": "R", "name": "气体常数", "unit": "J/(mol·K)", "role": "constant", "default": 8.314, "desc": "理想气体常数"},
-        {"symbol": "T1", "name": "低温", "unit": "K", "role": "input", "constraints": {"min": 200}, "desc": "已知蒸汽压对应的温度"},
-        {"symbol": "T2", "name": "高温", "unit": "K", "role": "input", "constraints": {"min": 200}, "desc": "求解蒸汽压对应的温度"}
+        {
+          "symbol": "P2",
+          "name": "高压侧蒸汽压",
+          "unit": "Pa",
+          "role": "output",
+          "desc": "T2温度下的蒸汽压"
+        },
+        {
+          "symbol": "P1",
+          "name": "低压侧蒸汽压",
+          "unit": "Pa",
+          "role": "input",
+          "constraints": {
+            "min": 100
+          },
+          "desc": "T1温度下的蒸汽压"
+        },
+        {
+          "symbol": "ΔHvap",
+          "name": "汽化潜热",
+          "unit": "J/mol",
+          "role": "input",
+          "constraints": {
+            "min": 1000
+          },
+          "desc": "摩尔汽化潜热"
+        },
+        {
+          "symbol": "R",
+          "name": "气体常数",
+          "unit": "J/(mol·K)",
+          "role": "constant",
+          "default": 8.314,
+          "desc": "理想气体常数"
+        },
+        {
+          "symbol": "T1",
+          "name": "低温",
+          "unit": "K",
+          "role": "input",
+          "constraints": {
+            "min": 200
+          },
+          "desc": "已知蒸汽压对应的温度"
+        },
+        {
+          "symbol": "T2",
+          "name": "高温",
+          "unit": "K",
+          "role": "input",
+          "constraints": {
+            "min": 200
+          },
+          "desc": "求解蒸汽压对应的温度"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "相平衡"},
-      "tags": ["蒸汽压", "克劳修斯-克拉佩龙", "相平衡"],
-      "keywords": ["蒸汽压", "克劳修斯-克拉佩龙", "汽化潜热", "沸点"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "相平衡"
+      },
+      "tags": [
+        "蒸汽压",
+        "克劳修斯-克拉佩龙",
+        "相平衡"
+      ],
+      "keywords": [
+        "蒸汽压",
+        "克劳修斯-克拉佩龙",
+        "汽化潜热",
+        "沸点"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -132,25 +419,70 @@
     },
     {
       "formula_id": "PR-VAP-002",
+      "vdi_formula_id": "PR-VAP-002",
       "name": "拉乌尔定律",
       "name_en": "Raoult's Law",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "thermodynamics/vle",
       "type": "exact",
       "equation_text": "P = x * P°",
       "equation_latex": "P = x \\cdot P°",
       "equation_ast": {
         "op": "mul",
-        "args": [{"var": "x"}, {"var": "P0"}]
+        "args": [
+          {
+            "var": "x"
+          },
+          {
+            "var": "P0"
+          }
+        ]
       },
       "variables": [
-        {"symbol": "P", "name": "组分分压", "unit": "Pa", "role": "output", "desc": "溶液中某组分的分压"},
-        {"symbol": "x", "name": "液相摩尔分数", "unit": "-", "role": "input", "constraints": {"min": 0, "max": 1}, "desc": "液相中该组分的摩尔分数"},
-        {"symbol": "P0", "name": "纯组分蒸汽压", "unit": "Pa", "role": "input", "constraints": {"min": 100}, "desc": "纯组分在该温度下的饱和蒸汽压"}
+        {
+          "symbol": "P",
+          "name": "组分分压",
+          "unit": "Pa",
+          "role": "output",
+          "desc": "溶液中某组分的分压"
+        },
+        {
+          "symbol": "x",
+          "name": "液相摩尔分数",
+          "unit": "-",
+          "role": "input",
+          "constraints": {
+            "min": 0,
+            "max": 1
+          },
+          "desc": "液相中该组分的摩尔分数"
+        },
+        {
+          "symbol": "P0",
+          "name": "纯组分蒸汽压",
+          "unit": "Pa",
+          "role": "input",
+          "constraints": {
+            "min": 100
+          },
+          "desc": "纯组分在该温度下的饱和蒸汽压"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "相平衡"},
-      "tags": ["拉乌尔定律", "蒸汽压", "理想溶液"],
-      "keywords": ["拉乌尔定律", "分压", "理想溶液", "VLE"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "相平衡"
+      },
+      "tags": [
+        "拉乌尔定律",
+        "蒸汽压",
+        "理想溶液"
+      ],
+      "keywords": [
+        "拉乌尔定律",
+        "分压",
+        "理想溶液",
+        "VLE"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -158,26 +490,82 @@
     },
     {
       "formula_id": "PR-VAP-003",
+      "vdi_formula_id": "PR-VAP-003",
       "name": "道尔顿分压定律",
       "name_en": "Dalton's Law of Partial Pressures",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "thermodynamics/gas",
       "type": "exact",
       "equation_text": "P_total = P1 + P2 + ... + Pn",
       "equation_latex": "P_{total} = \\sum_{i=1}^{n} P_i",
       "equation_ast": {
         "op": "add",
-        "args": [{"var": "P1"}, {"var": "P2"}, {"var": "P3"}]
+        "args": [
+          {
+            "var": "P1"
+          },
+          {
+            "var": "P2"
+          },
+          {
+            "var": "P3"
+          }
+        ]
       },
       "variables": [
-        {"symbol": "P_total", "name": "总压", "unit": "Pa", "role": "output", "desc": "混合气体总压力"},
-        {"symbol": "P1", "name": "组分1分压", "unit": "Pa", "role": "input", "constraints": {"min": 0}, "desc": "组分1的分压"},
-        {"symbol": "P2", "name": "组分2分压", "unit": "Pa", "role": "input", "constraints": {"min": 0}, "desc": "组分2的分压"},
-        {"symbol": "P3", "name": "组分3分压", "unit": "Pa", "role": "input", "constraints": {"min": 0}, "desc": "组分3的分压"}
+        {
+          "symbol": "P_total",
+          "name": "总压",
+          "unit": "Pa",
+          "role": "output",
+          "desc": "混合气体总压力"
+        },
+        {
+          "symbol": "P1",
+          "name": "组分1分压",
+          "unit": "Pa",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "组分1的分压"
+        },
+        {
+          "symbol": "P2",
+          "name": "组分2分压",
+          "unit": "Pa",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "组分2的分压"
+        },
+        {
+          "symbol": "P3",
+          "name": "组分3分压",
+          "unit": "Pa",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "组分3的分压"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "气体混合物"},
-      "tags": ["道尔顿定律", "分压", "气体混合物"],
-      "keywords": ["道尔顿分压定律", "总压", "分压", "气体混合"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "气体混合物"
+      },
+      "tags": [
+        "道尔顿定律",
+        "分压",
+        "气体混合物"
+      ],
+      "keywords": [
+        "道尔顿分压定律",
+        "总压",
+        "分压",
+        "气体混合"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",

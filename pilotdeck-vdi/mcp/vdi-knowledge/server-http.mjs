@@ -83,7 +83,7 @@ function loadAllIndices() {
 }
 
 function buildFormulaFileMap() {
-  const disciplines = ["electrical", "hse", "instrument", "piping", "process", "water"];
+  const disciplines = ["electrical", "hs", "instrument", "piping", "process", "water"];
   for (const disc of disciplines) {
     const discDir = path.join(FORMULAS_DIR, disc);
     if (!fs.existsSync(discDir)) continue;

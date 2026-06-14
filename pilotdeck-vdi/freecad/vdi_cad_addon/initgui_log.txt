@@ -1,0 +1,6 @@
+InitGui start: /Users/apoda/Library/Application Support/FreeCAD/v1-1/Mod/VDI_CAD
+sys.path ready, mod_dir exists=True
+font compat applied (macOS TechDraw Sans warning)
+workbench registered
+RPC server started on 0.0.0.0:9876 (Docker via host.docker.internal)
+VDI selection observer: success

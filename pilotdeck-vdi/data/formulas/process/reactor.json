@@ -1,14 +1,15 @@
 {
   "file": "process/reactor.json",
-  "discipline": "process",
+  "discipline": "PX",
   "category": "reactor",
   "formula_count": 6,
   "formulas": [
     {
       "formula_id": "PR-RCT-001",
+      "vdi_formula_id": "PR-RCT-001",
       "name": "固定床反应器压降（Ergun方程）",
       "name_en": "Fixed Bed Pressure Drop (Ergun Equation)",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "reactor/fixed_bed",
       "type": "exact",
       "equation_text": "ΔP/L = [150*μ*(1-ε)²/(ε³*dp²)]*u + [1.75*ρ*(1-ε)/(ε³*dp)]*u²",
@@ -16,21 +17,190 @@
       "equation_ast": {
         "op": "add",
         "args": [
-          {"op": "mul", "args": [{"op": "div", "num": {"op": "mul", "args": [{"const": 150}, {"var": "μ"}, {"op": "pow", "base": {"op": "sub", "args": [{"const": 1}, {"var": "ε"}]}, "exp": 2}]}, "den": {"op": "mul", "args": [{"op": "pow", "base": {"var": "ε"}, "exp": 3}, {"op": "pow", "base": {"var": "dp"}, "exp": 2}]}}, {"var": "u"}]},
-          {"op": "mul", "args": [{"op": "div", "num": {"op": "mul", "args": [{"const": 1.75}, {"var": "ρ"}, {"op": "sub", "args": [{"const": 1}, {"var": "ε"}]}]}, "den": {"op": "mul", "args": [{"op": "pow", "base": {"var": "ε"}, "exp": 3}, {"var": "dp"}]}}, {"op": "pow", "base": {"var": "u"}, "exp": 2}]}
+          {
+            "op": "mul",
+            "args": [
+              {
+                "op": "div",
+                "num": {
+                  "op": "mul",
+                  "args": [
+                    {
+                      "const": 150
+                    },
+                    {
+                      "var": "μ"
+                    },
+                    {
+                      "op": "pow",
+                      "base": {
+                        "op": "sub",
+                        "args": [
+                          {
+                            "const": 1
+                          },
+                          {
+                            "var": "ε"
+                          }
+                        ]
+                      },
+                      "exp": 2
+                    }
+                  ]
+                },
+                "den": {
+                  "op": "mul",
+                  "args": [
+                    {
+                      "op": "pow",
+                      "base": {
+                        "var": "ε"
+                      },
+                      "exp": 3
+                    },
+                    {
+                      "op": "pow",
+                      "base": {
+                        "var": "dp"
+                      },
+                      "exp": 2
+                    }
+                  ]
+                }
+              },
+              {
+                "var": "u"
+              }
+            ]
+          },
+          {
+            "op": "mul",
+            "args": [
+              {
+                "op": "div",
+                "num": {
+                  "op": "mul",
+                  "args": [
+                    {
+                      "const": 1.75
+                    },
+                    {
+                      "var": "ρ"
+                    },
+                    {
+                      "op": "sub",
+                      "args": [
+                        {
+                          "const": 1
+                        },
+                        {
+                          "var": "ε"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "den": {
+                  "op": "mul",
+                  "args": [
+                    {
+                      "op": "pow",
+                      "base": {
+                        "var": "ε"
+                      },
+                      "exp": 3
+                    },
+                    {
+                      "var": "dp"
+                    }
+                  ]
+                }
+              },
+              {
+                "op": "pow",
+                "base": {
+                  "var": "u"
+                },
+                "exp": 2
+              }
+            ]
+          }
         ]
       },
       "variables": [
-        {"symbol": "ΔP/L", "name": "单位长度压降", "unit": "Pa/m", "role": "output", "desc": "固定床单位长度压降"},
-        {"symbol": "μ", "name": "流体粘度", "unit": "Pa·s", "role": "input", "constraints": {"min": 1e-6}, "desc": "流体动力粘度"},
-        {"symbol": "ε", "name": "床层空隙率", "unit": "-", "role": "input", "constraints": {"min": 0.2, "max": 0.8}, "desc": "催化剂床层空隙率"},
-        {"symbol": "dp", "name": "催化剂颗粒直径", "unit": "m", "role": "input", "constraints": {"min": 0.0001}, "desc": "催化剂颗粒等效直径"},
-        {"symbol": "ρ", "name": "流体密度", "unit": "kg/m³", "role": "input", "constraints": {"min": 0.1}, "desc": "流体密度"},
-        {"symbol": "u", "name": "空塔速度", "unit": "m/s", "role": "input", "constraints": {"min": 0.001}, "desc": "空塔线速度"}
+        {
+          "symbol": "ΔP/L",
+          "name": "单位长度压降",
+          "unit": "Pa/m",
+          "role": "output",
+          "desc": "固定床单位长度压降"
+        },
+        {
+          "symbol": "μ",
+          "name": "流体粘度",
+          "unit": "Pa·s",
+          "role": "input",
+          "constraints": {
+            "min": 0.000001
+          },
+          "desc": "流体动力粘度"
+        },
+        {
+          "symbol": "ε",
+          "name": "床层空隙率",
+          "unit": "-",
+          "role": "input",
+          "constraints": {
+            "min": 0.2,
+            "max": 0.8
+          },
+          "desc": "催化剂床层空隙率"
+        },
+        {
+          "symbol": "dp",
+          "name": "催化剂颗粒直径",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.0001
+          },
+          "desc": "催化剂颗粒等效直径"
+        },
+        {
+          "symbol": "ρ",
+          "name": "流体密度",
+          "unit": "kg/m³",
+          "role": "input",
+          "constraints": {
+            "min": 0.1
+          },
+          "desc": "流体密度"
+        },
+        {
+          "symbol": "u",
+          "name": "空塔速度",
+          "unit": "m/s",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "空塔线速度"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "固定床反应器"},
-      "tags": ["压降", "Ergun方程", "固定床"],
-      "keywords": ["固定床压降", "Ergun方程", "催化剂床层"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "固定床反应器"
+      },
+      "tags": [
+        "压降",
+        "Ergun方程",
+        "固定床"
+      ],
+      "keywords": [
+        "固定床压降",
+        "Ergun方程",
+        "催化剂床层"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -38,29 +208,128 @@
     },
     {
       "formula_id": "PR-RCT-002",
+      "vdi_formula_id": "PR-RCT-002",
       "name": "流化床最小流化速度",
       "name_en": "Minimum Fluidization Velocity",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "reactor/fluidized_bed",
       "type": "exact",
       "equation_text": "Umf = (dp²*(ρp-ρf)*g)/(165*μ) (层流) 或 Umf = sqrt((dp*(ρp-ρf)*g)/(24.5*ρf)) (湍流)",
       "equation_latex": "U_{mf} = \\frac{d_p^2(\\rho_p-\\rho_f)g}{165\\mu} \\text{ (laminar)}",
       "equation_ast": {
         "op": "div",
-        "num": {"op": "mul", "args": [{"op": "pow", "base": {"var": "dp"}, "exp": 2}, {"op": "sub", "args": [{"var": "ρp"}, {"var": "ρf"}]}, {"var": "g"}]},
-        "den": {"op": "mul", "args": [{"const": 165}, {"var": "μ"}]}
+        "num": {
+          "op": "mul",
+          "args": [
+            {
+              "op": "pow",
+              "base": {
+                "var": "dp"
+              },
+              "exp": 2
+            },
+            {
+              "op": "sub",
+              "args": [
+                {
+                  "var": "ρp"
+                },
+                {
+                  "var": "ρf"
+                }
+              ]
+            },
+            {
+              "var": "g"
+            }
+          ]
+        },
+        "den": {
+          "op": "mul",
+          "args": [
+            {
+              "const": 165
+            },
+            {
+              "var": "μ"
+            }
+          ]
+        }
       },
       "variables": [
-        {"symbol": "Umf", "name": "最小流化速度", "unit": "m/s", "role": "output", "constraints": {"min": 0}, "desc": "最小流化速度"},
-        {"symbol": "dp", "name": "颗粒直径", "unit": "m", "role": "input", "constraints": {"min": 0.0001}, "desc": "颗粒等效直径"},
-        {"symbol": "ρp", "name": "颗粒密度", "unit": "kg/m³", "role": "input", "constraints": {"min": 100}, "desc": "颗粒密度"},
-        {"symbol": "ρf", "name": "流体密度", "unit": "kg/m³", "role": "input", "constraints": {"min": 0.1}, "desc": "流体密度"},
-        {"symbol": "g", "name": "重力加速度", "unit": "m/s²", "role": "constant", "default": 9.81, "desc": "重力加速度"},
-        {"symbol": "μ", "name": "流体粘度", "unit": "Pa·s", "role": "input", "constraints": {"min": 1e-6}, "desc": "流体动力粘度"}
+        {
+          "symbol": "Umf",
+          "name": "最小流化速度",
+          "unit": "m/s",
+          "role": "output",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "最小流化速度"
+        },
+        {
+          "symbol": "dp",
+          "name": "颗粒直径",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.0001
+          },
+          "desc": "颗粒等效直径"
+        },
+        {
+          "symbol": "ρp",
+          "name": "颗粒密度",
+          "unit": "kg/m³",
+          "role": "input",
+          "constraints": {
+            "min": 100
+          },
+          "desc": "颗粒密度"
+        },
+        {
+          "symbol": "ρf",
+          "name": "流体密度",
+          "unit": "kg/m³",
+          "role": "input",
+          "constraints": {
+            "min": 0.1
+          },
+          "desc": "流体密度"
+        },
+        {
+          "symbol": "g",
+          "name": "重力加速度",
+          "unit": "m/s²",
+          "role": "constant",
+          "default": 9.81,
+          "desc": "重力加速度"
+        },
+        {
+          "symbol": "μ",
+          "name": "流体粘度",
+          "unit": "Pa·s",
+          "role": "input",
+          "constraints": {
+            "min": 0.000001
+          },
+          "desc": "流体动力粘度"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "流化床反应器"},
-      "tags": ["最小流化速度", "流化床", "颗粒流态化"],
-      "keywords": ["最小流化速度", "流化床", "Umf"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "流化床反应器"
+      },
+      "tags": [
+        "最小流化速度",
+        "流化床",
+        "颗粒流态化"
+      ],
+      "keywords": [
+        "最小流化速度",
+        "流化床",
+        "Umf"
+      ],
       "precision": 0.001,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -68,28 +337,109 @@
     },
     {
       "formula_id": "PR-RCT-003",
+      "vdi_formula_id": "PR-RCT-003",
       "name": "管式反应器停留时间",
       "name_en": "Plug Flow Reactor Residence Time",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "reactor/tube",
       "type": "exact",
       "equation_text": "τ = V/Q = (π*D²*L/4)/Q",
       "equation_latex": "\\tau = \\frac{V}{Q} = \\frac{\\pi D^2 L / 4}{Q}",
       "equation_ast": {
         "op": "div",
-        "num": {"op": "div", "args": [{"op": "mul", "args": [{"const": 3.14159}, {"op": "pow", "base": {"var": "D"}, "exp": 2}, {"var": "L"}]}, {"const": 4}]},
-        "den": {"var": "Q"}
+        "num": {
+          "op": "div",
+          "args": [
+            {
+              "op": "mul",
+              "args": [
+                {
+                  "const": 3.14159
+                },
+                {
+                  "op": "pow",
+                  "base": {
+                    "var": "D"
+                  },
+                  "exp": 2
+                },
+                {
+                  "var": "L"
+                }
+              ]
+            },
+            {
+              "const": 4
+            }
+          ]
+        },
+        "den": {
+          "var": "Q"
+        }
       },
       "variables": [
-        {"symbol": "τ", "name": "停留时间", "unit": "s", "role": "output", "constraints": {"min": 0}, "desc": "反应物平均停留时间"},
-        {"symbol": "V", "name": "反应器体积", "unit": "m³", "role": "output", "desc": "反应器有效体积"},
-        {"symbol": "Q", "name": "体积流量", "unit": "m³/s", "role": "input", "constraints": {"min": 0.001}, "desc": "体积流量"},
-        {"symbol": "D", "name": "反应器直径", "unit": "m", "role": "input", "constraints": {"min": 0.01}, "desc": "管式反应器内径"},
-        {"symbol": "L", "name": "反应器长度", "unit": "m", "role": "input", "constraints": {"min": 0.1}, "desc": "管式反应器长度"}
+        {
+          "symbol": "τ",
+          "name": "停留时间",
+          "unit": "s",
+          "role": "output",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "反应物平均停留时间"
+        },
+        {
+          "symbol": "V",
+          "name": "反应器体积",
+          "unit": "m³",
+          "role": "output",
+          "desc": "反应器有效体积"
+        },
+        {
+          "symbol": "Q",
+          "name": "体积流量",
+          "unit": "m³/s",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "体积流量"
+        },
+        {
+          "symbol": "D",
+          "name": "反应器直径",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.01
+          },
+          "desc": "管式反应器内径"
+        },
+        {
+          "symbol": "L",
+          "name": "反应器长度",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.1
+          },
+          "desc": "管式反应器长度"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "管式反应器"},
-      "tags": ["停留时间", "管式反应器", "平推流"],
-      "keywords": ["停留时间", "管式反应器", "空时"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "管式反应器"
+      },
+      "tags": [
+        "停留时间",
+        "管式反应器",
+        "平推流"
+      ],
+      "keywords": [
+        "停留时间",
+        "管式反应器",
+        "空时"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -97,28 +447,104 @@
     },
     {
       "formula_id": "PR-RCT-004",
+      "vdi_formula_id": "PR-RCT-004",
       "name": "全混流反应器设计方程",
       "name_en": "CSTR Design Equation",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "reactor/cstr",
       "type": "exact",
       "equation_text": "V = Q*CA0*X/(-rA)",
       "equation_latex": "V = \\frac{Q \\cdot C_{A0} \\cdot X}{-r_A}",
       "equation_ast": {
         "op": "div",
-        "num": {"op": "mul", "args": [{"var": "Q"}, {"var": "CA0"}, {"var": "X"}]},
-        "den": {"op": "neg", "arg": {"var": "rA"}}
+        "num": {
+          "op": "mul",
+          "args": [
+            {
+              "var": "Q"
+            },
+            {
+              "var": "CA0"
+            },
+            {
+              "var": "X"
+            }
+          ]
+        },
+        "den": {
+          "op": "neg",
+          "arg": {
+            "var": "rA"
+          }
+        }
       },
       "variables": [
-        {"symbol": "V", "name": "反应器体积", "unit": "m³", "role": "output", "constraints": {"min": 0.001}, "desc": "CSTR反应器体积"},
-        {"symbol": "Q", "name": "体积流量", "unit": "m³/s", "role": "input", "constraints": {"min": 0.001}, "desc": "进料体积流量"},
-        {"symbol": "CA0", "name": "进料浓度", "unit": "mol/m³", "role": "input", "constraints": {"min": 0.1}, "desc": "反应物A初始浓度"},
-        {"symbol": "X", "name": "转化率", "unit": "-", "role": "input", "constraints": {"min": 0, "max": 0.999}, "desc": "反应物A转化率"},
-        {"symbol": "rA", "name": "反应速率", "unit": "mol/(m³·s)", "role": "input", "constraints": {"min": 0.001}, "desc": "反应物A消耗速率"}
+        {
+          "symbol": "V",
+          "name": "反应器体积",
+          "unit": "m³",
+          "role": "output",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "CSTR反应器体积"
+        },
+        {
+          "symbol": "Q",
+          "name": "体积流量",
+          "unit": "m³/s",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "进料体积流量"
+        },
+        {
+          "symbol": "CA0",
+          "name": "进料浓度",
+          "unit": "mol/m³",
+          "role": "input",
+          "constraints": {
+            "min": 0.1
+          },
+          "desc": "反应物A初始浓度"
+        },
+        {
+          "symbol": "X",
+          "name": "转化率",
+          "unit": "-",
+          "role": "input",
+          "constraints": {
+            "min": 0,
+            "max": 0.999
+          },
+          "desc": "反应物A转化率"
+        },
+        {
+          "symbol": "rA",
+          "name": "反应速率",
+          "unit": "mol/(m³·s)",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "反应物A消耗速率"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "全混流反应器"},
-      "tags": ["CSTR", "全混流", "反应器设计"],
-      "keywords": ["CSTR", "全混流反应器", "设计方程"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "全混流反应器"
+      },
+      "tags": [
+        "CSTR",
+        "全混流",
+        "反应器设计"
+      ],
+      "keywords": [
+        "CSTR",
+        "全混流反应器",
+        "设计方程"
+      ],
       "precision": 0.001,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -126,27 +552,87 @@
     },
     {
       "formula_id": "PR-RCT-005",
+      "vdi_formula_id": "PR-RCT-005",
       "name": "反应器传热面积",
       "name_en": "Reactor Heat Transfer Area",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "reactor/heat_transfer",
       "type": "exact",
       "equation_text": "A = Q/(U*ΔTm)",
       "equation_latex": "A = \\frac{Q}{U \\cdot \\Delta T_m}",
       "equation_ast": {
         "op": "div",
-        "num": {"var": "Q"},
-        "den": {"op": "mul", "args": [{"var": "U"}, {"var": "ΔTm"}]}
+        "num": {
+          "var": "Q"
+        },
+        "den": {
+          "op": "mul",
+          "args": [
+            {
+              "var": "U"
+            },
+            {
+              "var": "ΔTm"
+            }
+          ]
+        }
       },
       "variables": [
-        {"symbol": "A", "name": "传热面积", "unit": "m²", "role": "output", "constraints": {"min": 0.01}, "desc": "反应器传热面积"},
-        {"symbol": "Q", "name": "传热量", "unit": "W", "role": "input", "constraints": {"min": 0}, "desc": "反应器热负荷"},
-        {"symbol": "U", "name": "总传热系数", "unit": "W/(m²·K)", "role": "input", "constraints": {"min": 10}, "desc": "总传热系数"},
-        {"symbol": "ΔTm", "name": "平均温差", "unit": "K", "role": "input", "constraints": {"min": 1}, "desc": "对数平均温差"}
+        {
+          "symbol": "A",
+          "name": "传热面积",
+          "unit": "m²",
+          "role": "output",
+          "constraints": {
+            "min": 0.01
+          },
+          "desc": "反应器传热面积"
+        },
+        {
+          "symbol": "Q",
+          "name": "传热量",
+          "unit": "W",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "反应器热负荷"
+        },
+        {
+          "symbol": "U",
+          "name": "总传热系数",
+          "unit": "W/(m²·K)",
+          "role": "input",
+          "constraints": {
+            "min": 10
+          },
+          "desc": "总传热系数"
+        },
+        {
+          "symbol": "ΔTm",
+          "name": "平均温差",
+          "unit": "K",
+          "role": "input",
+          "constraints": {
+            "min": 1
+          },
+          "desc": "对数平均温差"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "反应器传热"},
-      "tags": ["传热面积", "反应器设计", "热交换"],
-      "keywords": ["传热面积", "反应器传热", "热负荷"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "反应器传热"
+      },
+      "tags": [
+        "传热面积",
+        "反应器设计",
+        "热交换"
+      ],
+      "keywords": [
+        "传热面积",
+        "反应器传热",
+        "热负荷"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -154,27 +640,105 @@
     },
     {
       "formula_id": "PR-RCT-006",
+      "vdi_formula_id": "PR-RCT-006",
       "name": "反应器混合功率",
       "name_en": "Reactor Mixing Power",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "reactor/mixing",
       "type": "exact",
       "equation_text": "P = Np*ρ*n³*D^5",
       "equation_latex": "P = N_p \\cdot \\rho \\cdot n^3 \\cdot D^5",
       "equation_ast": {
         "op": "mul",
-        "args": [{"var": "Np"}, {"var": "ρ"}, {"op": "pow", "base": {"var": "n"}, "exp": 3}, {"op": "pow", "base": {"var": "D"}, "exp": 5}]
+        "args": [
+          {
+            "var": "Np"
+          },
+          {
+            "var": "ρ"
+          },
+          {
+            "op": "pow",
+            "base": {
+              "var": "n"
+            },
+            "exp": 3
+          },
+          {
+            "op": "pow",
+            "base": {
+              "var": "D"
+            },
+            "exp": 5
+          }
+        ]
       },
       "variables": [
-        {"symbol": "P", "name": "搅拌功率", "unit": "W", "role": "output", "constraints": {"min": 0}, "desc": "搅拌器功率消耗"},
-        {"symbol": "Np", "name": "功率准数", "unit": "-", "role": "input", "constraints": {"min": 0.1}, "desc": "搅拌器功率准数"},
-        {"symbol": "ρ", "name": "流体密度", "unit": "kg/m³", "role": "input", "constraints": {"min": 100}, "desc": "流体密度"},
-        {"symbol": "n", "name": "搅拌转速", "unit": "r/s", "role": "input", "constraints": {"min": 0.1}, "desc": "搅拌器转速"},
-        {"symbol": "D", "name": "搅拌桨直径", "unit": "m", "role": "input", "constraints": {"min": 0.01}, "desc": "搅拌器桨叶直径"}
+        {
+          "symbol": "P",
+          "name": "搅拌功率",
+          "unit": "W",
+          "role": "output",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "搅拌器功率消耗"
+        },
+        {
+          "symbol": "Np",
+          "name": "功率准数",
+          "unit": "-",
+          "role": "input",
+          "constraints": {
+            "min": 0.1
+          },
+          "desc": "搅拌器功率准数"
+        },
+        {
+          "symbol": "ρ",
+          "name": "流体密度",
+          "unit": "kg/m³",
+          "role": "input",
+          "constraints": {
+            "min": 100
+          },
+          "desc": "流体密度"
+        },
+        {
+          "symbol": "n",
+          "name": "搅拌转速",
+          "unit": "r/s",
+          "role": "input",
+          "constraints": {
+            "min": 0.1
+          },
+          "desc": "搅拌器转速"
+        },
+        {
+          "symbol": "D",
+          "name": "搅拌桨直径",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.01
+          },
+          "desc": "搅拌器桨叶直径"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "搅拌与混合"},
-      "tags": ["搅拌功率", "反应器混合", "功率准数"],
-      "keywords": ["搅拌功率", "混合功率", "搅拌器设计"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "搅拌与混合"
+      },
+      "tags": [
+        "搅拌功率",
+        "反应器混合",
+        "功率准数"
+      ],
+      "keywords": [
+        "搅拌功率",
+        "混合功率",
+        "搅拌器设计"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",

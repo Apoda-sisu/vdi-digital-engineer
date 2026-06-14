@@ -1,0 +1,66 @@
+{
+  "symbol_id": "HX-CONDENSER-001",
+  "name": "冷凝器",
+  "name_en": "Condenser",
+  "standard": "HG/T 20559.2-1993",
+  "category": "heat_exchangers",
+  "description": "管壳式冷凝器",
+  "parameters": {
+    "heat_transfer_area": {
+      "type": "number",
+      "unit": "m²",
+      "description": "换热面积"
+    },
+    "design_pressure": {
+      "type": "number",
+      "unit": "MPa",
+      "description": "设计压力"
+    },
+    "condensation_rate": {
+      "type": "number",
+      "unit": "kg/h",
+      "description": "冷凝量"
+    }
+  },
+  "connections": {
+    "vapor_in": {
+      "position": {"x": 0, "y": 20},
+      "direction": "up"
+    },
+    "liquid_out": {
+      "position": {"x": 0, "y": -20},
+      "direction": "down"
+    },
+    "coolant_in": {
+      "position": {"x": -30, "y": 0},
+      "direction": "left"
+    },
+    "coolant_out": {
+      "position": {"x": 30, "y": 0},
+      "direction": "right"
+    }
+  },
+  "geometry": {
+    "components": [
+      {
+        "type": "rectangle",
+        "params": {"width": 55, "height": 30},
+        "description": "壳体"
+      },
+      {
+        "type": "circle",
+        "params": {"radius": 15},
+        "position": {"x": -27, "y": 0},
+        "description": "前管箱"
+      },
+      {
+        "type": "circle",
+        "params": {"radius": 15},
+        "position": {"x": 27, "y": 0},
+        "description": "后管箱"
+      }
+    ]
+  },
+  "related_standards": ["GB/T 151", "TEMA", "API 660"],
+  "typical_applications": ["蒸汽冷凝", "塔顶冷凝", "制冷"]
+}

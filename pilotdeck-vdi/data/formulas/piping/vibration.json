@@ -1,14 +1,15 @@
 {
   "file": "piping/vibration.json",
-  "discipline": "piping",
+  "discipline": "MP",
   "category": "vibration",
   "formula_count": 4,
   "formulas": [
     {
       "formula_id": "PI-VIB-001",
+      "vdi_formula_id": "PI-VIB-001",
       "name": "管道固有频率（简支梁）",
       "name_en": "Pipe Natural Frequency (Simply Supported)",
-      "discipline": "piping",
+      "discipline": "MP",
       "category": "vibration/natural",
       "type": "exact",
       "equation_text": "fn = (π/2) * √(EI/(m*L⁴))",
@@ -16,20 +17,107 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"const": 1.5708},
-          {"op": "sqrt", "arg": {"op": "div", "num": {"op": "mul", "args": [{"var": "E"}, {"var": "I"}]}, "den": {"op": "mul", "args": [{"var": "m"}, {"op": "pow", "base": {"var": "L"}, "exp": 4}]}}}
+          {
+            "const": 1.5708
+          },
+          {
+            "op": "sqrt",
+            "arg": {
+              "op": "div",
+              "num": {
+                "op": "mul",
+                "args": [
+                  {
+                    "var": "E"
+                  },
+                  {
+                    "var": "I"
+                  }
+                ]
+              },
+              "den": {
+                "op": "mul",
+                "args": [
+                  {
+                    "var": "m"
+                  },
+                  {
+                    "op": "pow",
+                    "base": {
+                      "var": "L"
+                    },
+                    "exp": 4
+                  }
+                ]
+              }
+            }
+          }
         ]
       },
       "variables": [
-        {"symbol": "fn", "name": "固有频率", "unit": "Hz", "role": "output", "desc": "管道一阶固有频率"},
-        {"symbol": "E", "name": "弹性模量", "unit": "Pa", "role": "input", "constraints": {"min": 1e9}, "desc": "材料弹性模量"},
-        {"symbol": "I", "name": "截面惯性矩", "unit": "m⁴", "role": "input", "constraints": {"min": 1e-10}, "desc": "管道截面惯性矩"},
-        {"symbol": "m", "name": "单位长度质量", "unit": "kg/m", "role": "input", "constraints": {"min": 0.1}, "desc": "管道单位长度质量（含介质）"},
-        {"symbol": "L", "name": "跨距", "unit": "m", "role": "input", "constraints": {"min": 0.5, "max": 20}, "desc": "管道支架跨距"}
+        {
+          "symbol": "fn",
+          "name": "固有频率",
+          "unit": "Hz",
+          "role": "output",
+          "desc": "管道一阶固有频率"
+        },
+        {
+          "symbol": "E",
+          "name": "弹性模量",
+          "unit": "Pa",
+          "role": "input",
+          "constraints": {
+            "min": 1000000000
+          },
+          "desc": "材料弹性模量"
+        },
+        {
+          "symbol": "I",
+          "name": "截面惯性矩",
+          "unit": "m⁴",
+          "role": "input",
+          "constraints": {
+            "min": 1e-10
+          },
+          "desc": "管道截面惯性矩"
+        },
+        {
+          "symbol": "m",
+          "name": "单位长度质量",
+          "unit": "kg/m",
+          "role": "input",
+          "constraints": {
+            "min": 0.1
+          },
+          "desc": "管道单位长度质量（含介质）"
+        },
+        {
+          "symbol": "L",
+          "name": "跨距",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.5,
+            "max": 20
+          },
+          "desc": "管道支架跨距"
+        }
       ],
-      "source": {"standard_id": "GB/T 20801.3", "clause": "振动分析"},
-      "tags": ["固有频率", "管道振动", "共振"],
-      "keywords": ["固有频率", "管道振动", "共振频率"],
+      "source": {
+        "standard_id": "GB/T 20801.3",
+        "clause": "振动分析"
+      },
+      "tags": [
+        "固有频率",
+        "管道振动",
+        "共振"
+      ],
+      "keywords": [
+        "固有频率",
+        "管道振动",
+        "共振频率"
+      ],
       "precision": 0.1,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -37,9 +125,10 @@
     },
     {
       "formula_id": "PI-VIB-002",
+      "vdi_formula_id": "PI-VIB-002",
       "name": "管道最大允许跨距",
       "name_en": "Maximum Allowable Pipe Span",
-      "discipline": "piping",
+      "discipline": "MP",
       "category": "vibration/span",
       "type": "exact",
       "equation_text": "L = K * √(E*I/(m*g))",
@@ -47,21 +136,112 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"var": "K"},
-          {"op": "sqrt", "arg": {"op": "div", "num": {"op": "mul", "args": [{"var": "E"}, {"var": "I"}]}, "den": {"op": "mul", "args": [{"var": "m"}, {"var": "g"}]}}}
+          {
+            "var": "K"
+          },
+          {
+            "op": "sqrt",
+            "arg": {
+              "op": "div",
+              "num": {
+                "op": "mul",
+                "args": [
+                  {
+                    "var": "E"
+                  },
+                  {
+                    "var": "I"
+                  }
+                ]
+              },
+              "den": {
+                "op": "mul",
+                "args": [
+                  {
+                    "var": "m"
+                  },
+                  {
+                    "var": "g"
+                  }
+                ]
+              }
+            }
+          }
         ]
       },
       "variables": [
-        {"symbol": "L", "name": "最大跨距", "unit": "m", "role": "output", "desc": "管道最大允许跨距"},
-        {"symbol": "K", "name": "跨距系数", "unit": "-", "role": "input", "constraints": {"min": 0.1, "max": 1}, "default": 0.4, "desc": "跨距系数（与许用挠度相关）"},
-        {"symbol": "E", "name": "弹性模量", "unit": "Pa", "role": "input", "constraints": {"min": 1e9}, "desc": "材料弹性模量"},
-        {"symbol": "I", "name": "截面惯性矩", "unit": "m⁴", "role": "input", "constraints": {"min": 1e-10}, "desc": "管道截面惯性矩"},
-        {"symbol": "m", "name": "单位长度质量", "unit": "kg/m", "role": "input", "constraints": {"min": 0.1}, "desc": "管道单位长度质量"},
-        {"symbol": "g", "name": "重力加速度", "unit": "m/s²", "role": "constant", "default": 9.81, "desc": "重力加速度"}
+        {
+          "symbol": "L",
+          "name": "最大跨距",
+          "unit": "m",
+          "role": "output",
+          "desc": "管道最大允许跨距"
+        },
+        {
+          "symbol": "K",
+          "name": "跨距系数",
+          "unit": "-",
+          "role": "input",
+          "constraints": {
+            "min": 0.1,
+            "max": 1
+          },
+          "default": 0.4,
+          "desc": "跨距系数（与许用挠度相关）"
+        },
+        {
+          "symbol": "E",
+          "name": "弹性模量",
+          "unit": "Pa",
+          "role": "input",
+          "constraints": {
+            "min": 1000000000
+          },
+          "desc": "材料弹性模量"
+        },
+        {
+          "symbol": "I",
+          "name": "截面惯性矩",
+          "unit": "m⁴",
+          "role": "input",
+          "constraints": {
+            "min": 1e-10
+          },
+          "desc": "管道截面惯性矩"
+        },
+        {
+          "symbol": "m",
+          "name": "单位长度质量",
+          "unit": "kg/m",
+          "role": "input",
+          "constraints": {
+            "min": 0.1
+          },
+          "desc": "管道单位长度质量"
+        },
+        {
+          "symbol": "g",
+          "name": "重力加速度",
+          "unit": "m/s²",
+          "role": "constant",
+          "default": 9.81,
+          "desc": "重力加速度"
+        }
       ],
-      "source": {"standard_id": "GB 50316", "clause": "支架设计"},
-      "tags": ["跨距", "支架间距", "管道支撑"],
-      "keywords": ["最大跨距", "支架间距", "管道支撑"],
+      "source": {
+        "standard_id": "GB 50316",
+        "clause": "支架设计"
+      },
+      "tags": [
+        "跨距",
+        "支架间距",
+        "管道支撑"
+      ],
+      "keywords": [
+        "最大跨距",
+        "支架间距",
+        "管道支撑"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -69,26 +249,80 @@
     },
     {
       "formula_id": "PI-VIB-003",
+      "vdi_formula_id": "PI-VIB-003",
       "name": "水锤压力增量",
       "name_en": "Water Hammer Pressure Rise",
-      "discipline": "piping",
+      "discipline": "MP",
       "category": "vibration/hammer",
       "type": "exact",
       "equation_text": "ΔP = ρ*c*ΔV",
       "equation_latex": "\\Delta P = \\rho \\cdot c \\cdot \\Delta V",
       "equation_ast": {
         "op": "mul",
-        "args": [{"var": "ρ"}, {"var": "c"}, {"var": "ΔV"}]
+        "args": [
+          {
+            "var": "ρ"
+          },
+          {
+            "var": "c"
+          },
+          {
+            "var": "ΔV"
+          }
+        ]
       },
       "variables": [
-        {"symbol": "ΔP", "name": "压力增量", "unit": "Pa", "role": "output", "desc": "水锤引起的压力增量"},
-        {"symbol": "ρ", "name": "流体密度", "unit": "kg/m³", "role": "input", "constraints": {"min": 100}, "desc": "流体密度"},
-        {"symbol": "c", "name": "水击波速", "unit": "m/s", "role": "input", "constraints": {"min": 100, "max": 1500}, "desc": "水击波传播速度"},
-        {"symbol": "ΔV", "name": "流速变化", "unit": "m/s", "role": "input", "desc": "阀门关闭引起的流速变化"}
+        {
+          "symbol": "ΔP",
+          "name": "压力增量",
+          "unit": "Pa",
+          "role": "output",
+          "desc": "水锤引起的压力增量"
+        },
+        {
+          "symbol": "ρ",
+          "name": "流体密度",
+          "unit": "kg/m³",
+          "role": "input",
+          "constraints": {
+            "min": 100
+          },
+          "desc": "流体密度"
+        },
+        {
+          "symbol": "c",
+          "name": "水击波速",
+          "unit": "m/s",
+          "role": "input",
+          "constraints": {
+            "min": 100,
+            "max": 1500
+          },
+          "desc": "水击波传播速度"
+        },
+        {
+          "symbol": "ΔV",
+          "name": "流速变化",
+          "unit": "m/s",
+          "role": "input",
+          "desc": "阀门关闭引起的流速变化"
+        }
       ],
-      "source": {"standard_id": "GB 50316", "clause": "水锤分析"},
-      "tags": ["水锤", "压力冲击", "阀门关闭"],
-      "keywords": ["水锤", "压力冲击", "水击", "阀门关闭"],
+      "source": {
+        "standard_id": "GB 50316",
+        "clause": "水锤分析"
+      },
+      "tags": [
+        "水锤",
+        "压力冲击",
+        "阀门关闭"
+      ],
+      "keywords": [
+        "水锤",
+        "压力冲击",
+        "水击",
+        "阀门关闭"
+      ],
       "precision": 1,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -96,29 +330,138 @@
     },
     {
       "formula_id": "PI-VIB-004",
+      "vdi_formula_id": "PI-VIB-004",
       "name": "水击波速计算",
       "name_en": "Water Hammer Wave Speed",
-      "discipline": "piping",
+      "discipline": "MP",
       "category": "vibration/wave",
       "type": "exact",
       "equation_text": "c = √(K/ρ) / √(1 + K*D/(E*t))",
       "equation_latex": "c = \\frac{\\sqrt{K/\\rho}}{\\sqrt{1 + KD/(Et)}}",
       "equation_ast": {
         "op": "div",
-        "num": {"op": "sqrt", "arg": {"op": "div", "num": {"var": "K"}, "den": {"var": "ρ"}}},
-        "den": {"op": "sqrt", "arg": {"op": "add", "args": [{"const": 1}, {"op": "div", "num": {"op": "mul", "args": [{"var": "K"}, {"var": "D"}]}, "den": {"op": "mul", "args": [{"var": "E"}, {"var": "t"}]}}]}}
+        "num": {
+          "op": "sqrt",
+          "arg": {
+            "op": "div",
+            "num": {
+              "var": "K"
+            },
+            "den": {
+              "var": "ρ"
+            }
+          }
+        },
+        "den": {
+          "op": "sqrt",
+          "arg": {
+            "op": "add",
+            "args": [
+              {
+                "const": 1
+              },
+              {
+                "op": "div",
+                "num": {
+                  "op": "mul",
+                  "args": [
+                    {
+                      "var": "K"
+                    },
+                    {
+                      "var": "D"
+                    }
+                  ]
+                },
+                "den": {
+                  "op": "mul",
+                  "args": [
+                    {
+                      "var": "E"
+                    },
+                    {
+                      "var": "t"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
       },
       "variables": [
-        {"symbol": "c", "name": "水击波速", "unit": "m/s", "role": "output", "desc": "水击波传播速度"},
-        {"symbol": "K", "name": "流体体积模量", "unit": "Pa", "role": "input", "constraints": {"min": 1e8}, "desc": "流体体积模量"},
-        {"symbol": "ρ", "name": "流体密度", "unit": "kg/m³", "role": "input", "constraints": {"min": 100}, "desc": "流体密度"},
-        {"symbol": "D", "name": "管道内径", "unit": "m", "role": "input", "constraints": {"min": 0.01}, "desc": "管道内径"},
-        {"symbol": "E", "name": "管材弹性模量", "unit": "Pa", "role": "input", "constraints": {"min": 1e9}, "desc": "管材弹性模量"},
-        {"symbol": "t", "name": "管道壁厚", "unit": "m", "role": "input", "constraints": {"min": 0.001}, "desc": "管道壁厚"}
+        {
+          "symbol": "c",
+          "name": "水击波速",
+          "unit": "m/s",
+          "role": "output",
+          "desc": "水击波传播速度"
+        },
+        {
+          "symbol": "K",
+          "name": "流体体积模量",
+          "unit": "Pa",
+          "role": "input",
+          "constraints": {
+            "min": 100000000
+          },
+          "desc": "流体体积模量"
+        },
+        {
+          "symbol": "ρ",
+          "name": "流体密度",
+          "unit": "kg/m³",
+          "role": "input",
+          "constraints": {
+            "min": 100
+          },
+          "desc": "流体密度"
+        },
+        {
+          "symbol": "D",
+          "name": "管道内径",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.01
+          },
+          "desc": "管道内径"
+        },
+        {
+          "symbol": "E",
+          "name": "管材弹性模量",
+          "unit": "Pa",
+          "role": "input",
+          "constraints": {
+            "min": 1000000000
+          },
+          "desc": "管材弹性模量"
+        },
+        {
+          "symbol": "t",
+          "name": "管道壁厚",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "管道壁厚"
+        }
       ],
-      "source": {"standard_id": "GB 50316", "clause": "水锤分析"},
-      "tags": ["水击波速", "水锤", "波速计算"],
-      "keywords": ["水击波速", "水锤波速", "压力波"],
+      "source": {
+        "standard_id": "GB 50316",
+        "clause": "水锤分析"
+      },
+      "tags": [
+        "水击波速",
+        "水锤",
+        "波速计算"
+      ],
+      "keywords": [
+        "水击波速",
+        "水锤波速",
+        "压力波"
+      ],
       "precision": 1,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",

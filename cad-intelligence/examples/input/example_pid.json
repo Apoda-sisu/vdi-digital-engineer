@@ -1,0 +1,184 @@
+{
+  "input_type": "scheme",
+  "project_info": {
+    "project_id": "PRJ-001",
+    "project_name": "某石化装置",
+    "drawing_number": "PID-001",
+    "drawing_title": "管道及仪表流程图 P&ID",
+    "revision": "A"
+  },
+  "streams": [
+    {
+      "stream_no": "S-101",
+      "connection_id": "CONN-001",
+      "from_tag": "P-1001",
+      "to_tag": "T-1001",
+      "flow": "100 m³/h",
+      "phase": "液相",
+      "T_C": 80,
+      "P_MPa": 0.6,
+      "medium": "进料"
+    }
+  ],
+  "geometry": {
+    "objects": [
+      {
+        "id": "EQ-001",
+        "type": "equipment",
+        "symbol_id": "PUMP-CENTRIFUGAL-001",
+        "position": { "x": 100, "y": 200 },
+        "label": "P-1001",
+        "parameters": { "oper_T_C": 80, "oper_P_MPa": 0.8 }
+      },
+      {
+        "id": "EQ-002",
+        "type": "equipment",
+        "symbol_id": "VESSEL-TANK-001",
+        "position": { "x": 320, "y": 200 },
+        "label": "T-1001",
+        "parameters": { "oper_T_C": 75, "oper_P_MPa": 0.4 }
+      },
+      {
+        "id": "EQ-003",
+        "type": "equipment",
+        "symbol_id": "VALVE-GATE-001",
+        "position": { "x": 210, "y": 140 },
+        "label": "V-1001"
+      }
+    ],
+    "connections": [
+      {
+        "id": "CONN-001",
+        "type": "pipe",
+        "from": "EQ-001",
+        "to": "EQ-002",
+        "label": "1001-A1A-H",
+        "stream_no": "S-101",
+        "valve": { "tag": "XV-1001", "type": "gate" },
+        "parameters": {
+          "diameter": "DN100",
+          "medium": "进料",
+          "phase": "液相",
+          "material": "CS",
+          "insulation": "H",
+          "design_T_C": 250,
+          "design_P_MPa": 1.6,
+          "oper_T_C": 80,
+          "oper_P_MPa": 0.6
+        }
+      },
+      {
+        "id": "CONN-002",
+        "type": "pipe",
+        "from": "EQ-001",
+        "to": "EQ-003",
+        "label": "1002-A1A-H",
+        "valves": [{ "tag": "HV-1001", "type": "gate" }],
+        "parameters": {
+          "diameter": "DN50",
+          "medium": "旁路",
+          "phase": "液相",
+          "material": "CS",
+          "insulation": "N",
+          "design_T_C": 120,
+          "design_P_MPa": 1.0,
+          "oper_T_C": 80,
+          "oper_P_MPa": 0.8
+        }
+      }
+    ],
+    "instruments": [
+      {
+        "tag": "TI-1001",
+        "type": "TI",
+        "loop": "TIC-1001",
+        "on_line": "1001-A1A-H",
+        "range": "0-150°C",
+        "signal": "4-20mA"
+      },
+      {
+        "tag": "FIC-1001",
+        "type": "FIC",
+        "loop": "FIC-1001",
+        "on_line": "1001-A1A-H",
+        "range": "0-150 m³/h",
+        "signal": "4-20mA"
+      },
+      {
+        "tag": "LI-1001",
+        "type": "LI",
+        "loop": "LIC-1001",
+        "on_equipment": "T-1001",
+        "range": "0-100%",
+        "signal": "4-20mA"
+      },
+      {
+        "tag": "PI-1001",
+        "type": "PI",
+        "loop": "",
+        "on_equipment": "T-1001",
+        "range": "0-1.0 MPa",
+        "signal": "本地"
+      }
+    ]
+  },
+  "tables": {
+    "pipe_list": [
+      {
+        "line_no": "1001-A1A-H",
+        "stream_no": "S-101",
+        "from_tag": "P-1001",
+        "to_tag": "T-1001",
+        "DN": "100",
+        "medium": "进料",
+        "phase": "液相",
+        "material": "CS",
+        "insulation": "H",
+        "design_T_C": 250,
+        "design_P_MPa": 1.6,
+        "oper_T_C": 80,
+        "oper_P_MPa": 0.6
+      },
+      {
+        "line_no": "1002-A1A-H",
+        "from_tag": "P-1001",
+        "to_tag": "V-1001",
+        "DN": "50",
+        "medium": "旁路",
+        "phase": "液相",
+        "material": "CS",
+        "insulation": "N",
+        "design_T_C": 120,
+        "design_P_MPa": 1.0,
+        "oper_T_C": 80,
+        "oper_P_MPa": 0.8
+      }
+    ],
+    "cause_effect": [
+      {
+        "cause": "T-1001 液位 HH",
+        "effect": "关进料阀 XV-1001",
+        "sensor": "LSH-1001"
+      },
+      {
+        "cause": "P-1001 出口压力 LL",
+        "effect": "停泵 P-1001",
+        "sensor": "PSL-1001"
+      }
+    ]
+  },
+  "output_config": {
+    "drawing_type": "pid",
+    "format": "FCStd",
+    "scale": "1:100",
+    "dimension_standard": "GB",
+    "paper_size": "A3",
+    "orientation": "landscape"
+  },
+  "vdi_source": {
+    "cp_stage": "CP-2",
+    "material_balance_ref": "MB-PRJ-001",
+    "equipment_datasheet_ref": "EQ-DS-PRJ-001",
+    "control_philosophy_ref": "CTL-PRJ-001"
+  }
+}

@@ -15,6 +15,10 @@ import {
   ListToolsRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
 import { z } from "zod";
+import {
+  resolveCanonicalDiscipline,
+  getDisciplineSlugMapping,
+} from "../../config/cfihos-discipline-resolve.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -23,9 +27,28 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // ---------------------------------------------------------------------------
 
 const WORKSPACE_ROOT = process.env.VDI_WORKSPACE_ROOT || "/workspace/workspaces";
+const PROJECT_REGISTRY_PATH = path.join(WORKSPACE_ROOT, ".vdi-project-registry.json");
+
+/** 解析项目工作空间目录（支持 工艺组/子项目 及 registry 映射） */
+function resolveProjectDir(projectId) {
+  const registry = readJSON(PROJECT_REGISTRY_PATH, { projects: {} });
+  const entry = registry.projects?.[projectId];
+  if (entry?.workspace_rel) {
+    const mapped = path.join(WORKSPACE_ROOT, entry.workspace_rel);
+    if (fs.existsSync(mapped)) return mapped;
+  }
+  const candidates = [
+    path.join(WORKSPACE_ROOT, projectId),
+    path.join(WORKSPACE_ROOT, "工艺组", projectId),
+  ];
+  for (const dir of candidates) {
+    if (fs.existsSync(dir)) return dir;
+  }
+  return path.join(WORKSPACE_ROOT, projectId);
+}
 
 function projectDir(projectId) {
-  return path.join(WORKSPACE_ROOT, projectId);
+  return resolveProjectDir(projectId);
 }
 
 function statePath(projectId, file) {
@@ -53,18 +76,37 @@ function writeJSON(filePath, data) {
 // ---------------------------------------------------------------------------
 
 const DISCIPLINE_CODES_PATH = path.resolve(__dirname, "../../config/discipline-codes.json");
+
+const SLUG_TO_CODE = getDisciplineSlugMapping();
+
+function normalizeDisciplineCodes(raw) {
+  if (raw.disciplines) return raw;
+  const disciplines = {};
+  for (const [code, info] of Object.entries(raw.mappings || {})) {
+    disciplines[code] = {
+      ...info,
+      name: info.name,
+      lead_code: info.lead_skill || info.skill_group,
+    };
+  }
+  return {
+    ...raw,
+    disciplines,
+    discipline_slug_mapping: { ...SLUG_TO_CODE, ...(raw.discipline_slug_mapping || {}) },
+  };
+}
+
 let DISCIPLINE_CODES;
 try {
-  DISCIPLINE_CODES = JSON.parse(fs.readFileSync(DISCIPLINE_CODES_PATH, "utf8"));
+  DISCIPLINE_CODES = normalizeDisciplineCodes(JSON.parse(fs.readFileSync(DISCIPLINE_CODES_PATH, "utf8")));
 } catch (e) {
   console.error(`[vdi-orchestrator] 无法加载学科代码表: ${e.message}`);
   process.exit(1);
 }
 
 function oldSlugToCode(slug) {
-  // 尝试直接匹配（已经是代码）或通过映射表转换
   if (DISCIPLINE_CODES.disciplines[slug]) return slug;
-  return DISCIPLINE_CODES.discipline_slug_mapping[slug] || slug;
+  return DISCIPLINE_CODES.discipline_slug_mapping[slug] || resolveCanonicalDiscipline(slug);
 }
 
 function getLeadCode(disciplineCode) {
@@ -80,77 +122,77 @@ function getDisciplineName(discipline) {
 // ---------------------------------------------------------------------------
 
 const DEPENDENCY_GRAPH = {
-  PR: {
-    downstream: ["PI", "IN", "EQ", "WA", "HS"],
+  PX: {
+    downstream: ["MP", "IN", "MX", "CI", "HS"],
     description: "工艺设计基础（PFD/P&ID、物料平衡、设计基础参数）",
   },
-  PI: {
-    downstream: ["IN", "ST"],
-    upstream: ["PR"],
+  MP: {
+    downstream: ["IN", "CS"],
+    upstream: ["PX"],
     description: "管道布置、材料等级、应力分析",
   },
   IN: {
-    downstream: ["EL"],
-    upstream: ["PR", "PI"],
+    downstream: ["EA"],
+    upstream: ["PX", "MP"],
     description: "仪表索引、联锁逻辑、DCS/PLC 配置",
   },
-  EQ: {
-    downstream: ["ST", "PI"],
-    upstream: ["PR"],
+  MX: {
+    downstream: ["CS", "MP"],
+    upstream: ["PX"],
     description: "静动设备数据表、布置图",
   },
-  WA: {
-    downstream: ["FI", "EL"],
-    upstream: ["PR"],
+  CI: {
+    downstream: ["HX", "EA"],
+    upstream: ["PX"],
     description: "给排水专业（由 WA0L 统一管理子领域）",
     lead_code: "WA0L",
     active: true,
   },
-  EL: {
-    downstream: ["ST"],
-    upstream: ["IN", "EQ", "WA"],
+  EA: {
+    downstream: ["CS"],
+    upstream: ["IN", "MX", "CI"],
     description: "供配电、防爆分区、照明",
   },
   HS: {
-    upstream: ["PR"],
-    description: "HAZOP/LOPA、安全阀、环保",
+    upstream: ["PX"],
+    description: "安全专业（CFIHOS HS / safety）；HX/LOPA 见 HX，环保见 HE",
   },
-  FI: {
-    upstream: ["WA"],
+  HX: {
+    upstream: ["CI"],
     description: "建筑防火分区、灭火器配置",
   },
-  HV: {
-    upstream: ["PR", "EQ"],
+  MH: {
+    upstream: ["PX", "MX"],
     description: "暖通空调",
   },
-  ST: {
-    upstream: ["PI", "EQ", "EL"],
+  CS: {
+    upstream: ["MP", "MX", "EA"],
     description: "结构设计、基础设计",
   },
-  AR: {
-    upstream: ["FI"],
+  CB: {
+    upstream: ["HX"],
     description: "建筑设计、防火疏散",
   },
   SI: {
-    upstream: ["PR", "PI"],
+    upstream: ["PX", "MP"],
     description: "总图布置、竖向设计",
   },
   TH: {
-    upstream: ["PR"],
+    upstream: ["PX"],
     description: "热工、换热站",
   },
   TC: {
-    upstream: ["EL"],
+    upstream: ["EA"],
     description: "电信、通信",
   },
-  MG: {
-    downstream: ["PR", "WA", "PI", "IN", "EQ", "EL", "HS", "FI", "HV", "ST"],
+  AA: {
+    downstream: ["PX", "CI", "MP", "IN", "MX", "EA", "HS", "HX", "MH", "CS"],
     description: "设计管理（顶层协调）",
     lead_code: "MGDM",
     active: true,
   },
   QA: {
-    upstream: ["PR", "WA", "PI", "IN", "EQ"],
+    upstream: ["PX", "CI", "MP", "IN", "MX"],
     description: "质量管理",
   },
 };
@@ -266,7 +308,7 @@ function handleDecomposeTasks(args) {
       output_to: info.downstream || [],
       estimated_hours: estimateHours(disc),
       milestone: defaultMilestone,
-      risk_level: ["process", "hse"].includes(disc) ? "high" : "medium",
+      risk_level: ["process", "hs", "hse"].includes(disc) ? "high" : "medium",
       depends_on: upstreamWbs,
       status: "pending",
     });
@@ -343,6 +385,7 @@ function estimateHours(discipline) {
     equipment: 24,
     water: 20,
     electrical: 20,
+    hs: 16,
     hse: 16,
     fire: 12,
     hvac: 16,

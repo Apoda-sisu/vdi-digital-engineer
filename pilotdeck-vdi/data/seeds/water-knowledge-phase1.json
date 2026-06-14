@@ -1,0 +1,586 @@
+{
+  "seed_version": "w1",
+  "discipline": "water",
+  "description": "Sprint 7 Phase1 GB50015/50014",
+  "clauses": [
+    {
+      "clause_id": "GB500152019-3-1-1-w1",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.1",
+      "content": "建筑给水设计用水量应包括生活、生产、消防及未预见水量。",
+      "keywords": [
+        "用水量",
+        "生活",
+        "生产"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB500152019-3-1-2-w1",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.2",
+      "content": "生活用水定额应按建筑物性质、使用人数及用水时间确定。",
+      "keywords": [
+        "生活用水",
+        "用水定额"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB500152019-3-1-4-w1",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.1.4",
+      "content": "未预见水量宜按生活、生产用水量之和的 10%~15% 计。",
+      "keywords": [
+        "未预见水量",
+        "10%"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB500152019-3-6-1-w1",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.6.1",
+      "content": "建筑给水设计秒流量应按用水量最高日最高时或同时最大秒流量确定。",
+      "keywords": [
+        "秒流量",
+        "最高日最高时",
+        "给水设计"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB500152019-3-6-2-w1",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.6.2",
+      "content": "当采用卫生器具当量法时，设计秒流量应按当量叠加及同时使用系数计算。",
+      "keywords": [
+        "当量法",
+        "同时使用系数",
+        "秒流量计算"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB500152019-3-6-3-w1",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.6.3",
+      "content": "工业企业生产用水设计秒流量应按工艺专业提供的最大时或最大秒流量确定。",
+      "keywords": [
+        "生产用水",
+        "秒流量",
+        "工艺"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB500152019-3-7-1-w1",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.7.1",
+      "content": "给水管网布置宜采用环状，枝状布置仅适用于小型或末端用户。",
+      "keywords": [
+        "环状管网",
+        "枝状",
+        "给水管网"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB500152019-3-7-4-w1",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.7.4",
+      "content": "给水管网应进行水力计算，保证最不利点所需水压。",
+      "keywords": [
+        "水力计算",
+        "最不利点",
+        "给水管网"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB500152019-3-8-1-w1",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.8.1",
+      "content": "生活给水管道流速宜为 0.6~2.0m/s，经济流速应经水力计算确定。",
+      "keywords": [
+        "经济流速",
+        "生活给水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB500152019-3-9-2-w1",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.9.2",
+      "content": "加压泵站备用泵不宜少于 1 台，且不得少于工作泵台数的 50%。",
+      "keywords": [
+        "加压泵站",
+        "备用泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB500152019-4-1-1-w1",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.1.1",
+      "content": "建筑排水系统应实行清污分流，污水与废水宜分别收集处理。",
+      "keywords": [
+        "清污分流",
+        "建筑排水",
+        "污水废水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB500152019-4-1-3-w1",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.1.3",
+      "content": "工业废水应根据水质、水量分别收集，不得与生活污水混排。",
+      "keywords": [
+        "工业废水",
+        "分别收集"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB500152019-4-2-1-w1",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.2.1",
+      "content": "排水管道最小坡度应根据管径和材质确定，并满足自清流速要求。",
+      "keywords": [
+        "排水坡度",
+        "最小管径"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB500152019-4-3-2-w1",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.3.2",
+      "content": "排水立管应设通气管道，保证排水系统气压平衡。",
+      "keywords": [
+        "通气",
+        "排水立管"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB500152019-4-4-1-w1",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "4.4.1",
+      "content": "化粪池设置应符合当地环保要求，并便于清掏维护。",
+      "keywords": [
+        "化粪池"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB500142021-3-2-3-w1",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "3.2.3",
+      "content": "室外排水设计重现期应根据地区暴雨强度公式及汇水性质确定。",
+      "keywords": [
+        "重现期",
+        "室外排水",
+        "暴雨强度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB500142021-3-2-4-w1",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "3.2.4",
+      "content": "一般地区雨水管道设计重现期不宜小于 1~3 年，重要区域应提高。",
+      "keywords": [
+        "雨水",
+        "重现期",
+        "设计标准"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB500142021-4-1-2-w1",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "4.1.2",
+      "content": "雨水调蓄设施容积应根据削峰流量、汇水面积及控制目标计算确定。",
+      "keywords": [
+        "雨水调蓄池",
+        "调蓄容积",
+        "削峰"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB500142021-4-1-3-w1",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "4.1.3",
+      "content": "调蓄池排空时间不宜超过 24h，并应设溢流及排空设施。",
+      "keywords": [
+        "调蓄池",
+        "排空",
+        "溢流"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D04"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB500142021-5-2-1-w1",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "5.2.1",
+      "content": "污水管道最小管径应根据设计流量及充满度确定，并不宜小于规范限值。",
+      "keywords": [
+        "污水管道",
+        "最小管径",
+        "充满度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB500142021-5-3-1-w1",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "5.3.1",
+      "content": "工业废水接入市政或厂区污水系统前应进行水质水量论证。",
+      "keywords": [
+        "石化装置",
+        "生产污水",
+        "接入",
+        "工业废水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB500142021-5-3-2-w1",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "5.3.2",
+      "content": "石化生产污水应分类收集，含油污水、酸碱污水及生活污水不得混接。",
+      "keywords": [
+        "石化",
+        "生产污水",
+        "分类收集"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D05"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB500142021-6-1-1-w1",
+      "source_type": "standard",
+      "source_id": "GB 50014-2021",
+      "version": "2021",
+      "discipline": "CI",
+      "clause": "6.1.1",
+      "content": "排水泵站设计流量应满足汇水区域最大时设计流量。",
+      "keywords": [
+        "排水泵站",
+        "设计流量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB509742014-3-1-2-w1",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.1.2",
+      "content": "消防用水量应包括室内外消火栓、自动喷水及其他灭火系统用水量之和。",
+      "keywords": [
+        "消防用水量",
+        "消火栓"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB509742014-3-2-1-w1",
+      "source_type": "standard",
+      "source_id": "GB 50974-2014",
+      "version": "2014",
+      "discipline": "CI",
+      "clause": "3.2.1",
+      "content": "甲类厂房室外消火栓设计流量不应小于 30L/s。",
+      "keywords": [
+        "甲类",
+        "消火栓",
+        "设计流量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D02"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "SHT3105-4-2-1-w1",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "4.2.1",
+      "content": "石化装置生产给水应优先利用循环水系统，新鲜水补水量应经平衡计算。",
+      "keywords": [
+        "石化",
+        "循环水",
+        "新鲜水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "SH/T-S7"
+    },
+    {
+      "clause_id": "SHT3105-4-3-1-w1",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "4.3.1",
+      "content": "石化装置排水应实行清污分流、雨污分流，生产污水不得直接外排。",
+      "keywords": [
+        "石化装置",
+        "清污分流",
+        "雨污分流"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D03",
+        "WA-D05"
+      ],
+      "category": "SH/T-S7"
+    },
+    {
+      "clause_id": "SHT3105-5-1-1-w1",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "5.1.1",
+      "content": "循环冷却水系统设计应明确设计流量、进出水温度及补水量。",
+      "keywords": [
+        "循环冷却水",
+        "补水量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "SH/T-S7"
+    },
+    {
+      "clause_id": "SHT3105-5-2-1-w1",
+      "source_type": "standard",
+      "source_id": "SH/T 3105",
+      "version": "2017",
+      "discipline": "CI",
+      "clause": "5.2.1",
+      "content": "循环水系统旁滤水量宜为循环量的 1%~5%。",
+      "keywords": [
+        "旁滤",
+        "循环水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D06"
+      ],
+      "category": "SH/T-S7"
+    },
+    {
+      "clause_id": "GB500152019-3-2-1-w1",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.2.1",
+      "content": "水源选择应进行水量、水质、水压及可靠性比较，并符合环保要求。",
+      "keywords": [
+        "水源选择",
+        "水质"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB-S7"
+    },
+    {
+      "clause_id": "GB500152019-3-5-1-w1",
+      "source_type": "standard",
+      "source_id": "GB 50015-2019",
+      "version": "2019",
+      "discipline": "CI",
+      "clause": "3.5.1",
+      "content": "给水处理工艺应根据原水水质、处理后水质要求及用地条件确定。",
+      "keywords": [
+        "给水处理",
+        "混凝",
+        "过滤"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "WA-D01"
+      ],
+      "category": "GB-S7"
+    }
+  ]
+}

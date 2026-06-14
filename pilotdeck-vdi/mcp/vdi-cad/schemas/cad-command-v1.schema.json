@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pilotdeck.local/schemas/cad-command-v1.schema.json",
+  "title": "CadCommand v1",
+  "description": "VDI CAD 绘图命令协议 — 视图渲染快照，可由 PlantModel 衍生",
+  "type": "object",
+  "required": ["version", "drawing_type", "title_block", "equipment", "lines"],
+  "properties": {
+    "version": { "type": "string", "enum": ["1.0", "1.1"] },
+    "plant_model_ref": { "type": "string", "description": "PlantModel JSON 路径" },
+    "view_id": { "type": "string", "description": "PlantModel.views 中的 view_id" },
+    "plant_model": { "type": "object", "description": "内嵌 PlantModel（可选）" },
+    "drawing_type": {
+      "type": "string",
+      "enum": ["pfd", "pid", "layout", "isometric", "3d"]
+    },
+    "options": {
+      "type": "object",
+      "properties": {
+        "create_sheet": { "type": "boolean", "default": true },
+        "merge_mode": { "type": "boolean", "default": true },
+        "export_object_list": { "type": "boolean", "default": true },
+        "layout_engine": { "type": "string" },
+        "strict_validation": { "type": "boolean" }
+      }
+    },
+    "title_block": {
+      "type": "object",
+      "required": ["drawing_number"],
+      "properties": {
+        "project_id": { "type": "string" },
+        "project_name": { "type": "string" },
+        "drawing_number": { "type": "string" },
+        "drawing_title": { "type": "string" },
+        "revision": { "type": "string", "default": "A" },
+        "discipline": { "type": "string" },
+        "scale": { "type": "string", "default": "1:100" }
+      }
+    },
+    "equipment": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["tag", "type"],
+        "properties": {
+          "object_id": { "type": "string" },
+          "tag": { "type": "string" },
+          "type": { "type": "string" },
+          "symbol_id": { "type": "string" },
+          "position": {
+            "type": "object",
+            "properties": { "x": { "type": "number" }, "y": { "type": "number" } }
+          },
+          "rotation": { "type": "number" },
+          "parameters": { "type": "object" }
+        }
+      }
+    },
+    "lines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["line_no", "from_tag", "to_tag"],
+        "properties": {
+          "object_id": { "type": "string" },
+          "line_no": { "type": "string" },
+          "from_tag": { "type": "string" },
+          "to_tag": { "type": "string" },
+          "from_port": { "type": "string" },
+          "to_port": { "type": "string" },
+          "stream_no": { "type": "string" },
+          "dn": { "type": ["string", "number"] },
+          "fluid": { "type": "string" },
+          "phase": { "type": "string" },
+          "design_P_MPaG": { "type": "number" },
+          "design_T_C": { "type": "number" },
+          "material": { "type": "string" },
+          "insulation": { "type": "string" }
+        }
+      }
+    },
+    "instruments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["tag", "type"],
+        "properties": {
+          "object_id": { "type": "string" },
+          "tag": { "type": "string" },
+          "type": { "type": "string" },
+          "on_line": { "type": "string" },
+          "loop": { "type": "string" },
+          "range": { "type": "string" },
+          "signal": { "type": "string" }
+        }
+      }
+    },
+    "streams": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "object_id": { "type": "string" },
+          "stream_no": { "type": "string" },
+          "from_tag": { "type": "string" },
+          "to_tag": { "type": "string" },
+          "flow": { "type": "string" },
+          "T_C": { "type": "number" },
+          "P_MPa": { "type": "number" },
+          "phase": { "type": "string" }
+        }
+      }
+    },
+    "tables": {
+      "type": "object",
+      "properties": {
+        "pipe_list": { "type": "array" },
+        "stream_list": { "type": "array" },
+        "equipment_list": { "type": "array" },
+        "cause_effect": { "type": "array" },
+        "safety_valves": { "type": "array" }
+      }
+    },
+    "citations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source_type": { "type": "string" },
+          "source_id": { "type": "string" },
+          "clause": { "type": "string" }
+        }
+      }
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "directory": { "type": "string" },
+        "formats": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["FCStd", "DXF", "PDF", "STEP"] }
+        },
+        "basename": { "type": "string" }
+      }
+    }
+  }
+}

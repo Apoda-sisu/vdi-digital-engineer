@@ -1,0 +1,86 @@
+{
+  "symbol_id": "VESSEL-REACTOR-001",
+  "name": "反应器",
+  "name_en": "Reactor",
+  "standard": "HG/T 20559.2-1993",
+  "category": "vessels",
+  "description": "搅拌反应器",
+  "parameters": {
+    "diameter": {
+      "type": "number",
+      "unit": "mm",
+      "description": "内径"
+    },
+    "height": {
+      "type": "number",
+      "unit": "mm",
+      "description": "筒体高度"
+    },
+    "volume": {
+      "type": "number",
+      "unit": "m³",
+      "description": "容积"
+    },
+    "agitator_type": {
+      "type": "string",
+      "description": "搅拌器类型",
+      "examples": ["桨式", "框式", "锚式", "螺带式"]
+    },
+    "agitator_speed": {
+      "type": "number",
+      "unit": "rpm",
+      "description": "搅拌转速"
+    }
+  },
+  "connections": {
+    "feed": {
+      "position": {"x": 0, "y": 35},
+      "direction": "up"
+    },
+    "discharge": {
+      "position": {"x": 0, "y": -35},
+      "direction": "down"
+    },
+    "jacket_in": {
+      "position": {"x": -25, "y": 10},
+      "direction": "left"
+    },
+    "jacket_out": {
+      "position": {"x": -25, "y": -10},
+      "direction": "left"
+    }
+  },
+  "geometry": {
+    "components": [
+      {
+        "type": "rectangle",
+        "params": {"width": 40, "height": 50},
+        "description": "筒体"
+      },
+      {
+        "type": "circle",
+        "params": {"radius": 20},
+        "position": {"x": 0, "y": 25},
+        "description": "上封头"
+      },
+      {
+        "type": "circle",
+        "params": {"radius": 20},
+        "position": {"x": 0, "y": -25},
+        "description": "下封头"
+      },
+      {
+        "type": "line",
+        "params": {"start": [0, 25], "end": [0, 35]},
+        "description": "搅拌轴"
+      },
+      {
+        "type": "line",
+        "params": {"start": [-8, 25], "end": [8, 25]},
+        "description": "搅拌器"
+      }
+    ]
+  },
+  "related_standards": ["GB/T 150", "HG/T 20569", "ASME VIII"],
+  "typical_applications": ["化学反应", "聚合", "发酵"]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "vdi-cad-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "VDI CAD MCP — DisciplineOutput → FreeCAD 绘图",
+  "bin": {
+    "vdi-cad-mcp": "./server.mjs"
+  },
+  "scripts": {
+    "mcp": "node server.mjs",
+    "test:converter": "node test-converter.mjs",
+    "test:plant": "node test-plant-converter.mjs",
+    "test:layout": "node test-layout-engine.mjs",
+    "test:pid": "node test-pid-semantics.mjs",
+    "test:publish": "node test-publish-gate.mjs",
+    "test:golden": "node test-golden-diff.mjs",
+    "test:multi-view": "node test-multi-view.mjs",
+    "test:dexpi": "node test-dexpi-export.mjs",
+    "test:dexpi:roundtrip": "node test-dexpi-roundtrip.mjs",
+    "test:get-object": "node test-get-object.mjs",
+    "test:manifest-pick": "node test-manifest-pick.mjs",
+    "handover:pack": "node digital-handover-pack.mjs",
+    "test:acceptance": "node test-acceptance-gate.mjs",
+    "test:e2e": "node test-e2e.mjs",
+    "test:e2e:mock": "node test-e2e-mock.mjs",
+    "export:meoh-baseline": "node scripts/export-meoh-baseline.mjs",
+    "acceptance": "node scripts/run-acceptance.mjs",
+    "acceptance:full": "node scripts/run-acceptance.mjs --full",
+    "acceptance:e2e": "node scripts/run-acceptance.mjs --full --e2e"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "zod": "^3.23.8"
+  }
+}

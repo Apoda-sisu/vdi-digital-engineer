@@ -1,40 +1,139 @@
 {
   "file": "water/equipment.json",
-  "discipline": "water",
+  "discipline": "CI",
   "category": "equipment",
   "formula_count": 7,
   "formulas": [
     {
       "formula_id": "WA-EQ-001",
+      "vdi_formula_id": "WA-EQ-001",
       "name": "水泵轴功率",
       "name_en": "Pump Shaft Power",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "equipment/pump",
       "type": "exact",
       "equation_text": "P = ρ * g * Q * H / (1000 * η)",
       "equation_latex": "P = \\frac{\\rho \\cdot g \\cdot Q \\cdot H}{1000 \\cdot \\eta}",
       "equation_ast": {
         "op": "div",
-        "num": {"op": "mul", "args": [{"var": "ρ"}, {"var": "g"}, {"var": "Q"}, {"var": "H"}]},
-        "den": {"op": "mul", "args": [{"const": 1000}, {"var": "η"}]}
+        "num": {
+          "op": "mul",
+          "args": [
+            {
+              "var": "ρ"
+            },
+            {
+              "var": "g"
+            },
+            {
+              "var": "Q"
+            },
+            {
+              "var": "H"
+            }
+          ]
+        },
+        "den": {
+          "op": "mul",
+          "args": [
+            {
+              "const": 1000
+            },
+            {
+              "var": "η"
+            }
+          ]
+        }
       },
       "variables": [
-        {"symbol": "P", "name": "水泵轴功率", "unit": "kW", "role": "output", "desc": "水泵轴功率"},
-        {"symbol": "ρ", "name": "液体密度", "unit": "kg/m3", "role": "input", "default": 1000, "desc": "清水密度1000kg/m3"},
-        {"symbol": "g", "name": "重力加速度", "unit": "m/s2", "role": "input", "default": 9.81},
-        {"symbol": "Q", "name": "流量", "unit": "m3/s", "role": "input", "constraints": {"min": 0, "exclusive_min": true},
-          "alt_units": [{"unit": "m3/h", "factor": 0.000278}, {"unit": "L/s", "factor": 0.001}]},
-        {"symbol": "H", "name": "扬程", "unit": "m", "role": "input", "constraints": {"min": 0, "exclusive_min": true},
-          "desc": "水泵总扬程"},
-        {"symbol": "η", "name": "水泵效率", "unit": "-", "role": "input", "constraints": {"min": 0.1, "max": 1.0},
-          "desc": "水泵效率，一般取0.6-0.85"}
+        {
+          "symbol": "P",
+          "name": "水泵轴功率",
+          "unit": "kW",
+          "role": "output",
+          "desc": "水泵轴功率"
+        },
+        {
+          "symbol": "ρ",
+          "name": "液体密度",
+          "unit": "kg/m3",
+          "role": "input",
+          "default": 1000,
+          "desc": "清水密度1000kg/m3"
+        },
+        {
+          "symbol": "g",
+          "name": "重力加速度",
+          "unit": "m/s2",
+          "role": "input",
+          "default": 9.81
+        },
+        {
+          "symbol": "Q",
+          "name": "流量",
+          "unit": "m3/s",
+          "role": "input",
+          "constraints": {
+            "min": 0,
+            "exclusive_min": true
+          },
+          "alt_units": [
+            {
+              "unit": "m3/h",
+              "factor": 0.000278
+            },
+            {
+              "unit": "L/s",
+              "factor": 0.001
+            }
+          ]
+        },
+        {
+          "symbol": "H",
+          "name": "扬程",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0,
+            "exclusive_min": true
+          },
+          "desc": "水泵总扬程"
+        },
+        {
+          "symbol": "η",
+          "name": "水泵效率",
+          "unit": "-",
+          "role": "input",
+          "constraints": {
+            "min": 0.1,
+            "max": 1
+          },
+          "desc": "水泵效率，一般取0.6-0.85"
+        }
       ],
-      "source": {"standard_id": "GB 50015-2019", "clause": "3.8.8"},
+      "source": {
+        "standard_id": "GB 50015-2019",
+        "clause": "3.8.8"
+      },
       "related_formulas": [
-        {"formula_id": "WA-EQ-002", "relation": "complement", "note": "电机功率=轴功率/电机效率"}
+        {
+          "formula_id": "WA-EQ-002",
+          "vdi_formula_id": "WA-EQ-002",
+          "relation": "complement",
+          "note": "电机功率=轴功率/电机效率"
+        }
       ],
-      "tags": ["水泵", "轴功率", "选型"],
-      "keywords": ["水泵功率", "轴功率", "泵功率计算", "P=ρgQH/η"],
+      "tags": [
+        "水泵",
+        "轴功率",
+        "选型"
+      ],
+      "keywords": [
+        "水泵功率",
+        "轴功率",
+        "泵功率计算",
+        "P=ρgQH/η"
+      ],
       "precision": "精确",
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",
@@ -42,24 +141,68 @@
     },
     {
       "formula_id": "WA-EQ-002",
+      "vdi_formula_id": "WA-EQ-002",
       "name": "水泵电机功率",
       "name_en": "Pump Motor Power",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "equipment/pump",
       "type": "exact",
       "equation_text": "Pm = P / ηm",
       "equation_latex": "P_m = \\frac{P}{\\eta_m}",
-      "equation_ast": {"op": "div", "num": {"var": "P"}, "den": {"var": "ηm"}},
+      "equation_ast": {
+        "op": "div",
+        "num": {
+          "var": "P"
+        },
+        "den": {
+          "var": "ηm"
+        }
+      },
       "variables": [
-        {"symbol": "Pm", "name": "电机功率", "unit": "kW", "role": "output", "desc": "配套电机功率"},
-        {"symbol": "P", "name": "水泵轴功率", "unit": "kW", "role": "input"},
-        {"symbol": "ηm", "name": "电机效率", "unit": "-", "role": "input", "default": 0.9,
-          "desc": "电机效率，一般取0.85-0.95"}
+        {
+          "symbol": "Pm",
+          "name": "电机功率",
+          "unit": "kW",
+          "role": "output",
+          "desc": "配套电机功率"
+        },
+        {
+          "symbol": "P",
+          "name": "水泵轴功率",
+          "unit": "kW",
+          "role": "input"
+        },
+        {
+          "symbol": "ηm",
+          "name": "电机效率",
+          "unit": "-",
+          "role": "input",
+          "default": 0.9,
+          "desc": "电机效率，一般取0.85-0.95"
+        }
       ],
-      "source": {"standard_id": "GB 50015-2019", "clause": "3.8.8"},
-      "related_formulas": [{"formula_id": "WA-EQ-001", "relation": "prerequisite", "note": "需先计算轴功率"}],
-      "tags": ["水泵", "电机功率", "选型"],
-      "keywords": ["电机功率", "配套功率", "水泵选型"],
+      "source": {
+        "standard_id": "GB 50015-2019",
+        "clause": "3.8.8"
+      },
+      "related_formulas": [
+        {
+          "formula_id": "WA-EQ-001",
+          "vdi_formula_id": "WA-EQ-001",
+          "relation": "prerequisite",
+          "note": "需先计算轴功率"
+        }
+      ],
+      "tags": [
+        "水泵",
+        "电机功率",
+        "选型"
+      ],
+      "keywords": [
+        "电机功率",
+        "配套功率",
+        "水泵选型"
+      ],
       "precision": "精确",
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",
@@ -67,9 +210,10 @@
     },
     {
       "formula_id": "WA-EQ-003",
+      "vdi_formula_id": "WA-EQ-003",
       "name": "水泵汽蚀余量校核",
       "name_en": "Pump NPSH Verification",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "equipment/pump",
       "type": "exact",
       "equation_text": "NPSHa = Ha + Hs - Hv - Hf_s",
@@ -77,28 +221,110 @@
       "equation_ast": {
         "op": "sub",
         "args": [
-          {"op": "add", "args": [{"var": "Ha"}, {"var": "Hs"}]},
-          {"op": "add", "args": [{"var": "Hv"}, {"var": "Hf_s"}]}
+          {
+            "op": "add",
+            "args": [
+              {
+                "var": "Ha"
+              },
+              {
+                "var": "Hs"
+              }
+            ]
+          },
+          {
+            "op": "add",
+            "args": [
+              {
+                "var": "Hv"
+              },
+              {
+                "var": "Hf_s"
+              }
+            ]
+          }
         ]
       },
       "variables": [
-        {"symbol": "NPSHa", "name": "有效汽蚀余量", "unit": "m", "role": "output", "desc": "系统可用的有效汽蚀余量"},
-        {"symbol": "Ha", "name": "大气压力水头", "unit": "m", "role": "input", "default": 10.33, "desc": "当地大气压对应的水柱高度"},
-        {"symbol": "Hs", "name": "吸水几何高度", "unit": "m", "role": "input", "desc": "液面至泵入口的垂直高度（灌注为正，吸上为负）"},
-        {"symbol": "Hv", "name": "饱和蒸汽压力水头", "unit": "m", "role": "input", "desc": "液体饱和蒸汽压对应的水柱高度",
-          "look_up": {"type": "fluid_property", "table_ref": "TBL-HV-001", "default": 0.24}},
-        {"symbol": "Hf_s", "name": "吸入管路损失", "unit": "m", "role": "input", "constraints": {"min": 0}, "desc": "吸入管路的水头损失"}
+        {
+          "symbol": "NPSHa",
+          "name": "有效汽蚀余量",
+          "unit": "m",
+          "role": "output",
+          "desc": "系统可用的有效汽蚀余量"
+        },
+        {
+          "symbol": "Ha",
+          "name": "大气压力水头",
+          "unit": "m",
+          "role": "input",
+          "default": 10.33,
+          "desc": "当地大气压对应的水柱高度"
+        },
+        {
+          "symbol": "Hs",
+          "name": "吸水几何高度",
+          "unit": "m",
+          "role": "input",
+          "desc": "液面至泵入口的垂直高度（灌注为正，吸上为负）"
+        },
+        {
+          "symbol": "Hv",
+          "name": "饱和蒸汽压力水头",
+          "unit": "m",
+          "role": "input",
+          "desc": "液体饱和蒸汽压对应的水柱高度",
+          "look_up": {
+            "type": "fluid_property",
+            "table_ref": "TBL-HV-001",
+            "default": 0.24
+          }
+        },
+        {
+          "symbol": "Hf_s",
+          "name": "吸入管路损失",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "吸入管路的水头损失"
+        }
       ],
-      "source": {"standard_id": "GB 50015-2019", "clause": "3.8.6", "note": "水泵安装高度确定"},
+      "source": {
+        "standard_id": "GB 50015-2019",
+        "clause": "3.8.6",
+        "note": "水泵安装高度确定"
+      },
       "applicable_scope": {
-        "conditions": ["NPSHa ≥ 1.3 × NPSHr"],
-        "exclusions": ["自灌式吸水"]
+        "conditions": [
+          "NPSHa ≥ 1.3 × NPSHr"
+        ],
+        "exclusions": [
+          "自灌式吸水"
+        ]
       },
       "related_formulas": [
-        {"formula_id": "WA-EQ-001", "relation": "complement", "note": "水泵选型"}
+        {
+          "formula_id": "WA-EQ-001",
+          "vdi_formula_id": "WA-EQ-001",
+          "relation": "complement",
+          "note": "水泵选型"
+        }
       ],
-      "tags": ["汽蚀余量", "NPSH", "水泵安装高度", "吸上高度"],
-      "keywords": ["汽蚀余量", "NPSH", "有效汽蚀余量", "水泵安装高度", "吸上真空度"],
+      "tags": [
+        "汽蚀余量",
+        "NPSH",
+        "水泵安装高度",
+        "吸上高度"
+      ],
+      "keywords": [
+        "汽蚀余量",
+        "NPSH",
+        "有效汽蚀余量",
+        "水泵安装高度",
+        "吸上真空度"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -106,9 +332,10 @@
     },
     {
       "formula_id": "WA-EQ-004",
+      "vdi_formula_id": "WA-EQ-004",
       "name": "变频水泵功率曲线",
       "name_en": "Variable Frequency Pump Power Curve",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "equipment/pump",
       "type": "exact",
       "equation_text": "P2 = P1 * (n2/n1)³ (相似工况)",
@@ -116,34 +343,102 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"var": "P1"},
+          {
+            "var": "P1"
+          },
           {
             "op": "pow",
             "base": {
               "op": "div",
-              "num": {"var": "n2"},
-              "den": {"var": "n1"}
+              "num": {
+                "var": "n2"
+              },
+              "den": {
+                "var": "n1"
+              }
             },
-            "exp": {"const": 3}
+            "exp": {
+              "const": 3
+            }
           }
         ]
       },
       "variables": [
-        {"symbol": "P2", "name": "调速后功率", "unit": "kW", "role": "output", "desc": "变频调速后的水泵功率"},
-        {"symbol": "P1", "name": "额定功率", "unit": "kW", "role": "input", "constraints": {"min": 0.1}, "desc": "额定转速下的水泵功率"},
-        {"symbol": "n2", "name": "调速后转速", "unit": "rpm", "role": "input", "constraints": {"min": 600, "max": 3600}, "desc": "变频调速后的转速"},
-        {"symbol": "n1", "name": "额定转速", "unit": "rpm", "role": "input", "constraints": {"min": 600, "max": 3600}, "default": 2950, "desc": "水泵额定转速"}
+        {
+          "symbol": "P2",
+          "name": "调速后功率",
+          "unit": "kW",
+          "role": "output",
+          "desc": "变频调速后的水泵功率"
+        },
+        {
+          "symbol": "P1",
+          "name": "额定功率",
+          "unit": "kW",
+          "role": "input",
+          "constraints": {
+            "min": 0.1
+          },
+          "desc": "额定转速下的水泵功率"
+        },
+        {
+          "symbol": "n2",
+          "name": "调速后转速",
+          "unit": "rpm",
+          "role": "input",
+          "constraints": {
+            "min": 600,
+            "max": 3600
+          },
+          "desc": "变频调速后的转速"
+        },
+        {
+          "symbol": "n1",
+          "name": "额定转速",
+          "unit": "rpm",
+          "role": "input",
+          "constraints": {
+            "min": 600,
+            "max": 3600
+          },
+          "default": 2950,
+          "desc": "水泵额定转速"
+        }
       ],
-      "source": {"standard_id": "GB 50015-2019", "clause": "3.8.11", "note": "变频调速水泵选型"},
+      "source": {
+        "standard_id": "GB 50015-2019",
+        "clause": "3.8.11",
+        "note": "变频调速水泵选型"
+      },
       "applicable_scope": {
-        "conditions": ["相似工况点"],
-        "exclusions": ["非相似工况"]
+        "conditions": [
+          "相似工况点"
+        ],
+        "exclusions": [
+          "非相似工况"
+        ]
       },
       "related_formulas": [
-        {"formula_id": "WA-EQ-001", "relation": "prerequisite", "note": "额定功率计算"}
+        {
+          "formula_id": "WA-EQ-001",
+          "vdi_formula_id": "WA-EQ-001",
+          "relation": "prerequisite",
+          "note": "额定功率计算"
+        }
       ],
-      "tags": ["变频泵", "功率曲线", "相似定律", "节能"],
-      "keywords": ["变频水泵", "功率曲线", "相似定律", "调速节能", "水泵效率"],
+      "tags": [
+        "变频泵",
+        "功率曲线",
+        "相似定律",
+        "节能"
+      ],
+      "keywords": [
+        "变频水泵",
+        "功率曲线",
+        "相似定律",
+        "调速节能",
+        "水泵效率"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -151,28 +446,101 @@
     },
     {
       "formula_id": "WA-EQ-005",
+      "vdi_formula_id": "WA-EQ-005",
       "name": "生活水箱有效容积",
       "name_en": "Domestic Water Tank Effective Volume",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "equipment/tank",
       "type": "exact",
       "equation_text": "V = Qd * T / (2 * N)",
       "equation_latex": "V = \\frac{Q_d \\cdot T}{2 \\cdot N}",
       "equation_ast": {
         "op": "div",
-        "num": {"op": "mul", "args": [{"var": "Qd"}, {"var": "T"}]},
-        "den": {"op": "mul", "args": [{"const": 2}, {"var": "N"}]}
+        "num": {
+          "op": "mul",
+          "args": [
+            {
+              "var": "Qd"
+            },
+            {
+              "var": "T"
+            }
+          ]
+        },
+        "den": {
+          "op": "mul",
+          "args": [
+            {
+              "const": 2
+            },
+            {
+              "var": "N"
+            }
+          ]
+        }
       },
       "variables": [
-        {"symbol": "V", "name": "水箱有效容积", "unit": "m³", "role": "output", "desc": "水箱最小有效容积"},
-        {"symbol": "Qd", "name": "最高日用水量", "unit": "m³/d", "role": "input", "constraints": {"min": 1}, "desc": "建筑物最高日用水量"},
-        {"symbol": "T", "name": "水箱进水时间", "unit": "h", "role": "input", "constraints": {"min": 1, "max": 24}, "default": 8, "desc": "水箱进水时间"},
-        {"symbol": "N", "name": "每日进水次数", "unit": "次", "role": "input", "constraints": {"min": 1, "max": 6}, "default": 2, "desc": "每日进水次数"}
+        {
+          "symbol": "V",
+          "name": "水箱有效容积",
+          "unit": "m³",
+          "role": "output",
+          "desc": "水箱最小有效容积"
+        },
+        {
+          "symbol": "Qd",
+          "name": "最高日用水量",
+          "unit": "m³/d",
+          "role": "input",
+          "constraints": {
+            "min": 1
+          },
+          "desc": "建筑物最高日用水量"
+        },
+        {
+          "symbol": "T",
+          "name": "水箱进水时间",
+          "unit": "h",
+          "role": "input",
+          "constraints": {
+            "min": 1,
+            "max": 24
+          },
+          "default": 8,
+          "desc": "水箱进水时间"
+        },
+        {
+          "symbol": "N",
+          "name": "每日进水次数",
+          "unit": "次",
+          "role": "input",
+          "constraints": {
+            "min": 1,
+            "max": 6
+          },
+          "default": 2,
+          "desc": "每日进水次数"
+        }
       ],
-      "source": {"standard_id": "GB 50015-2019", "clause": "3.7.3", "note": "生活水箱容积计算"},
+      "source": {
+        "standard_id": "GB 50015-2019",
+        "clause": "3.7.3",
+        "note": "生活水箱容积计算"
+      },
       "related_formulas": [],
-      "tags": ["水箱", "有效容积", "生活给水", "调节容积"],
-      "keywords": ["水箱容积", "有效容积", "生活水箱", "调节容积", "高位水箱"],
+      "tags": [
+        "水箱",
+        "有效容积",
+        "生活给水",
+        "调节容积"
+      ],
+      "keywords": [
+        "水箱容积",
+        "有效容积",
+        "生活水箱",
+        "调节容积",
+        "高位水箱"
+      ],
       "precision": 0.1,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -180,31 +548,132 @@
     },
     {
       "formula_id": "WA-EQ-006",
+      "vdi_formula_id": "WA-EQ-006",
       "name": "气压罐调节容积",
       "name_en": "Pressure Tank Adjustable Volume",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "equipment/pressure_tank",
       "type": "exact",
       "equation_text": "Vt = Qp * (P1*P2) / (4*(P2-P1)*N)",
       "equation_latex": "V_t = \\frac{Q_p \\cdot P_1 \\cdot P_2}{4 \\cdot (P_2 - P_1) \\cdot N}",
       "equation_ast": {
         "op": "div",
-        "num": {"op": "mul", "args": [{"var": "Qp"}, {"var": "P1"}, {"var": "P2"}]},
-        "den": {"op": "mul", "args": [{"const": 4}, {"op": "sub", "args": [{"var": "P2"}, {"var": "P1"}]}, {"var": "N"}]}
+        "num": {
+          "op": "mul",
+          "args": [
+            {
+              "var": "Qp"
+            },
+            {
+              "var": "P1"
+            },
+            {
+              "var": "P2"
+            }
+          ]
+        },
+        "den": {
+          "op": "mul",
+          "args": [
+            {
+              "const": 4
+            },
+            {
+              "op": "sub",
+              "args": [
+                {
+                  "var": "P2"
+                },
+                {
+                  "var": "P1"
+                }
+              ]
+            },
+            {
+              "var": "N"
+            }
+          ]
+        }
       },
       "variables": [
-        {"symbol": "Vt", "name": "气压罐调节容积", "unit": "m³", "role": "output", "desc": "气压罐最小调节容积"},
-        {"symbol": "Qp", "name": "水泵流量", "unit": "m³/h", "role": "input", "constraints": {"min": 0.5}, "desc": "配套水泵流量"},
-        {"symbol": "P1", "name": "最低工作压力", "unit": "MPa", "role": "input", "constraints": {"min": 0.1, "max": 1.6}, "desc": "气压罐最低工作压力（绝对压力）"},
-        {"symbol": "P2", "name": "最高工作压力", "unit": "MPa", "role": "input", "constraints": {"min": 0.2, "max": 2.5}, "desc": "气压罐最高工作压力（绝对压力）"},
-        {"symbol": "N", "name": "水泵启停次数", "unit": "次/h", "role": "input", "constraints": {"min": 1, "max": 15}, "default": 6, "desc": "每小时水泵启停次数"}
+        {
+          "symbol": "Vt",
+          "name": "气压罐调节容积",
+          "unit": "m³",
+          "role": "output",
+          "desc": "气压罐最小调节容积"
+        },
+        {
+          "symbol": "Qp",
+          "name": "水泵流量",
+          "unit": "m³/h",
+          "role": "input",
+          "constraints": {
+            "min": 0.5
+          },
+          "desc": "配套水泵流量"
+        },
+        {
+          "symbol": "P1",
+          "name": "最低工作压力",
+          "unit": "MPa",
+          "role": "input",
+          "constraints": {
+            "min": 0.1,
+            "max": 1.6
+          },
+          "desc": "气压罐最低工作压力（绝对压力）"
+        },
+        {
+          "symbol": "P2",
+          "name": "最高工作压力",
+          "unit": "MPa",
+          "role": "input",
+          "constraints": {
+            "min": 0.2,
+            "max": 2.5
+          },
+          "desc": "气压罐最高工作压力（绝对压力）"
+        },
+        {
+          "symbol": "N",
+          "name": "水泵启停次数",
+          "unit": "次/h",
+          "role": "input",
+          "constraints": {
+            "min": 1,
+            "max": 15
+          },
+          "default": 6,
+          "desc": "每小时水泵启停次数"
+        }
       ],
-      "source": {"standard_id": "GB 50015-2019", "clause": "3.8.5", "note": "气压给水设备选型"},
+      "source": {
+        "standard_id": "GB 50015-2019",
+        "clause": "3.8.5",
+        "note": "气压给水设备选型"
+      },
       "related_formulas": [
-        {"formula_id": "WA-EQ-001", "relation": "prerequisite", "note": "水泵功率计算"}
+        {
+          "formula_id": "WA-EQ-001",
+          "vdi_formula_id": "WA-EQ-001",
+          "relation": "prerequisite",
+          "note": "水泵功率计算"
+        }
       ],
-      "tags": ["气压罐", "调节容积", "变频供水", "无负压"],
-      "keywords": ["气压罐", "调节容积", "气压给水", "无负压设备", "供水压力"],
+      "tags": [
+        "气压罐",
+        "调节容积",
+        "变频供水",
+        "无负压"
+      ],
+      "keywords": [
+        "气压罐",
+        "调节容积",
+        "气压给水",
+        "无负压设备",
+        "供水压力"
+      ],
       "precision": 0.001,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -212,30 +681,83 @@
     },
     {
       "formula_id": "WA-EQ-007",
+      "vdi_formula_id": "WA-EQ-007",
       "name": "紫外线消毒剂量",
       "name_en": "UV Disinfection Dose",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "equipment/disinfection",
       "type": "exact",
       "equation_text": "D = I * t",
       "equation_latex": "D = I \\cdot t",
       "equation_ast": {
         "op": "mul",
-        "args": [{"var": "I"}, {"var": "t"}]
+        "args": [
+          {
+            "var": "I"
+          },
+          {
+            "var": "t"
+          }
+        ]
       },
       "variables": [
-        {"symbol": "D", "name": "紫外线剂量", "unit": "mJ/cm²", "role": "output", "desc": "紫外线照射剂量"},
-        {"symbol": "I", "name": "紫外线强度", "unit": "mW/cm²", "role": "input", "constraints": {"min": 1, "max": 200}, "desc": "紫外线灯管辐射强度"},
-        {"symbol": "t", "name": "接触时间", "unit": "s", "role": "input", "constraints": {"min": 1, "max": 120}, "desc": "水流在反应器内的停留时间"}
+        {
+          "symbol": "D",
+          "name": "紫外线剂量",
+          "unit": "mJ/cm²",
+          "role": "output",
+          "desc": "紫外线照射剂量"
+        },
+        {
+          "symbol": "I",
+          "name": "紫外线强度",
+          "unit": "mW/cm²",
+          "role": "input",
+          "constraints": {
+            "min": 1,
+            "max": 200
+          },
+          "desc": "紫外线灯管辐射强度"
+        },
+        {
+          "symbol": "t",
+          "name": "接触时间",
+          "unit": "s",
+          "role": "input",
+          "constraints": {
+            "min": 1,
+            "max": 120
+          },
+          "desc": "水流在反应器内的停留时间"
+        }
       ],
-      "source": {"standard_id": "GB 50015-2019", "clause": "3.9.15", "note": "紫外线消毒设计"},
+      "source": {
+        "standard_id": "GB 50015-2019",
+        "clause": "3.9.15",
+        "note": "紫外线消毒设计"
+      },
       "applicable_scope": {
-        "conditions": ["D ≥ 40 mJ/cm²（生活饮用水）"],
-        "exclusions": ["浊度 > 5 NTU 的水质"]
+        "conditions": [
+          "D ≥ 40 mJ/cm²（生活饮用水）"
+        ],
+        "exclusions": [
+          "浊度 > 5 NTU 的水质"
+        ]
       },
       "related_formulas": [],
-      "tags": ["紫外线消毒", "消毒剂量", "饮用水处理", "UV"],
-      "keywords": ["紫外线消毒", "UV剂量", "消毒", "饮用水", "水处理"],
+      "tags": [
+        "紫外线消毒",
+        "消毒剂量",
+        "饮用水处理",
+        "UV"
+      ],
+      "keywords": [
+        "紫外线消毒",
+        "UV剂量",
+        "消毒",
+        "饮用水",
+        "水处理"
+      ],
       "precision": 0.1,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",

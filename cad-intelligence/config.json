@@ -1,0 +1,101 @@
+{
+  "module_info": {
+    "name": "cad-intelligence",
+    "version": "2.0.0",
+    "description": "基于FreeCAD的AI智能绘图模块",
+    "author": "VDI Digital Engineer Project",
+    "license": "Apache-2.0"
+  },
+  "ai": {
+    "api_key": "",
+    "api_base": "https://api.deepseek.com",
+    "model": "deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 2000,
+    "provider": "ollama",
+    "ollama_base": "http://127.0.0.1:11434",
+    "ollama_model": "qwen3.5:9b-mlx"
+  },
+  "freecad": {
+    "min_version": "1.1.1",
+    "executable": "freecadcmd",
+    "python_path": null,
+    "timeout_seconds": 60
+  },
+  "input": {
+    "supported_types": [
+      "scheme",
+      "chat"
+    ],
+    "max_file_size_mb": 50
+  },
+  "output": {
+    "supported_formats": [
+      "FCStd",
+      "STEP",
+      "IGES",
+      "DXF",
+      "PDF",
+      "STL",
+      "CSV"
+    ],
+    "default_format": "FCStd",
+    "output_directory": "./output",
+    "naming_pattern": "{project_id}_{drawing_number}_r{revision}"
+  },
+  "drawing": {
+    "standards": {
+      "dimension": "GB",
+      "annotation": "GB",
+      "symbol": "GB/T 2625",
+      "piping": "HG/T 20559",
+      "instrument": "ISA 5.1"
+    },
+    "default_scale": "1:100",
+    "line_weights": {
+      "thin": 0.18,
+      "medium": 0.35,
+      "thick": 0.7
+    },
+    "colors": {
+      "object": "#000000",
+      "dimension": "#0000FF",
+      "center_line": "#FF0000",
+      "hidden_line": "#888888"
+    }
+  },
+  "symbols": {
+    "base_path": "./symbols",
+    "categories": [
+      "equipment",
+      "instruments",
+      "piping",
+      "annotations"
+    ],
+    "cache_enabled": true
+  },
+  "knowledge": {
+    "enabled": true,
+    "graph_db": null,
+    "vector_db": null,
+    "cache_ttl": 3600
+  },
+  "constraints": {
+    "validation_enabled": true,
+    "auto_fix": true,
+    "strict_mode": false
+  },
+  "layout": {
+    "auto_layout": true,
+    "algorithm": "hierarchical",
+    "spacing": {
+      "equipment": 150,
+      "pipe_min": 50
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "file": null,
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  }
+}

@@ -15,6 +15,8 @@ import {
   ListToolsRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
 import { z } from "zod";
+import { resolveCanonicalDiscipline, getDisciplineSlugMapping } from "../../config/cfihos-discipline-resolve.mjs";
+import { validatePlantModelForPublish } from "../vdi-cad/plant-model-validator.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -52,13 +54,43 @@ function loadDisciplineCodes() {
   return _disciplineCodes;
 }
 
-/** 将 slug（如 "water"）转换为 2 字母学科码（如 "WA"），已是代码则原样返回 */
+/** slug / legacy VDI / CFIHOS → canonical discipline code */
 function resolveDiscipline(input) {
-  const codes = loadDisciplineCodes();
-  const mapping = codes.discipline_slug_mapping || {};
-  return mapping[input] || input;
+  const slugMap = getDisciplineSlugMapping(loadDisciplineCodes());
+  if (slugMap[input]) return slugMap[input];
+  return resolveCanonicalDiscipline(input);
 }
 
+/** 子领域 slug → vdi-rules data_contracts 键（如 supply → S） */
+const SUB_DISCIPLINE_ALIASES = {
+  supply: "S",
+  fire: "F",
+  drainage: "D",
+  stormwater: "R",
+  wastewater: "W",
+  circulating: "C",
+  package: "K",
+  safety: "F",
+  route: "R",
+  balance: "B",
+  pfd: "P",
+  pid: "P",
+  equipment: "E",
+  utilities: "U",
+  hydraulics: "H",
+  relief: "L",
+  control: "C",
+  lab: "A",
+};
+
+function resolveSubDiscipline(disciplineCode, subDiscipline) {
+  if (!subDiscipline) return subDiscipline;
+  const contracts = loadRules().data_contracts?.[disciplineCode];
+  if (contracts?.[subDiscipline]) return subDiscipline;
+  const alias = SUB_DISCIPLINE_ALIASES[subDiscipline.toLowerCase()];
+  if (alias && contracts?.[alias]) return alias;
+  return subDiscipline;
+}
 // ---------------------------------------------------------------------------
 // 工具 1：vdi_check_redlines — 红线规则检查
 // ---------------------------------------------------------------------------
@@ -167,6 +199,9 @@ const ValidateOutputSchema = z.object({
 function handleValidateOutput(args) {
   const input = ValidateOutputSchema.parse(args);
   input.discipline = resolveDiscipline(input.discipline);
+  if (input.sub_discipline) {
+    input.sub_discipline = resolveSubDiscipline(input.discipline, input.sub_discipline);
+  }
   const rules = loadRules();
   const issues = [];
 
@@ -191,8 +226,9 @@ function handleValidateOutput(args) {
     }
   }
 
-  // 2. 检查 discipline 字段值
-  if (input.output.discipline !== input.discipline) {
+  // 2. 检查 discipline 字段值（允许 slug 与学科码等价，如 water ↔ WA）
+  const outputDiscipline = resolveDiscipline(input.output.discipline ?? "");
+  if (outputDiscipline !== input.discipline) {
     issues.push({ field: "discipline", error: `discipline 应为 '${input.discipline}'，实际为 '${input.output.discipline}'`, severity: "error" });
   }
 
@@ -254,6 +290,7 @@ const CheckDataCompletenessSchema = z.object({
 function handleCheckDataCompleteness(args) {
   const input = CheckDataCompletenessSchema.parse(args);
   input.discipline = resolveDiscipline(input.discipline);
+  input.sub_discipline = resolveSubDiscipline(input.discipline, input.sub_discipline);
   const rules = loadRules();
   const dataContracts = rules.data_contracts;
   
@@ -376,6 +413,7 @@ const CheckReviewGateSchema = z.object({
   stage: z.enum(["design", "checking", "review", "approval"]).describe("校审阶段"),
   output: z.any().describe("DisciplineOutput JSON 对象"),
   reviewer_notes: z.string().optional().describe("校审人备注"),
+  human_approval: z.boolean().optional().describe("审定阶段人工确认（high risk 时）"),
 });
 
 function handleCheckReviewGate(args) {
@@ -421,10 +459,13 @@ function handleCheckReviewGate(args) {
       case "AP-01":
       case "AP-02":
       case "AP-03":
-        // 审定阶段 — risk_level=high 的需特别关注并标记为未通过
-        if (input.output.risk_level === "high") {
+        // 审定：high risk 须人工确认；E2E/流程传入 human_approval 表示已审定
+        if (input.output.risk_level === "high" && !input.human_approval) {
           passed = false;
-          note = "重大方案需额外评审（risk_level=high），须人工审定确认";
+          note = "重大方案（risk_level=high）须人工审定；确认后传 human_approval=true";
+        } else if (input.output.risk_level === "high" && input.human_approval) {
+          passed = true;
+          note = "人工审定已确认";
         }
         break;
 
@@ -478,6 +519,24 @@ function getNextStage(current) {
   const order = ["design", "checking", "review", "approval"];
   const idx = order.indexOf(current);
   return idx < order.length - 1 ? order[idx + 1] : null;
+}
+
+// ---------------------------------------------------------------------------
+// 工具 5：vdi_validate_plant_model — PlantModel 发布闸门
+// ---------------------------------------------------------------------------
+
+const ValidatePlantModelSchema = z.object({
+  plant_model: z.any().describe("PlantModel v1 JSON"),
+  stage: z.enum(["design", "checking", "review", "approval"]).optional().default("checking"),
+  min_equipment: z.number().optional(),
+});
+
+function handleValidatePlantModel(args) {
+  const input = ValidatePlantModelSchema.parse(args);
+  return validatePlantModelForPublish(input.plant_model, {
+    stage: input.stage,
+    min_equipment: input.min_equipment,
+  });
 }
 
 // ---------------------------------------------------------------------------
@@ -564,8 +623,27 @@ async function main() {
             },
             output: { description: "DisciplineOutput JSON 对象" },
             reviewer_notes: { type: "string", description: "校审人备注" },
+            human_approval: { type: "boolean", description: "审定阶段：high risk 时人工已确认" },
           },
           required: ["discipline", "stage", "output"],
+        },
+      },
+      {
+        name: "vdi_validate_plant_model",
+        description:
+          "PlantModel 发布闸门。校验工厂对象模型完整性（Equipment 设计条件、PipeRun 管径、object_id 等）。缺 design_P 等设备设计条件时拒绝发布。",
+        inputSchema: {
+          type: "object",
+          properties: {
+            plant_model: { description: "PlantModel v1 JSON 对象" },
+            stage: {
+              type: "string",
+              enum: ["design", "checking", "review", "approval"],
+              description: "校审阶段",
+            },
+            min_equipment: { type: "number", description: "最少设备数量" },
+          },
+          required: ["plant_model"],
         },
       },
     ],
@@ -587,6 +665,9 @@ async function main() {
           break;
         case "vdi_check_review_gate":
           result = handleCheckReviewGate(args ?? {});
+          break;
+        case "vdi_validate_plant_model":
+          result = handleValidatePlantModel(args ?? {});
           break;
         default:
           return {

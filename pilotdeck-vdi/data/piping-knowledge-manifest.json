@@ -1,0 +1,173 @@
+{
+  "manifest_version": 2,
+  "created_at": "2026-06-12",
+  "updated_at": "2026-06-14",
+  "discipline": "piping",
+  "baseline_clauses": 0,
+  "current_clauses": 0,
+  "targets": {
+    "phase1": {
+      "deadline": "2026-07-15",
+      "clause_count": 120
+    },
+    "phase2": {
+      "deadline": "2026-08-30",
+      "clause_count": 300
+    }
+  },
+  "standards": [
+    {
+      "priority": "P0",
+      "source_id": "SH/T 3059",
+      "title": "石油化工管道设计器材选用规范",
+      "target_clauses": 35,
+      "current_clauses": 0,
+      "skill_tags": [
+        "MP7737",
+        "MP4368"
+      ],
+      "status": "phase1"
+    },
+    {
+      "priority": "P0",
+      "source_id": "HG/T 20519-4",
+      "title": "化工装置施工图设计深度规定 管道布置",
+      "target_clauses": 40,
+      "current_clauses": 0,
+      "skill_tags": [
+        "MP4033",
+        "MP4363",
+        "MP4024",
+        "MP4033"
+      ],
+      "status": "phase1"
+    },
+    {
+      "priority": "P0",
+      "source_id": "HG/T 20645",
+      "title": "化工装置管道机械设计规定",
+      "target_clauses": 40,
+      "current_clauses": 0,
+      "skill_tags": [
+        "MP2358",
+        "MP8005"
+      ],
+      "status": "phase1"
+    },
+    {
+      "priority": "P0",
+      "source_id": "GB/T 50933",
+      "title": "石油化工装置设计文件编制标准",
+      "target_clauses": 15,
+      "current_clauses": 0,
+      "skill_tags": [
+        "MP4338"
+      ],
+      "status": "phase1"
+    },
+    {
+      "priority": "P0",
+      "source_id": "GB 50264",
+      "title": "工业设备及管道绝热工程设计规范",
+      "target_clauses": 25,
+      "current_clauses": 0,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "status": "phase2"
+    },
+    {
+      "priority": "P0",
+      "source_id": "SH/T 3015",
+      "title": "石油化工装置工艺设计规范（伴热）",
+      "target_clauses": 15,
+      "current_clauses": 0,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "status": "phase2"
+    },
+    {
+      "priority": "P1",
+      "source_id": "GB 50316",
+      "title": "工业金属管道设计规范",
+      "target_clauses": 15,
+      "current_clauses": 0,
+      "skill_tags": [
+        "MP7737",
+        "MP4033",
+        "MP8005",
+        "MP4038"
+      ],
+      "status": "phase1"
+    },
+    {
+      "priority": "P1",
+      "source_id": "SH/T 3503",
+      "title": "石油化工工程施工质量验收规范",
+      "target_clauses": 10,
+      "current_clauses": 0,
+      "skill_tags": [
+        "MP2343",
+        "MP4306"
+      ],
+      "status": "phase1"
+    },
+    {
+      "priority": "P2",
+      "source_id": "GB 50268",
+      "title": "给水排水管道工程施工及验收规范",
+      "target_clauses": 10,
+      "current_clauses": 0,
+      "skill_tags": [
+        "MP4038"
+      ],
+      "status": "phase2"
+    },
+    {
+      "priority": "P2",
+      "source_id": "SH/T 3012",
+      "title": "石油化工金属管道布置设计规范",
+      "target_clauses": 8,
+      "current_clauses": 0,
+      "skill_tags": [
+        "MP4033",
+        "MP4024"
+      ],
+      "status": "legacy"
+    }
+  ],
+  "skill_clause_minimums": {
+    "MP7737": 15,
+    "MP4338": 12,
+    "MP4033": 12,
+    "MP4363": 12,
+    "MP4024": 12,
+    "MP2358": 15,
+    "MP8005": 5,
+    "MP0900": 15,
+    "MP2343": 12,
+    "MP4368": 12,
+    "MP4038": 10,
+    "MP1206": 5,
+    "MP1380": 5,
+    "MP0519": 5,
+    "MP4306": 5
+  },
+  "retrieval_regression_queries": [
+    "管道材料等级 设计温度 设计压力",
+    "Line List 管道表 编制深度",
+    "管道布置 平面 立面 管廊",
+    "设备接管 管口方位 Nozzle",
+    "管架 管廊 布置",
+    "管道综合 碰撞 路由",
+    "管道支架 选型 荷载 间距",
+    "管道应力 临界管系 CAESAR",
+    "绝热 厚度 防烫 保冷",
+    "伴热 蒸汽 电伴热",
+    "ISO 轴测 试压包",
+    "阀门选用 SH/T 3059",
+    "地下管道 管沟 埋深",
+    "弹簧支架 导向支架 固定支架"
+  ]
+}

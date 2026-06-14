@@ -1,0 +1,92 @@
+[
+  {
+    "skill": "vdi-process-package",
+    "beforeLines": 148,
+    "afterLines": 133,
+    "deliverable_code": "PR-D01"
+  },
+  {
+    "skill": "vdi-process-route",
+    "beforeLines": 139,
+    "afterLines": 136,
+    "deliverable_code": "PR-D02"
+  },
+  {
+    "skill": "vdi-process-balance",
+    "beforeLines": 145,
+    "afterLines": 141,
+    "deliverable_code": "PR-D03"
+  },
+  {
+    "skill": "vdi-process-pfd",
+    "beforeLines": 171,
+    "afterLines": 165,
+    "deliverable_code": "PR-D04"
+  },
+  {
+    "skill": "vdi-process-equipment",
+    "beforeLines": 147,
+    "afterLines": 134,
+    "deliverable_code": "PR-D05"
+  },
+  {
+    "skill": "vdi-process-pid",
+    "beforeLines": 139,
+    "afterLines": 137,
+    "deliverable_code": "PR-S01"
+  },
+  {
+    "skill": "vdi-process-hydraulics",
+    "beforeLines": 97,
+    "afterLines": 96,
+    "deliverable_code": "PR-S02"
+  },
+  {
+    "skill": "vdi-process-relief",
+    "beforeLines": 99,
+    "afterLines": 100,
+    "deliverable_code": "PR-S03"
+  },
+  {
+    "skill": "vdi-process-utilities",
+    "beforeLines": 140,
+    "afterLines": 137,
+    "deliverable_code": "PR-S04"
+  },
+  {
+    "skill": "vdi-process-control",
+    "beforeLines": 89,
+    "afterLines": 94,
+    "deliverable_code": "PR-S05"
+  },
+  {
+    "skill": "vdi-process-safety",
+    "beforeLines": 438,
+    "afterLines": 149,
+    "deliverable_code": "PR-X01"
+  },
+  {
+    "skill": "vdi-process-lab",
+    "beforeLines": 87,
+    "afterLines": 94,
+    "deliverable_code": "PR-X02"
+  },
+  {
+    "skill": "vdi-process-simulation",
+    "beforeLines": 338,
+    "afterLines": 61,
+    "deliverable_code": "PR-T01"
+  },
+  {
+    "skill": "vdi-process-data-mgmt",
+    "beforeLines": 469,
+    "afterLines": 65,
+    "deliverable_code": "PR-T08"
+  },
+  {
+    "skill": "vdi-process-cad-2d",
+    "beforeLines": 223,
+    "afterLines": 100,
+    "deliverable_code": "PR-CAD-2D"
+  }
+]

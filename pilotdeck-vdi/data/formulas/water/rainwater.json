@@ -1,33 +1,102 @@
 {
   "file": "water/rainwater.json",
-  "discipline": "water",
+  "discipline": "CI",
   "category": "rainwater",
   "formula_count": 3,
   "formulas": [
     {
       "formula_id": "WA-RAI-001",
+      "vdi_formula_id": "WA-RAI-001",
       "name": "雨水设计流量",
       "name_en": "Stormwater Design Flow",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "rainwater/runoff",
       "type": "exact",
       "equation_text": "Q = q * ψ * F",
       "equation_latex": "Q = q \\cdot \\psi \\cdot F",
-      "equation_ast": {"op": "mul", "args": [{"var": "q"}, {"var": "ψ"}, {"var": "F"}]},
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {
+            "var": "q"
+          },
+          {
+            "var": "ψ"
+          },
+          {
+            "var": "F"
+          }
+        ]
+      },
       "variables": [
-        {"symbol": "Q", "name": "雨水设计流量", "unit": "L/s", "role": "output"},
-        {"symbol": "q", "name": "设计暴雨强度", "unit": "L/(s*ha)", "role": "input",
-          "desc": "根据重现期和降雨历时查暴雨强度公式或图表"},
-        {"symbol": "ψ", "name": "径流系数", "unit": "-", "role": "input", "constraints": {"min": 0, "max": 1},
+        {
+          "symbol": "Q",
+          "name": "雨水设计流量",
+          "unit": "L/s",
+          "role": "output"
+        },
+        {
+          "symbol": "q",
+          "name": "设计暴雨强度",
+          "unit": "L/(s*ha)",
+          "role": "input",
+          "desc": "根据重现期和降雨历时查暴雨强度公式或图表"
+        },
+        {
+          "symbol": "ψ",
+          "name": "径流系数",
+          "unit": "-",
+          "role": "input",
+          "constraints": {
+            "min": 0,
+            "max": 1
+          },
           "desc": "与地面覆盖有关",
-          "look_up": {"type": "surface_coefficient", "table_ref": "TBL-PSI-001"}},
-        {"symbol": "F", "name": "汇水面积", "unit": "ha", "role": "input", "constraints": {"min": 0, "exclusive_min": true},
-          "alt_units": [{"unit": "m2", "factor": 0.0001}]}
+          "look_up": {
+            "type": "surface_coefficient",
+            "table_ref": "TBL-PSI-001"
+          }
+        },
+        {
+          "symbol": "F",
+          "name": "汇水面积",
+          "unit": "ha",
+          "role": "input",
+          "constraints": {
+            "min": 0,
+            "exclusive_min": true
+          },
+          "alt_units": [
+            {
+              "unit": "m2",
+              "factor": 0.0001
+            }
+          ]
+        }
       ],
-      "source": {"standard_id": "GB 50014-2021", "clause": "4.2.1"},
-      "related_formulas": [{"formula_id": "WA-RAI-002", "relation": "prerequisite", "note": "需先计算暴雨强度"}],
-      "tags": ["雨水", "设计流量", "暴雨强度", "径流系数"],
-      "keywords": ["雨水流量", "Q=qψF", "暴雨强度", "汇水面积"],
+      "source": {
+        "standard_id": "GB 50014-2021",
+        "clause": "4.2.1"
+      },
+      "related_formulas": [
+        {
+          "formula_id": "WA-RAI-002",
+          "relation": "prerequisite",
+          "note": "需先计算暴雨强度"
+        }
+      ],
+      "tags": [
+        "雨水",
+        "设计流量",
+        "暴雨强度",
+        "径流系数"
+      ],
+      "keywords": [
+        "雨水流量",
+        "Q=qψF",
+        "暴雨强度",
+        "汇水面积"
+      ],
       "precision": "精确",
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",
@@ -35,35 +104,138 @@
     },
     {
       "formula_id": "WA-RAI-002",
+      "vdi_formula_id": "WA-RAI-002",
       "name": "暴雨强度公式",
       "name_en": "Rainfall Intensity Formula",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "rainwater/runoff",
       "type": "exact",
       "equation_text": "q = 167*A1*(1+C*lgP) / (t+b)^n",
       "equation_latex": "q = \\frac{167 \\cdot A_1 \\cdot (1 + C \\cdot \\lg P)}{(t + b)^n}",
       "equation_ast": {
         "op": "div",
-        "num": {"op": "mul", "args": [
-          {"const": 167}, {"var": "A1"},
-          {"op": "add", "args": [{"const": 1}, {"op": "mul", "args": [{"var": "C"}, {"op": "log10", "arg": {"var": "P"}}]}]}
-        ]},
-        "den": {"op": "pow", "base": {"op": "add", "args": [{"var": "t"}, {"var": "b"}]}, "exp": {"var": "n"}}
+        "num": {
+          "op": "mul",
+          "args": [
+            {
+              "const": 167
+            },
+            {
+              "var": "A1"
+            },
+            {
+              "op": "add",
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "op": "mul",
+                  "args": [
+                    {
+                      "var": "C"
+                    },
+                    {
+                      "op": "log10",
+                      "arg": {
+                        "var": "P"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "den": {
+          "op": "pow",
+          "base": {
+            "op": "add",
+            "args": [
+              {
+                "var": "t"
+              },
+              {
+                "var": "b"
+              }
+            ]
+          },
+          "exp": {
+            "var": "n"
+          }
+        }
       },
       "variables": [
-        {"symbol": "q", "name": "设计暴雨强度", "unit": "L/(s*ha)", "role": "output"},
-        {"symbol": "A1", "name": "雨力参数", "unit": "mm/min", "role": "input", "desc": "当地暴雨强度公式参数，查规范附录"},
-        {"symbol": "C", "name": "雨力变动参数", "unit": "-", "role": "input", "desc": "当地参数"},
-        {"symbol": "P", "name": "设计重现期", "unit": "a", "role": "input", "constraints": {"min": 0.25},
-          "desc": "一般取1-5年"},
-        {"symbol": "t", "name": "降雨历时", "unit": "min", "role": "input", "constraints": {"min": 5},
-          "desc": "地面集水时间+管内流行时间"},
-        {"symbol": "b", "name": "降雨历时参数", "unit": "min", "role": "input", "desc": "当地参数"},
-        {"symbol": "n", "name": "暴雨强度指数", "unit": "-", "role": "input", "desc": "当地参数"}
+        {
+          "symbol": "q",
+          "name": "设计暴雨强度",
+          "unit": "L/(s*ha)",
+          "role": "output"
+        },
+        {
+          "symbol": "A1",
+          "name": "雨力参数",
+          "unit": "mm/min",
+          "role": "input",
+          "desc": "当地暴雨强度公式参数，查规范附录"
+        },
+        {
+          "symbol": "C",
+          "name": "雨力变动参数",
+          "unit": "-",
+          "role": "input",
+          "desc": "当地参数"
+        },
+        {
+          "symbol": "P",
+          "name": "设计重现期",
+          "unit": "a",
+          "role": "input",
+          "constraints": {
+            "min": 0.25
+          },
+          "desc": "一般取1-5年"
+        },
+        {
+          "symbol": "t",
+          "name": "降雨历时",
+          "unit": "min",
+          "role": "input",
+          "constraints": {
+            "min": 5
+          },
+          "desc": "地面集水时间+管内流行时间"
+        },
+        {
+          "symbol": "b",
+          "name": "降雨历时参数",
+          "unit": "min",
+          "role": "input",
+          "desc": "当地参数"
+        },
+        {
+          "symbol": "n",
+          "name": "暴雨强度指数",
+          "unit": "-",
+          "role": "input",
+          "desc": "当地参数"
+        }
       ],
-      "source": {"standard_id": "GB 50014-2021", "clause": "4.2.2"},
-      "tags": ["暴雨强度", "重现期", "降雨历时"],
-      "keywords": ["暴雨强度公式", "雨力参数", "重现期", "降雨历时"],
+      "source": {
+        "standard_id": "GB 50014-2021",
+        "clause": "4.2.2"
+      },
+      "tags": [
+        "暴雨强度",
+        "重现期",
+        "降雨历时"
+      ],
+      "keywords": [
+        "暴雨强度公式",
+        "雨力参数",
+        "重现期",
+        "降雨历时"
+      ],
       "precision": "精确",
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",
@@ -71,27 +243,93 @@
     },
     {
       "formula_id": "WA-RAI-003",
+      "vdi_formula_id": "WA-RAI-003",
       "name": "雨水入渗量",
       "name_en": "Rainwater Infiltration Capacity",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "rainwater/infiltration",
       "type": "exact",
       "equation_text": "Wp = K * J * A * t",
       "equation_latex": "W_p = K \\cdot J \\cdot A \\cdot t",
-      "equation_ast": {"op": "mul", "args": [{"var": "K"}, {"var": "J"}, {"var": "A"}, {"var": "t"}]},
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {
+            "var": "K"
+          },
+          {
+            "var": "J"
+          },
+          {
+            "var": "A"
+          },
+          {
+            "var": "t"
+          }
+        ]
+      },
       "variables": [
-        {"symbol": "Wp", "name": "渗透量", "unit": "m3", "role": "output"},
-        {"symbol": "K", "name": "土壤渗透系数", "unit": "m/s", "role": "input",
+        {
+          "symbol": "Wp",
+          "name": "渗透量",
+          "unit": "m3",
+          "role": "output"
+        },
+        {
+          "symbol": "K",
+          "name": "土壤渗透系数",
+          "unit": "m/s",
+          "role": "input",
           "desc": "与土壤类型有关，查规范",
-          "look_up": {"type": "soil_property", "table_ref": "TBL-K-001"}},
-        {"symbol": "J", "name": "水力坡降", "unit": "-", "role": "input", "default": 1,
-          "desc": "一般取1"},
-        {"symbol": "A", "name": "有效渗透面积", "unit": "m2", "role": "input", "constraints": {"min": 0, "exclusive_min": true}},
-        {"symbol": "t", "name": "渗透时间", "unit": "s", "role": "input", "constraints": {"min": 0, "exclusive_min": true}}
+          "look_up": {
+            "type": "soil_property",
+            "table_ref": "TBL-K-001"
+          }
+        },
+        {
+          "symbol": "J",
+          "name": "水力坡降",
+          "unit": "-",
+          "role": "input",
+          "default": 1,
+          "desc": "一般取1"
+        },
+        {
+          "symbol": "A",
+          "name": "有效渗透面积",
+          "unit": "m2",
+          "role": "input",
+          "constraints": {
+            "min": 0,
+            "exclusive_min": true
+          }
+        },
+        {
+          "symbol": "t",
+          "name": "渗透时间",
+          "unit": "s",
+          "role": "input",
+          "constraints": {
+            "min": 0,
+            "exclusive_min": true
+          }
+        }
       ],
-      "source": {"standard_id": "GB 50400-2016", "clause": "6.2.1"},
-      "tags": ["雨水入渗", "渗透系数", "海绵城市"],
-      "keywords": ["渗透量", "入渗计算", "Wp=KJAt", "土壤渗透"],
+      "source": {
+        "standard_id": "GB 50400-2016",
+        "clause": "6.2.1"
+      },
+      "tags": [
+        "雨水入渗",
+        "渗透系数",
+        "海绵城市"
+      ],
+      "keywords": [
+        "渗透量",
+        "入渗计算",
+        "Wp=KJAt",
+        "土壤渗透"
+      ],
       "precision": "精确",
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",

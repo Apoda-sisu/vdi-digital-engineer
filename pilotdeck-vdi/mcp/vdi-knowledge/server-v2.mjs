@@ -26,6 +26,7 @@ import {
   ListToolsRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
 import { z } from "zod";
+import { resolveKnowledgeDiscipline } from "../../config/cfihos-discipline-resolve.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -130,7 +131,7 @@ function loadFormulas() {
 }
 
 function buildFormulaFileMap() {
-  const disciplines = ["electrical", "hse", "instrument", "piping", "process", "water"];
+  const disciplines = ["electrical", "hs", "instrument", "piping", "process", "water"];
   for (const disc of disciplines) {
     const discDir = path.join(FORMULAS_DIR, disc);
     if (!fs.existsSync(discDir)) continue;
@@ -149,6 +150,23 @@ function buildFormulaFileMap() {
     }
   }
   console.error(`[vdi-knowledge V2] 构建公式文件映射: ${Object.keys(formulaFileMap).length} 个公式`);
+}
+
+const DISC_CODE_TO_KNOWLEDGE_SLUG = {
+  WA: "CI",
+  PR: "PX",
+  PI: "MP",
+  EL: "EA",
+  IN: "IN",
+  HS: "HS",
+  EQ: "MX",
+  FI: "HX",
+};
+
+function normalizeKnowledgeDiscipline(raw) {
+  if (!raw) return raw;
+  const cfihos = resolveKnowledgeDiscipline(raw);
+  return cfihos;
 }
 
 // 加载单个公式完整数据（懒加载缓存）
@@ -172,7 +190,9 @@ function loadFormulaDetail(formulaId) {
 
   const fileData = JSON.parse(fs.readFileSync(filePath, "utf8"));
   const formulas = Array.isArray(fileData) ? fileData : (fileData.formulas || []);
-  const formula = formulas.find(f => (f.formula_id || f.id) === formulaId);
+  const formula = formulas.find(
+    (f) => (f.formula_id || f.id) === formulaId || f.vdi_formula_id === formulaId
+  );
   if (formula) {
     formulaCache[formulaId] = formula;
   }
@@ -496,7 +516,7 @@ function resolveCrossRefs(clauseId, depth = 1) {
 // ============================================================
 const SearchSchema = z.object({
   query: z.string().describe("检索关键词，如：消防给水 消火栓流量 或 GB 50160 第5.2.3条"),
-  discipline: z.string().optional().describe("学科码过滤：WA=给排水 / PR=工艺 / PI=管道 / IN=仪控 / EL=电气 / EQ=设备 / FI=消防 / HS=HSE"),
+  discipline: z.string().optional().describe("学科码过滤：WA=给排水 / PR=工艺 / PI=管道 / IN=仪控 / EL=电气 / EQ=设备 / FI=消防 / HS=安全"),
   source_type: z.enum(["standard", "rule", "case"]).optional().describe("来源类型"),
   limit: z.number().int().min(1).max(20).optional().default(5),
   resolve_cross_refs: z.boolean().optional().default(true).describe("是否解析跨规范引用"),
@@ -795,7 +815,7 @@ async function main() {
           type: "object",
           properties: {
             query: { type: "string", description: "搜索关键词，如：水头损失、水泵功率、消防水池" },
-            discipline: { type: "string", description: "专业过滤（支持短代码或全名）：WA/water=给排水 PR/process=工艺 PI/piping=管道 EL/electrical=电气 IN/instrument=仪控 HS/hse=HSE EQ/equipment=设备 FI/fire=消防" },
+            discipline: { type: "string", description: "专业过滤（支持短代码或全名）：WA/water=给排水 PR/process=工艺 PI/piping=管道 EL/electrical=电气 IN/instrument=仪控 HS/hs=安全 EQ/equipment=设备 FI/fire=消防（hse 为兼容别名）" },
             category: { type: "string", description: "类别过滤，如：hydraulic、equipment、fire" },
             limit: { type: "number", description: "返回条数（默认5，最大20）" },
           },
@@ -861,6 +881,7 @@ async function main() {
       if (name === "vdi_search_knowledge") {
         const input = SearchSchema.parse(args ?? {});
         const parsed = parseQuery(input.query);
+        const discipline = normalizeKnowledgeDiscipline(input.discipline);
 
         // 第一层：实体索引精确匹配
         let exactResults = [];
@@ -871,7 +892,7 @@ async function main() {
         // 第二层+第三层：混合检索
         const hybridResults = hybridSearch(
           parsed,
-          input.discipline,
+          discipline,
           input.source_type,
           input.limit
         );
@@ -1012,11 +1033,12 @@ async function main() {
       // --- vdi_list_standards ---
       if (name === "vdi_list_standards") {
         const input = ListStandardsSchema.parse(args ?? {});
+        const discipline = normalizeKnowledgeDiscipline(input.discipline);
 
         // 聚合统计
         const standardMap = {};
         for (const c of clauses) {
-          if (input.discipline && c.discipline !== input.discipline) continue;
+          if (discipline && c.discipline !== discipline) continue;
           const key = c.source_id;
           if (!standardMap[key]) {
             standardMap[key] = {
@@ -1066,10 +1088,11 @@ async function main() {
         const limit = args?.limit || 5;
 
         // 专业短代码→全名映射
-        const discCodeToName = { WA: "water", PR: "process", PI: "piping", EL: "electrical", IN: "instrument", HS: "hse", EQ: "equipment", FI: "fire" };
+        const discCodeToName = DISC_CODE_TO_KNOWLEDGE_SLUG;
         if (discipline && discCodeToName[discipline.toUpperCase()]) {
           discipline = discCodeToName[discipline.toUpperCase()];
         }
+        discipline = normalizeKnowledgeDiscipline(discipline);
 
         if (!formulaIndex) {
           return { content: [{ type: "text", text: JSON.stringify({ error: "formula_index_not_loaded" }) }], isError: true };

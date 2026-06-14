@@ -8,12 +8,16 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import {
+  listAllSkillSlugs,
+  skillDir,
+  SKILLS_REGISTRY,
+} from "../config/skills-layout.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "../..");
 const WORKSPACE_ROOT = path.join(ROOT, "workspaces");
 const FORMULAS_DIR = path.join(ROOT, "pilotdeck-vdi/data/formulas");
-const SKILLS_DIR = path.join(ROOT, "skills");
 
 // 测试结果收集
 const testResults = {
@@ -109,37 +113,30 @@ async function testSkillConfiguration() {
   };
   
   // 读取Skill索引
-  const indexFile = path.join(SKILLS_DIR, "index.json");
+  const indexFile = SKILLS_REGISTRY;
   if (fs.existsSync(indexFile)) {
     const index = JSON.parse(fs.readFileSync(indexFile, "utf8"));
-    results.totalSkills = index.total;
-    
-    console.log(`✅ Skill索引加载成功: ${results.totalSkills} 个Skill`);
-    
-    // 分析Skill配置
-    for (const skill of index.skills) {
-      // 统计专业
+    results.totalSkills = index.total || index.skills?.length || 0;
+
+    console.log(`✅ Skill 索引加载成功: ${results.totalSkills} 个 Skill`);
+
+    for (const skill of index.skills || []) {
       const disc = skill.discipline || "unknown";
       results.disciplines[disc] = (results.disciplines[disc] || 0) + 1;
-      
-      // 统计层级
+
       const level = skill.level || 0;
       results.levels[level] = (results.levels[level] || 0) + 1;
-      
-      // 统计MCP依赖
-      for (const mcp of skill.mcp_required || []) {
-        results.mcpDependencies[mcp] = (results.mcpDependencies[mcp] || 0) + 1;
-      }
-      
-      // 验证Skill文件
-      const skillDir = path.join(SKILLS_DIR, skill.path);
-      const skillFile = path.join(skillDir, "SKILL.md");
-      
-      if (!fs.existsSync(skillFile)) {
+
+      const absDir = skill.path
+        ? path.join(ROOT, skill.path)
+        : skillDir(skill.slug);
+      const skillFile = absDir ? path.join(absDir, "SKILL.md") : null;
+
+      if (!skillFile || !fs.existsSync(skillFile)) {
         results.validation.push({
-          name: skill.name,
+          name: skill.slug || skill.name,
           status: "missing",
-          reason: "SKILL.md文件不存在"
+          reason: "SKILL.md 文件不存在",
         });
       }
     }
@@ -294,7 +291,7 @@ async function testIntegration() {
   const configFiles = [
     "pilotdeck-vdi/config/discipline-codes.json",
     "pilotdeck-vdi/config/mcp.json",
-    "skills/index.json"
+    "workspaces/skills-registry.json"
   ];
   
   for (const configFile of configFiles) {

@@ -97,7 +97,7 @@ const SearchSchema = z.object({
   discipline: z
     .string()
     .optional()
-    .describe("专业过滤：water/process/piping/instrument/hse 等"),
+    .describe("专业过滤：water/process/piping/instrument/hs 等（hse 为兼容别名）"),
   source_type: z
     .enum(["standard", "rule", "case"])
     .optional()

@@ -1,0 +1,45 @@
+# VDI 事件总线服务 - 安全优化版本
+# 使用更新的 Node.js 版本以修复已知漏洞
+FROM node:22-alpine AS builder
+
+WORKDIR /app
+
+# 安装运行时依赖（仅 curl 用于健康检查）
+RUN apk add --no-cache curl
+
+# 复制 package.json 并安装依赖
+COPY package*.json ./
+RUN npm install --omit=dev && npm cache clean --force
+
+# 复制源代码
+COPY . .
+
+# 创建非 root 用户以提高安全性
+RUN addgroup -g 1001 -S vdi && \
+    adduser -u 1001 -S vdi -G vdi && \
+    chown -R vdi:vdi /app
+
+# 最终阶段
+FROM node:22-alpine AS runtime
+
+WORKDIR /app
+
+# 安装 curl 用于健康检查
+RUN apk add --no-cache curl
+
+# 创建非 root 用户
+RUN addgroup -g 1001 -S vdi && \
+    adduser -u 1001 -S vdi -G vdi
+
+# 从构建阶段复制应用
+COPY --from=builder --chown=vdi:vdi /app .
+
+# 切换到非 root 用户
+USER vdi
+
+EXPOSE 3001
+
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:3001/health || exit 1
+
+CMD ["node", "pilotdeck-vdi/mcp/vdi-events/server-http.mjs"]

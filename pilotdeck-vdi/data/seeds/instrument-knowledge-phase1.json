@@ -1,0 +1,274 @@
+{
+  "seed_version": "in-phase1",
+  "discipline": "instrument",
+  "description": "仪控 Phase1 补齐种子（D05/D07/D08）",
+  "clauses": [
+    {
+      "clause_id": "IN-HGT20509-6-1-1-in1",
+      "source_type": "standard",
+      "source_id": "HG/T 20509",
+      "version": "2014",
+      "discipline": "instrument",
+      "clause": "6.1.1",
+      "content": "仪表信号电缆应采用铜芯绝缘电缆，本安回路电缆应满足本安参数匹配要求。",
+      "keywords": [
+        "仪表电缆",
+        "本安",
+        "信号电缆"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D05"
+      ],
+      "category": "cable"
+    },
+    {
+      "clause_id": "IN-HGT20509-6-2-1-in1",
+      "source_type": "standard",
+      "source_id": "HG/T 20509",
+      "version": "2014",
+      "discipline": "instrument",
+      "clause": "6.2.1",
+      "content": "仪表电缆应分本安与非本安、屏蔽与非屏蔽回路分开敷设，避免混敷。",
+      "keywords": [
+        "电缆敷设",
+        "本安",
+        "屏蔽"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D05"
+      ],
+      "category": "cable"
+    },
+    {
+      "clause_id": "IN-HGT20509-6-3-1-in1",
+      "source_type": "standard",
+      "source_id": "HG/T 20509",
+      "version": "2014",
+      "discipline": "instrument",
+      "clause": "6.3.1",
+      "content": "接线箱应设置在便于维护、接近仪表集中区域，并满足防爆分区要求。",
+      "keywords": [
+        "接线箱",
+        "JB",
+        "防爆"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D05"
+      ],
+      "category": "installation"
+    },
+    {
+      "clause_id": "IN-HGT20509-7-1-1-in1",
+      "source_type": "standard",
+      "source_id": "HG/T 20509",
+      "version": "2014",
+      "discipline": "instrument",
+      "clause": "7.1.1",
+      "content": "仪表气源管应选用不锈钢或镀锌钢管，管径应满足执行机构耗气量要求。",
+      "keywords": [
+        "气源管",
+        "执行机构"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D05"
+      ],
+      "category": "installation"
+    },
+    {
+      "clause_id": "IN-HGT20636-4-1-1-in1",
+      "source_type": "standard",
+      "source_id": "HG/T 20636",
+      "version": "2013",
+      "discipline": "instrument",
+      "clause": "4.1.1",
+      "content": "仪表安装支架应满足仪表重量及振动要求，取源部件应便于检修。",
+      "keywords": [
+        "仪表安装",
+        "支架",
+        "取源"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D05"
+      ],
+      "category": "installation"
+    },
+    {
+      "clause_id": "IN-GBT50770-8-1-1-in1",
+      "source_type": "standard",
+      "source_id": "GB/T 50770",
+      "version": "2013",
+      "discipline": "instrument",
+      "clause": "8.1.1",
+      "content": "在线分析仪表取样点应设置在具有代表性的工艺位置，并便于维护。",
+      "keywords": [
+        "在线分析",
+        "取样点"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D07"
+      ],
+      "category": "analytical"
+    },
+    {
+      "clause_id": "IN-GBT50770-8-2-1-in1",
+      "source_type": "standard",
+      "source_id": "GB/T 50770",
+      "version": "2013",
+      "discipline": "instrument",
+      "clause": "8.2.1",
+      "content": "对在线分析仪表应明确样品条件（温度、压力、过滤）及排放去向。",
+      "keywords": [
+        "样品条件",
+        "在线分析",
+        "排放"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D07"
+      ],
+      "category": "analytical"
+    },
+    {
+      "clause_id": "IN-SHT3005-5-3-1-in1",
+      "source_type": "standard",
+      "source_id": "SH/T 3005",
+      "version": "2016",
+      "discipline": "instrument",
+      "clause": "5.3.1",
+      "content": "在线分析仪数据表应注明测量组分、量程、精度及校准方法。",
+      "keywords": [
+        "分析仪",
+        "数据表",
+        "在线分析"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D07",
+        "IN-D01"
+      ],
+      "category": "analytical"
+    },
+    {
+      "clause_id": "IN-GBT50770-9-1-1-in1",
+      "source_type": "standard",
+      "source_id": "GB/T 50770",
+      "version": "2013",
+      "discipline": "instrument",
+      "clause": "9.1.1",
+      "content": "DCS 与上位系统通信宜采用 OPC UA 等标准协议，接口应独立划分安全域。",
+      "keywords": [
+        "OPC UA",
+        "上位",
+        "通信"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D08"
+      ],
+      "category": "network"
+    },
+    {
+      "clause_id": "IN-GBT50770-9-2-1-in1",
+      "source_type": "standard",
+      "source_id": "GB/T 50770",
+      "version": "2013",
+      "discipline": "instrument",
+      "clause": "9.2.1",
+      "content": "无线仪表网络应评估覆盖、干扰及供电方式，网关数量应满足冗余要求。",
+      "keywords": [
+        "无线仪表",
+        "网关",
+        "网络"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D08"
+      ],
+      "category": "network"
+    },
+    {
+      "clause_id": "IN-HGT20507-8-1-1-in1",
+      "source_type": "standard",
+      "source_id": "HG/T 20507",
+      "version": "2014",
+      "discipline": "instrument",
+      "clause": "8.1.1",
+      "content": "仪表电缆长度估算应考虑水平垂直距离及布线系数，留有安装裕量。",
+      "keywords": [
+        "电缆长度",
+        "布线系数",
+        "MTO"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D05",
+        "IN-T04"
+      ],
+      "category": "cable"
+    },
+    {
+      "clause_id": "IN-HGT20509-6-4-1-in1",
+      "source_type": "standard",
+      "source_id": "HG/T 20509",
+      "version": "2014",
+      "discipline": "instrument",
+      "clause": "6.4.1",
+      "content": "本质安全回路电缆屏蔽层应在安全区一侧单点接地。",
+      "keywords": [
+        "本安",
+        "屏蔽",
+        "接地"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D05"
+      ],
+      "category": "cable"
+    },
+    {
+      "clause_id": "IN-GBT50770-9-3-1-in1",
+      "source_type": "standard",
+      "source_id": "GB/T 50770",
+      "version": "2013",
+      "discipline": "instrument",
+      "clause": "9.3.1",
+      "content": "历史站与操作站网络应与控制网分区，OPC 服务器宜置于 DMZ。",
+      "keywords": [
+        "历史站",
+        "DMZ",
+        "OPC"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D08",
+        "IN-D04"
+      ],
+      "category": "network"
+    },
+    {
+      "clause_id": "IN-SHT3005-6-2-1-in1",
+      "source_type": "standard",
+      "source_id": "SH/T 3005",
+      "version": "2016",
+      "discipline": "instrument",
+      "clause": "6.2.1",
+      "content": "分析小屋应满足环境温度、通风及防爆要求，并配置样品排放收集。",
+      "keywords": [
+        "分析小屋",
+        "shelter",
+        "防爆"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "IN-D07"
+      ],
+      "category": "analytical"
+    }
+  ]
+}

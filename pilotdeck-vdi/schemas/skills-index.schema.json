@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "pilotdeck-skills-index",
   "title": "PilotDeck Skills Index",
-  "description": "skills/index.json 结构约束",
+  "description": "workspaces/skills-registry.json 结构约束",
   "type": "object",
   "required": ["version", "skills"],
   "properties": {

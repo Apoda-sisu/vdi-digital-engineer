@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pilotdeck.local/schemas/drawing-manifest-v1.schema.json",
+  "title": "DrawingManifest v1",
+  "type": "object",
+  "required": ["version", "drawing_number", "view_id", "objects"],
+  "properties": {
+    "version": { "type": "string", "const": "1.0" },
+    "drawing_number": { "type": "string" },
+    "view_id": { "type": "string" },
+    "sheet_size": { "type": "string" },
+    "scale": { "type": "number" },
+    "symbol_scale": { "type": "number" },
+    "sheet_mm": {
+      "type": "object",
+      "properties": {
+        "width": { "type": "number" },
+        "height": { "type": "number" }
+      }
+    },
+    "objects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["object_id", "tag", "class", "bbox_mm", "bbox_view"],
+        "properties": {
+          "object_id": { "type": "string" },
+          "tag": { "type": "string" },
+          "class": { "type": "string" },
+          "bbox_mm": {
+            "type": "object",
+            "properties": {
+              "x": { "type": "number" },
+              "y": { "type": "number" },
+              "w": { "type": "number" },
+              "h": { "type": "number" }
+            }
+          },
+          "bbox_view": {
+            "type": "object",
+            "properties": {
+              "x": { "type": "number" },
+              "y": { "type": "number" },
+              "w": { "type": "number" },
+              "h": { "type": "number" }
+            }
+          }
+        }
+      }
+    },
+    "files": { "type": "object" }
+  }
+}

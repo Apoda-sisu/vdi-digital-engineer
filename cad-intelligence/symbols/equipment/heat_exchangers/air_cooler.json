@@ -1,0 +1,57 @@
+{
+  "symbol_id": "HX-AIRCOOLER-001",
+  "name": "空冷器",
+  "name_en": "Air Cooler",
+  "standard": "HG/T 20559.2-1993",
+  "category": "heat_exchangers",
+  "description": "空气冷却器",
+  "parameters": {
+    "heat_transfer_area": {
+      "type": "number",
+      "unit": "m²",
+      "description": "换热面积"
+    },
+    "air_flow": {
+      "type": "number",
+      "unit": "m³/h",
+      "description": "风量"
+    },
+    "fan_power": {
+      "type": "number",
+      "unit": "kW",
+      "description": "风机功率"
+    }
+  },
+  "connections": {
+    "inlet": {
+      "position": {"x": -25, "y": 0},
+      "direction": "left"
+    },
+    "outlet": {
+      "position": {"x": -25, "y": -15},
+      "direction": "left"
+    }
+  },
+  "geometry": {
+    "components": [
+      {
+        "type": "rectangle",
+        "params": {"width": 50, "height": 25},
+        "description": "翅片管束"
+      },
+      {
+        "type": "circle",
+        "params": {"radius": 8},
+        "position": {"x": 20, "y": 0},
+        "description": "风机"
+      },
+      {
+        "type": "line",
+        "params": {"start": [-25, 0], "end": [-25, -15]},
+        "description": "管箱"
+      }
+    ]
+  },
+  "related_standards": ["GB/T 15386", "API 661"],
+  "typical_applications": ["冷却", "冷凝", "节水"]
+}

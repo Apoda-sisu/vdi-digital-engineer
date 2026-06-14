@@ -1,0 +1,571 @@
+{
+  "seed_version": "p3a",
+  "discipline": "process",
+  "description": "Sprint 7 API520 Phase3a",
+  "clauses": [
+    {
+      "clause_id": "API520-1-1-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "1.1",
+      "content": "本标准适用于炼油、石化及化工装置压力泄放装置的尺寸确定与选型。",
+      "keywords": [
+        "API 520",
+        "泄压",
+        "PSV"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-T07"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-1-2-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "1.2",
+      "content": "泄放装置设计应基于认可的工况分析，包括正常操作、异常及紧急工况。",
+      "keywords": [
+        "泄放工况",
+        "异常",
+        "紧急"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-X01"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-2-1-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "2.1",
+      "content": "应识别所有需要泄压保护的设备，并确定主导泄放工况。",
+      "keywords": [
+        "泄压保护",
+        "主导工况"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-2-2-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "2.2",
+      "content": "对多源同时泄放，应评估叠加效应及火炬系统承载能力。",
+      "keywords": [
+        "同时泄放",
+        "火炬"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-S04"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-3-1-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "3.1",
+      "content": "火灾工况泄放量计算应基于受火表面积、环境因子及绝热条件。",
+      "keywords": [
+        "fire case",
+        "泄放量",
+        "API 520"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-T07"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-3-2-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "3.2",
+      "content": "对液体受火，应使用有效受火面积及合适的气化模型。",
+      "keywords": [
+        "液体",
+        "受火面积",
+        "气化"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-3-3-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "3.3",
+      "content": "对气体受火，应使用绝热温升模型并考虑容器湿表面积。",
+      "keywords": [
+        "气体",
+        "绝热",
+        "湿表面积"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-4-1-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "4.1",
+      "content": "阻塞流判定应基于下游压力与临界压力比。",
+      "keywords": [
+        "阻塞流",
+        "临界压力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-T07"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-4-2-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "4.2",
+      "content": "两相泄放应使用合适的平衡闪蒸或非平衡模型，不得简单按单相处理。",
+      "keywords": [
+        "两相泄放",
+        "闪蒸"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-T07"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-5-1-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "5.1",
+      "content": "安全阀整定压力应不超过设备最大允许工作压力（MAWP）规定限值。",
+      "keywords": [
+        "整定压力",
+        "MAWP",
+        "安全阀选型"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-T07"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-5-2-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "5.2",
+      "content": "安全阀选型应明确弹簧式、先导式或全启式结构及适用介质。",
+      "keywords": [
+        "安全阀选型",
+        "先导式",
+        "全启式"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-5-3-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "5.3",
+      "content": "对有毒、易燃介质，排放去向应满足环保及火炬设计规范。",
+      "keywords": [
+        "排放去向",
+        "有毒",
+        "易燃"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-X01"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-6-1-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "6.1",
+      "content": "进口管道压降不宜超过整定压力的 3%（按 API 520 要求校核）。",
+      "keywords": [
+        "进口压降",
+        "3%"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-6-2-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "6.2",
+      "content": "出口管道压降对弹簧式安全阀不宜超过整定压力的 10%。",
+      "keywords": [
+        "出口压降",
+        "10%"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-6-3-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "6.3",
+      "content": "PSV 进口应设短直管段，避免弯头紧邻阀入口。",
+      "keywords": [
+        "进口直管",
+        "PSV布置"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-7-1-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "7.1",
+      "content": "多个 PSV 并联时应评估各阀分担流量及一致性。",
+      "keywords": [
+        "PSV并联",
+        "分担流量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-7-2-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "7.2",
+      "content": "备用 PSV 或双重泄放配置应明确切换及隔离要求。",
+      "keywords": [
+        "备用PSV",
+        "双重泄放"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-8-1-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "8.1",
+      "content": "爆破片可与 PSV 串联使用，应标注爆破片额定爆破压力及更换周期。",
+      "keywords": [
+        "爆破片",
+        "串联"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-8-2-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "8.2",
+      "content": "对 fire case 泄放，应明确受火面积假设及环境因子选取依据。",
+      "keywords": [
+        "fire case",
+        "环境因子"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-T07"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-8-3-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "8.3",
+      "content": "对反应失控工况，应引用反应热及分解动力学评估结果。",
+      "keywords": [
+        "反应失控",
+        "分解"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X01",
+        "PR-S03"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-9-1-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "9.1",
+      "content": "泄放系统文档应包含泄放量汇总表、设备保护清单及 P&ID 标注。",
+      "keywords": [
+        "泄放量汇总",
+        "P&ID"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-S03"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-9-2-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "9.2",
+      "content": "PSV 数据表应包含介质、分子量、比热比、整定压力及泄放系数。",
+      "keywords": [
+        "PSV数据表",
+        "泄放系数"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-D05"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-10-1-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "10.1",
+      "content": "对低温介质泄放，应评估低温脆性及复温措施。",
+      "keywords": [
+        "低温",
+        "脆性"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-10-2-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "10.2",
+      "content": "对高粘度液体，应校核泄放通道凝堵及保温要求。",
+      "keywords": [
+        "高粘度",
+        "凝堵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-11-1-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "11.1",
+      "content": "火炬系统总泄放量应包含所有 PSV 同时泄放合理组合的最大值。",
+      "keywords": [
+        "火炬",
+        "总泄放量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-S04"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-11-2-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "11.2",
+      "content": "对持续泄放与瞬时泄放，应分别评估火炬分液及燃烧器能力。",
+      "keywords": [
+        "持续泄放",
+        "瞬时泄放"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-12-1-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "12.1",
+      "content": "设计变更导致工况变化时，应重新校核 PSV 尺寸及整定压力。",
+      "keywords": [
+        "设计变更",
+        "重新校核"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-12-2-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "12.2",
+      "content": "PSV 校验报告应作为 HAZOP 及 SIL 评估的输入文件。",
+      "keywords": [
+        "PSV校验",
+        "HAZOP",
+        "SIL"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X01",
+        "PR-S03"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-13-1-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "13.1",
+      "content": "对储罐呼吸阀与紧急泄压组合，应协调整定压力梯度。",
+      "keywords": [
+        "呼吸阀",
+        "紧急泄压"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-D05"
+      ],
+      "category": "API520-S7"
+    },
+    {
+      "clause_id": "API520-13-2-p3a",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "13.2",
+      "content": "对装置边界 PSV，应明确排放至火炬、焚烧或安全地点的路径。",
+      "keywords": [
+        "装置边界",
+        "排放路径"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-S04"
+      ],
+      "category": "API520-S7"
+    }
+  ]
+}

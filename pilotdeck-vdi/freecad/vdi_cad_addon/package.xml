@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package format="1" xmlns="https://wiki.freecad.org/Package_Metadata">
+  <name>VDI_CAD</name>
+  <description>VDI CAD RPC addon — receives CadCommand from vdi-cad MCP and renders engineering drawings</description>
+  <version>1.0.0</version>
+  <maintainer email="vdi@pilotdeck.local">VDI PilotDeck</maintainer>
+  <license>Apache-2.0</license>
+  <url type="repository">https://github.com/pilotdeck/vdi-cad</url>
+  <content>
+    <workbench>
+      <classname>VdiCadWorkbench</classname>
+      <name>VDI CAD</name>
+      <subdirectory>./</subdirectory>
+    </workbench>
+  </content>
+</package>

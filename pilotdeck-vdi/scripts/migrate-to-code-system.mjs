@@ -8,6 +8,7 @@
 import { readFileSync, writeFileSync, readdirSync } from "node:fs";
 import { resolve, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { listAllSkillSlugs, skillDir } from "../config/skills-layout.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..", "..");
@@ -62,12 +63,16 @@ let totalChanges = 0;
 // Step 1: 更新 SKILL.md 的 sub_discipline 字段
 // ============================================================
 console.log("=== Step 1: 更新 SKILL.md sub_discipline 字段 ===\n");
-const SKILLS_DIR = join(ROOT, "skills");
 
-for (const entry of readdirSync(SKILLS_DIR, { withFileTypes: true })) {
-  if (!entry.isDirectory() || entry.name.startsWith(".")) continue;
-  const mdPath = join(SKILLS_DIR, entry.name, "SKILL.md");
-  let content = readFileSync(mdPath, "utf8");
+for (const slug of listAllSkillSlugs()) {
+  const mdPath = join(skillDir(slug), "SKILL.md");
+  if (!skillDir(slug)) continue;
+  let content;
+  try {
+    content = readFileSync(mdPath, "utf8");
+  } catch {
+    continue;
+  }
   let changed = false;
 
   // 替换 sub_discipline: xxx
@@ -75,7 +80,7 @@ for (const entry of readdirSync(SKILLS_DIR, { withFileTypes: true })) {
     const pattern = new RegExp(`^(\\s+sub_discipline:\\s*)${old}\\s*$`, "m");
     if (pattern.test(content)) {
       content = content.replace(pattern, `$1${code}`);
-      console.log(`  ${entry.name}: sub_discipline ${old} → ${code}`);
+      console.log(`  ${slug}: sub_discipline ${old} → ${code}`);
       changed = true;
       totalChanges++;
     }
@@ -86,7 +91,7 @@ for (const entry of readdirSync(SKILLS_DIR, { withFileTypes: true })) {
     const pattern = new RegExp(`^(\\s+discipline:\\s*)${old}\\s*$`, "m");
     if (pattern.test(content)) {
       content = content.replace(pattern, `$1${code}`);
-      console.log(`  ${entry.name}: discipline ${old} → ${code}`);
+      console.log(`  ${slug}: discipline ${old} → ${code}`);
       changed = true;
       totalChanges++;
     }

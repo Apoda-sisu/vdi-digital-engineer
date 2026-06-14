@@ -1,32 +1,89 @@
 {
   "file": "process/catalyst.json",
-  "discipline": "process",
+  "discipline": "PX",
   "category": "catalyst",
   "formula_count": 6,
   "formulas": [
     {
       "formula_id": "PR-CAT-001",
+      "vdi_formula_id": "PR-CAT-001",
       "name": "催化剂空时收率",
       "name_en": "Catalyst Space-Time Yield",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "catalyst/activity",
       "type": "exact",
       "equation_text": "STY = F_product / (W_cat * V_bed)",
       "equation_latex": "STY = \\frac{F_{product}}{W_{cat} \\cdot V_{bed}}",
       "equation_ast": {
         "op": "div",
-        "num": {"var": "F_product"},
-        "den": {"op": "mul", "args": [{"var": "W_cat"}, {"var": "V_bed"}]}
+        "num": {
+          "var": "F_product"
+        },
+        "den": {
+          "op": "mul",
+          "args": [
+            {
+              "var": "W_cat"
+            },
+            {
+              "var": "V_bed"
+            }
+          ]
+        }
       },
       "variables": [
-        {"symbol": "STY", "name": "空时收率", "unit": "kg/(kg·h)", "role": "output", "desc": "催化剂空时收率"},
-        {"symbol": "F_product", "name": "产品流量", "unit": "kg/h", "role": "input", "constraints": {"min": 0}, "desc": "产品生成速率"},
-        {"symbol": "W_cat", "name": "催化剂装填量", "unit": "kg", "role": "input", "constraints": {"min": 0.1}, "desc": "催化剂质量"},
-        {"symbol": "V_bed", "name": "床层体积", "unit": "m³", "role": "input", "constraints": {"min": 0.001}, "desc": "催化剂床层体积"}
+        {
+          "symbol": "STY",
+          "name": "空时收率",
+          "unit": "kg/(kg·h)",
+          "role": "output",
+          "desc": "催化剂空时收率"
+        },
+        {
+          "symbol": "F_product",
+          "name": "产品流量",
+          "unit": "kg/h",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "产品生成速率"
+        },
+        {
+          "symbol": "W_cat",
+          "name": "催化剂装填量",
+          "unit": "kg",
+          "role": "input",
+          "constraints": {
+            "min": 0.1
+          },
+          "desc": "催化剂质量"
+        },
+        {
+          "symbol": "V_bed",
+          "name": "床层体积",
+          "unit": "m³",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "催化剂床层体积"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "催化反应工程"},
-      "tags": ["空时收率", "催化剂", "反应器性能"],
-      "keywords": ["空时收率", "催化剂活性", "反应器效率"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "催化反应工程"
+      },
+      "tags": [
+        "空时收率",
+        "催化剂",
+        "反应器性能"
+      ],
+      "keywords": [
+        "空时收率",
+        "催化剂活性",
+        "反应器效率"
+      ],
       "precision": 0.001,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -34,26 +91,81 @@
     },
     {
       "formula_id": "PR-CAT-002",
+      "vdi_formula_id": "PR-CAT-002",
       "name": "催化剂失活动力学",
       "name_en": "Catalyst Deactivation Kinetics",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "catalyst/deactivation",
       "type": "exact",
       "equation_text": "a = exp(-k_d * t)",
       "equation_latex": "a = \\exp(-k_d \\cdot t)",
       "equation_ast": {
         "op": "pow",
-        "base": {"const": 2.7183},
-        "exp": {"op": "mul", "args": [{"op": "neg", "arg": {"var": "k_d"}}, {"var": "t"}]}
+        "base": {
+          "const": 2.7183
+        },
+        "exp": {
+          "op": "mul",
+          "args": [
+            {
+              "op": "neg",
+              "arg": {
+                "var": "k_d"
+              }
+            },
+            {
+              "var": "t"
+            }
+          ]
+        }
       },
       "variables": [
-        {"symbol": "a", "name": "催化剂活性", "unit": "-", "role": "output", "constraints": {"min": 0, "max": 1}, "desc": "催化剂相对活性"},
-        {"symbol": "k_d", "name": "失活速率常数", "unit": "1/h", "role": "input", "constraints": {"min": 0}, "desc": "失活动力学常数"},
-        {"symbol": "t", "name": "运行时间", "unit": "h", "role": "input", "constraints": {"min": 0}, "desc": "催化剂运行时间"}
+        {
+          "symbol": "a",
+          "name": "催化剂活性",
+          "unit": "-",
+          "role": "output",
+          "constraints": {
+            "min": 0,
+            "max": 1
+          },
+          "desc": "催化剂相对活性"
+        },
+        {
+          "symbol": "k_d",
+          "name": "失活速率常数",
+          "unit": "1/h",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "失活动力学常数"
+        },
+        {
+          "symbol": "t",
+          "name": "运行时间",
+          "unit": "h",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "催化剂运行时间"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "催化反应工程"},
-      "tags": ["催化剂失活", "失活动力学", "寿命预测"],
-      "keywords": ["催化剂失活", "活性衰减", "寿命预测"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "催化反应工程"
+      },
+      "tags": [
+        "催化剂失活",
+        "失活动力学",
+        "寿命预测"
+      ],
+      "keywords": [
+        "催化剂失活",
+        "活性衰减",
+        "寿命预测"
+      ],
       "precision": 0.001,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -61,9 +173,10 @@
     },
     {
       "formula_id": "PR-CAT-003",
+      "vdi_formula_id": "PR-CAT-003",
       "name": "催化剂选择性",
       "name_en": "Catalyst Selectivity",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "catalyst/selectivity",
       "type": "exact",
       "equation_text": "S = (n_product * M_product) / (n_reactant * M_reactant) * 100%",
@@ -71,20 +184,103 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"op": "div", "num": {"op": "mul", "args": [{"var": "n_product"}, {"var": "M_product"}]}, "den": {"op": "mul", "args": [{"var": "n_reactant"}, {"var": "M_reactant"}]}},
-          {"const": 100}
+          {
+            "op": "div",
+            "num": {
+              "op": "mul",
+              "args": [
+                {
+                  "var": "n_product"
+                },
+                {
+                  "var": "M_product"
+                }
+              ]
+            },
+            "den": {
+              "op": "mul",
+              "args": [
+                {
+                  "var": "n_reactant"
+                },
+                {
+                  "var": "M_reactant"
+                }
+              ]
+            }
+          },
+          {
+            "const": 100
+          }
         ]
       },
       "variables": [
-        {"symbol": "S", "name": "选择性", "unit": "%", "role": "output", "constraints": {"min": 0, "max": 100}, "desc": "催化剂选择性"},
-        {"symbol": "n_product", "name": "产品物质的量", "unit": "mol", "role": "input", "constraints": {"min": 0}, "desc": "生成产品物质的量"},
-        {"symbol": "M_product", "name": "产品摩尔质量", "unit": "g/mol", "role": "input", "constraints": {"min": 1}, "desc": "产品摩尔质量"},
-        {"symbol": "n_reactant", "name": "反应物物质的量", "unit": "mol", "role": "input", "constraints": {"min": 0.001}, "desc": "消耗反应物物质的量"},
-        {"symbol": "M_reactant", "name": "反应物摩尔质量", "unit": "g/mol", "role": "input", "constraints": {"min": 1}, "desc": "反应物摩尔质量"}
+        {
+          "symbol": "S",
+          "name": "选择性",
+          "unit": "%",
+          "role": "output",
+          "constraints": {
+            "min": 0,
+            "max": 100
+          },
+          "desc": "催化剂选择性"
+        },
+        {
+          "symbol": "n_product",
+          "name": "产品物质的量",
+          "unit": "mol",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "生成产品物质的量"
+        },
+        {
+          "symbol": "M_product",
+          "name": "产品摩尔质量",
+          "unit": "g/mol",
+          "role": "input",
+          "constraints": {
+            "min": 1
+          },
+          "desc": "产品摩尔质量"
+        },
+        {
+          "symbol": "n_reactant",
+          "name": "反应物物质的量",
+          "unit": "mol",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "消耗反应物物质的量"
+        },
+        {
+          "symbol": "M_reactant",
+          "name": "反应物摩尔质量",
+          "unit": "g/mol",
+          "role": "input",
+          "constraints": {
+            "min": 1
+          },
+          "desc": "反应物摩尔质量"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "催化反应工程"},
-      "tags": ["选择性", "催化剂", "产品收率"],
-      "keywords": ["催化剂选择性", "产品分布", "副反应"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "催化反应工程"
+      },
+      "tags": [
+        "选择性",
+        "催化剂",
+        "产品收率"
+      ],
+      "keywords": [
+        "催化剂选择性",
+        "产品分布",
+        "副反应"
+      ],
       "precision": 0.1,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -92,29 +288,114 @@
     },
     {
       "formula_id": "PR-CAT-004",
+      "vdi_formula_id": "PR-CAT-004",
       "name": "催化剂比表面积",
       "name_en": "Catalyst Specific Surface Area",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "catalyst/physical",
       "type": "exact",
       "equation_text": "Sg = (V_ads * N_A * σ) / (W_cat * V_m)",
       "equation_latex": "S_g = \\frac{V_{ads} \\cdot N_A \\cdot \\sigma}{W_{cat} \\cdot V_m}",
       "equation_ast": {
         "op": "div",
-        "num": {"op": "mul", "args": [{"var": "V_ads"}, {"var": "N_A"}, {"var": "σ"}]},
-        "den": {"op": "mul", "args": [{"var": "W_cat"}, {"var": "V_m"}]}
+        "num": {
+          "op": "mul",
+          "args": [
+            {
+              "var": "V_ads"
+            },
+            {
+              "var": "N_A"
+            },
+            {
+              "var": "σ"
+            }
+          ]
+        },
+        "den": {
+          "op": "mul",
+          "args": [
+            {
+              "var": "W_cat"
+            },
+            {
+              "var": "V_m"
+            }
+          ]
+        }
       },
       "variables": [
-        {"symbol": "Sg", "name": "比表面积", "unit": "m²/g", "role": "output", "constraints": {"min": 0}, "desc": "催化剂比表面积"},
-        {"symbol": "V_ads", "name": "吸附气体体积", "unit": "cm³", "role": "input", "constraints": {"min": 0}, "desc": "标准状态下吸附气体体积"},
-        {"symbol": "N_A", "name": "阿伏伽德罗常数", "unit": "1/mol", "role": "constant", "default": 6.022e23, "desc": "阿伏伽德罗常数"},
-        {"symbol": "σ", "name": "吸附分子截面积", "unit": "m²", "role": "input", "constraints": {"min": 1e-20}, "desc": "吸附分子截面积"},
-        {"symbol": "W_cat", "name": "催化剂质量", "unit": "g", "role": "input", "constraints": {"min": 0.001}, "desc": "催化剂质量"},
-        {"symbol": "V_m", "name": "摩尔体积", "unit": "cm³/mol", "role": "constant", "default": 22400, "desc": "标准状态下摩尔体积"}
+        {
+          "symbol": "Sg",
+          "name": "比表面积",
+          "unit": "m²/g",
+          "role": "output",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "催化剂比表面积"
+        },
+        {
+          "symbol": "V_ads",
+          "name": "吸附气体体积",
+          "unit": "cm³",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "标准状态下吸附气体体积"
+        },
+        {
+          "symbol": "N_A",
+          "name": "阿伏伽德罗常数",
+          "unit": "1/mol",
+          "role": "constant",
+          "default": 6.022e+23,
+          "desc": "阿伏伽德罗常数"
+        },
+        {
+          "symbol": "σ",
+          "name": "吸附分子截面积",
+          "unit": "m²",
+          "role": "input",
+          "constraints": {
+            "min": 1e-20
+          },
+          "desc": "吸附分子截面积"
+        },
+        {
+          "symbol": "W_cat",
+          "name": "催化剂质量",
+          "unit": "g",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "催化剂质量"
+        },
+        {
+          "symbol": "V_m",
+          "name": "摩尔体积",
+          "unit": "cm³/mol",
+          "role": "constant",
+          "default": 22400,
+          "desc": "标准状态下摩尔体积"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "催化剂表征"},
-      "tags": ["比表面积", "BET", "催化剂物理性质"],
-      "keywords": ["比表面积", "BET法", "催化剂表征"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "催化剂表征"
+      },
+      "tags": [
+        "比表面积",
+        "BET",
+        "催化剂物理性质"
+      ],
+      "keywords": [
+        "比表面积",
+        "BET法",
+        "催化剂表征"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -122,27 +403,85 @@
     },
     {
       "formula_id": "PR-CAT-005",
+      "vdi_formula_id": "PR-CAT-005",
       "name": "催化剂孔容",
       "name_en": "Catalyst Pore Volume",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "catalyst/physical",
       "type": "exact",
       "equation_text": "Vp = (W_water * ρ_water) / W_cat",
       "equation_latex": "V_p = \\frac{W_{water} / \\rho_{water}}{W_{cat}}",
       "equation_ast": {
         "op": "div",
-        "num": {"op": "div", "args": [{"var": "W_water"}, {"var": "ρ_water"}]},
-        "den": {"var": "W_cat"}
+        "num": {
+          "op": "div",
+          "args": [
+            {
+              "var": "W_water"
+            },
+            {
+              "var": "ρ_water"
+            }
+          ]
+        },
+        "den": {
+          "var": "W_cat"
+        }
       },
       "variables": [
-        {"symbol": "Vp", "name": "孔容", "unit": "mL/g", "role": "output", "constraints": {"min": 0}, "desc": "催化剂孔容"},
-        {"symbol": "W_water", "name": "水吸收量", "unit": "g", "role": "input", "constraints": {"min": 0}, "desc": "催化剂吸水量"},
-        {"symbol": "ρ_water", "name": "水密度", "unit": "g/mL", "role": "constant", "default": 1.0, "desc": "水密度"},
-        {"symbol": "W_cat", "name": "催化剂质量", "unit": "g", "role": "input", "constraints": {"min": 0.001}, "desc": "催化剂质量"}
+        {
+          "symbol": "Vp",
+          "name": "孔容",
+          "unit": "mL/g",
+          "role": "output",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "催化剂孔容"
+        },
+        {
+          "symbol": "W_water",
+          "name": "水吸收量",
+          "unit": "g",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "催化剂吸水量"
+        },
+        {
+          "symbol": "ρ_water",
+          "name": "水密度",
+          "unit": "g/mL",
+          "role": "constant",
+          "default": 1,
+          "desc": "水密度"
+        },
+        {
+          "symbol": "W_cat",
+          "name": "催化剂质量",
+          "unit": "g",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "催化剂质量"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "催化剂表征"},
-      "tags": ["孔容", "催化剂物理性质", "孔结构"],
-      "keywords": ["孔容", "孔体积", "催化剂表征"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "催化剂表征"
+      },
+      "tags": [
+        "孔容",
+        "催化剂物理性质",
+        "孔结构"
+      ],
+      "keywords": [
+        "孔容",
+        "孔体积",
+        "催化剂表征"
+      ],
       "precision": 0.001,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -150,26 +489,77 @@
     },
     {
       "formula_id": "PR-CAT-006",
+      "vdi_formula_id": "PR-CAT-006",
       "name": "催化剂平均孔径",
       "name_en": "Catalyst Average Pore Diameter",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "catalyst/physical",
       "type": "exact",
       "equation_text": "Dp = (4 * Vp) / Sg",
       "equation_latex": "D_p = \\frac{4 \\cdot V_p}{S_g}",
       "equation_ast": {
         "op": "div",
-        "num": {"op": "mul", "args": [{"const": 4}, {"var": "Vp"}]},
-        "den": {"var": "Sg"}
+        "num": {
+          "op": "mul",
+          "args": [
+            {
+              "const": 4
+            },
+            {
+              "var": "Vp"
+            }
+          ]
+        },
+        "den": {
+          "var": "Sg"
+        }
       },
       "variables": [
-        {"symbol": "Dp", "name": "平均孔径", "unit": "nm", "role": "output", "constraints": {"min": 0}, "desc": "催化剂平均孔径"},
-        {"symbol": "Vp", "name": "孔容", "unit": "mL/g", "role": "input", "constraints": {"min": 0}, "desc": "催化剂孔容"},
-        {"symbol": "Sg", "name": "比表面积", "unit": "m²/g", "role": "input", "constraints": {"min": 0.1}, "desc": "催化剂比表面积"}
+        {
+          "symbol": "Dp",
+          "name": "平均孔径",
+          "unit": "nm",
+          "role": "output",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "催化剂平均孔径"
+        },
+        {
+          "symbol": "Vp",
+          "name": "孔容",
+          "unit": "mL/g",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "催化剂孔容"
+        },
+        {
+          "symbol": "Sg",
+          "name": "比表面积",
+          "unit": "m²/g",
+          "role": "input",
+          "constraints": {
+            "min": 0.1
+          },
+          "desc": "催化剂比表面积"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "催化剂表征"},
-      "tags": ["孔径", "催化剂物理性质", "孔结构"],
-      "keywords": ["平均孔径", "孔径分布", "催化剂表征"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "催化剂表征"
+      },
+      "tags": [
+        "孔径",
+        "催化剂物理性质",
+        "孔结构"
+      ],
+      "keywords": [
+        "平均孔径",
+        "孔径分布",
+        "催化剂表征"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",

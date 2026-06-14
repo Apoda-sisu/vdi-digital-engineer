@@ -1,0 +1,52 @@
+{
+  "version": "1.0",
+  "description": "VDI PlantModel attributes → CFIHOS / ISO 15926 handover keys",
+  "mappings": {
+    "Equipment": {
+      "tag": { "cfihos": "equipment_tag", "dexpi": "TagName" },
+      "equipment_type": { "cfihos": "equipment_class", "dexpi": "ComponentClass" },
+      "design_P_MPaG": { "cfihos": "design_pressure", "unit": "MPa(g)", "dexpi": "DesignPressure" },
+      "design_T_C": { "cfihos": "design_temperature", "unit": "degC", "dexpi": "DesignTemperature" },
+      "oper_P_MPaG": { "cfihos": "operating_pressure", "unit": "MPa(g)", "dexpi": "OperatingPressure" },
+      "oper_T_C": { "cfihos": "operating_temperature", "unit": "degC", "dexpi": "OperatingTemperature" },
+      "material": { "cfihos": "material_of_construction", "dexpi": "MaterialOfConstruction" },
+      "footprint_x": { "cfihos": "equipment_length", "unit": "mm" },
+      "footprint_y": { "cfihos": "equipment_width", "unit": "mm" },
+      "elevation_mm": { "cfihos": "elevation", "unit": "mm" },
+      "height_mm": { "cfihos": "equipment_height", "unit": "mm" },
+      "diameter_mm": { "cfihos": "equipment_diameter", "unit": "mm" }
+    },
+    "PipeRun": {
+      "tag": { "cfihos": "piping_line_number", "dexpi": "TagName" },
+      "dn": { "cfihos": "nominal_diameter", "unit": "DN", "dexpi": "NominalDiameter" },
+      "fluid": { "cfihos": "fluid_code", "dexpi": "FluidCode" },
+      "phase": { "cfihos": "phase", "dexpi": "Phase" },
+      "design_P_MPaG": { "cfihos": "design_pressure", "unit": "MPa(g)" },
+      "design_T_C": { "cfihos": "design_temperature", "unit": "degC" },
+      "material": { "cfihos": "pipe_material", "dexpi": "MaterialOfConstruction" },
+      "insulation": { "cfihos": "insulation_type", "dexpi": "InsulationType" },
+      "from_tag": { "cfihos": "from_equipment" },
+      "to_tag": { "cfihos": "to_equipment" }
+    },
+    "Instrument": {
+      "tag": { "cfihos": "instrument_tag", "dexpi": "TagName" },
+      "inst_type": { "cfihos": "instrument_type", "dexpi": "ComponentClass" },
+      "loop_id": { "cfihos": "control_loop_id", "dexpi": "LoopNumber" },
+      "range": { "cfihos": "instrument_range", "dexpi": "Range" },
+      "signal": { "cfihos": "signal_type", "dexpi": "SignalType" },
+      "on_line": { "cfihos": "mounted_on_line" }
+    },
+    "Valve": {
+      "tag": { "cfihos": "valve_tag", "dexpi": "TagName" },
+      "valve_type": { "cfihos": "valve_type", "dexpi": "ComponentClass" },
+      "fail_position": { "cfihos": "fail_position", "dexpi": "FailPosition" },
+      "on_line": { "cfihos": "mounted_on_line" }
+    },
+    "SafetyValve": {
+      "tag": { "cfihos": "psv_tag", "dexpi": "TagName" },
+      "set_P_MPaG": { "cfihos": "set_pressure", "unit": "MPa(g)", "dexpi": "SetPressure" },
+      "discharge": { "cfihos": "discharge_destination", "dexpi": "DischargeDestination" },
+      "protected_equipment": { "cfihos": "protected_equipment" }
+    }
+  }
+}

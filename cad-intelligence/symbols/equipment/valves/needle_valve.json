@@ -1,0 +1,55 @@
+{
+  "symbol_id": "VALVE-NEEDLE-001",
+  "name": "针阀",
+  "name_en": "Needle Valve",
+  "standard": "GB/T 2625-1981",
+  "category": "valves",
+  "description": "精密针阀",
+  "parameters": {
+    "diameter": {
+      "type": "string",
+      "description": "公称直径",
+      "examples": ["DN6", "DN10", "DN15"]
+    },
+    "pressure_rating": {
+      "type": "string",
+      "description": "压力等级"
+    }
+  },
+  "connections": {
+    "inlet": {
+      "position": {"x": -10, "y": 0},
+      "direction": "left"
+    },
+    "outlet": {
+      "position": {"x": 10, "y": 0},
+      "direction": "right"
+    }
+  },
+  "geometry": {
+    "components": [
+      {
+        "type": "circle",
+        "params": {"radius": 8},
+        "description": "阀体"
+      },
+      {
+        "type": "line",
+        "params": {"start": [0, 8], "end": [0, 16]},
+        "description": "阀杆"
+      },
+      {
+        "type": "line",
+        "params": {"start": [-4, 16], "end": [4, 16]},
+        "description": "手轮"
+      },
+      {
+        "type": "line",
+        "params": {"start": [0, 0], "end": [0, -6]},
+        "description": "针尖"
+      }
+    ]
+  },
+  "related_standards": ["GB/T 12233"],
+  "typical_applications": ["精密调节", "仪表取样", "小流量控制"]
+}

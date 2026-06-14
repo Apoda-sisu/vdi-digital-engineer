@@ -1,0 +1,64 @@
+{
+  "symbol_id": "HX-PLATE-001",
+  "name": "板式换热器",
+  "name_en": "Plate Heat Exchanger",
+  "standard": "HG/T 20559.2-1993",
+  "category": "heat_exchangers",
+  "description": "可拆卸板式换热器",
+  "parameters": {
+    "heat_transfer_area": {
+      "type": "number",
+      "unit": "m²",
+      "description": "换热面积"
+    },
+    "design_pressure": {
+      "type": "number",
+      "unit": "MPa",
+      "description": "设计压力"
+    },
+    "design_temperature": {
+      "type": "number",
+      "unit": "°C",
+      "description": "设计温度"
+    }
+  },
+  "connections": {
+    "hot_in": {
+      "position": {"x": -25, "y": 10},
+      "direction": "left"
+    },
+    "hot_out": {
+      "position": {"x": -25, "y": -10},
+      "direction": "left"
+    },
+    "cold_in": {
+      "position": {"x": 25, "y": -10},
+      "direction": "right"
+    },
+    "cold_out": {
+      "position": {"x": 25, "y": 10},
+      "direction": "right"
+    }
+  },
+  "geometry": {
+    "components": [
+      {
+        "type": "rectangle",
+        "params": {"width": 45, "height": 30},
+        "description": "板片组"
+      },
+      {
+        "type": "line",
+        "params": {"start": [-22, -10], "end": [-22, 10]},
+        "description": "固定板"
+      },
+      {
+        "type": "line",
+        "params": {"start": [22, -10], "end": [22, 10]},
+        "description": "活动板"
+      }
+    ]
+  },
+  "related_standards": ["GB/T 16409", "HG/T 20574"],
+  "typical_applications": ["液体-液体换热", "冷凝", "蒸发"]
+}

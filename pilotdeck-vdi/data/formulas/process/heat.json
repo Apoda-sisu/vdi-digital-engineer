@@ -1,14 +1,15 @@
 {
   "file": "process/heat.json",
-  "discipline": "process",
+  "discipline": "PX",
   "category": "heat",
   "formula_count": 8,
   "formulas": [
     {
       "formula_id": "PR-HEA-002",
+      "vdi_formula_id": "PR-HEA-002",
       "name": "对流传热方程",
       "name_en": "Convective Heat Transfer",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "heat/convection",
       "type": "exact",
       "equation_text": "Q = h * A * (Tw - Tf)",
@@ -16,21 +17,82 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"var": "h"},
-          {"var": "A"},
-          {"op": "sub", "args": [{"var": "Tw"}, {"var": "Tf"}]}
+          {
+            "var": "h"
+          },
+          {
+            "var": "A"
+          },
+          {
+            "op": "sub",
+            "args": [
+              {
+                "var": "Tw"
+              },
+              {
+                "var": "Tf"
+              }
+            ]
+          }
         ]
       },
       "variables": [
-        {"symbol": "Q", "name": "传热量", "unit": "W", "role": "output", "desc": "对流传热量"},
-        {"symbol": "h", "name": "对流传热系数", "unit": "W/(m²·K)", "role": "input", "constraints": {"min": 1}, "desc": "对流传热系数"},
-        {"symbol": "A", "name": "传热面积", "unit": "m²", "role": "input", "constraints": {"min": 0.001}, "desc": "传热面积"},
-        {"symbol": "Tw", "name": "壁面温度", "unit": "K", "role": "input", "desc": "壁面温度"},
-        {"symbol": "Tf", "name": "流体温度", "unit": "K", "role": "input", "desc": "流体主体温度"}
+        {
+          "symbol": "Q",
+          "name": "传热量",
+          "unit": "W",
+          "role": "output",
+          "desc": "对流传热量"
+        },
+        {
+          "symbol": "h",
+          "name": "对流传热系数",
+          "unit": "W/(m²·K)",
+          "role": "input",
+          "constraints": {
+            "min": 1
+          },
+          "desc": "对流传热系数"
+        },
+        {
+          "symbol": "A",
+          "name": "传热面积",
+          "unit": "m²",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "传热面积"
+        },
+        {
+          "symbol": "Tw",
+          "name": "壁面温度",
+          "unit": "K",
+          "role": "input",
+          "desc": "壁面温度"
+        },
+        {
+          "symbol": "Tf",
+          "name": "流体温度",
+          "unit": "K",
+          "role": "input",
+          "desc": "流体主体温度"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "传热"},
-      "tags": ["对流传热", "牛顿冷却定律", "传热系数"],
-      "keywords": ["对流传热", "传热系数", "牛顿冷却定律"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "传热"
+      },
+      "tags": [
+        "对流传热",
+        "牛顿冷却定律",
+        "传热系数"
+      ],
+      "keywords": [
+        "对流传热",
+        "传热系数",
+        "牛顿冷却定律"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -38,9 +100,10 @@
     },
     {
       "formula_id": "PR-HEA-003",
+      "vdi_formula_id": "PR-HEA-003",
       "name": "导热传热方程（傅里叶定律）",
       "name_en": "Conduction Heat Transfer (Fourier's Law)",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "heat/conduction",
       "type": "exact",
       "equation_text": "Q = -kA * dT/dx",
@@ -48,22 +111,99 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"var": "k"},
-          {"var": "A"},
-          {"op": "div", "num": {"op": "sub", "args": [{"var": "T1"}, {"var": "T2"}]}, "den": {"var": "L"}}
+          {
+            "var": "k"
+          },
+          {
+            "var": "A"
+          },
+          {
+            "op": "div",
+            "num": {
+              "op": "sub",
+              "args": [
+                {
+                  "var": "T1"
+                },
+                {
+                  "var": "T2"
+                }
+              ]
+            },
+            "den": {
+              "var": "L"
+            }
+          }
         ]
       },
       "variables": [
-        {"symbol": "Q", "name": "导热量", "unit": "W", "role": "output", "desc": "导热传热量"},
-        {"symbol": "k", "name": "导热系数", "unit": "W/(m·K)", "role": "input", "constraints": {"min": 0.001}, "desc": "材料导热系数"},
-        {"symbol": "A", "name": "传热面积", "unit": "m²", "role": "input", "constraints": {"min": 0.001}, "desc": "垂直于热流方向的面积"},
-        {"symbol": "T1", "name": "高温侧温度", "unit": "K", "role": "input", "desc": "高温侧温度"},
-        {"symbol": "T2", "name": "低温侧温度", "unit": "K", "role": "input", "desc": "低温侧温度"},
-        {"symbol": "L", "name": "厚度", "unit": "m", "role": "input", "constraints": {"min": 0.001}, "desc": "材料厚度"}
+        {
+          "symbol": "Q",
+          "name": "导热量",
+          "unit": "W",
+          "role": "output",
+          "desc": "导热传热量"
+        },
+        {
+          "symbol": "k",
+          "name": "导热系数",
+          "unit": "W/(m·K)",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "材料导热系数"
+        },
+        {
+          "symbol": "A",
+          "name": "传热面积",
+          "unit": "m²",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "垂直于热流方向的面积"
+        },
+        {
+          "symbol": "T1",
+          "name": "高温侧温度",
+          "unit": "K",
+          "role": "input",
+          "desc": "高温侧温度"
+        },
+        {
+          "symbol": "T2",
+          "name": "低温侧温度",
+          "unit": "K",
+          "role": "input",
+          "desc": "低温侧温度"
+        },
+        {
+          "symbol": "L",
+          "name": "厚度",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "材料厚度"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "传热"},
-      "tags": ["导热", "傅里叶定律", "热传导"],
-      "keywords": ["导热", "傅里叶定律", "热传导", "导热系数"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "传热"
+      },
+      "tags": [
+        "导热",
+        "傅里叶定律",
+        "热传导"
+      ],
+      "keywords": [
+        "导热",
+        "傅里叶定律",
+        "热传导",
+        "导热系数"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -71,9 +211,10 @@
     },
     {
       "formula_id": "PR-HEA-004",
+      "vdi_formula_id": "PR-HEA-004",
       "name": "辐射传热方程（斯蒂芬-玻尔兹曼）",
       "name_en": "Radiation Heat Transfer (Stefan-Boltzmann)",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "heat/radiation",
       "type": "exact",
       "equation_text": "Q = εσA(T1⁴ - T2⁴)",
@@ -81,26 +222,109 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"var": "ε"},
-          {"var": "σ"},
-          {"var": "A"},
-          {"op": "sub", "args": [
-            {"op": "pow", "base": {"var": "T1"}, "exp": 4},
-            {"op": "pow", "base": {"var": "T2"}, "exp": 4}
-          ]}
+          {
+            "var": "ε"
+          },
+          {
+            "var": "σ"
+          },
+          {
+            "var": "A"
+          },
+          {
+            "op": "sub",
+            "args": [
+              {
+                "op": "pow",
+                "base": {
+                  "var": "T1"
+                },
+                "exp": 4
+              },
+              {
+                "op": "pow",
+                "base": {
+                  "var": "T2"
+                },
+                "exp": 4
+              }
+            ]
+          }
         ]
       },
       "variables": [
-        {"symbol": "Q", "name": "辐射传热量", "unit": "W", "role": "output", "desc": "辐射传热量"},
-        {"symbol": "ε", "name": "发射率", "unit": "-", "role": "input", "constraints": {"min": 0, "max": 1}, "desc": "物体表面发射率"},
-        {"symbol": "σ", "name": "斯蒂芬-玻尔兹曼常数", "unit": "W/(m²·K⁴)", "role": "constant", "default": 5.67e-8, "desc": "黑体辐射常数"},
-        {"symbol": "A", "name": "辐射面积", "unit": "m²", "role": "input", "constraints": {"min": 0.001}, "desc": "辐射换热面积"},
-        {"symbol": "T1", "name": "高温物体温度", "unit": "K", "role": "input", "constraints": {"min": 200}, "desc": "高温物体绝对温度"},
-        {"symbol": "T2", "name": "低温物体温度", "unit": "K", "role": "input", "constraints": {"min": 200}, "desc": "低温物体绝对温度"}
+        {
+          "symbol": "Q",
+          "name": "辐射传热量",
+          "unit": "W",
+          "role": "output",
+          "desc": "辐射传热量"
+        },
+        {
+          "symbol": "ε",
+          "name": "发射率",
+          "unit": "-",
+          "role": "input",
+          "constraints": {
+            "min": 0,
+            "max": 1
+          },
+          "desc": "物体表面发射率"
+        },
+        {
+          "symbol": "σ",
+          "name": "斯蒂芬-玻尔兹曼常数",
+          "unit": "W/(m²·K⁴)",
+          "role": "constant",
+          "default": 5.67e-8,
+          "desc": "黑体辐射常数"
+        },
+        {
+          "symbol": "A",
+          "name": "辐射面积",
+          "unit": "m²",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "辐射换热面积"
+        },
+        {
+          "symbol": "T1",
+          "name": "高温物体温度",
+          "unit": "K",
+          "role": "input",
+          "constraints": {
+            "min": 200
+          },
+          "desc": "高温物体绝对温度"
+        },
+        {
+          "symbol": "T2",
+          "name": "低温物体温度",
+          "unit": "K",
+          "role": "input",
+          "constraints": {
+            "min": 200
+          },
+          "desc": "低温物体绝对温度"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "传热"},
-      "tags": ["辐射传热", "斯蒂芬-玻尔兹曼", "黑体辐射"],
-      "keywords": ["辐射传热", "黑体辐射", "发射率", "四次方定律"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "传热"
+      },
+      "tags": [
+        "辐射传热",
+        "斯蒂芬-玻尔兹曼",
+        "黑体辐射"
+      ],
+      "keywords": [
+        "辐射传热",
+        "黑体辐射",
+        "发射率",
+        "四次方定律"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -108,32 +332,115 @@
     },
     {
       "formula_id": "PR-HEA-005",
+      "vdi_formula_id": "PR-HEA-005",
       "name": "总传热系数计算",
       "name_en": "Overall Heat Transfer Coefficient",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "heat/overall",
       "type": "exact",
       "equation_text": "U = 1/(1/h1 + δ/k + 1/h2)",
       "equation_latex": "U = \\frac{1}{\\frac{1}{h_1} + \\frac{\\delta}{k} + \\frac{1}{h_2}}",
       "equation_ast": {
         "op": "div",
-        "num": {"const": 1},
-        "den": {"op": "add", "args": [
-          {"op": "div", "num": {"const": 1}, "den": {"var": "h1"}},
-          {"op": "div", "num": {"var": "δ"}, "den": {"var": "k"}},
-          {"op": "div", "num": {"const": 1}, "den": {"var": "h2"}}
-        ]}
+        "num": {
+          "const": 1
+        },
+        "den": {
+          "op": "add",
+          "args": [
+            {
+              "op": "div",
+              "num": {
+                "const": 1
+              },
+              "den": {
+                "var": "h1"
+              }
+            },
+            {
+              "op": "div",
+              "num": {
+                "var": "δ"
+              },
+              "den": {
+                "var": "k"
+              }
+            },
+            {
+              "op": "div",
+              "num": {
+                "const": 1
+              },
+              "den": {
+                "var": "h2"
+              }
+            }
+          ]
+        }
       },
       "variables": [
-        {"symbol": "U", "name": "总传热系数", "unit": "W/(m²·K)", "role": "output", "desc": "总传热系数"},
-        {"symbol": "h1", "name": "热侧传热系数", "unit": "W/(m²·K)", "role": "input", "constraints": {"min": 1}, "desc": "热侧对流传热系数"},
-        {"symbol": "δ", "name": "壁面厚度", "unit": "m", "role": "input", "constraints": {"min": 0.0001}, "desc": "传热壁面厚度"},
-        {"symbol": "k", "name": "壁面导热系数", "unit": "W/(m·K)", "role": "input", "constraints": {"min": 0.01}, "desc": "壁面材料导热系数"},
-        {"symbol": "h2", "name": "冷侧传热系数", "unit": "W/(m²·K)", "role": "input", "constraints": {"min": 1}, "desc": "冷侧对流传热系数"}
+        {
+          "symbol": "U",
+          "name": "总传热系数",
+          "unit": "W/(m²·K)",
+          "role": "output",
+          "desc": "总传热系数"
+        },
+        {
+          "symbol": "h1",
+          "name": "热侧传热系数",
+          "unit": "W/(m²·K)",
+          "role": "input",
+          "constraints": {
+            "min": 1
+          },
+          "desc": "热侧对流传热系数"
+        },
+        {
+          "symbol": "δ",
+          "name": "壁面厚度",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.0001
+          },
+          "desc": "传热壁面厚度"
+        },
+        {
+          "symbol": "k",
+          "name": "壁面导热系数",
+          "unit": "W/(m·K)",
+          "role": "input",
+          "constraints": {
+            "min": 0.01
+          },
+          "desc": "壁面材料导热系数"
+        },
+        {
+          "symbol": "h2",
+          "name": "冷侧传热系数",
+          "unit": "W/(m²·K)",
+          "role": "input",
+          "constraints": {
+            "min": 1
+          },
+          "desc": "冷侧对流传热系数"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "传热"},
-      "tags": ["总传热系数", "热阻", "复合传热"],
-      "keywords": ["总传热系数", "热阻串联", "复合传热"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "传热"
+      },
+      "tags": [
+        "总传热系数",
+        "热阻",
+        "复合传热"
+      ],
+      "keywords": [
+        "总传热系数",
+        "热阻串联",
+        "复合传热"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -141,26 +448,83 @@
     },
     {
       "formula_id": "PR-HEA-006",
+      "vdi_formula_id": "PR-HEA-006",
       "name": "对数平均温差（LMTD）",
       "name_en": "Log Mean Temperature Difference",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "heat/exchanger",
       "type": "exact",
       "equation_text": "ΔTlm = (ΔT1 - ΔT2) / ln(ΔT1/ΔT2)",
       "equation_latex": "\\Delta T_{lm} = \\frac{\\Delta T_1 - \\Delta T_2}{\\ln(\\Delta T_1 / \\Delta T_2)}",
       "equation_ast": {
         "op": "div",
-        "num": {"op": "sub", "args": [{"var": "ΔT1"}, {"var": "ΔT2"}]},
-        "den": {"op": "log", "arg": {"op": "div", "num": {"var": "ΔT1"}, "den": {"var": "ΔT2"}}}
+        "num": {
+          "op": "sub",
+          "args": [
+            {
+              "var": "ΔT1"
+            },
+            {
+              "var": "ΔT2"
+            }
+          ]
+        },
+        "den": {
+          "op": "log",
+          "arg": {
+            "op": "div",
+            "num": {
+              "var": "ΔT1"
+            },
+            "den": {
+              "var": "ΔT2"
+            }
+          }
+        }
       },
       "variables": [
-        {"symbol": "ΔTlm", "name": "对数平均温差", "unit": "K", "role": "output", "desc": "对数平均温差"},
-        {"symbol": "ΔT1", "name": "大温差", "unit": "K", "role": "input", "constraints": {"min": 0.1}, "desc": "换热器一端的温差"},
-        {"symbol": "ΔT2", "name": "小温差", "unit": "K", "role": "input", "constraints": {"min": 0.1}, "desc": "换热器另一端的温差"}
+        {
+          "symbol": "ΔTlm",
+          "name": "对数平均温差",
+          "unit": "K",
+          "role": "output",
+          "desc": "对数平均温差"
+        },
+        {
+          "symbol": "ΔT1",
+          "name": "大温差",
+          "unit": "K",
+          "role": "input",
+          "constraints": {
+            "min": 0.1
+          },
+          "desc": "换热器一端的温差"
+        },
+        {
+          "symbol": "ΔT2",
+          "name": "小温差",
+          "unit": "K",
+          "role": "input",
+          "constraints": {
+            "min": 0.1
+          },
+          "desc": "换热器另一端的温差"
+        }
       ],
-      "source": {"standard_id": "GB/T 151", "clause": "换热器设计"},
-      "tags": ["对数平均温差", "LMTD", "换热器"],
-      "keywords": ["对数平均温差", "LMTD", "换热器设计"],
+      "source": {
+        "standard_id": "GB/T 151",
+        "clause": "换热器设计"
+      },
+      "tags": [
+        "对数平均温差",
+        "LMTD",
+        "换热器"
+      ],
+      "keywords": [
+        "对数平均温差",
+        "LMTD",
+        "换热器设计"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -168,28 +532,96 @@
     },
     {
       "formula_id": "PR-HEA-007",
+      "vdi_formula_id": "PR-HEA-007",
       "name": "换热器效能（ε-NTU法）",
       "name_en": "Heat Exchanger Effectiveness",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "heat/exchanger",
       "type": "exact",
       "equation_text": "ε = Q / Qmax = Q / (Cmin * (Th,in - Tc,in))",
       "equation_latex": "\\varepsilon = \\frac{Q}{Q_{max}} = \\frac{Q}{C_{min} \\cdot (T_{h,in} - T_{c,in})}",
       "equation_ast": {
         "op": "div",
-        "num": {"var": "Q"},
-        "den": {"op": "mul", "args": [{"var": "Cmin"}, {"op": "sub", "args": [{"var": "Th_in"}, {"var": "Tc_in"}]}]}
+        "num": {
+          "var": "Q"
+        },
+        "den": {
+          "op": "mul",
+          "args": [
+            {
+              "var": "Cmin"
+            },
+            {
+              "op": "sub",
+              "args": [
+                {
+                  "var": "Th_in"
+                },
+                {
+                  "var": "Tc_in"
+                }
+              ]
+            }
+          ]
+        }
       },
       "variables": [
-        {"symbol": "ε", "name": "换热器效能", "unit": "-", "role": "output", "desc": "换热器效能（0-1）"},
-        {"symbol": "Q", "name": "实际传热量", "unit": "W", "role": "input", "constraints": {"min": 0}, "desc": "实际传热量"},
-        {"symbol": "Cmin", "name": "最小热容流率", "unit": "W/K", "role": "input", "constraints": {"min": 0.001}, "desc": "冷热流体中较小的热容流率"},
-        {"symbol": "Th_in", "name": "热流体入口温度", "unit": "K", "role": "input", "desc": "热流体入口温度"},
-        {"symbol": "Tc_in", "name": "冷流体入口温度", "unit": "K", "role": "input", "desc": "冷流体入口温度"}
+        {
+          "symbol": "ε",
+          "name": "换热器效能",
+          "unit": "-",
+          "role": "output",
+          "desc": "换热器效能（0-1）"
+        },
+        {
+          "symbol": "Q",
+          "name": "实际传热量",
+          "unit": "W",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "实际传热量"
+        },
+        {
+          "symbol": "Cmin",
+          "name": "最小热容流率",
+          "unit": "W/K",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "冷热流体中较小的热容流率"
+        },
+        {
+          "symbol": "Th_in",
+          "name": "热流体入口温度",
+          "unit": "K",
+          "role": "input",
+          "desc": "热流体入口温度"
+        },
+        {
+          "symbol": "Tc_in",
+          "name": "冷流体入口温度",
+          "unit": "K",
+          "role": "input",
+          "desc": "冷流体入口温度"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "换热器"},
-      "tags": ["换热器效能", "ε-NTU", "换热器设计"],
-      "keywords": ["换热器效能", "ε-NTU法", "传热计算"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "换热器"
+      },
+      "tags": [
+        "换热器效能",
+        "ε-NTU",
+        "换热器设计"
+      ],
+      "keywords": [
+        "换热器效能",
+        "ε-NTU法",
+        "传热计算"
+      ],
       "precision": 0.001,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -197,34 +629,167 @@
     },
     {
       "formula_id": "PR-HEA-008",
+      "vdi_formula_id": "PR-HEA-008",
       "name": "保温层热损失",
       "name_en": "Insulation Heat Loss",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "heat/insulation",
       "type": "exact",
       "equation_text": "Q = 2πL(Ts - Ta) / [ln(r2/r1)/k + 1/(h*r2)]",
       "equation_latex": "Q = \\frac{2\\pi L (T_s - T_a)}{\\frac{\\ln(r_2/r_1)}{k} + \\frac{1}{h \\cdot r_2}}",
       "equation_ast": {
         "op": "div",
-        "num": {"op": "mul", "args": [{"const": 6.2832}, {"var": "L"}, {"op": "sub", "args": [{"var": "Ts"}, {"var": "Ta"}]}]},
-        "den": {"op": "add", "args": [
-          {"op": "div", "num": {"op": "log", "arg": {"op": "div", "num": {"var": "r2"}, "den": {"var": "r1"}}}, "den": {"var": "k"}},
-          {"op": "div", "num": {"const": 1}, "den": {"op": "mul", "args": [{"var": "h"}, {"var": "r2"}]}}
-        ]}
+        "num": {
+          "op": "mul",
+          "args": [
+            {
+              "const": 6.2832
+            },
+            {
+              "var": "L"
+            },
+            {
+              "op": "sub",
+              "args": [
+                {
+                  "var": "Ts"
+                },
+                {
+                  "var": "Ta"
+                }
+              ]
+            }
+          ]
+        },
+        "den": {
+          "op": "add",
+          "args": [
+            {
+              "op": "div",
+              "num": {
+                "op": "log",
+                "arg": {
+                  "op": "div",
+                  "num": {
+                    "var": "r2"
+                  },
+                  "den": {
+                    "var": "r1"
+                  }
+                }
+              },
+              "den": {
+                "var": "k"
+              }
+            },
+            {
+              "op": "div",
+              "num": {
+                "const": 1
+              },
+              "den": {
+                "op": "mul",
+                "args": [
+                  {
+                    "var": "h"
+                  },
+                  {
+                    "var": "r2"
+                  }
+                ]
+              }
+            }
+          ]
+        }
       },
       "variables": [
-        {"symbol": "Q", "name": "热损失", "unit": "W", "role": "output", "desc": "管道保温热损失"},
-        {"symbol": "L", "name": "管道长度", "unit": "m", "role": "input", "constraints": {"min": 0.1}, "desc": "管道长度"},
-        {"symbol": "Ts", "name": "管壁温度", "unit": "K", "role": "input", "desc": "管道外壁温度"},
-        {"symbol": "Ta", "name": "环境温度", "unit": "K", "role": "input", "desc": "环境温度"},
-        {"symbol": "r1", "name": "管道外径", "unit": "m", "role": "input", "constraints": {"min": 0.01}, "desc": "管道外半径"},
-        {"symbol": "r2", "name": "保温层外径", "unit": "m", "role": "input", "constraints": {"min": 0.01}, "desc": "保温层外半径"},
-        {"symbol": "k", "name": "保温材料导热系数", "unit": "W/(m·K)", "role": "input", "constraints": {"min": 0.001}, "desc": "保温材料导热系数"},
-        {"symbol": "h", "name": "表面传热系数", "unit": "W/(m²·K)", "role": "input", "constraints": {"min": 1}, "default": 10, "desc": "保温层外表面传热系数"}
+        {
+          "symbol": "Q",
+          "name": "热损失",
+          "unit": "W",
+          "role": "output",
+          "desc": "管道保温热损失"
+        },
+        {
+          "symbol": "L",
+          "name": "管道长度",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.1
+          },
+          "desc": "管道长度"
+        },
+        {
+          "symbol": "Ts",
+          "name": "管壁温度",
+          "unit": "K",
+          "role": "input",
+          "desc": "管道外壁温度"
+        },
+        {
+          "symbol": "Ta",
+          "name": "环境温度",
+          "unit": "K",
+          "role": "input",
+          "desc": "环境温度"
+        },
+        {
+          "symbol": "r1",
+          "name": "管道外径",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.01
+          },
+          "desc": "管道外半径"
+        },
+        {
+          "symbol": "r2",
+          "name": "保温层外径",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0.01
+          },
+          "desc": "保温层外半径"
+        },
+        {
+          "symbol": "k",
+          "name": "保温材料导热系数",
+          "unit": "W/(m·K)",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "保温材料导热系数"
+        },
+        {
+          "symbol": "h",
+          "name": "表面传热系数",
+          "unit": "W/(m²·K)",
+          "role": "input",
+          "constraints": {
+            "min": 1
+          },
+          "default": 10,
+          "desc": "保温层外表面传热系数"
+        }
       ],
-      "source": {"standard_id": "GB 50264", "clause": "保温设计"},
-      "tags": ["保温", "热损失", "管道保温"],
-      "keywords": ["保温热损失", "管道保温", "热损失计算"],
+      "source": {
+        "standard_id": "GB 50264",
+        "clause": "保温设计"
+      },
+      "tags": [
+        "保温",
+        "热损失",
+        "管道保温"
+      ],
+      "keywords": [
+        "保温热损失",
+        "管道保温",
+        "热损失计算"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -232,26 +797,81 @@
     },
     {
       "formula_id": "PR-HEA-009",
+      "vdi_formula_id": "PR-HEA-009",
       "name": "热阻串联计算",
       "name_en": "Thermal Resistance in Series",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "heat/resistance",
       "type": "exact",
       "equation_text": "Rtotal = R1 + R2 + R3",
       "equation_latex": "R_{total} = R_1 + R_2 + R_3",
       "equation_ast": {
         "op": "add",
-        "args": [{"var": "R1"}, {"var": "R2"}, {"var": "R3"}]
+        "args": [
+          {
+            "var": "R1"
+          },
+          {
+            "var": "R2"
+          },
+          {
+            "var": "R3"
+          }
+        ]
       },
       "variables": [
-        {"symbol": "Rtotal", "name": "总热阻", "unit": "K/W", "role": "output", "desc": "串联总热阻"},
-        {"symbol": "R1", "name": "热侧对流热阻", "unit": "K/W", "role": "input", "constraints": {"min": 0}, "desc": "热侧对流热阻"},
-        {"symbol": "R2", "name": "导热热阻", "unit": "K/W", "role": "input", "constraints": {"min": 0}, "desc": "壁面导热热阻"},
-        {"symbol": "R3", "name": "冷侧对流热阻", "unit": "K/W", "role": "input", "constraints": {"min": 0}, "desc": "冷侧对流热阻"}
+        {
+          "symbol": "Rtotal",
+          "name": "总热阻",
+          "unit": "K/W",
+          "role": "output",
+          "desc": "串联总热阻"
+        },
+        {
+          "symbol": "R1",
+          "name": "热侧对流热阻",
+          "unit": "K/W",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "热侧对流热阻"
+        },
+        {
+          "symbol": "R2",
+          "name": "导热热阻",
+          "unit": "K/W",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "壁面导热热阻"
+        },
+        {
+          "symbol": "R3",
+          "name": "冷侧对流热阻",
+          "unit": "K/W",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "冷侧对流热阻"
+        }
       ],
-      "source": {"standard_id": "化工原理", "clause": "传热"},
-      "tags": ["热阻", "串联热阻", "传热计算"],
-      "keywords": ["热阻串联", "总热阻", "传热阻力"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "传热"
+      },
+      "tags": [
+        "热阻",
+        "串联热阻",
+        "传热计算"
+      ],
+      "keywords": [
+        "热阻串联",
+        "总热阻",
+        "传热阻力"
+      ],
       "precision": 0.001,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",

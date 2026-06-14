@@ -1,0 +1,200 @@
+{
+  "timestamp": "2026-06-14T03:24:17.256Z",
+  "skill_count": 70,
+  "process_skills": [
+    "vdi-process-balance",
+    "vdi-process-cad-2d",
+    "vdi-process-calc",
+    "vdi-process-calc-column",
+    "vdi-process-calc-hx",
+    "vdi-process-calc-psv",
+    "vdi-process-calc-pump",
+    "vdi-process-calc-reactor",
+    "vdi-process-control",
+    "vdi-process-data-mgmt",
+    "vdi-process-docgen",
+    "vdi-process-equipment",
+    "vdi-process-hydraulics",
+    "vdi-process-lab",
+    "vdi-process-lead",
+    "vdi-process-package",
+    "vdi-process-pfd",
+    "vdi-process-pid",
+    "vdi-process-relief",
+    "vdi-process-route",
+    "vdi-process-safety",
+    "vdi-process-simulation",
+    "vdi-process-utilities"
+  ],
+  "user_scope": {
+    "slugs": [
+      "vdi-doc-export",
+      "vdi-doc-ingest",
+      "vdi-system-health"
+    ],
+    "copied": 3,
+    "stale": [],
+    "destRoot": "/Users/apoda/Documents/Cursor/016-数字工程师/pilotdeck-vdi/pilotdeck-user-skills"
+  },
+  "workspaces": [
+    {
+      "workspace": "工艺组",
+      "dest": "/Users/apoda/Documents/Cursor/016-数字工程师/workspaces/工艺组/.pilotdeck/skills",
+      "copied": 23,
+      "filter": {
+        "prefix": "vdi-process-",
+        "excludeDeprecated": true
+      },
+      "removed": 0,
+      "stale": [],
+      "slugs": [
+        "vdi-process-balance",
+        "vdi-process-cad-2d",
+        "vdi-process-calc",
+        "vdi-process-calc-column",
+        "vdi-process-calc-hx",
+        "vdi-process-calc-psv",
+        "vdi-process-calc-pump",
+        "vdi-process-calc-reactor",
+        "vdi-process-control",
+        "vdi-process-data-mgmt",
+        "vdi-process-docgen",
+        "vdi-process-equipment",
+        "vdi-process-hydraulics",
+        "vdi-process-lab",
+        "vdi-process-lead",
+        "vdi-process-package",
+        "vdi-process-pfd",
+        "vdi-process-pid",
+        "vdi-process-relief",
+        "vdi-process-route",
+        "vdi-process-safety",
+        "vdi-process-simulation",
+        "vdi-process-utilities"
+      ]
+    },
+    {
+      "workspace": "管道组",
+      "dest": "/Users/apoda/Documents/Cursor/016-数字工程师/workspaces/管道组/.pilotdeck/skills",
+      "copied": 20,
+      "filter": {
+        "prefix": "vdi-piping-",
+        "excludeDeprecated": true
+      },
+      "removed": 0,
+      "stale": [],
+      "slugs": [
+        "vdi-piping-cad-3d",
+        "vdi-piping-corrosion-calc",
+        "vdi-piping-data-mgmt",
+        "vdi-piping-equipment-connect",
+        "vdi-piping-hydraulics",
+        "vdi-piping-insulation",
+        "vdi-piping-isometric",
+        "vdi-piping-layout",
+        "vdi-piping-lead",
+        "vdi-piping-line-list",
+        "vdi-piping-material-class",
+        "vdi-piping-rack-layout",
+        "vdi-piping-routing",
+        "vdi-piping-stress",
+        "vdi-piping-stress-calc",
+        "vdi-piping-support",
+        "vdi-piping-underground",
+        "vdi-piping-valve-spec",
+        "vdi-piping-vibration-calc",
+        "vdi-piping-weight-calc"
+      ]
+    },
+    {
+      "workspace": "管理组",
+      "dest": "/Users/apoda/Documents/Cursor/016-数字工程师/workspaces/管理组/.pilotdeck/skills",
+      "copied": 4,
+      "filter": {
+        "slugs": [
+          "vdi-design-manager",
+          "vdi-doc-export",
+          "vdi-doc-ingest",
+          "vdi-scheduler-agent"
+        ],
+        "excludeDeprecated": true
+      },
+      "removed": 0,
+      "stale": [],
+      "slugs": [
+        "vdi-design-manager",
+        "vdi-doc-export",
+        "vdi-doc-ingest",
+        "vdi-scheduler-agent"
+      ]
+    },
+    {
+      "workspace": "给排水组",
+      "dest": "/Users/apoda/Documents/Cursor/016-数字工程师/workspaces/给排水组/.pilotdeck/skills",
+      "copied": 9,
+      "filter": {
+        "prefix": "vdi-water-",
+        "excludeDeprecated": true
+      },
+      "removed": 0,
+      "stale": [],
+      "slugs": [
+        "vdi-water-circulating",
+        "vdi-water-drainage",
+        "vdi-water-equipment",
+        "vdi-water-fire",
+        "vdi-water-hydraulics",
+        "vdi-water-lead",
+        "vdi-water-stormwater",
+        "vdi-water-supply",
+        "vdi-water-wastewater"
+      ]
+    },
+    {
+      "workspace": "仪控组",
+      "dest": "/Users/apoda/Documents/Cursor/016-数字工程师/workspaces/仪控组/.pilotdeck/skills",
+      "copied": 13,
+      "filter": {
+        "prefix": "vdi-instrument-",
+        "excludeDeprecated": true
+      },
+      "removed": 0,
+      "stale": [],
+      "slugs": [
+        "vdi-instrument-analytical",
+        "vdi-instrument-cable",
+        "vdi-instrument-cable-mto",
+        "vdi-instrument-calc-sil",
+        "vdi-instrument-dcs",
+        "vdi-instrument-index",
+        "vdi-instrument-interlock",
+        "vdi-instrument-io-count",
+        "vdi-instrument-lead",
+        "vdi-instrument-loop",
+        "vdi-instrument-selection",
+        "vdi-instrument-telecom",
+        "vdi-instrument-valve"
+      ]
+    },
+    {
+      "workspace": "程序检测",
+      "dest": "/Users/apoda/Documents/Cursor/016-数字工程师/workspaces/程序检测/.pilotdeck/skills",
+      "copied": 1,
+      "filter": {
+        "slugs": [
+          "vdi-system-health"
+        ],
+        "excludeDeprecated": true
+      },
+      "removed": 0,
+      "stale": [],
+      "slugs": [
+        "vdi-system-health"
+      ]
+    }
+  ],
+  "knowledge": {
+    "total": 1919,
+    "process": 0
+  }
+}

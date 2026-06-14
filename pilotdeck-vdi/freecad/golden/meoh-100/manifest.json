@@ -1,0 +1,15 @@
+{
+  "project_id": "MEOH-100",
+  "object_count": 141,
+  "equipment": 48,
+  "pipe_runs": 32,
+  "instruments": 12,
+  "valves": 32,
+  "safety_valves": 5,
+  "control_loops": 12,
+  "change_log_entries": 1,
+  "dexpi_equipment": 48,
+  "checksum": "c5fa3b00c76e27d2",
+  "attribute_checksum": "f8581ebba3a2cc5c",
+  "generated_at": "2026-06-12T02:47:52.680Z"
+}

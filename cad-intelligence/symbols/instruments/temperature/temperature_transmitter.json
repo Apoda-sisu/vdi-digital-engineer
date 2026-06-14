@@ -1,0 +1,60 @@
+{
+  "symbol_id": "INST-TT-001",
+  "name": "温度变送",
+  "name_en": "Temperature Transmitter",
+  "standard": "ISA 5.1",
+  "category": "instruments",
+  "sub_category": "temperature",
+  "description": "温度变送器",
+  "parameters": {
+    "range_min": {
+      "type": "number",
+      "unit": "°C",
+      "description": "量程下限"
+    },
+    "range_max": {
+      "type": "number",
+      "unit": "°C",
+      "description": "量程上限"
+    },
+    "output_signal": {
+      "type": "string",
+      "description": "输出信号",
+      "examples": ["4-20mA", "HART"]
+    }
+  },
+  "connections": {
+    "process": {
+      "position": {"x": 0, "y": -15},
+      "direction": "down",
+      "description": "工艺连接点"
+    },
+    "signal": {
+      "position": {"x": 15, "y": 0},
+      "direction": "right",
+      "description": "信号输出"
+    }
+  },
+  "geometry": {
+    "components": [
+      {
+        "type": "diamond",
+        "params": {"size": 12},
+        "description": "仪表圆（菱形表示变送）"
+      },
+      {
+        "type": "text",
+        "params": {"text": "TT", "size": 8},
+        "position": {"x": 0, "y": 0},
+        "description": "字母标识"
+      },
+      {
+        "type": "line",
+        "params": {"start": [0, -12], "end": [0, -18]},
+        "description": "连接线"
+      }
+    ]
+  },
+  "related_standards": ["ISA 5.1", "GB/T 2625"],
+  "typical_applications": ["温度测量", "信号远传"]
+}

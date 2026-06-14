@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pilotdeck.local/schemas/instrument_index.schema.json",
+  "title": "IN-D01 instrument_index payload",
+  "description": "仪控仪表索引与数据表交付物 payload 结构（output_type: instrument_index）",
+  "type": "object",
+  "required": ["pid_revision", "index_table", "instruments", "fce_tags", "io_summary"],
+  "additionalProperties": false,
+  "properties": {
+    "pid_revision": {
+      "type": "string",
+      "minLength": 1,
+      "description": "P&ID 版本，与 PR-S01 一致"
+    },
+    "control_philosophy_ref": {
+      "type": "string",
+      "description": "控制方案引用 PR-S05"
+    },
+    "index_table": {
+      "type": "array",
+      "minItems": 1,
+      "description": "全厂仪表位号索引表（真相源）",
+      "items": { "$ref": "#/$defs/index_row" }
+    },
+    "instruments": {
+      "type": "array",
+      "description": "ISA 数据表结构化条目（与 index_table 位号互校）",
+      "items": { "$ref": "#/$defs/instrument_datasheet" }
+    },
+    "fce_tags": {
+      "type": "array",
+      "description": "最终控制元件位号登记（规格归 IN-D06，禁止 Cv）",
+      "items": { "$ref": "#/$defs/fce_tag" }
+    },
+    "io_summary": {
+      "$ref": "#/$defs/io_summary"
+    }
+  },
+  "$defs": {
+    "index_row": {
+      "type": "object",
+      "required": ["tag", "service", "instrument_type", "io_type", "hazardous_area", "datasheet_status"],
+      "additionalProperties": false,
+      "properties": {
+        "tag": { "type": "string", "pattern": "^[A-Z]{1,4}-[0-9]{3,5}$" },
+        "service": { "type": "string", "minLength": 1 },
+        "instrument_type": {
+          "type": "string",
+          "enum": ["PT", "PDT", "TT", "TE", "FT", "LT", "LE", "AT", "AE", "PDIC", "TIC", "FIC", "LIC", "ZS", "ZI", "PSV", "OTHER"]
+        },
+        "io_type": {
+          "type": "string",
+          "enum": ["AI", "AO", "DI", "DO", "SAI", "SDI", "SDO", "NONE"]
+        },
+        "hazardous_area": { "type": "string", "minLength": 1 },
+        "loop_id": { "type": "string" },
+        "pid_sheet": { "type": "string" },
+        "datasheet_status": {
+          "type": "string",
+          "enum": ["draft", "pending_media", "complete"]
+        },
+        "sil_required": { "type": "string" }
+      }
+    },
+    "instrument_datasheet": {
+      "type": "object",
+      "required": ["tag", "service", "datasheet_type", "fluid", "hazardous_area", "output_signal"],
+      "additionalProperties": true,
+      "properties": {
+        "tag": { "type": "string" },
+        "service": { "type": "string" },
+        "datasheet_type": {
+          "type": "string",
+          "enum": ["PT", "PDT", "TT", "FT", "LT", "SW", "AE", "OTHER"]
+        },
+        "fluid": { "type": "string" },
+        "operating_temp_C": { "type": "number" },
+        "operating_pressure": { "type": "string" },
+        "range": { "type": "string" },
+        "range_basis": { "type": "string", "description": "公式 ID 如 IN-SEL-001 或 DATA_REQUEST" },
+        "wetted_material": { "type": "string" },
+        "output_signal": { "type": "string" },
+        "power_supply": { "type": "string" },
+        "hazardous_area": { "type": "string" },
+        "mounting": { "type": "string" },
+        "meter_type": { "type": "string" },
+        "setpoint": { "type": "string" }
+      }
+    },
+    "fce_tag": {
+      "type": "object",
+      "required": ["tag", "service", "spec_owner"],
+      "additionalProperties": false,
+      "properties": {
+        "tag": { "type": "string", "pattern": "^[A-Z]{1,3}V-[0-9]{3,5}$" },
+        "service": { "type": "string" },
+        "loop_id": { "type": "string" },
+        "spec_owner": { "type": "string", "const": "IN-D06" }
+      }
+    },
+    "io_summary": {
+      "type": "object",
+      "required": ["bpcs"],
+      "properties": {
+        "bpcs": { "$ref": "#/$defs/io_counts" },
+        "sis": { "$ref": "#/$defs/io_counts" }
+      }
+    },
+    "io_counts": {
+      "type": "object",
+      "properties": {
+        "AI": { "type": "integer", "minimum": 0 },
+        "AO": { "type": "integer", "minimum": 0 },
+        "DI": { "type": "integer", "minimum": 0 },
+        "DO": { "type": "integer", "minimum": 0 }
+      }
+    }
+  }
+}

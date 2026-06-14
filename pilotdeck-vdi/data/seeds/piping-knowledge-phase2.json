@@ -1,0 +1,3116 @@
+{
+  "seed_version": "pi-phase2",
+  "discipline": "piping",
+  "description": "Phase2 优先 D07/D09/D04/D05",
+  "clauses": [
+    {
+      "clause_id": "PI-GB50264-3-1-1-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50264",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "3.1.1",
+      "content": "绝热设计应根据介质操作温度、环境温度及节能要求确定绝热类型。",
+      "keywords": [
+        "绝热",
+        "操作温度",
+        "节能"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "GB50264"
+    },
+    {
+      "clause_id": "PI-GB50264-3-2-1-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50264",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "3.2.1",
+      "content": "防烫绝热适用于表面温度高于 60℃ 的设备和管道。",
+      "keywords": [
+        "防烫",
+        "60℃"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "GB50264"
+    },
+    {
+      "clause_id": "PI-GB50264-3-3-1-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50264",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "3.3.1",
+      "content": "保冷绝热适用于操作温度低于 ambient 且需防结露的管道。",
+      "keywords": [
+        "保冷",
+        "结露"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "GB50264"
+    },
+    {
+      "clause_id": "PI-GB50264-4-1-1-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50264",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "4.1.1",
+      "content": "绝热材料应满足使用温度范围内的导热系数及防火要求。",
+      "keywords": [
+        "绝热材料",
+        "导热系数"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "GB50264"
+    },
+    {
+      "clause_id": "PI-GB50264-4-2-1-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50264",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "4.2.1",
+      "content": "绝热厚度应根据热损失或表面温度限值计算确定。",
+      "keywords": [
+        "绝热厚度",
+        "热损失"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "GB50264"
+    },
+    {
+      "clause_id": "PI-GB50264-5-1-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50264",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "5.1",
+      "content": "绝热厚度计算 1：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "绝热厚度",
+        "防烫"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "GB50264"
+    },
+    {
+      "clause_id": "PI-GB50264-5-2-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50264",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "5.2",
+      "content": "绝热厚度计算 2：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "绝热厚度",
+        "防烫"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "GB50264"
+    },
+    {
+      "clause_id": "PI-GB50264-5-3-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50264",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "5.3",
+      "content": "绝热厚度计算 3：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "绝热厚度",
+        "防烫"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "GB50264"
+    },
+    {
+      "clause_id": "PI-GB50264-5-4-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50264",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "5.4",
+      "content": "绝热厚度计算 4：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "绝热厚度",
+        "防烫"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "GB50264"
+    },
+    {
+      "clause_id": "PI-GB50264-5-5-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50264",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "5.5",
+      "content": "绝热厚度计算 5：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "绝热厚度",
+        "防烫"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "GB50264"
+    },
+    {
+      "clause_id": "PI-GB50264-5-6-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50264",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "5.6",
+      "content": "绝热厚度计算 6：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "绝热厚度",
+        "防烫"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "GB50264"
+    },
+    {
+      "clause_id": "PI-GB50264-5-7-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50264",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "5.7",
+      "content": "绝热厚度计算 7：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "绝热厚度",
+        "防烫"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "GB50264"
+    },
+    {
+      "clause_id": "PI-GB50264-5-8-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50264",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "5.8",
+      "content": "绝热厚度计算 8：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "绝热厚度",
+        "防烫"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "GB50264"
+    },
+    {
+      "clause_id": "PI-GB50264-5-9-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50264",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "5.9",
+      "content": "绝热厚度计算 9：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "绝热厚度",
+        "防烫"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "GB50264"
+    },
+    {
+      "clause_id": "PI-GB50264-5-10-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50264",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "5.10",
+      "content": "绝热厚度计算 10：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "绝热厚度",
+        "防烫"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "GB50264"
+    },
+    {
+      "clause_id": "PI-GB50264-5-11-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50264",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "5.11",
+      "content": "绝热厚度计算 11：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "绝热厚度",
+        "防烫"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "GB50264"
+    },
+    {
+      "clause_id": "PI-GB50264-5-12-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50264",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "5.12",
+      "content": "绝热厚度计算 12：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "绝热厚度",
+        "防烫"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "GB50264"
+    },
+    {
+      "clause_id": "PI-GB50264-5-13-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50264",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "5.13",
+      "content": "绝热厚度计算 13：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "绝热厚度",
+        "防烫"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "GB50264"
+    },
+    {
+      "clause_id": "PI-GB50264-5-14-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50264",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "5.14",
+      "content": "绝热厚度计算 14：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "绝热厚度",
+        "防烫"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "GB50264"
+    },
+    {
+      "clause_id": "PI-GB50264-5-15-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50264",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "5.15",
+      "content": "绝热厚度计算 15：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "绝热厚度",
+        "防烫"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "GB50264"
+    },
+    {
+      "clause_id": "PI-SHT3015-6-1-1-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3015",
+      "version": "2019",
+      "discipline": "MP",
+      "clause": "6.1.1",
+      "content": "需伴热的管道应注明伴热介质及维持温度。",
+      "keywords": [
+        "伴热",
+        "维持温度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "SH3015"
+    },
+    {
+      "clause_id": "PI-SHT3015-6-2-1-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3015",
+      "version": "2019",
+      "discipline": "MP",
+      "clause": "6.2.1",
+      "content": "蒸汽伴热适用于需较高维持温度的工艺管道。",
+      "keywords": [
+        "蒸汽伴热"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "SH3015"
+    },
+    {
+      "clause_id": "PI-SHT3015-6-3-1-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3015",
+      "version": "2019",
+      "discipline": "MP",
+      "clause": "6.3.1",
+      "content": "电伴热适用于分散、小管径或精确控温场合。",
+      "keywords": [
+        "电伴热",
+        "控温"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "SH3015"
+    },
+    {
+      "clause_id": "PI-SHT3015-7-1-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3015",
+      "version": "2019",
+      "discipline": "MP",
+      "clause": "7.1",
+      "content": "伴热设计 1：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "伴热",
+        "蒸汽",
+        "电伴热"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "SH3015"
+    },
+    {
+      "clause_id": "PI-SHT3015-7-2-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3015",
+      "version": "2019",
+      "discipline": "MP",
+      "clause": "7.2",
+      "content": "伴热设计 2：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "伴热",
+        "蒸汽",
+        "电伴热"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "SH3015"
+    },
+    {
+      "clause_id": "PI-SHT3015-7-3-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3015",
+      "version": "2019",
+      "discipline": "MP",
+      "clause": "7.3",
+      "content": "伴热设计 3：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "伴热",
+        "蒸汽",
+        "电伴热"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "SH3015"
+    },
+    {
+      "clause_id": "PI-SHT3015-7-4-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3015",
+      "version": "2019",
+      "discipline": "MP",
+      "clause": "7.4",
+      "content": "伴热设计 4：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "伴热",
+        "蒸汽",
+        "电伴热"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "SH3015"
+    },
+    {
+      "clause_id": "PI-SHT3015-7-5-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3015",
+      "version": "2019",
+      "discipline": "MP",
+      "clause": "7.5",
+      "content": "伴热设计 5：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "伴热",
+        "蒸汽",
+        "电伴热"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "SH3015"
+    },
+    {
+      "clause_id": "PI-SHT3015-7-6-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3015",
+      "version": "2019",
+      "discipline": "MP",
+      "clause": "7.6",
+      "content": "伴热设计 6：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "伴热",
+        "蒸汽",
+        "电伴热"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "SH3015"
+    },
+    {
+      "clause_id": "PI-SHT3015-7-7-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3015",
+      "version": "2019",
+      "discipline": "MP",
+      "clause": "7.7",
+      "content": "伴热设计 7：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "伴热",
+        "蒸汽",
+        "电伴热"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "SH3015"
+    },
+    {
+      "clause_id": "PI-SHT3015-7-8-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3015",
+      "version": "2019",
+      "discipline": "MP",
+      "clause": "7.8",
+      "content": "伴热设计 8：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "伴热",
+        "蒸汽",
+        "电伴热"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "SH3015"
+    },
+    {
+      "clause_id": "PI-SHT3015-7-9-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3015",
+      "version": "2019",
+      "discipline": "MP",
+      "clause": "7.9",
+      "content": "伴热设计 9：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "伴热",
+        "蒸汽",
+        "电伴热"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "SH3015"
+    },
+    {
+      "clause_id": "PI-SHT3015-7-10-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3015",
+      "version": "2019",
+      "discipline": "MP",
+      "clause": "7.10",
+      "content": "伴热设计 10：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "伴热",
+        "蒸汽",
+        "电伴热"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "SH3015"
+    },
+    {
+      "clause_id": "PI-SHT3015-7-11-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3015",
+      "version": "2019",
+      "discipline": "MP",
+      "clause": "7.11",
+      "content": "伴热设计 11：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "伴热",
+        "蒸汽",
+        "电伴热"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "SH3015"
+    },
+    {
+      "clause_id": "PI-SHT3015-7-12-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3015",
+      "version": "2019",
+      "discipline": "MP",
+      "clause": "7.12",
+      "content": "伴热设计 12：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "伴热",
+        "蒸汽",
+        "电伴热"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP0900"
+      ],
+      "category": "SH3015"
+    },
+    {
+      "clause_id": "PI-HGT20645-3-2-1-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "3.2.1",
+      "content": "管道支架选型应满足管道荷载、位移及振动要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "位移"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-3-2-2-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "3.2.2",
+      "content": "标准支架间距应根据管径、保温厚度及介质特性确定。",
+      "keywords": [
+        "支架间距",
+        "管径"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-3-3-1-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "3.3.1",
+      "content": "固定支架应承受管道热膨胀产生的推力并限制位移。",
+      "keywords": [
+        "固定支架",
+        "热膨胀"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-3-3-2-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "3.3.2",
+      "content": "导向支架应允许管道轴向位移并限制横向位移。",
+      "keywords": [
+        "导向支架",
+        "横向"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-3-4-1-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "3.4.1",
+      "content": "弹簧支架应根据垂直位移量和荷载选择弹簧刚度。",
+      "keywords": [
+        "弹簧支架",
+        "刚度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-1-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.1",
+      "content": "管道支架设计 1：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-2-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.2",
+      "content": "管道支架设计 2：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-3-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.3",
+      "content": "管道支架设计 3：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-4-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.4",
+      "content": "管道支架设计 4：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-5-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.5",
+      "content": "管道支架设计 5：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-6-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.6",
+      "content": "管道支架设计 6：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-7-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.7",
+      "content": "管道支架设计 7：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-8-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.8",
+      "content": "管道支架设计 8：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-9-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.9",
+      "content": "管道支架设计 9：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-10-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.10",
+      "content": "管道支架设计 10：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-11-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.11",
+      "content": "管道支架设计 11：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-12-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.12",
+      "content": "管道支架设计 12：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-13-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.13",
+      "content": "管道支架设计 13：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-14-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.14",
+      "content": "管道支架设计 14：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-15-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.15",
+      "content": "管道支架设计 15：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-16-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.16",
+      "content": "管道支架设计 16：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-17-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.17",
+      "content": "管道支架设计 17：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-18-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.18",
+      "content": "管道支架设计 18：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-19-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.19",
+      "content": "管道支架设计 19：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-20-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.20",
+      "content": "管道支架设计 20：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-21-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.21",
+      "content": "管道支架设计 21：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-22-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.22",
+      "content": "管道支架设计 22：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-23-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.23",
+      "content": "管道支架设计 23：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-24-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.24",
+      "content": "管道支架设计 24：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-6-25-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "6.25",
+      "content": "管道支架设计 25：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "支架",
+        "荷载",
+        "选型"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT205194-3-3-1-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "3.3.1",
+      "content": "设备接管应满足设备管口方位及检修空间。",
+      "keywords": [
+        "设备接管",
+        "管口方位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-3-3-2-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "3.3.2",
+      "content": "泵吸入管道应短直，避免气袋和涡流。",
+      "keywords": [
+        "泵入口",
+        "气袋"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-3-3-3-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "3.3.3",
+      "content": "塔器接管应满足内件检修及平台布置要求。",
+      "keywords": [
+        "塔器",
+        "接管"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-3-3-4-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "3.3.4",
+      "content": "换热器接管应便于抽芯及管道拆卸。",
+      "keywords": [
+        "换热器",
+        "抽芯"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-8-1-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "8.1",
+      "content": "设备管道连接 1：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "设备接管",
+        "Nozzle",
+        "泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-8-2-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "8.2",
+      "content": "设备管道连接 2：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "设备接管",
+        "Nozzle",
+        "泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-8-3-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "8.3",
+      "content": "设备管道连接 3：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "设备接管",
+        "Nozzle",
+        "泵"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-8-4-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "8.4",
+      "content": "设备管道连接 4：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "设备接管",
+        "Nozzle",
+        "泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-8-5-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "8.5",
+      "content": "设备管道连接 5：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "设备接管",
+        "Nozzle",
+        "泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-8-6-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "8.6",
+      "content": "设备管道连接 6：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "设备接管",
+        "Nozzle",
+        "泵"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-8-7-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "8.7",
+      "content": "设备管道连接 7：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "设备接管",
+        "Nozzle",
+        "泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-8-8-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "8.8",
+      "content": "设备管道连接 8：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "设备接管",
+        "Nozzle",
+        "泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-8-9-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "8.9",
+      "content": "设备管道连接 9：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "设备接管",
+        "Nozzle",
+        "泵"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-8-10-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "8.10",
+      "content": "设备管道连接 10：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "设备接管",
+        "Nozzle",
+        "泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-8-11-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "8.11",
+      "content": "设备管道连接 11：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "设备接管",
+        "Nozzle",
+        "泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-8-12-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "8.12",
+      "content": "设备管道连接 12：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "设备接管",
+        "Nozzle",
+        "泵"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-8-13-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "8.13",
+      "content": "设备管道连接 13：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "设备接管",
+        "Nozzle",
+        "泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-8-14-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "8.14",
+      "content": "设备管道连接 14：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "设备接管",
+        "Nozzle",
+        "泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-8-15-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "8.15",
+      "content": "设备管道连接 15：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "设备接管",
+        "Nozzle",
+        "泵"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-8-16-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "8.16",
+      "content": "设备管道连接 16：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "设备接管",
+        "Nozzle",
+        "泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-8-17-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "8.17",
+      "content": "设备管道连接 17：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "设备接管",
+        "Nozzle",
+        "泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-8-18-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "8.18",
+      "content": "设备管道连接 18：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "设备接管",
+        "Nozzle",
+        "泵"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-8-19-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "8.19",
+      "content": "设备管道连接 19：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "设备接管",
+        "Nozzle",
+        "泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-8-20-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "8.20",
+      "content": "设备管道连接 20：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "设备接管",
+        "Nozzle",
+        "泵"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-8-21-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "8.21",
+      "content": "设备管道连接 21：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "设备接管",
+        "Nozzle",
+        "泵"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP4363"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-3-2-1-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "3.2.1",
+      "content": "管廊布置应满足工艺管道、电缆桥架及检修通道要求。",
+      "keywords": [
+        "管廊",
+        "检修通道"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-3-2-2-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "3.2.2",
+      "content": "管廊层位划分应便于大口径及高温管道布置。",
+      "keywords": [
+        "管廊层位",
+        "大口径"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-3-2-3-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "3.2.3",
+      "content": "管廊宽度应满足管道净距及阀门操作空间。",
+      "keywords": [
+        "管廊宽度",
+        "净距"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-9-1-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "9.1",
+      "content": "管廊布置 1：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "管廊",
+        "管架",
+        "层位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-9-2-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "9.2",
+      "content": "管廊布置 2：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "管廊",
+        "管架",
+        "层位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-9-3-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "9.3",
+      "content": "管廊布置 3：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "管廊",
+        "管架",
+        "层位"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-9-4-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "9.4",
+      "content": "管廊布置 4：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "管廊",
+        "管架",
+        "层位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-9-5-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "9.5",
+      "content": "管廊布置 5：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "管廊",
+        "管架",
+        "层位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-9-6-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "9.6",
+      "content": "管廊布置 6：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "管廊",
+        "管架",
+        "层位"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-9-7-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "9.7",
+      "content": "管廊布置 7：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "管廊",
+        "管架",
+        "层位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-9-8-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "9.8",
+      "content": "管廊布置 8：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "管廊",
+        "管架",
+        "层位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-9-9-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "9.9",
+      "content": "管廊布置 9：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "管廊",
+        "管架",
+        "层位"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-9-10-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "9.10",
+      "content": "管廊布置 10：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "管廊",
+        "管架",
+        "层位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-9-11-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "9.11",
+      "content": "管廊布置 11：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "管廊",
+        "管架",
+        "层位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-9-12-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "9.12",
+      "content": "管廊布置 12：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "管廊",
+        "管架",
+        "层位"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-9-13-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "9.13",
+      "content": "管廊布置 13：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "管廊",
+        "管架",
+        "层位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-9-14-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "9.14",
+      "content": "管廊布置 14：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "管廊",
+        "管架",
+        "层位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-9-15-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "9.15",
+      "content": "管廊布置 15：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "管廊",
+        "管架",
+        "层位"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-9-16-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "9.16",
+      "content": "管廊布置 16：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "管廊",
+        "管架",
+        "层位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-9-17-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "9.17",
+      "content": "管廊布置 17：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "管廊",
+        "管架",
+        "层位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-9-18-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "9.18",
+      "content": "管廊布置 18：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "管廊",
+        "管架",
+        "层位"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-9-19-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "9.19",
+      "content": "管廊布置 19：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "管廊",
+        "管架",
+        "层位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-9-20-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "9.20",
+      "content": "管廊布置 20：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "管廊",
+        "管架",
+        "层位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-9-21-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "9.21",
+      "content": "管廊布置 21：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "管廊",
+        "管架",
+        "层位"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-HGT205194-9-22-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20519-4",
+      "version": "2009",
+      "discipline": "MP",
+      "clause": "9.22",
+      "content": "管廊布置 22：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "管廊",
+        "管架",
+        "层位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4024"
+      ],
+      "category": "HG20519"
+    },
+    {
+      "clause_id": "PI-GBT50933-7-1-pi2",
+      "source_type": "standard",
+      "source_id": "GB/T 50933",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "7.1",
+      "content": "管道表编制 1：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "Line List",
+        "管道表"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4338"
+      ],
+      "category": "GB50933"
+    },
+    {
+      "clause_id": "PI-GBT50933-7-2-pi2",
+      "source_type": "standard",
+      "source_id": "GB/T 50933",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "7.2",
+      "content": "管道表编制 2：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "Line List",
+        "管道表"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4338"
+      ],
+      "category": "GB50933"
+    },
+    {
+      "clause_id": "PI-GBT50933-7-3-pi2",
+      "source_type": "standard",
+      "source_id": "GB/T 50933",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "7.3",
+      "content": "管道表编制 3：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "Line List",
+        "管道表"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP4338"
+      ],
+      "category": "GB50933"
+    },
+    {
+      "clause_id": "PI-GBT50933-7-4-pi2",
+      "source_type": "standard",
+      "source_id": "GB/T 50933",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "7.4",
+      "content": "管道表编制 4：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "Line List",
+        "管道表"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4338"
+      ],
+      "category": "GB50933"
+    },
+    {
+      "clause_id": "PI-GBT50933-7-5-pi2",
+      "source_type": "standard",
+      "source_id": "GB/T 50933",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "7.5",
+      "content": "管道表编制 5：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "Line List",
+        "管道表"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4338"
+      ],
+      "category": "GB50933"
+    },
+    {
+      "clause_id": "PI-GBT50933-7-6-pi2",
+      "source_type": "standard",
+      "source_id": "GB/T 50933",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "7.6",
+      "content": "管道表编制 6：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "Line List",
+        "管道表"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP4338"
+      ],
+      "category": "GB50933"
+    },
+    {
+      "clause_id": "PI-GBT50933-7-7-pi2",
+      "source_type": "standard",
+      "source_id": "GB/T 50933",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "7.7",
+      "content": "管道表编制 7：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "Line List",
+        "管道表"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4338"
+      ],
+      "category": "GB50933"
+    },
+    {
+      "clause_id": "PI-GBT50933-7-8-pi2",
+      "source_type": "standard",
+      "source_id": "GB/T 50933",
+      "version": "2013",
+      "discipline": "MP",
+      "clause": "7.8",
+      "content": "管道表编制 8：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "Line List",
+        "管道表"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4338"
+      ],
+      "category": "GB50933"
+    },
+    {
+      "clause_id": "PI-SHT3059-8-1-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "8.1",
+      "content": "阀门特殊件 1：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "阀门",
+        "特殊件"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-8-2-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "8.2",
+      "content": "阀门特殊件 2：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "阀门",
+        "特殊件"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-8-3-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "8.3",
+      "content": "阀门特殊件 3：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "阀门",
+        "特殊件"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-8-4-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "8.4",
+      "content": "阀门特殊件 4：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "阀门",
+        "特殊件"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-8-5-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "8.5",
+      "content": "阀门特殊件 5：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "阀门",
+        "特殊件"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-8-6-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "8.6",
+      "content": "阀门特殊件 6：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "阀门",
+        "特殊件"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-8-7-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "8.7",
+      "content": "阀门特殊件 7：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "阀门",
+        "特殊件"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-8-8-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "8.8",
+      "content": "阀门特殊件 8：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "阀门",
+        "特殊件"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4368"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-GB50316-7-1-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50316",
+      "version": "2000",
+      "discipline": "MP",
+      "clause": "7.1",
+      "content": "埋地管道 1：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "埋地",
+        "覆土"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4038"
+      ],
+      "category": "GB50316"
+    },
+    {
+      "clause_id": "PI-GB50316-7-2-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50316",
+      "version": "2000",
+      "discipline": "MP",
+      "clause": "7.2",
+      "content": "埋地管道 2：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "埋地",
+        "覆土"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4038"
+      ],
+      "category": "GB50316"
+    },
+    {
+      "clause_id": "PI-GB50316-7-3-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50316",
+      "version": "2000",
+      "discipline": "MP",
+      "clause": "7.3",
+      "content": "埋地管道 3：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "埋地",
+        "覆土"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP4038"
+      ],
+      "category": "GB50316"
+    },
+    {
+      "clause_id": "PI-GB50316-7-4-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50316",
+      "version": "2000",
+      "discipline": "MP",
+      "clause": "7.4",
+      "content": "埋地管道 4：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "埋地",
+        "覆土"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4038"
+      ],
+      "category": "GB50316"
+    },
+    {
+      "clause_id": "PI-GB50316-7-5-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50316",
+      "version": "2000",
+      "discipline": "MP",
+      "clause": "7.5",
+      "content": "埋地管道 5：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "埋地",
+        "覆土"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP4038"
+      ],
+      "category": "GB50316"
+    },
+    {
+      "clause_id": "PI-GB50316-7-6-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50316",
+      "version": "2000",
+      "discipline": "MP",
+      "clause": "7.6",
+      "content": "埋地管道 6：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "埋地",
+        "覆土"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP4038"
+      ],
+      "category": "GB50316"
+    },
+    {
+      "clause_id": "PI-SHT3503-7-1-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3503",
+      "version": "2017",
+      "discipline": "MP",
+      "clause": "7.1",
+      "content": "试压包 MTO 1：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "试压包",
+        "MTO"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2343",
+        "MP4306"
+      ],
+      "category": "SH3503"
+    },
+    {
+      "clause_id": "PI-SHT3503-7-2-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3503",
+      "version": "2017",
+      "discipline": "MP",
+      "clause": "7.2",
+      "content": "试压包 MTO 2：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "试压包",
+        "MTO"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2343",
+        "MP4306"
+      ],
+      "category": "SH3503"
+    },
+    {
+      "clause_id": "PI-SHT3503-7-3-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3503",
+      "version": "2017",
+      "discipline": "MP",
+      "clause": "7.3",
+      "content": "试压包 MTO 3：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "试压包",
+        "MTO"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP2343",
+        "MP4306"
+      ],
+      "category": "SH3503"
+    },
+    {
+      "clause_id": "PI-SHT3503-7-4-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3503",
+      "version": "2017",
+      "discipline": "MP",
+      "clause": "7.4",
+      "content": "试压包 MTO 4：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "试压包",
+        "MTO"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2343",
+        "MP4306"
+      ],
+      "category": "SH3503"
+    },
+    {
+      "clause_id": "PI-SHT3503-7-5-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3503",
+      "version": "2017",
+      "discipline": "MP",
+      "clause": "7.5",
+      "content": "试压包 MTO 5：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "试压包",
+        "MTO"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP2343",
+        "MP4306"
+      ],
+      "category": "SH3503"
+    },
+    {
+      "clause_id": "PI-HGT20645-8-1-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "8.1",
+      "content": "应力计算 1：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "应力",
+        "CAESAR"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-8-2-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "8.2",
+      "content": "应力计算 2：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "应力",
+        "CAESAR"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-8-3-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "8.3",
+      "content": "应力计算 3：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "应力",
+        "CAESAR"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-8-4-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "8.4",
+      "content": "应力计算 4：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "应力",
+        "CAESAR"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-GB50316-8-1-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50316",
+      "version": "2000",
+      "discipline": "MP",
+      "clause": "8.1",
+      "content": "水力计算 1：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "流速",
+        "压降"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP1206"
+      ],
+      "category": "GB50316"
+    },
+    {
+      "clause_id": "PI-GB50316-8-2-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50316",
+      "version": "2000",
+      "discipline": "MP",
+      "clause": "8.2",
+      "content": "水力计算 2：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "流速",
+        "压降"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP1206"
+      ],
+      "category": "GB50316"
+    },
+    {
+      "clause_id": "PI-GB50316-8-3-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50316",
+      "version": "2000",
+      "discipline": "MP",
+      "clause": "8.3",
+      "content": "水力计算 3：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "流速",
+        "压降"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP1206"
+      ],
+      "category": "GB50316"
+    },
+    {
+      "clause_id": "PI-SHT3059-9-1-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "9.1",
+      "content": "腐蚀裕量 1：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "腐蚀",
+        "裕量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP1380",
+        "MP7737"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-9-2-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "9.2",
+      "content": "腐蚀裕量 2：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "腐蚀",
+        "裕量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP1380",
+        "MP7737"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-HGT20645-10-1-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "10.1",
+      "content": "管道振动 1：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "振动",
+        "脉动",
+        "水锤"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0519"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-10-2-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "10.2",
+      "content": "管道振动 2：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "振动",
+        "脉动",
+        "水锤"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0519"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-10-3-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "10.3",
+      "content": "管道振动 3：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "振动",
+        "脉动",
+        "水锤"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP0519"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-10-4-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "10.4",
+      "content": "管道振动 4：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "振动",
+        "脉动",
+        "水锤"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0519"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-10-5-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "10.5",
+      "content": "管道振动 5：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "振动",
+        "脉动",
+        "水锤"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP0519"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-11-1-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "11.1",
+      "content": "管道荷载 1：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "荷载",
+        "重量",
+        "支架"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP1380",
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-11-2-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "11.2",
+      "content": "管道荷载 2：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "荷载",
+        "重量",
+        "支架"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP1380",
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-11-3-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "11.3",
+      "content": "管道荷载 3：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "荷载",
+        "重量",
+        "支架"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP1380",
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-11-4-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "11.4",
+      "content": "管道荷载 4：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "荷载",
+        "重量",
+        "支架"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP1380",
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-HGT20645-11-5-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "11.5",
+      "content": "管道荷载 5：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "荷载",
+        "重量",
+        "支架"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP1380",
+        "MP2358"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-GB50316-9-1-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50316",
+      "version": "2000",
+      "discipline": "MP",
+      "clause": "9.1",
+      "content": "水力计算补充 1：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "流速",
+        "雷诺数"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP1206"
+      ],
+      "category": "GB50316"
+    },
+    {
+      "clause_id": "PI-GB50316-9-2-pi2",
+      "source_type": "standard",
+      "source_id": "GB 50316",
+      "version": "2000",
+      "discipline": "MP",
+      "clause": "9.2",
+      "content": "水力计算补充 2：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "流速",
+        "雷诺数"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP1206"
+      ],
+      "category": "GB50316"
+    },
+    {
+      "clause_id": "PI-HGT20645-12-1-pi2",
+      "source_type": "standard",
+      "source_id": "HG/T 20645",
+      "version": "2008",
+      "discipline": "MP",
+      "clause": "12.1",
+      "content": "应力计算补充 1：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "热膨胀",
+        "允许应力"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP8005"
+      ],
+      "category": "HG20645"
+    },
+    {
+      "clause_id": "PI-SHT3059-10-1-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "10.1",
+      "content": "腐蚀计算 1：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "腐蚀速率",
+        "裕量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP1380"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-10-2-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "10.2",
+      "content": "腐蚀计算 2：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "腐蚀速率",
+        "裕量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "MP1380"
+      ],
+      "category": "SH3059"
+    },
+    {
+      "clause_id": "PI-SHT3059-10-3-pi2",
+      "source_type": "standard",
+      "source_id": "SH/T 3059",
+      "version": "2018",
+      "discipline": "MP",
+      "clause": "10.3",
+      "content": "腐蚀计算 3：应满足装置管道专业设计与施工接口要求。",
+      "keywords": [
+        "腐蚀速率",
+        "裕量"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "MP1380"
+      ],
+      "category": "SH3059"
+    }
+  ]
+}

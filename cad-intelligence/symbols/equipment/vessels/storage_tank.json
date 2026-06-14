@@ -1,0 +1,65 @@
+{
+  "symbol_id": "VESSEL-TANK-002",
+  "name": "常压储罐",
+  "name_en": "Storage Tank",
+  "standard": "HG/T 20559.2-1993",
+  "category": "vessels",
+  "description": "立式圆筒形常压储罐",
+  "parameters": {
+    "diameter": {
+      "type": "number",
+      "unit": "mm",
+      "description": "内径"
+    },
+    "height": {
+      "type": "number",
+      "unit": "mm",
+      "description": "罐壁高度"
+    },
+    "volume": {
+      "type": "number",
+      "unit": "m³",
+      "description": "公称容积"
+    },
+    "roof_type": {
+      "type": "string",
+      "description": "顶盖类型",
+      "examples": ["拱顶", "浮顶", "内浮顶"]
+    }
+  },
+  "connections": {
+    "inlet": {
+      "position": {"x": 20, "y": 15},
+      "direction": "right"
+    },
+    "outlet": {
+      "position": {"x": 20, "y": -15},
+      "direction": "right"
+    },
+    "drain": {
+      "position": {"x": 0, "y": -25},
+      "direction": "down"
+    }
+  },
+  "geometry": {
+    "components": [
+      {
+        "type": "rectangle",
+        "params": {"width": 45, "height": 40},
+        "description": "罐壁"
+      },
+      {
+        "type": "line",
+        "params": {"start": [-22, 20], "end": [22, 20]},
+        "description": "罐顶"
+      },
+      {
+        "type": "line",
+        "params": {"start": [-22, -20], "end": [22, -20]},
+        "description": "罐底"
+      }
+    ]
+  },
+  "related_standards": ["GB/T 50341", "API 650", "GB 50128"],
+  "typical_applications": ["原料储存", "产品储存", "中间储存"]
+}

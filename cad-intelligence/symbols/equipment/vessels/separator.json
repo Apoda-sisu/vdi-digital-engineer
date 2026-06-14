@@ -1,0 +1,67 @@
+{
+  "symbol_id": "VESSEL-SEPARATOR-001",
+  "name": "分离器",
+  "name_en": "Separator",
+  "standard": "HG/T 20559.2-1993",
+  "category": "vessels",
+  "description": "气液分离器",
+  "parameters": {
+    "diameter": {
+      "type": "number",
+      "unit": "mm",
+      "description": "内径"
+    },
+    "height": {
+      "type": "number",
+      "unit": "mm",
+      "description": "筒体高度"
+    },
+    "design_pressure": {
+      "type": "number",
+      "unit": "MPa",
+      "description": "设计压力"
+    }
+  },
+  "connections": {
+    "inlet": {
+      "position": {"x": -20, "y": 10},
+      "direction": "left"
+    },
+    "gas_outlet": {
+      "position": {"x": 0, "y": 30},
+      "direction": "up"
+    },
+    "liquid_outlet": {
+      "position": {"x": 0, "y": -30},
+      "direction": "down"
+    }
+  },
+  "geometry": {
+    "components": [
+      {
+        "type": "rectangle",
+        "params": {"width": 36, "height": 50},
+        "description": "筒体"
+      },
+      {
+        "type": "circle",
+        "params": {"radius": 18},
+        "position": {"x": 0, "y": 25},
+        "description": "上封头"
+      },
+      {
+        "type": "circle",
+        "params": {"radius": 18},
+        "position": {"x": 0, "y": -25},
+        "description": "下封头"
+      },
+      {
+        "type": "line",
+        "params": {"start": [-10, 0], "end": [10, 0]},
+        "description": "挡板"
+      }
+    ]
+  },
+  "related_standards": ["GB/T 150", "API 12J", "HG/T 20570"],
+  "typical_applications": ["气液分离", "油水分离", "闪蒸"]
+}

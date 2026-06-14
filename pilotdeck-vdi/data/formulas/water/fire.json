@@ -1,14 +1,15 @@
 {
   "file": "water/fire.json",
-  "discipline": "water",
+  "discipline": "CI",
   "category": "fire",
   "formula_count": 6,
   "formulas": [
     {
       "formula_id": "WA-FIR-001",
+      "vdi_formula_id": "WA-FIR-001",
       "name": "消防水池有效容积",
       "name_en": "Fire Pool Effective Volume",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "fire/fire_pool",
       "type": "exact",
       "equation_text": "V = (Qf - Qb) * T",
@@ -16,22 +17,65 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"op": "sub", "args": [{"var": "Qf"}, {"var": "Qb"}]},
-          {"var": "T"}
+          {
+            "op": "sub",
+            "args": [
+              {
+                "var": "Qf"
+              },
+              {
+                "var": "Qb"
+              }
+            ]
+          },
+          {
+            "var": "T"
+          }
         ]
       },
       "variables": [
-        {"symbol": "V", "name": "消防水池有效容积", "unit": "m3", "role": "output"},
-        {"symbol": "Qf", "name": "消防用水量", "unit": "m3/h", "role": "input",
-          "desc": "室内外消防用水量之和"},
-        {"symbol": "Qb", "name": "补水量", "unit": "m3/h", "role": "input",
-          "desc": "火灾延续时间内的连续补水量，两路供水时可扣除"},
-        {"symbol": "T", "name": "火灾延续时间", "unit": "h", "role": "input",
-          "desc": "根据建筑类型确定，一般取2-3h"}
+        {
+          "symbol": "V",
+          "name": "消防水池有效容积",
+          "unit": "m3",
+          "role": "output"
+        },
+        {
+          "symbol": "Qf",
+          "name": "消防用水量",
+          "unit": "m3/h",
+          "role": "input",
+          "desc": "室内外消防用水量之和"
+        },
+        {
+          "symbol": "Qb",
+          "name": "补水量",
+          "unit": "m3/h",
+          "role": "input",
+          "desc": "火灾延续时间内的连续补水量，两路供水时可扣除"
+        },
+        {
+          "symbol": "T",
+          "name": "火灾延续时间",
+          "unit": "h",
+          "role": "input",
+          "desc": "根据建筑类型确定，一般取2-3h"
+        }
       ],
-      "source": {"standard_id": "GB 50974-2014", "clause": "5.3.1"},
-      "tags": ["消防水池", "有效容积", "消防用水"],
-      "keywords": ["消防水池容积", "消防水池计算", "火灾延续时间"],
+      "source": {
+        "standard_id": "GB 50974-2014",
+        "clause": "5.3.1"
+      },
+      "tags": [
+        "消防水池",
+        "有效容积",
+        "消防用水"
+      ],
+      "keywords": [
+        "消防水池容积",
+        "消防水池计算",
+        "火灾延续时间"
+      ],
       "precision": "精确",
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",
@@ -39,24 +83,61 @@
     },
     {
       "formula_id": "WA-FIR-002",
+      "vdi_formula_id": "WA-FIR-002",
       "name": "消火栓系统设计流量",
       "name_en": "Hydrant System Design Flow",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "fire/hydrant",
       "type": "lookup",
       "equation_text": "Qx = n * qx",
       "equation_latex": "Q_x = n \\cdot q_x",
-      "equation_ast": {"op": "mul", "args": [{"var": "n"}, {"var": "qx"}]},
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {
+            "var": "n"
+          },
+          {
+            "var": "qx"
+          }
+        ]
+      },
       "variables": [
-        {"symbol": "Qx", "name": "消火栓系统设计流量", "unit": "L/s", "role": "output"},
-        {"symbol": "n", "name": "同时使用水枪数", "unit": "支", "role": "input",
-          "desc": "根据建筑类型和高度查规范表"},
-        {"symbol": "qx", "name": "每支水枪流量", "unit": "L/s", "role": "input",
-          "desc": "一般取5L/s（DN65水枪）"}
+        {
+          "symbol": "Qx",
+          "name": "消火栓系统设计流量",
+          "unit": "L/s",
+          "role": "output"
+        },
+        {
+          "symbol": "n",
+          "name": "同时使用水枪数",
+          "unit": "支",
+          "role": "input",
+          "desc": "根据建筑类型和高度查规范表"
+        },
+        {
+          "symbol": "qx",
+          "name": "每支水枪流量",
+          "unit": "L/s",
+          "role": "input",
+          "desc": "一般取5L/s（DN65水枪）"
+        }
       ],
-      "source": {"standard_id": "GB 50974-2014", "clause": "5.1.1"},
-      "tags": ["消火栓", "设计流量", "消防"],
-      "keywords": ["消火栓流量", "水枪流量", "同时使用"],
+      "source": {
+        "standard_id": "GB 50974-2014",
+        "clause": "5.1.1"
+      },
+      "tags": [
+        "消火栓",
+        "设计流量",
+        "消防"
+      ],
+      "keywords": [
+        "消火栓流量",
+        "水枪流量",
+        "同时使用"
+      ],
       "precision": "精确",
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",
@@ -64,35 +145,110 @@
     },
     {
       "formula_id": "WA-FIR-003",
+      "vdi_formula_id": "WA-FIR-003",
       "name": "自动喷水灭火系统设计流量",
       "name_en": "Sprinkler System Design Flow",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "fire/sprinkler",
       "type": "exact",
       "equation_text": "Q = q * A / 60",
       "equation_latex": "Q = \\frac{q \\cdot A}{60}",
       "equation_ast": {
         "op": "div",
-        "num": {"op": "mul", "args": [{"var": "q"}, {"var": "A"}]},
-        "den": {"const": 60}
+        "num": {
+          "op": "mul",
+          "args": [
+            {
+              "var": "q"
+            },
+            {
+              "var": "A"
+            }
+          ]
+        },
+        "den": {
+          "const": 60
+        }
       },
       "variables": [
-        {"symbol": "Q", "name": "系统设计流量", "unit": "L/s", "role": "output", "desc": "自动喷水灭火系统设计流量"},
-        {"symbol": "q", "name": "喷水强度", "unit": "L/(min·m²)", "role": "input", "constraints": {"min": 4, "max": 20}, "desc": "根据危险等级确定的喷水强度",
-          "look_up": {"type": "hazard_class", "table_ref": "TBL-SPK-001", "default": 6}},
-        {"symbol": "A", "name": "作用面积", "unit": "m²", "role": "input", "constraints": {"min": 100, "max": 500}, "desc": "一次灭火的作用面积",
-          "look_up": {"type": "hazard_class", "table_ref": "TBL-SPK-002", "default": 160}}
+        {
+          "symbol": "Q",
+          "name": "系统设计流量",
+          "unit": "L/s",
+          "role": "output",
+          "desc": "自动喷水灭火系统设计流量"
+        },
+        {
+          "symbol": "q",
+          "name": "喷水强度",
+          "unit": "L/(min·m²)",
+          "role": "input",
+          "constraints": {
+            "min": 4,
+            "max": 20
+          },
+          "desc": "根据危险等级确定的喷水强度",
+          "look_up": {
+            "type": "hazard_class",
+            "table_ref": "TBL-SPK-001",
+            "default": 6
+          }
+        },
+        {
+          "symbol": "A",
+          "name": "作用面积",
+          "unit": "m²",
+          "role": "input",
+          "constraints": {
+            "min": 100,
+            "max": 500
+          },
+          "desc": "一次灭火的作用面积",
+          "look_up": {
+            "type": "hazard_class",
+            "table_ref": "TBL-SPK-002",
+            "default": 160
+          }
+        }
       ],
-      "source": {"standard_id": "GB 50084-2017", "clause": "5.0.1", "note": "自动喷水灭火系统设计规范"},
+      "source": {
+        "standard_id": "GB 50084-2017",
+        "clause": "5.0.1",
+        "note": "自动喷水灭火系统设计规范"
+      },
       "applicable_scope": {
-        "hazard_classes": ["轻危险级", "中危险级I/II", "严重危险级I/II"],
-        "system_types": ["湿式", "干式", "预作用"]
+        "hazard_classes": [
+          "轻危险级",
+          "中危险级I/II",
+          "严重危险级I/II"
+        ],
+        "system_types": [
+          "湿式",
+          "干式",
+          "预作用"
+        ]
       },
       "related_formulas": [
-        {"formula_id": "WA-FIR-001", "relation": "complement", "note": "消防水池容积"}
+        {
+          "formula_id": "WA-FIR-001",
+          "vdi_formula_id": "WA-FIR-001",
+          "relation": "complement",
+          "note": "消防水池容积"
+        }
       ],
-      "tags": ["自动喷水", "喷淋系统", "设计流量", "喷水强度"],
-      "keywords": ["喷淋流量", "自动喷水", "喷水强度", "作用面积", "喷淋设计"],
+      "tags": [
+        "自动喷水",
+        "喷淋系统",
+        "设计流量",
+        "喷水强度"
+      ],
+      "keywords": [
+        "喷淋流量",
+        "自动喷水",
+        "喷水强度",
+        "作用面积",
+        "喷淋设计"
+      ],
       "precision": 0.1,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -100,31 +256,111 @@
     },
     {
       "formula_id": "WA-FIR-004",
+      "vdi_formula_id": "WA-FIR-004",
       "name": "消防水泵扬程",
       "name_en": "Fire Pump Head",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "fire/pump",
       "type": "exact",
       "equation_text": "H = Hg + Hf + Hl + Hr",
       "equation_latex": "H = H_g + H_f + H_l + H_r",
       "equation_ast": {
         "op": "add",
-        "args": [{"var": "Hg"}, {"var": "Hf"}, {"var": "Hl"}, {"var": "Hr"}]
+        "args": [
+          {
+            "var": "Hg"
+          },
+          {
+            "var": "Hf"
+          },
+          {
+            "var": "Hl"
+          },
+          {
+            "var": "Hr"
+          }
+        ]
       },
       "variables": [
-        {"symbol": "H", "name": "消防水泵扬程", "unit": "m", "role": "output", "desc": "消防水泵所需扬程"},
-        {"symbol": "Hg", "name": "几何高差", "unit": "m", "role": "input", "constraints": {"min": 0}, "desc": "消防水池最低水位至最不利点高差"},
-        {"symbol": "Hf", "name": "管道沿程损失", "unit": "m", "role": "input", "constraints": {"min": 0}, "desc": "管网沿程水头损失"},
-        {"symbol": "Hl", "name": "局部损失", "unit": "m", "role": "input", "constraints": {"min": 0}, "desc": "管件阀门局部损失"},
-        {"symbol": "Hr", "name": "最不利点水压", "unit": "m", "role": "input", "constraints": {"min": 0}, "desc": "最不利点灭火设备所需最低压力"}
+        {
+          "symbol": "H",
+          "name": "消防水泵扬程",
+          "unit": "m",
+          "role": "output",
+          "desc": "消防水泵所需扬程"
+        },
+        {
+          "symbol": "Hg",
+          "name": "几何高差",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "消防水池最低水位至最不利点高差"
+        },
+        {
+          "symbol": "Hf",
+          "name": "管道沿程损失",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "管网沿程水头损失"
+        },
+        {
+          "symbol": "Hl",
+          "name": "局部损失",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "管件阀门局部损失"
+        },
+        {
+          "symbol": "Hr",
+          "name": "最不利点水压",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "最不利点灭火设备所需最低压力"
+        }
       ],
-      "source": {"standard_id": "GB 50974-2014", "clause": "5.1.6", "note": "消防水泵扬程确定"},
+      "source": {
+        "standard_id": "GB 50974-2014",
+        "clause": "5.1.6",
+        "note": "消防水泵扬程确定"
+      },
       "related_formulas": [
-        {"formula_id": "WA-HYD-015", "relation": "alternative", "note": "生活水泵扬程"},
-        {"formula_id": "WA-EQ-001", "relation": "complement", "note": "水泵功率计算"}
+        {
+          "formula_id": "WA-HYD-013",
+          "vdi_formula_id": "WA-HYD-015",
+          "relation": "alternative",
+          "note": "生活水泵扬程"
+        },
+        {
+          "formula_id": "WA-EQ-001",
+          "vdi_formula_id": "WA-EQ-001",
+          "relation": "complement",
+          "note": "水泵功率计算"
+        }
       ],
-      "tags": ["消防泵", "扬程", "消防给水", "水泵选型"],
-      "keywords": ["消防泵扬程", "消防水泵", "扬程计算", "消防给水"],
+      "tags": [
+        "消防泵",
+        "扬程",
+        "消防给水",
+        "水泵选型"
+      ],
+      "keywords": [
+        "消防泵扬程",
+        "消防水泵",
+        "扬程计算",
+        "消防给水"
+      ],
       "precision": 0.1,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -132,28 +368,68 @@
     },
     {
       "formula_id": "WA-FIR-005",
+      "vdi_formula_id": "WA-FIR-005",
       "name": "稳压泵流量",
       "name_en": "Jockey Pump Flow",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "fire/jockey_pump",
       "type": "exact",
       "equation_text": "Qs = Ql + 0.5",
       "equation_latex": "Q_s = Q_l + 0.5",
       "equation_ast": {
         "op": "add",
-        "args": [{"var": "Ql"}, {"const": 0.5}]
+        "args": [
+          {
+            "var": "Ql"
+          },
+          {
+            "const": 0.5
+          }
+        ]
       },
       "variables": [
-        {"symbol": "Qs", "name": "稳压泵流量", "unit": "L/s", "role": "output", "desc": "稳压泵设计流量"},
-        {"symbol": "Ql", "name": "管网漏水量", "unit": "L/s", "role": "input", "constraints": {"min": 0, "max": 1}, "desc": "管网正常漏水量（一般取0.1-0.5 L/s）"}
+        {
+          "symbol": "Qs",
+          "name": "稳压泵流量",
+          "unit": "L/s",
+          "role": "output",
+          "desc": "稳压泵设计流量"
+        },
+        {
+          "symbol": "Ql",
+          "name": "管网漏水量",
+          "unit": "L/s",
+          "role": "input",
+          "constraints": {
+            "min": 0,
+            "max": 1
+          },
+          "desc": "管网正常漏水量（一般取0.1-0.5 L/s）"
+        }
       ],
-      "source": {"standard_id": "GB 50974-2014", "clause": "5.3.4", "note": "稳压泵设置要求"},
+      "source": {
+        "standard_id": "GB 50974-2014",
+        "clause": "5.3.4",
+        "note": "稳压泵设置要求"
+      },
       "applicable_scope": {
-        "conditions": ["临时高压系统", "稳压罐设置场所"]
+        "conditions": [
+          "临时高压系统",
+          "稳压罐设置场所"
+        ]
       },
       "related_formulas": [],
-      "tags": ["稳压泵", "消防稳压", "管网保压"],
-      "keywords": ["稳压泵", "稳压流量", "消防稳压", "管网保压"],
+      "tags": [
+        "稳压泵",
+        "消防稳压",
+        "管网保压"
+      ],
+      "keywords": [
+        "稳压泵",
+        "稳压流量",
+        "消防稳压",
+        "管网保压"
+      ],
       "precision": 0.1,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",
@@ -161,28 +437,104 @@
     },
     {
       "formula_id": "WA-FIR-006",
+      "vdi_formula_id": "WA-FIR-006",
       "name": "泡沫液储罐容积",
       "name_en": "Foam Concentrate Tank Volume",
-      "discipline": "water",
+      "discipline": "CI",
       "category": "fire/foam",
       "type": "exact",
       "equation_text": "Vf = Q * C * T * K",
       "equation_latex": "V_f = Q \\cdot C \\cdot T \\cdot K",
       "equation_ast": {
         "op": "mul",
-        "args": [{"var": "Q"}, {"var": "C"}, {"var": "T"}, {"var": "K"}]
+        "args": [
+          {
+            "var": "Q"
+          },
+          {
+            "var": "C"
+          },
+          {
+            "var": "T"
+          },
+          {
+            "var": "K"
+          }
+        ]
       },
       "variables": [
-        {"symbol": "Vf", "name": "泡沫液储罐容积", "unit": "m³", "role": "output", "desc": "泡沫液储罐最小容积"},
-        {"symbol": "Q", "name": "泡沫混合液流量", "unit": "L/s", "role": "input", "constraints": {"min": 1}, "desc": "泡沫混合液设计流量"},
-        {"symbol": "C", "name": "泡沫液混合比", "unit": "%", "role": "input", "constraints": {"min": 1, "max": 10}, "default": 3, "desc": "泡沫液与水的混合比例"},
-        {"symbol": "T", "name": "供给时间", "unit": "min", "role": "input", "constraints": {"min": 10, "max": 60}, "default": 30, "desc": "泡沫液供给持续时间"},
-        {"symbol": "K", "name": "安全系数", "unit": "-", "role": "input", "constraints": {"min": 1.0, "max": 1.5}, "default": 1.1, "desc": "安全储备系数"}
+        {
+          "symbol": "Vf",
+          "name": "泡沫液储罐容积",
+          "unit": "m³",
+          "role": "output",
+          "desc": "泡沫液储罐最小容积"
+        },
+        {
+          "symbol": "Q",
+          "name": "泡沫混合液流量",
+          "unit": "L/s",
+          "role": "input",
+          "constraints": {
+            "min": 1
+          },
+          "desc": "泡沫混合液设计流量"
+        },
+        {
+          "symbol": "C",
+          "name": "泡沫液混合比",
+          "unit": "%",
+          "role": "input",
+          "constraints": {
+            "min": 1,
+            "max": 10
+          },
+          "default": 3,
+          "desc": "泡沫液与水的混合比例"
+        },
+        {
+          "symbol": "T",
+          "name": "供给时间",
+          "unit": "min",
+          "role": "input",
+          "constraints": {
+            "min": 10,
+            "max": 60
+          },
+          "default": 30,
+          "desc": "泡沫液供给持续时间"
+        },
+        {
+          "symbol": "K",
+          "name": "安全系数",
+          "unit": "-",
+          "role": "input",
+          "constraints": {
+            "min": 1,
+            "max": 1.5
+          },
+          "default": 1.1,
+          "desc": "安全储备系数"
+        }
       ],
-      "source": {"standard_id": "GB 50151-2021", "clause": "4.2.2", "note": "泡沫灭火系统设计规范"},
+      "source": {
+        "standard_id": "GB 50151-2021",
+        "clause": "4.2.2",
+        "note": "泡沫灭火系统设计规范"
+      },
       "related_formulas": [],
-      "tags": ["泡沫灭火", "泡沫液", "储罐容积", "消防设计"],
-      "keywords": ["泡沫液储罐", "泡沫灭火", "混合比", "泡沫液容积"],
+      "tags": [
+        "泡沫灭火",
+        "泡沫液",
+        "储罐容积",
+        "消防设计"
+      ],
+      "keywords": [
+        "泡沫液储罐",
+        "泡沫灭火",
+        "混合比",
+        "泡沫液容积"
+      ],
       "precision": 0.01,
       "created_at": "2026-06-05T00:00:00Z",
       "updated_at": "2026-06-05T00:00:00Z",

@@ -27,6 +27,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { SKILLS_REGISTRY } from "../config/skills-layout.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "../..");
@@ -35,7 +36,7 @@ const ROOT = path.resolve(__dirname, "../..");
 // 路径配置
 // ============================================================
 const PATHS = {
-  skillsIndex: path.join(ROOT, "skills/index.json"),
+  skillsIndex: SKILLS_REGISTRY,
   mcpDir: path.join(ROOT, "pilotdeck-vdi/mcp"),
   formulasDir: path.join(ROOT, "pilotdeck-vdi/data/formulas"),
   tablesFile: path.join(ROOT, "pilotdeck-vdi/data/formulas/tables.json"),

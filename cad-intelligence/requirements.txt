@@ -1,0 +1,28 @@
+# CAD Intelligence 2.0 依赖文件
+
+# 核心依赖
+click>=8.0.0
+pydantic>=2.0.0
+pyyaml>=6.0
+
+# AI/LLM 依赖
+openai>=1.0.0
+httpx>=0.24.0
+
+# 数据处理
+numpy>=1.24.0
+
+# 测试依赖
+pytest>=7.0.0
+pytest-cov>=4.0.0
+pytest-asyncio>=0.21.0
+
+# 开发依赖
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.0.0
+isort>=5.12.0
+
+# 文档依赖
+sphinx>=7.0.0
+sphinx-rtd-theme>=1.0.0

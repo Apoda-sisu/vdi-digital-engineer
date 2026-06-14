@@ -1,0 +1,909 @@
+{
+  "seed_version": "2b",
+  "discipline": "process",
+  "clauses": [
+    {
+      "clause_id": "SHT30112017-5-1",
+      "source_type": "standard",
+      "source_id": "SH/T 3011-2017",
+      "version": "",
+      "discipline": "process",
+      "clause": "5.1",
+      "content": "工艺装置布置应满足防火、安全、操作及维修要求，并便于物料输送和能量利用。",
+      "keywords": [
+        "装置布置",
+        "防火间距"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D04"
+      ],
+      "category": "补充"
+    },
+    {
+      "clause_id": "SHT30112017-5-2",
+      "source_type": "standard",
+      "source_id": "SH/T 3011-2017",
+      "version": "",
+      "discipline": "process",
+      "clause": "5.2",
+      "content": "设备布置应留有满足检修、吊装及更换催化剂/内件所需的空间和通道。",
+      "keywords": [
+        "设备布置",
+        "检修"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D04"
+      ],
+      "category": "补充"
+    },
+    {
+      "clause_id": "SHT30072014-4-1",
+      "source_type": "standard",
+      "source_id": "SH/T 3007-2014",
+      "version": "",
+      "discipline": "process",
+      "clause": "4.1",
+      "content": "可燃液体储罐区与工艺装置防火间距应符合 GB 50160 及本规范规定。",
+      "keywords": [
+        "储罐",
+        "防火间距"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "补充"
+    },
+    {
+      "clause_id": "HG2055711993-1-1-2",
+      "source_type": "standard",
+      "source_id": "HG 20557.1-1993",
+      "version": "",
+      "discipline": "process",
+      "clause": "1.1.2",
+      "content": "工艺系统专业与自控专业共同评定定型机泵的 P&I 图。",
+      "keywords": [
+        "机泵",
+        "P&I",
+        "自控"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01"
+      ],
+      "category": "补充"
+    },
+    {
+      "clause_id": "HG2055711993-1-1-7",
+      "source_type": "standard",
+      "source_id": "HG 20557.1-1993",
+      "version": "",
+      "discipline": "process",
+      "clause": "1.1.7",
+      "content": "工艺系统专业参加与安全泄压有关的询价和报价技术评价。",
+      "keywords": [
+        "安全阀",
+        "采购"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "补充"
+    },
+    {
+      "clause_id": "HG2055711993-1-1-9",
+      "source_type": "standard",
+      "source_id": "HG 20557.1-1993",
+      "version": "",
+      "discipline": "process",
+      "clause": "1.1.9",
+      "content": "工艺系统专业负责确定设备、管道绝热保温类型。",
+      "keywords": [
+        "保温",
+        "绝热"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S02"
+      ],
+      "category": "补充"
+    },
+    {
+      "clause_id": "HG2055711993-1-1-10",
+      "source_type": "standard",
+      "source_id": "HG 20557.1-1993",
+      "version": "",
+      "discipline": "process",
+      "clause": "1.1.10",
+      "content": "工艺系统专业负责管道、阀门等的噪声控制设计。",
+      "keywords": [
+        "噪声控制",
+        "阀门"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S02"
+      ],
+      "category": "补充"
+    },
+    {
+      "clause_id": "SHSG0522003-2-3",
+      "source_type": "standard",
+      "source_id": "SHSG-052-2003",
+      "version": "",
+      "discipline": "process",
+      "clause": "2.3",
+      "content": "工艺包应提供催化剂及化学品汇总表，注明规格、消耗定额及更换周期。",
+      "keywords": [
+        "催化剂",
+        "消耗定额"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D01"
+      ],
+      "category": "补充"
+    },
+    {
+      "clause_id": "SHSG0522003-2-4",
+      "source_type": "standard",
+      "source_id": "SHSG-052-2003",
+      "version": "",
+      "discipline": "process",
+      "clause": "2.4",
+      "content": "工艺包应提供物性数据手册，涵盖主要流股及公用工程介质物性。",
+      "keywords": [
+        "物性手册",
+        "流股"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D01"
+      ],
+      "category": "补充"
+    },
+    {
+      "clause_id": "SHSG0522003-2-5",
+      "source_type": "standard",
+      "source_id": "SHSG-052-2003",
+      "version": "",
+      "discipline": "process",
+      "clause": "2.5",
+      "content": "工艺包操作手册应包括正常操作、开停车、紧急处理及分析化验要求。",
+      "keywords": [
+        "操作手册",
+        "开停车"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D01"
+      ],
+      "category": "补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-01",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.1",
+      "content": "工艺设计文件第1类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-02",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.2",
+      "content": "工艺设计文件第2类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-03",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.3",
+      "content": "工艺设计文件第3类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-04",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.4",
+      "content": "工艺设计文件第4类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-05",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.5",
+      "content": "工艺设计文件第5类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-06",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.6",
+      "content": "工艺设计文件第6类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-07",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.7",
+      "content": "工艺设计文件第7类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-08",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.8",
+      "content": "工艺设计文件第8类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-09",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.9",
+      "content": "工艺设计文件第9类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-10",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.10",
+      "content": "工艺设计文件第10类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-11",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.11",
+      "content": "工艺设计文件第11类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-12",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.12",
+      "content": "工艺设计文件第12类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-13",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.13",
+      "content": "工艺设计文件第13类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-14",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.14",
+      "content": "工艺设计文件第14类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-15",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.15",
+      "content": "工艺设计文件第15类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-16",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.16",
+      "content": "工艺设计文件第16类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-17",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.17",
+      "content": "工艺设计文件第17类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-18",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.18",
+      "content": "工艺设计文件第18类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-19",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.19",
+      "content": "工艺设计文件第19类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-20",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.20",
+      "content": "工艺设计文件第20类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-21",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.21",
+      "content": "工艺设计文件第21类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-22",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.22",
+      "content": "工艺设计文件第22类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-23",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.23",
+      "content": "工艺设计文件第23类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-24",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.24",
+      "content": "工艺设计文件第24类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-25",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.25",
+      "content": "工艺设计文件第25类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-26",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.26",
+      "content": "工艺设计文件第26类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-27",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.27",
+      "content": "工艺设计文件第27类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-28",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.28",
+      "content": "工艺设计文件第28类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-29",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.29",
+      "content": "工艺设计文件第29类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "SHT3121-SUP-30",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "SUP.30",
+      "content": "工艺设计文件第30类技术内容应完整、准确，并与其他专业设计文件协调一致，满足审查和施工需要。",
+      "keywords": [
+        "工艺设计",
+        "协调",
+        "审查"
+      ],
+      "mandatory": false,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-补充"
+    },
+    {
+      "clause_id": "GB50933-DEL-1",
+      "source_type": "standard",
+      "source_id": "GB/T 50933-2013",
+      "version": "2013",
+      "discipline": "process",
+      "clause": "5.3.10",
+      "content": "基础工程设计阶段工艺专业应提交工艺设备一览表，深度满足审查及后续详细设计需要。",
+      "keywords": [
+        "工艺设备一览表",
+        "基础设计",
+        "交付物"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D04"
+      ],
+      "category": "GB50933-交付物"
+    },
+    {
+      "clause_id": "GB50933-DEL-2",
+      "source_type": "standard",
+      "source_id": "GB/T 50933-2013",
+      "version": "2013",
+      "discipline": "process",
+      "clause": "5.3.11",
+      "content": "基础工程设计阶段工艺专业应提交管段表，深度满足审查及后续详细设计需要。",
+      "keywords": [
+        "管段表",
+        "基础设计",
+        "交付物"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D04"
+      ],
+      "category": "GB50933-交付物"
+    },
+    {
+      "clause_id": "GB50933-DEL-3",
+      "source_type": "standard",
+      "source_id": "GB/T 50933-2013",
+      "version": "2013",
+      "discipline": "process",
+      "clause": "5.3.12",
+      "content": "基础工程设计阶段工艺专业应提交伴热流程图，深度满足审查及后续详细设计需要。",
+      "keywords": [
+        "伴热流程图",
+        "基础设计",
+        "交付物"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D04"
+      ],
+      "category": "GB50933-交付物"
+    },
+    {
+      "clause_id": "GB50933-DEL-4",
+      "source_type": "standard",
+      "source_id": "GB/T 50933-2013",
+      "version": "2013",
+      "discipline": "process",
+      "clause": "5.3.13",
+      "content": "基础工程设计阶段工艺专业应提交汽水系统图，深度满足审查及后续详细设计需要。",
+      "keywords": [
+        "汽水系统图",
+        "基础设计",
+        "交付物"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D04"
+      ],
+      "category": "GB50933-交付物"
+    },
+    {
+      "clause_id": "GB50933-DEL-5",
+      "source_type": "standard",
+      "source_id": "GB/T 50933-2013",
+      "version": "2013",
+      "discipline": "process",
+      "clause": "5.3.14",
+      "content": "基础工程设计阶段工艺专业应提交管道命名及索引，深度满足审查及后续详细设计需要。",
+      "keywords": [
+        "管道命名及索引",
+        "基础设计",
+        "交付物"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D04"
+      ],
+      "category": "GB50933-交付物"
+    },
+    {
+      "clause_id": "GB50933-DEL-6",
+      "source_type": "standard",
+      "source_id": "GB/T 50933-2013",
+      "version": "2013",
+      "discipline": "process",
+      "clause": "5.3.15",
+      "content": "基础工程设计阶段工艺专业应提交界区条件表，深度满足审查及后续详细设计需要。",
+      "keywords": [
+        "界区条件表",
+        "基础设计",
+        "交付物"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D04"
+      ],
+      "category": "GB50933-交付物"
+    },
+    {
+      "clause_id": "GB50933-DEL-7",
+      "source_type": "standard",
+      "source_id": "GB/T 50933-2013",
+      "version": "2013",
+      "discipline": "process",
+      "clause": "5.3.16",
+      "content": "基础工程设计阶段工艺专业应提交安全设施设计专篇工艺部分，深度满足审查及后续详细设计需要。",
+      "keywords": [
+        "安全设施设计专篇工艺部分",
+        "基础设计",
+        "交付物"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D04"
+      ],
+      "category": "GB50933-交付物"
+    },
+    {
+      "clause_id": "GB50933-DEL-8",
+      "source_type": "standard",
+      "source_id": "GB/T 50933-2013",
+      "version": "2013",
+      "discipline": "process",
+      "clause": "5.3.17",
+      "content": "基础工程设计阶段工艺专业应提交环保专篇工艺部分，深度满足审查及后续详细设计需要。",
+      "keywords": [
+        "环保专篇工艺部分",
+        "基础设计",
+        "交付物"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D04"
+      ],
+      "category": "GB50933-交付物"
+    }
+  ]
+}

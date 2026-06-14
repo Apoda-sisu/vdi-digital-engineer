@@ -251,7 +251,7 @@ const doc = new Document({
         ["层级", "选型", "说明"],
         [
           ["智能体 OS", "PilotDeck（开源）", "WorkSpace 隔离、MCP 原生、白盒记忆、智能路由"],
-          ["岗位定义", "Agent Skills（skills/vdi-*）", "一专业一 Skill，内含五角色工作流"],
+          ["岗位定义", "Agent Skills（workspaces/{组}/skills/vdi-*）", "一专业一 Skill，内含五角色工作流"],
           ["知识检索", "vdi-knowledge MCP", "YAML 知识库 → JSON 索引，禁止无工具编造条款"],
           ["质量规则", "vdi-rules MCP（建设）", "红线 + DisciplineOutput 契约 + 三审闸门"],
           ["协同编排", "vdi-events + vdi-orchestrator（建设）", "承接 agent-routing.yaml"],

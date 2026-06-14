@@ -1,0 +1,11 @@
+{
+  "passed": 56,
+  "warnings": 1,
+  "failures": 0,
+  "details": {
+    "issues": [],
+    "warnings": [
+      "INDEX 可能未更新 Sprint4"
+    ]
+  }
+}

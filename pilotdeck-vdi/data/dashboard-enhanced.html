@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VDI 数字工程师 - 智能设计平台</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -706,6 +707,175 @@
         .modal-close:hover {
             background: #e5e7eb;
         }
+
+        /* Skill 思维导图 */
+        .mindmap-section {
+            margin-bottom: 30px;
+        }
+
+        .mindmap-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .mindmap-tab {
+            padding: 8px 16px;
+            border: 2px solid var(--border);
+            border-radius: 20px;
+            background: white;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+
+        .mindmap-tab.active {
+            border-color: var(--primary);
+            background: #eef2ff;
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        .code-badge {
+            display: inline-block;
+            font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+            font-size: 0.75rem;
+            background: #eef2ff;
+            color: #4338ca;
+            padding: 2px 8px;
+            border-radius: 6px;
+            margin-right: 6px;
+        }
+
+        .mindmap-l3-table .code-cell {
+            font-family: ui-monospace, monospace;
+            font-size: 0.8rem;
+            color: #4338ca;
+        }
+
+        .mindmap-panel {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 20px;
+            overflow-x: auto;
+            min-height: 320px;
+        }
+
+        .mindmap-panel .mermaid {
+            display: flex;
+            justify-content: center;
+        }
+
+        .mindmap-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .mindmap-meta span {
+            background: white;
+            padding: 4px 10px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .mindmap-l3-panel {
+            margin-top: 16px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 16px 20px;
+        }
+
+        .mindmap-l3-panel:empty {
+            display: none;
+        }
+
+        .mindmap-l3-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+        }
+
+        .mindmap-l3-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        .mindmap-l3-table th {
+            text-align: left;
+            padding: 10px 12px;
+            background: #f1f5f9;
+            color: var(--gray);
+            font-weight: 600;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .mindmap-l3-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #eef2f7;
+            vertical-align: top;
+        }
+
+        .mindmap-l3-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .mindmap-l3-table td:first-child {
+            width: 28%;
+            font-weight: 500;
+            color: #334155;
+            white-space: nowrap;
+        }
+
+        .l3-tag {
+            display: inline-block;
+            background: #ede9fe;
+            color: #5b21b6;
+            padding: 3px 10px;
+            border-radius: 12px;
+            margin: 2px 4px 2px 0;
+            font-size: 0.8rem;
+        }
+
+        .mindmap-l3-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px dashed var(--border);
+        }
+
+        .l3-legend-item {
+            font-size: 0.78rem;
+            color: var(--gray);
+            background: #f8fafc;
+            padding: 4px 10px;
+            border-radius: 8px;
+        }
+
+        .status-badge {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+
+        .status-badge.active { background: #d1fae5; color: #059669; }
+        .status-badge.pending { background: #f3f4f6; color: #6b7280; }
+
+        .stat-note {
+            font-size: 0.75rem;
+            color: var(--gray);
+            margin-top: 4px;
+        }
     </style>
 </head>
 <body>
@@ -731,37 +901,41 @@
                 <div class="stat-card animate-in delay-1">
                     <div class="stat-card-header">
                         <div class="stat-card-icon" style="background: #dbeafe; color: #2563eb;">👥</div>
-                        <span class="stat-card-change positive">+12%</span>
+                        <span class="status-badge active" id="activeDiscBadge">4 专业 active</span>
                     </div>
-                    <div class="stat-card-value" id="totalSkills">37</div>
-                    <div class="stat-card-label">活跃 Skills</div>
+                    <div class="stat-card-value" id="totalSkills">—</div>
+                    <div class="stat-card-label">Skill 实体（文件）</div>
+                    <div class="stat-note" id="skillsConfigNote">配置合计 —</div>
                 </div>
                 
                 <div class="stat-card animate-in delay-2">
                     <div class="stat-card-header">
                         <div class="stat-card-icon" style="background: #d1fae5; color: #059669;">📚</div>
-                        <span class="stat-card-change positive">+8%</span>
+                        <span class="status-badge active" id="manifestBadge">4 manifest</span>
                     </div>
-                    <div class="stat-card-value" id="totalClauses">651</div>
+                    <div class="stat-card-value" id="totalClauses">—</div>
                     <div class="stat-card-label">规范条文</div>
+                    <div class="stat-note" id="mandatoryNote">强制 —</div>
                 </div>
                 
                 <div class="stat-card animate-in delay-3">
                     <div class="stat-card-header">
                         <div class="stat-card-icon" style="background: #fef3c7; color: #d97706;">📐</div>
-                        <span class="stat-card-change positive">+15%</span>
+                        <span class="status-badge active">6 专业</span>
                     </div>
-                    <div class="stat-card-value" id="totalFormulas">162</div>
+                    <div class="stat-card-value" id="totalFormulas">—</div>
                     <div class="stat-card-label">计算公式</div>
+                    <div class="stat-note">formulas/index.json</div>
                 </div>
                 
                 <div class="stat-card animate-in delay-4">
                     <div class="stat-card-header">
                         <div class="stat-card-icon" style="background: #fee2e2; color: #dc2626;">⚡</div>
-                        <span class="stat-card-change positive">+20%</span>
+                        <span class="status-badge active">vdi-events</span>
                     </div>
-                    <div class="stat-card-value" id="totalEvents">28</div>
+                    <div class="stat-card-value" id="totalEvents">—</div>
                     <div class="stat-card-label">事件类型</div>
+                    <div class="stat-note" id="dataFreshNote">数据快照 —</div>
                 </div>
             </div>
         </header>
@@ -902,6 +1076,23 @@
             </div>
         </div>
         
+        <!-- Skill 逻辑关系思维导图 -->
+        <div class="card animate-in delay-4 mindmap-section">
+            <div class="card-header">
+                <div class="card-title">
+                    <div class="card-title-icon" style="background: #ede9fe; color: #7c3aed;">🧠</div>
+                    Skill 逻辑关系思维导图
+                </div>
+                <span class="stat-note" id="mindmapFlowHint">上图：L1→L2 派活主链（实线）· 协作（虚线）｜ 下表：L2 调用 L3 工具</span>
+            </div>
+            <div class="mindmap-tabs" id="mindmapTabs"></div>
+            <div class="mindmap-panel">
+                <div id="mindmapDiagram" class="mermaid"></div>
+            </div>
+            <div id="mindmapL3Panel" class="mindmap-l3-panel"></div>
+            <div class="mindmap-meta" id="mindmapMeta"></div>
+        </div>
+        
         <!-- 底部表格 -->
         <div class="card animate-in delay-4">
             <div class="card-header">
@@ -952,349 +1143,1730 @@
     </div>
     
     <script>
-        // 模拟数据
-        const mockData = {
-            disciplines: [
-                { name: '工艺', code: 'PR', skills: 12, clauses: 40, formulas: 44, color: '#6366f1' },
-                { name: '给排水', code: 'WA', skills: 10, clauses: 282, formulas: 37, color: '#8b5cf6' },
-                { name: '电气', code: 'EL', skills: 4, clauses: 82, formulas: 30, color: '#a78bfa' },
-                { name: '管道', code: 'PI', skills: 5, clauses: 38, formulas: 35, color: '#c4b5fd' },
-                { name: '仪控', code: 'IN', skills: 3, clauses: 26, formulas: 14, color: '#ddd6fe' },
-                { name: '设备', code: 'EQ', skills: 2, clauses: 35, formulas: 2, color: '#ede9fe' },
-                { name: 'HSE', code: 'HS', skills: 1, clauses: 101, formulas: 2, color: '#f5f3ff' },
-                { name: 'HAZOP', code: 'HZ', skills: 7, clauses: 41, formulas: 0, color: '#e0e7ff' }
-            ],
-            events: [
-                { time: '10:30', discipline: '工艺', type: 'design_basis.updated', status: 'completed', desc: '发布设计基础更新' },
-                { time: '10:15', discipline: '管道', type: 'piping_layout.updated', status: 'in-progress', desc: '管道布置更新' },
-                { time: '10:00', discipline: '电气', type: 'electrical_layout.updated', status: 'pending', desc: '电气布置更新' },
-                { time: '09:45', discipline: '仪控', type: 'instrument_location.updated', status: 'completed', desc: '仪表位置更新' },
-                { time: '09:30', discipline: '结构', type: 'structural_condition.updated', status: 'completed', desc: '结构条件更新' }
-            ],
-            activities: [
-                { time: '2026-06-08 10:30', discipline: '工艺', activity: '发布设计基础更新', status: 'completed' },
-                { time: '2026-06-08 10:15', discipline: '管道', activity: '管道布置更新', status: 'in-progress' },
-                { time: '2026-06-08 10:00', discipline: '电气', activity: '电气布置更新', status: 'pending' },
-                { time: '2026-06-08 09:45', discipline: '仪控', activity: '仪表位置更新', status: 'completed' },
-                { time: '2026-06-08 09:30', discipline: '结构', activity: '结构条件更新', status: 'completed' }
-            ]
-        };
-        
-        // 当前标签页
+        let systemData = null;
         let currentTab = 'skills';
-        
-        // 初始化
-        document.addEventListener('DOMContentLoaded', function() {
+        let currentMindmap = 'overview';
+        let chartInstances = [];
+
+        mermaid.initialize({
+            startOnLoad: false,
+            theme: 'neutral',
+            flowchart: { curve: 'stepAfter', htmlLabels: true, padding: 16, nodeSpacing: 40, rankSpacing: 50 },
+        });
+
+        document.addEventListener('DOMContentLoaded', () => loadDashboard());
+
+        async function loadDashboard() {
+            try {
+                const res = await fetch('./dashboard-data.json?t=' + Date.now());
+                if (!res.ok) throw new Error('fetch failed');
+                systemData = await res.json();
+            } catch (e) {
+                console.warn('dashboard-data.json 加载失败，使用内嵌快照', e);
+                systemData = EMBEDDED_SNAPSHOT;
+            }
+            renderAll();
+        }
+
+        function renderAll() {
+            const s = systemData.stats;
+            document.getElementById('totalSkills').textContent = s.total_skills_files;
+            document.getElementById('skillsConfigNote').textContent = `discipline-codes 配置 ${s.total_skills_configured} 个`;
+            document.getElementById('totalClauses').textContent = s.total_clauses.toLocaleString();
+            document.getElementById('mandatoryNote').textContent = `强制 ${s.mandatory_clauses} · 交叉引用 ${s.cross_refs}`;
+            document.getElementById('totalFormulas').textContent = s.total_formulas;
+            document.getElementById('totalEvents').textContent = s.event_types;
+            document.getElementById('manifestBadge').textContent = `${s.knowledge_manifests} manifest`;
+            document.getElementById('activeDiscBadge').textContent =
+                systemData.disciplines.filter(d => d.status === 'active').length + ' 专业 active';
+            document.getElementById('dataFreshNote').textContent =
+                '快照 ' + new Date(systemData.generated_at).toLocaleString('zh-CN');
+            document.getElementById('lastUpdate').textContent =
+                new Date(systemData.generated_at).toLocaleString('zh-CN');
+
+            updateHealthPanel(s);
             renderDisciplineGrid();
             renderEventTimeline();
             renderKnowledgeGrid();
             renderFormulaStats();
             renderActivityTable();
+            renderMindmapTabs();
+            renderMindmap(currentMindmap);
             initCharts();
-        });
-        
-        // 渲染专业分布
+        }
+
+        function updateHealthPanel(s) {
+            const formulaLabel = document.querySelector('.card .progress-fill')?.parentElement?.previousElementSibling?.querySelector('span:last-child');
+            const panels = document.querySelectorAll('.card .progress-fill');
+            if (panels[3]) panels[3].parentElement.previousElementSibling.querySelector('span:last-child').textContent = s.total_formulas + ' 个公式';
+        }
+
         function renderDisciplineGrid() {
             const grid = document.getElementById('disciplineGrid');
-            grid.innerHTML = mockData.disciplines.map(d => `
+            grid.innerHTML = systemData.disciplines.map(d => `
                 <div class="discipline-item" onclick="showDisciplineDetail('${d.code}')">
-                    <div class="discipline-icon" style="background: ${d.color}20; color: ${d.color};">
-                        ${getDisciplineIcon(d.code)}
-                    </div>
+                    <div class="discipline-icon" style="background: ${d.color}20; color: ${d.color};">${d.icon}</div>
                     <div class="discipline-name">${d.name}</div>
                     <div class="discipline-count">${d[currentTab]}</div>
                     <div class="discipline-label">${getTabLabel()}</div>
+                    <span class="status-badge ${d.status}">${d.status === 'active' ? '已激活' : '待建'}</span>
                 </div>
             `).join('');
         }
-        
-        // 获取专业图标
-        function getDisciplineIcon(code) {
-            const icons = {
-                'PR': '⚗️',
-                'WA': '💧',
-                'EL': '⚡',
-                'PI': '🔧',
-                'IN': '📊',
-                'EQ': '🏭',
-                'HS': '🛡️',
-                'HZ': '⚠️'
-            };
-            return icons[code] || '📋';
-        }
-        
-        // 获取标签页标签
+
         function getTabLabel() {
-            const labels = {
-                'skills': '个 Skills',
-                'clauses': '条规范',
-                'formulas': '个公式'
-            };
-            return labels[currentTab];
+            return { skills: '个 Skills', clauses: '条规范', formulas: '个公式' }[currentTab];
         }
-        
-        // 切换标签页
+
         function switchTab(tab) {
             currentTab = tab;
-            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tabs .tab').forEach(t => t.classList.remove('active'));
             event.target.classList.add('active');
             renderDisciplineGrid();
+            initCharts();
         }
-        
-        // 渲染事件时间线
+
         function renderEventTimeline() {
             const timeline = document.getElementById('eventTimeline');
-            timeline.innerHTML = mockData.events.map(e => `
+            timeline.innerHTML = systemData.milestones.slice(0, 5).map(e => `
                 <div class="timeline-item">
-                    <div class="timeline-time">${e.time}</div>
-                    <div class="timeline-title">${e.discipline} · ${e.type}</div>
-                    <div class="timeline-desc">${e.desc}</div>
+                    <div class="timeline-time">${e.date}</div>
+                    <div class="timeline-title">${e.discipline} · ${e.activity.split('：')[0]}</div>
+                    <div class="timeline-desc">${e.activity}</div>
                     <span class="timeline-status ${e.status}">${getStatusLabel(e.status)}</span>
                 </div>
             `).join('');
         }
-        
-        // 获取状态标签
+
         function getStatusLabel(status) {
-            const labels = {
-                'completed': '已完成',
-                'in-progress': '进行中',
-                'pending': '待处理'
-            };
-            return labels[status] || status;
+            return { completed: '已完成', 'in-progress': '进行中', pending: '待处理' }[status] || status;
         }
-        
-        // 渲染知识库统计
+
         function renderKnowledgeGrid() {
-            const grid = document.getElementById('knowledgeGrid');
+            const s = systemData.stats;
             const stats = [
-                { value: '651', label: '总条文' },
-                { value: '132', label: '强制性' },
-                { value: '14', label: '交叉引用' },
-                { value: '32', label: '规范文件' }
+                { value: s.total_clauses, label: '总条文' },
+                { value: s.mandatory_clauses, label: '强制性' },
+                { value: s.cross_refs, label: '交叉引用' },
+                { value: s.knowledge_manifests, label: 'Manifest' },
             ];
-            grid.innerHTML = stats.map(s => `
+            document.getElementById('knowledgeGrid').innerHTML = stats.map(x => `
                 <div class="knowledge-item">
-                    <div class="knowledge-value">${s.value}</div>
-                    <div class="knowledge-label">${s.label}</div>
+                    <div class="knowledge-value">${x.value}</div>
+                    <div class="knowledge-label">${x.label}</div>
                 </div>
             `).join('');
         }
-        
-        // 渲染公式库统计
+
         function renderFormulaStats() {
-            const container = document.getElementById('formulaStats');
+            const f = systemData.stats;
+            const byDisc = systemData.disciplines.filter(d => d.formulas > 0);
             const stats = [
-                { value: '162', label: '总公式数' },
-                { value: '6', label: '专业覆盖' },
-                { value: '35', label: '类别数' },
-                { value: '133', label: '精确公式' }
+                { value: f.total_formulas, label: '总公式' },
+                { value: byDisc.length, label: '专业覆盖' },
+                { value: byDisc.reduce((a, d) => a + d.formulas, 0), label: '已映射' },
+                { value: '158', label: '精确公式' },
             ];
-            container.innerHTML = stats.map(s => `
+            document.getElementById('formulaStats').innerHTML = stats.map(x => `
                 <div class="formula-stat-item">
-                    <div class="formula-stat-value">${s.value}</div>
-                    <div class="formula-stat-label">${s.label}</div>
+                    <div class="formula-stat-value">${x.value}</div>
+                    <div class="formula-stat-label">${x.label}</div>
                 </div>
             `).join('');
         }
-        
-        // 渲染活动表格
+
         function renderActivityTable() {
-            const tbody = document.getElementById('activityTable');
-            tbody.innerHTML = mockData.activities.map(a => `
+            document.getElementById('activityTable').innerHTML = systemData.milestones.map(a => `
                 <tr>
-                    <td>${a.time}</td>
+                    <td>${a.date}</td>
                     <td><span class="badge badge-primary">${a.discipline}</span></td>
                     <td>${a.activity}</td>
-                    <td><span class="badge badge-${getStatusBadge(a.status)}">${getStatusLabel(a.status)}</span></td>
-                    <td><button class="btn btn-outline" style="padding: 4px 8px; font-size: 0.8rem;" onclick="showDetail('${a.activity}')">查看</button></td>
+                    <td><span class="badge badge-success">${getStatusLabel(a.status)}</span></td>
+                    <td><button class="btn btn-outline" style="padding:4px 8px;font-size:0.8rem" onclick="showDetail('${a.activity.replace(/'/g, "\\'")}')">查看</button></td>
                 </tr>
             `).join('');
         }
-        
-        // 获取状态徽章
-        function getStatusBadge(status) {
-            const badges = {
-                'completed': 'success',
-                'in-progress': 'warning',
-                'pending': 'danger'
-            };
-            return badges[status] || 'primary';
+
+        function buildMermaidOverview() {
+            const active = systemData.skillGraph.disciplines.filter(d => d.status === 'active');
+            const lines = ['flowchart TB'];
+            lines.push('  DM[设计经理] --> ORCH[编排器]');
+            lines.push('  ORCH --> MCP[MCP · 知识库 / 规则 / 事件]');
+            active.forEach(d => {
+                const id = d.code;
+                const leadCode = d.lead?.documentType || d.lead?.disciplineCode || d.code;
+                lines.push(`  ORCH --> ${id}L["${d.code} · ${d.name}<br/>${leadCode} · ${d.lead.label}"]`);
+                const first = d.l2[0];
+                if (first) lines.push(`  ${id}L --> ${id}_${first.id}["${formatNodeLabel(first).replace(/<br\/>/g, ' ')}"]`);
+                if (d.l2.length > 1) {
+                    lines.push(`  ${id}L --> ${id}M[…共 ${d.l2.length} 个 L2 · ${d.l3.length} 个 L3]`);
+                }
+            });
+            return lines.join('\n');
         }
-        
-        // 初始化图表
+
+        function formatNodeLabel(node) {
+            const code = node.documentType || node.deliverableCode || '';
+            const name = (node.label || '').replace(/^[^·]+·\s*/, '');
+            if (code) return `${code}<br/>${name || node.label}`;
+            const m = (node.label || '').match(/^(\S+)\s+(.+)$/);
+            return m ? `${m[1]}<br/>${m[2]}` : (node.label || '');
+        }
+
+        function disciplineCodeBadge(d) {
+            const dc = d.cfihosDisciplineCode || d.code;
+            const uq = d.cfihosUniqueCode ? ` · ${d.cfihosUniqueCode}` : '';
+            return `<span class="code-badge">${dc}${uq}</span>`;
+        }
+
+        function buildMermaidStaged(d) {
+            const nodeIds = new Set(['LEAD', ...d.l2.map(n => n.id)]);
+            const lines = ['flowchart TB'];
+            lines.push(`  LEAD["${d.lead.disciplineCode || d.code} · ${d.lead.label}${d.lead.documentType ? '<br/>' + d.lead.documentType : ''}${d.lead.cfihosUniqueCode ? '<br/>' + d.lead.cfihosUniqueCode : ''}"]`);
+
+            const groups = d.l2Groups?.length ? d.l2Groups : [{ title: '交付物', ids: d.l2.map(n => n.id) }];
+            groups.forEach((g, gi) => {
+                lines.push(`  subgraph G${gi}["${gi + 1}. ${g.title}"]`);
+                lines.push('    direction LR');
+                for (const id of g.ids) {
+                    const n = d.l2.find(x => x.id === id);
+                    if (n) lines.push(`    ${n.id}["${formatNodeLabel(n)}"]`);
+                }
+                lines.push('  end');
+            });
+
+            for (const e of d.edges) {
+                if (e.type === 'sequence' && nodeIds.has(e.from) && nodeIds.has(e.to)) {
+                    lines.push(`  ${e.from} --> ${e.to}`);
+                } else if (e.type === 'collab' && nodeIds.has(e.from) && nodeIds.has(e.to)) {
+                    lines.push(`  ${e.from} -.->|${e.label}| ${e.to}`);
+                }
+            }
+            if (!d.edges.some(e => e.type === 'sequence' && e.from === 'LEAD')) {
+                const first = groups[0]?.ids?.[0];
+                if (first) lines.push(`  LEAD --> ${first}`);
+            }
+            return lines.join('\n');
+        }
+
+        function buildL3SupportTable(d) {
+            if (!d.l3?.length) return '';
+            const supports = d.edges.filter(e => e.type === 'supports');
+            if (!supports.length) return '';
+
+            const l2Map = new Map(d.l2.map(n => [n.id, n]));
+            const rows = new Map();
+            for (const e of supports) {
+                const l2Node = e.from === 'LEAD' ? d.lead : l2Map.get(e.from);
+                const l3Node = d.l3.find(n => n.id === e.to);
+                if (!l2Node || !l3Node) continue;
+                const key = e.from;
+            const l2Label = l2Node.label || l2Node.id;
+            if (!rows.has(key)) rows.set(key, { l2: l2Label, code: l2Node.documentType || l2Node.deliverableCode || '', tools: [] });
+            const tool = { label: l3Node.label, code: l3Node.documentType || l3Node.deliverableCode || l3Node.id || '' };
+            const dup = rows.get(key).tools.some(t => t.code === tool.code && t.label === tool.label);
+            if (!dup) rows.get(key).tools.push(tool);
+            }
+
+            const order = ['LEAD', ...d.l2.map(n => n.id)];
+            const sorted = [...rows.entries()].sort((a, b) => order.indexOf(a[0]) - order.indexOf(b[0]));
+
+            let html = '<div class="mindmap-l3-title">三级工具 · 调用关系（L2 交付物 → L3）</div>';
+            html += '<table class="mindmap-l3-table"><thead><tr><th>L2 交付物</th><th>CFIHOS 编码</th><th>可调用的 L3 工具</th></tr></thead><tbody>';
+            for (const [, row] of sorted) {
+                html += `<tr><td>${row.l2}</td><td class="code-cell">${row.code || '—'}</td><td>${row.tools.map(t => `<span class="l3-tag" title="${t.label}">${t.code ? `<strong>${t.code}</strong> · ` : ''}${(t.label || '').replace(/^[^·]+·\s*/, '')}</span>`).join('')}</td></tr>`;
+            }
+            html += '</tbody></table>';
+            html += '<div class="mindmap-l3-legend">';
+            for (const n of d.l3) {
+                const code = n.documentType || n.deliverableCode || n.id || '';
+                const name = (n.label || '').replace(/^[^·]+·\s*/, '') || n.label;
+                html += `<span class="l3-legend-item">${code ? `<strong>${code}</strong> · ` : ''}${name}</span>`;
+            }
+            html += '</div>';
+            return html;
+        }
+
+        function buildMermaidFromGraph(d) {
+            return buildMermaidStaged(d);
+        }
+
+        function buildMermaidDiscipline(d) {
+            return buildMermaidFromGraph(d);
+        }
+
+        function renderMindmapTabs() {
+            const tabs = [{ id: 'overview', label: '总览' }, ...systemData.skillGraph.disciplines.filter(d => d.status === 'active').map(d => ({ id: d.code, label: `${d.code} · ${d.name}` }))];
+            document.getElementById('mindmapTabs').innerHTML = tabs.map(t => `
+                <button class="mindmap-tab ${t.id === currentMindmap ? 'active' : ''}" onclick="selectMindmap('${t.id}')">${t.label}</button>
+            `).join('');
+        }
+
+        async function selectMindmap(id) {
+            currentMindmap = id;
+            renderMindmapTabs();
+            await renderMindmap(id);
+        }
+
+        async function renderMindmap(id) {
+            const el = document.getElementById('mindmapDiagram');
+            const l3Panel = document.getElementById('mindmapL3Panel');
+            const meta = document.getElementById('mindmapMeta');
+            let def, info = [];
+            if (id === 'overview') {
+                def = buildMermaidOverview();
+                l3Panel.innerHTML = '';
+                info.push('<span>平台：设计经理 → 编排器 → MCP</span>');
+                systemData.skillGraph.disciplines.filter(d => d.status === 'active').forEach(d => {
+                    info.push(`<span>${disciplineCodeBadge(d)} ${d.name}：${d.flow}</span>`);
+                });
+            } else {
+                const d = systemData.skillGraph.disciplines.find(x => x.code === id);
+                if (!d) return;
+                def = buildMermaidDiscipline(d);
+                l3Panel.innerHTML = buildL3SupportTable(d);
+                info.push(`<span>${disciplineCodeBadge(d)}</span>`);
+                info.push(`<span>负责人: ${d.lead.label}${d.lead.documentType ? ' · ' + d.lead.documentType : ''}</span>`);
+                info.push(`<span>派活: ${d.flow}</span>`);
+                const seq = d.edges.filter(e => e.type === 'sequence').length;
+                const sup = d.edges.filter(e => e.type === 'supports').length;
+                info.push(`<span>L2 ${d.l2.length} · L3 ${d.l3.length} · 派活边 ${seq} · 工具调用 ${sup}</span>`);
+            }
+            meta.innerHTML = info.join('');
+            el.removeAttribute('data-processed');
+            el.textContent = def;
+            await mermaid.run({ nodes: [el] });
+        }
+
         function initCharts() {
-            // 专业分布图
-            const disciplineCtx = document.getElementById('disciplineChart').getContext('2d');
-            new Chart(disciplineCtx, {
+            chartInstances.forEach(c => c.destroy());
+            chartInstances = [];
+            const disc = systemData.disciplines.filter(d => d.clauses > 0 || d.skills > 0);
+            const labels = disc.map(d => d.name);
+            const colors = disc.map(d => d.color);
+
+            chartInstances.push(new Chart(document.getElementById('disciplineChart').getContext('2d'), {
                 type: 'bar',
                 data: {
-                    labels: mockData.disciplines.map(d => d.name),
+                    labels,
                     datasets: [
-                        {
-                            label: 'Skills',
-                            data: mockData.disciplines.map(d => d.skills),
-                            backgroundColor: '#6366f1',
-                            borderRadius: 5
-                        },
-                        {
-                            label: '规范',
-                            data: mockData.disciplines.map(d => d.clauses),
-                            backgroundColor: '#8b5cf6',
-                            borderRadius: 5
-                        },
-                        {
-                            label: '公式',
-                            data: mockData.disciplines.map(d => d.formulas),
-                            backgroundColor: '#a78bfa',
-                            borderRadius: 5
-                        }
-                    ]
+                        { label: 'Skills', data: disc.map(d => d.skills), backgroundColor: '#6366f1', borderRadius: 5 },
+                        { label: '规范', data: disc.map(d => d.clauses), backgroundColor: '#8b5cf6', borderRadius: 5 },
+                        { label: '公式', data: disc.map(d => d.formulas), backgroundColor: '#a78bfa', borderRadius: 5 },
+                    ],
                 },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'top',
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-            
-            // 公式分布图
-            const formulaCtx = document.getElementById('formulaChart').getContext('2d');
-            new Chart(formulaCtx, {
+                options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true } } },
+            }));
+
+            const withFormulas = disc.filter(d => d.formulas > 0);
+            chartInstances.push(new Chart(document.getElementById('formulaChart').getContext('2d'), {
                 type: 'doughnut',
-                data: {
-                    labels: mockData.disciplines.map(d => d.name),
-                    datasets: [{
-                        data: mockData.disciplines.map(d => d.formulas),
-                        backgroundColor: mockData.disciplines.map(d => d.color),
-                        borderWidth: 2,
-                        borderColor: '#fff'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                        }
-                    }
-                }
-            });
-            
-            // 知识库分布图
-            const knowledgeCtx = document.getElementById('knowledgeChart').getContext('2d');
-            new Chart(knowledgeCtx, {
+                data: { labels: withFormulas.map(d => d.name), datasets: [{ data: withFormulas.map(d => d.formulas), backgroundColor: withFormulas.map(d => d.color), borderWidth: 2, borderColor: '#fff' }] },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } },
+            }));
+
+            const withClauses = disc.filter(d => d.clauses > 0);
+            chartInstances.push(new Chart(document.getElementById('knowledgeChart').getContext('2d'), {
                 type: 'pie',
-                data: {
-                    labels: mockData.disciplines.map(d => d.name),
-                    datasets: [{
-                        data: mockData.disciplines.map(d => d.clauses),
-                        backgroundColor: mockData.disciplines.map(d => d.color),
-                        borderWidth: 2,
-                        borderColor: '#fff'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                        }
-                    }
-                }
-            });
+                data: { labels: withClauses.map(d => d.name), datasets: [{ data: withClauses.map(d => d.clauses), backgroundColor: withClauses.map(d => d.color), borderWidth: 2, borderColor: '#fff' }] },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } },
+            }));
         }
-        
-        // 显示专业详情
+
         function showDisciplineDetail(code) {
-            const discipline = mockData.disciplines.find(d => d.code === code);
-            if (!discipline) return;
-            
-            document.getElementById('modalTitle').textContent = `${discipline.name}专业详情`;
+            const d = systemData.disciplines.find(x => x.code === code);
+            if (!d) return;
+            const mf = systemData.manifests.find(m => ({ PX: 'process', WA: 'water', MP: 'piping', IN: 'instrument' }[code] === m.discipline));
+            document.getElementById('modalTitle').textContent = `${d.name}专业详情`;
             document.getElementById('modalBody').innerHTML = `
-                <div style="space-y: 20px;">
-                    <div style="margin-bottom: 20px;">
-                        <h4 style="margin-bottom: 10px; color: var(--dark);">基本信息</h4>
-                        <p><strong>专业代码：</strong>${discipline.code}</p>
-                        <p><strong>Skills 数量：</strong>${discipline.skills}</p>
-                        <p><strong>规范条文：</strong>${discipline.clauses}</p>
-                        <p><strong>计算公式：</strong>${discipline.formulas}</p>
-                    </div>
-                    
-                    <div style="margin-bottom: 20px;">
-                        <h4 style="margin-bottom: 10px; color: var(--dark);">主要职责</h4>
-                        <ul style="padding-left: 20px; color: var(--gray);">
-                            <li>负责本专业的设计计算</li>
-                            <li>生成专业设计文档</li>
-                            <li>与其他专业协作提资</li>
-                            <li>参与设计评审和校审</li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h4 style="margin-bottom: 10px; color: var(--dark);">相关事件</h4>
-                        <p style="color: var(--gray);">最近 24 小时内有 ${Math.floor(Math.random() * 10)} 个事件</p>
-                    </div>
-                </div>
-            `;
+                <p><strong>代码：</strong>${d.code} · <strong>状态：</strong>${d.status}</p>
+                <p><strong>Skills：</strong>${d.skills} · <strong>条文：</strong>${d.clauses} · <strong>公式：</strong>${d.formulas}</p>
+                ${mf ? `<p><strong>知识库：</strong>${mf.current} / Phase2 ${mf.phase2}（manifest v${mf.version || 1}）</p>` : ''}
+                ${d.note ? `<p style="color:var(--gray)">${d.note}</p>` : ''}
+                <p style="margin-top:12px"><button class="btn btn-primary" onclick="selectMindmap('${code}');closeModal()">查看 Skill 思维导图</button></p>`;
             document.getElementById('detailModal').classList.add('active');
         }
-        
-        // 显示详情
+
         function showDetail(activity) {
             document.getElementById('modalTitle').textContent = '活动详情';
-            document.getElementById('modalBody').innerHTML = `
-                <div>
-                    <p><strong>活动：</strong>${activity}</p>
-                    <p><strong>时间：</strong>2026-06-08 10:30</p>
-                    <p><strong>状态：</strong>已完成</p>
-                    <p style="margin-top: 15px; color: var(--gray);">这是活动的详细描述，包含了具体的操作内容和结果。</p>
-                </div>
-            `;
+            document.getElementById('modalBody').innerHTML = `<p>${activity}</p>`;
             document.getElementById('detailModal').classList.add('active');
         }
-        
-        // 关闭模态框
-        function closeModal() {
-            document.getElementById('detailModal').classList.remove('active');
-        }
-        
-        // 刷新数据
-        function refreshData() {
-            // 模拟刷新
+
+        function closeModal() { document.getElementById('detailModal').classList.remove('active'); }
+
+        async function refreshData() {
             const btn = event.target;
             btn.textContent = '刷新中...';
             btn.disabled = true;
-            
-            setTimeout(() => {
-                btn.textContent = '🔄 刷新数据';
-                btn.disabled = false;
-                alert('数据已刷新！');
-            }, 1000);
+            await loadDashboard();
+            btn.textContent = '🔄 刷新数据';
+            btn.disabled = false;
         }
-        
-        // 导出报告
+
         function exportReport() {
-            alert('报告导出功能开发中...');
+            window.open('./dashboard-data.json', '_blank');
         }
-        
-        // 点击模态框外部关闭
-        document.getElementById('detailModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
+
+        document.getElementById('detailModal').addEventListener('click', e => { if (e.target.id === 'detailModal') closeModal(); });
+
+        // 内嵌快照（fetch 失败时 fallback，由 generate-dashboard-data.mjs 同步更新）
+        const EMBEDDED_SNAPSHOT = {
+  "generated_at": "2026-06-14T03:22:52.339Z",
+  "stats": {
+    "total_skills_files": 70,
+    "total_skills_configured": 67,
+    "total_clauses": 1919,
+    "mandatory_clauses": 132,
+    "cross_refs": 14,
+    "total_formulas": 167,
+    "event_types": 28,
+    "knowledge_manifests": 4,
+    "kb_built_at": "2026-06-13T09:52:41.097Z"
+  },
+  "disciplines": [
+    {
+      "name": "工艺",
+      "code": "PX",
+      "status": "active",
+      "skills": 22,
+      "clauses": 480,
+      "formulas": 0,
+      "color": "#6366f1",
+      "icon": "⚗️",
+      "note": ""
+    },
+    {
+      "name": "管道",
+      "code": "MP",
+      "status": "active",
+      "skills": 20,
+      "clauses": 316,
+      "formulas": 0,
+      "color": "#a78bfa",
+      "icon": "🔧",
+      "note": "Sprint 11-18 全量建设完成"
+    },
+    {
+      "name": "仪控",
+      "code": "IN",
+      "status": "active",
+      "skills": 13,
+      "clauses": 54,
+      "formulas": 0,
+      "color": "#c4b5fd",
+      "icon": "📊",
+      "note": "1014 V1.1：8 L2 + 4 L3 全量"
+    },
+    {
+      "name": "电气",
+      "code": "EA",
+      "status": "pending",
+      "skills": 1,
+      "clauses": 82,
+      "formulas": 0,
+      "color": "#ddd6fe",
+      "icon": "⚡",
+      "note": "待创建Skill定义"
+    },
+    {
+      "name": "设备",
+      "code": "MX",
+      "status": "pending",
+      "skills": 1,
+      "clauses": 35,
+      "formulas": 0,
+      "color": "#ede9fe",
+      "icon": "🏭",
+      "note": "待创建Skill定义"
+    },
+    {
+      "name": "安全",
+      "code": "HS",
+      "status": "pending",
+      "skills": 1,
+      "clauses": 107,
+      "formulas": 0,
+      "color": "#f5f3ff",
+      "icon": "🛡️",
+      "note": "待创建Skill定义；范围对齐 CFIHOS HS（safety），非 HX 宏观 HSE"
+    },
+    {
+      "name": "给排水",
+      "code": "CI",
+      "status": "active",
+      "skills": 9,
+      "clauses": 804,
+      "formulas": 0,
+      "color": "#8b5cf6",
+      "icon": "💧",
+      "note": ""
+    }
+  ],
+  "manifests": [
+    {
+      "discipline": "instrument",
+      "current": 54,
+      "phase2": 80,
+      "version": 2
+    },
+    {
+      "discipline": "piping",
+      "current": 0,
+      "phase2": 300,
+      "version": 2
+    },
+    {
+      "discipline": "process",
+      "current": 480,
+      "phase2": 450,
+      "version": 1
+    },
+    {
+      "discipline": "water",
+      "current": 804,
+      "phase2": 400,
+      "version": 2
+    }
+  ],
+  "milestones": [
+    {
+      "date": "2026-06-13",
+      "discipline": "仪控",
+      "activity": "IN-2：5 L2 + 3 L3 Skill V1.2 落地",
+      "status": "completed"
+    },
+    {
+      "date": "2026-06-12",
+      "discipline": "管道",
+      "activity": "知识库 Phase2 达标（316 条）+ manifest v2",
+      "status": "completed"
+    },
+    {
+      "date": "2026-06-12",
+      "discipline": "管道",
+      "activity": "Sprint 11–18 全量 Skill + audit 99/99",
+      "status": "completed"
+    },
+    {
+      "date": "2026-06-11",
+      "discipline": "给排水",
+      "activity": "知识库 Phase3（804 条）+ MCP 回归 18/18",
+      "status": "completed"
+    },
+    {
+      "date": "2026-06-11",
+      "discipline": "工艺",
+      "activity": "480 条条文 + process manifest",
+      "status": "completed"
+    }
+  ],
+  "skillGraph": {
+    "platform": {
+      "nodes": [
+        {
+          "slug": "vdi-design-manager",
+          "label": "设计经理"
+        },
+        {
+          "slug": "vdi-orchestrator",
+          "label": "编排器"
+        },
+        {
+          "slug": "vdi-knowledge",
+          "label": "知识库 MCP"
+        },
+        {
+          "slug": "vdi-rules",
+          "label": "规则 MCP"
+        },
+        {
+          "slug": "vdi-events",
+          "label": "事件 MCP"
+        }
+      ]
+    },
+    "disciplines": [
+      {
+        "code": "PX",
+        "name": "工艺",
+        "status": "active",
+        "flow": "D01→D02→D03→D04→{S01,D05}→{S02,S03,S05}→S04/X01/X02",
+        "cfihosDisciplineCode": "PX",
+        "cfihosUniqueCode": "CFIHOS-20000026",
+        "lead": {
+          "slug": "vdi-process-lead",
+          "label": "工艺专业负责人",
+          "id": "LEAD",
+          "disciplineCode": "PX",
+          "cfihosUniqueCode": "CFIHOS-20000026",
+          "documentType": "PX"
+        },
+        "l2Groups": [
+          {
+            "title": "主链路",
+            "ids": [
+              "PX2111",
+              "PX0980",
+              "PX3342",
+              "PX2366",
+              "PX2365"
+            ]
+          },
+          {
+            "title": "系统图/专项",
+            "ids": [
+              "PX2366",
+              "PX8248",
+              "PX3363",
+              "PX2908",
+              "PX4322",
+              "PX0504",
+              "PX4603"
+            ]
+          }
+        ],
+        "l2": [
+          {
+            "id": "PX2111",
+            "slug": "vdi-process-package",
+            "label": "PX2111 · 工艺包与设计基础",
+            "level": 2,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001481",
+            "documentType": "PX2111",
+            "deliverableCode": "PX2111",
+            "vdiDeliverable": "PX2111"
+          },
+          {
+            "id": "PX0980",
+            "slug": "vdi-process-route",
+            "label": "PX0980 · 工艺路线设计基础",
+            "level": 2,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001387",
+            "documentType": "PX0980",
+            "deliverableCode": "PX0980",
+            "vdiDeliverable": "PX0980"
+          },
+          {
+            "id": "PX3342",
+            "slug": "vdi-process-balance",
+            "label": "PX3342 · 物料热量平衡",
+            "level": 2,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001157",
+            "documentType": "PX3342",
+            "deliverableCode": "PX3342",
+            "vdiDeliverable": "PX3342"
+          },
+          {
+            "id": "PX2366",
+            "slug": "vdi-process-pfd",
+            "label": "PX2366 · 工艺流程图 PFD",
+            "level": 2,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001152",
+            "documentType": "PX2366",
+            "deliverableCode": "PX2366",
+            "vdiDeliverable": "PX2366"
+          },
+          {
+            "id": "PX2365",
+            "slug": "vdi-process-pid",
+            "label": "PX2365 · 管道仪表流程图",
+            "level": 2,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001151",
+            "documentType": "PX2365",
+            "deliverableCode": "PX2365",
+            "vdiDeliverable": "PR-S01"
+          },
+          {
+            "id": "PX4322",
+            "slug": "vdi-process-equipment",
+            "label": "PX4322 · 工艺设备数据表",
+            "level": 2,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001159",
+            "documentType": "PX4322",
+            "deliverableCode": "PX4322",
+            "vdiDeliverable": "PX2365"
+          },
+          {
+            "id": "PX4603",
+            "slug": "vdi-process-hydraulics",
+            "label": "PX4603 · 管道水力与管径",
+            "level": 2,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001161",
+            "documentType": "PX4603",
+            "deliverableCode": "PX4603",
+            "vdiDeliverable": "PX3363"
+          },
+          {
+            "id": "PX2908",
+            "slug": "vdi-process-relief",
+            "label": "PX2908 · 安全泄压与火炬",
+            "level": 2,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001154",
+            "documentType": "PX2908",
+            "deliverableCode": "PX2908",
+            "vdiDeliverable": "PX0504"
+          },
+          {
+            "id": "PX2366",
+            "slug": "vdi-process-utilities",
+            "label": "PX2366 · 公用工程系统",
+            "level": 2,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001152",
+            "documentType": "PX2366",
+            "deliverableCode": "PX2366",
+            "vdiDeliverable": "PR-S04"
+          },
+          {
+            "id": "PX8248",
+            "slug": "vdi-process-control",
+            "label": "PX8248 · 控制方案与联锁",
+            "level": 2,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001184",
+            "documentType": "PX8248",
+            "deliverableCode": "PX8248",
+            "vdiDeliverable": "PX8248"
+          },
+          {
+            "id": "PX3363",
+            "slug": "vdi-process-safety",
+            "label": "PX3363 · 工艺安全分析",
+            "level": 2,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001158",
+            "documentType": "PX3363",
+            "deliverableCode": "PX3363",
+            "vdiDeliverable": "PR-X01"
+          },
+          {
+            "id": "PX0504",
+            "slug": "vdi-process-lab",
+            "label": "PX0504 · 分析化验条件",
+            "level": 2,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001140",
+            "documentType": "PX0504",
+            "deliverableCode": "PX0504",
+            "vdiDeliverable": "PR-X02"
+          }
+        ],
+        "l3": [
+          {
+            "id": "PX1380",
+            "slug": "vdi-process-calc",
+            "label": "PX1380 · 工艺计算",
+            "level": 3,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001145",
+            "documentType": "PX1380",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "PX8240",
+            "slug": "vdi-process-simulation",
+            "label": "PX8240 · 流程模拟",
+            "level": 3,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001183",
+            "documentType": "PX8240",
+            "deliverableCode": "PX8240",
+            "vdiDeliverable": "PX1206"
+          },
+          {
+            "id": "PX1206",
+            "slug": "vdi-process-calc-column",
+            "label": "PX1206 · 塔器工艺计算",
+            "level": 3,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001143",
+            "documentType": "PX1206",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "PX1206",
+            "slug": "vdi-process-calc-hx",
+            "label": "PX1206 · 换热器工艺计算",
+            "level": 3,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001143",
+            "documentType": "PX1206",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "PX1206",
+            "slug": "vdi-process-calc-reactor",
+            "label": "PX1206 · 反应器工艺计算",
+            "level": 3,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001143",
+            "documentType": "PX1206",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "PX1206",
+            "slug": "vdi-process-calc-pump",
+            "label": "PX1206 · 机泵与NPSH",
+            "level": 3,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001143",
+            "documentType": "PX1206",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "PX2908",
+            "slug": "vdi-process-calc-psv",
+            "label": "PX2908 · 安全阀计算",
+            "level": 3,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001154",
+            "documentType": "PX2908",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "PX1979",
+            "slug": "vdi-process-data-mgmt",
+            "label": "PX1979 · 工艺数据管理",
+            "level": 3,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001146",
+            "documentType": "PX1979",
+            "deliverableCode": "PX1979",
+            "vdiDeliverable": "PR-T08"
+          },
+          {
+            "id": "PX7180",
+            "slug": "vdi-process-docgen",
+            "label": "PX7180 · 工艺文档生成",
+            "level": 3,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001175",
+            "documentType": "PX7180",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          }
+        ],
+        "edges": [
+          {
+            "from": "LEAD",
+            "to": "PX2111",
+            "type": "sequence"
+          },
+          {
+            "from": "PX2111",
+            "to": "PX0980",
+            "type": "sequence"
+          },
+          {
+            "from": "PX0980",
+            "to": "PX3342",
+            "type": "sequence"
+          },
+          {
+            "from": "PX3342",
+            "to": "PX2366",
+            "type": "sequence"
+          },
+          {
+            "from": "PX2366",
+            "to": "PX2365",
+            "type": "sequence"
+          },
+          {
+            "from": "PX2111",
+            "to": "PX8240",
+            "type": "supports"
+          },
+          {
+            "from": "PX2111",
+            "to": "PX7180",
+            "type": "supports"
+          },
+          {
+            "from": "PX0980",
+            "to": "PX1380",
+            "type": "supports"
+          },
+          {
+            "from": "PX0980",
+            "to": "PX8240",
+            "type": "supports"
+          },
+          {
+            "from": "PX3342",
+            "to": "PX1380",
+            "type": "supports"
+          },
+          {
+            "from": "PX3342",
+            "to": "PX8240",
+            "type": "supports"
+          },
+          {
+            "from": "PX2366",
+            "to": "PX8240",
+            "type": "supports"
+          },
+          {
+            "from": "PX4322",
+            "to": "PX1206",
+            "type": "supports"
+          },
+          {
+            "from": "PX4322",
+            "to": "PX1380",
+            "type": "supports"
+          },
+          {
+            "from": "PX4603",
+            "to": "PX1206",
+            "type": "supports"
+          },
+          {
+            "from": "PX4603",
+            "to": "PX1380",
+            "type": "supports"
+          },
+          {
+            "from": "PX2908",
+            "to": "PX2908",
+            "type": "supports"
+          },
+          {
+            "from": "PX2908",
+            "to": "PX1380",
+            "type": "supports"
+          },
+          {
+            "from": "PX2366",
+            "to": "PX1380",
+            "type": "supports"
+          },
+          {
+            "from": "PX3363",
+            "to": "PX1380",
+            "type": "supports"
+          },
+          {
+            "from": "LEAD",
+            "to": "PX1979",
+            "type": "supports"
+          }
+        ]
+      },
+      {
+        "code": "CI",
+        "name": "给排水",
+        "status": "active",
+        "flow": "D01→D02；D01→D03/D04/D05/D06",
+        "cfihosDisciplineCode": "CI",
+        "cfihosUniqueCode": "CFIHOS-20000005",
+        "lead": {
+          "slug": "vdi-water-lead",
+          "label": "给排水专业负责人",
+          "id": "LEAD",
+          "disciplineCode": "CI",
+          "cfihosUniqueCode": "CFIHOS-20000005",
+          "documentType": "CI"
+        },
+        "l2Groups": [
+          {
+            "title": "给水·循环",
+            "ids": [
+              "CX7770",
+              "HX6802",
+              "CX1380"
+            ]
+          },
+          {
+            "title": "排水·污水",
+            "ids": [
+              "CX4038",
+              "CX4038",
+              "CX7770"
+            ]
+          }
+        ],
+        "l2": [
+          {
+            "id": "CX7770",
+            "slug": "vdi-water-supply",
+            "label": "CX7770 · 给水系统设计",
+            "level": 2,
+            "disciplineCode": "CI",
+            "cfihosUniqueCode": "CFIHOS-20000682",
+            "documentType": "CX7770",
+            "deliverableCode": "CX7770",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "HX6802",
+            "slug": "vdi-water-fire",
+            "label": "HX6802 · 消防给水设计",
+            "level": 2,
+            "disciplineCode": "CI",
+            "cfihosUniqueCode": "CFIHOS-20000832",
+            "documentType": "HX6802",
+            "deliverableCode": "HX6802",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "CX4038",
+            "slug": "vdi-water-drainage",
+            "label": "CX4038 · 排水系统设计",
+            "level": 2,
+            "disciplineCode": "CI",
+            "cfihosUniqueCode": "CFIHOS-20000672",
+            "documentType": "CX4038",
+            "deliverableCode": "CX4038",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "CX4038",
+            "slug": "vdi-water-stormwater",
+            "label": "CX4038 · 雨水系统设计",
+            "level": 2,
+            "disciplineCode": "CI",
+            "cfihosUniqueCode": "CFIHOS-20000672",
+            "documentType": "CX4038",
+            "deliverableCode": "CX4038",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "CX7770",
+            "slug": "vdi-water-wastewater",
+            "label": "CX7770 · 污水处理设计",
+            "level": 2,
+            "disciplineCode": "CI",
+            "cfihosUniqueCode": "CFIHOS-20000682",
+            "documentType": "CX7770",
+            "deliverableCode": "CX7770",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "CX1380",
+            "slug": "vdi-water-circulating",
+            "label": "CX1380 · 循环水系统设计",
+            "level": 2,
+            "disciplineCode": "CI",
+            "cfihosUniqueCode": "CFIHOS-20000663",
+            "documentType": "CX1380",
+            "deliverableCode": "CX1380",
+            "vdiDeliverable": ""
+          }
+        ],
+        "l3": [
+          {
+            "id": "CX1380",
+            "slug": "vdi-water-hydraulics",
+            "label": "CX1380 · 给排水水力计算",
+            "level": 3,
+            "disciplineCode": "CI",
+            "cfihosUniqueCode": "CFIHOS-20000663",
+            "documentType": "CX1380",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "CI7303",
+            "slug": "vdi-water-equipment",
+            "label": "CI7303 · 给排水设备选型",
+            "level": 3,
+            "disciplineCode": "CI",
+            "cfihosUniqueCode": "CFIHOS-20000629",
+            "documentType": "CI7303",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          }
+        ],
+        "edges": [
+          {
+            "from": "LEAD",
+            "to": "CX7770",
+            "type": "sequence"
+          },
+          {
+            "from": "CX7770",
+            "to": "HX6802",
+            "type": "sequence"
+          },
+          {
+            "from": "HX6802",
+            "to": "CX4038",
+            "type": "sequence"
+          },
+          {
+            "from": "CX4038",
+            "to": "CX4038",
+            "type": "sequence"
+          },
+          {
+            "from": "CX4038",
+            "to": "CX7770",
+            "type": "sequence"
+          },
+          {
+            "from": "CX7770",
+            "to": "CX1380",
+            "type": "sequence"
+          },
+          {
+            "from": "CX7770",
+            "to": "CX1380",
+            "type": "supports"
+          },
+          {
+            "from": "CX7770",
+            "to": "CI7303",
+            "type": "supports"
+          },
+          {
+            "from": "HX6802",
+            "to": "CX1380",
+            "type": "supports"
+          },
+          {
+            "from": "HX6802",
+            "to": "CI7303",
+            "type": "supports"
+          },
+          {
+            "from": "CX4038",
+            "to": "CX1380",
+            "type": "supports"
+          },
+          {
+            "from": "CX4038",
+            "to": "CI7303",
+            "type": "supports"
+          },
+          {
+            "from": "CX1380",
+            "to": "CX1380",
+            "type": "supports"
+          },
+          {
+            "from": "CX1380",
+            "to": "CI7303",
+            "type": "supports"
+          }
+        ]
+      },
+      {
+        "code": "MP",
+        "name": "管道",
+        "status": "active",
+        "flow": "D01→D02→D03→D04/D05→D06→D07/D08→D09→D10/D11/D12",
+        "cfihosDisciplineCode": "MP",
+        "cfihosUniqueCode": "CFIHOS-20000020",
+        "lead": {
+          "slug": "vdi-piping-lead",
+          "label": "管道专业负责人",
+          "id": "LEAD",
+          "disciplineCode": "MP",
+          "cfihosUniqueCode": "CFIHOS-20000020",
+          "documentType": "MP"
+        },
+        "l2Groups": [
+          {
+            "title": "基础资料",
+            "ids": [
+              "MP7737",
+              "MP4338"
+            ]
+          },
+          {
+            "title": "布置枢纽",
+            "ids": [
+              "MP4033"
+            ]
+          },
+          {
+            "title": "分析派生",
+            "ids": [
+              "MP4363",
+              "MP4024",
+              "MP4033",
+              "MP2358",
+              "MP8005",
+              "MP4038"
+            ]
+          },
+          {
+            "title": "详图·专项",
+            "ids": [
+              "MP0900",
+              "MP2343",
+              "MP4368",
+              "MP7402"
+            ]
+          }
+        ],
+        "l2": [
+          {
+            "id": "MP7737",
+            "slug": "vdi-piping-material-class",
+            "label": "MP7737 · 管道材料等级",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001025",
+            "documentType": "MP7737",
+            "deliverableCode": "MP7737",
+            "vdiDeliverable": "MP7737"
+          },
+          {
+            "id": "MP4338",
+            "slug": "vdi-piping-line-list",
+            "label": "MP4338 · 管道表 Line List",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001014",
+            "documentType": "MP4338",
+            "deliverableCode": "MP4338",
+            "vdiDeliverable": "MP4338"
+          },
+          {
+            "id": "MP4033",
+            "slug": "vdi-piping-layout",
+            "label": "MP4033 · 管道布置",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001011",
+            "documentType": "MP4033",
+            "deliverableCode": "MP4033",
+            "vdiDeliverable": "MP4033"
+          },
+          {
+            "id": "MP4363",
+            "slug": "vdi-piping-equipment-connect",
+            "label": "MP4363 · 设备管道连接",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001015",
+            "documentType": "MP4363",
+            "deliverableCode": "MP4363",
+            "vdiDeliverable": "MP4363"
+          },
+          {
+            "id": "MP4024",
+            "slug": "vdi-piping-rack-layout",
+            "label": "MP4024 · 管架管廊布置",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001010",
+            "documentType": "MP4024",
+            "deliverableCode": "MP4024",
+            "vdiDeliverable": "MP4024"
+          },
+          {
+            "id": "MP4033",
+            "slug": "vdi-piping-routing",
+            "label": "MP4033 · 管道综合路由",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001011",
+            "documentType": "MP4033",
+            "deliverableCode": "MP4033",
+            "vdiDeliverable": "MP4033"
+          },
+          {
+            "id": "MP2358",
+            "slug": "vdi-piping-support",
+            "label": "MP2358 · 管道支架设计",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001007",
+            "documentType": "MP2358",
+            "deliverableCode": "MP2358",
+            "vdiDeliverable": "MP2358"
+          },
+          {
+            "id": "MP8005",
+            "slug": "vdi-piping-stress",
+            "label": "MP8005 · 管道应力分析",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001029",
+            "documentType": "MP8005",
+            "deliverableCode": "MP8005",
+            "vdiDeliverable": "MP8005"
+          },
+          {
+            "id": "MP0900",
+            "slug": "vdi-piping-insulation",
+            "label": "MP0900 · 绝热伴热设计",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001396",
+            "documentType": "MP0900",
+            "deliverableCode": "MP0900",
+            "vdiDeliverable": "MP0900"
+          },
+          {
+            "id": "MP2343",
+            "slug": "vdi-piping-isometric",
+            "label": "MP2343 · ISO 单线图管段图",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001006",
+            "documentType": "MP2343",
+            "deliverableCode": "MP2343",
+            "vdiDeliverable": "MP2343"
+          },
+          {
+            "id": "MP4368",
+            "slug": "vdi-piping-valve-spec",
+            "label": "MP4368 · 阀门与特殊件选用",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001016",
+            "documentType": "MP4368",
+            "deliverableCode": "MP4368",
+            "vdiDeliverable": "MP4368"
+          },
+          {
+            "id": "MP4038",
+            "slug": "vdi-piping-underground",
+            "label": "MP4038 · 地下管沟布置",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001364",
+            "documentType": "MP4038",
+            "deliverableCode": "MP4038",
+            "vdiDeliverable": "MP4038"
+          },
+          {
+            "id": "MP7402",
+            "slug": "vdi-piping-cad-3d",
+            "label": "MP7402 · 管道三维制图试点",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001024",
+            "documentType": "MP7402",
+            "deliverableCode": "MP7402",
+            "vdiDeliverable": "PI-CAD"
+          }
+        ],
+        "l3": [
+          {
+            "id": "MP1206",
+            "slug": "vdi-piping-hydraulics",
+            "label": "MP1206 · 管道水力计算",
+            "level": 3,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001000",
+            "documentType": "MP1206",
+            "deliverableCode": "MP1206",
+            "vdiDeliverable": "MP1206"
+          },
+          {
+            "id": "MP8005",
+            "slug": "vdi-piping-stress-calc",
+            "label": "MP8005 · 管道应力计算",
+            "level": 3,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001029",
+            "documentType": "MP8005",
+            "deliverableCode": "MP8005",
+            "vdiDeliverable": "MP8005"
+          },
+          {
+            "id": "MP1380",
+            "slug": "vdi-piping-corrosion-calc",
+            "label": "MP1380 · 管道腐蚀计算",
+            "level": 3,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001001",
+            "documentType": "MP1380",
+            "deliverableCode": "MP1380",
+            "vdiDeliverable": "MP1380"
+          },
+          {
+            "id": "MP0519",
+            "slug": "vdi-piping-vibration-calc",
+            "label": "MP0519 · 管道振动计算",
+            "level": 3,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001543",
+            "documentType": "MP0519",
+            "deliverableCode": "MP0519",
+            "vdiDeliverable": "MP0519"
+          },
+          {
+            "id": "MP1380",
+            "slug": "vdi-piping-weight-calc",
+            "label": "MP1380 · 管道重量与荷载",
+            "level": 3,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001001",
+            "documentType": "MP1380",
+            "deliverableCode": "MP1380",
+            "vdiDeliverable": "MP1380"
+          },
+          {
+            "id": "MP4306",
+            "slug": "vdi-piping-data-mgmt",
+            "label": "MP4306 · 管道数据与 MTO",
+            "level": 3,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001012",
+            "documentType": "MP4306",
+            "deliverableCode": "MP4306",
+            "vdiDeliverable": "MP4306"
+          }
+        ],
+        "edges": [
+          {
+            "from": "LEAD",
+            "to": "MP7737",
+            "type": "sequence"
+          },
+          {
+            "from": "MP7737",
+            "to": "MP4338",
+            "type": "sequence"
+          },
+          {
+            "from": "MP4338",
+            "to": "MP4033",
+            "type": "sequence"
+          },
+          {
+            "from": "MP4033",
+            "to": "MP4363",
+            "type": "sequence"
+          },
+          {
+            "from": "MP4363",
+            "to": "MP4024",
+            "type": "sequence"
+          },
+          {
+            "from": "MP4024",
+            "to": "MP4033",
+            "type": "sequence"
+          },
+          {
+            "from": "MP7737",
+            "to": "MP1380",
+            "type": "supports"
+          },
+          {
+            "from": "MP4338",
+            "to": "MP1206",
+            "type": "supports"
+          },
+          {
+            "from": "MP4338",
+            "to": "MP4306",
+            "type": "supports"
+          },
+          {
+            "from": "MP4033",
+            "to": "MP1206",
+            "type": "supports"
+          },
+          {
+            "from": "MP4033",
+            "to": "MP0519",
+            "type": "supports"
+          },
+          {
+            "from": "MP4363",
+            "to": "MP1206",
+            "type": "supports"
+          },
+          {
+            "from": "MP4024",
+            "to": "MP1380",
+            "type": "supports"
+          },
+          {
+            "from": "MP4033",
+            "to": "MP4306",
+            "type": "supports"
+          },
+          {
+            "from": "MP2358",
+            "to": "MP8005",
+            "type": "supports"
+          },
+          {
+            "from": "MP2358",
+            "to": "MP0519",
+            "type": "supports"
+          },
+          {
+            "from": "MP2358",
+            "to": "MP1380",
+            "type": "supports"
+          },
+          {
+            "from": "MP8005",
+            "to": "MP8005",
+            "type": "supports"
+          },
+          {
+            "from": "MP2343",
+            "to": "MP4306",
+            "type": "supports"
+          },
+          {
+            "from": "MP4368",
+            "to": "MP1380",
+            "type": "supports"
+          },
+          {
+            "from": "MP4038",
+            "to": "MP1206",
+            "type": "supports"
+          }
+        ]
+      },
+      {
+        "code": "IN",
+        "name": "仪控",
+        "status": "active",
+        "flow": "D01→D02∥D03→D06→D04",
+        "cfihosDisciplineCode": "IN",
+        "cfihosUniqueCode": "CFIHOS-20000015",
+        "lead": {
+          "slug": "vdi-instrument-lead",
+          "label": "仪控专业负责人",
+          "id": "LEAD",
+          "disciplineCode": "IN",
+          "cfihosUniqueCode": "CFIHOS-20000015",
+          "documentType": "IN"
+        },
+        "l2Groups": [
+          {
+            "title": "索引",
+            "ids": [
+              "IN4315"
+            ]
+          },
+          {
+            "title": "回路·联锁·DCS",
+            "ids": [
+              "IN2347",
+              "IN5531",
+              "IN7771",
+              "IN2312"
+            ]
+          }
+        ],
+        "l2": [
+          {
+            "id": "IN4315",
+            "slug": "vdi-instrument-index",
+            "label": "IN4315 · 仪控仪表索引与数据表",
+            "level": 2,
+            "disciplineCode": "IN",
+            "cfihosUniqueCode": "CFIHOS-20001506",
+            "documentType": "IN4315",
+            "deliverableCode": "IN4315",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "IN2347",
+            "slug": "vdi-instrument-loop",
+            "label": "IN2347 · 控制回路设计",
+            "level": 2,
+            "disciplineCode": "IN",
+            "cfihosUniqueCode": "CFIHOS-20000862",
+            "documentType": "IN2347",
+            "deliverableCode": "IN2347",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "IN5531",
+            "slug": "vdi-instrument-interlock",
+            "label": "IN5531 · 仪控联锁设计",
+            "level": 2,
+            "disciplineCode": "IN",
+            "cfihosUniqueCode": "CFIHOS-20000884",
+            "documentType": "IN5531",
+            "deliverableCode": "IN5531",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "IN2312",
+            "slug": "vdi-instrument-dcs",
+            "label": "IN2312 · DCS系统工程",
+            "level": 2,
+            "disciplineCode": "IN",
+            "cfihosUniqueCode": "CFIHOS-20000858",
+            "documentType": "IN2312",
+            "deliverableCode": "IN2312",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "IN4308",
+            "slug": "vdi-instrument-cable",
+            "label": "IN4308 · 仪控电缆与安装",
+            "level": 2,
+            "disciplineCode": "IN",
+            "cfihosUniqueCode": "CFIHOS-20000876",
+            "documentType": "IN4308",
+            "deliverableCode": "IN4308",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "IN7771",
+            "slug": "vdi-instrument-valve",
+            "label": "IN7771 · 最终控制元件",
+            "level": 2,
+            "disciplineCode": "IN",
+            "cfihosUniqueCode": "CFIHOS-20000899",
+            "documentType": "IN7771",
+            "deliverableCode": "IN7771",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "IN2105",
+            "slug": "vdi-instrument-analytical",
+            "label": "IN2105 · 在线分析仪表",
+            "level": 2,
+            "disciplineCode": "IN",
+            "cfihosUniqueCode": "CFIHOS-20000856",
+            "documentType": "IN2105",
+            "deliverableCode": "IN2105",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "TA4308",
+            "slug": "vdi-instrument-telecom",
+            "label": "TA4308 · 仪控通信与上位",
+            "level": 2,
+            "disciplineCode": "IN",
+            "cfihosUniqueCode": "CFIHOS-20001263",
+            "documentType": "TA4308",
+            "deliverableCode": "TA4308",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "IN4306",
+            "slug": "vdi-instrument-cable-mto",
+            "label": "IN4306 · 仪控电缆MTO",
+            "level": 3,
+            "disciplineCode": "IN",
+            "cfihosUniqueCode": "CFIHOS-20000875",
+            "documentType": "IN4306",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          }
+        ],
+        "l3": [
+          {
+            "id": "HX1222",
+            "slug": "vdi-instrument-calc-sil",
+            "label": "HX1222 · 仪控SIL计算",
+            "level": 3,
+            "disciplineCode": "IN",
+            "cfihosUniqueCode": "CFIHOS-20000804",
+            "documentType": "HX1222",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "IN2105",
+            "slug": "vdi-instrument-selection",
+            "label": "IN2105 · 仪控选型辅助",
+            "level": 3,
+            "disciplineCode": "IN",
+            "cfihosUniqueCode": "CFIHOS-20000856",
+            "documentType": "IN2105",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "IN4327",
+            "slug": "vdi-instrument-io-count",
+            "label": "IN4327 · 仪控IO统计",
+            "level": 3,
+            "disciplineCode": "IN",
+            "cfihosUniqueCode": "CFIHOS-20000877",
+            "documentType": "IN4327",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          }
+        ],
+        "edges": [
+          {
+            "from": "LEAD",
+            "to": "IN4315",
+            "type": "sequence"
+          },
+          {
+            "from": "IN4315",
+            "to": "IN2347",
+            "type": "sequence"
+          },
+          {
+            "from": "IN2347",
+            "to": "IN5531",
+            "type": "sequence"
+          },
+          {
+            "from": "IN5531",
+            "to": "IN2312",
+            "type": "sequence"
+          },
+          {
+            "from": "IN4315",
+            "to": "IN2105",
+            "type": "supports"
+          },
+          {
+            "from": "IN4315",
+            "to": "IN4327",
+            "type": "supports"
+          },
+          {
+            "from": "IN2347",
+            "to": "IN2105",
+            "type": "supports"
+          },
+          {
+            "from": "IN5531",
+            "to": "HX1222",
+            "type": "supports"
+          },
+          {
+            "from": "IN2312",
+            "to": "IN4327",
+            "type": "supports"
+          },
+          {
+            "from": "IN7771",
+            "to": "IN2105",
+            "type": "supports"
+          },
+          {
+            "from": "IN2105",
+            "to": "IN2105",
+            "type": "supports"
+          }
+        ]
+      }
+    ]
+  }
+};
     </script>
 </body>
 </html>

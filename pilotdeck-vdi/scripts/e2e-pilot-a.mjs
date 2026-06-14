@@ -64,14 +64,19 @@ const ORC = path.join(ROOT, "mcp/vdi-orchestrator/server.mjs");
 const RULES = path.join(ROOT, "mcp/vdi-rules/server.mjs");
 const EVENTS = path.join(ROOT, "mcp/vdi-events/server.mjs");
 
-const PROJECT = "VDI-PILOT-A";
+const PROJECT = "WATER-PLANT-BASE";
 const DIVIDER = "═".repeat(60);
+const PROJECT_DIR = path.join(WORKSPACE_ROOT, "给排水组/pilot/plant-base");
 
-// 清理上次残留
-try { execSync(`rm -rf "${WORKSPACE_ROOT}/${PROJECT}"`); } catch {}
+// 清理上次 E2E 残留（仅 plant-base 项目数据）
+try {
+  for (const sub of ["outputs", "events"]) {
+    execSync(`rm -rf "${path.join(PROJECT_DIR, sub)}"`);
+  }
+} catch {}
 
 console.log(DIVIDER);
-console.log("  试点 A E2E — 给排水单专业三审三校全链路验证");
+console.log("  给排水专业 E2E — 三审三校全链路（给排水组 / plant-base）");
 console.log(DIVIDER + "\n");
 
 let passed = 0;
@@ -89,7 +94,7 @@ console.log("── 阶段1：编排层（vdi-orchestrator）──\n");
 console.log("1.1 创建任务包");
 const pkg = mcpCall(ORC, "vdi_create_task_package", {
   project_id: PROJECT,
-  title: "某石化装置给排水基础设计（试点A）",
+  title: "某石化装置给排水基础设计",
   description: "涉及给水/消防/排水/循环水四个子领域，目标里程碑 model_review_30=2026-07-15",
   disciplines: ["water"],
   milestones: [
@@ -347,7 +352,14 @@ for (const [sub, output] of Object.entries(subOutputs)) {
   const stages = ["design", "checking", "review", "approval"];
   let allGatesPassed = true;
   for (const stage of stages) {
-    const gate = mcpCall(RULES, "vdi_check_review_gate", { discipline: "water", stage, output });
+    const gate = mcpCall(RULES, "vdi_check_review_gate", {
+      discipline: "water",
+      stage,
+      output,
+      ...(stage === "approval" && output.risk_level === "high"
+        ? { human_approval: true, reviewer_notes: "E2E 模拟人工审定确认" }
+        : {}),
+    });
     if (!gate?.passed) allGatesPassed = false;
     const label = { design: "自校", checking: "校核", review: "审核", approval: "审定" }[stage];
     console.log(`    ${gate?.passed ? "✅" : "❌"} ${label}: ${gate?.passed_checks}/${gate?.total_checks} checks`);
@@ -396,7 +408,11 @@ check("集成红线检查", !ir?.blocked, ir?.summary);
 
 console.log("\n4.3 集成输出审定");
 const iapprove = mcpCall(RULES, "vdi_check_review_gate", {
-  discipline: "water", stage: "approval", output: integrated,
+  discipline: "water",
+  stage: "approval",
+  output: integrated,
+  human_approval: true,
+  reviewer_notes: "E2E 模拟人工审定确认",
 });
 check("集成审定", iapprove?.passed, `${iapprove?.passed_checks}/${iapprove?.total_checks} checks`);
 
@@ -447,7 +463,7 @@ console.log(`  验收结果: ${passed}/${total} 通过`);
 if (failed > 0) {
   console.log(`  ❌ ${failed} 项未通过`);
 } else {
-  console.log(`  ✅ 全部通过 — 试点 A E2E 验收完成`);
+  console.log(`  ✅ 全部通过 — 给排水 E2E 验收完成`);
 }
 console.log(DIVIDER);
 

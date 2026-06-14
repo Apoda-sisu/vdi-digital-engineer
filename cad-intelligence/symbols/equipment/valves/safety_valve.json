@@ -1,0 +1,57 @@
+{
+  "symbol_id": "VALVE-SAFETY-001",
+  "name": "安全阀",
+  "name_en": "Safety Valve",
+  "standard": "GB/T 2625-1981",
+  "category": "valves",
+  "description": "弹簧式安全阀",
+  "parameters": {
+    "set_pressure": {
+      "type": "number",
+      "unit": "MPa",
+      "description": "整定压力"
+    },
+    "capacity": {
+      "type": "number",
+      "unit": "kg/h",
+      "description": "排放能力"
+    }
+  },
+  "connections": {
+    "inlet": {
+      "position": {"x": 0, "y": -12},
+      "direction": "down"
+    },
+    "outlet": {
+      "position": {"x": 0, "y": 12},
+      "direction": "up"
+    }
+  },
+  "geometry": {
+    "components": [
+      {
+        "type": "circle",
+        "params": {"radius": 8},
+        "description": "阀体"
+      },
+      {
+        "type": "line",
+        "params": {"start": [-8, 0], "end": [8, 0]},
+        "description": "阀座"
+      },
+      {
+        "type": "line",
+        "params": {"start": [0, 0], "end": [0, 10]},
+        "description": "阀杆"
+      },
+      {
+        "type": "triangle",
+        "params": {"size": 6},
+        "position": {"x": 0, "y": 12},
+        "description": "出口"
+      }
+    ]
+  },
+  "related_standards": ["GB/T 12241", "API 520", "API 521"],
+  "typical_applications": ["超压保护", "设备安全", "系统泄压"]
+}

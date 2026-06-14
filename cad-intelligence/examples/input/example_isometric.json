@@ -1,0 +1,89 @@
+{
+  "input_type": "scheme",
+  "project_info": {
+    "project_id": "PRJ-001",
+    "project_name": "某石化装置",
+    "drawing_number": "ISO-001",
+    "drawing_title": "管道单线图",
+    "revision": "A"
+  },
+  "geometry": {
+    "objects": [
+      {
+        "id": "EQ-001",
+        "type": "equipment",
+        "ai_type": "pump",
+        "position": { "x": 200, "y": 300, "z": 0 },
+        "label": "P-1001"
+      },
+      {
+        "id": "EQ-002",
+        "type": "equipment",
+        "ai_type": "heat_exchanger",
+        "position": { "x": 600, "y": 300, "z": 0 },
+        "label": "E-1001"
+      },
+      {
+        "id": "EQ-003",
+        "type": "equipment",
+        "ai_type": "vessel",
+        "position": { "x": 1000, "y": 300, "z": 0 },
+        "label": "T-1001"
+      },
+      {
+        "id": "EQ-004",
+        "type": "equipment",
+        "ai_type": "reactor",
+        "position": { "x": 600, "y": 650, "z": 500 },
+        "label": "R-1001"
+      },
+      {
+        "id": "EQ-005",
+        "type": "equipment",
+        "ai_type": "column",
+        "position": { "x": 1000, "y": 650, "z": 800 },
+        "label": "C-1001"
+      }
+    ],
+    "connections": [
+      {
+        "id": "CONN-001",
+        "type": "pipe",
+        "from": "EQ-001",
+        "to": "EQ-002",
+        "label": "1001-A1A-H",
+        "parameters": { "diameter": "DN100", "medium": "进料", "material": "CS" }
+      },
+      {
+        "id": "CONN-002",
+        "type": "pipe",
+        "from": "EQ-002",
+        "to": "EQ-003",
+        "label": "1002-A1A-H",
+        "parameters": { "diameter": "DN100", "medium": "进料", "material": "CS" }
+      },
+      {
+        "id": "CONN-003",
+        "type": "pipe",
+        "from": "EQ-002",
+        "to": "EQ-004",
+        "label": "1003-B1B-H",
+        "parameters": { "diameter": "DN80", "medium": "反应进料", "material": "SS304" }
+      },
+      {
+        "id": "CONN-004",
+        "type": "pipe",
+        "from": "EQ-004",
+        "to": "EQ-005",
+        "label": "1004-B1B-H",
+        "parameters": { "diameter": "DN65", "medium": "反应产物", "material": "SS304" }
+      }
+    ]
+  },
+  "output_config": {
+    "drawing_type": "isometric",
+    "format": "FCStd",
+    "paper_size": "A3",
+    "orientation": "landscape"
+  }
+}

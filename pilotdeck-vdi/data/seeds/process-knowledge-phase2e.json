@@ -1,0 +1,620 @@
+{
+  "seed_version": "2e",
+  "discipline": "process",
+  "description": "Sprint 5 Phase 2e 扩展",
+  "clauses": [
+    {
+      "clause_id": "SHT31212022-4-5-e",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "4.5",
+      "content": "对催化反应装置，工艺设计应明确催化剂装填量、预期寿命及再生/更换周期。",
+      "keywords": [
+        "催化剂",
+        "寿命",
+        "再生"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D02",
+        "PR-D05"
+      ],
+      "category": "SH/T3121-扩展"
+    },
+    {
+      "clause_id": "SHT31212022-4-6-e",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "4.6",
+      "content": "对分离序列设计，应评估热集成方案及对公用工程消耗的影响。",
+      "keywords": [
+        "分离序列",
+        "热集成"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D02",
+        "PR-D03"
+      ],
+      "category": "SH/T3121-扩展"
+    },
+    {
+      "clause_id": "SHT31212022-5-4-e",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "5.4",
+      "content": "流股表应给出各流股的质量流量、摩尔分率、温度、压力及相态。",
+      "keywords": [
+        "流股表",
+        "摩尔分率",
+        "相态"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03"
+      ],
+      "category": "SH/T3121-扩展"
+    },
+    {
+      "clause_id": "SHT31212022-5-5-e",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "5.5",
+      "content": "对含腐蚀性介质，物料平衡应标注氯离子、硫化氢等关键杂质浓度。",
+      "keywords": [
+        "腐蚀",
+        "杂质",
+        "H2S"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03",
+        "PR-S01"
+      ],
+      "category": "SH/T3121-扩展"
+    },
+    {
+      "clause_id": "SHT31212022-7-6-e",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "7.6",
+      "content": "储罐设计应明确储存温度、呼吸损失、氮封要求及高低液位联锁。",
+      "keywords": [
+        "储罐",
+        "氮封",
+        "液位联锁"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05",
+        "PR-S05"
+      ],
+      "category": "SH/T3121-扩展"
+    },
+    {
+      "clause_id": "SHT31212022-7-7-e",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "7.7",
+      "content": "过滤器/筛网选型应满足 Startup 及正常操作固体颗粒控制要求。",
+      "keywords": [
+        "过滤器",
+        "Startup"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05"
+      ],
+      "category": "SH/T3121-扩展"
+    },
+    {
+      "clause_id": "SHT31212022-8-5-e",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "8.5",
+      "content": "对毒性介质 PSV 排放，应评估火炬燃烧效率及地面浓度影响。",
+      "keywords": [
+        "毒性",
+        "火炬燃烧"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "SH/T3121-扩展"
+    },
+    {
+      "clause_id": "SHT31212022-8-6-e",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "8.6",
+      "content": "真空系统泄压应同时考虑正向超压及反向超压（ implosion ）保护。",
+      "keywords": [
+        "真空",
+        "超压",
+        "implosion"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "SH/T3121-扩展"
+    },
+    {
+      "clause_id": "SHT31212022-9-4-e",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "9.4",
+      "content": "串级控制方案应明确主副回路职责及防积分饱和措施。",
+      "keywords": [
+        "串级",
+        "积分饱和"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05"
+      ],
+      "category": "SH/T3121-扩展"
+    },
+    {
+      "clause_id": "SHT31212022-9-5-e",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "9.5",
+      "content": "分程控制及选择性控制应在控制哲学中单独说明应用场景。",
+      "keywords": [
+        "分程",
+        "选择性控制"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05"
+      ],
+      "category": "SH/T3121-扩展"
+    },
+    {
+      "clause_id": "SHT31212022-10-3-e",
+      "source_type": "standard",
+      "source_id": "SH/T 3121-2022",
+      "version": "2022",
+      "discipline": "process",
+      "clause": "10.3",
+      "content": "工艺设计应对 VOCs 无组织排放源提出控制措施。",
+      "keywords": [
+        "VOCs",
+        "无组织排放"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D02"
+      ],
+      "category": "SH/T3121-扩展"
+    },
+    {
+      "clause_id": "HGT205702015-4-4-e",
+      "source_type": "standard",
+      "source_id": "HG/T 20570-2015",
+      "version": "2015",
+      "discipline": "process",
+      "clause": "4.4",
+      "content": "P&ID 应标注管道编号、公称直径、管道等级、绝热要求及流向箭头。",
+      "keywords": [
+        "管道编号",
+        "管道等级",
+        "绝热"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01"
+      ],
+      "category": "HG20570-PID"
+    },
+    {
+      "clause_id": "HGT205702015-4-5-e",
+      "source_type": "standard",
+      "source_id": "HG/T 20570-2015",
+      "version": "2015",
+      "discipline": "process",
+      "clause": "4.5",
+      "content": "P&ID 安全阀、爆破片、限流孔板应标注位号、整定压力及排放去向。",
+      "keywords": [
+        "PSV标注",
+        "排放去向"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-S03"
+      ],
+      "category": "HG20570-PID"
+    },
+    {
+      "clause_id": "HGT205702015-4-6-e",
+      "source_type": "standard",
+      "source_id": "HG/T 20570-2015",
+      "version": "2015",
+      "discipline": "process",
+      "clause": "4.6",
+      "content": "P&ID 取样点、排凝点、放空点应使用标准符号并编号。",
+      "keywords": [
+        "取样点",
+        "排凝",
+        "放空"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-X02"
+      ],
+      "category": "HG20570-PID"
+    },
+    {
+      "clause_id": "HGT205702015-4-7-e",
+      "source_type": "standard",
+      "source_id": "HG/T 20570-2015",
+      "version": "2015",
+      "discipline": "process",
+      "clause": "4.7",
+      "content": "P&ID 版次记录应包含 HAZOP 审查版、配管会签版及 IFC 终版日期。",
+      "keywords": [
+        "版次",
+        "HAZOP",
+        "IFC"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01"
+      ],
+      "category": "HG20570-PID"
+    },
+    {
+      "clause_id": "HGT205702015-5-3-e",
+      "source_type": "standard",
+      "source_id": "HG/T 20570-2015",
+      "version": "2015",
+      "discipline": "process",
+      "clause": "5.3",
+      "content": "管道表与 P&ID 管道编号应完全一致，作为配管 ISO 图唯一索引。",
+      "keywords": [
+        "管道表",
+        "ISO图"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01"
+      ],
+      "category": "HG20570-PID"
+    },
+    {
+      "clause_id": "HGT205702015-6-2-e",
+      "source_type": "standard",
+      "source_id": "HG/T 20570-2015",
+      "version": "2015",
+      "discipline": "process",
+      "clause": "6.2",
+      "content": "蒸汽平衡应区分不同压力等级，并标注各等级产汽/用汽装置。",
+      "keywords": [
+        "蒸汽平衡",
+        "压力等级"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S04"
+      ],
+      "category": "HG20570-公用工程"
+    },
+    {
+      "clause_id": "HGT205702015-6-3-e",
+      "source_type": "standard",
+      "source_id": "HG/T 20570-2015",
+      "version": "2015",
+      "discipline": "process",
+      "clause": "6.3",
+      "content": "循环水系统应给出设计供回水温度、流量及用户清单。",
+      "keywords": [
+        "循环水",
+        "供回水"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S04"
+      ],
+      "category": "HG20570-公用工程"
+    },
+    {
+      "clause_id": "HGT205702015-6-4-e",
+      "source_type": "standard",
+      "source_id": "HG/T 20570-2015",
+      "version": "2015",
+      "discipline": "process",
+      "clause": "6.4",
+      "content": "氮气/仪表风系统应区分连续消耗与间歇吹扫用量。",
+      "keywords": [
+        "氮气",
+        "仪表风"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S04"
+      ],
+      "category": "HG20570-公用工程"
+    },
+    {
+      "clause_id": "APIRP520-7-1-e",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "7.1",
+      "content": "临界流动判定应基于下游压力与上游压力比值，选用正确泄放系数。",
+      "keywords": [
+        "临界流动",
+        "泄放系数"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-T07",
+        "PR-S03"
+      ],
+      "category": "API520-扩展"
+    },
+    {
+      "clause_id": "APIRP520-7-2-e",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "7.2",
+      "content": "蒸汽泄放应区分过热蒸汽与饱和蒸汽，采用对应 API 520 公式。",
+      "keywords": [
+        "蒸汽泄放",
+        "过热蒸汽"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-T07"
+      ],
+      "category": "API520-扩展"
+    },
+    {
+      "clause_id": "APIRP520-8-1-e",
+      "source_type": "standard",
+      "source_id": "API RP 520",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "8.1",
+      "content": "多组分混合物泄放应明确混合物性质计算方法（理想混合或实验数据）。",
+      "keywords": [
+        "混合物",
+        "泄放"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API520-扩展"
+    },
+    {
+      "clause_id": "VDI-PR-EQP-001-e",
+      "source_type": "rule",
+      "source_id": "VDI-PR-EQP-001",
+      "version": "2026",
+      "discipline": "process",
+      "clause": "1.0",
+      "content": "设备数据表应包含设计/正常/最大/最小流量及温度压力工况。",
+      "keywords": [
+        "设备数据表",
+        "工况"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-扩展"
+    },
+    {
+      "clause_id": "VDI-PR-EQP-002-e",
+      "source_type": "rule",
+      "source_id": "VDI-PR-EQP-002",
+      "version": "2026",
+      "discipline": "process",
+      "clause": "1.0",
+      "content": "长周期设备（压缩机、大型塔器）应标注工艺包阶段需冻结的参数。",
+      "keywords": [
+        "长周期设备",
+        "冻结参数"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D01",
+        "PR-D05"
+      ],
+      "category": "VDI工艺规则-扩展"
+    },
+    {
+      "clause_id": "VDI-PR-INT-001-e",
+      "source_type": "rule",
+      "source_id": "VDI-PR-INT-001",
+      "version": "2026",
+      "discipline": "process",
+      "clause": "1.0",
+      "content": "与管道专业接口：工艺系统提供管道等级初稿及特殊管道清单。",
+      "keywords": [
+        "管道等级",
+        "专业接口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01"
+      ],
+      "category": "VDI工艺规则-扩展"
+    },
+    {
+      "clause_id": "VDI-PR-INT-002-e",
+      "source_type": "rule",
+      "source_id": "VDI-PR-INT-002",
+      "version": "2026",
+      "discipline": "process",
+      "clause": "1.0",
+      "content": "与仪控专业接口：工艺提供 C&E 及联锁矩阵，仪控提供 SIS 详细设计。",
+      "keywords": [
+        "仪控接口",
+        "SIS"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05"
+      ],
+      "category": "VDI工艺规则-扩展"
+    },
+    {
+      "clause_id": "VDI-PR-INT-003-e",
+      "source_type": "rule",
+      "source_id": "VDI-PR-INT-003",
+      "version": "2026",
+      "discipline": "process",
+      "clause": "1.0",
+      "content": "与总图专业接口：提供设备清单及相对定位要求、风向及火炬方位。",
+      "keywords": [
+        "总图接口",
+        "设备定位"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D04"
+      ],
+      "category": "VDI工艺规则-扩展"
+    },
+    {
+      "clause_id": "VDI-PR-STG-001-e",
+      "source_type": "rule",
+      "source_id": "VDI-PR-STG-001",
+      "version": "2026",
+      "discipline": "process",
+      "clause": "1.0",
+      "content": "30% P&ID 深度应满足 HAZOP 节点划分及主要仪表识别。",
+      "keywords": [
+        "30% P&ID",
+        "HAZOP"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-X01"
+      ],
+      "category": "VDI工艺规则-扩展"
+    },
+    {
+      "clause_id": "VDI-PR-STG-002-e",
+      "source_type": "rule",
+      "source_id": "VDI-PR-STG-002",
+      "version": "2026",
+      "discipline": "process",
+      "clause": "1.0",
+      "content": "60% P&ID 深度应完成管道等级及主要管道尺寸。",
+      "keywords": [
+        "60% P&ID",
+        "管道等级"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01"
+      ],
+      "category": "VDI工艺规则-扩展"
+    },
+    {
+      "clause_id": "VDI-PR-STG-003-e",
+      "source_type": "rule",
+      "source_id": "VDI-PR-STG-003",
+      "version": "2026",
+      "discipline": "process",
+      "clause": "1.0",
+      "content": "90% P&ID 深度应完成安全阀、控制阀及在线分析仪表选型。",
+      "keywords": [
+        "90% P&ID",
+        "选型"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-S03"
+      ],
+      "category": "VDI工艺规则-扩展"
+    },
+    {
+      "clause_id": "GBT509332013-5-3-6-e",
+      "source_type": "standard",
+      "source_id": "GB/T 50933-2013",
+      "version": "2013",
+      "discipline": "process",
+      "clause": "5.3.6",
+      "content": "基础设计应提交分析化验手册目录及取样点汇总表。",
+      "keywords": [
+        "化验手册",
+        "基础设计"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X02",
+        "PR-D01"
+      ],
+      "category": "GB50933-扩展"
+    },
+    {
+      "clause_id": "GBT509332013-5-3-7-e",
+      "source_type": "standard",
+      "source_id": "GB/T 50933-2013",
+      "version": "2013",
+      "discipline": "process",
+      "clause": "5.3.7",
+      "content": "基础设计应明确三废治理方向及主要排放指标（工艺侧源强）。",
+      "keywords": [
+        "三废",
+        "源强"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D03"
+      ],
+      "category": "GB50933-扩展"
+    },
+    {
+      "clause_id": "GBT509332013-6-2-5-e",
+      "source_type": "standard",
+      "source_id": "GB/T 50933-2013",
+      "version": "2013",
+      "discipline": "process",
+      "clause": "6.2.5",
+      "content": "详细设计应提交管道应力分析所需工艺条件（温度压力波动）。",
+      "keywords": [
+        "管道应力",
+        "工艺条件"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01"
+      ],
+      "category": "GB50933-扩展"
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+version: '3.8'
+
+services:
+  # VDI 知识库服务
+  vdi-knowledge:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vdi-knowledge
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./pilotdeck-vdi/data:/app/pilotdeck-vdi/data
+      - ./workspaces:/app/workspaces
+      - ./logs:/app/logs
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - LOG_LEVEL=info
+    restart: unless-stopped
+    networks:
+      - vdi-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # VDI 事件总线服务
+  vdi-events:
+    build:
+      context: .
+      dockerfile: Dockerfile.events
+    container_name: vdi-events
+    ports:
+      - "3011:3001"
+    volumes:
+      - ./pilotdeck-vdi/mcp/vdi-events:/app/events
+      - ./workspaces:/app/workspaces
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+      - LOG_LEVEL=info
+    restart: unless-stopped
+    networks:
+      - vdi-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # VDI 规则引擎服务
+  vdi-rules:
+    build:
+      context: .
+      dockerfile: Dockerfile.rules
+    container_name: vdi-rules
+    ports:
+      - "3002:3002"
+    volumes:
+      - ./pilotdeck-vdi/mcp/vdi-rules:/app/rules
+      - ./pilotdeck-vdi/data:/app/data
+    environment:
+      - NODE_ENV=production
+      - PORT=3002
+      - LOG_LEVEL=info
+    restart: unless-stopped
+    networks:
+      - vdi-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # VDI 图片解读服务（表格/文字类图片）
+  vdi-vision:
+    build:
+      context: .
+      dockerfile: Dockerfile.vision
+    container_name: vdi-vision
+    ports:
+      - "3004:3004"
+    volumes:
+      - ./workspaces:/app/workspaces
+      - ./uploads:/app/uploads
+    environment:
+      - NODE_ENV=production
+      - PORT=3004
+      - VISION_PROVIDER=${VISION_PROVIDER:-openai}
+      - VISION_API_KEY=${VISION_API_KEY:-}
+      - VISION_API_BASE=${VISION_API_BASE:-}
+      - VISION_MODEL_OPENAI=${VISION_MODEL_OPENAI:-gpt-4o-mini}
+      - VISION_MODEL_OLLAMA=${VISION_MODEL_OLLAMA:-llava}
+      - OLLAMA_BASE=${OLLAMA_BASE:-http://host.docker.internal:11434}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+    networks:
+      - vdi-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3004/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # VDI 文档服务
+  vdi-documents:
+    build:
+      context: .
+      dockerfile: Dockerfile.documents
+    container_name: vdi-documents
+    ports:
+      - "3003:3003"
+    volumes:
+      - ./pilotdeck-vdi/mcp/documents:/app/documents
+      - ./workspaces:/app/workspaces
+    environment:
+      - NODE_ENV=production
+      - PORT=3003
+      - LOG_LEVEL=info
+    restart: unless-stopped
+    networks:
+      - vdi-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3003/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Nginx 反向代理
+  nginx:
+    image: nginx:alpine
+    container_name: vdi-nginx
+    ports:
+      - "8880:80"
+      - "8443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+      - ./pilotdeck-vdi/data/dashboard-enhanced.html:/usr/share/nginx/html/index.html:ro
+    depends_on:
+      - vdi-knowledge
+      - vdi-events
+      - vdi-rules
+      - vdi-documents
+      - vdi-vision
+    restart: unless-stopped
+    networks:
+      - vdi-network
+
+  # Redis 缓存
+  redis:
+    image: redis:7-alpine
+    container_name: vdi-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-vdi_redis_2026}
+    restart: unless-stopped
+    networks:
+      - vdi-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # PostgreSQL 数据库
+  postgres:
+    image: postgres:15-alpine
+    container_name: vdi-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=vdi_db
+      - POSTGRES_USER=vdi_user
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-vdi_postgres_2026}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: unless-stopped
+    networks:
+      - vdi-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vdi_user -d vdi_db"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # 监控服务
+  monitoring:
+    image: prom/prometheus:latest
+    container_name: vdi-monitoring
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    restart: unless-stopped
+    networks:
+      - vdi-network
+
+networks:
+  vdi-network:
+    driver: bridge
+
+volumes:
+  redis-data:
+    driver: local
+  postgres-data:
+    driver: local
+  prometheus-data:
+    driver: local

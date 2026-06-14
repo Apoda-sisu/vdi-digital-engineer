@@ -1,208 +1,52 @@
 {
   "nodes": [
     {
-      "id": "skill:vdi-design-manager",
+      "id": "skill:undefined",
       "type": "skill",
       "name": "设计经理",
-      "group": "MG"
+      "group": "AA"
     },
     {
-      "id": "mcp:vdi-orchestrator",
-      "type": "mcp",
-      "name": "vdi-orchestrator",
-      "group": "mcp"
-    },
-    {
-      "id": "mcp:vdi-knowledge",
-      "type": "mcp",
-      "name": "vdi-knowledge",
-      "group": "mcp"
-    },
-    {
-      "id": "disc:MG",
+      "id": "disc:AA",
       "type": "discipline",
-      "name": "MG",
+      "name": "AA",
       "group": "discipline"
     },
     {
-      "id": "skill:vdi-doc-export",
-      "type": "skill",
-      "name": "文档导出",
-      "group": "MG"
+      "id": "disc:IN",
+      "type": "discipline",
+      "name": "IN",
+      "group": "discipline"
+    },
+    {
+      "id": "disc:MP",
+      "type": "discipline",
+      "name": "MP",
+      "group": "discipline"
+    },
+    {
+      "id": "disc:PX",
+      "type": "discipline",
+      "name": "PX",
+      "group": "discipline"
+    },
+    {
+      "id": "disc:JA",
+      "type": "discipline",
+      "name": "JA",
+      "group": "discipline"
+    },
+    {
+      "id": "disc:CI",
+      "type": "discipline",
+      "name": "CI",
+      "group": "discipline"
     },
     {
       "id": "mcp:documents",
       "type": "mcp",
       "name": "documents",
       "group": "mcp"
-    },
-    {
-      "id": "skill:vdi-doc-ingest",
-      "type": "skill",
-      "name": "文档解读",
-      "group": "MG"
-    },
-    {
-      "id": "skill:vdi-process-balance",
-      "type": "skill",
-      "name": "物料热量平衡",
-      "group": "PR"
-    },
-    {
-      "id": "disc:PR",
-      "type": "discipline",
-      "name": "PR",
-      "group": "discipline"
-    },
-    {
-      "id": "skill:vdi-process-calc",
-      "type": "skill",
-      "name": "工艺计算",
-      "group": "PR"
-    },
-    {
-      "id": "skill:vdi-process-data-mgmt",
-      "type": "skill",
-      "name": "工艺数据管理",
-      "group": "PR"
-    },
-    {
-      "id": "skill:vdi-process-docgen",
-      "type": "skill",
-      "name": "工艺文档生成",
-      "group": "PR"
-    },
-    {
-      "id": "skill:vdi-process-equipment",
-      "type": "skill",
-      "name": "工艺设备数据表",
-      "group": "PR"
-    },
-    {
-      "id": "skill:vdi-process-lead",
-      "type": "skill",
-      "name": "工艺专业负责人",
-      "group": "PR"
-    },
-    {
-      "id": "mcp:vdi-rules",
-      "type": "mcp",
-      "name": "vdi-rules",
-      "group": "mcp"
-    },
-    {
-      "id": "skill:vdi-process-pfd-pid",
-      "type": "skill",
-      "name": "PFD-PID设计",
-      "group": "PR"
-    },
-    {
-      "id": "skill:vdi-process-route",
-      "type": "skill",
-      "name": "工艺路线设计基础",
-      "group": "PR"
-    },
-    {
-      "id": "skill:vdi-process-safety",
-      "type": "skill",
-      "name": "工艺安全分析",
-      "group": "PR"
-    },
-    {
-      "id": "skill:vdi-process-simulation",
-      "type": "skill",
-      "name": "流程模拟",
-      "group": "PR"
-    },
-    {
-      "id": "skill:vdi-process-utilities",
-      "type": "skill",
-      "name": "公用工程排放",
-      "group": "PR"
-    },
-    {
-      "id": "skill:vdi-scheduler-agent",
-      "type": "skill",
-      "name": "计划调度",
-      "group": "MG"
-    },
-    {
-      "id": "skill:vdi-system-health",
-      "type": "skill",
-      "name": "\"系统健康检查\"",
-      "group": "\"system\""
-    },
-    {
-      "id": "mcp:\"vdi-knowledge\"",
-      "type": "mcp",
-      "name": "\"vdi-knowledge\"",
-      "group": "mcp"
-    },
-    {
-      "id": "disc:\"system\"",
-      "type": "discipline",
-      "name": "\"system\"",
-      "group": "discipline"
-    },
-    {
-      "id": "skill:vdi-water-circulating",
-      "type": "skill",
-      "name": "循环水系统设计",
-      "group": "WA"
-    },
-    {
-      "id": "disc:WA",
-      "type": "discipline",
-      "name": "WA",
-      "group": "discipline"
-    },
-    {
-      "id": "skill:vdi-water-drainage",
-      "type": "skill",
-      "name": "排水系统设计",
-      "group": "WA"
-    },
-    {
-      "id": "skill:vdi-water-equipment",
-      "type": "skill",
-      "name": "给排水设备选型",
-      "group": "WA"
-    },
-    {
-      "id": "skill:vdi-water-fire",
-      "type": "skill",
-      "name": "消防给水设计",
-      "group": "WA"
-    },
-    {
-      "id": "skill:vdi-water-hydraulics",
-      "type": "skill",
-      "name": "给排水水力计算",
-      "group": "WA"
-    },
-    {
-      "id": "skill:vdi-water-lead",
-      "type": "skill",
-      "name": "给排水专业负责人",
-      "group": "WA"
-    },
-    {
-      "id": "skill:vdi-water-stormwater",
-      "type": "skill",
-      "name": "雨水系统设计",
-      "group": "WA"
-    },
-    {
-      "id": "skill:vdi-water-supply",
-      "type": "skill",
-      "name": "给水系统设计",
-      "group": "WA"
-    },
-    {
-      "id": "skill:vdi-water-wastewater",
-      "type": "skill",
-      "name": "污水处理设计",
-      "group": "WA"
     },
     {
       "id": "tool:content_read",
@@ -325,6 +169,114 @@
       "group": "documents"
     },
     {
+      "id": "mcp:vdi-cad",
+      "type": "mcp",
+      "name": "vdi-cad",
+      "group": "mcp"
+    },
+    {
+      "id": "tool:vdi_cad_generate",
+      "type": "tool",
+      "name": "vdi_cad_generate",
+      "group": "vdi-cad"
+    },
+    {
+      "id": "tool:vdi_cad_status",
+      "type": "tool",
+      "name": "vdi_cad_status",
+      "group": "vdi-cad"
+    },
+    {
+      "id": "tool:vdi_cad_export",
+      "type": "tool",
+      "name": "vdi_cad_export",
+      "group": "vdi-cad"
+    },
+    {
+      "id": "tool:vdi_cad_screenshot",
+      "type": "tool",
+      "name": "vdi_cad_screenshot",
+      "group": "vdi-cad"
+    },
+    {
+      "id": "tool:vdi_cad_execute",
+      "type": "tool",
+      "name": "vdi_cad_execute",
+      "group": "vdi-cad"
+    },
+    {
+      "id": "tool:vdi_cad_extract_model",
+      "type": "tool",
+      "name": "vdi_cad_extract_model",
+      "group": "vdi-cad"
+    },
+    {
+      "id": "tool:vdi_cad_apply_delta",
+      "type": "tool",
+      "name": "vdi_cad_apply_delta",
+      "group": "vdi-cad"
+    },
+    {
+      "id": "tool:vdi_cad_load_plant_model",
+      "type": "tool",
+      "name": "vdi_cad_load_plant_model",
+      "group": "vdi-cad"
+    },
+    {
+      "id": "tool:vdi_cad_validate_plant_model",
+      "type": "tool",
+      "name": "vdi_cad_validate_plant_model",
+      "group": "vdi-cad"
+    },
+    {
+      "id": "tool:vdi_cad_export_object_list",
+      "type": "tool",
+      "name": "vdi_cad_export_object_list",
+      "group": "vdi-cad"
+    },
+    {
+      "id": "tool:vdi_cad_export_dexpi",
+      "type": "tool",
+      "name": "vdi_cad_export_dexpi",
+      "group": "vdi-cad"
+    },
+    {
+      "id": "tool:vdi_cad_export_cfihos",
+      "type": "tool",
+      "name": "vdi_cad_export_cfihos",
+      "group": "vdi-cad"
+    },
+    {
+      "id": "tool:vdi_cad_apply_plant_delta",
+      "type": "tool",
+      "name": "vdi_cad_apply_plant_delta",
+      "group": "vdi-cad"
+    },
+    {
+      "id": "tool:vdi_cad_get_object",
+      "type": "tool",
+      "name": "vdi_cad_get_object",
+      "group": "vdi-cad"
+    },
+    {
+      "id": "tool:vdi_cad_get_drawing_manifest",
+      "type": "tool",
+      "name": "vdi_cad_get_drawing_manifest",
+      "group": "vdi-cad"
+    },
+    {
+      "id": "tool:vdi_cad_resolve_pick",
+      "type": "tool",
+      "name": "vdi_cad_resolve_pick",
+      "group": "vdi-cad"
+    },
+    {
+      "id": "tool:vdi_cad_regenerate_drawing",
+      "type": "tool",
+      "name": "vdi_cad_regenerate_drawing",
+      "group": "vdi-cad"
+    },
+    {
       "id": "mcp:vdi-events",
       "type": "mcp",
       "name": "vdi-events",
@@ -359,6 +311,12 @@
       "type": "tool",
       "name": "vdi_list_subscribers",
       "group": "vdi-events"
+    },
+    {
+      "id": "mcp:vdi-knowledge",
+      "type": "mcp",
+      "name": "vdi-knowledge",
+      "group": "mcp"
     },
     {
       "id": "tool:vdi_search_knowledge",
@@ -413,6 +371,12 @@
       "type": "tool",
       "name": "vdi_calculate_composite",
       "group": "vdi-knowledge"
+    },
+    {
+      "id": "mcp:vdi-orchestrator",
+      "type": "mcp",
+      "name": "vdi-orchestrator",
+      "group": "mcp"
     },
     {
       "id": "tool:vdi_create_task_package",
@@ -481,6 +445,12 @@
       "group": "vdi-orchestrator"
     },
     {
+      "id": "mcp:vdi-rules",
+      "type": "mcp",
+      "name": "vdi-rules",
+      "group": "mcp"
+    },
+    {
       "id": "tool:vdi_check_redlines",
       "type": "tool",
       "name": "vdi_check_redlines",
@@ -505,460 +475,472 @@
       "group": "vdi-rules"
     },
     {
+      "id": "tool:vdi_validate_plant_model",
+      "type": "tool",
+      "name": "vdi_validate_plant_model",
+      "group": "vdi-rules"
+    },
+    {
+      "id": "mcp:vdi-vision",
+      "type": "mcp",
+      "name": "vdi-vision",
+      "group": "mcp"
+    },
+    {
+      "id": "tool:vdi_analyze_image",
+      "type": "tool",
+      "name": "vdi_analyze_image",
+      "group": "vdi-vision"
+    },
+    {
+      "id": "tool:vdi_vision_status",
+      "type": "tool",
+      "name": "vdi_vision_status",
+      "group": "vdi-vision"
+    },
+    {
       "id": "formula:EL-CAB-001",
       "type": "formula",
       "name": "EL-CAB-001",
-      "group": "electrical"
+      "group": "EA"
     },
     {
-      "id": "disc:electrical",
+      "id": "disc:EA",
       "type": "discipline",
-      "name": "electrical",
+      "name": "EA",
       "group": "discipline"
     },
     {
       "id": "formula:EL-CAB-002",
       "type": "formula",
       "name": "EL-CAB-002",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-CAB-003",
       "type": "formula",
       "name": "EL-CAB-003",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-CAB-004",
       "type": "formula",
       "name": "EL-CAB-004",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-CAB-005",
       "type": "formula",
       "name": "EL-CAB-005",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-CAB-006",
       "type": "formula",
       "name": "EL-CAB-006",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-LIG-001",
       "type": "formula",
       "name": "EL-LIG-001",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-LIG-002",
       "type": "formula",
       "name": "EL-LIG-002",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-LIG-003",
       "type": "formula",
       "name": "EL-LIG-003",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-LIG-004",
       "type": "formula",
       "name": "EL-LIG-004",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-LIG-005",
       "type": "formula",
       "name": "EL-LIG-005",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-LOAD-001",
       "type": "formula",
       "name": "EL-LOAD-001",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-LOAD-002",
       "type": "formula",
       "name": "EL-LOAD-002",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-LOAD-003",
       "type": "formula",
       "name": "EL-LOAD-003",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-LOAD-004",
       "type": "formula",
       "name": "EL-LOAD-004",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-LOAD-005",
       "type": "formula",
       "name": "EL-LOAD-005",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-LOAD-006",
       "type": "formula",
       "name": "EL-LOAD-006",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-LOAD-007",
       "type": "formula",
       "name": "EL-LOAD-007",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-LOAD-008",
       "type": "formula",
       "name": "EL-LOAD-008",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-LOAD-009",
       "type": "formula",
       "name": "EL-LOAD-009",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-LOAD-010",
       "type": "formula",
       "name": "EL-LOAD-010",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-POW-001",
       "type": "formula",
       "name": "EL-POW-001",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-VOL-001",
       "type": "formula",
       "name": "EL-VOL-001",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-POW-002",
       "type": "formula",
       "name": "EL-POW-002",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-PRO-001",
       "type": "formula",
       "name": "EL-PRO-001",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-PRO-002",
       "type": "formula",
       "name": "EL-PRO-002",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-PRO-003",
       "type": "formula",
       "name": "EL-PRO-003",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-PRO-004",
       "type": "formula",
       "name": "EL-PRO-004",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-PRO-005",
       "type": "formula",
       "name": "EL-PRO-005",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:EL-PRO-006",
       "type": "formula",
       "name": "EL-PRO-006",
-      "group": "electrical"
+      "group": "EA"
     },
     {
       "id": "formula:HS-VEN-001",
       "type": "formula",
       "name": "HS-VEN-001",
-      "group": "hse"
+      "group": "HS"
     },
     {
-      "id": "disc:hse",
+      "id": "disc:HS",
       "type": "discipline",
-      "name": "hse",
+      "name": "HS",
       "group": "discipline"
     },
     {
       "id": "formula:HS-VEN-002",
       "type": "formula",
       "name": "HS-VEN-002",
-      "group": "hse"
+      "group": "HS"
     },
     {
       "id": "formula:IN-SEL-001",
       "type": "formula",
       "name": "IN-SEL-001",
-      "group": "instrument"
-    },
-    {
-      "id": "disc:instrument",
-      "type": "discipline",
-      "name": "instrument",
-      "group": "discipline"
+      "group": "IN"
     },
     {
       "id": "formula:IN-SEL-002",
       "type": "formula",
       "name": "IN-SEL-002",
-      "group": "instrument"
+      "group": "IN"
     },
     {
       "id": "formula:IN-SEL-003",
       "type": "formula",
       "name": "IN-SEL-003",
-      "group": "instrument"
+      "group": "IN"
     },
     {
       "id": "formula:IN-SEL-004",
       "type": "formula",
       "name": "IN-SEL-004",
-      "group": "instrument"
+      "group": "IN"
     },
     {
       "id": "formula:IN-SEL-005",
       "type": "formula",
       "name": "IN-SEL-005",
-      "group": "instrument"
+      "group": "IN"
     },
     {
       "id": "formula:IN-SEL-006",
       "type": "formula",
       "name": "IN-SEL-006",
-      "group": "instrument"
+      "group": "IN"
     },
     {
       "id": "formula:IN-SEL-007",
       "type": "formula",
       "name": "IN-SEL-007",
-      "group": "instrument"
+      "group": "IN"
     },
     {
       "id": "formula:IN-SEL-008",
       "type": "formula",
       "name": "IN-SEL-008",
-      "group": "instrument"
+      "group": "IN"
     },
     {
       "id": "formula:IN-SIL-001",
       "type": "formula",
       "name": "IN-SIL-001",
-      "group": "instrument"
+      "group": "IN"
     },
     {
       "id": "formula:IN-SIL-002",
       "type": "formula",
       "name": "IN-SIL-002",
-      "group": "instrument"
+      "group": "IN"
     },
     {
       "id": "formula:IN-SIL-003",
       "type": "formula",
       "name": "IN-SIL-003",
-      "group": "instrument"
+      "group": "IN"
     },
     {
       "id": "formula:IN-SIL-004",
       "type": "formula",
       "name": "IN-SIL-004",
-      "group": "instrument"
+      "group": "IN"
     },
     {
       "id": "formula:IN-SIL-005",
       "type": "formula",
       "name": "IN-SIL-005",
-      "group": "instrument"
+      "group": "IN"
     },
     {
       "id": "formula:IN-SIL-006",
       "type": "formula",
       "name": "IN-SIL-006",
-      "group": "instrument"
+      "group": "IN"
     },
     {
       "id": "formula:PI-COR-001",
       "type": "formula",
       "name": "PI-COR-001",
-      "group": "piping"
-    },
-    {
-      "id": "disc:piping",
-      "type": "discipline",
-      "name": "piping",
-      "group": "discipline"
+      "group": "MP"
     },
     {
       "id": "formula:PI-COR-002",
       "type": "formula",
       "name": "PI-COR-002",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-COR-003",
       "type": "formula",
       "name": "PI-COR-003",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-COR-004",
       "type": "formula",
       "name": "PI-COR-004",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-FLOW-001",
       "type": "formula",
       "name": "PI-FLOW-001",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-FLOW-002",
       "type": "formula",
       "name": "PI-FLOW-002",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-FLOW-003",
       "type": "formula",
       "name": "PI-FLOW-003",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-FLOW-004",
       "type": "formula",
       "name": "PI-FLOW-004",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-FLOW-005",
       "type": "formula",
       "name": "PI-FLOW-005",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-FLOW-006",
       "type": "formula",
       "name": "PI-FLOW-006",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-FLOW-007",
       "type": "formula",
       "name": "PI-FLOW-007",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-FLOW-008",
       "type": "formula",
       "name": "PI-FLOW-008",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-FLOW-009",
       "type": "formula",
       "name": "PI-FLOW-009",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-FLOW-010",
       "type": "formula",
       "name": "PI-FLOW-010",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-VOL-002",
       "type": "formula",
       "name": "PI-VOL-002",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-VOL-003",
       "type": "formula",
       "name": "PI-VOL-003",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-VEL-002",
       "type": "formula",
       "name": "PI-VEL-002",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-VEL-003",
       "type": "formula",
       "name": "PI-VEL-003",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-VEL-004",
       "type": "formula",
       "name": "PI-VEL-004",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-VEL-005",
       "type": "formula",
       "name": "PI-VEL-005",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-VEL-006",
       "type": "formula",
       "name": "PI-VEL-006",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-VEL-007",
       "type": "formula",
       "name": "PI-VEL-007",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-STR-001",
       "type": "formula",
       "name": "PI-STR-001",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-VOL-001",
       "type": "formula",
       "name": "PI-VOL-001",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-VEL-001",
       "type": "formula",
       "name": "PI-VEL-001",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-STR-002",
       "type": "formula",
       "name": "PI-STR-002",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "table:[object Object]",
@@ -974,553 +956,571 @@
       "id": "formula:PI-STR-003",
       "type": "formula",
       "name": "PI-STR-003",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-STR-004",
       "type": "formula",
       "name": "PI-STR-004",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-STR-005",
       "type": "formula",
       "name": "PI-STR-005",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-STR-006",
       "type": "formula",
       "name": "PI-STR-006",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-STR-007",
       "type": "formula",
       "name": "PI-STR-007",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-VIB-001",
       "type": "formula",
       "name": "PI-VIB-001",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-VIB-002",
       "type": "formula",
       "name": "PI-VIB-002",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-VIB-003",
       "type": "formula",
       "name": "PI-VIB-003",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PI-VIB-004",
       "type": "formula",
       "name": "PI-VIB-004",
-      "group": "piping"
+      "group": "MP"
     },
     {
       "id": "formula:PR-CAT-001",
       "type": "formula",
       "name": "PR-CAT-001",
-      "group": "process"
-    },
-    {
-      "id": "disc:process",
-      "type": "discipline",
-      "name": "process",
-      "group": "discipline"
+      "group": "PX"
     },
     {
       "id": "formula:PR-CAT-002",
       "type": "formula",
       "name": "PR-CAT-002",
-      "group": "process"
+      "group": "PX"
     },
     {
       "id": "formula:PR-CAT-003",
       "type": "formula",
       "name": "PR-CAT-003",
-      "group": "process"
+      "group": "PX"
     },
     {
       "id": "formula:PR-CAT-004",
       "type": "formula",
       "name": "PR-CAT-004",
-      "group": "process"
+      "group": "PX"
     },
     {
       "id": "formula:PR-CAT-005",
       "type": "formula",
       "name": "PR-CAT-005",
-      "group": "process"
+      "group": "PX"
     },
     {
       "id": "formula:PR-CAT-006",
       "type": "formula",
       "name": "PR-CAT-006",
-      "group": "process"
+      "group": "PX"
     },
     {
-      "id": "formula:PR-FLO-002",
+      "id": "formula:PR-COL-001",
       "type": "formula",
-      "name": "PR-FLO-002",
-      "group": "process"
-    },
-    {
-      "id": "formula:PR-FLO-003",
-      "type": "formula",
-      "name": "PR-FLO-003",
-      "group": "process"
-    },
-    {
-      "id": "formula:PR-FLO-004",
-      "type": "formula",
-      "name": "PR-FLO-004",
-      "group": "process"
-    },
-    {
-      "id": "formula:PR-FLO-005",
-      "type": "formula",
-      "name": "PR-FLO-005",
-      "group": "process"
-    },
-    {
-      "id": "formula:PR-FLO-006",
-      "type": "formula",
-      "name": "PR-FLO-006",
-      "group": "process"
-    },
-    {
-      "id": "formula:PR-FLO-007",
-      "type": "formula",
-      "name": "PR-FLO-007",
-      "group": "process"
-    },
-    {
-      "id": "formula:PR-FLO-008",
-      "type": "formula",
-      "name": "PR-FLO-008",
-      "group": "process"
-    },
-    {
-      "id": "formula:PR-FLO-009",
-      "type": "formula",
-      "name": "PR-FLO-009",
-      "group": "process"
-    },
-    {
-      "id": "formula:PR-HEA-002",
-      "type": "formula",
-      "name": "PR-HEA-002",
-      "group": "process"
-    },
-    {
-      "id": "formula:PR-HEA-003",
-      "type": "formula",
-      "name": "PR-HEA-003",
-      "group": "process"
-    },
-    {
-      "id": "formula:PR-HEA-004",
-      "type": "formula",
-      "name": "PR-HEA-004",
-      "group": "process"
-    },
-    {
-      "id": "formula:PR-HEA-005",
-      "type": "formula",
-      "name": "PR-HEA-005",
-      "group": "process"
-    },
-    {
-      "id": "formula:PR-HEA-006",
-      "type": "formula",
-      "name": "PR-HEA-006",
-      "group": "process"
-    },
-    {
-      "id": "formula:PR-HEA-007",
-      "type": "formula",
-      "name": "PR-HEA-007",
-      "group": "process"
-    },
-    {
-      "id": "formula:PR-HEA-008",
-      "type": "formula",
-      "name": "PR-HEA-008",
-      "group": "process"
-    },
-    {
-      "id": "formula:PR-HEA-009",
-      "type": "formula",
-      "name": "PR-HEA-009",
-      "group": "process"
-    },
-    {
-      "id": "formula:PR-REA-001",
-      "type": "formula",
-      "name": "PR-REA-001",
-      "group": "process"
-    },
-    {
-      "id": "formula:PR-REA-002",
-      "type": "formula",
-      "name": "PR-REA-002",
-      "group": "process"
-    },
-    {
-      "id": "formula:PR-FLO-001",
-      "type": "formula",
-      "name": "PR-FLO-001",
-      "group": "process"
+      "name": "PR-COL-001",
+      "group": "PX"
     },
     {
       "id": "formula:PR-HEA-001",
       "type": "formula",
       "name": "PR-HEA-001",
-      "group": "process"
+      "group": "PX"
+    },
+    {
+      "id": "formula:PR-FLO-002",
+      "type": "formula",
+      "name": "PR-FLO-002",
+      "group": "PX"
+    },
+    {
+      "id": "formula:PR-FLO-003",
+      "type": "formula",
+      "name": "PR-FLO-003",
+      "group": "PX"
+    },
+    {
+      "id": "formula:PR-FLO-004",
+      "type": "formula",
+      "name": "PR-FLO-004",
+      "group": "PX"
+    },
+    {
+      "id": "formula:PR-FLO-005",
+      "type": "formula",
+      "name": "PR-FLO-005",
+      "group": "PX"
+    },
+    {
+      "id": "formula:PR-FLO-006",
+      "type": "formula",
+      "name": "PR-FLO-006",
+      "group": "PX"
+    },
+    {
+      "id": "formula:PR-FLO-007",
+      "type": "formula",
+      "name": "PR-FLO-007",
+      "group": "PX"
+    },
+    {
+      "id": "formula:PR-FLO-008",
+      "type": "formula",
+      "name": "PR-FLO-008",
+      "group": "PX"
+    },
+    {
+      "id": "formula:PR-FLO-009",
+      "type": "formula",
+      "name": "PR-FLO-009",
+      "group": "PX"
+    },
+    {
+      "id": "formula:PR-HEA-002",
+      "type": "formula",
+      "name": "PR-HEA-002",
+      "group": "PX"
+    },
+    {
+      "id": "formula:PR-HEA-003",
+      "type": "formula",
+      "name": "PR-HEA-003",
+      "group": "PX"
+    },
+    {
+      "id": "formula:PR-HEA-004",
+      "type": "formula",
+      "name": "PR-HEA-004",
+      "group": "PX"
+    },
+    {
+      "id": "formula:PR-HEA-005",
+      "type": "formula",
+      "name": "PR-HEA-005",
+      "group": "PX"
+    },
+    {
+      "id": "formula:PR-HEA-006",
+      "type": "formula",
+      "name": "PR-HEA-006",
+      "group": "PX"
+    },
+    {
+      "id": "formula:PR-HEA-007",
+      "type": "formula",
+      "name": "PR-HEA-007",
+      "group": "PX"
+    },
+    {
+      "id": "formula:PR-HEA-008",
+      "type": "formula",
+      "name": "PR-HEA-008",
+      "group": "PX"
+    },
+    {
+      "id": "formula:PR-HEA-009",
+      "type": "formula",
+      "name": "PR-HEA-009",
+      "group": "PX"
+    },
+    {
+      "id": "formula:PR-PSV-001",
+      "type": "formula",
+      "name": "PR-PSV-001",
+      "group": "PX"
+    },
+    {
+      "id": "formula:PR-PSV-002",
+      "type": "formula",
+      "name": "PR-PSV-002",
+      "group": "PX"
+    },
+    {
+      "id": "formula:PR-PSV-003",
+      "type": "formula",
+      "name": "PR-PSV-003",
+      "group": "PX"
+    },
+    {
+      "id": "formula:PR-PMP-001",
+      "type": "formula",
+      "name": "PR-PMP-001",
+      "group": "PX"
+    },
+    {
+      "id": "formula:PR-REA-001",
+      "type": "formula",
+      "name": "PR-REA-001",
+      "group": "PX"
+    },
+    {
+      "id": "formula:PR-REA-002",
+      "type": "formula",
+      "name": "PR-REA-002",
+      "group": "PX"
+    },
+    {
+      "id": "formula:PR-FLO-001",
+      "type": "formula",
+      "name": "PR-FLO-001",
+      "group": "PX"
     },
     {
       "id": "formula:PR-RCT-001",
       "type": "formula",
       "name": "PR-RCT-001",
-      "group": "process"
+      "group": "PX"
     },
     {
       "id": "formula:PR-RCT-002",
       "type": "formula",
       "name": "PR-RCT-002",
-      "group": "process"
+      "group": "PX"
     },
     {
       "id": "formula:PR-RCT-003",
       "type": "formula",
       "name": "PR-RCT-003",
-      "group": "process"
+      "group": "PX"
     },
     {
       "id": "formula:PR-RCT-004",
       "type": "formula",
       "name": "PR-RCT-004",
-      "group": "process"
+      "group": "PX"
     },
     {
       "id": "formula:PR-RCT-005",
       "type": "formula",
       "name": "PR-RCT-005",
-      "group": "process"
+      "group": "PX"
     },
     {
       "id": "formula:PR-RCT-006",
       "type": "formula",
       "name": "PR-RCT-006",
-      "group": "process"
+      "group": "PX"
     },
     {
       "id": "formula:PR-SEP-001",
       "type": "formula",
       "name": "PR-SEP-001",
-      "group": "process"
+      "group": "PX"
     },
     {
       "id": "formula:PR-SEP-002",
       "type": "formula",
       "name": "PR-SEP-002",
-      "group": "process"
+      "group": "PX"
     },
     {
       "id": "formula:PR-SEP-003",
       "type": "formula",
       "name": "PR-SEP-003",
-      "group": "process"
+      "group": "PX"
     },
     {
       "id": "formula:PR-SEP-004",
       "type": "formula",
       "name": "PR-SEP-004",
-      "group": "process"
+      "group": "PX"
     },
     {
       "id": "formula:PR-SEP-005",
       "type": "formula",
       "name": "PR-SEP-005",
-      "group": "process"
+      "group": "PX"
     },
     {
       "id": "formula:PR-SEP-006",
       "type": "formula",
       "name": "PR-SEP-006",
-      "group": "process"
+      "group": "PX"
     },
     {
       "id": "formula:PR-REA-003",
       "type": "formula",
       "name": "PR-REA-003",
-      "group": "process"
+      "group": "PX"
     },
     {
       "id": "formula:PR-REA-004",
       "type": "formula",
       "name": "PR-REA-004",
-      "group": "process"
+      "group": "PX"
     },
     {
       "id": "formula:PR-REA-005",
       "type": "formula",
       "name": "PR-REA-005",
-      "group": "process"
+      "group": "PX"
     },
     {
       "id": "formula:PR-VAP-001",
       "type": "formula",
       "name": "PR-VAP-001",
-      "group": "process"
+      "group": "PX"
     },
     {
       "id": "formula:PR-VAP-002",
       "type": "formula",
       "name": "PR-VAP-002",
-      "group": "process"
+      "group": "PX"
     },
     {
       "id": "formula:PR-VAP-003",
       "type": "formula",
       "name": "PR-VAP-003",
-      "group": "process"
+      "group": "PX"
     },
     {
       "id": "formula:WA-EQ-001",
       "type": "formula",
       "name": "WA-EQ-001",
-      "group": "water"
-    },
-    {
-      "id": "disc:water",
-      "type": "discipline",
-      "name": "water",
-      "group": "discipline"
+      "group": "CI"
     },
     {
       "id": "formula:WA-EQ-002",
       "type": "formula",
       "name": "WA-EQ-002",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-EQ-003",
       "type": "formula",
       "name": "WA-EQ-003",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-EQ-004",
       "type": "formula",
       "name": "WA-EQ-004",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-EQ-005",
       "type": "formula",
       "name": "WA-EQ-005",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-EQ-006",
       "type": "formula",
       "name": "WA-EQ-006",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-EQ-007",
       "type": "formula",
       "name": "WA-EQ-007",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-FIR-001",
       "type": "formula",
       "name": "WA-FIR-001",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-FIR-002",
       "type": "formula",
       "name": "WA-FIR-002",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-FIR-003",
       "type": "formula",
       "name": "WA-FIR-003",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-FIR-004",
       "type": "formula",
       "name": "WA-FIR-004",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-FIR-005",
       "type": "formula",
       "name": "WA-FIR-005",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-FIR-006",
       "type": "formula",
       "name": "WA-FIR-006",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-HYD-001",
       "type": "formula",
       "name": "WA-HYD-001",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-HYD-002",
       "type": "formula",
       "name": "WA-HYD-002",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-HYD-003",
       "type": "formula",
       "name": "WA-HYD-003",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-HYD-004",
       "type": "formula",
       "name": "WA-HYD-004",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-HYD-005",
       "type": "formula",
       "name": "WA-HYD-005",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-HYD-006",
       "type": "formula",
       "name": "WA-HYD-006",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-HYD-007",
       "type": "formula",
       "name": "WA-HYD-007",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-HYD-008",
       "type": "formula",
       "name": "WA-HYD-008",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-HYD-009",
       "type": "formula",
       "name": "WA-HYD-009",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-HYD-010",
       "type": "formula",
       "name": "WA-HYD-010",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-HYD-011",
       "type": "formula",
       "name": "WA-HYD-011",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-HYD-012",
       "type": "formula",
       "name": "WA-HYD-012",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-HYD-013",
       "type": "formula",
       "name": "WA-HYD-013",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-HYD-014",
       "type": "formula",
       "name": "WA-HYD-014",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-HYD-015",
       "type": "formula",
       "name": "WA-HYD-015",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-HYD-016",
       "type": "formula",
       "name": "WA-HYD-016",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-HYD-017",
       "type": "formula",
       "name": "WA-HYD-017",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-HYD-018",
       "type": "formula",
       "name": "WA-HYD-018",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-HYD-019",
       "type": "formula",
       "name": "WA-HYD-019",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-HYD-020",
       "type": "formula",
       "name": "WA-HYD-020",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-RAI-001",
       "type": "formula",
       "name": "WA-RAI-001",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-RAI-002",
       "type": "formula",
       "name": "WA-RAI-002",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-RAI-003",
       "type": "formula",
       "name": "WA-RAI-003",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "formula:WA-WQ-001",
       "type": "formula",
       "name": "WA-WQ-001",
-      "group": "water"
+      "group": "CI"
     },
     {
       "id": "table:TBL-C-001",
@@ -1849,464 +1849,422 @@
   ],
   "edges": [
     {
-      "from": "skill:vdi-design-manager",
-      "to": "mcp:vdi-orchestrator",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-design-manager",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-design-manager",
-      "to": "disc:MG",
+      "from": "skill:undefined",
+      "to": "disc:AA",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-doc-export",
-      "to": "mcp:documents",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-doc-export",
-      "to": "disc:MG",
+      "from": "skill:undefined",
+      "to": "disc:AA",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-doc-ingest",
-      "to": "mcp:documents",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-doc-ingest",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-doc-ingest",
-      "to": "disc:MG",
+      "from": "skill:undefined",
+      "to": "disc:AA",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-process-balance",
-      "to": "skill:vdi-process-lead",
-      "type": "SKILL_REPORTS_TO",
-      "label": "汇报"
-    },
-    {
-      "from": "skill:vdi-process-balance",
-      "to": "disc:PR",
+      "from": "skill:undefined",
+      "to": "disc:IN",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-process-calc",
-      "to": "disc:PR",
+      "from": "skill:undefined",
+      "to": "disc:IN",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-process-data-mgmt",
-      "to": "disc:PR",
+      "from": "skill:undefined",
+      "to": "disc:IN",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-process-docgen",
-      "to": "disc:PR",
+      "from": "skill:undefined",
+      "to": "disc:IN",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-process-equipment",
-      "to": "skill:vdi-process-lead",
-      "type": "SKILL_REPORTS_TO",
-      "label": "汇报"
-    },
-    {
-      "from": "skill:vdi-process-equipment",
-      "to": "disc:PR",
+      "from": "skill:undefined",
+      "to": "disc:IN",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-process-lead",
-      "to": "mcp:vdi-orchestrator",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-process-lead",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-process-lead",
-      "to": "mcp:vdi-rules",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-process-lead",
-      "to": "skill:vdi-process-route",
-      "type": "SKILL_MANAGES",
-      "label": "管理"
-    },
-    {
-      "from": "skill:vdi-process-lead",
-      "to": "skill:vdi-process-balance",
-      "type": "SKILL_MANAGES",
-      "label": "管理"
-    },
-    {
-      "from": "skill:vdi-process-lead",
-      "to": "skill:vdi-process-pfd-pid",
-      "type": "SKILL_MANAGES",
-      "label": "管理"
-    },
-    {
-      "from": "skill:vdi-process-lead",
-      "to": "skill:vdi-process-equipment",
-      "type": "SKILL_MANAGES",
-      "label": "管理"
-    },
-    {
-      "from": "skill:vdi-process-lead",
-      "to": "skill:vdi-process-safety",
-      "type": "SKILL_MANAGES",
-      "label": "管理"
-    },
-    {
-      "from": "skill:vdi-process-lead",
-      "to": "skill:vdi-process-utilities",
-      "type": "SKILL_MANAGES",
-      "label": "管理"
-    },
-    {
-      "from": "skill:vdi-process-lead",
-      "to": "disc:PR",
+      "from": "skill:undefined",
+      "to": "disc:IN",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-process-pfd-pid",
-      "to": "skill:vdi-process-lead",
-      "type": "SKILL_REPORTS_TO",
-      "label": "汇报"
-    },
-    {
-      "from": "skill:vdi-process-pfd-pid",
-      "to": "disc:PR",
+      "from": "skill:undefined",
+      "to": "disc:IN",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-process-route",
-      "to": "skill:vdi-process-lead",
-      "type": "SKILL_REPORTS_TO",
-      "label": "汇报"
-    },
-    {
-      "from": "skill:vdi-process-route",
-      "to": "disc:PR",
+      "from": "skill:undefined",
+      "to": "disc:IN",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-process-safety",
-      "to": "skill:vdi-process-lead",
-      "type": "SKILL_REPORTS_TO",
-      "label": "汇报"
-    },
-    {
-      "from": "skill:vdi-process-safety",
-      "to": "disc:PR",
+      "from": "skill:undefined",
+      "to": "disc:IN",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-process-simulation",
-      "to": "disc:PR",
+      "from": "skill:undefined",
+      "to": "disc:IN",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-process-utilities",
-      "to": "skill:vdi-process-lead",
-      "type": "SKILL_REPORTS_TO",
-      "label": "汇报"
-    },
-    {
-      "from": "skill:vdi-process-utilities",
-      "to": "disc:PR",
+      "from": "skill:undefined",
+      "to": "disc:IN",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-scheduler-agent",
-      "to": "mcp:vdi-orchestrator",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-scheduler-agent",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-scheduler-agent",
-      "to": "disc:MG",
+      "from": "skill:undefined",
+      "to": "disc:IN",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-system-health",
-      "to": "mcp:\"vdi-knowledge\"",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-system-health",
-      "to": "disc:\"system\"",
+      "from": "skill:undefined",
+      "to": "disc:IN",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-water-circulating",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-water-circulating",
-      "to": "mcp:vdi-rules",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-water-circulating",
-      "to": "skill:vdi-water-lead",
-      "type": "SKILL_REPORTS_TO",
-      "label": "汇报"
-    },
-    {
-      "from": "skill:vdi-water-circulating",
-      "to": "disc:WA",
+      "from": "skill:undefined",
+      "to": "disc:MP",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-water-drainage",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-water-drainage",
-      "to": "mcp:vdi-rules",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-water-drainage",
-      "to": "skill:vdi-water-lead",
-      "type": "SKILL_REPORTS_TO",
-      "label": "汇报"
-    },
-    {
-      "from": "skill:vdi-water-drainage",
-      "to": "disc:WA",
+      "from": "skill:undefined",
+      "to": "disc:MP",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-water-equipment",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-water-equipment",
-      "to": "disc:WA",
+      "from": "skill:undefined",
+      "to": "disc:MP",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-water-fire",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-water-fire",
-      "to": "mcp:vdi-rules",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-water-fire",
-      "to": "skill:vdi-water-lead",
-      "type": "SKILL_REPORTS_TO",
-      "label": "汇报"
-    },
-    {
-      "from": "skill:vdi-water-fire",
-      "to": "disc:WA",
+      "from": "skill:undefined",
+      "to": "disc:MP",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-water-hydraulics",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-water-hydraulics",
-      "to": "disc:WA",
+      "from": "skill:undefined",
+      "to": "disc:MP",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-water-lead",
-      "to": "mcp:vdi-orchestrator",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-water-lead",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-water-lead",
-      "to": "mcp:vdi-rules",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-water-lead",
-      "to": "skill:vdi-water-supply",
-      "type": "SKILL_MANAGES",
-      "label": "管理"
-    },
-    {
-      "from": "skill:vdi-water-lead",
-      "to": "skill:vdi-water-fire",
-      "type": "SKILL_MANAGES",
-      "label": "管理"
-    },
-    {
-      "from": "skill:vdi-water-lead",
-      "to": "skill:vdi-water-drainage",
-      "type": "SKILL_MANAGES",
-      "label": "管理"
-    },
-    {
-      "from": "skill:vdi-water-lead",
-      "to": "skill:vdi-water-stormwater",
-      "type": "SKILL_MANAGES",
-      "label": "管理"
-    },
-    {
-      "from": "skill:vdi-water-lead",
-      "to": "skill:vdi-water-wastewater",
-      "type": "SKILL_MANAGES",
-      "label": "管理"
-    },
-    {
-      "from": "skill:vdi-water-lead",
-      "to": "skill:vdi-water-circulating",
-      "type": "SKILL_MANAGES",
-      "label": "管理"
-    },
-    {
-      "from": "skill:vdi-water-lead",
-      "to": "disc:WA",
+      "from": "skill:undefined",
+      "to": "disc:MP",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-water-stormwater",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-water-stormwater",
-      "to": "mcp:vdi-rules",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-water-stormwater",
-      "to": "skill:vdi-water-lead",
-      "type": "SKILL_REPORTS_TO",
-      "label": "汇报"
-    },
-    {
-      "from": "skill:vdi-water-stormwater",
-      "to": "disc:WA",
+      "from": "skill:undefined",
+      "to": "disc:MP",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-water-supply",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-water-supply",
-      "to": "mcp:vdi-rules",
-      "type": "SKILL_MCP",
-      "label": "依赖"
-    },
-    {
-      "from": "skill:vdi-water-supply",
-      "to": "skill:vdi-water-lead",
-      "type": "SKILL_REPORTS_TO",
-      "label": "汇报"
-    },
-    {
-      "from": "skill:vdi-water-supply",
-      "to": "disc:WA",
+      "from": "skill:undefined",
+      "to": "disc:MP",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "skill:vdi-water-wastewater",
-      "to": "mcp:vdi-knowledge",
-      "type": "SKILL_MCP",
-      "label": "依赖"
+      "from": "skill:undefined",
+      "to": "disc:MP",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
     },
     {
-      "from": "skill:vdi-water-wastewater",
-      "to": "mcp:vdi-rules",
-      "type": "SKILL_MCP",
-      "label": "依赖"
+      "from": "skill:undefined",
+      "to": "disc:MP",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
     },
     {
-      "from": "skill:vdi-water-wastewater",
-      "to": "skill:vdi-water-lead",
-      "type": "SKILL_REPORTS_TO",
-      "label": "汇报"
+      "from": "skill:undefined",
+      "to": "disc:MP",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
     },
     {
-      "from": "skill:vdi-water-wastewater",
-      "to": "disc:WA",
+      "from": "skill:undefined",
+      "to": "disc:MP",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:MP",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:MP",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:MP",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:MP",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:MP",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:MP",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:MP",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:MP",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:PX",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:PX",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:PX",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:PX",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:PX",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:PX",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:PX",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:PX",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:PX",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:PX",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:PX",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:PX",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:PX",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:PX",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:PX",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:PX",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:PX",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:PX",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:PX",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:PX",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:PX",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:PX",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:PX",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:AA",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:JA",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:CI",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:CI",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:CI",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:CI",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:CI",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:CI",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:CI",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:CI",
+      "type": "SKILL_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "skill:undefined",
+      "to": "disc:CI",
       "type": "SKILL_DISCIPLINE",
       "label": "所属专业"
     },
@@ -2427,6 +2385,108 @@
     {
       "from": "mcp:documents",
       "to": "tool:version_restore",
+      "type": "MCP_TOOL",
+      "label": "提供"
+    },
+    {
+      "from": "mcp:vdi-cad",
+      "to": "tool:vdi_cad_generate",
+      "type": "MCP_TOOL",
+      "label": "提供"
+    },
+    {
+      "from": "mcp:vdi-cad",
+      "to": "tool:vdi_cad_status",
+      "type": "MCP_TOOL",
+      "label": "提供"
+    },
+    {
+      "from": "mcp:vdi-cad",
+      "to": "tool:vdi_cad_export",
+      "type": "MCP_TOOL",
+      "label": "提供"
+    },
+    {
+      "from": "mcp:vdi-cad",
+      "to": "tool:vdi_cad_screenshot",
+      "type": "MCP_TOOL",
+      "label": "提供"
+    },
+    {
+      "from": "mcp:vdi-cad",
+      "to": "tool:vdi_cad_execute",
+      "type": "MCP_TOOL",
+      "label": "提供"
+    },
+    {
+      "from": "mcp:vdi-cad",
+      "to": "tool:vdi_cad_extract_model",
+      "type": "MCP_TOOL",
+      "label": "提供"
+    },
+    {
+      "from": "mcp:vdi-cad",
+      "to": "tool:vdi_cad_apply_delta",
+      "type": "MCP_TOOL",
+      "label": "提供"
+    },
+    {
+      "from": "mcp:vdi-cad",
+      "to": "tool:vdi_cad_load_plant_model",
+      "type": "MCP_TOOL",
+      "label": "提供"
+    },
+    {
+      "from": "mcp:vdi-cad",
+      "to": "tool:vdi_cad_validate_plant_model",
+      "type": "MCP_TOOL",
+      "label": "提供"
+    },
+    {
+      "from": "mcp:vdi-cad",
+      "to": "tool:vdi_cad_export_object_list",
+      "type": "MCP_TOOL",
+      "label": "提供"
+    },
+    {
+      "from": "mcp:vdi-cad",
+      "to": "tool:vdi_cad_export_dexpi",
+      "type": "MCP_TOOL",
+      "label": "提供"
+    },
+    {
+      "from": "mcp:vdi-cad",
+      "to": "tool:vdi_cad_export_cfihos",
+      "type": "MCP_TOOL",
+      "label": "提供"
+    },
+    {
+      "from": "mcp:vdi-cad",
+      "to": "tool:vdi_cad_apply_plant_delta",
+      "type": "MCP_TOOL",
+      "label": "提供"
+    },
+    {
+      "from": "mcp:vdi-cad",
+      "to": "tool:vdi_cad_get_object",
+      "type": "MCP_TOOL",
+      "label": "提供"
+    },
+    {
+      "from": "mcp:vdi-cad",
+      "to": "tool:vdi_cad_get_drawing_manifest",
+      "type": "MCP_TOOL",
+      "label": "提供"
+    },
+    {
+      "from": "mcp:vdi-cad",
+      "to": "tool:vdi_cad_resolve_pick",
+      "type": "MCP_TOOL",
+      "label": "提供"
+    },
+    {
+      "from": "mcp:vdi-cad",
+      "to": "tool:vdi_cad_regenerate_drawing",
       "type": "MCP_TOOL",
       "label": "提供"
     },
@@ -2605,434 +2665,452 @@
       "label": "提供"
     },
     {
+      "from": "mcp:vdi-rules",
+      "to": "tool:vdi_validate_plant_model",
+      "type": "MCP_TOOL",
+      "label": "提供"
+    },
+    {
+      "from": "mcp:vdi-vision",
+      "to": "tool:vdi_analyze_image",
+      "type": "MCP_TOOL",
+      "label": "提供"
+    },
+    {
+      "from": "mcp:vdi-vision",
+      "to": "tool:vdi_vision_status",
+      "type": "MCP_TOOL",
+      "label": "提供"
+    },
+    {
       "from": "formula:EL-CAB-001",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-CAB-002",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-CAB-003",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-CAB-004",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-CAB-005",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-CAB-006",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-LIG-001",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-LIG-002",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-LIG-003",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-LIG-004",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-LIG-005",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-LOAD-001",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-LOAD-002",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-LOAD-003",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-LOAD-004",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-LOAD-005",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-LOAD-006",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-LOAD-007",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-LOAD-008",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-LOAD-009",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-LOAD-010",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-POW-001",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-VOL-001",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-POW-002",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-PRO-001",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-PRO-002",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-PRO-003",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-PRO-004",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-PRO-005",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:EL-PRO-006",
-      "to": "disc:electrical",
+      "to": "disc:EA",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:HS-VEN-001",
-      "to": "disc:hse",
+      "to": "disc:HS",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:HS-VEN-002",
-      "to": "disc:hse",
+      "to": "disc:HS",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:IN-SEL-001",
-      "to": "disc:instrument",
+      "to": "disc:IN",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:IN-SEL-002",
-      "to": "disc:instrument",
+      "to": "disc:IN",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:IN-SEL-003",
-      "to": "disc:instrument",
+      "to": "disc:IN",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:IN-SEL-004",
-      "to": "disc:instrument",
+      "to": "disc:IN",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:IN-SEL-005",
-      "to": "disc:instrument",
+      "to": "disc:IN",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:IN-SEL-006",
-      "to": "disc:instrument",
+      "to": "disc:IN",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:IN-SEL-007",
-      "to": "disc:instrument",
+      "to": "disc:IN",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:IN-SEL-008",
-      "to": "disc:instrument",
+      "to": "disc:IN",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:IN-SIL-001",
-      "to": "disc:instrument",
+      "to": "disc:IN",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:IN-SIL-002",
-      "to": "disc:instrument",
+      "to": "disc:IN",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:IN-SIL-003",
-      "to": "disc:instrument",
+      "to": "disc:IN",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:IN-SIL-004",
-      "to": "disc:instrument",
+      "to": "disc:IN",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:IN-SIL-005",
-      "to": "disc:instrument",
+      "to": "disc:IN",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:IN-SIL-006",
-      "to": "disc:instrument",
+      "to": "disc:IN",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-COR-001",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-COR-002",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-COR-003",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-COR-004",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-FLOW-001",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-FLOW-002",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-FLOW-003",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-FLOW-004",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-FLOW-005",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-FLOW-006",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-FLOW-007",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-FLOW-008",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-FLOW-009",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-FLOW-010",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-VOL-002",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-VOL-003",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-VEL-002",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-VEL-003",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-VEL-004",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-VEL-005",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-VEL-006",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-VEL-007",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-STR-001",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-VOL-001",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-VEL-001",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-STR-002",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3044,325 +3122,361 @@
     },
     {
       "from": "formula:PI-STR-003",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-STR-004",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-STR-005",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-STR-006",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-STR-007",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-VIB-001",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-VIB-002",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-VIB-003",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PI-VIB-004",
-      "to": "disc:piping",
+      "to": "disc:MP",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-CAT-001",
-      "to": "disc:process",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-CAT-002",
-      "to": "disc:process",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-CAT-003",
-      "to": "disc:process",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-CAT-004",
-      "to": "disc:process",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-CAT-005",
-      "to": "disc:process",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-CAT-006",
-      "to": "disc:process",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "formula:PR-FLO-002",
-      "to": "disc:process",
-      "type": "FORMULA_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "formula:PR-FLO-003",
-      "to": "disc:process",
-      "type": "FORMULA_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "formula:PR-FLO-004",
-      "to": "disc:process",
-      "type": "FORMULA_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "formula:PR-FLO-005",
-      "to": "disc:process",
-      "type": "FORMULA_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "formula:PR-FLO-006",
-      "to": "disc:process",
-      "type": "FORMULA_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "formula:PR-FLO-007",
-      "to": "disc:process",
-      "type": "FORMULA_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "formula:PR-FLO-008",
-      "to": "disc:process",
-      "type": "FORMULA_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "formula:PR-FLO-009",
-      "to": "disc:process",
-      "type": "FORMULA_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "formula:PR-HEA-002",
-      "to": "disc:process",
-      "type": "FORMULA_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "formula:PR-HEA-003",
-      "to": "disc:process",
-      "type": "FORMULA_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "formula:PR-HEA-004",
-      "to": "disc:process",
-      "type": "FORMULA_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "formula:PR-HEA-005",
-      "to": "disc:process",
-      "type": "FORMULA_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "formula:PR-HEA-006",
-      "to": "disc:process",
-      "type": "FORMULA_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "formula:PR-HEA-007",
-      "to": "disc:process",
-      "type": "FORMULA_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "formula:PR-HEA-008",
-      "to": "disc:process",
-      "type": "FORMULA_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "formula:PR-HEA-009",
-      "to": "disc:process",
-      "type": "FORMULA_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "formula:PR-REA-001",
-      "to": "disc:process",
-      "type": "FORMULA_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "formula:PR-REA-002",
-      "to": "disc:process",
-      "type": "FORMULA_DISCIPLINE",
-      "label": "所属专业"
-    },
-    {
-      "from": "formula:PR-FLO-001",
-      "to": "disc:process",
+      "from": "formula:PR-COL-001",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-HEA-001",
-      "to": "disc:process",
+      "to": "disc:PX",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PR-FLO-002",
+      "to": "disc:PX",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PR-FLO-003",
+      "to": "disc:PX",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PR-FLO-004",
+      "to": "disc:PX",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PR-FLO-005",
+      "to": "disc:PX",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PR-FLO-006",
+      "to": "disc:PX",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PR-FLO-007",
+      "to": "disc:PX",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PR-FLO-008",
+      "to": "disc:PX",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PR-FLO-009",
+      "to": "disc:PX",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PR-HEA-002",
+      "to": "disc:PX",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PR-HEA-003",
+      "to": "disc:PX",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PR-HEA-004",
+      "to": "disc:PX",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PR-HEA-005",
+      "to": "disc:PX",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PR-HEA-006",
+      "to": "disc:PX",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PR-HEA-007",
+      "to": "disc:PX",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PR-HEA-008",
+      "to": "disc:PX",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PR-HEA-009",
+      "to": "disc:PX",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PR-PSV-001",
+      "to": "disc:PX",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PR-PSV-002",
+      "to": "disc:PX",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PR-PSV-003",
+      "to": "disc:PX",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PR-PMP-001",
+      "to": "disc:PX",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PR-REA-001",
+      "to": "disc:PX",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PR-REA-002",
+      "to": "disc:PX",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PR-FLO-001",
+      "to": "disc:PX",
+      "type": "FORMULA_DISCIPLINE",
+      "label": "所属专业"
+    },
+    {
+      "from": "formula:PR-HEA-001",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-RCT-001",
-      "to": "disc:process",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-RCT-002",
-      "to": "disc:process",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-RCT-003",
-      "to": "disc:process",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-RCT-004",
-      "to": "disc:process",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-RCT-005",
-      "to": "disc:process",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-RCT-006",
-      "to": "disc:process",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-SEP-001",
-      "to": "disc:process",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-SEP-002",
-      "to": "disc:process",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-SEP-003",
-      "to": "disc:process",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-SEP-004",
-      "to": "disc:process",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-SEP-005",
-      "to": "disc:process",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-SEP-006",
-      "to": "disc:process",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-REA-003",
-      "to": "disc:process",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-REA-004",
-      "to": "disc:process",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-REA-005",
-      "to": "disc:process",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-VAP-001",
-      "to": "disc:process",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-VAP-002",
-      "to": "disc:process",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:PR-VAP-003",
-      "to": "disc:process",
+      "to": "disc:PX",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:WA-EQ-001",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3374,7 +3488,7 @@
     },
     {
       "from": "formula:WA-EQ-002",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3386,7 +3500,7 @@
     },
     {
       "from": "formula:WA-EQ-003",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3404,7 +3518,7 @@
     },
     {
       "from": "formula:WA-EQ-004",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3416,13 +3530,13 @@
     },
     {
       "from": "formula:WA-EQ-005",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:WA-EQ-006",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3434,25 +3548,25 @@
     },
     {
       "from": "formula:WA-EQ-007",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:WA-FIR-001",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:WA-FIR-002",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:WA-FIR-003",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3476,7 +3590,7 @@
     },
     {
       "from": "formula:WA-FIR-004",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3494,19 +3608,19 @@
     },
     {
       "from": "formula:WA-FIR-005",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:WA-FIR-006",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:WA-HYD-001",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3530,7 +3644,7 @@
     },
     {
       "from": "formula:WA-HYD-002",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3548,19 +3662,19 @@
     },
     {
       "from": "formula:WA-HYD-003",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:WA-HYD-004",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:WA-HYD-005",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3572,7 +3686,7 @@
     },
     {
       "from": "formula:WA-HYD-006",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3584,7 +3698,7 @@
     },
     {
       "from": "formula:WA-HYD-007",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3602,7 +3716,7 @@
     },
     {
       "from": "formula:WA-HYD-008",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3620,7 +3734,7 @@
     },
     {
       "from": "formula:WA-HYD-009",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3644,7 +3758,7 @@
     },
     {
       "from": "formula:WA-HYD-010",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3668,7 +3782,7 @@
     },
     {
       "from": "formula:WA-HYD-011",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3686,7 +3800,7 @@
     },
     {
       "from": "formula:WA-HYD-012",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3710,7 +3824,7 @@
     },
     {
       "from": "formula:WA-HYD-013",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3734,7 +3848,7 @@
     },
     {
       "from": "formula:WA-HYD-014",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3752,7 +3866,7 @@
     },
     {
       "from": "formula:WA-HYD-015",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3776,7 +3890,7 @@
     },
     {
       "from": "formula:WA-HYD-016",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3794,7 +3908,7 @@
     },
     {
       "from": "formula:WA-HYD-017",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3812,7 +3926,7 @@
     },
     {
       "from": "formula:WA-HYD-018",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3824,7 +3938,7 @@
     },
     {
       "from": "formula:WA-HYD-019",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3848,13 +3962,13 @@
     },
     {
       "from": "formula:WA-HYD-020",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:WA-RAI-001",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3872,13 +3986,13 @@
     },
     {
       "from": "formula:WA-RAI-002",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
       "from": "formula:WA-RAI-003",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
@@ -3890,187 +4004,424 @@
     },
     {
       "from": "formula:WA-WQ-001",
-      "to": "disc:water",
+      "to": "disc:CI",
       "type": "FORMULA_DISCIPLINE",
       "label": "所属专业"
     },
     {
-      "from": "disc:PR",
+      "from": "disc:PX",
+      "to": "event:design_basis.updated",
+      "type": "EVENT_PRODUCER",
+      "label": "发布"
+    },
+    {
+      "from": "disc:JA",
       "to": "event:design_basis.updated",
       "type": "EVENT_PRODUCER",
       "label": "发布"
     },
     {
       "from": "event:design_basis.updated",
-      "to": "disc:WA",
+      "to": "disc:MP",
       "type": "EVENT_CONSUMER",
       "label": "订阅"
     },
     {
-      "from": "disc:WA",
+      "from": "event:design_basis.updated",
+      "to": "disc:IN",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:design_basis.updated",
+      "to": "disc:CI",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:design_basis.updated",
+      "to": "disc:HS",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:design_basis.updated",
+      "to": "disc:EA",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "disc:MP",
+      "to": "event:design_basis.acknowledged",
+      "type": "EVENT_PRODUCER",
+      "label": "发布"
+    },
+    {
+      "from": "disc:IN",
+      "to": "event:design_basis.acknowledged",
+      "type": "EVENT_PRODUCER",
+      "label": "发布"
+    },
+    {
+      "from": "disc:CI",
+      "to": "event:design_basis.acknowledged",
+      "type": "EVENT_PRODUCER",
+      "label": "发布"
+    },
+    {
+      "from": "disc:HS",
+      "to": "event:design_basis.acknowledged",
+      "type": "EVENT_PRODUCER",
+      "label": "发布"
+    },
+    {
+      "from": "disc:EA",
       "to": "event:design_basis.acknowledged",
       "type": "EVENT_PRODUCER",
       "label": "发布"
     },
     {
       "from": "event:design_basis.acknowledged",
-      "to": "disc:PR",
+      "to": "disc:PX",
       "type": "EVENT_CONSUMER",
       "label": "订阅"
     },
     {
-      "from": "disc:WA",
+      "from": "event:design_basis.acknowledged",
+      "to": "disc:JA",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "disc:EA",
       "to": "event:condition.changed",
       "type": "EVENT_PRODUCER",
       "label": "发布"
     },
     {
+      "from": "disc:CI",
+      "to": "event:condition.changed",
+      "type": "EVENT_PRODUCER",
+      "label": "发布"
+    },
+    {
+      "from": "disc:MP",
+      "to": "event:piping_layout.updated",
+      "type": "EVENT_PRODUCER",
+      "label": "发布"
+    },
+    {
       "from": "event:piping_layout.updated",
-      "to": "disc:WA",
+      "to": "disc:IN",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:piping_layout.updated",
+      "to": "disc:EA",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:piping_layout.updated",
+      "to": "disc:CI",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "disc:IN",
+      "to": "event:instrument_location.updated",
+      "type": "EVENT_PRODUCER",
+      "label": "发布"
+    },
+    {
+      "from": "event:instrument_location.updated",
+      "to": "disc:MP",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:instrument_location.updated",
+      "to": "disc:EA",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "disc:EA",
+      "to": "event:electrical_layout.updated",
+      "type": "EVENT_PRODUCER",
+      "label": "发布"
+    },
+    {
+      "from": "event:electrical_layout.updated",
+      "to": "disc:MP",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:electrical_layout.updated",
+      "to": "disc:IN",
       "type": "EVENT_CONSUMER",
       "label": "订阅"
     },
     {
       "from": "event:structural_condition.updated",
-      "to": "disc:WA",
+      "to": "disc:MP",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:structural_condition.updated",
+      "to": "disc:IN",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:structural_condition.updated",
+      "to": "disc:CI",
       "type": "EVENT_CONSUMER",
       "label": "订阅"
     },
     {
       "from": "event:equipment_data.updated",
-      "to": "disc:WA",
+      "to": "disc:MP",
       "type": "EVENT_CONSUMER",
       "label": "订阅"
     },
     {
-      "from": "disc:WA",
+      "from": "event:equipment_data.updated",
+      "to": "disc:IN",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:equipment_data.updated",
+      "to": "disc:CI",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "disc:CI",
       "to": "event:water_condition.updated",
       "type": "EVENT_PRODUCER",
       "label": "发布"
     },
     {
+      "from": "event:water_condition.updated",
+      "to": "disc:EA",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:water_condition.updated",
+      "to": "disc:MP",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:water_condition.updated",
+      "to": "disc:IN",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
       "from": "event:fire_condition.updated",
-      "to": "disc:WA",
+      "to": "disc:CI",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:fire_condition.updated",
+      "to": "disc:EA",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:fire_condition.updated",
+      "to": "disc:MP",
       "type": "EVENT_CONSUMER",
       "label": "订阅"
     },
     {
       "from": "event:hvac_condition.updated",
-      "to": "disc:WA",
+      "to": "disc:CI",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:hvac_condition.updated",
+      "to": "disc:EA",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:hvac_condition.updated",
+      "to": "disc:MP",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:material_data.updated",
+      "to": "disc:MP",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:material_data.updated",
+      "to": "disc:IN",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:stress_analysis.completed",
+      "to": "disc:MP",
       "type": "EVENT_CONSUMER",
       "label": "订阅"
     },
     {
       "from": "event:review_gate.passed",
-      "to": "disc:MG",
+      "to": "disc:AA",
       "type": "EVENT_CONSUMER",
       "label": "订阅"
     },
     {
       "from": "event:review_gate.failed",
-      "to": "disc:MG",
+      "to": "disc:AA",
       "type": "EVENT_CONSUMER",
       "label": "订阅"
     },
     {
       "from": "event:task.status_changed",
-      "to": "disc:MG",
+      "to": "disc:AA",
       "type": "EVENT_CONSUMER",
       "label": "订阅"
     },
     {
-      "from": "disc:MG",
+      "from": "disc:AA",
       "to": "event:milestone.at_risk",
       "type": "EVENT_PRODUCER",
       "label": "发布"
     },
     {
       "from": "event:milestone.at_risk",
-      "to": "disc:MG",
+      "to": "disc:AA",
       "type": "EVENT_CONSUMER",
       "label": "订阅"
     },
     {
-      "from": "disc:MG",
+      "from": "disc:AA",
       "to": "event:milestone.achieved",
       "type": "EVENT_PRODUCER",
       "label": "发布"
     },
     {
       "from": "event:milestone.achieved",
-      "to": "disc:MG",
+      "to": "disc:AA",
       "type": "EVENT_CONSUMER",
       "label": "订阅"
     },
     {
       "from": "event:human.data_requested",
-      "to": "disc:MG",
+      "to": "disc:AA",
       "type": "EVENT_CONSUMER",
       "label": "订阅"
     },
     {
-      "from": "disc:MG",
+      "from": "disc:AA",
       "to": "event:human.data_supplied",
       "type": "EVENT_PRODUCER",
       "label": "发布"
     },
     {
       "from": "event:human.review_requested",
-      "to": "disc:MG",
+      "to": "disc:AA",
       "type": "EVENT_CONSUMER",
       "label": "订阅"
     },
     {
-      "from": "disc:MG",
+      "from": "disc:AA",
       "to": "event:human.review_resolved",
       "type": "EVENT_PRODUCER",
       "label": "发布"
     },
     {
-      "from": "event:model_review.scheduled",
-      "to": "disc:WA",
+      "from": "disc:IN",
+      "to": "event:procurement.requested",
+      "type": "EVENT_PRODUCER",
+      "label": "发布"
+    },
+    {
+      "from": "event:procurement.acknowledged",
+      "to": "disc:IN",
       "type": "EVENT_CONSUMER",
       "label": "订阅"
     },
     {
+      "from": "disc:MP",
+      "to": "event:model_review.scheduled",
+      "type": "EVENT_PRODUCER",
+      "label": "发布"
+    },
+    {
+      "from": "event:model_review.scheduled",
+      "to": "disc:IN",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:model_review.scheduled",
+      "to": "disc:EA",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "event:model_review.scheduled",
+      "to": "disc:CI",
+      "type": "EVENT_CONSUMER",
+      "label": "订阅"
+    },
+    {
+      "from": "disc:MP",
+      "to": "event:model_review.completed",
+      "type": "EVENT_PRODUCER",
+      "label": "发布"
+    },
+    {
       "from": "event:model_review.completed",
-      "to": "disc:MG",
+      "to": "disc:AA",
       "type": "EVENT_CONSUMER",
       "label": "订阅"
     }
   ],
   "meta": {
-    "generated_at": "2026-06-08T05:28:44.182Z",
+    "generated_at": "2026-06-14T03:34:04.568Z",
     "node_count": 307,
-    "edge_count": 365,
+    "edge_count": 424,
     "by_type": {
-      "skill": 25,
-      "mcp": 6,
-      "tool": 49,
-      "formula": 162,
+      "skill": 1,
+      "mcp": 7,
+      "tool": 69,
+      "formula": 167,
       "table": 27,
       "event": 28,
-      "discipline": 10
+      "discipline": 8
     },
     "by_edge_type": {
-      "SKILL_MCP": 28,
-      "SKILL_DISCIPLINE": 25,
-      "SKILL_REPORTS_TO": 12,
-      "SKILL_MANAGES": 12,
-      "MCP_TOOL": 49,
-      "FORMULA_DISCIPLINE": 162,
+      "SKILL_DISCIPLINE": 70,
+      "MCP_TOOL": 69,
+      "FORMULA_DISCIPLINE": 168,
       "FORMULA_TABLE": 11,
       "FORMULA_RELATED": 42,
-      "EVENT_PRODUCER": 8,
-      "EVENT_CONSUMER": 16
+      "EVENT_PRODUCER": 20,
+      "EVENT_CONSUMER": 44
     },
     "formula_disciplines": {
-      "electrical": 30,
-      "hse": 2,
-      "instrument": 14,
-      "piping": 35,
-      "process": 44,
-      "water": 37
+      "EA": 30,
+      "HS": 2,
+      "IN": 14,
+      "MP": 35,
+      "PX": 50,
+      "CI": 37
     }
   }
 }

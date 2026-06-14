@@ -1,0 +1,55 @@
+{
+  "symbol_id": "PUMP-SCREW-001",
+  "name": "螺杆泵",
+  "name_en": "Screw Pump",
+  "standard": "GB/T 2625-1981",
+  "category": "pumps",
+  "description": "双螺杆泵",
+  "parameters": {
+    "flow_rate": {
+      "type": "number",
+      "unit": "m³/h",
+      "description": "流量"
+    },
+    "pressure": {
+      "type": "number",
+      "unit": "MPa",
+      "description": "工作压力"
+    },
+    "viscosity": {
+      "type": "string",
+      "description": "适用粘度范围"
+    }
+  },
+  "connections": {
+    "suction": {
+      "position": {"x": -20, "y": 0},
+      "direction": "left"
+    },
+    "discharge": {
+      "position": {"x": 20, "y": 0},
+      "direction": "right"
+    }
+  },
+  "geometry": {
+    "components": [
+      {
+        "type": "rectangle",
+        "params": {"width": 40, "height": 18},
+        "description": "泵体"
+      },
+      {
+        "type": "line",
+        "params": {"start": [-15, -6], "end": [15, -6]},
+        "description": "螺杆1"
+      },
+      {
+        "type": "line",
+        "params": {"start": [-15, 6], "end": [15, 6]},
+        "description": "螺杆2"
+      }
+    ]
+  },
+  "related_standards": ["API 676", "GB/T 10886"],
+  "typical_applications": ["高粘度原油", "沥青", "聚合物"]
+}

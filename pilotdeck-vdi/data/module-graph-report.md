@@ -1,82 +1,38 @@
 # PilotDeck 模块关联关系图
 
-> 自动生成于 2026-06-08T05:28:44.182Z
-> 节点: 307 | 边: 365
+> 自动生成于 2026-06-14T03:34:04.568Z
+> 节点: 307 | 边: 424
 
 ## 总览
 
 | 模块类型 | 数量 |
 |----------|------|
-| Skill | 25 |
-| MCP 服务 | 6 |
-| MCP 工具 | 49 |
-| 公式 | 162 |
+| Skill | 1 |
+| MCP 服务 | 7 |
+| MCP 工具 | 69 |
+| 公式 | 167 |
 | 参数表 | 27 |
 | 事件类型 | 28 |
-| 专业 | 10 |
+| 专业 | 8 |
 
 ## 关联关系统计
 
 | 关联类型 | 数量 | 说明 |
 |----------|------|------|
-| SKILL_MCP | 28 | Skill → MCP |
-| SKILL_DISCIPLINE | 25 | Skill 专业 |
-| SKILL_REPORTS_TO | 12 | Skill 汇报 |
-| SKILL_MANAGES | 12 | Skill 管理 |
-| MCP_TOOL | 49 | MCP 工具 |
-| FORMULA_DISCIPLINE | 162 | 公式专业 |
+| SKILL_DISCIPLINE | 70 | Skill 专业 |
+| MCP_TOOL | 69 | MCP 工具 |
+| FORMULA_DISCIPLINE | 168 | 公式专业 |
 | FORMULA_TABLE | 11 | 公式→参数表 |
 | FORMULA_RELATED | 42 | 公式关联 |
-| EVENT_PRODUCER | 8 | 事件发布 |
-| EVENT_CONSUMER | 16 | 事件消费 |
+| EVENT_PRODUCER | 20 | 事件发布 |
+| EVENT_CONSUMER | 44 | 事件消费 |
 
 ## Skill → MCP 依赖详情
 
 | Skill | MCP 依赖 |
 |-------|----------|
-| 设计经理 | vdi-orchestrator, vdi-knowledge |
-| 文档导出 | documents |
-| 文档解读 | documents, vdi-knowledge |
-| 工艺专业负责人 | vdi-orchestrator, vdi-knowledge, vdi-rules |
-| 计划调度 | vdi-orchestrator, vdi-knowledge |
-| "系统健康检查" | "vdi-knowledge" |
-| 循环水系统设计 | vdi-knowledge, vdi-rules |
-| 排水系统设计 | vdi-knowledge, vdi-rules |
-| 给排水设备选型 | vdi-knowledge |
-| 消防给水设计 | vdi-knowledge, vdi-rules |
-| 给排水水力计算 | vdi-knowledge |
-| 给排水专业负责人 | vdi-orchestrator, vdi-knowledge, vdi-rules |
-| 雨水系统设计 | vdi-knowledge, vdi-rules |
-| 给水系统设计 | vdi-knowledge, vdi-rules |
-| 污水处理设计 | vdi-knowledge, vdi-rules |
 
 ## MCP 工具详情
-
-### vdi-orchestrator（11 个工具）
-
-- `vdi_create_task_package`
-- `vdi_decompose_tasks`
-- `vdi_dispatch_task`
-- `vdi_check_milestone`
-- `vdi_get_dependency_graph`
-- `vdi_trigger_alert`
-- `vdi_update_task_status`
-- `vdi_request_human_review`
-- `vdi_resolve_human_review`
-- `vdi_check_stale_tasks`
-- `vdi_attempt_recovery`
-
-### vdi-knowledge（9 个工具）
-
-- `vdi_search_knowledge`
-- `vdi_get_citation`
-- `vdi_search_by_entity`
-- `vdi_resolve_cross_refs`
-- `vdi_list_standards`
-- `vdi_search_formulas`
-- `vdi_get_formula`
-- `vdi_calculate`
-- `vdi_calculate_composite`
 
 ### documents（20 个工具）
 
@@ -101,15 +57,25 @@
 - `version_diff`
 - `version_restore`
 
-### vdi-rules（4 个工具）
+### vdi-cad（17 个工具）
 
-- `vdi_check_redlines`
-- `vdi_validate_discipline_output`
-- `vdi_check_data_completeness`
-- `vdi_check_review_gate`
-
-### "vdi-knowledge"（0 个工具）
-
+- `vdi_cad_generate`
+- `vdi_cad_status`
+- `vdi_cad_export`
+- `vdi_cad_screenshot`
+- `vdi_cad_execute`
+- `vdi_cad_extract_model`
+- `vdi_cad_apply_delta`
+- `vdi_cad_load_plant_model`
+- `vdi_cad_validate_plant_model`
+- `vdi_cad_export_object_list`
+- `vdi_cad_export_dexpi`
+- `vdi_cad_export_cfihos`
+- `vdi_cad_apply_plant_delta`
+- `vdi_cad_get_object`
+- `vdi_cad_get_drawing_manifest`
+- `vdi_cad_resolve_pick`
+- `vdi_cad_regenerate_drawing`
 
 ### vdi-events（5 个工具）
 
@@ -119,48 +85,57 @@
 - `vdi_get_event_status`
 - `vdi_list_subscribers`
 
+### vdi-knowledge（9 个工具）
+
+- `vdi_search_knowledge`
+- `vdi_get_citation`
+- `vdi_search_by_entity`
+- `vdi_resolve_cross_refs`
+- `vdi_list_standards`
+- `vdi_search_formulas`
+- `vdi_get_formula`
+- `vdi_calculate`
+- `vdi_calculate_composite`
+
+### vdi-orchestrator（11 个工具）
+
+- `vdi_create_task_package`
+- `vdi_decompose_tasks`
+- `vdi_dispatch_task`
+- `vdi_check_milestone`
+- `vdi_get_dependency_graph`
+- `vdi_trigger_alert`
+- `vdi_update_task_status`
+- `vdi_request_human_review`
+- `vdi_resolve_human_review`
+- `vdi_check_stale_tasks`
+- `vdi_attempt_recovery`
+
+### vdi-rules（5 个工具）
+
+- `vdi_check_redlines`
+- `vdi_validate_discipline_output`
+- `vdi_check_data_completeness`
+- `vdi_check_review_gate`
+- `vdi_validate_plant_model`
+
+### vdi-vision（2 个工具）
+
+- `vdi_analyze_image`
+- `vdi_vision_status`
+
 ## Skill 组织关系
-
-### 管理链
-
-- **工艺专业负责人** 管理 → 工艺路线设计基础
-- **工艺专业负责人** 管理 → 物料热量平衡
-- **工艺专业负责人** 管理 → PFD-PID设计
-- **工艺专业负责人** 管理 → 工艺设备数据表
-- **工艺专业负责人** 管理 → 工艺安全分析
-- **工艺专业负责人** 管理 → 公用工程排放
-- **给排水专业负责人** 管理 → 给水系统设计
-- **给排水专业负责人** 管理 → 消防给水设计
-- **给排水专业负责人** 管理 → 排水系统设计
-- **给排水专业负责人** 管理 → 雨水系统设计
-- **给排水专业负责人** 管理 → 污水处理设计
-- **给排水专业负责人** 管理 → 循环水系统设计
-
-### 汇报链
-
-- 物料热量平衡 → 汇报至 **工艺专业负责人**
-- 工艺设备数据表 → 汇报至 **工艺专业负责人**
-- PFD-PID设计 → 汇报至 **工艺专业负责人**
-- 工艺路线设计基础 → 汇报至 **工艺专业负责人**
-- 工艺安全分析 → 汇报至 **工艺专业负责人**
-- 公用工程排放 → 汇报至 **工艺专业负责人**
-- 循环水系统设计 → 汇报至 **给排水专业负责人**
-- 排水系统设计 → 汇报至 **给排水专业负责人**
-- 消防给水设计 → 汇报至 **给排水专业负责人**
-- 雨水系统设计 → 汇报至 **给排水专业负责人**
-- 给水系统设计 → 汇报至 **给排水专业负责人**
-- 污水处理设计 → 汇报至 **给排水专业负责人**
 
 ## 公式库分布
 
 | 专业 | 公式数量 |
 |------|----------|
-| electrical | 30 |
-| hse | 2 |
-| instrument | 14 |
-| piping | 35 |
-| process | 44 |
-| water | 37 |
+| EA | 30 |
+| HS | 2 |
+| IN | 14 |
+| MP | 35 |
+| PX | 50 |
+| CI | 37 |
 
 ## 公式 → 参数表引用
 
@@ -228,12 +203,12 @@
 ## 事件驱动关系
 
 ### `design_basis.updated`
-- 发布者: PR
-- 消费者: WA
+- 发布者: PX, JA
+- 消费者: MP, IN, CI, HS, EA
 
 ### `design_basis.acknowledged`
-- 发布者: WA
-- 消费者: PR
+- 发布者: MP, IN, CI, HS, EA
+- 消费者: PX, JA
 
 ### `discipline_output.submitted`
 - 发布者: (无)
@@ -244,97 +219,97 @@
 - 消费者: (无)
 
 ### `condition.changed`
-- 发布者: WA
+- 发布者: EA, CI
 - 消费者: (无)
 
 ### `piping_layout.updated`
-- 发布者: (无)
-- 消费者: WA
+- 发布者: MP
+- 消费者: IN, EA, CI
 
 ### `instrument_location.updated`
-- 发布者: (无)
-- 消费者: (无)
+- 发布者: IN
+- 消费者: MP, EA
 
 ### `electrical_layout.updated`
-- 发布者: (无)
-- 消费者: (无)
+- 发布者: EA
+- 消费者: MP, IN
 
 ### `structural_condition.updated`
 - 发布者: (无)
-- 消费者: WA
+- 消费者: MP, IN, CI
 
 ### `equipment_data.updated`
 - 发布者: (无)
-- 消费者: WA
+- 消费者: MP, IN, CI
 
 ### `water_condition.updated`
-- 发布者: WA
-- 消费者: (无)
+- 发布者: CI
+- 消费者: EA, MP, IN
 
 ### `fire_condition.updated`
 - 发布者: (无)
-- 消费者: WA
+- 消费者: CI, EA, MP
 
 ### `hvac_condition.updated`
 - 发布者: (无)
-- 消费者: WA
+- 消费者: CI, EA, MP
 
 ### `material_data.updated`
 - 发布者: (无)
-- 消费者: (无)
+- 消费者: MP, IN
 
 ### `stress_analysis.completed`
 - 发布者: (无)
-- 消费者: (无)
+- 消费者: MP
 
 ### `review_gate.passed`
 - 发布者: (无)
-- 消费者: MG
+- 消费者: AA
 
 ### `review_gate.failed`
 - 发布者: (无)
-- 消费者: MG
+- 消费者: AA
 
 ### `task.status_changed`
 - 发布者: (无)
-- 消费者: MG
+- 消费者: AA
 
 ### `milestone.at_risk`
-- 发布者: MG
-- 消费者: MG
+- 发布者: AA
+- 消费者: AA
 
 ### `milestone.achieved`
-- 发布者: MG
-- 消费者: MG
+- 发布者: AA
+- 消费者: AA
 
 ### `human.data_requested`
 - 发布者: (无)
-- 消费者: MG
+- 消费者: AA
 
 ### `human.data_supplied`
-- 发布者: MG
+- 发布者: AA
 - 消费者: (无)
 
 ### `human.review_requested`
 - 发布者: (无)
-- 消费者: MG
+- 消费者: AA
 
 ### `human.review_resolved`
-- 发布者: MG
+- 发布者: AA
 - 消费者: (无)
 
 ### `procurement.requested`
-- 发布者: (无)
+- 发布者: IN
 - 消费者: (无)
 
 ### `procurement.acknowledged`
 - 发布者: (无)
-- 消费者: (无)
+- 消费者: IN
 
 ### `model_review.scheduled`
-- 发布者: (无)
-- 消费者: WA
+- 发布者: MP
+- 消费者: IN, EA, CI
 
 ### `model_review.completed`
-- 发布者: (无)
-- 消费者: MG
+- 发布者: MP
+- 消费者: AA

@@ -1,0 +1,50 @@
+{
+  "symbol_id": "VALVE-BUTTERFLY-001",
+  "name": "蝶阀",
+  "name_en": "Butterfly Valve",
+  "standard": "GB/T 2625-1981",
+  "category": "valves",
+  "description": "对夹式蝶阀",
+  "parameters": {
+    "diameter": {
+      "type": "string",
+      "description": "公称直径",
+      "examples": ["DN50", "DN100", "DN200"]
+    },
+    "pressure_rating": {
+      "type": "string",
+      "description": "压力等级"
+    }
+  },
+  "connections": {
+    "inlet": {
+      "position": {"x": -10, "y": 0},
+      "direction": "left"
+    },
+    "outlet": {
+      "position": {"x": 10, "y": 0},
+      "direction": "right"
+    }
+  },
+  "geometry": {
+    "components": [
+      {
+        "type": "circle",
+        "params": {"radius": 10},
+        "description": "阀体"
+      },
+      {
+        "type": "line",
+        "params": {"start": [-8, -8], "end": [8, 8]},
+        "description": "蝶板"
+      },
+      {
+        "type": "line",
+        "params": {"start": [0, -10], "end": [0, -16]},
+        "description": "阀杆"
+      }
+    ]
+  },
+  "related_standards": ["GB/T 12238", "API 609"],
+  "typical_applications": ["大口径管道", "低压降", "快速启闭"]
+}

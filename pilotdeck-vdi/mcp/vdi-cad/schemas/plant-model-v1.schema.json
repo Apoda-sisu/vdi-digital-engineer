@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pilotdeck.local/schemas/plant-model-v1.schema.json",
+  "title": "PlantModel v1",
+  "description": "VDI 工厂对象模型 — 项目级真源，二三维视图为衍生",
+  "type": "object",
+  "required": ["version", "project_id", "revision", "objects", "views"],
+  "properties": {
+    "version": { "type": "string", "const": "1.0" },
+    "project_id": { "type": "string" },
+    "revision": { "type": "string", "default": "A" },
+    "objects": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/plantObject" }
+    },
+    "views": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/viewDefinition" }
+    },
+    "change_log": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "timestamp": { "type": "string" },
+          "object_id": { "type": "string" },
+          "op": { "type": "string", "enum": ["create", "update", "delete"] },
+          "field": { "type": "string" },
+          "revision": { "type": "string" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "plantObject": {
+      "type": "object",
+      "required": ["object_id", "class", "tag"],
+      "properties": {
+        "object_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "class": {
+          "type": "string",
+          "enum": ["Equipment", "PipeRun", "Instrument", "Valve", "SafetyValve", "Stream", "ControlLoop"]
+        },
+        "tag": { "type": "string" },
+        "attributes": { "type": "object" },
+        "relationships": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/relationship" }
+        }
+      }
+    },
+    "relationship": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["connects", "has_nozzle", "connected_by", "loop_member", "protects", "mounted_on"]
+        },
+        "target_id": { "type": "string" },
+        "from_id": { "type": "string" },
+        "to_id": { "type": "string" },
+        "from_port": { "type": "string" },
+        "to_port": { "type": "string" },
+        "role": { "type": "string" }
+      }
+    },
+    "viewDefinition": {
+      "type": "object",
+      "required": ["view_id", "view_type"],
+      "properties": {
+        "view_id": { "type": "string" },
+        "view_type": {
+          "type": "string",
+          "enum": ["pfd", "pid", "layout", "isometric", "3d"]
+        },
+        "title_block": {
+          "type": "object",
+          "properties": {
+            "drawing_number": { "type": "string" },
+            "drawing_title": { "type": "string" },
+            "scale": { "type": "string" },
+            "revision": { "type": "string" }
+          }
+        },
+        "placements": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "x": { "type": "number" },
+              "y": { "type": "number" },
+              "z": { "type": "number" },
+              "rotation": { "type": "number", "default": 0 }
+            }
+          }
+        }
+      }
+    }
+  }
+}

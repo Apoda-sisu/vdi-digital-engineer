@@ -1,0 +1,132 @@
+{
+  "file": "process/pump.json",
+  "discipline": "PX",
+  "category": "pump",
+  "formula_count": 1,
+  "formulas": [
+    {
+      "formula_id": "PR-PMP-001",
+      "vdi_formula_id": "PR-PMP-001",
+      "name": "泵有效汽蚀余量 NPSHa",
+      "name_en": "Pump Available NPSH",
+      "discipline": "PX",
+      "category": "pump/npsh",
+      "type": "exact",
+      "equation_text": "NPSHa = (Pa/ρg) + Hs - Hv - Hf",
+      "equation_latex": "NPSH_a = \\frac{P_a}{\\rho g} + H_s - H_v - H_f",
+      "equation_ast": {
+        "op": "sub",
+        "args": [
+          {
+            "op": "add",
+            "args": [
+              {
+                "op": "div",
+                "num": {
+                  "var": "Pa"
+                },
+                "den": {
+                  "op": "mul",
+                  "args": [
+                    {
+                      "var": "ρ"
+                    },
+                    {
+                      "var": "g"
+                    }
+                  ]
+                }
+              },
+              {
+                "var": "Hs"
+              }
+            ]
+          },
+          {
+            "var": "Hv"
+          },
+          {
+            "var": "Hf"
+          }
+        ]
+      },
+      "variables": [
+        {
+          "symbol": "NPSHa",
+          "name": "有效汽蚀余量",
+          "unit": "m",
+          "role": "output",
+          "desc": "装置有效 NPSHa"
+        },
+        {
+          "symbol": "Pa",
+          "name": "吸入液面压力",
+          "unit": "Pa",
+          "role": "input",
+          "desc": "吸入侧绝对压力"
+        },
+        {
+          "symbol": "ρ",
+          "name": "液体密度",
+          "unit": "kg/m³",
+          "role": "input",
+          "default": 1000,
+          "desc": "液体密度"
+        },
+        {
+          "symbol": "g",
+          "name": "重力加速度",
+          "unit": "m/s²",
+          "role": "constant",
+          "default": 9.81,
+          "desc": "g"
+        },
+        {
+          "symbol": "Hs",
+          "name": "几何吸上高度",
+          "unit": "m",
+          "role": "input",
+          "desc": "泵中心至液面高度（吸上为正）"
+        },
+        {
+          "symbol": "Hv",
+          "name": "饱和蒸汽压头",
+          "unit": "m",
+          "role": "input",
+          "desc": "液体饱和蒸汽压对应压头"
+        },
+        {
+          "symbol": "Hf",
+          "name": "吸入管路损失",
+          "unit": "m",
+          "role": "input",
+          "constraints": {
+            "min": 0
+          },
+          "desc": "吸入侧摩擦损失"
+        }
+      ],
+      "source": {
+        "standard_id": "HG/T 20557.1",
+        "clause": "1.1.8"
+      },
+      "tags": [
+        "NPSH",
+        "机泵",
+        "汽蚀"
+      ],
+      "keywords": [
+        "NPSHa",
+        "NPSH",
+        "机泵",
+        "吸上高度"
+      ],
+      "skill_tags": [
+        "PR-T06",
+        "PX3363"
+      ],
+      "precision": 0.01,
+      "version": 1
+    }
+  ]
+}

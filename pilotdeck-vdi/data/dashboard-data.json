@@ -1,0 +1,1356 @@
+{
+  "generated_at": "2026-06-14T03:22:52.339Z",
+  "stats": {
+    "total_skills_files": 70,
+    "total_skills_configured": 67,
+    "total_clauses": 1919,
+    "mandatory_clauses": 132,
+    "cross_refs": 14,
+    "total_formulas": 167,
+    "event_types": 28,
+    "knowledge_manifests": 4,
+    "kb_built_at": "2026-06-13T09:52:41.097Z"
+  },
+  "disciplines": [
+    {
+      "name": "工艺",
+      "code": "PX",
+      "status": "active",
+      "skills": 22,
+      "clauses": 480,
+      "formulas": 0,
+      "color": "#6366f1",
+      "icon": "⚗️",
+      "note": ""
+    },
+    {
+      "name": "管道",
+      "code": "MP",
+      "status": "active",
+      "skills": 20,
+      "clauses": 316,
+      "formulas": 0,
+      "color": "#a78bfa",
+      "icon": "🔧",
+      "note": "Sprint 11-18 全量建设完成"
+    },
+    {
+      "name": "仪控",
+      "code": "IN",
+      "status": "active",
+      "skills": 13,
+      "clauses": 54,
+      "formulas": 0,
+      "color": "#c4b5fd",
+      "icon": "📊",
+      "note": "1014 V1.1：8 L2 + 4 L3 全量"
+    },
+    {
+      "name": "电气",
+      "code": "EA",
+      "status": "pending",
+      "skills": 1,
+      "clauses": 82,
+      "formulas": 0,
+      "color": "#ddd6fe",
+      "icon": "⚡",
+      "note": "待创建Skill定义"
+    },
+    {
+      "name": "设备",
+      "code": "MX",
+      "status": "pending",
+      "skills": 1,
+      "clauses": 35,
+      "formulas": 0,
+      "color": "#ede9fe",
+      "icon": "🏭",
+      "note": "待创建Skill定义"
+    },
+    {
+      "name": "安全",
+      "code": "HS",
+      "status": "pending",
+      "skills": 1,
+      "clauses": 107,
+      "formulas": 0,
+      "color": "#f5f3ff",
+      "icon": "🛡️",
+      "note": "待创建Skill定义；范围对齐 CFIHOS HS（safety），非 HX 宏观 HSE"
+    },
+    {
+      "name": "给排水",
+      "code": "CI",
+      "status": "active",
+      "skills": 9,
+      "clauses": 804,
+      "formulas": 0,
+      "color": "#8b5cf6",
+      "icon": "💧",
+      "note": ""
+    }
+  ],
+  "manifests": [
+    {
+      "discipline": "instrument",
+      "current": 54,
+      "phase2": 80,
+      "version": 2
+    },
+    {
+      "discipline": "piping",
+      "current": 0,
+      "phase2": 300,
+      "version": 2
+    },
+    {
+      "discipline": "process",
+      "current": 480,
+      "phase2": 450,
+      "version": 1
+    },
+    {
+      "discipline": "water",
+      "current": 804,
+      "phase2": 400,
+      "version": 2
+    }
+  ],
+  "milestones": [
+    {
+      "date": "2026-06-13",
+      "discipline": "仪控",
+      "activity": "IN-2：5 L2 + 3 L3 Skill V1.2 落地",
+      "status": "completed"
+    },
+    {
+      "date": "2026-06-12",
+      "discipline": "管道",
+      "activity": "知识库 Phase2 达标（316 条）+ manifest v2",
+      "status": "completed"
+    },
+    {
+      "date": "2026-06-12",
+      "discipline": "管道",
+      "activity": "Sprint 11–18 全量 Skill + audit 99/99",
+      "status": "completed"
+    },
+    {
+      "date": "2026-06-11",
+      "discipline": "给排水",
+      "activity": "知识库 Phase3（804 条）+ MCP 回归 18/18",
+      "status": "completed"
+    },
+    {
+      "date": "2026-06-11",
+      "discipline": "工艺",
+      "activity": "480 条条文 + process manifest",
+      "status": "completed"
+    }
+  ],
+  "skillGraph": {
+    "platform": {
+      "nodes": [
+        {
+          "slug": "vdi-design-manager",
+          "label": "设计经理"
+        },
+        {
+          "slug": "vdi-orchestrator",
+          "label": "编排器"
+        },
+        {
+          "slug": "vdi-knowledge",
+          "label": "知识库 MCP"
+        },
+        {
+          "slug": "vdi-rules",
+          "label": "规则 MCP"
+        },
+        {
+          "slug": "vdi-events",
+          "label": "事件 MCP"
+        }
+      ]
+    },
+    "disciplines": [
+      {
+        "code": "PX",
+        "name": "工艺",
+        "status": "active",
+        "flow": "D01→D02→D03→D04→{S01,D05}→{S02,S03,S05}→S04/X01/X02",
+        "cfihosDisciplineCode": "PX",
+        "cfihosUniqueCode": "CFIHOS-20000026",
+        "lead": {
+          "slug": "vdi-process-lead",
+          "label": "工艺专业负责人",
+          "id": "LEAD",
+          "disciplineCode": "PX",
+          "cfihosUniqueCode": "CFIHOS-20000026",
+          "documentType": "PX"
+        },
+        "l2Groups": [
+          {
+            "title": "主链路",
+            "ids": [
+              "PX2111",
+              "PX0980",
+              "PX3342",
+              "PX2366",
+              "PX2365"
+            ]
+          },
+          {
+            "title": "系统图/专项",
+            "ids": [
+              "PX2366",
+              "PX8248",
+              "PX3363",
+              "PX2908",
+              "PX4322",
+              "PX0504",
+              "PX4603"
+            ]
+          }
+        ],
+        "l2": [
+          {
+            "id": "PX2111",
+            "slug": "vdi-process-package",
+            "label": "PX2111 · 工艺包与设计基础",
+            "level": 2,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001481",
+            "documentType": "PX2111",
+            "deliverableCode": "PX2111",
+            "vdiDeliverable": "PX2111"
+          },
+          {
+            "id": "PX0980",
+            "slug": "vdi-process-route",
+            "label": "PX0980 · 工艺路线设计基础",
+            "level": 2,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001387",
+            "documentType": "PX0980",
+            "deliverableCode": "PX0980",
+            "vdiDeliverable": "PX0980"
+          },
+          {
+            "id": "PX3342",
+            "slug": "vdi-process-balance",
+            "label": "PX3342 · 物料热量平衡",
+            "level": 2,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001157",
+            "documentType": "PX3342",
+            "deliverableCode": "PX3342",
+            "vdiDeliverable": "PX3342"
+          },
+          {
+            "id": "PX2366",
+            "slug": "vdi-process-pfd",
+            "label": "PX2366 · 工艺流程图 PFD",
+            "level": 2,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001152",
+            "documentType": "PX2366",
+            "deliverableCode": "PX2366",
+            "vdiDeliverable": "PX2366"
+          },
+          {
+            "id": "PX2365",
+            "slug": "vdi-process-pid",
+            "label": "PX2365 · 管道仪表流程图",
+            "level": 2,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001151",
+            "documentType": "PX2365",
+            "deliverableCode": "PX2365",
+            "vdiDeliverable": "PR-S01"
+          },
+          {
+            "id": "PX4322",
+            "slug": "vdi-process-equipment",
+            "label": "PX4322 · 工艺设备数据表",
+            "level": 2,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001159",
+            "documentType": "PX4322",
+            "deliverableCode": "PX4322",
+            "vdiDeliverable": "PX2365"
+          },
+          {
+            "id": "PX4603",
+            "slug": "vdi-process-hydraulics",
+            "label": "PX4603 · 管道水力与管径",
+            "level": 2,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001161",
+            "documentType": "PX4603",
+            "deliverableCode": "PX4603",
+            "vdiDeliverable": "PX3363"
+          },
+          {
+            "id": "PX2908",
+            "slug": "vdi-process-relief",
+            "label": "PX2908 · 安全泄压与火炬",
+            "level": 2,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001154",
+            "documentType": "PX2908",
+            "deliverableCode": "PX2908",
+            "vdiDeliverable": "PX0504"
+          },
+          {
+            "id": "PX2366",
+            "slug": "vdi-process-utilities",
+            "label": "PX2366 · 公用工程系统",
+            "level": 2,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001152",
+            "documentType": "PX2366",
+            "deliverableCode": "PX2366",
+            "vdiDeliverable": "PR-S04"
+          },
+          {
+            "id": "PX8248",
+            "slug": "vdi-process-control",
+            "label": "PX8248 · 控制方案与联锁",
+            "level": 2,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001184",
+            "documentType": "PX8248",
+            "deliverableCode": "PX8248",
+            "vdiDeliverable": "PX8248"
+          },
+          {
+            "id": "PX3363",
+            "slug": "vdi-process-safety",
+            "label": "PX3363 · 工艺安全分析",
+            "level": 2,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001158",
+            "documentType": "PX3363",
+            "deliverableCode": "PX3363",
+            "vdiDeliverable": "PR-X01"
+          },
+          {
+            "id": "PX0504",
+            "slug": "vdi-process-lab",
+            "label": "PX0504 · 分析化验条件",
+            "level": 2,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001140",
+            "documentType": "PX0504",
+            "deliverableCode": "PX0504",
+            "vdiDeliverable": "PR-X02"
+          }
+        ],
+        "l3": [
+          {
+            "id": "PX1380",
+            "slug": "vdi-process-calc",
+            "label": "PX1380 · 工艺计算",
+            "level": 3,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001145",
+            "documentType": "PX1380",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "PX8240",
+            "slug": "vdi-process-simulation",
+            "label": "PX8240 · 流程模拟",
+            "level": 3,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001183",
+            "documentType": "PX8240",
+            "deliverableCode": "PX8240",
+            "vdiDeliverable": "PX1206"
+          },
+          {
+            "id": "PX1206",
+            "slug": "vdi-process-calc-column",
+            "label": "PX1206 · 塔器工艺计算",
+            "level": 3,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001143",
+            "documentType": "PX1206",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "PX1206",
+            "slug": "vdi-process-calc-hx",
+            "label": "PX1206 · 换热器工艺计算",
+            "level": 3,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001143",
+            "documentType": "PX1206",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "PX1206",
+            "slug": "vdi-process-calc-reactor",
+            "label": "PX1206 · 反应器工艺计算",
+            "level": 3,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001143",
+            "documentType": "PX1206",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "PX1206",
+            "slug": "vdi-process-calc-pump",
+            "label": "PX1206 · 机泵与NPSH",
+            "level": 3,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001143",
+            "documentType": "PX1206",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "PX2908",
+            "slug": "vdi-process-calc-psv",
+            "label": "PX2908 · 安全阀计算",
+            "level": 3,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001154",
+            "documentType": "PX2908",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "PX1979",
+            "slug": "vdi-process-data-mgmt",
+            "label": "PX1979 · 工艺数据管理",
+            "level": 3,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001146",
+            "documentType": "PX1979",
+            "deliverableCode": "PX1979",
+            "vdiDeliverable": "PR-T08"
+          },
+          {
+            "id": "PX7180",
+            "slug": "vdi-process-docgen",
+            "label": "PX7180 · 工艺文档生成",
+            "level": 3,
+            "disciplineCode": "PX",
+            "cfihosUniqueCode": "CFIHOS-20001175",
+            "documentType": "PX7180",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          }
+        ],
+        "edges": [
+          {
+            "from": "LEAD",
+            "to": "PX2111",
+            "type": "sequence"
+          },
+          {
+            "from": "PX2111",
+            "to": "PX0980",
+            "type": "sequence"
+          },
+          {
+            "from": "PX0980",
+            "to": "PX3342",
+            "type": "sequence"
+          },
+          {
+            "from": "PX3342",
+            "to": "PX2366",
+            "type": "sequence"
+          },
+          {
+            "from": "PX2366",
+            "to": "PX2365",
+            "type": "sequence"
+          },
+          {
+            "from": "PX2111",
+            "to": "PX8240",
+            "type": "supports"
+          },
+          {
+            "from": "PX2111",
+            "to": "PX7180",
+            "type": "supports"
+          },
+          {
+            "from": "PX0980",
+            "to": "PX1380",
+            "type": "supports"
+          },
+          {
+            "from": "PX0980",
+            "to": "PX8240",
+            "type": "supports"
+          },
+          {
+            "from": "PX3342",
+            "to": "PX1380",
+            "type": "supports"
+          },
+          {
+            "from": "PX3342",
+            "to": "PX8240",
+            "type": "supports"
+          },
+          {
+            "from": "PX2366",
+            "to": "PX8240",
+            "type": "supports"
+          },
+          {
+            "from": "PX4322",
+            "to": "PX1206",
+            "type": "supports"
+          },
+          {
+            "from": "PX4322",
+            "to": "PX1380",
+            "type": "supports"
+          },
+          {
+            "from": "PX4603",
+            "to": "PX1206",
+            "type": "supports"
+          },
+          {
+            "from": "PX4603",
+            "to": "PX1380",
+            "type": "supports"
+          },
+          {
+            "from": "PX2908",
+            "to": "PX2908",
+            "type": "supports"
+          },
+          {
+            "from": "PX2908",
+            "to": "PX1380",
+            "type": "supports"
+          },
+          {
+            "from": "PX2366",
+            "to": "PX1380",
+            "type": "supports"
+          },
+          {
+            "from": "PX3363",
+            "to": "PX1380",
+            "type": "supports"
+          },
+          {
+            "from": "LEAD",
+            "to": "PX1979",
+            "type": "supports"
+          }
+        ]
+      },
+      {
+        "code": "CI",
+        "name": "给排水",
+        "status": "active",
+        "flow": "D01→D02；D01→D03/D04/D05/D06",
+        "cfihosDisciplineCode": "CI",
+        "cfihosUniqueCode": "CFIHOS-20000005",
+        "lead": {
+          "slug": "vdi-water-lead",
+          "label": "给排水专业负责人",
+          "id": "LEAD",
+          "disciplineCode": "CI",
+          "cfihosUniqueCode": "CFIHOS-20000005",
+          "documentType": "CI"
+        },
+        "l2Groups": [
+          {
+            "title": "给水·循环",
+            "ids": [
+              "CX7770",
+              "HX6802",
+              "CX1380"
+            ]
+          },
+          {
+            "title": "排水·污水",
+            "ids": [
+              "CX4038",
+              "CX4038",
+              "CX7770"
+            ]
+          }
+        ],
+        "l2": [
+          {
+            "id": "CX7770",
+            "slug": "vdi-water-supply",
+            "label": "CX7770 · 给水系统设计",
+            "level": 2,
+            "disciplineCode": "CI",
+            "cfihosUniqueCode": "CFIHOS-20000682",
+            "documentType": "CX7770",
+            "deliverableCode": "CX7770",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "HX6802",
+            "slug": "vdi-water-fire",
+            "label": "HX6802 · 消防给水设计",
+            "level": 2,
+            "disciplineCode": "CI",
+            "cfihosUniqueCode": "CFIHOS-20000832",
+            "documentType": "HX6802",
+            "deliverableCode": "HX6802",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "CX4038",
+            "slug": "vdi-water-drainage",
+            "label": "CX4038 · 排水系统设计",
+            "level": 2,
+            "disciplineCode": "CI",
+            "cfihosUniqueCode": "CFIHOS-20000672",
+            "documentType": "CX4038",
+            "deliverableCode": "CX4038",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "CX4038",
+            "slug": "vdi-water-stormwater",
+            "label": "CX4038 · 雨水系统设计",
+            "level": 2,
+            "disciplineCode": "CI",
+            "cfihosUniqueCode": "CFIHOS-20000672",
+            "documentType": "CX4038",
+            "deliverableCode": "CX4038",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "CX7770",
+            "slug": "vdi-water-wastewater",
+            "label": "CX7770 · 污水处理设计",
+            "level": 2,
+            "disciplineCode": "CI",
+            "cfihosUniqueCode": "CFIHOS-20000682",
+            "documentType": "CX7770",
+            "deliverableCode": "CX7770",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "CX1380",
+            "slug": "vdi-water-circulating",
+            "label": "CX1380 · 循环水系统设计",
+            "level": 2,
+            "disciplineCode": "CI",
+            "cfihosUniqueCode": "CFIHOS-20000663",
+            "documentType": "CX1380",
+            "deliverableCode": "CX1380",
+            "vdiDeliverable": ""
+          }
+        ],
+        "l3": [
+          {
+            "id": "CX1380",
+            "slug": "vdi-water-hydraulics",
+            "label": "CX1380 · 给排水水力计算",
+            "level": 3,
+            "disciplineCode": "CI",
+            "cfihosUniqueCode": "CFIHOS-20000663",
+            "documentType": "CX1380",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "CI7303",
+            "slug": "vdi-water-equipment",
+            "label": "CI7303 · 给排水设备选型",
+            "level": 3,
+            "disciplineCode": "CI",
+            "cfihosUniqueCode": "CFIHOS-20000629",
+            "documentType": "CI7303",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          }
+        ],
+        "edges": [
+          {
+            "from": "LEAD",
+            "to": "CX7770",
+            "type": "sequence"
+          },
+          {
+            "from": "CX7770",
+            "to": "HX6802",
+            "type": "sequence"
+          },
+          {
+            "from": "HX6802",
+            "to": "CX4038",
+            "type": "sequence"
+          },
+          {
+            "from": "CX4038",
+            "to": "CX4038",
+            "type": "sequence"
+          },
+          {
+            "from": "CX4038",
+            "to": "CX7770",
+            "type": "sequence"
+          },
+          {
+            "from": "CX7770",
+            "to": "CX1380",
+            "type": "sequence"
+          },
+          {
+            "from": "CX7770",
+            "to": "CX1380",
+            "type": "supports"
+          },
+          {
+            "from": "CX7770",
+            "to": "CI7303",
+            "type": "supports"
+          },
+          {
+            "from": "HX6802",
+            "to": "CX1380",
+            "type": "supports"
+          },
+          {
+            "from": "HX6802",
+            "to": "CI7303",
+            "type": "supports"
+          },
+          {
+            "from": "CX4038",
+            "to": "CX1380",
+            "type": "supports"
+          },
+          {
+            "from": "CX4038",
+            "to": "CI7303",
+            "type": "supports"
+          },
+          {
+            "from": "CX1380",
+            "to": "CX1380",
+            "type": "supports"
+          },
+          {
+            "from": "CX1380",
+            "to": "CI7303",
+            "type": "supports"
+          }
+        ]
+      },
+      {
+        "code": "MP",
+        "name": "管道",
+        "status": "active",
+        "flow": "D01→D02→D03→D04/D05→D06→D07/D08→D09→D10/D11/D12",
+        "cfihosDisciplineCode": "MP",
+        "cfihosUniqueCode": "CFIHOS-20000020",
+        "lead": {
+          "slug": "vdi-piping-lead",
+          "label": "管道专业负责人",
+          "id": "LEAD",
+          "disciplineCode": "MP",
+          "cfihosUniqueCode": "CFIHOS-20000020",
+          "documentType": "MP"
+        },
+        "l2Groups": [
+          {
+            "title": "基础资料",
+            "ids": [
+              "MP7737",
+              "MP4338"
+            ]
+          },
+          {
+            "title": "布置枢纽",
+            "ids": [
+              "MP4033"
+            ]
+          },
+          {
+            "title": "分析派生",
+            "ids": [
+              "MP4363",
+              "MP4024",
+              "MP4033",
+              "MP2358",
+              "MP8005",
+              "MP4038"
+            ]
+          },
+          {
+            "title": "详图·专项",
+            "ids": [
+              "MP0900",
+              "MP2343",
+              "MP4368",
+              "MP7402"
+            ]
+          }
+        ],
+        "l2": [
+          {
+            "id": "MP7737",
+            "slug": "vdi-piping-material-class",
+            "label": "MP7737 · 管道材料等级",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001025",
+            "documentType": "MP7737",
+            "deliverableCode": "MP7737",
+            "vdiDeliverable": "MP7737"
+          },
+          {
+            "id": "MP4338",
+            "slug": "vdi-piping-line-list",
+            "label": "MP4338 · 管道表 Line List",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001014",
+            "documentType": "MP4338",
+            "deliverableCode": "MP4338",
+            "vdiDeliverable": "MP4338"
+          },
+          {
+            "id": "MP4033",
+            "slug": "vdi-piping-layout",
+            "label": "MP4033 · 管道布置",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001011",
+            "documentType": "MP4033",
+            "deliverableCode": "MP4033",
+            "vdiDeliverable": "MP4033"
+          },
+          {
+            "id": "MP4363",
+            "slug": "vdi-piping-equipment-connect",
+            "label": "MP4363 · 设备管道连接",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001015",
+            "documentType": "MP4363",
+            "deliverableCode": "MP4363",
+            "vdiDeliverable": "MP4363"
+          },
+          {
+            "id": "MP4024",
+            "slug": "vdi-piping-rack-layout",
+            "label": "MP4024 · 管架管廊布置",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001010",
+            "documentType": "MP4024",
+            "deliverableCode": "MP4024",
+            "vdiDeliverable": "MP4024"
+          },
+          {
+            "id": "MP4033",
+            "slug": "vdi-piping-routing",
+            "label": "MP4033 · 管道综合路由",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001011",
+            "documentType": "MP4033",
+            "deliverableCode": "MP4033",
+            "vdiDeliverable": "MP4033"
+          },
+          {
+            "id": "MP2358",
+            "slug": "vdi-piping-support",
+            "label": "MP2358 · 管道支架设计",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001007",
+            "documentType": "MP2358",
+            "deliverableCode": "MP2358",
+            "vdiDeliverable": "MP2358"
+          },
+          {
+            "id": "MP8005",
+            "slug": "vdi-piping-stress",
+            "label": "MP8005 · 管道应力分析",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001029",
+            "documentType": "MP8005",
+            "deliverableCode": "MP8005",
+            "vdiDeliverable": "MP8005"
+          },
+          {
+            "id": "MP0900",
+            "slug": "vdi-piping-insulation",
+            "label": "MP0900 · 绝热伴热设计",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001396",
+            "documentType": "MP0900",
+            "deliverableCode": "MP0900",
+            "vdiDeliverable": "MP0900"
+          },
+          {
+            "id": "MP2343",
+            "slug": "vdi-piping-isometric",
+            "label": "MP2343 · ISO 单线图管段图",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001006",
+            "documentType": "MP2343",
+            "deliverableCode": "MP2343",
+            "vdiDeliverable": "MP2343"
+          },
+          {
+            "id": "MP4368",
+            "slug": "vdi-piping-valve-spec",
+            "label": "MP4368 · 阀门与特殊件选用",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001016",
+            "documentType": "MP4368",
+            "deliverableCode": "MP4368",
+            "vdiDeliverable": "MP4368"
+          },
+          {
+            "id": "MP4038",
+            "slug": "vdi-piping-underground",
+            "label": "MP4038 · 地下管沟布置",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001364",
+            "documentType": "MP4038",
+            "deliverableCode": "MP4038",
+            "vdiDeliverable": "MP4038"
+          },
+          {
+            "id": "MP7402",
+            "slug": "vdi-piping-cad-3d",
+            "label": "MP7402 · 管道三维制图试点",
+            "level": 2,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001024",
+            "documentType": "MP7402",
+            "deliverableCode": "MP7402",
+            "vdiDeliverable": "PI-CAD"
+          }
+        ],
+        "l3": [
+          {
+            "id": "MP1206",
+            "slug": "vdi-piping-hydraulics",
+            "label": "MP1206 · 管道水力计算",
+            "level": 3,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001000",
+            "documentType": "MP1206",
+            "deliverableCode": "MP1206",
+            "vdiDeliverable": "MP1206"
+          },
+          {
+            "id": "MP8005",
+            "slug": "vdi-piping-stress-calc",
+            "label": "MP8005 · 管道应力计算",
+            "level": 3,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001029",
+            "documentType": "MP8005",
+            "deliverableCode": "MP8005",
+            "vdiDeliverable": "MP8005"
+          },
+          {
+            "id": "MP1380",
+            "slug": "vdi-piping-corrosion-calc",
+            "label": "MP1380 · 管道腐蚀计算",
+            "level": 3,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001001",
+            "documentType": "MP1380",
+            "deliverableCode": "MP1380",
+            "vdiDeliverable": "MP1380"
+          },
+          {
+            "id": "MP0519",
+            "slug": "vdi-piping-vibration-calc",
+            "label": "MP0519 · 管道振动计算",
+            "level": 3,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001543",
+            "documentType": "MP0519",
+            "deliverableCode": "MP0519",
+            "vdiDeliverable": "MP0519"
+          },
+          {
+            "id": "MP1380",
+            "slug": "vdi-piping-weight-calc",
+            "label": "MP1380 · 管道重量与荷载",
+            "level": 3,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001001",
+            "documentType": "MP1380",
+            "deliverableCode": "MP1380",
+            "vdiDeliverable": "MP1380"
+          },
+          {
+            "id": "MP4306",
+            "slug": "vdi-piping-data-mgmt",
+            "label": "MP4306 · 管道数据与 MTO",
+            "level": 3,
+            "disciplineCode": "MP",
+            "cfihosUniqueCode": "CFIHOS-20001012",
+            "documentType": "MP4306",
+            "deliverableCode": "MP4306",
+            "vdiDeliverable": "MP4306"
+          }
+        ],
+        "edges": [
+          {
+            "from": "LEAD",
+            "to": "MP7737",
+            "type": "sequence"
+          },
+          {
+            "from": "MP7737",
+            "to": "MP4338",
+            "type": "sequence"
+          },
+          {
+            "from": "MP4338",
+            "to": "MP4033",
+            "type": "sequence"
+          },
+          {
+            "from": "MP4033",
+            "to": "MP4363",
+            "type": "sequence"
+          },
+          {
+            "from": "MP4363",
+            "to": "MP4024",
+            "type": "sequence"
+          },
+          {
+            "from": "MP4024",
+            "to": "MP4033",
+            "type": "sequence"
+          },
+          {
+            "from": "MP7737",
+            "to": "MP1380",
+            "type": "supports"
+          },
+          {
+            "from": "MP4338",
+            "to": "MP1206",
+            "type": "supports"
+          },
+          {
+            "from": "MP4338",
+            "to": "MP4306",
+            "type": "supports"
+          },
+          {
+            "from": "MP4033",
+            "to": "MP1206",
+            "type": "supports"
+          },
+          {
+            "from": "MP4033",
+            "to": "MP0519",
+            "type": "supports"
+          },
+          {
+            "from": "MP4363",
+            "to": "MP1206",
+            "type": "supports"
+          },
+          {
+            "from": "MP4024",
+            "to": "MP1380",
+            "type": "supports"
+          },
+          {
+            "from": "MP4033",
+            "to": "MP4306",
+            "type": "supports"
+          },
+          {
+            "from": "MP2358",
+            "to": "MP8005",
+            "type": "supports"
+          },
+          {
+            "from": "MP2358",
+            "to": "MP0519",
+            "type": "supports"
+          },
+          {
+            "from": "MP2358",
+            "to": "MP1380",
+            "type": "supports"
+          },
+          {
+            "from": "MP8005",
+            "to": "MP8005",
+            "type": "supports"
+          },
+          {
+            "from": "MP2343",
+            "to": "MP4306",
+            "type": "supports"
+          },
+          {
+            "from": "MP4368",
+            "to": "MP1380",
+            "type": "supports"
+          },
+          {
+            "from": "MP4038",
+            "to": "MP1206",
+            "type": "supports"
+          }
+        ]
+      },
+      {
+        "code": "IN",
+        "name": "仪控",
+        "status": "active",
+        "flow": "D01→D02∥D03→D06→D04",
+        "cfihosDisciplineCode": "IN",
+        "cfihosUniqueCode": "CFIHOS-20000015",
+        "lead": {
+          "slug": "vdi-instrument-lead",
+          "label": "仪控专业负责人",
+          "id": "LEAD",
+          "disciplineCode": "IN",
+          "cfihosUniqueCode": "CFIHOS-20000015",
+          "documentType": "IN"
+        },
+        "l2Groups": [
+          {
+            "title": "索引",
+            "ids": [
+              "IN4315"
+            ]
+          },
+          {
+            "title": "回路·联锁·DCS",
+            "ids": [
+              "IN2347",
+              "IN5531",
+              "IN7771",
+              "IN2312"
+            ]
+          }
+        ],
+        "l2": [
+          {
+            "id": "IN4315",
+            "slug": "vdi-instrument-index",
+            "label": "IN4315 · 仪控仪表索引与数据表",
+            "level": 2,
+            "disciplineCode": "IN",
+            "cfihosUniqueCode": "CFIHOS-20001506",
+            "documentType": "IN4315",
+            "deliverableCode": "IN4315",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "IN2347",
+            "slug": "vdi-instrument-loop",
+            "label": "IN2347 · 控制回路设计",
+            "level": 2,
+            "disciplineCode": "IN",
+            "cfihosUniqueCode": "CFIHOS-20000862",
+            "documentType": "IN2347",
+            "deliverableCode": "IN2347",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "IN5531",
+            "slug": "vdi-instrument-interlock",
+            "label": "IN5531 · 仪控联锁设计",
+            "level": 2,
+            "disciplineCode": "IN",
+            "cfihosUniqueCode": "CFIHOS-20000884",
+            "documentType": "IN5531",
+            "deliverableCode": "IN5531",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "IN2312",
+            "slug": "vdi-instrument-dcs",
+            "label": "IN2312 · DCS系统工程",
+            "level": 2,
+            "disciplineCode": "IN",
+            "cfihosUniqueCode": "CFIHOS-20000858",
+            "documentType": "IN2312",
+            "deliverableCode": "IN2312",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "IN4308",
+            "slug": "vdi-instrument-cable",
+            "label": "IN4308 · 仪控电缆与安装",
+            "level": 2,
+            "disciplineCode": "IN",
+            "cfihosUniqueCode": "CFIHOS-20000876",
+            "documentType": "IN4308",
+            "deliverableCode": "IN4308",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "IN7771",
+            "slug": "vdi-instrument-valve",
+            "label": "IN7771 · 最终控制元件",
+            "level": 2,
+            "disciplineCode": "IN",
+            "cfihosUniqueCode": "CFIHOS-20000899",
+            "documentType": "IN7771",
+            "deliverableCode": "IN7771",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "IN2105",
+            "slug": "vdi-instrument-analytical",
+            "label": "IN2105 · 在线分析仪表",
+            "level": 2,
+            "disciplineCode": "IN",
+            "cfihosUniqueCode": "CFIHOS-20000856",
+            "documentType": "IN2105",
+            "deliverableCode": "IN2105",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "TA4308",
+            "slug": "vdi-instrument-telecom",
+            "label": "TA4308 · 仪控通信与上位",
+            "level": 2,
+            "disciplineCode": "IN",
+            "cfihosUniqueCode": "CFIHOS-20001263",
+            "documentType": "TA4308",
+            "deliverableCode": "TA4308",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "IN4306",
+            "slug": "vdi-instrument-cable-mto",
+            "label": "IN4306 · 仪控电缆MTO",
+            "level": 3,
+            "disciplineCode": "IN",
+            "cfihosUniqueCode": "CFIHOS-20000875",
+            "documentType": "IN4306",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          }
+        ],
+        "l3": [
+          {
+            "id": "HX1222",
+            "slug": "vdi-instrument-calc-sil",
+            "label": "HX1222 · 仪控SIL计算",
+            "level": 3,
+            "disciplineCode": "IN",
+            "cfihosUniqueCode": "CFIHOS-20000804",
+            "documentType": "HX1222",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "IN2105",
+            "slug": "vdi-instrument-selection",
+            "label": "IN2105 · 仪控选型辅助",
+            "level": 3,
+            "disciplineCode": "IN",
+            "cfihosUniqueCode": "CFIHOS-20000856",
+            "documentType": "IN2105",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          },
+          {
+            "id": "IN4327",
+            "slug": "vdi-instrument-io-count",
+            "label": "IN4327 · 仪控IO统计",
+            "level": 3,
+            "disciplineCode": "IN",
+            "cfihosUniqueCode": "CFIHOS-20000877",
+            "documentType": "IN4327",
+            "deliverableCode": "",
+            "vdiDeliverable": ""
+          }
+        ],
+        "edges": [
+          {
+            "from": "LEAD",
+            "to": "IN4315",
+            "type": "sequence"
+          },
+          {
+            "from": "IN4315",
+            "to": "IN2347",
+            "type": "sequence"
+          },
+          {
+            "from": "IN2347",
+            "to": "IN5531",
+            "type": "sequence"
+          },
+          {
+            "from": "IN5531",
+            "to": "IN2312",
+            "type": "sequence"
+          },
+          {
+            "from": "IN4315",
+            "to": "IN2105",
+            "type": "supports"
+          },
+          {
+            "from": "IN4315",
+            "to": "IN4327",
+            "type": "supports"
+          },
+          {
+            "from": "IN2347",
+            "to": "IN2105",
+            "type": "supports"
+          },
+          {
+            "from": "IN5531",
+            "to": "HX1222",
+            "type": "supports"
+          },
+          {
+            "from": "IN2312",
+            "to": "IN4327",
+            "type": "supports"
+          },
+          {
+            "from": "IN7771",
+            "to": "IN2105",
+            "type": "supports"
+          },
+          {
+            "from": "IN2105",
+            "to": "IN2105",
+            "type": "supports"
+          }
+        ]
+      }
+    ]
+  }
+}

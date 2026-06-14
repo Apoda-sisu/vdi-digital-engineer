@@ -1,14 +1,15 @@
 {
   "file": "process/reaction.json",
-  "discipline": "process",
+  "discipline": "PX",
   "category": "reaction",
   "formula_count": 4,
   "formulas": [
     {
       "formula_id": "PR-REA-001",
+      "vdi_formula_id": "PR-REA-001",
       "name": "理想气体状态方程",
       "name_en": "Ideal Gas Law",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "reaction",
       "type": "equation",
       "equation_text": "PV = nRT → V = n*R*T/P",
@@ -17,9 +18,21 @@
         "op": "div",
         "num": {
           "op": "mul",
-          "args": [{"var": "n"}, {"var": "R"}, {"var": "T"}]
+          "args": [
+            {
+              "var": "n"
+            },
+            {
+              "var": "R"
+            },
+            {
+              "var": "T"
+            }
+          ]
         },
-        "den": {"var": "P"}
+        "den": {
+          "var": "P"
+        }
       },
       "variables": [
         {
@@ -59,9 +72,22 @@
           "desc": "气体压力"
         }
       ],
-      "source": {"standard_id": "化工原理通用公式", "clause": "通用"},
-      "tags": ["气体", "状态方程", "热力学"],
-      "keywords": ["理想气体", "PV=nRT", "体积", "压力", "温度"],
+      "source": {
+        "standard_id": "化工原理通用公式",
+        "clause": "通用"
+      },
+      "tags": [
+        "气体",
+        "状态方程",
+        "热力学"
+      ],
+      "keywords": [
+        "理想气体",
+        "PV=nRT",
+        "体积",
+        "压力",
+        "温度"
+      ],
       "precision": 6,
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",
@@ -69,9 +95,10 @@
     },
     {
       "formula_id": "PR-REA-002",
+      "vdi_formula_id": "PR-REA-002",
       "name": "化学反应转化率",
       "name_en": "Chemical Reaction Conversion Rate",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "reaction",
       "type": "equation",
       "equation_text": "X = (N_in - N_out) / N_in",
@@ -80,9 +107,18 @@
         "op": "div",
         "num": {
           "op": "sub",
-          "args": [{"var": "N_in"}, {"var": "N_out"}]
+          "args": [
+            {
+              "var": "N_in"
+            },
+            {
+              "var": "N_out"
+            }
+          ]
         },
-        "den": {"var": "N_in"}
+        "den": {
+          "var": "N_in"
+        }
       },
       "variables": [
         {
@@ -107,9 +143,20 @@
           "desc": "反应物出口物质的量"
         }
       ],
-      "source": {"standard_id": "化工原理", "clause": "通用"},
-      "tags": ["反应", "转化率", "化学工程"],
-      "keywords": ["转化率", "反应", "物质的量"],
+      "source": {
+        "standard_id": "化工原理",
+        "clause": "通用"
+      },
+      "tags": [
+        "反应",
+        "转化率",
+        "化学工程"
+      ],
+      "keywords": [
+        "转化率",
+        "反应",
+        "物质的量"
+      ],
       "precision": 6,
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",
@@ -117,9 +164,10 @@
     },
     {
       "formula_id": "PR-FLO-001",
+      "vdi_formula_id": "PR-FLO-001",
       "name": "孔板流量计",
       "name_en": "Orifice Flow Meter",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "flow",
       "type": "equation",
       "equation_text": "Q = C * A * sqrt(2 * ΔP / ρ)",
@@ -127,15 +175,28 @@
       "equation_ast": {
         "op": "mul",
         "args": [
-          {"var": "C"},
-          {"var": "A"},
+          {
+            "var": "C"
+          },
+          {
+            "var": "A"
+          },
           {
             "op": "div",
             "num": {
               "op": "mul",
-              "args": [{"const": 2}, {"var": "ΔP"}]
+              "args": [
+                {
+                  "const": 2
+                },
+                {
+                  "var": "ΔP"
+                }
+              ]
             },
-            "den": {"var": "ρ"}
+            "den": {
+              "var": "ρ"
+            }
           }
         ]
       },
@@ -178,9 +239,21 @@
           "desc": "流体密度"
         }
       ],
-      "source": {"standard_id": "GB/T 2624", "clause": "通用"},
-      "tags": ["流量", "孔板", "测量"],
-      "keywords": ["孔板", "流量计", "压差", "流量系数"],
+      "source": {
+        "standard_id": "GB/T 2624",
+        "clause": "通用"
+      },
+      "tags": [
+        "流量",
+        "孔板",
+        "测量"
+      ],
+      "keywords": [
+        "孔板",
+        "流量计",
+        "压差",
+        "流量系数"
+      ],
       "precision": 6,
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",
@@ -188,16 +261,27 @@
     },
     {
       "formula_id": "PR-HEA-001",
+      "vdi_formula_id": "PR-HEA-001",
       "name": "换热器传热方程",
       "name_en": "Heat Exchanger Heat Transfer Equation",
-      "discipline": "process",
+      "discipline": "PX",
       "category": "heat",
       "type": "equation",
       "equation_text": "Q = U * A * ΔTm",
       "equation_latex": "Q = U \\cdot A \\cdot \\Delta T_m",
       "equation_ast": {
         "op": "mul",
-        "args": [{"var": "U"}, {"var": "A"}, {"var": "ΔTm"}]
+        "args": [
+          {
+            "var": "U"
+          },
+          {
+            "var": "A"
+          },
+          {
+            "var": "ΔTm"
+          }
+        ]
       },
       "variables": [
         {
@@ -229,9 +313,21 @@
           "desc": "对数平均温差"
         }
       ],
-      "source": {"standard_id": "GB/T 151", "clause": "通用"},
-      "tags": ["换热器", "传热", "热力学"],
-      "keywords": ["换热器", "传热系数", "传热面积", "温差"],
+      "source": {
+        "standard_id": "GB/T 151",
+        "clause": "通用"
+      },
+      "tags": [
+        "换热器",
+        "传热",
+        "热力学"
+      ],
+      "keywords": [
+        "换热器",
+        "传热系数",
+        "传热面积",
+        "温差"
+      ],
       "precision": 6,
       "created_at": "2026-06-04T00:00:00Z",
       "updated_at": "2026-06-04T00:00:00Z",

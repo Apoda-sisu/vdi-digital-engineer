@@ -7,8 +7,8 @@
       "name": "消防设计合规",
       "description": "消防给水系统必须符合 GB 50974-2014 和 GB 50016-2014 的要求",
       "discipline": [
-        "WA",
-        "FI"
+        "CI",
+        "HX"
       ],
       "severity": "critical",
       "check": "输出中消防水量、消火栓布置、消防水池有效容积必须满足规范最低要求",
@@ -22,9 +22,9 @@
       "name": "防火间距合规",
       "description": "建筑物防火间距必须符合 GB 50016-2014 的规定",
       "discipline": [
-        "AR",
+        "CB",
         "SI",
-        "PI"
+        "MP"
       ],
       "severity": "critical",
       "check": "总图布置中相邻建筑间距不得小于规范要求的防火间距最小值",
@@ -37,8 +37,8 @@
       "name": "防爆分区合规",
       "description": "爆炸危险区域划分必须符合 GB 50058-2014",
       "discipline": [
-        "EL",
-        "PR"
+        "EA",
+        "PX"
       ],
       "severity": "critical",
       "check": "电气设备选型与防爆分区等级一致，爆炸危险区域图必须标注",
@@ -51,7 +51,7 @@
       "name": "HAZOP 建议闭环",
       "description": "HAZOP/LOPA 分析建议必须在设计中闭环",
       "discipline": [
-        "PR",
+        "PX",
         "IN",
         "HS"
       ],
@@ -66,7 +66,7 @@
       "name": "排污水质达标",
       "description": "排水水质必须满足排放标准或预处理要求",
       "discipline": [
-        "WA",
+        "CI",
         "HS"
       ],
       "severity": "critical",
@@ -80,8 +80,8 @@
       "name": "安全阀泄放合规",
       "description": "安全阀泄放系统设计必须符合规范",
       "discipline": [
-        "PR",
-        "PI",
+        "PX",
+        "MP",
         "HS"
       ],
       "severity": "critical",
@@ -245,7 +245,160 @@
     }
   },
   "output_contracts": {
-    "WA": {
+    "PX": {
+      "schema_ref": "DisciplineOutput",
+      "required_fields": [
+        "discipline",
+        "output_type",
+        "payload",
+        "citations",
+        "risk_level",
+        "confidence",
+        "status"
+      ]
+    },
+    "MP": {
+      "schema_ref": "DisciplineOutput",
+      "required_fields": [
+        "discipline",
+        "output_type",
+        "payload",
+        "citations",
+        "risk_level",
+        "confidence",
+        "status"
+      ],
+      "sub_discipline_contracts": {
+        "M": {
+          "output_type": "material_class",
+          "required_payload_fields": [
+            "classes"
+          ]
+        },
+        "L": {
+          "output_type": "line_list",
+          "required_payload_fields": [
+            "lines"
+          ]
+        },
+        "Y": {
+          "output_type": "piping_layout",
+          "required_payload_fields": [
+            "plan_sheets",
+            "elevation_sheets",
+            "revision"
+          ]
+        },
+        "N": {
+          "output_type": "equipment_piping",
+          "required_payload_fields": [
+            "nozzle_connections"
+          ]
+        },
+        "R": {
+          "output_type": "rack_layout",
+          "required_payload_fields": [
+            "racks"
+          ]
+        },
+        "G": {
+          "output_type": "piping_design",
+          "required_payload_fields": [
+            "routing_summary",
+            "clash_report"
+          ]
+        },
+        "U": {
+          "output_type": "support_design",
+          "required_payload_fields": [
+            "supports",
+            "loads_kN"
+          ]
+        },
+        "S": {
+          "output_type": "stress_analysis",
+          "required_payload_fields": [
+            "critical_lines",
+            "recommendations"
+          ]
+        },
+        "I": {
+          "output_type": "insulation_tracing",
+          "required_payload_fields": [
+            "insulation_lines",
+            "tracing_lines"
+          ]
+        },
+        "O": {
+          "output_type": "isometric_spool",
+          "required_payload_fields": [
+            "isometrics",
+            "test_packages"
+          ]
+        },
+        "V": {
+          "output_type": "valve_specialty",
+          "required_payload_fields": [
+            "valves",
+            "specialty_items"
+          ]
+        },
+        "B": {
+          "output_type": "underground_piping",
+          "required_payload_fields": [
+            "underground_routes",
+            "trench_sections"
+          ]
+        },
+        "C": {
+          "output_type": "piping_3d_pilot",
+          "required_payload_fields": [
+            "model_id",
+            "revision"
+          ]
+        }
+      }
+    },
+    "IN": {
+      "schema_ref": "DisciplineOutput",
+      "required_fields": [
+        "discipline",
+        "output_type",
+        "payload",
+        "citations",
+        "risk_level",
+        "confidence",
+        "status"
+      ],
+      "note": "output_type 枚举: instrument_design / instrument_index / control_loop / interlock / dcs_config / control_valve_spec / instrument_installation / analytical_instruments / instrument_network",
+      "sub_discipline_contracts": {
+        "I": {
+          "output_type": "instrument_index",
+          "payload_schema_ref": "pilotdeck-vdi/schemas/instrument_index.schema.json",
+          "required_payload_fields": [
+            "pid_revision",
+            "index_table",
+            "instruments",
+            "fce_tags",
+            "io_summary"
+          ]
+        }
+      }
+    },
+    "SI": {
+      "schema_ref": "DisciplineOutput",
+      "required_fields": [
+        "discipline",
+        "output_type",
+        "content",
+        "citations",
+        "risk_level",
+        "confidence",
+        "status"
+      ],
+      "note": "output_type 枚举: layout / vertical / pipeline / transport / verification"
+    },
+    "CI": {
       "schema_ref": "DisciplineOutput",
       "required_fields": [
         "discipline",
@@ -315,61 +468,755 @@
           ]
         }
       }
-    },
-    "PR": {
-      "schema_ref": "DisciplineOutput",
-      "required_fields": [
-        "discipline",
-        "output_type",
-        "payload",
-        "citations",
-        "risk_level",
-        "confidence",
-        "status"
-      ]
-    },
-    "PI": {
-      "schema_ref": "DisciplineOutput",
-      "required_fields": [
-        "discipline",
-        "output_type",
-        "payload",
-        "citations",
-        "risk_level",
-        "confidence",
-        "status"
-      ],
-      "note": "output_type 枚举: piping_design / material_class / line_list / stress_analysis"
-    },
-    "IN": {
-      "schema_ref": "DisciplineOutput",
-      "required_fields": [
-        "discipline",
-        "output_type",
-        "payload",
-        "citations",
-        "risk_level",
-        "confidence",
-        "status"
-      ],
-      "note": "output_type 枚举: instrument_design / control_loop / interlock / dcs_config"
-    },
-    "SI": {
-      "schema_ref": "DisciplineOutput",
-      "required_fields": [
-        "discipline",
-        "output_type",
-        "content",
-        "citations",
-        "risk_level",
-        "confidence",
-        "status"
-      ],
-      "note": "output_type 枚举: layout / vertical / pipeline / transport / verification"
     }
   },
   "data_contracts": {
-    "WA": {
+    "MP": {
+      "M": {
+        "must": [
+          {
+            "field": "medium_list",
+            "label": "介质清单（名称、相态）",
+            "type": "array",
+            "source": "工艺 P&ID / DesignBasis",
+            "rule": "非空"
+          },
+          {
+            "field": "design_TP",
+            "label": "设计温度压力范围",
+            "type": "object",
+            "source": "工艺专业",
+            "rule": "含 max_T_C, max_P_MPa"
+          }
+        ],
+        "should": [
+          {
+            "field": "corrosion_env",
+            "label": "腐蚀环境",
+            "default": "常温常压碳钢",
+            "basis": "SH/T 3059"
+          }
+        ]
+      },
+      "L": {
+        "must": [
+          {
+            "field": "pid_line_list_draft",
+            "label": "工艺管道表草案",
+            "type": "array",
+            "source": "工艺 PR-S01",
+            "rule": "非空"
+          },
+          {
+            "field": "material_classes",
+            "label": "管道材料等级表",
+            "type": "array",
+            "source": "MP7737",
+            "rule": "已发布"
+          }
+        ],
+        "should": [
+          {
+            "field": "insulation_requirements",
+            "label": "绝热伴热要求",
+            "default": "按 Line List 字段",
+            "basis": "工艺/操作条件"
+          }
+        ]
+      },
+      "Y": {
+        "must": [
+          {
+            "field": "plot_boundary",
+            "label": "装置边界与坐标系",
+            "type": "object",
+            "source": "总图 SI",
+            "rule": "含装置界区"
+          },
+          {
+            "field": "equipment_coords",
+            "label": "主要设备定位",
+            "type": "array",
+            "source": "设备 EQ / 总图",
+            "rule": "非空"
+          }
+        ],
+        "should": [
+          {
+            "field": "rack_zones",
+            "label": "管廊区域",
+            "default": "总图管廊布置",
+            "basis": "SI / MP4024"
+          }
+        ]
+      },
+      "N": {
+        "must": [
+          {
+            "field": "nozzle_list",
+            "label": "设备管口清单",
+            "type": "array",
+            "source": "设备 EQ",
+            "rule": "含 nozzle_id, size, orientation"
+          },
+          {
+            "field": "line_list",
+            "label": "管道表",
+            "type": "array",
+            "source": "MP4338",
+            "rule": "已发布"
+          }
+        ],
+        "should": []
+      },
+      "R": {
+        "must": [
+          {
+            "field": "plot_plan",
+            "label": "装置总平面",
+            "type": "object",
+            "source": "总图 SI",
+            "rule": "含管廊走向"
+          }
+        ],
+        "should": [
+          {
+            "field": "piping_layout",
+            "label": "管道平面布置",
+            "source": "MP4033",
+            "default": "初版布置"
+          }
+        ]
+      },
+      "G": {
+        "must": [
+          {
+            "field": "line_list",
+            "label": "管道表",
+            "type": "array",
+            "source": "MP4338",
+            "rule": "已发布"
+          },
+          {
+            "field": "piping_layout",
+            "label": "管道布置图",
+            "type": "object",
+            "source": "MP4033",
+            "rule": "已发布"
+          }
+        ],
+        "should": []
+      },
+      "U": {
+        "must": [
+          {
+            "field": "piping_geometry",
+            "label": "管线路径与标高",
+            "type": "array",
+            "source": "MP4033",
+            "rule": "非空"
+          }
+        ],
+        "should": [
+          {
+            "field": "critical_line_list",
+            "label": "临界管系表",
+            "source": "MP8005",
+            "default": "待应力分析"
+          }
+        ]
+      },
+      "S": {
+        "must": [
+          {
+            "field": "piping_geometry",
+            "label": "管线几何（含支承点）",
+            "type": "array",
+            "source": "MP4033 / MP2358",
+            "rule": "非空"
+          },
+          {
+            "field": "operating_TP",
+            "label": "操作温度压力",
+            "type": "object",
+            "source": "Line List",
+            "rule": "含 design/oper"
+          }
+        ],
+        "should": []
+      },
+      "I": {
+        "must": [
+          {
+            "field": "line_list",
+            "label": "管道表（含操作温度）",
+            "type": "array",
+            "source": "MP4338",
+            "rule": "已发布"
+          }
+        ],
+        "should": []
+      },
+      "O": {
+        "must": [
+          {
+            "field": "line_list",
+            "label": "管道表",
+            "type": "array",
+            "source": "MP4338",
+            "rule": "已发布"
+          },
+          {
+            "field": "piping_layout",
+            "label": "管道布置",
+            "type": "object",
+            "source": "MP4033",
+            "rule": "已发布"
+          }
+        ],
+        "should": []
+      },
+      "V": {
+        "must": [
+          {
+            "field": "material_classes",
+            "label": "管道材料等级",
+            "type": "array",
+            "source": "MP7737",
+            "rule": "已发布"
+          },
+          {
+            "field": "line_list",
+            "label": "管道表",
+            "type": "array",
+            "source": "MP4338",
+            "rule": "已发布"
+          }
+        ],
+        "should": []
+      },
+      "B": {
+        "must": [
+          {
+            "field": "plot_boundary",
+            "label": "装置边界",
+            "type": "object",
+            "source": "总图 SI",
+            "rule": "含地下区域"
+          },
+          {
+            "field": "line_list",
+            "label": "地下管线清单",
+            "type": "array",
+            "source": "MP4338",
+            "rule": "标注 buried"
+          }
+        ],
+        "should": []
+      },
+      "C": {
+        "must": [
+          {
+            "field": "line_list",
+            "label": "管道表",
+            "type": "array",
+            "source": "MP4338",
+            "rule": "已发布"
+          }
+        ],
+        "should": []
+      }
+    },
+    "PX": {
+      "R": {
+        "must": [
+          {
+            "field": "feedstock_spec",
+            "label": "原料方案（种类、规格、供给量）",
+            "type": "object",
+            "source": "业主/前期研究",
+            "rule": "含原料种类/组成/供给量"
+          },
+          {
+            "field": "product_spec",
+            "label": "产品方案（种类、产能、规格）",
+            "type": "object",
+            "source": "业主",
+            "rule": "含产品种类/产能/纯度要求"
+          },
+          {
+            "field": "battery_limit_conditions",
+            "label": "界区条件（温度/压力范围）",
+            "type": "object",
+            "source": "业主/前期",
+            "rule": "含原料进界区和产品出界区的T/P条件"
+          }
+        ],
+        "should": [
+          {
+            "field": "catalyst_type",
+            "label": "催化剂选择",
+            "default": "按文献推荐",
+            "basis": "工艺比选",
+            "confirm_when": "新催化剂需实验验证"
+          },
+          {
+            "field": "operating_hours_ha",
+            "label": "年操作时数",
+            "default": "8000",
+            "basis": "SH/T 3011-2017"
+          }
+        ]
+      },
+      "B": {
+        "must": [
+          {
+            "field": "route_output",
+            "label": "工艺路线确定后的物流数据",
+            "type": "object",
+            "source": "vdi-process-route",
+            "rule": "含关键物流的流量/组成/相态"
+          },
+          {
+            "field": "reaction_data",
+            "label": "反应转化率/选择性",
+            "type": "object",
+            "source": "vdi-process-route",
+            "rule": "含主副反应转化率和选择性"
+          },
+          {
+            "field": "key_operating_params",
+            "label": "关键操作参数(T/P)",
+            "type": "object",
+            "source": "vdi-process-route",
+            "rule": "含反应器和分离单元的操作T/P"
+          }
+        ],
+        "should": [
+          {
+            "field": "utility_prices",
+            "label": "公用工程价格",
+            "default": "按项目所在地均价",
+            "basis": "经济评价"
+          },
+          {
+            "field": "emission_factors",
+            "label": "三废排放因子",
+            "default": "按 GB/T 50483 估算",
+            "basis": "GB/T 50483-2019"
+          }
+        ]
+      },
+      "P": {
+        "must": [
+          {
+            "field": "material_balance",
+            "label": "物料平衡表（物流号/流量/组成/相态）",
+            "type": "object",
+            "source": "vdi-process-balance",
+            "rule": "含全部物流的流量/组成/相态"
+          },
+          {
+            "field": "equipment_draft_datasheets",
+            "label": "设备数据表草稿",
+            "type": "object",
+            "source": "vdi-process-equipment",
+            "rule": "含设备位号和基本操作条件"
+          },
+          {
+            "field": "control_philosophy",
+            "label": "控制方案说明",
+            "type": "string",
+            "source": "工艺/仪控",
+            "rule": "含主要控制回路和联锁逻辑描述"
+          }
+        ],
+        "should": [
+          {
+            "field": "pipe_material_class",
+            "label": "管道材料等级",
+            "default": "按介质/温度/压力选材",
+            "basis": "HG/T 20570-2015",
+            "confirm_when": "特殊介质需确认"
+          },
+          {
+            "field": "instrument_standard",
+            "label": "仪表规格标准",
+            "default": "HG/T 20505",
+            "basis": "HG/T 20505-2014"
+          }
+        ]
+      },
+      "E": {
+        "must": [
+          {
+            "field": "material_balance_table",
+            "label": "物料平衡表",
+            "type": "object",
+            "source": "vdi-process-balance",
+            "rule": "含各单元进出物流数据"
+          },
+          {
+            "field": "pfd_with_tags",
+            "label": "PFD（含设备位号和操作条件）",
+            "type": "object",
+            "source": "vdi-process-pfd",
+            "rule": "含设备位号/操作T/P/流量"
+          },
+          {
+            "field": "equipment_operating_conditions",
+            "label": "设备操作参数(T/P/Flow)",
+            "type": "object",
+            "source": "vdi-process-route + balance",
+            "rule": "每台设备的设计T/P/流量"
+          }
+        ],
+        "should": [
+          {
+            "field": "vendor_data",
+            "label": "制造商数据/样本",
+            "default": "按经验选型",
+            "basis": "工程经验",
+            "confirm_when": "关键设备需制造商确认"
+          },
+          {
+            "field": "material_selection_detail",
+            "label": "具体材质选择",
+            "default": "按 GB 150 材料篇初选",
+            "basis": "GB 150-2011"
+          }
+        ]
+      },
+      "K": {
+        "must": [
+          {
+            "field": "tech_source",
+            "label": "技术来源/专利状态",
+            "type": "string",
+            "source": "业主",
+            "rule": "含专利/许可/自有技术说明"
+          },
+          {
+            "field": "feedstock_product_scheme",
+            "label": "原料产品方案",
+            "type": "object",
+            "source": "业主/可研",
+            "rule": "含原料种类与产品规格"
+          },
+          {
+            "field": "design_capacity",
+            "label": "设计能力/规模",
+            "type": "object",
+            "source": "业主",
+            "rule": "含产能与年操作时数"
+          }
+        ],
+        "should": [
+          {
+            "field": "reference_plant",
+            "label": "类似装置参考",
+            "default": "无",
+            "basis": "业主资料",
+            "confirm_when": "首套装置"
+          }
+        ]
+      },
+      "F": {
+        "must": [
+          {
+            "field": "pid_document",
+            "label": "P&ID（含设备/管道/仪表位号）",
+            "type": "object",
+            "source": "vdi-process-pfd",
+            "rule": "完整的P&ID图"
+          },
+          {
+            "field": "fire_hazard_class",
+            "label": "介质火灾危险性分类（甲/乙/丙）",
+            "type": "enum",
+            "source": "工艺/消防",
+            "rule": "按 GB 50160 分类"
+          },
+          {
+            "field": "hazop_nodes",
+            "label": "HAZOP节点划分",
+            "type": "array",
+            "source": "工艺/HSE",
+            "rule": "含节点描述和边界"
+          }
+        ],
+        "should": [
+          {
+            "field": "sil_preliminary",
+            "label": "SIL定级初始评估",
+            "default": "按 GB/T 50770 初评",
+            "basis": "GB/T 50770-2013",
+            "confirm_when": "需LOPA确认"
+          },
+          {
+            "field": "relief_scenario_priority",
+            "label": "泄放场景优先级",
+            "default": "火灾>阻塞>热膨胀",
+            "basis": "API 521"
+          }
+        ]
+      },
+      "U": {
+        "must": [
+          {
+            "field": "material_balance_with_utilities",
+            "label": "物料平衡表（含公用工程消耗）",
+            "type": "object",
+            "source": "vdi-process-balance",
+            "rule": "含各级蒸汽/循环水/电/氮气用量"
+          },
+          {
+            "field": "heat_balance_table",
+            "label": "热量平衡表",
+            "type": "object",
+            "source": "vdi-process-balance",
+            "rule": "含各单元热负荷和换热网络"
+          },
+          {
+            "field": "equipment_cooling_load",
+            "label": "设备冷却负荷汇总",
+            "type": "object",
+            "source": "vdi-process-equipment",
+            "rule": "含需要循环水/冷冻水的设备及热负荷"
+          }
+        ],
+        "should": [
+          {
+            "field": "steam_pressure_levels",
+            "label": "蒸汽等级压力定义",
+            "default": "HP≥4.0/MP=1.6/LP=0.5 MPaG",
+            "basis": "项目统一规定"
+          },
+          {
+            "field": "condensate_recovery_target",
+            "label": "冷凝水回收率目标",
+            "default": "75%",
+            "basis": "SH/T 3011-2017",
+            "confirm_when": "严寒地区需调整"
+          }
+        ]
+      }
+    },
+    "IN": {
+      "I": {
+        "must": [
+          {
+            "field": "pid_revision",
+            "label": "P&ID 版本",
+            "type": "string",
+            "source": "vdi-process-pid",
+            "rule": "非空"
+          },
+          {
+            "field": "control_philosophy_ref",
+            "label": "控制方案引用",
+            "type": "string",
+            "source": "vdi-process-control",
+            "rule": "非空"
+          },
+          {
+            "field": "hazardous_area_classification",
+            "label": "爆炸危险区域分级",
+            "type": "string",
+            "source": "project_design_basis",
+            "rule": "非空"
+          }
+        ],
+        "should": [
+          {
+            "field": "instrument_standard",
+            "label": "仪表设计标准",
+            "default": "HG/T 20507",
+            "basis": "项目统一规定"
+          },
+          {
+            "field": "operating_conditions",
+            "label": "操作工况/介质",
+            "source": "vdi-process-pid",
+            "basis": "数据表选型"
+          }
+        ]
+      },
+      "L": {
+        "must": [
+          {
+            "field": "cause_effect",
+            "label": "因果图/联锁矩阵",
+            "type": "array",
+            "source": "vdi-process-control",
+            "rule": "非空"
+          },
+          {
+            "field": "pid_instrument_tags",
+            "label": "P&ID 仪表位号清单",
+            "type": "array",
+            "source": "vdi-process-pid",
+            "rule": "非空"
+          }
+        ],
+        "should": [
+          {
+            "field": "sil_target",
+            "label": "SIL 目标等级",
+            "default": "SIL1",
+            "basis": "IEC 61511"
+          }
+        ]
+      },
+      "V": {
+        "must": [
+          {
+            "field": "fce_tag_list",
+            "label": "最终控制元件位号清单",
+            "type": "array",
+            "source": "vdi-instrument-index",
+            "rule": "非空"
+          },
+          {
+            "field": "operating_conditions",
+            "label": "操作工况",
+            "type": "object",
+            "source": "vdi-process-pid",
+            "rule": "非空"
+          }
+        ],
+        "should": [
+          {
+            "field": "fail_position",
+            "label": "故障位置",
+            "source": "vdi-process-control",
+            "basis": "PX8248 控制方案"
+          }
+        ]
+      },
+      "C": {
+        "must": [
+          {
+            "field": "control_philosophy_ref",
+            "label": "控制方案引用",
+            "type": "string",
+            "source": "vdi-process-control",
+            "rule": "非空"
+          },
+          {
+            "field": "instrument_index_ref",
+            "label": "仪表索引引用",
+            "type": "string",
+            "source": "vdi-instrument-index",
+            "rule": "非空"
+          }
+        ],
+        "should": [
+          {
+            "field": "pid_revision",
+            "label": "P&ID 版本",
+            "source": "vdi-process-pid",
+            "basis": "位号互校"
+          }
+        ]
+      },
+      "S": {
+        "must": [
+          {
+            "field": "instrument_index_ref",
+            "label": "仪表索引引用",
+            "type": "string",
+            "source": "vdi-instrument-index",
+            "rule": "非空"
+          }
+        ],
+        "should": [
+          {
+            "field": "control_loop_ref",
+            "label": "控制回路引用",
+            "source": "vdi-instrument-loop",
+            "basis": "I/O 与逻辑归属"
+          },
+          {
+            "field": "interlock_ref",
+            "label": "联锁/SIS 引用",
+            "source": "vdi-instrument-interlock",
+            "basis": "SIS I/O 分离",
+            "confirm_when": "项目含 SIS"
+          }
+        ]
+      },
+      "K": {
+        "must": [
+          {
+            "field": "instrument_index_ref",
+            "label": "仪表索引引用",
+            "type": "string",
+            "source": "vdi-instrument-index",
+            "rule": "非空"
+          }
+        ],
+        "should": [
+          {
+            "field": "io_assignment",
+            "label": "I/O 分配",
+            "source": "vdi-instrument-dcs",
+            "basis": "机柜/JB 定位"
+          },
+          {
+            "field": "layout_ref",
+            "label": "布置图引用",
+            "basis": "电缆路由"
+          }
+        ]
+      },
+      "A": {
+        "must": [
+          {
+            "field": "analytical_tag_list",
+            "label": "在线分析位号清单",
+            "type": "array",
+            "source": "vdi-instrument-index",
+            "rule": "非空"
+          },
+          {
+            "field": "sample_conditions",
+            "label": "样品条件",
+            "type": "object",
+            "source": "vdi-process-control",
+            "rule": "非空"
+          }
+        ],
+        "should": [
+          {
+            "field": "pid_revision",
+            "label": "P&ID 版本",
+            "source": "vdi-process-pid",
+            "basis": "取样点校验"
+          }
+        ]
+      },
+      "N": {
+        "must": [
+          {
+            "field": "dcs_config_ref",
+            "label": "DCS 配置引用",
+            "type": "string",
+            "source": "vdi-instrument-dcs",
+            "rule": "非空"
+          }
+        ],
+        "should": [
+          {
+            "field": "instrument_index_ref",
+            "label": "仪表索引引用",
+            "source": "vdi-instrument-index",
+            "basis": "无线仪表位号"
+          }
+        ]
+      }
+    },
+    "CI": {
       "S": {
         "must": [
           {
@@ -602,247 +1449,6 @@
             "label": "冷却塔布置场地条件",
             "default": "开式逆流默认",
             "basis": "总图"
-          }
-        ]
-      }
-    },
-    "PR": {
-      "R": {
-        "must": [
-          {
-            "field": "feedstock_spec",
-            "label": "原料方案（种类、规格、供给量）",
-            "type": "object",
-            "source": "业主/前期研究",
-            "rule": "含原料种类/组成/供给量"
-          },
-          {
-            "field": "product_spec",
-            "label": "产品方案（种类、产能、规格）",
-            "type": "object",
-            "source": "业主",
-            "rule": "含产品种类/产能/纯度要求"
-          },
-          {
-            "field": "battery_limit_conditions",
-            "label": "界区条件（温度/压力范围）",
-            "type": "object",
-            "source": "业主/前期",
-            "rule": "含原料进界区和产品出界区的T/P条件"
-          }
-        ],
-        "should": [
-          {
-            "field": "catalyst_type",
-            "label": "催化剂选择",
-            "default": "按文献推荐",
-            "basis": "工艺比选",
-            "confirm_when": "新催化剂需实验验证"
-          },
-          {
-            "field": "operating_hours_ha",
-            "label": "年操作时数",
-            "default": "8000",
-            "basis": "SH/T 3011-2017"
-          }
-        ]
-      },
-      "B": {
-        "must": [
-          {
-            "field": "route_output",
-            "label": "工艺路线确定后的物流数据",
-            "type": "object",
-            "source": "vdi-process-route",
-            "rule": "含关键物流的流量/组成/相态"
-          },
-          {
-            "field": "reaction_data",
-            "label": "反应转化率/选择性",
-            "type": "object",
-            "source": "vdi-process-route",
-            "rule": "含主副反应转化率和选择性"
-          },
-          {
-            "field": "key_operating_params",
-            "label": "关键操作参数(T/P)",
-            "type": "object",
-            "source": "vdi-process-route",
-            "rule": "含反应器和分离单元的操作T/P"
-          }
-        ],
-        "should": [
-          {
-            "field": "utility_prices",
-            "label": "公用工程价格",
-            "default": "按项目所在地均价",
-            "basis": "经济评价"
-          },
-          {
-            "field": "emission_factors",
-            "label": "三废排放因子",
-            "default": "按 GB/T 50483 估算",
-            "basis": "GB/T 50483-2019"
-          }
-        ]
-      },
-      "P": {
-        "must": [
-          {
-            "field": "material_balance",
-            "label": "物料平衡表（物流号/流量/组成/相态）",
-            "type": "object",
-            "source": "vdi-process-balance",
-            "rule": "含全部物流的流量/组成/相态"
-          },
-          {
-            "field": "equipment_draft_datasheets",
-            "label": "设备数据表草稿",
-            "type": "object",
-            "source": "vdi-process-equipment",
-            "rule": "含设备位号和基本操作条件"
-          },
-          {
-            "field": "control_philosophy",
-            "label": "控制方案说明",
-            "type": "string",
-            "source": "工艺/仪控",
-            "rule": "含主要控制回路和联锁逻辑描述"
-          }
-        ],
-        "should": [
-          {
-            "field": "pipe_material_class",
-            "label": "管道材料等级",
-            "default": "按介质/温度/压力选材",
-            "basis": "HG/T 20570-2015",
-            "confirm_when": "特殊介质需确认"
-          },
-          {
-            "field": "instrument_standard",
-            "label": "仪表规格标准",
-            "default": "HG/T 20505",
-            "basis": "HG/T 20505-2014"
-          }
-        ]
-      },
-      "E": {
-        "must": [
-          {
-            "field": "material_balance_table",
-            "label": "物料平衡表",
-            "type": "object",
-            "source": "vdi-process-balance",
-            "rule": "含各单元进出物流数据"
-          },
-          {
-            "field": "pfd_with_tags",
-            "label": "PFD（含设备位号和操作条件）",
-            "type": "object",
-            "source": "vdi-process-pfd-pid",
-            "rule": "含设备位号/操作T/P/流量"
-          },
-          {
-            "field": "equipment_operating_conditions",
-            "label": "设备操作参数(T/P/Flow)",
-            "type": "object",
-            "source": "vdi-process-route + balance",
-            "rule": "每台设备的设计T/P/流量"
-          }
-        ],
-        "should": [
-          {
-            "field": "vendor_data",
-            "label": "制造商数据/样本",
-            "default": "按经验选型",
-            "basis": "工程经验",
-            "confirm_when": "关键设备需制造商确认"
-          },
-          {
-            "field": "material_selection_detail",
-            "label": "具体材质选择",
-            "default": "按 GB 150 材料篇初选",
-            "basis": "GB 150-2011"
-          }
-        ]
-      },
-      "F": {
-        "must": [
-          {
-            "field": "pid_document",
-            "label": "P&ID（含设备/管道/仪表位号）",
-            "type": "object",
-            "source": "vdi-process-pfd-pid",
-            "rule": "完整的P&ID图"
-          },
-          {
-            "field": "fire_hazard_class",
-            "label": "介质火灾危险性分类（甲/乙/丙）",
-            "type": "enum",
-            "source": "工艺/消防",
-            "rule": "按 GB 50160 分类"
-          },
-          {
-            "field": "hazop_nodes",
-            "label": "HAZOP节点划分",
-            "type": "array",
-            "source": "工艺/HSE",
-            "rule": "含节点描述和边界"
-          }
-        ],
-        "should": [
-          {
-            "field": "sil_preliminary",
-            "label": "SIL定级初始评估",
-            "default": "按 GB/T 50770 初评",
-            "basis": "GB/T 50770-2013",
-            "confirm_when": "需LOPA确认"
-          },
-          {
-            "field": "relief_scenario_priority",
-            "label": "泄放场景优先级",
-            "default": "火灾>阻塞>热膨胀",
-            "basis": "API 521"
-          }
-        ]
-      },
-      "U": {
-        "must": [
-          {
-            "field": "material_balance_with_utilities",
-            "label": "物料平衡表（含公用工程消耗）",
-            "type": "object",
-            "source": "vdi-process-balance",
-            "rule": "含各级蒸汽/循环水/电/氮气用量"
-          },
-          {
-            "field": "heat_balance_table",
-            "label": "热量平衡表",
-            "type": "object",
-            "source": "vdi-process-balance",
-            "rule": "含各单元热负荷和换热网络"
-          },
-          {
-            "field": "equipment_cooling_load",
-            "label": "设备冷却负荷汇总",
-            "type": "object",
-            "source": "vdi-process-equipment",
-            "rule": "含需要循环水/冷冻水的设备及热负荷"
-          }
-        ],
-        "should": [
-          {
-            "field": "steam_pressure_levels",
-            "label": "蒸汽等级压力定义",
-            "default": "HP≥4.0/MP=1.6/LP=0.5 MPaG",
-            "basis": "项目统一规定"
-          },
-          {
-            "field": "condensate_recovery_target",
-            "label": "冷凝水回收率目标",
-            "default": "75%",
-            "basis": "SH/T 3011-2017",
-            "confirm_when": "严寒地区需调整"
           }
         ]
       }

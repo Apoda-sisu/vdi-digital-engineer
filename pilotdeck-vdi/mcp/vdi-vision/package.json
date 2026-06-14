@@ -1,0 +1,18 @@
+{
+  "name": "vdi-vision-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "VDI 图片解读 MCP — 表格/文字类图片（本地 Ollama / 云端 API）",
+  "bin": {
+    "vdi-vision-mcp": "./server.mjs"
+  },
+  "scripts": {
+    "start": "node server-http.mjs",
+    "mcp": "node server.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "zod": "^3.23.8"
+  }
+}

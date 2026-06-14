@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "description": "VDI 工作空间 canonical 路径（唯一真相源）",
+  "discipline_workspaces": {
+    "process": "工艺组",
+    "piping": "管道组",
+    "water": "给排水组",
+      "management": "管理组/skills",
+    "instrument": "仪控组"
+  },
+  "skills_layout": {
+    "canonical": "workspaces/{专业组}/skills/{slug}/",
+    "eval_workspace": "workspaces/{专业组}/skill-workspaces/{slug}/",
+    "registry": "workspaces/skills-registry.json",
+    "groups": {
+      "water": "给排水组/skills",
+      "piping": "管道组/skills",
+      "process": "工艺组/skills",
+      "management": "管理组/skills",
+      "instrument": "仪控组/skills",
+      "platform": "程序检测/skills"
+    }
+  },
+  "pilots": {
+    "water_plant_base": {
+      "id": "WATER-PLANT-BASE",
+      "workspace_rel": "给排水组/pilot/plant-base",
+      "discipline": "water",
+      "scope": "给排水 Skill E2E 与任务卡基准",
+      "test_data": "给排水组/pilot/plant-base/design-basis/must-data.json"
+    },
+    "meoh_process": {
+      "id": "MEOH-100",
+      "workspace_rel": "工艺组/pilot/meoh-100",
+      "discipline": "process",
+      "scope": "工艺物料/设备基准数据",
+      "test_data": "工艺组/pilot/meoh-100/test-inputs/pid-01-must-data.json"
+    },
+    "atfd_demo": {
+      "id": "ATFD-DEMO",
+      "workspace_rel": "工艺组/pilot/atfd-demo",
+      "discipline": "process",
+      "scope": "常减压 CP-0 对话",
+      "test_data": "工艺组/pilot/atfd-demo/design-basis/basis-001.json"
+    },
+    "instrument_plant_base": {
+      "id": "IN-PLANT-BASE",
+      "workspace_rel": "仪控组/pilot/plant-base",
+      "discipline": "instrument",
+      "scope": "IN-D01 常减压塔仪表选型案例",
+      "test_data": "仪控组/pilot/plant-base/design-basis/must-data.json",
+      "case_dir": "仪控组/pilot/plant-base/cases/cdu-tower",
+      "acceptance": "pilotdeck-vdi/scripts/test-in-d01-cdu-case.mjs"
+    }
+  }
+}

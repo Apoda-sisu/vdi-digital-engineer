@@ -1,17 +1,16 @@
 #!/usr/bin/env node
 /**
- * 生成 skills/index.json — 全量 Skill 索引入口
- *
- * 用途：供 PilotDeck / 管理工具 / CI 快速发现和查询 Skill
- * 运行：node pilotdeck-vdi/scripts/generate-skill-index.mjs
+ * 生成 workspaces/skills-registry.json — 全量 Skill 索引
  */
-import { readFileSync, writeFileSync, readdirSync } from "node:fs";
-import { join, relative, resolve, dirname } from "node:path";
-import { fileURLToPath } from "node:url";
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT = resolve(__dirname, "..", "..");
-const SKILLS_DIR = join(ROOT, "skills");
+import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
+import { join } from "node:path";
+import {
+  REPO,
+  SKILLS_REGISTRY,
+  allSkillsRoots,
+  groupForSlug,
+  skillRelPath,
+} from "../config/skills-layout.mjs";
 
 function parseFrontmatter(content) {
   const match = content.match(/^---\n([\s\S]*?)\n---/);
@@ -31,61 +30,53 @@ function parseFrontmatter(content) {
       fm[currentKey].push(list[1].trim());
     }
   }
-  // 解析嵌套 metadata.vdi
   return fm;
 }
 
-function walk(dir, result = []) {
-  for (const entry of readdirSync(dir, { withFileTypes: true })) {
-    if (entry.name.startsWith(".")) continue;
-    const full = join(dir, entry.name);
-    if (entry.isDirectory()) {
-      walk(full, result);
-    } else if (entry.name === "SKILL.md") {
-      const content = readFileSync(full, "utf8");
-      const fm = parseFrontmatter(content);
-      const relPath = relative(SKILLS_DIR, dir);
-      const group = relPath.split("/")[0];
-      result.push({
-        name: fm.name || "unknown",
-        path: "skills/" + relPath,
-        group,
-        discipline: fm.discipline || "",
-        sub_discipline: fm.sub_discipline || "",
-        level: Number(fm.level) || 0,
-        role: fm.role || (fm.manages ? "lead" : ""),
-        reports_to: fm.reports_to || "",
-        manages: Array.isArray(fm.manages) ? fm.manages : [],
-        mcp_required: Array.isArray(fm.mcp_required) ? fm.mcp_required : [],
-        standalone: fm.standalone !== "false",
-        triggers: Array.isArray(fm.triggers) ? fm.triggers : [],
-      });
-    }
+function parseVdiYaml(yaml) {
+  const vdi = {};
+  const block = yaml.match(/vdi:\s*\n([\s\S]*?)(?=\n\w|\n---|$)/);
+  if (!block) return vdi;
+  for (const line of block[1].split("\n")) {
+    const m = line.match(/^\s+(\w+):\s*(.+)/);
+    if (m) vdi[m[1]] = m[2].trim().replace(/^["']|["']$/g, "");
   }
-  return result;
+  return vdi;
 }
 
-const skills = walk(SKILLS_DIR);
-
-const groups = {};
-for (const s of skills) {
-  if (!groups[s.group]) groups[s.group] = [];
-  groups[s.group].push(s);
+const skills = [];
+for (const root of allSkillsRoots()) {
+  const group = root.split("/workspaces/")[1]?.split("/")[0] || "";
+  for (const entry of readdirSync(root, { withFileTypes: true })) {
+    if (!entry.isDirectory() || entry.name.startsWith(".")) continue;
+    const skillMd = join(root, entry.name, "SKILL.md");
+    if (!existsSync(skillMd)) continue;
+    const content = readFileSync(skillMd, "utf8");
+    const fm = parseFrontmatter(content);
+    const yaml = content.match(/^---\n([\s\S]*?)\n---/)?.[1] || "";
+    const vdi = parseVdiYaml(yaml);
+    skills.push({
+      slug: entry.name,
+      name: fm.name || entry.name,
+      path: skillRelPath(entry.name),
+      workspace_group: group || groupForSlug(entry.name),
+      discipline: vdi.discipline || fm.discipline || "",
+      level: Number(vdi.level || fm.level) || 0,
+      deliverable_code: vdi.deliverable_code || "",
+      generation: vdi.generation || "",
+    });
+  }
 }
 
-const index = {
-  version: "1.0",
+skills.sort((a, b) => a.slug.localeCompare(b.slug));
+
+const out = {
+  version: "2.0",
+  layout: "workspaces/{专业组}/skills/{slug}",
   generated: new Date().toISOString(),
   total: skills.length,
-  groups: Object.keys(groups).sort(),
-  breakdown: Object.fromEntries(
-    Object.entries(groups).map(([k, v]) => [k, v.length])
-  ),
-  skills: skills.sort((a, b) => a.path.localeCompare(b.path)),
+  skills,
 };
 
-writeFileSync(join(SKILLS_DIR, "index.json"), JSON.stringify(index, null, 2), "utf8");
-console.log(`✅ skills/index.json — ${skills.length} skills across ${Object.keys(groups).length} groups`);
-for (const [group, list] of Object.entries(groups)) {
-  console.log(`   ${group}: ${list.length} skills`);
-}
+writeFileSync(SKILLS_REGISTRY, JSON.stringify(out, null, 2));
+console.log(`✅ ${skills.length} 个 Skill → ${SKILLS_REGISTRY.replace(REPO + "/", "")}`);

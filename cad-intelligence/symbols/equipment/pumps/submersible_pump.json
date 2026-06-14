@@ -1,0 +1,53 @@
+{
+  "symbol_id": "PUMP-SUBMERSIBLE-001",
+  "name": "潜水泵",
+  "name_en": "Submersible Pump",
+  "standard": "GB/T 2625-1981",
+  "category": "pumps",
+  "description": "井用潜水泵",
+  "parameters": {
+    "flow_rate": {
+      "type": "number",
+      "unit": "m³/h",
+      "description": "流量"
+    },
+    "head": {
+      "type": "number",
+      "unit": "m",
+      "description": "扬程"
+    },
+    "submersible_depth": {
+      "type": "number",
+      "unit": "m",
+      "description": "潜水深度"
+    }
+  },
+  "connections": {
+    "discharge": {
+      "position": {"x": 0, "y": 20},
+      "direction": "up"
+    }
+  },
+  "geometry": {
+    "components": [
+      {
+        "type": "rectangle",
+        "params": {"width": 14, "height": 30},
+        "description": "泵体"
+      },
+      {
+        "type": "line",
+        "params": {"start": [0, -15], "end": [0, 15]},
+        "description": "轴"
+      },
+      {
+        "type": "triangle",
+        "params": {"size": 8},
+        "position": {"x": 0, "y": -12},
+        "description": "入口"
+      }
+    ]
+  },
+  "related_standards": ["GB/T 2816", "GB/T 2818"],
+  "typical_applications": ["深井取水", "矿山排水", "污水处理"]
+}

@@ -1,0 +1,319 @@
+{
+  "file": "process/psv.json",
+  "discipline": "PX",
+  "category": "relief",
+  "formula_count": 3,
+  "formulas": [
+    {
+      "formula_id": "PR-PSV-001",
+      "vdi_formula_id": "PR-PSV-001",
+      "name": "火灾暴露泄放量（API 521 简化）",
+      "name_en": "Fire Case Relief Load (API 521 simplified)",
+      "discipline": "PX",
+      "category": "relief/fire",
+      "type": "exact",
+      "equation_text": "W = 21000 * F * Aw^0.82",
+      "equation_latex": "W = 21000 \\cdot F \\cdot A_w^{0.82}",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {
+            "const": 21000
+          },
+          {
+            "var": "F"
+          },
+          {
+            "op": "pow",
+            "base": {
+              "var": "Aw"
+            },
+            "exp": 0.82
+          }
+        ]
+      },
+      "variables": [
+        {
+          "symbol": "W",
+          "name": "泄放量",
+          "unit": "kg/h",
+          "role": "output",
+          "desc": "火灾工况泄放量"
+        },
+        {
+          "symbol": "F",
+          "name": "环境因子",
+          "unit": "-",
+          "role": "input",
+          "default": 1,
+          "desc": "API 521 环境因子"
+        },
+        {
+          "symbol": "Aw",
+          "name": "润湿面积",
+          "unit": "m²",
+          "role": "input",
+          "constraints": {
+            "min": 0.1
+          },
+          "desc": "容器润湿表面积"
+        }
+      ],
+      "source": {
+        "standard_id": "API RP 521",
+        "clause": "4.3"
+      },
+      "tags": [
+        "安全阀",
+        "泄放量",
+        "火灾",
+        "API521"
+      ],
+      "keywords": [
+        "PSV",
+        "安全阀",
+        "泄放量",
+        "火灾暴露",
+        "API 521"
+      ],
+      "skill_tags": [
+        "PR-T07",
+        "PX0504"
+      ],
+      "precision": 1,
+      "version": 1
+    },
+    {
+      "formula_id": "PR-PSV-002",
+      "vdi_formula_id": "PR-PSV-002",
+      "name": "阻塞出口泄放量",
+      "name_en": "Blocked Outlet Relief Load",
+      "discipline": "PX",
+      "category": "relief/blocked",
+      "type": "exact",
+      "equation_text": "W = Q * ρ",
+      "equation_latex": "W = Q \\cdot \\rho",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {
+            "var": "Q"
+          },
+          {
+            "var": "ρ"
+          }
+        ]
+      },
+      "variables": [
+        {
+          "symbol": "W",
+          "name": "泄放量",
+          "unit": "kg/h",
+          "role": "output",
+          "desc": "阻塞出口工况泄放量"
+        },
+        {
+          "symbol": "Q",
+          "name": "体积流量",
+          "unit": "m³/h",
+          "role": "input",
+          "constraints": {
+            "min": 0.001
+          },
+          "desc": "上游最大体积流量"
+        },
+        {
+          "symbol": "ρ",
+          "name": "密度",
+          "unit": "kg/m³",
+          "role": "input",
+          "constraints": {
+            "min": 0.1
+          },
+          "desc": "泄放介质密度"
+        }
+      ],
+      "source": {
+        "standard_id": "API RP 520",
+        "clause": "5"
+      },
+      "tags": [
+        "安全阀",
+        "blocked outlet",
+        "泄放"
+      ],
+      "keywords": [
+        "阻塞出口",
+        "泄放量",
+        "PSV"
+      ],
+      "skill_tags": [
+        "PR-T07"
+      ],
+      "precision": 0.1,
+      "version": 1
+    },
+    {
+      "formula_id": "PR-PSV-003",
+      "vdi_formula_id": "PR-PSV-003",
+      "name": "安全阀喉径（API 520 简化）",
+      "name_en": "PSV Orifice Area",
+      "discipline": "PX",
+      "category": "relief/sizing",
+      "type": "exact",
+      "equation_text": "A = W / (C * Kd * P1 * Kb * Kc) * sqrt(T*Z/M)",
+      "equation_latex": "A = \\frac{W}{C \\cdot K_d \\cdot P_1 \\cdot K_b \\cdot K_c} \\sqrt{\\frac{T Z}{M}}",
+      "equation_ast": {
+        "op": "mul",
+        "args": [
+          {
+            "op": "div",
+            "num": {
+              "var": "W"
+            },
+            "den": {
+              "op": "mul",
+              "args": [
+                {
+                  "var": "C"
+                },
+                {
+                  "var": "Kd"
+                },
+                {
+                  "var": "P1"
+                },
+                {
+                  "var": "Kb"
+                },
+                {
+                  "var": "Kc"
+                }
+              ]
+            }
+          },
+          {
+            "op": "sqrt",
+            "arg": {
+              "op": "div",
+              "num": {
+                "op": "mul",
+                "args": [
+                  {
+                    "var": "T"
+                  },
+                  {
+                    "var": "Z"
+                  }
+                ]
+              },
+              "den": {
+                "var": "M"
+              }
+            }
+          }
+        ]
+      },
+      "variables": [
+        {
+          "symbol": "A",
+          "name": "喉径面积",
+          "unit": "mm²",
+          "role": "output",
+          "desc": "所需喉径面积"
+        },
+        {
+          "symbol": "W",
+          "name": "泄放量",
+          "unit": "kg/h",
+          "role": "input",
+          "constraints": {
+            "min": 1
+          },
+          "desc": "泄放质量流量"
+        },
+        {
+          "symbol": "C",
+          "name": "气体常数",
+          "unit": "-",
+          "role": "constant",
+          "default": 315,
+          "desc": "API 520 气体常数"
+        },
+        {
+          "symbol": "Kd",
+          "name": "泄放系数",
+          "unit": "-",
+          "role": "input",
+          "default": 0.975,
+          "desc": "额定泄放系数"
+        },
+        {
+          "symbol": "P1",
+          "name": "上游压力",
+          "unit": "kPa",
+          "role": "input",
+          "desc": "泄放上游压力"
+        },
+        {
+          "symbol": "Kb",
+          "name": "背压修正",
+          "unit": "-",
+          "role": "input",
+          "default": 1,
+          "desc": "背压修正系数"
+        },
+        {
+          "symbol": "Kc",
+          "name": "组合修正",
+          "unit": "-",
+          "role": "input",
+          "default": 1,
+          "desc": "组合修正系数"
+        },
+        {
+          "symbol": "T",
+          "name": "温度",
+          "unit": "K",
+          "role": "input",
+          "desc": "泄放温度"
+        },
+        {
+          "symbol": "Z",
+          "name": "压缩因子",
+          "unit": "-",
+          "role": "input",
+          "default": 1,
+          "desc": "压缩因子"
+        },
+        {
+          "symbol": "M",
+          "name": "分子量",
+          "unit": "kg/kmol",
+          "role": "input",
+          "desc": "分子量"
+        }
+      ],
+      "source": {
+        "standard_id": "API RP 520",
+        "clause": "5.6"
+      },
+      "tags": [
+        "喉径",
+        "API520",
+        "安全阀选型"
+      ],
+      "keywords": [
+        "喉径",
+        "orifice",
+        "PSV选型",
+        "API 520"
+      ],
+      "skill_tags": [
+        "PR-T07"
+      ],
+      "precision": 1,
+      "version": 1
+    }
+  ]
+}

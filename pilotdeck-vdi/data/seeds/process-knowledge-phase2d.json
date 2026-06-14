@@ -1,0 +1,878 @@
+{
+  "seed_version": "2d",
+  "discipline": "process",
+  "description": "Sprint 5 Phase 2d — API 521 / IEC 61511 / HG 20557 / SH/T 3011 / 化验水力扩展",
+  "clauses": [
+    {
+      "clause_id": "APIRP521-1-1",
+      "source_type": "standard",
+      "source_id": "API RP 521",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "1.1",
+      "content": "泄压系统设计应识别所有可能导致超压的单一危害场景，并分别计算所需泄放量。",
+      "keywords": [
+        "超压场景",
+        "单一危害",
+        "泄放量"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API RP 521"
+    },
+    {
+      "clause_id": "APIRP521-2-1",
+      "source_type": "standard",
+      "source_id": "API RP 521",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "2.1",
+      "content": "火灾暴露场景下应对液体部分润湿表面积、环境因子及热输入速率进行合理假设。",
+      "keywords": [
+        "火灾",
+        "润湿表面积",
+        "热输入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-T07"
+      ],
+      "category": "API RP 521"
+    },
+    {
+      "clause_id": "APIRP521-2-2",
+      "source_type": "standard",
+      "source_id": "API RP 521",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "2.2",
+      "content": "blocked outlet 场景应基于上游最大进料流量及下游完全阻塞条件计算超压。",
+      "keywords": [
+        "blocked outlet",
+        "阻塞出口"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API RP 521"
+    },
+    {
+      "clause_id": "APIRP521-2-3",
+      "source_type": "standard",
+      "source_id": "API RP 521",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "2.3",
+      "content": "冷却失效场景应评估外部火灾或内部反应失控导致的压力上升速率。",
+      "keywords": [
+        "冷却失效",
+        "反应失控"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-X01"
+      ],
+      "category": "API RP 521"
+    },
+    {
+      "clause_id": "APIRP521-3-1",
+      "source_type": "standard",
+      "source_id": "API RP 521",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "3.1",
+      "content": "泄压设施下游 piping 压降不应导致被保护设备超压或安全阀背压超过允许值。",
+      "keywords": [
+        "背压",
+        "下游管道",
+        "压降"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API RP 521"
+    },
+    {
+      "clause_id": "APIRP521-3-2",
+      "source_type": "standard",
+      "source_id": "API RP 521",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "3.2",
+      "content": "火炬 header 设计应满足所有同时泄放场景下的最大汇总负荷及允许背压。",
+      "keywords": [
+        "火炬",
+        "header",
+        "同时泄放"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API RP 521"
+    },
+    {
+      "clause_id": "APIRP521-4-1",
+      "source_type": "standard",
+      "source_id": "API RP 521",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "4.1",
+      "content": "可凝性介质泄入火炬系统应评估凝液回收或加热措施，防止 header 冻结或液锤。",
+      "keywords": [
+        "可凝性",
+        "液锤",
+        "火炬"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API RP 521"
+    },
+    {
+      "clause_id": "APIRP521-4-2",
+      "source_type": "standard",
+      "source_id": "API RP 521",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "4.2",
+      "content": "毒性介质泄放应导入封闭火炬或处理系统，并满足环保及职业卫生要求。",
+      "keywords": [
+        "毒性",
+        "封闭火炬"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API RP 521"
+    },
+    {
+      "clause_id": "APIRP521-5-1",
+      "source_type": "standard",
+      "source_id": "API RP 521",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "5.1",
+      "content": "紧急泄压（EDP）与正常操作泄压应区分场景，不得合并计算导致泄放设施过大或过小。",
+      "keywords": [
+        "EDP",
+        "正常泄压"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03"
+      ],
+      "category": "API RP 521"
+    },
+    {
+      "clause_id": "APIRP521-5-2",
+      "source_type": "standard",
+      "source_id": "API RP 521",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "5.2",
+      "content": "PSV  inlet 管道压降应控制在允许范围内，避免影响阀件开启性能。",
+      "keywords": [
+        "PSV入口",
+        "压降",
+        "开启性能"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-S02"
+      ],
+      "category": "API RP 521"
+    },
+    {
+      "clause_id": "APIRP521-6-1",
+      "source_type": "standard",
+      "source_id": "API RP 521",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "6.1",
+      "content": "泄压系统 HAZOP 应审查误开启、无法开启及泄漏至火炬等失效模式。",
+      "keywords": [
+        "HAZOP",
+        "误开启",
+        "失效模式"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X01",
+        "PR-S03"
+      ],
+      "category": "API RP 521"
+    },
+    {
+      "clause_id": "APIRP521-6-2",
+      "source_type": "standard",
+      "source_id": "API RP 521",
+      "version": "2020",
+      "discipline": "process",
+      "clause": "6.2",
+      "content": "泄压设施变更应触发 MOC，并重新评估下游火炬及处理系统负荷。",
+      "keywords": [
+        "MOC",
+        "变更管理",
+        "火炬负荷"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S03",
+        "PR-X01"
+      ],
+      "category": "API RP 521"
+    },
+    {
+      "clause_id": "IEC61511-1-1",
+      "source_type": "standard",
+      "source_id": "IEC 61511",
+      "version": "2016",
+      "discipline": "process",
+      "clause": "1.1",
+      "content": "安全仪表功能（SIF）识别应基于工艺危害分析，并记录于安全生命周期文件。",
+      "keywords": [
+        "SIF",
+        "安全生命周期",
+        "危害分析"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X01"
+      ],
+      "category": "IEC 61511"
+    },
+    {
+      "clause_id": "IEC61511-2-1",
+      "source_type": "standard",
+      "source_id": "IEC 61511",
+      "version": "2016",
+      "discipline": "process",
+      "clause": "2.1",
+      "content": "SIL 定级应使用 LOPA 或等同方法，明确 initiating event 频率及独立保护层。",
+      "keywords": [
+        "SIL",
+        "LOPA",
+        "IPL"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X01",
+        "PR-S05"
+      ],
+      "category": "IEC 61511"
+    },
+    {
+      "clause_id": "IEC61511-3-1",
+      "source_type": "standard",
+      "source_id": "IEC 61511",
+      "version": "2016",
+      "discipline": "process",
+      "clause": "3.1",
+      "content": "因果图应清晰表达 cause-effect 关系，并与 P&ID 位号及联锁矩阵一致。",
+      "keywords": [
+        "因果图",
+        "联锁矩阵",
+        "P&ID"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05"
+      ],
+      "category": "IEC 61511"
+    },
+    {
+      "clause_id": "IEC61511-3-2",
+      "source_type": "standard",
+      "source_id": "IEC 61511",
+      "version": "2016",
+      "discipline": "process",
+      "clause": "3.2",
+      "content": "BPCS 与 SIS 功能分离：安全联锁不得由常规 DCS 逻辑单独承担 SIL 2 及以上功能。",
+      "keywords": [
+        "BPCS",
+        "SIS",
+        "功能分离"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-X01"
+      ],
+      "category": "IEC 61511"
+    },
+    {
+      "clause_id": "IEC61511-4-1",
+      "source_type": "standard",
+      "source_id": "IEC 61511",
+      "version": "2016",
+      "discipline": "process",
+      "clause": "4.1",
+      "content": "联锁测试 interval 应与 SIL 验证计算一致，并在操作手册中规定测试程序。",
+      "keywords": [
+        "联锁测试",
+        "SIL验证"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05"
+      ],
+      "category": "IEC 61511"
+    },
+    {
+      "clause_id": "IEC61511-4-2",
+      "source_type": "standard",
+      "source_id": "IEC 61511",
+      "version": "2016",
+      "discipline": "process",
+      "clause": "4.2",
+      "content": "ESD 动作应优先保证人员安全，其次保护环境，再考虑设备完整性。",
+      "keywords": [
+        "ESD",
+        "优先级",
+        "人员安全"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05",
+        "PR-X01"
+      ],
+      "category": "IEC 61511"
+    },
+    {
+      "clause_id": "IEC61511-5-1",
+      "source_type": "standard",
+      "source_id": "IEC 61511",
+      "version": "2016",
+      "discipline": "process",
+      "clause": "5.1",
+      "content": "报警泛滥管理：关键报警应分级，并避免同一根因触发大量次要报警。",
+      "keywords": [
+        "报警管理",
+        "报警分级"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05"
+      ],
+      "category": "IEC 61511"
+    },
+    {
+      "clause_id": "IEC61511-5-2",
+      "source_type": "standard",
+      "source_id": "IEC 61511",
+      "version": "2016",
+      "discipline": "process",
+      "clause": "5.2",
+      "content": "操作员响应时间假设应与 HMI 设计及培训程序一致。",
+      "keywords": [
+        "响应时间",
+        "HMI"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S05"
+      ],
+      "category": "IEC 61511"
+    },
+    {
+      "clause_id": "HG2055711993-1-1-5",
+      "source_type": "standard",
+      "source_id": "HG 20557.1-1993",
+      "version": "1993",
+      "discipline": "process",
+      "clause": "1.1.5",
+      "content": "工艺系统专业应编制 P&ID，并负责管道、仪表、安全泄压等系统的设计协调。",
+      "keywords": [
+        "P&ID",
+        "工艺系统",
+        "协调"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01"
+      ],
+      "category": "HG 20557.1-1993"
+    },
+    {
+      "clause_id": "HG2055711993-1-1-6",
+      "source_type": "standard",
+      "source_id": "HG 20557.1-1993",
+      "version": "1993",
+      "discipline": "process",
+      "clause": "1.1.6",
+      "content": "工艺系统应提出管道压力等级、阀门型式及特殊管件要求。",
+      "keywords": [
+        "压力等级",
+        "阀门型式"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-S02"
+      ],
+      "category": "HG 20557.1-1993"
+    },
+    {
+      "clause_id": "HG2055711993-1-1-7",
+      "source_type": "standard",
+      "source_id": "HG 20557.1-1993",
+      "version": "1993",
+      "discipline": "process",
+      "clause": "1.1.7",
+      "content": "机泵 NPSH 及压差要求由工艺系统提出，作为机泵专业选型依据。",
+      "keywords": [
+        "NPSH",
+        "机泵",
+        "压差"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S02",
+        "PR-T06"
+      ],
+      "category": "HG 20557.1-1993"
+    },
+    {
+      "clause_id": "HG2055711993-1-1-9",
+      "source_type": "standard",
+      "source_id": "HG 20557.1-1993",
+      "version": "1993",
+      "discipline": "process",
+      "clause": "1.1.9",
+      "content": "工艺系统应编制管道表，作为配管专业布置设计输入。",
+      "keywords": [
+        "管道表",
+        "配管"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01"
+      ],
+      "category": "HG 20557.1-1993"
+    },
+    {
+      "clause_id": "HG2055711993-2-1-1",
+      "source_type": "standard",
+      "source_id": "HG 20557.1-1993",
+      "version": "1993",
+      "discipline": "process",
+      "clause": "2.1.1",
+      "content": "基础设计阶段工艺系统应完成 P&ID、管道表、安全阀表及主要设备条件。",
+      "keywords": [
+        "基础设计",
+        "安全阀表"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-S03"
+      ],
+      "category": "HG 20557.1-1993"
+    },
+    {
+      "clause_id": "HG2055711993-2-1-2",
+      "source_type": "standard",
+      "source_id": "HG 20557.1-1993",
+      "version": "1993",
+      "discipline": "process",
+      "clause": "2.1.2",
+      "content": "详细设计阶段 P&ID 应达到可施工深度，并与仪表、配管专业会签。",
+      "keywords": [
+        "详细设计",
+        "会签"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01"
+      ],
+      "category": "HG 20557.1-1993"
+    },
+    {
+      "clause_id": "SHT30112017-4-1",
+      "source_type": "standard",
+      "source_id": "SH/T 3011-2017",
+      "version": "2017",
+      "discipline": "process",
+      "clause": "4.1",
+      "content": "工艺装置总体布置应结合风向、主导物流及火炬位置，减少可燃气体积聚风险。",
+      "keywords": [
+        "总体布置",
+        "风向",
+        "火炬"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D04"
+      ],
+      "category": "SH/T 3011-2017"
+    },
+    {
+      "clause_id": "SHT30112017-4-2",
+      "source_type": "standard",
+      "source_id": "SH/T 3011-2017",
+      "version": "2017",
+      "discipline": "process",
+      "clause": "4.2",
+      "content": "高温设备与可燃物料设备之间应留有满足检修及消防要求的间距。",
+      "keywords": [
+        "高温设备",
+        "防火间距"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D04"
+      ],
+      "category": "SH/T 3011-2017"
+    },
+    {
+      "clause_id": "SHT30112017-6-1",
+      "source_type": "standard",
+      "source_id": "SH/T 3011-2017",
+      "version": "2017",
+      "discipline": "process",
+      "clause": "6.1",
+      "content": "工艺管道布置应减少死角和袋形，便于排凝、清线和维护。",
+      "keywords": [
+        "管道布置",
+        "排凝",
+        "清线"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01"
+      ],
+      "category": "SH/T 3011-2017"
+    },
+    {
+      "clause_id": "SHT30112017-6-2",
+      "source_type": "standard",
+      "source_id": "SH/T 3011-2017",
+      "version": "2017",
+      "discipline": "process",
+      "clause": "6.2",
+      "content": "采样点、排凝点及放空点设置应安全可达，并满足环保要求。",
+      "keywords": [
+        "采样点",
+        "放空",
+        "排凝"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S01",
+        "PR-X02"
+      ],
+      "category": "SH/T 3011-2017"
+    },
+    {
+      "clause_id": "SHT30112017-7-1",
+      "source_type": "standard",
+      "source_id": "SH/T 3011-2017",
+      "version": "2017",
+      "discipline": "process",
+      "clause": "7.1",
+      "content": "加热炉及反应器区域应明确燃料气、主工艺介质及紧急切断阀布置原则。",
+      "keywords": [
+        "加热炉",
+        "切断阀"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D04",
+        "PR-S05"
+      ],
+      "category": "SH/T 3011-2017"
+    },
+    {
+      "clause_id": "SHT30112017-7-2",
+      "source_type": "standard",
+      "source_id": "SH/T 3011-2017",
+      "version": "2017",
+      "discipline": "process",
+      "clause": "7.2",
+      "content": "在线分析仪表取样点应设置在具有代表性的工艺位置，并便于维护。",
+      "keywords": [
+        "在线分析",
+        "取样点"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X02",
+        "PR-S01"
+      ],
+      "category": "SH/T 3011-2017"
+    },
+    {
+      "clause_id": "SHSG0522003-3-2",
+      "source_type": "standard",
+      "source_id": "SHSG-052-2003",
+      "version": "2003",
+      "discipline": "process",
+      "clause": "3.2",
+      "content": "工艺包应提供完整的工艺技术说明，包括反应/分离原理、催化剂及化学品清单。",
+      "keywords": [
+        "工艺包",
+        "催化剂",
+        "化学品"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D01"
+      ],
+      "category": "SHSG-052-2003"
+    },
+    {
+      "clause_id": "SHSG0522003-3-4",
+      "source_type": "standard",
+      "source_id": "SHSG-052-2003",
+      "version": "2003",
+      "discipline": "process",
+      "clause": "3.4",
+      "content": "工艺包应提供设备清单及主要设备工艺数据表，作为设备专业设计输入。",
+      "keywords": [
+        "设备清单",
+        "数据表"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D01",
+        "PR-D05"
+      ],
+      "category": "SHSG-052-2003"
+    },
+    {
+      "clause_id": "SHSG0522003-3-6",
+      "source_type": "standard",
+      "source_id": "SHSG-052-2003",
+      "version": "2003",
+      "discipline": "process",
+      "clause": "3.6",
+      "content": "工艺包应提供公用工程消耗及规格汇总表。",
+      "keywords": [
+        "公用工程",
+        "消耗汇总"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D01",
+        "PR-S04"
+      ],
+      "category": "SHSG-052-2003"
+    },
+    {
+      "clause_id": "SHSG0522003-4-1",
+      "source_type": "standard",
+      "source_id": "SHSG-052-2003",
+      "version": "2003",
+      "discipline": "process",
+      "clause": "4.1",
+      "content": "工艺包 PFD 应标注主要物流数据及公用工程接入点。",
+      "keywords": [
+        "PFD",
+        "公用工程接入"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D01",
+        "PR-D04"
+      ],
+      "category": "SHSG-052-2003"
+    },
+    {
+      "clause_id": "SHSG0522003-4-3",
+      "source_type": "standard",
+      "source_id": "SHSG-052-2003",
+      "version": "2003",
+      "discipline": "process",
+      "clause": "4.3",
+      "content": "工艺包应提供分析化验手册目录及取样点汇总表。",
+      "keywords": [
+        "化验手册",
+        "取样点"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D01",
+        "PR-X02"
+      ],
+      "category": "SHSG-052-2003"
+    },
+    {
+      "clause_id": "SHSG0522003-5-1",
+      "source_type": "standard",
+      "source_id": "SHSG-052-2003",
+      "version": "2003",
+      "discipline": "process",
+      "clause": "5.1",
+      "content": "工艺包应提供开停车程序概要及主要联锁说明。",
+      "keywords": [
+        "开停车",
+        "联锁概要"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-D01",
+        "PR-S05"
+      ],
+      "category": "SHSG-052-2003"
+    },
+    {
+      "clause_id": "VDIPRLAB001-1-0",
+      "source_type": "standard",
+      "source_id": "VDI-PR-LAB-001",
+      "version": "2026",
+      "discipline": "process",
+      "clause": "1.0",
+      "content": "取样点编号应与 PFD 流股号及 P&ID 取样器位号建立一一对应关系。",
+      "keywords": [
+        "取样点编号",
+        "流股号"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X02"
+      ],
+      "category": "VDI-PR-LAB-001"
+    },
+    {
+      "clause_id": "VDIPRLAB001-2-0",
+      "source_type": "standard",
+      "source_id": "VDI-PR-LAB-001",
+      "version": "2026",
+      "discipline": "process",
+      "clause": "2.0",
+      "content": "产品质检取样频率应满足产品质量控制及合同规范要求。",
+      "keywords": [
+        "质检",
+        "取样频率"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X02"
+      ],
+      "category": "VDI-PR-LAB-001"
+    },
+    {
+      "clause_id": "VDIPRLAB001-3-0",
+      "source_type": "standard",
+      "source_id": "VDI-PR-LAB-001",
+      "version": "2026",
+      "discipline": "process",
+      "clause": "3.0",
+      "content": "环保监测取样点应满足 GB/T 50483 及地方排放标准监测要求。",
+      "keywords": [
+        "环保监测",
+        "排放"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X02"
+      ],
+      "category": "VDI-PR-LAB-001"
+    },
+    {
+      "clause_id": "VDIPRLAB001-4-0",
+      "source_type": "standard",
+      "source_id": "VDI-PR-LAB-001",
+      "version": "2026",
+      "discipline": "process",
+      "clause": "4.0",
+      "content": "在线分析与实验室分析项目应明确方法标准（如 GB/T、ASTM）。",
+      "keywords": [
+        "分析方法",
+        "ASTM"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-X02"
+      ],
+      "category": "VDI-PR-LAB-001"
+    },
+    {
+      "clause_id": "VDIPRHYD002-1-0",
+      "source_type": "standard",
+      "source_id": "VDI-PR-HYD-002",
+      "version": "2026",
+      "discipline": "process",
+      "clause": "1.0",
+      "content": "管径初选应基于经济流速或允许压降，两相流管线应使用专用关联式。",
+      "keywords": [
+        "管径",
+        "经济流速",
+        "两相流"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S02"
+      ],
+      "category": "VDI-PR-HYD-002"
+    },
+    {
+      "clause_id": "VDIPRHYD002-2-0",
+      "source_type": "standard",
+      "source_id": "VDI-PR-HYD-002",
+      "version": "2026",
+      "discipline": "process",
+      "clause": "2.0",
+      "content": "泵 NPSHa 计算应计入吸入管道摩擦损失、设备入口高度及液体饱和蒸汽压。",
+      "keywords": [
+        "NPSHa",
+        "摩擦损失",
+        "饱和蒸汽压"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S02",
+        "PR-T06"
+      ],
+      "category": "VDI-PR-HYD-002"
+    },
+    {
+      "clause_id": "VDIPRHYD002-3-0",
+      "source_type": "standard",
+      "source_id": "VDI-PR-HYD-002",
+      "version": "2026",
+      "discipline": "process",
+      "clause": "3.0",
+      "content": "控制阀上下游压降分配应保证阀门在 30%–70% 开度范围内正常调节。",
+      "keywords": [
+        "控制阀",
+        "压降分配",
+        "开度"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S02",
+        "PR-S05"
+      ],
+      "category": "VDI-PR-HYD-002"
+    },
+    {
+      "clause_id": "VDIPRHYD002-4-0",
+      "source_type": "standard",
+      "source_id": "VDI-PR-HYD-002",
+      "version": "2026",
+      "discipline": "process",
+      "clause": "4.0",
+      "content": "长距离输送管线应校核水击及热膨胀引起的超压风险。",
+      "keywords": [
+        "水击",
+        "热膨胀"
+      ],
+      "mandatory": true,
+      "skill_tags": [
+        "PR-S02"
+      ],
+      "category": "VDI-PR-HYD-002"
+    }
+  ]
+}
